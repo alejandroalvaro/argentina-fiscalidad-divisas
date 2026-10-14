@@ -8,7 +8,12 @@
 ## Faltantes
 - Unidades: la página de metadatos del SGS respondió "System unavailable" durante toda la sesión. Las unidades de las series de balance de pagos, PII, reservas y saldos de deuda quedan vacías en la tabla. Solo se completó "% PIB" cuando figura en el título.
 - PII: no se encontró en el catálogo el código del Activo total ni de la posición neta. Solo están el Passivo total (24040) y tres componentes del activo, así que la posición neta no se calculó.
-- Deuda por moneda en sentido estricto (DPF por indexador, con la porción cambial): no se derivó. El CSV del Tesouro trae el título por código (LFT, NTN-B, etc.) y se podría clasificar, pero no se hizo para no inferir el indexador sin la tabla oficial. El Relatório Mensal da Dívida (RMD) no se descargó.
+- Clasificación de la DPF por indexador (`tablas/mapeo_indexador_dpf.csv` y `tablas/dpf_por_indexador_derivado.csv`): DERIVADA POR GROK, NO OFICIAL. Debe cotejarse con el Relatório Mensal da Dívida (RMD) del Tesouro, que no fue descargado. Puntos a revisar:
+  - Deuda externa asignada en bloque a cambio según los metadatos (conversión desde moneda extranjera). Algunos préstamos podrían tener otra moneda o indexador.
+  - Global BRL (denominado en reales), TDA, CVS, títulos de securitización (HCF*, HSTN), ECTN, AINSS y otros quedan sin_clasificar (0,30% del stock en 2026-07).
+  - LFT-TD asignada a Selic solo por prefijo.
+  - NTN-C (IGP-M) agrupada en ipca_precos.
+  - Las valoraciones del CSV usan la TIR media de emisión (metadatos), por lo que las participaciones pueden diferir de las del RMD.
 - Reservas diarias: solo hay 10 años (desde 2016-10-17), por el límite de la API SGS para series diarias.
 - Reservas netas de Brasil (brutas menos pasivos, swaps cambiales del BCB, operaciones de recompra en USD): no hay serie descargada.
 - La búsqueda CKAN del BCB devolvió XML/HTML de forma intermitente y hubo que reintentar.

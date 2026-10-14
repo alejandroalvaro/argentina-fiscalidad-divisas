@@ -8,3 +8,4 @@ Fuentes: BCB (SGS, 19 series), Tesouro Nacional (stock de la DPF) y FMI WEO (2 s
 - Deuda: hay dos series vigentes de deuda bruta del gobierno general con metodologías distintas, y el dato del FMI se acerca a la anterior a 2008. Se marca como ruptura metodológica y contradicción, sin resolver.
 - DPF del Tesouro: la deuda externa representa una fracción pequeña del stock total en 2026-07 (aprox. 340 frente a 11.928 mil millones de reales). Es una suma propia y está pendiente de cotejo con el RMD.
 - PII: hay pasivo total y componentes del activo, pero no el activo total ni la posición neta.
+- DPF por indexador (derivado por Grok, no oficial, pendiente de cotejo con el RMD): en 2026-07, Selic 46,4%, IPCA/precios 27,1%, prefixado 23,5%, cambio 2,7%, TR/otros cerca de 0% y sin_clasificar 0,3%. Las reglas de mapeo se basan en el Decreto 3.859/2001 y en los metadatos del Tesouro.
