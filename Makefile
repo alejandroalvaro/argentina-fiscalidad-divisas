@@ -1,4 +1,4 @@
-.PHONY: install lint format test check config storage-check clean-cache
+.PHONY: install lint format test check config storage-check clean-cache validate-grok
 
 install:
 	uv sync
@@ -24,3 +24,11 @@ storage-check:
 
 clean-cache:
 	rm -rf data/cache
+
+# Snapshot every grok/* branch's inbox/ into data/inbox and validate it (no checkout needed)
+validate-grok:
+	git fetch -q origin
+	rm -rf data/inbox && mkdir -p data/inbox
+	for b in $$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/grok/); do \
+		git archive $$b inbox | tar -x -C data/inbox; done
+	uv run argfx validate data/inbox/inbox --out data/validacion

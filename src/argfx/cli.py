@@ -83,6 +83,23 @@ def cmd_fetch_sources(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+def cmd_validate(args: argparse.Namespace) -> int:
+    from argfx.validate import validate_inbox, write_report
+
+    report = validate_inbox(args.inbox)
+    print(
+        f"{len(report.files)} files, {report.rows_read:,} rows: "
+        f"{report.errors:,} errors, {report.warnings:,} warnings"
+    )
+    for i in report.issues:
+        where = f"{i.lote}/{i.file}" + (f":{i.line}" if i.line else "")
+        print(f"  {i.severity:7} {i.code:24} x{i.count:<5} {where}  [{i.column}] {i.message}")
+    if args.out:
+        csv_path, md_path = write_report(report, args.out)
+        print(f"report: {md_path} and {csv_path}")
+    return 1 if report.errors else 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -108,6 +125,11 @@ def build_parser() -> argparse.ArgumentParser:
     fs.add_argument("sources", nargs="+", type=Path)
     fs.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
     fs.set_defaults(func=cmd_fetch_sources)
+
+    val = sub.add_parser("validate", help="validate Grok batches under an inbox directory")
+    val.add_argument("inbox", type=Path, help="directory containing lote-*/ folders")
+    val.add_argument("--out", type=Path, help="write resumen.md and issues.csv here")
+    val.set_defaults(func=cmd_validate)
     return parser
 
 

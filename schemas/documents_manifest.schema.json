@@ -1,0 +1,83 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Sha256",
+      "type": "string"
+    },
+    "size_bytes": {
+      "minimum": 0,
+      "title": "Size Bytes",
+      "type": "integer"
+    },
+    "object_key": {
+      "title": "Object Key",
+      "type": "string"
+    },
+    "media_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Media Type"
+    },
+    "original_filename": {
+      "title": "Original Filename",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "ingested_at": {
+      "format": "date-time",
+      "title": "Ingested At",
+      "type": "string"
+    },
+    "local_object_key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Local Object Key"
+    },
+    "rol": {
+      "anyOf": [
+        {
+          "enum": [
+            "original",
+            "derivado"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rol"
+    }
+  },
+  "required": [
+    "sha256",
+    "size_bytes",
+    "object_key",
+    "original_filename",
+    "source_id",
+    "ingested_at"
+  ],
+  "title": "ManifestRow",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

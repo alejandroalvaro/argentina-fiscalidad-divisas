@@ -1,0 +1,64 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "claim_id": {
+      "pattern": "^CLM-[A-Z]-\\d{3}$",
+      "title": "Claim Id",
+      "type": "string"
+    },
+    "claim": {
+      "title": "Claim",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "page_or_section": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Page Or Section"
+    },
+    "exact_evidence": {
+      "title": "Exact Evidence",
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "alta",
+        "media",
+        "baja"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "review_status": {
+      "enum": [
+        "sin_revisar",
+        "revisado",
+        "rechazado"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "claim",
+    "source_id",
+    "exact_evidence",
+    "confidence",
+    "review_status"
+  ],
+  "title": "Claim",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

@@ -1,0 +1,51 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "series_id": {
+      "title": "Series Id",
+      "type": "string"
+    },
+    "fecha": {
+      "format": "date",
+      "title": "Fecha",
+      "type": "string"
+    },
+    "valor": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valor"
+    },
+    "unidad": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unidad"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "series_id",
+    "fecha",
+    "source_id"
+  ],
+  "title": "SeriesObservation",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

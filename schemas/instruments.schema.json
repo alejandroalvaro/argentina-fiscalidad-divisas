@@ -1,0 +1,91 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "instrument_id": {
+      "pattern": "^INS-[A-Z]-\\d{4}$",
+      "title": "Instrument Id",
+      "type": "string"
+    },
+    "issuer": {
+      "title": "Issuer",
+      "type": "string"
+    },
+    "isin": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Isin"
+    },
+    "currency_of_account": {
+      "title": "Currency Of Account",
+      "type": "string"
+    },
+    "currency_of_payment": {
+      "title": "Currency Of Payment",
+      "type": "string"
+    },
+    "indexation": {
+      "enum": [
+        "ninguna",
+        "ninguna informada",
+        "CER",
+        "UVA",
+        "dólar-linked (pagadero en ARS)",
+        "TAMAR",
+        "BADLAR"
+      ],
+      "title": "Indexation",
+      "type": "string"
+    },
+    "outstanding_principal": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Outstanding Principal"
+    },
+    "as_of_date": {
+      "format": "date",
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "review_status": {
+      "enum": [
+        "candidato_sin_revisar",
+        "revisado",
+        "rechazado"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "instrument_id",
+    "issuer",
+    "currency_of_account",
+    "currency_of_payment",
+    "indexation",
+    "as_of_date",
+    "source_id",
+    "review_status"
+  ],
+  "title": "Instrument",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

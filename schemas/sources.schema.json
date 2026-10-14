@@ -1,0 +1,104 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "issuer": {
+      "title": "Issuer",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "url": {
+      "pattern": "^https?://",
+      "title": "Url",
+      "type": "string"
+    },
+    "publication_date": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publication Date"
+    },
+    "accessed_at": {
+      "format": "date",
+      "title": "Accessed At",
+      "type": "string"
+    },
+    "period_covered": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Period Covered"
+    },
+    "document_type": {
+      "title": "Document Type",
+      "type": "string"
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sha256"
+    },
+    "license_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "License Notes"
+    },
+    "local_object_key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Local Object Key"
+    }
+  },
+  "required": [
+    "source_id",
+    "issuer",
+    "title",
+    "url",
+    "accessed_at",
+    "document_type"
+  ],
+  "title": "Source",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}
