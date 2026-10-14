@@ -33,3 +33,6 @@ dist/
 .DS_Store
 .idea/
 .vscode/
+
+# Grok may push documents it cannot link by URL, only on its own branches (see docs/FLUJO_GROK.md)
+!inbox/*/documentos/**
