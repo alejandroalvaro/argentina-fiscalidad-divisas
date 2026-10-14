@@ -30,3 +30,8 @@ Fecha de acceso: 2026-10-14. Cortes: base SIGADE y planilla trimestral al 30/06/
 - **Garantías y contingencias.** Los avales y las letras en garantía figuran en SIGADE. No se localizó un inventario oficial de pasivos contingentes (juicios, garantías de PPP o RIGI, fondos fiduciarios).
 - **Calendario posterior al corte.** La tabla de vencimientos es una proyección al 30/06/2026. Las licitaciones de julio a octubre de 2026 no están incorporadas.
 - **Contenido del 18-K 2025.** Solo se descargó la carátula (44 KB). El anexo D con la descripción de la deuda no se descargó.
+
+## Ajustes de formato posteriores a la validación de Claude Code
+
+- `instruments.csv`: `currency_of_payment` pasa de `ARP` a `ARS` (ISO 4217) en 90 filas. El código SIGADE se conserva en `currency_code_sigade`.
+- `documents_manifest.csv`: se agregó la columna `rol`. Las cinco tablas exportadas de SIGADE quedan como `derivado` con `source_id` SRC-0102, y su `local_object_key` apunta a `tablas_sigade/`, que es donde están en la rama.
