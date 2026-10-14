@@ -1,6 +1,6 @@
 # Lote D: síntesis breve (series externas)
 
-Fuentes: API del BCRA, API de Series de Tiempo (datos.gob.ar, con datos de BCRA, INDEC y Secretaría de Hacienda) e informe del FMI de mayo de 2026. Las series de datos.gob.ar se toman de los archivos estáticos de cada distribución. Acceso el 14/10/2026. Los datos están en `tablas/series_lote_d.csv` (formato largo, 8.344 observaciones) y `tablas/definiciones_reservas.csv`.
+Fuentes: API del BCRA, API de Series de Tiempo (datos.gob.ar, con datos de BCRA, INDEC y Secretaría de Hacienda) e informe del FMI de mayo de 2026. Las series de datos.gob.ar se toman de los archivos estáticos de cada distribución. Acceso el 14/10/2026. Los datos están en `tablas/series_lote_d.csv` (formato largo, 8.396 observaciones) y `tablas/definiciones_reservas.csv`.
 
 **Reservas.** El BCRA publica reservas brutas diarias desde 2003 (último dato: 08/10/2026) y mensuales desde 1940. El balance de pagos de INDEC registra la transacción de activos de reserva, que es un flujo. El programa con el FMI define reservas netas como brutas menos pasivos de corto plazo, swaps, encajes en divisas y otros conceptos, y no descuenta los depósitos en divisas del Tesoro en el BCRA. Hay cinco definiciones en uso y ninguna serie oficial de reservas netas.
 
