@@ -16,6 +16,8 @@ Research pipeline for an academic paper on collecting Argentine export duties in
 - Keep observed data, contract terms, scenarios and assumptions in separate tables.
 - Treasury, BCRA and consolidated public sector are reported separately. No double counting of intra-public-sector holdings.
 - No LLM calls for deterministic calculations. LLM-written text only in the Phase 5 writing layer.
+- datos.gob.ar: take series from the static distribution CSV (`infra.datos.gob.ar/.../download/*.csv`). The `apis.datos.gob.ar/series` API drops observations at random; use it only to find the `downloadURL`.
+- SIGADE amounts are in USD units; Secretaría de Finanzas cuadros (A.1.x...) are in thousands of USD.
 - Originals are immutable and content-addressed by SHA-256 (`argfx.storage.put_immutable`). Register them in `manifests/` via `argfx ingest`.
 
 ## Storage
