@@ -1,0 +1,32 @@
+# Lote C: cuestiones abiertas y contradicciones
+
+Fecha de acceso: 2026-10-14. Cortes: base SIGADE y planilla trimestral al 30/06/2026; estructura financiera de títulos al 31/08/2026. No se encontró inventario oficial con corte posterior al 30/06/2026.
+
+## Alcance de instruments.csv
+
+- Una fila por operación de la tabla "Saldo de Deuda en Situación de Pago Normal" de SIGADE (753 filas). `outstanding_principal` copia el campo "Saldo en Moneda de Origen", que es un saldo y no una emisión. Falta verificar si ese saldo es solo capital o incluye capitalizaciones.
+- Quedan fuera la deuda elegible pendiente de reestructuración (tabla aparte, 1.036 filas de servicios) y la "Deuda a Reestructurar" (110 filas). Ambas están en `data/` sin convertir a instrumentos.
+- Cubre la Administración Central. Quedan fuera la deuda del BCRA (por ejemplo, BOPREAL y pasivos remunerados), provincias y empresas públicas.
+- `isin` está vacío en todas las filas: ninguna fuente oficial descargada asocia ISIN a las operaciones vigentes. Las ISIN del prospecto de 2020 (SRC-0108) son de bonos elegibles canjeados, y por eso no se asignaron.
+- `holder_residency` está vacío. Solo existe el agregado por residencia (cuadro A.4.5).
+- `instrument_family` es una clasificación mecánica derivada de los códigos SIGADE (moneda, clasificación, nombre). Requiere revisión.
+
+## Inconsistencias dentro de la base SIGADE (no corregidas)
+
+1. Código de moneda frente a descripción: AED figura como "DOLARES ESTADOUNIDENSES"; KWD figura como "EURO" (con moneda de pago EUR); una fila XDR figura como "DOLARES ESTADOUNIDENSES" con pago USD, y otras dos como "SPECIAL DRAWING RIGHTS".
+2. Préstamos garantizados con "T.VARIABLE" en el nombre figuran con tipo de tasa "TASA FIJA". El BONTE DUAL CER/TAMAR figura como "TASA CERO", y los BONCAP TAMAR figuran como "DIVERSAS".
+3. Los instrumentos con código UCP (CER) tienen el saldo en moneda de origen expresado en una unidad que no está documentada en la base. Hay que confirmarla antes de sumar.
+4. La tabla de tipos de cambio asigna 1 a DLK. Falta verificar con qué tipo de cambio se convierte DLK a USD en "Saldo en Dólares".
+
+## Diferencias entre cuadros (conciliables, no contradicciones)
+
+- A.1.1 "Deuda en situación de pago normal" = 471.689.788 miles de USD, igual a la suma de SIGADE. A.1.4 "excluida la elegible" = 471.795.067; la diferencia (105.278) coincide con la deuda en situación de pago diferido de A.1.2.
+- En A.1.4 no queda claro si la deuda dólar-linked se clasifica como "moneda local" o "moneda extranjera". Pendiente.
+
+## Brechas
+
+- **ISIN y CUSIP vigentes.** Fuentes candidatas no descargadas: anexos del 18-K y los 424B posteriores en EDGAR, resoluciones conjuntas de emisión en el Boletín Oficial, Caja de Valores y BYMA. BYMA y MAE no se consultaron (datos de mercado, no del emisor).
+- **Prospectos maestros.** No se descargaron el prospecto base de la República en EDGAR ni el indenture de 2016. Las resoluciones de emisión locales (Boletín Oficial) tampoco.
+- **Garantías y contingencias.** Los avales y las letras en garantía figuran en SIGADE. No se localizó un inventario oficial de pasivos contingentes (juicios, garantías de PPP o RIGI, fondos fiduciarios).
+- **Calendario posterior al corte.** La tabla de vencimientos es una proyección al 30/06/2026. Las licitaciones de julio a octubre de 2026 no están incorporadas.
+- **Contenido del 18-K 2025.** Solo se descargó la carátula (44 KB). El anexo D con la descripción de la deuda no se descargó.
