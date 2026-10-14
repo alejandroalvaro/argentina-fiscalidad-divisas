@@ -14,6 +14,7 @@ Research pipeline for an academic paper on collecting Argentine export duties in
 - Keep currency of account, indexation, currency of payment and residency as separate fields.
 - Dollar-linked debt payable in ARS is not a contractual USD need.
 - Keep observed data, contract terms, scenarios and assumptions in separate tables.
+- Net reserves follow the IMF TMU definition: Treasury FX deposits at the BCRA are NOT subtracted (see docs/DECISIONES.md D-001).
 - Treasury, BCRA and consolidated public sector are reported separately. No double counting of intra-public-sector holdings.
 - No LLM calls for deterministic calculations. LLM-written text only in the Phase 5 writing layer.
 - datos.gob.ar: take series from the static distribution CSV (`infra.datos.gob.ar/.../download/*.csv`). The `apis.datos.gob.ar/series` API drops observations at random; use it only to find the `downloadURL`.
