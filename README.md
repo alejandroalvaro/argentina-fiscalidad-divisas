@@ -46,6 +46,7 @@ schemas/       esquemas de los lotes de Grok (fase 1)
 scripts/       tareas puntuales que todavía no forman parte del CLI
 manifests/     manifiestos versionados que apuntan a objetos en R2
 inbox/         entregas de Grok, sólo en sus ramas (ver docs/FLUJO_GROK.md)
+mensajes/      mensajes entre Claude Code y Grok
 docs/          protocolo de investigación y documentación técnica
 ```
 
