@@ -4,7 +4,7 @@ Fecha de acceso: 2026-10-14. Cortes: base SIGADE y planilla trimestral al 30/06/
 
 ## Alcance de instruments.csv
 
-- Una fila por operación de la tabla "Saldo de Deuda en Situación de Pago Normal" de SIGADE (753 filas). `outstanding_principal` copia el campo "Saldo en Moneda de Origen", que es un saldo y no una emisión. Falta verificar si ese saldo es solo capital o incluye capitalizaciones.
+- Una fila por operación de la tabla "Saldo de Deuda en Situación de Pago Normal" de SIGADE (753 filas). `outstanding_principal` copia el campo "Saldo en Moneda de Origen", que es un saldo y no una emisión. **Resuelto (verificación de Claude Code, docs/verificaciones/2026-10-14_sigade_lote-c.md):** el saldo de cada operación coincide con la suma del principal futuro de la tabla de vencimientos (diferencia total de 25 USD), por lo que al corte el saldo es capital pendiente.
 - Quedan fuera la deuda elegible pendiente de reestructuración (tabla aparte, 1.036 filas de servicios) y la "Deuda a Reestructurar" (110 filas). Ambas están en `data/` sin convertir a instrumentos.
 - Cubre la Administración Central. Quedan fuera la deuda del BCRA (por ejemplo, BOPREAL y pasivos remunerados), provincias y empresas públicas.
 - `isin` está vacío en todas las filas: ninguna fuente oficial descargada asocia ISIN a las operaciones vigentes. Las ISIN del prospecto de 2020 (SRC-0108) son de bonos elegibles canjeados, y por eso no se asignaron.
@@ -15,12 +15,12 @@ Fecha de acceso: 2026-10-14. Cortes: base SIGADE y planilla trimestral al 30/06/
 
 1. Código de moneda frente a descripción: AED figura como "DOLARES ESTADOUNIDENSES"; KWD figura como "EURO" (con moneda de pago EUR); una fila XDR figura como "DOLARES ESTADOUNIDENSES" con pago USD, y otras dos como "SPECIAL DRAWING RIGHTS".
 2. Préstamos garantizados con "T.VARIABLE" en el nombre figuran con tipo de tasa "TASA FIJA". El BONTE DUAL CER/TAMAR figura como "TASA CERO", y los BONCAP TAMAR figuran como "DIVERSAS".
-3. Los instrumentos con código UCP (CER) tienen el saldo en moneda de origen expresado en una unidad que no está documentada en la base. Hay que confirmarla antes de sumar.
-4. La tabla de tipos de cambio asigna 1 a DLK. Falta verificar con qué tipo de cambio se convierte DLK a USD en "Saldo en Dólares".
+3. **Resuelto (verificación de Claude Code, docs/verificaciones/2026-10-14_sigade_lote-c.md):** el tipo de cambio UCP es igual a ARP / CER (1.483,0198 / 799,2033 = 1,8556). El saldo UCP está en unidades de capital ajustable; multiplicado por el CER al corte da pesos corrientes.
+4. **Resuelto (verificación de Claude Code, docs/verificaciones/2026-10-14_sigade_lote-c.md):** el tipo de cambio DLK es 1 y la relación saldo en origen / saldo en dólares es exactamente 1 en las 8 operaciones. El saldo DLK está en USD, pagadero en pesos.
 
 ## Diferencias entre cuadros (conciliables, no contradicciones)
 
-- A.1.1 "Deuda en situación de pago normal" = 471.689.788 miles de USD, igual a la suma de SIGADE. A.1.4 "excluida la elegible" = 471.795.067; la diferencia (105.278) coincide con la deuda en situación de pago diferido de A.1.2.
+- A.1.1 "Deuda en situación de pago normal" = 471.689.788 miles de USD (cuadro), igual a la suma de SIGADE (471.689.788.348 USD; SIGADE está en dólares, no en miles). A.1.4 "excluida la elegible" = 471.795.067; la diferencia (105.278) coincide con la deuda en situación de pago diferido de A.1.2.
 - En A.1.4 no queda claro si la deuda dólar-linked se clasifica como "moneda local" o "moneda extranjera". Pendiente.
 
 ## Brechas
