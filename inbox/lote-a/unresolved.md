@@ -21,3 +21,23 @@ Acceso: 2026-10-14. Todas las afirmaciones están marcadas sin_revisar. La colum
 ## Contradicciones
 
 No se detectaron contradicciones directas entre las fuentes de este lote. La definición de reservas del FMI (SRC-0202), centrada en el control de la autoridad monetaria, será relevante para el Lote D, donde las definiciones de reservas netas difieren.
+
+## Búsqueda de precedentes de percepción en divisas (ampliación 2026-10-14)
+
+Clasificación provisional, sin_revisar. Tres tipos: (T) tributo, regalía o derecho percibido en divisas o moneda dura para la tesorería; (E) ingreso en divisas por dividendos o participación de empresa estatal; (R) requisito de entrega de divisas al banco central, que no constituye un tributo.
+
+| Caso | Tipo provisional | Fuente | Estado |
+|---|---|---|---|
+| Propuesta Mosler, Argentina 2022 (3% de exportaciones brutas pagadero en USD) | propuesta, antecedente directo | SRC-0212 (primaria), SRC-0213 (secundaria) | documentado |
+| EE.UU. 1862, derechos de importación en coin | T | SRC-0214, sec. 5 | documentado |
+| Bolivia, Ley 3058 (regalías, participaciones e IDH en USD, equivalente en moneda nacional o especie) | T (opcional para el beneficiario) | SRC-0216, arts. 52 y 56 | documentado |
+| México, contraprestaciones al FMP en USD según contrato | T contractual | SRC-0217, numeral 4.3 | documentado; Ley de Ingresos sobre Hidrocarburos (diputados.gob.mx) falló por error TLS y no se descargó |
+| Noruega: impuestos petroleros en NOK; divisas vía SDFI | E (contraejemplo para T) | SRC-0215 | documentado |
+| Venezuela, Convenio Cambiario N° 1 (2003), art. 27 | R | SRC-0218 (copia no oficial) | falta Gaceta Oficial |
+| Chile, Ley 13.196 (10% de ventas externas de cobre de CODELCO a FF.AA.) y Ley 21.174 que la deroga | T sobre empresa estatal o E, a discutir | bcn.cl (idNorma 1136740); la página carga por JavaScript y la API leychile devolvió 401 | sin archivo; pendiente |
+| Rusia, derechos de exportación de crudo (calculados en USD/t, pagados en rublos según fuente secundaria) | contraejemplo probable | minfin.gov.ru devolvió 503 | pendiente |
+| Argentina 1890-1891, derechos de importación en oro (Ley 2697 de presupuesto 1890, según búsqueda) | T probable | solo resumen de buscador; el artículo de USACH descargado no lo confirmó y se descartó | pendiente, no afirmar |
+| Botswana (Debswana: regalías, impuestos y dividendos) | E probable | boletín del Bank of Botswana descargado no trataba el punto y se descartó | pendiente |
+| Aduana Marítima China (tael Haikwan), Administración de la Deuda Pública Otomana (1881), Estados del Golfo, Ecuador, impuestos coloniales | sin clasificar | no buscados con fuente primaria por tiempo | pendiente |
+
+Cautelas: la distinción entre T y E puede ser contestable en casos como Chile, donde el gravamen recae sobre ventas de una empresa estatal. Bolivia y México muestran pagos en divisas admitidos u opcionales, lo que difiere de una obligación general de pago en divisas. La afirmación previa de este archivo ("no se encontró un precedente de percepción de un tributo de exportación en divisas") queda matizada: EE.UU. 1862 es un precedente de derechos de importación, no de exportación, y la propuesta de Mosler es un antecedente directo de la idea aunque no una política aplicada.
