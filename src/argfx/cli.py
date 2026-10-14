@@ -9,6 +9,7 @@ import uuid
 from pathlib import Path
 
 from argfx.config import get_settings
+from argfx.fetch import fetch_sources
 from argfx.manifest import ingest_file
 from argfx.storage import fetch_verified, get_store
 
@@ -61,6 +62,27 @@ def cmd_fetch(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fetch_sources(args: argparse.Namespace) -> int:
+    from functools import partial
+
+    from argfx.fetch import http_fetch
+
+    settings = get_settings()
+    store = get_store(settings)
+    fetcher = partial(http_fetch, user_agent=settings.user_agent)
+    failed = 0
+    for csv_path in args.sources:
+        for r in fetch_sources(csv_path, store, settings.manifests_dir, fetcher, args.delay):
+            if r.error:
+                failed += 1
+                print(f"FAIL    {r.source_id}  {r.error}")
+                continue
+            match = {True: "hash=grok", False: "hash≠grok", None: "no grok hash"}[r.hash_match]
+            state = "stored " if r.created else "present"
+            print(f"{state} {r.source_id}  {r.size_bytes:>10,} B  {match}  {r.sha256[:12]}")
+    return 1 if failed else 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -81,6 +103,11 @@ def build_parser() -> argparse.ArgumentParser:
     fetch.add_argument("sha256")
     fetch.add_argument("dest", type=Path)
     fetch.set_defaults(func=cmd_fetch)
+
+    fs = sub.add_parser("fetch-sources", help="download every url in Grok sources.csv into storage")
+    fs.add_argument("sources", nargs="+", type=Path)
+    fs.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
+    fs.set_defaults(func=cmd_fetch_sources)
     return parser
 
 

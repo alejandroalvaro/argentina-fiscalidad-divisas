@@ -29,6 +29,11 @@ class Settings(BaseSettings):
         default=Path("manifests"), validation_alias=AliasChoices("ARGFX_MANIFESTS_DIR")
     )
     storage: StorageBackend = Field(default="auto", validation_alias=AliasChoices("ARGFX_STORAGE"))
+    # Some servers (SEC EDGAR) require a User-Agent that identifies the requester with a contact.
+    user_agent: str = Field(
+        default="argfx/0.1 (academic research; Argentina fiscal FX)",
+        validation_alias=AliasChoices("ARGFX_USER_AGENT"),
+    )
 
     @property
     def r2_endpoint(self) -> str | None:
