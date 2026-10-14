@@ -1,6 +1,6 @@
 # Aportes propuestos del proyecto (borrador de Grok)
 
-Estado: primera versión, 14 de octubre de 2026, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
+Estado: segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
 
 Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
@@ -14,7 +14,7 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
 | Aporte | Hipótesis | Precedente principal | Qué agrega el proyecto | Depende de resultados pendientes |
 |---|---|---|---|---|
-| 1. Regla de percepción directa en USD | H1, H2 | Determinación en USD (CLM-B-004) | Regla operativa y comparación con igual carga | Sí |
+| 1. Percepción directa en USD (propuesta de Warren Mosler) | H1, H2 | Mosler 2022 (CLM-A-015); determinación en USD (CLM-B-004) | Formalización, modelo SFC y cuantificación | Sí |
 | 2. Contabilidad consolidada Tesoro y BCRA | H2, H4 | TMU del FMI (CLM-D-001 a 003) | Registro único de las divisas percibidas | Parcial |
 | 3. Matriz de obligaciones | H3 | SALM y directrices (CLM-A-001, 006) | Matriz por operación con SIGADE | Parcial |
 | 4. Cobertura proyectada en USD | H4 | Adecuación de reservas (CLM-A-005) | Cobertura fiscal por horizonte | Sí |
@@ -22,7 +22,9 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 | 6. Modelo SFC con tres regímenes | H1 a H5 | Godley (CLM-A-010, 011) | Comparación con stocks y flujos completos | Sí |
 | 7. Contraste acotado con Brasil | H3, H4 | Jerarquía monetaria (CLM-A-013) | Indicadores sintéticos comparables | Parcial |
 
-## 1. Regla de percepción directa de derechos de exportación en divisas
+## 1. Percepción directa de derechos de exportación en divisas (propuesta de Warren Mosler)
+
+**Atribución.** La idea de cobrar los derechos de exportación directamente en dólares corresponde a Warren Mosler. En su presentación de Buenos Aires del 1 de mayo de 2022 propone "A 3% export tax payable in $US" para servir la deuda con el FMI (CLM-A-015, SRC-0212, fuente primaria en moslereconomics.com). En una entrevista de El Argentino Diario del 4 de mayo de 2022 formula la misma propuesta de un 3% sobre las exportaciones brutas, sin mencionar la moneda (CLM-A-016, SRC-0213, fuente secundaria). Este aporte se registra como precedente de Mosler y el proyecto no lo presenta como idea propia.
 
 **Hipótesis:** H1 y H2.
 
@@ -33,9 +35,11 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 - El contravalor de las exportaciones debe ingresarse y liquidarse en el mercado de cambios en los plazos que fija el BCRA (CLM-B-011, CLM-B-013, CLM-B-014).
 - El BCRA puede comprar y vender divisas por cuenta del Ministerio de Economía (CLM-B-020) y recibe en depósito los fondos del gobierno (CLM-B-019).
 - Existe una opción limitada para expresar en USD ciertos saldos de comercio exterior y compensarlos contra tributos aduaneros (CLM-B-006, CLM-B-007).
-- Entre los precedentes internacionales del lote A figuran la gestión conjunta de deuda en moneda extranjera y reservas (CLM-A-002, SRC-0201) y los fondos de estabilización (CLM-A-008, SRC-0206). En las fuentes relevadas no se encontró un precedente explícito de percepción de derechos de exportación en divisas para el Tesoro (`inbox/lote-a/unresolved.md`). Esto se registra como un faltante de búsqueda y no permite afirmar que el precedente no exista.
+- Precedentes de percepción en moneda dura o divisas (`inbox/lote-a/unresolved.md`, clasificación provisional): derechos de importación en coin en EE.UU. 1862 (CLM-A-017); regalías e IDH pagaderos en USD a elección del beneficiario en Bolivia (CLM-A-019); contraprestaciones contractuales en USD al Fondo Mexicano del Petróleo (CLM-A-020). Como contraste, Noruega cobra los impuestos petroleros en NOK y recibe divisas por la participación estatal SDFI (CLM-A-018), y Venezuela 2003 impuso la venta obligatoria de divisas al BCV, que corresponde a un requisito de entrega y no a un tributo (CLM-A-021). Chile (Ley 13.196), Rusia, Argentina 1890, Botswana, la Aduana Marítima China, la Deuda Pública Otomana, el Golfo y Ecuador siguen pendientes.
+- Otros precedentes del lote A: gestión conjunta de deuda en moneda extranjera y reservas (CLM-A-002) y fondos de estabilización (CLM-A-008).
+- Alícuotas vigentes al 2026-10-14 (Decreto 423/2026, `inbox/lote-f/tablas/alicuotas_de_vigentes_2026-10-14.csv`): soja en grano 24%, aceite y harina de soja 22,5%, maíz y sorgo 8,5%, girasol 4,5%, biodiésel de soja 21%, trigo 1% o 5,5% según posición; cronograma de reducción mensual en 2027 y 2028. La fracción percibida en divisas sería igual a esas alícuotas (indicación de Alejandro).
 
-**Lo que el proyecto propone.**
+**Lo que agrega el proyecto.** Formalización, modelización SFC y cuantificación de la propuesta de Mosler.
 
 - Formular una regla operativa en la que una fracción del derecho determinado en USD se perciba en divisas y se acredite en una cuenta del Tesoro. Compararla con el cobro en pesos con igual carga tributaria efectiva, como exige el protocolo.
 - Separar el permiso legal de la habilitación operativa. El lote B advierte que un permiso legal no implica que el circuito de pago exista (por ejemplo, los medios de pago de CLM-B-008).
@@ -123,7 +127,13 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 - Un modelo SFC que compare tres regímenes de percepción con igual carga tributaria. Separa el Tesoro, el BCRA y el sector público consolidado, y evita contar un mismo activo externo dos veces (principios del protocolo, D-001).
 - Sensibilidad a exportaciones, tipo de cambio, refinanciación y shocks productivos.
 
-**Pendiente.** Fase 4 del repositorio. Los regímenes concretos están por definir con Alejandro.
+**Regímenes (definidos por Alejandro, comparación en `inbox/lote-f/tablas/regimenes_comparados.csv`):**
+
+- (a) Argentina actual: derechos determinados en USD, pagados en pesos, con obligación de liquidar divisas de exportación según el BCRA.
+- (b) Brasil: los exportadores venden divisas en el mercado de cambio a instituciones autorizadas por el BCB, a tipo libremente pactado, y pueden mantenerlas en el exterior (CLM-F-008, CLM-F-009). El imposto de exportação existe pero alcanza a pocos productos y se paga en reales (CLM-F-012 a CLM-F-014).
+- (c) Propuesta: derechos percibidos directamente en USD para el Tesoro.
+
+**Pendiente.** Fase 4 del repositorio.
 
 ## 7. Contraste acotado con Brasil
 
@@ -143,5 +153,7 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
 ## Cuestiones abiertas para Alejandro
 
-- Cuáles son los tres regímenes del modelo SFC (aporte 6) y qué fracción del derecho se percibiría en divisas en la regla del aporte 1.
-- Si conviene una búsqueda sistemática de precedentes de percepción tributaria en divisas fuera de las fuentes del lote A, antes de presentar el aporte 1 como original.
+- Resueltas el 2026-10-14: regímenes del aporte 6 (arriba), fracción en divisas igual a las alícuotas vigentes, y atribución del aporte 1 a Mosler.
+- Si el régimen (c) mantiene o elimina la obligación de liquidar el resto del contravalor en el mercado de cambios.
+- Cómo tratar los sectores no relevados en la tabla de alícuotas (carnes, economías regionales, industria, minería) y el crudo con alícuota móvil.
+- Si se busca contacto o permiso para citar a Mosler más allá de sus textos públicos (no se hizo ningún contacto).
