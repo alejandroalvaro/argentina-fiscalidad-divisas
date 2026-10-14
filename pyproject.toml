@@ -1,0 +1,44 @@
+[project]
+name = "argfx"
+version = "0.1.0"
+description = "Infraestructura reproducible para investigar la fiscalidad en divisas y la restricción externa argentina"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Alejandro Álvaro", email = "alejandro.alvaro@gmail.com" }]
+dependencies = [
+    "boto3>=1.35",
+    "duckdb>=1.1",
+    "pyarrow>=17",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+]
+
+[project.scripts]
+argfx = "argfx.cli:main"
+
+[dependency-groups]
+dev = [
+    "moto[s3]>=5.0",
+    "pytest>=8.3",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/argfx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["network: needs real R2 credentials and network access (skipped by default)"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]

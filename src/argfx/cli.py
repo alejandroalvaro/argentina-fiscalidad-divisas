@@ -1,0 +1,93 @@
+"""Command line entry point: `argfx <command>`."""
+
+from __future__ import annotations
+
+import argparse
+import sys
+import tempfile
+import uuid
+from pathlib import Path
+
+from argfx.config import get_settings
+from argfx.manifest import ingest_file
+from argfx.storage import fetch_verified, get_store
+
+
+def cmd_config(_: argparse.Namespace) -> int:
+    for key, value in get_settings().public_summary().items():
+        print(f"{key:22} {value}")
+    return 0
+
+
+def cmd_storage_check(_: argparse.Namespace) -> int:
+    """Round-trip a throwaway object (write, list, read, delete) against the active store."""
+    settings = get_settings()
+    store = get_store(settings)
+    key = f"_healthcheck/{uuid.uuid4()}.txt"
+    payload = b"argfx storage check"
+    backend = settings.resolved_storage
+    target = settings.r2_bucket if backend == "r2" else settings.local_objects_dir
+    print(f"backend: {backend} ({target})")
+    with tempfile.TemporaryDirectory() as tmp:
+        src, back = Path(tmp) / "src.txt", Path(tmp) / "back.txt"
+        src.write_bytes(payload)
+        store.upload(src, key, "text/plain")
+        listed = key in store.list_keys("_healthcheck/")
+        store.download(key, back)
+        store.delete(key)
+        ok = listed and back.read_bytes() == payload and not store.exists(key)
+    print("write/list/read/delete:", "OK" if ok else "FAILED")
+    return 0 if ok else 1
+
+
+def cmd_ingest(args: argparse.Namespace) -> int:
+    settings = get_settings()
+    store = get_store(settings)
+    status = 0
+    for path in args.files:
+        if not path.is_file():
+            print(f"skip (not a file): {path}", file=sys.stderr)
+            status = 1
+            continue
+        record, created = ingest_file(path, store, settings.manifests_dir, args.source_id)
+        print(f"{'stored ' if created else 'present'} {record.sha256}  {path.name}")
+    return status
+
+
+def cmd_fetch(args: argparse.Namespace) -> int:
+    settings = get_settings()
+    dest = fetch_verified(get_store(settings), args.sha256, args.dest, settings.cache_dir)
+    print(f"verified {args.sha256} -> {dest}")
+    return 0
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="argfx")
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    sub.add_parser("config", help="show resolved configuration (no secrets)").set_defaults(
+        func=cmd_config
+    )
+    sub.add_parser("storage-check", help="round-trip a test object").set_defaults(
+        func=cmd_storage_check
+    )
+
+    ingest = sub.add_parser("ingest", help="store files by SHA-256 and register them")
+    ingest.add_argument("files", nargs="+", type=Path)
+    ingest.add_argument("--source-id", help="source_id from the Grok sources.csv")
+    ingest.set_defaults(func=cmd_ingest)
+
+    fetch = sub.add_parser("fetch", help="download an object by hash and verify it")
+    fetch.add_argument("sha256")
+    fetch.add_argument("dest", type=Path)
+    fetch.set_defaults(func=cmd_fetch)
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    return args.func(args)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
