@@ -5,6 +5,9 @@
 - `amortizaciones.csv`: amortization dates and fractions of the original face.
 - `fechas.csv` (optional): the full list of period ends, for instruments whose norm enumerates
   them instead of following a grid. It replaces primer_periodo/frecuencia for that instrument.
+- `operaciones.csv` (optional): issues, reopenings, buybacks and swaps after the cut-off, in
+  original face value (D-008). An instrument issued after the cut-off has saldo_corte 0 and an
+  `emision` row on its issue date.
 
 A blank cell is unknown. The engine refuses a term sheet with missing required terms instead of
 guessing them.
@@ -91,6 +94,26 @@ class DateRow(BaseModel):
     referencia: str
 
 
+OPERATION_SIGN = {
+    "emision": 1,
+    "reapertura": 1,
+    "canje_entrada": 1,
+    "rescate": -1,
+    "canje_salida": -1,
+}
+
+
+class OperationRow(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    instrument_id: str = Field(pattern=INSTRUMENT_ID)
+    fecha: date
+    tipo: Literal["emision", "reapertura", "rescate", "canje_entrada", "canje_salida"]
+    valor_nominal: float = Field(gt=0)
+    source_id: str = Field(pattern=SOURCE_ID)
+    referencia: str
+
+
 def _read(path: Path, model: type[BaseModel]) -> list:  # type: ignore[type-arg]
     with path.open(newline="", encoding="utf-8") as fh:
         return [model.model_validate(r) for r in csv.DictReader(fh)]
@@ -147,6 +170,10 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
     if (folder / "fechas.csv").exists():
         for r in _read(folder / "fechas.csv", DateRow):
             explicit[r.instrument_id].append(r.fecha)
+    ops: dict[str, list[OperationRow]] = defaultdict(list)
+    if (folder / "operaciones.csv").exists():
+        for o in _read(folder / "operaciones.csv", OperationRow):
+            ops[o.instrument_id].append(o)
 
     sheets = []
     seen: set[str] = set()
@@ -154,6 +181,14 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
         if t.instrument_id in seen:
             raise ValueError(f"duplicate instrument in terminos.csv: {t.instrument_id}")
         seen.add(t.instrument_id)
+        own_ops = ops.get(t.instrument_id, [])
+        if t.fecha_emision > t.fecha_corte:
+            issued = [o for o in own_ops if o.tipo == "emision" and o.fecha == t.fecha_emision]
+            if t.saldo_corte != 0 or not issued:
+                raise ValueError(
+                    f"{t.instrument_id}: issued after the cut-off, needs saldo_corte 0 and an "
+                    "emision row on fecha_emision in operaciones.csv"
+                )
         obligation = Obligation(
             instrument_id=t.instrument_id,
             name=t.nombre,
@@ -183,12 +218,15 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
                 amortization=tuple(sorted((a.fecha, a.fraccion) for a in amortization)),
                 capitalizes=t.capitaliza,
                 frequency_months=t.frecuencia_meses,
+                face_changes=tuple(
+                    sorted((o.fecha, OPERATION_SIGN[o.tipo] * o.valor_nominal) for o in own_ops)
+                ),
                 source_id=t.source_id,
                 reference=t.referencia,
                 notes=(t.notas,) if t.notas else (),
             )
         )
-    unknown = (set(rates) | set(amort)) - seen
+    unknown = (set(rates) | set(amort) | set(explicit) | set(ops)) - seen
     if unknown:
-        raise ValueError(f"rates or amortizations for instruments not in terminos.csv: {unknown}")
+        raise ValueError(f"rows for instruments not in terminos.csv: {unknown}")
     return sheets

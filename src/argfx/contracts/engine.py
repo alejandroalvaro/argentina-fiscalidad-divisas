@@ -9,6 +9,8 @@ Specialized pieces:
   period, compounding when interest capitalizes ((1+r)^f - 1, the LECAP and BONCAP formula);
 - amortization by fractions of the original face, applied pro rata to the balance outstanding
   at each date, so that buybacks and partial exchanges are respected;
+- operations after the cut-off (issues, reopenings, buybacks, swaps), as changes in face value
+  that take effect from the start of the period in which they settle;
 - options: see `argfx.contracts.options`.
 
 The engine reads only the term sheet and, for floating rates, the scenario. A rate it cannot
@@ -79,6 +81,9 @@ class TermSheet:
     capitalizes: bool = False
     frequency_months: int | None = None
     """Nominal period length; a per-period rate needs it to scale short periods."""
+    face_changes: tuple[tuple[date, float], ...] = ()
+    """(settlement date, change in original face) after `as_of`: issues and reopenings add,
+    buybacks and swaps out subtract. Proceeds and prices are financing, not contract flows."""
     source_id: str | None = None
     reference: str | None = None
     notes: tuple[str, ...] = field(default_factory=tuple)
@@ -92,6 +97,12 @@ class TermSheet:
         if missing:
             raise ValueError(
                 f"{self.obligation.instrument_id}: amortization off schedule {missing}"
+            )
+        maturity = self.period_dates[-1]
+        late = [d for d, _ in self.face_changes if not (self.as_of < d < maturity)]
+        if late:
+            raise ValueError(
+                f"{self.obligation.instrument_id}: face changes outside (cut-off, maturity) {late}"
             )
 
 
@@ -167,9 +178,22 @@ def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:
     remaining = sum(f for d, f in ts.amortization if d > ts.as_of)
     principal: float | None = ts.outstanding
     out: list[CashFlow] = []
+    # Balance per unit of original face at the start of the current period: the interest
+    # capitalized since issue, or the share of face not yet amortized.
+    factor: float | None = 1.0
+    if ts.capitalizes:
+        for a, b in pairwise((ts.accrual_start, *past)):
+            acc = _accrual(ts, a, b, scenario)
+            factor = None if factor is None or acc is None else factor * (1 + acc)
 
     for d in (x for x in ts.period_dates if x > ts.as_of):
+        change = sum(v for c, v in ts.face_changes if prev <= c < d)
+        if change:
+            unit = factor if ts.capitalizes else remaining
+            principal = None if principal is None or unit is None else principal + change * unit
         accrual = _accrual(ts, prev, d, scenario)
+        if ts.capitalizes:
+            factor = None if factor is None or accrual is None else factor * (1 + accrual)
         interest = None if (principal is None or accrual is None) else principal * accrual
         note = None if interest is not None else "tasa sin trayectoria en el escenario"
         if ts.capitalizes:

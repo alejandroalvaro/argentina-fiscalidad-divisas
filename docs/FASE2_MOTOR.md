@@ -86,6 +86,15 @@ Para reproducir la fórmula legal, los períodos se anclan en la fecha de emisi�
 
 Con una tasa por período sin capitalización, un período corto paga Tm × f.
 
+### Operaciones posteriores al corte (`operaciones.csv`)
+
+Por D-008, el análisis suma las operaciones del Tesoro posteriores al corte de SIGADE. El archivo opcional `contratos/operaciones.csv` tiene una fila por operación: `instrument_id`, `fecha` (liquidación), `tipo` (`emision`, `reapertura`, `canje_entrada`, `rescate`, `canje_salida`), `valor_nominal` (siempre positivo, en valor nominal original), `source_id` y `referencia`.
+
+- Un instrumento emitido después del corte va en `terminos.csv` con `saldo_corte` 0 y una fila `emision` en su fecha de emisión.
+- Las reaperturas suman valor nominal y los rescates y canjes de salida lo restan. El cambio rige desde el inicio del período en que se liquida, porque quien compra a mitad de período cobra el cupón completo (y paga el devengado en el precio).
+- El motor convierte valor nominal en saldo con el factor de capitalización acumulado desde la emisión, en los instrumentos que capitalizan, o con la fracción aún no amortizada, en los demás.
+- El precio de colocación o de rescate es financiamiento y no entra como flujo contractual.
+
 ## Prueba piloto: bonos step up 2030 y 2035 en USD
 
 Los términos de GD30, AL30, GD35 y AL35 (INS-C-0398, 0404, 0399 y 0405) se cargaron desde la estructura financiera de la Oficina Nacional de Crédito Público (SRC-0106, hoja A.1) y el prospecto del canje de 2020 (SRC-0108, p. S-32). El motor reproduce el perfil de SIGADE en las 94 fechas y tipos de flujo, con una diferencia máxima de 0,000001 USD.

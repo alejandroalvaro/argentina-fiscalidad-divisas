@@ -352,3 +352,75 @@ def test_explicit_dates_replace_the_grid(tmp_path: Path) -> None:
     )
     with pytest.raises(ValueError, match="does not end at maturity"):
         load_term_sheets(tmp_path)
+
+
+def test_reopening_of_a_lecap_adds_face_times_capitalization() -> None:
+    # A reopening after the cut-off adds face; the holder gets the same value per unit of face
+    # at maturity as the original holders, so the payment scales with total face.
+    issue, maturity, tem = date(2026, 1, 30), date(2026, 12, 30), 0.02
+    dates = tuple(regular_dates(date(2026, 2, 28), maturity, 1, eom=False, final_stub=True))
+
+    def sheet(outstanding: float, changes: tuple[tuple[date, float], ...]) -> TermSheet:
+        return TermSheet(
+            obligation=obligation(currency_of_account="ARS", currency_of_settlement="ARS"),
+            as_of=CUTOFF, outstanding=outstanding, period_dates=dates, accrual_start=issue,
+            day_count="30E/360", rate=FixedRate(((issue, tem),), per_period=True),
+            capitalizes=True, frequency_months=1, amortization=((maturity, 1.0),),
+            face_changes=changes,
+        )  # fmt: skip
+
+    past = sum(1 for d in dates if d <= CUTOFF)
+    base = generate(sheet(1000 * (1 + tem) ** past, ()))[-1].amount
+    reopened = generate(sheet(1000 * (1 + tem) ** past, ((date(2026, 8, 14), 500.0),)))
+    assert reopened[-1].amount == pytest.approx(base * 1.5)
+    bought_back = generate(sheet(1000 * (1 + tem) ** past, ((date(2026, 9, 1), -1000.0),)))
+    assert bought_back[-1].amount == pytest.approx(0.0, abs=1e-9)
+
+
+def test_issue_after_the_cutoff_and_amortizing_buyback() -> None:
+    issue, maturity = date(2026, 8, 15), date(2028, 8, 15)
+    dates = semiannual(date(2027, 2, 15), maturity)
+    amort = ((date(2027, 8, 15), 0.5), (maturity, 0.5))
+    ts = TermSheet(
+        obligation=obligation(), as_of=CUTOFF, outstanding=0.0, period_dates=dates,
+        accrual_start=issue, day_count="30/360", rate=FixedRate(((issue, 0.06),)),
+        amortization=amort,
+        face_changes=((issue, 1000.0), (date(2027, 10, 1), -200.0)),
+    )  # fmt: skip
+    flows = {(f.date, f.flow_type): f.amount for f in generate(ts)}
+    assert flows[(date(2027, 2, 15), "interes")] == pytest.approx(30.0)
+    assert flows[(date(2027, 8, 15), "amortizacion")] == pytest.approx(500.0)
+    # 200 of original face bought back with half amortized removes 100 of balance.
+    assert flows[(date(2028, 2, 15), "interes")] == pytest.approx(400 * 0.03)
+    assert flows[(maturity, "amortizacion")] == pytest.approx(400.0)
+    with pytest.raises(ValueError, match="outside"):
+        TermSheet(**{**ts.__dict__, "face_changes": ((CUTOFF, 1.0),)})
+
+
+def test_loader_requires_an_issue_row_for_post_cutoff_instruments(tmp_path: Path) -> None:
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv"):
+        (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
+    with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    gd30 = next(r for r in rows if r["instrument_id"] == "INS-C-0398")
+    new = {**gd30, "instrument_id": "INS-C-9001", "saldo_corte": "0",
+           "fecha_emision": "2026-08-01"}  # fmt: skip
+    with (tmp_path / "terminos.csv").open("a", newline="", encoding="utf-8") as fh:
+        csv.DictWriter(fh, fieldnames=list(gd30), lineterminator="\n").writerow(new)
+    rates = (tmp_path / "tasas.csv").read_text(encoding="utf-8").splitlines()
+    extra = [r.replace("INS-C-0398", "INS-C-9001") for r in rates if r.startswith("INS-C-0398")]
+    (tmp_path / "tasas.csv").write_text("\n".join(rates + extra) + "\n", encoding="utf-8")
+    amorts = (tmp_path / "amortizaciones.csv").read_text(encoding="utf-8").splitlines()
+    extra = [r.replace("INS-C-0398", "INS-C-9001") for r in amorts if r.startswith("INS-C-0398")]
+    (tmp_path / "amortizaciones.csv").write_text("\n".join(amorts + extra) + "\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="emision row"):
+        load_term_sheets(tmp_path)
+    (tmp_path / "operaciones.csv").write_text(
+        "instrument_id,fecha,tipo,valor_nominal,source_id,referencia\n"
+        "INS-C-9001,2026-08-01,emision,1000,SRC-0108,x\n",
+        encoding="utf-8",
+    )
+    sheets = {s.obligation.instrument_id: s for s in load_term_sheets(tmp_path)}
+    sheet = sheets["INS-C-9001"]
+    assert sheet.face_changes == ((date(2026, 8, 1), 1000.0),)
