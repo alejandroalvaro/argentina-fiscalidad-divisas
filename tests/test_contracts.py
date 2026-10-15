@@ -468,14 +468,23 @@ def test_operations_turn_pesos_into_cer_units_and_refuse_negative_balances(
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
-    cer = next(r for r in rows if r["indexacion"] == "CER" and r["tipo_tasa"] == "cero")
+    with (repo / "operaciones.csv").open(newline="", encoding="utf-8") as fh:
+        with_ops = {r["instrument_id"] for r in csv.DictReader(fh)}
+    cer = next(
+        r
+        for r in rows
+        if r["indexacion"] == "CER"
+        and r["tipo_tasa"] == "cero"
+        and r["instrument_id"] not in with_ops
+    )
     iid = cer["instrument_id"]
     with (tmp_path / "operaciones.csv").open("a", encoding="utf-8") as fh:
         fh.write(f"{iid},2026-07-17,reapertura,800,SRC-0108,x\n")
     with pytest.raises(ValueError, match="indice_inicial"):
         load_term_sheets(tmp_path)
     for r in rows:
-        r["indice_inicial"] = "400" if r["instrument_id"] == iid else ""
+        if r["instrument_id"] == iid:
+            r["indice_inicial"] = "400"
     with (tmp_path / "terminos.csv").open("w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
