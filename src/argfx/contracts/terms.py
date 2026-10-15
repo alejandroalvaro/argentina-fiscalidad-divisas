@@ -162,6 +162,8 @@ class DualRow(BaseModel):
     tem_dias: OptInt = Field(default=None, gt=0)
     promedio_plazo: Flag = False
     rezago_habiles: OptInt = Field(default=None, ge=0)
+    """Business-day lag: of the averaging window for a floating leg, of the index read at each
+    payment for a CER or UVA leg."""
     capitaliza: bool
     base: DayCount
     primer_periodo: date
@@ -416,7 +418,9 @@ def load_duals(folder: Path, sheets: list[TermSheet]) -> dict[str, TermSheet]:
             face_changes=tuple(
                 (c, v / first.index_rebase * d.factor_saldo) for c, v in first.face_changes
             ),
-            index_lag_days=0,
+            # A CER or UVA second leg reads its index with the lag of its own row; its balance
+            # is already in the units of the norm (factor_saldo uses the lagged base).
+            index_lag_days=(d.rezago_habiles or 0) if d.indexacion in ("CER", "UVA") else 0,
             index_rebase=1.0,
             source_id=d.source_id,
             reference=d.referencia,

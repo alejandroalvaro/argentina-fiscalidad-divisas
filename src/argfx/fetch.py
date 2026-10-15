@@ -61,6 +61,15 @@ def http_fetch(url: str, user_agent: str = DEFAULT_USER_AGENT) -> Fetched:
         return Fetched(resp.status, resp.read(), resp.headers.get_content_type())
 
 
+# Pages that answer 200 with an error body. The Boletín Oficial does it for a detalleAviso link
+# without the publication date at the end.
+ERROR_BODIES = (b"Hubo un error en el sistema. Por favor contactarse con el administrador",)
+
+
+class ErrorPage(OSError):
+    """A 200 response whose body is a known error page."""
+
+
 def read_sources(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
@@ -104,6 +113,8 @@ def fetch_sources(
         try:
             fetched = fetcher(url)
             status = fetched.status
+            if any(marker in fetched.body for marker in ERROR_BODIES):
+                raise ErrorPage("error page instead of the document; check the URL")
             with tempfile.TemporaryDirectory() as tmp:
                 path = Path(tmp) / filename_for(row)
                 path.write_bytes(fetched.body)

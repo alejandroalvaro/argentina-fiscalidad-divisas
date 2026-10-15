@@ -63,3 +63,17 @@ def test_fetch_sources_logs_matches_mismatches_and_errors(
     assert next(o for o in objects if o.source_id == "SRC-1").original_filename == "texord.pdf"
     with (settings.manifests_dir / DOWNLOADS_LOG).open() as fh:
         assert len(list(csv.DictReader(fh))) == 3
+
+
+def test_fetch_sources_refuses_the_boletin_error_page(settings: Settings, tmp_path: Path) -> None:
+    page = b"<html>Hubo un error en el sistema. Por favor contactarse con el administrador</html>"
+    sources = write_sources(
+        tmp_path / "sources.csv",
+        [{"source_id": "SRC-4", "url": "https://x/aviso", "sha256": "", "local_object_key": ""}],
+    )
+    (record,) = fetch_sources(
+        sources, get_store(settings), settings.manifests_dir,
+        lambda url: Fetched(200, page, "text/html"), 0,
+    )  # fmt: skip
+    assert record.sha256 is None and record.error and "ErrorPage" in record.error
+    assert not read_manifest(settings.manifests_dir / OBJECTS_MANIFEST)
