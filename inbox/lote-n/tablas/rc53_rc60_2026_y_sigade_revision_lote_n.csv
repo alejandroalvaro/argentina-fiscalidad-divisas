@@ -1,0 +1,6 @@
+item,consulta_2026_10_15,resultado,fuente
+RC 53/2026 (BO 2026-09-07),monitor de novedades normativas de la OPC,figura; sin monto ejecutado,SRC-0995
+RC 60/2026,monitor de novedades normativas de la OPC,"no figura; el listado llega hasta RC 58/2026 (BO 2026-09-30, aviso 348247)",SRC-0995
+montos ejecutados,informe de la OPC de septiembre de 2026,la dirección operaciones-de-deuda-publica-septiembre-2026 devuelve 404; último informe listado: agosto,SRC-1019
+montos ejecutados,ONCP colocaciones,"última planilla 31-08-2026; las direcciones colocaciones_30-09-26 (con y sin _preliminar), colocaciones_30-09-2026 y colocaciones_31-10-26_preliminar devuelven 404",SRC-1043
+SIGADE al 2026-09-30,Finanzas datos trimestrales,última planilla 30-06-2026; deuda_publica_30-09-2026.xlsx devuelve 404,SRC-1018
