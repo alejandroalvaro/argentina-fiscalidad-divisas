@@ -1,0 +1,9 @@
+baja,monto_millones_pesos,intervalo,fuente_revisada,hallazgo
+TMF27,"485000,000","2026-03-31 a 2026-06-30 (derivada, lote L)","ONCP colocaciones 2026, hojas Bonos, Canjes- Conversiones y Otras Operaciones (SRC-0947)","sin fila de rescate, recompra ni conversión de TMF27"
+TMG27,"415000,000","2026-03-31 a 2026-06-30 (derivada, lote L)","ONCP colocaciones 2026, mismas hojas (SRC-0947)","sin fila de rescate, recompra ni conversión de TMG27"
+TZX27,"556267,947","2025-12-31 a 2026-03-31 (derivada, lote L)","ONCP colocaciones 2026, mismas hojas (SRC-0947)",solo emisiones de TZX27; sin baja
+las tres,,2026,"Novedades normativas de la OPC, resoluciones conjuntas 3 a 59 de 2026 (SRC-0995)","ninguna norma con rescate, recompra o conversión de TMF27, TMG27 o TZX27 fuera de licitación"
+las tres,,2026-03 a 2026-06,"Informes mensuales de operaciones de deuda pública de la OPC, marzo a junio de 2026 (lote M, no cargados)",narrativa sin esos rescates
+las tres,,"2025-12-31, 2026-03-31, 2026-06-30","Finanzas, planilla trimestral hojas A.2.2 y A.2.3 (SRC-1004 y SRC-1005)","flujos agregados por trimestre, sin instrumento"
+las tres,,2025-12-31 a 2026-06-30,"Finanzas, presentaciones del I y II Trimestre 2026 (SRC-1015 y SRC-1014)","tenencias por acreedor agregadas, sin instrumento"
+las tres,,2026,Boletín trimestral de ONCP; Cuenta de Inversión,no encontré un boletín trimestral de ONCP con ese detalle; la Cuenta de Inversión de 2026 no existe todavía (el ejercicio no cerró)
