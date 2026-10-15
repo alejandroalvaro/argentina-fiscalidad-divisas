@@ -1,0 +1,366 @@
+rango_por_saldo,clasificacion_sigade,operacion_sigade,fecha_firma_sigade,moneda_prestamo,saldo_usd,saldo_acumulado_pct,dentro_del_90pct,birf_tipo_prestamo_snapshot_2026-09-30,birf_estado_snapshot_2026-09-30,contrato_ubicado,tasa_de_referencia_segun_contrato,margen_segun_contrato,base_de_dias_segun_contrato,pago_de_intereses_segun_contrato,source_id_contrato,claim_ids,salvedad
+1,BIRF,9814BIRF SOSTENIBILIDAD FISCAL,04/14/25,USD,1500000000.00,4.10,sí,FSL,Disbursing,sí,SOFR (Tasa de Referencia del BIRF; plazo y método no definidos en el texto leído),Margen Variable del BIRF (valor no está en el contrato),no encontrada en el texto leído,semestral (15 de abril y 15 de octubre),SRC-1127; SRC-1128,CLM-P-027;CLM-P-028,"contrato modelo leído por OCR, no el firmado"
+2,BILATERALES,Represa KIRCHNER-CEPERNIC,08/01/14,USD,939999999.96,6.67,sí,,,sí,LIBOR USD 6 meses según el texto (mecanismo de reemplazo en cláusula 35.3); SIGADE dice SOFR,"3,8% anual según el texto",ACT/360,semestral (períodos de 6 meses),SRC-1129,CLM-P-030;CLM-P-031,modelo de 2022; no se encontró el reemplazo por SOFR
+3,BID,6025BID-FORTALECIMIENTO,07/23/25,USD,800000000.00,8.85,sí,,,sí,SOFR compuesta diaria (Índice SOFR) más Costo de Fondeo del BID,sin margen fijo adicional más margen del capital ordinario del BID (cifras no están en el contrato),ACT/360,semestral,SRC-1123,CLM-P-014;CLM-P-015,"contrato modelo del decreto, no el firmado"
+4,BID,4648BID PROG APOY EQUIDAD,12/03/18,USD,787433312.00,11.00,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+5,BILATERALES,S. TRANSPORTE - CDB,07/18/14,USD,679381089.41,12.86,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+6,BID,5951BID-FORTALECIMIENTO,11/21/24,USD,650000000.00,14.64,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+7,BID,5907BID SOSTEN FISCAL Y CRECIM,08/01/24,USD,647500000.00,16.41,sí,,,sí,SOFR compuesta diaria (Índice SOFR) más Costo de Fondeo del BID,"1,15% fijo más margen del capital ordinario del BID (cifras no están en el contrato)",ACT/360,semestral,SRC-1119,CLM-P-008;CLM-P-009,"contrato modelo del decreto, no el firmado"
+8,BID,4806BID PROG.APOY.EQUID Y EFEC,04/08/20,USD,569927052.68,17.96,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+9,BID,5609BID PROY APOY MEJ GEST FIS,10/14/22,USD,544444444.44,19.45,sí,,,sí,SOFR compuesta diaria (Índice SOFR) más Costo de Fondeo del BID,"1,15% fijo más margen del capital ordinario del BID (cifras no están en el contrato)",ACT/360,semestral,SRC-1120,CLM-P-010;CLM-P-011,"contrato modelo del decreto, no el firmado"
+10,CAF,CAF 11985 - GASODUCTO NORTE,04/27/23,USD,540000000.00,20.93,sí,,,sí,SOFR a Plazo (CME) del período de intereses,"2,00% (piso de la tasa en 0%)",ACT/360,ver cláusula de pago de intereses (no extraída),SRC-1124,CLM-P-021;CLM-P-022,"contrato modelo del decreto, no el firmado"
+11,BIRF,8633BIRF PROG PROTECC NIÑOS,09/30/16,USD,529045023.15,22.37,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+12,BID,5675BID-POLÍT PÚB CRECIMIENTO,12/01/22,USD,500000000.00,23.74,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+13,BID,5994BID-ESTABILIDAD MACROECONÓ,05/08/25,USD,500000000.00,25.10,sí,,,sí,SOFR compuesta diaria (Índice SOFR) más Costo de Fondeo del BID,"1,15% fijo más margen del capital ordinario del BID (cifras no están en el contrato)",ACT/360,semestral,SRC-1121,CLM-P-012;CLM-P-013,"contrato modelo del decreto, no el firmado"
+14,BIRF,9292BIRF PREV Y MANEJ COVID 19,10/04/21,USD,500000000.00,26.47,sí,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+15,BIRF,8904BIRF POL DRLLO INCLUSIVO,12/12/18,USD,490000000.00,27.81,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+16,BIRF,8903 AR BIRF  - AUH,12/12/18,USD,441000000.00,29.01,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+17,BIRF,7706BIRF-DES.SUST.CUENCA MAT.R,08/25/09,USD,428009948.39,30.18,sí,FSL,Disbursing&Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+18,BID,5032BID MITIG PAND COVID 19,09/02/20,USD,411250000.00,31.31,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+19,BID,6026BID-REFORMAS REGULATORIAS,07/23/25,USD,400000000.00,32.40,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+20,CAF,12272CAF-APOYO A LA PRESTACION,05/03/24,USD,400000000.00,33.49,sí,,,sí,SOFR a Plazo (CME) del período de intereses,"2,00% (piso de la tasa en 0%)",ACT/360,ver cláusula de pago de intereses (no extraída),SRC-1125,CLM-P-023;CLM-P-024,"contrato modelo del decreto, no el firmado"
+21,CAF,12819CAF-SWAP,01/18/26,USD,400000000.00,34.59,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+22,BCIE,2322BCIEPROG DE APOY CONT HAM,03/17/23,USD,396049000.00,35.67,sí,,,sí,Term SOFR a 6 meses (ajuste semestral),"margen revisable trimestralmente por el BCIE; 251 pb en ene-mar 2023, luego sin dato",ACT/360,semestral,SRC-1126,CLM-P-025;CLM-P-026,"contrato modelo del decreto, no el firmado"
+23,BID,5057BID GLOB DE CRED PARA REAC,10/20/20,USD,389141635.97,36.73,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+24,BIRF,8464BIRF PROY FOM EMPLEO JOV,04/16/15,USD,350029999.91,37.69,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+25,BID,5761BID-PROG DE APOY A POLITI,06/22/23,USD,350000000.00,38.65,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+26,BIRF,8999BIRFMEJORA INCL EDUC SEC Y,11/14/19,USD,340117267.55,39.57,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+27,BID,5952BID SECTOR ELÉCTRICO SOST,12/02/24,USD,300500000.00,40.40,sí,,,sí,SOFR compuesta diaria (Índice SOFR) más Costo de Fondeo del BID,sin margen fijo adicional más margen del capital ordinario del BID (cifras no están en el contrato),ACT/360,semestral,SRC-1122,CLM-P-016;CLM-P-017,"contrato modelo del decreto, no el firmado"
+28,BIRF,9073BIRF2DO FINANC ADIC PROTEC,05/05/20,USD,300000000.00,41.22,sí,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+29,CAF,11367CAF APOY PLAN CONT HAMBRE,11/27/20,USD,300000000.00,42.04,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+30,CAF,12644CAF-PRESTACIÓN ALIMENTAR,06/21/25,USD,300000000.00,42.85,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+31,BID,5953BID-DESARROLLO INTEGRAL,11/25/24,USD,291600000.00,43.65,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+32,BIRF,9747BIRF-SECTOR ELÉCTRICO,11/25/24,USD,288250000.00,44.44,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+33,CAF,11960CAF PROG PROM MOD SOC AC,03/17/23,USD,288000000.00,45.23,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+34,BIRF,8853BIRFAPOY PROY COB UNIV SAL,12/17/18,USD,287764914.32,46.01,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+35,BID,5430BID PROFIR II PCIA BS AS,09/29/22,USD,281716560.00,46.78,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+36,BIRF,8017BIRF-PROY.PROTEC.BASICA,08/04/11,USD,269184000.00,47.52,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+37,BIRF,9740BIRF-TRANSPORTE PÚBLICO,11/25/24,USD,266390000.00,48.25,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+38,BIRF,9252BIRF 2DO PROY MATANZA RIAC,09/22/21,USD,265000000.00,48.97,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+39,BID,5746BID PROG APOY INCL SOCIAL,06/08/23,USD,263547836.66,49.69,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+40,BID,BID 4755 PROG FORT AGEN DIGI C,05/15/19,USD,260000000.00,50.40,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+41,BIRF,8508 BIRF P. PROT PER VULN ENF,10/09/15,USD,255562379.98,51.10,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+42,BIRF,9477BIRF INCLUSION EDUCATIVA,04/05/23,USD,252215000.00,51.79,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+43,CAF,11583CAF APOY PLAN HAMBRE COVI,10/18/21,USD,252000000.00,52.48,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+44,BIRF,7993BIRF-PROY.FUNC.ESC.SALUD,04/11/11,USD,251751226.82,53.16,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+45,BID,4569BID PROG PARA IMP EL CRECI,08/21/18,USD,250000000.00,53.85,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+46,BIRF,9222BIRF FINANCIAMIENTO ADICIO,07/21/21,USD,250000000.00,54.53,sí,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+47,BIRF,9588BIRF POLITICA ALIMENTARIA,10/09/23,USD,249951666.66,55.21,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+48,BID,3733 BID PROG AGUA POT Y SANEA,05/11/17,USD,245752390.11,55.88,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+49,BIRF,9008BIRF FINANC ADIC MATANZ RI,11/12/19,USD,245000000.00,56.55,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+50,BIRF,9750BIRF-ALFABETIZACIÓN INICIA,12/04/24,USD,243570000.00,57.22,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+51,BCIE,2339BCIE-APOYO A LA SEGURIDAD,12/16/24,USD,230000000.00,57.85,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+52,BIRF,8062BIRF-PROY.DES.SEG.PUB.PCIA,08/06/12,USD,224337859.52,58.46,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+53,CAF,9710 CAF PROY PASEO DEL BAJO,01/30/17,USD,220231011.79,59.06,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+54,BID,3836BIDPROG AMPL CAP SEG VIAL,09/13/17,USD,219358064.31,59.66,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+55,BIRF,8736 BIRF PROY APOY GEST INTEG,12/21/17,USD,210887761.40,60.24,sí,FSL,Disbursing&Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+56,BID,3050BID /PROG.INF.V.NOR.G.III,03/26/14,USD,206822020.08,60.80,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+57,BIRF,7991BIRF-INF.VIAL NORTE.GDE,05/04/11,USD,203523665.60,61.36,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+58,FONPLATA,FONP 62  APOY SEGU ALIMENT,07/15/24,USD,199950000.00,61.91,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+59,BID,5295BID APOYO POBL.VULNERABLE,09/28/21,USD,199811196.36,62.45,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+60,BIRF,9337BIRF FOMEN ME EMPL CON P,05/16/22,USD,199250118.78,63.00,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+61,BIRF,8452BIRF 2° PROY  EDUC RURAL,04/16/15,USD,198160309.68,63.54,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+62,BID,5981BID-SOSTENIBILIDAD Y EQUI,02/20/25,USD,196877539.64,64.08,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+63,BIRF,9232BIRFPROY MODER TRANSP FERR,10/07/21,USD,188161894.23,64.59,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+64,BID,2776BID-DESA.PROV.NORTE GDE,03/19/13,USD,186857505.61,65.10,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+65,BID,BID 4416/OC-AR,07/02/19,USD,183634445.78,65.60,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+66,BID,3256BID PROG.SANEAM.RIO RECON.,12/10/14,USD,180882487.14,66.10,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+67,BIRF,9823BIRF-PROGRAMAS INTEGRADOS,07/22/25,USD,174671162.42,66.57,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+68,BID,BID 4796 PROG APOY REF TRANS,06/12/19,USD,173333333.32,67.05,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+69,BIRF,9547BIRF-COBERTURA EFECTIVA U,08/10/23,USD,170446280.00,67.51,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+70,CAF,11501CAF ARSAT SGN 1 2DA GENER,06/07/21,USD,169559027.62,67.98,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+71,BIRF,8516 BIRF P SEG PROV SALUD,03/31/16,USD,168639999.92,68.44,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+72,BID,BID 4622 PROG APOY POLIT IGUAL,11/26/18,USD,166666666.65,68.89,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+73,BID,5744BID 1ER PR INTEG SIST SALU,06/08/23,USD,162359153.00,69.34,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+74,BID,5293 BID PROG DE INNOVAC,10/13/21,USD,154914210.87,69.76,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+75,BIRF,8628BIRF PROG.GEST.RIESG.CABA,11/10/16,USD,153814786.93,70.18,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+76,BID,4244 BID PROG REF TRANS INTEGR,11/30/17,USD,153333333.31,70.60,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+77,BID,2982BID MEJORA FERR GRAL ROCA,12/13/13,USD,152894612.66,71.02,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+78,BID,3458BID  PROG MEJOR. DE BARRIO,09/16/15,USD,151708824.04,71.43,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+79,BID,3455 BID PROG POLIT EDUC,05/19/16,USD,151698626.70,71.85,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+80,BIRF,9748BIRF-PRIMERA INFANCIA,12/04/24,USD,150750000.00,72.26,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+81,BID,5747BIDFORTALEC DE LAS TRAYECT,08/11/23,USD,150000000.00,72.67,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+82,BIRF,9007BIRF.APOY.TRANS TAR SOC,10/24/19,USD,148545366.49,73.07,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+83,BIRF,8706 BIRF PROY TRANSF URBA MET,12/21/17,USD,144453976.87,73.47,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+84,BIRF,8712 BIRF PROY INT HABI Y VIVI,08/17/17,USD,142899231.30,73.86,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+85,BID,4821BID PROG FORT RES SAL PBA,03/20/20,USD,142500000.00,74.25,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+86,BID,3451BID PROG AGUA POT Y SANEAM,10/30/15,USD,137092109.97,74.62,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+87,BID,2662BID-PROMEBA III,07/31/12,USD,127753205.12,74.97,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+88,BID,5741BID PROG INT SOC URB Y MEJ,06/07/23,USD,126048343.84,75.32,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+89,BIRF,8032BIRF-2°PROY.INF.HIDR.NORTE,11/23/11,USD,119201251.81,75.64,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+90,BIRF,9207BIRF AGUA Y SANEAMIENTO,08/11/21,USD,114744723.16,75.96,sí,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+91,BID,4229BID PRO APOY NAC DE 1ERA I,10/31/17,USD,111802714.26,76.26,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+92,BIRF,7992BIRF-PROY.INF.HIDR.NORTE G,05/04/11,USD,111047724.16,76.56,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+93,BIRF,7597BIRF-PROSAP II,03/27/09,USD,110769807.13,76.87,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+94,BID,3497BID PROG MODERNIZ TEC IV,10/30/15,USD,109175607.32,77.17,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+95,BID,2929/BID PROG.INV.MUN.,03/29/14,USD,108351807.72,77.46,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+96,BID,4418BID PROG AMP CAP MEJ SEG,06/15/18,USD,106806319.41,77.75,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+97,BID,3249BID PROG.GEST.INTEG.RESID.,12/09/14,USD,106271975.53,78.04,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+98,CAF,11175CAF PROY RENOV RAMAL M,03/30/20,USD,101586763.30,78.32,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+99,AVALES,AV IF-2024-77071038-APN-SH#MEC,07/23/24,USD,101159935.20,78.60,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+100,BEI,93660BEI PROY PL ESTR VAC COVI,12/17/21,USD,100000000.00,78.87,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+101,BID,6052BID-JUBILADOS Y PENSIONADO,10/24/25,USD,100000000.00,79.14,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+102,BCIE,2355BCIE-SEGURIDAD ALIMENTARIA,09/29/25,USD,99900000.00,79.42,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+103,BID,2698BID-PR.INF.VIAL NORTE G.II,07/31/12,USD,98887084.52,79.69,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+104,BID,4823BID PROG INTEGR URBANA PBA,12/23/20,USD,97501250.00,79.95,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+105,BID,2940BID PROMEDU III,10/28/13,USD,97456186.92,80.22,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+106,BID,5320BID MEJORA INTEGRAL,11/01/21,USD,94328876.46,80.48,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+107,BIRF,9917BIRF PROYECTO ARGENTINO DE,12/19/25,USD,93609267.72,80.73,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+108,CAF,11786CAF ARGENT CONT EL HAMBRE,08/19/22,USD,92000000.00,80.98,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+109,BID,5418 BID PROG SEG VIAL EN ÁREA,09/28/22,USD,91500000.00,81.23,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+110,BID,5585BID PROG APOY PRIM INFANCI,01/11/23,USD,90247709.55,81.48,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+111,BIRF,9857BIRF-MODERNIZACIÓN DE LOS,07/30/25,USD,90000000.00,81.73,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+112,CAF,11677CAF INCLUS DIG Y TRANS,01/26/22,USD,88179483.73,81.97,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+113,BID,4303BID PROG INTEG URB INCL S,08/31/18,USD,87033326.61,82.21,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+114,CAF,8086CAF-PROY.CENT.NUC.EMBALSE,02/06/13,USD,85830026.38,82.44,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+115,BID,4312 BID PROG DES SERV AGUA SA,01/16/18,USD,85160679.39,82.67,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+116,BID,2613BID-2°PROG.AGUA POT.Y SA.,08/21/12,USD,84851351.34,82.91,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+117,BID,5285BID AGUA POTABLE Y,11/17/21,USD,84700000.00,83.14,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+118,CAF,11574CAF PROG APOY SIST VIAL A,10/18/21,USD,84000000.00,83.37,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+119,BID,3174BID PROG.COMPET.ECON.REG.,09/30/14,USD,83014464.67,83.59,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+120,BID,4025BID PRO INNOV TECNOLOG,09/29/17,USD,82500000.00,83.82,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+121,CAF,11194CAF ACC MEJ CAL EDU JUJUY,03/30/20,USD,81818181.80,84.04,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+122,CAF,9914 CAF PREST SECT ENF AMPL F,07/04/17,USD,81250000.00,84.26,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+123,CAF,11177CAF PROG INT VILLA 20,03/30/20,USD,79563847.61,84.48,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+124,BID,5938BID-ALFABETIZACIÓN INTEGRA,11/21/24,USD,77534744.67,84.69,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+125,BID,3806 BID PROG SERV AGRIC PROV,05/11/17,USD,76890751.97,84.90,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+126,BID,3835 BID PROG FORT GEST. PROV.,02/22/17,USD,76677346.36,85.11,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+127,BID,3772 BID PROG MULTI ATENCI PRI,05/31/17,USD,76190476.20,85.32,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+128,BIRF,7833BIRF-ADIC.PROY.INF.VIAL,04/11/11,USD,75358675.68,85.53,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+129,CAF,11578/11799 CAF PL EST VAC C19,10/18/21,USD,75000000.00,85.73,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+130,BID,4268BID - PROG AG POT Y SAN DE,05/31/18,USD,72508576.79,85.93,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+131,BIRF,9224BIRF PROYEC DE INCLUSION D,06/28/21,USD,72000000.00,86.13,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+132,CAF,11781 CAFIPROG MEJOR INSF ESC,08/19/22,USD,71065050.17,86.32,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+133,BIRF,8710 BIRF PROY MODER INN MEJ S,08/17/17,USD,71062794.14,86.52,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+134,BID,BID AR O0008/16 (6000OC-AR),05/06/19,USD,70670492.28,86.71,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+135,BEI,BEI FI 8688,11/29/18,USD,70215197.72,86.90,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+136,CAF,11788CAF ENFO SECTORIAL AMPLIO,08/19/22,USD,69000000.00,87.09,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+137,CAF,11790CAF PROG APOY SIST VIALII,08/19/22,USD,69000000.00,87.28,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+138,BIRF,7794BIRF-TRANSP.URB.AR.METROP.,08/11/10,USD,68812382.54,87.47,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+139,BIRF,8991BIRF PROY TRANSF TRANSP PU,12/11/20,USD,68450000.00,87.65,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+140,CAF,11514CAF CONECTIVIDAD VIAL AUT,06/18/21,USD,68181818.18,87.84,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+141,CAF,10459CAF PROG. DES MERCADO CAP,09/17/18,USD,67500000.00,88.02,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+142,BID,2343BID-PROG.AGUA POT.Y SANEAM,03/26/11,USD,67045075.15,88.21,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+143,BIRF,8484 BIRF P. ENER. RENOV. RURA,10/09/15,USD,63718145.82,88.38,sí,FSL,Disbursing&Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+144,CAF,9301CAF Prog O Publ. Ag Pot.,03/09/16,USD,63545478.01,88.55,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+145,CAF,11459CAFMEJ CONEX VIAL TERRIT,04/27/21,USD,63051898.40,88.73,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+146,CAF,10209CAF  PRO CONST PLANT POT,02/15/18,USD,62139084.07,88.90,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+147,BILATERALES,AFD - REP. ARGENTINA,01/14/18,USD,59778374.83,89.06,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+148,BIRF,8810BIRF  PROY CORR DESA VIAL,07/23/18,USD,56828174.70,89.21,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+149,BID,BID 4840 PROSAT II,11/28/19,USD,54436977.79,89.36,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+150,BIRF,7599BIRF-PROY.INNOV.PRODUC.SOC,08/06/09,USD,53420094.67,89.51,sí,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+151,CAF,12869CAF-ACTIVIDAD DEPORTIVA,03/18/26,USD,53250000.00,89.65,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+152,BID,5378BIDINFRAEST VIAL PRODUC,03/03/22,USD,52274765.00,89.80,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+153,BIRF,9313BIRF SIST AGROAL CLIMA INT,12/21/21,USD,51130273.26,89.94,sí,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+154,CAF,10061 CAF PROY  IMPL PLAN MANE,10/27/17,USD,50778629.06,90.08,sí,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+155,BID,4427BID  PROY DRE CONTR INUND,12/20/18,USD,50660256.42,90.21,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+156,BID,2573BID-PROSAP III,12/29/11,USD,50010240.04,90.35,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+157,BIRF,9439BIRF PROY APOY TR ELEC PBA,03/22/23,USD,50000000.00,90.49,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+158,CAF,11865CAF ÍGNEA,11/24/22,USD,50000000.00,90.62,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+159,BCIE,2315BCIE PROG APOY PLAN NAC AR,12/16/22,USD,49941937.62,90.76,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+160,CAF,11346CAF PROG REG TRANSPORTE E,11/11/20,USD,47042920.00,90.89,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+161,BID,4688BID/OC-AR PROG DESARR INT,09/16/19,USD,44998672.16,91.01,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+162,CAF,11545CAF  MEJORAM INFRAESTRUCT,08/19/21,USD,44389577.00,91.13,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+163,BCIE,2258BCIE FORT INSFR SALUD CARC,09/24/21,USD,44262622.98,91.25,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+164,BID,3869BID PROG IMPLEM  REG NAC V,07/26/17,USD,43906307.89,91.37,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+165,CAF,11411CAF PROGRAMA DE CONECTIVI,01/27/21,USD,43702498.53,91.49,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+166,BIRF,8659BIRF PROY DE ACC FCERO MAY,04/20/18,USD,43399345.02,91.61,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+167,BID,4804BID PROG INTEG SOCIO URBAN,09/16/20,USD,42749333.64,91.73,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+168,BID,BID 4779/OC-AR,11/20/19,USD,42734956.95,91.85,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+169,BID,2606BID PROG DESA CORRED TURIS,10/30/12,USD,42123891.19,91.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+170,BID,4841BID PROG FED DE INSFR FED,04/24/20,USD,41990000.00,92.08,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+171,BID,4243BID PRGO FORT CAPACI INDEC,01/16/18,USD,41652009.94,92.19,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+172,BID,5343BID PROG CRED PARA REACTIV,03/22/22,USD,41495390.63,92.30,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+173,BIRF,8093BIRF P. INC. SOC-ECON RUR,12/09/15,USD,41447636.75,92.42,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+174,BIRF,8700BIRF PROYEC TRANSP URB A,04/25/17,USD,40590000.00,92.53,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+175,BIRF,9434 BIRFPROG DE INNOV PARA EL,10/28/22,USD,40500000.00,92.64,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+176,FONPLATA,ARG-43 FONP FORT ALIM ESC PBA,11/21/19,USD,40476190.48,92.75,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+177,FONPLATA,FONPLATA 44/2019 INFRAES. VIAL,11/04/19,USD,40476190.48,92.86,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+178,BID,2655BID PROG INF VIAL II,07/31/12,USD,40363350.14,92.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+179,CAF,8517 CAF PROY.INTERCON.ELEC.,04/15/14,USD,40275326.94,93.08,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+180,BIRF,8867 BIRF PROG GEST INTE RIES,02/12/19,USD,39791424.10,93.19,no,FSL,Disbursing&Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+181,BID,3169BID PROG.APOY.DES.TEC.MEN.,03/06/15,USD,39242624.51,93.30,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+182,CAF,8591CAF PROG.OBRAS.BAS AGUA,06/18/14,USD,39065943.60,93.40,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+183,CAF,12160CAF-SEGURIDAD Y CONFIABIL,11/08/23,USD,39000000.00,93.51,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+184,BCIE,BCIE 2233 PROMACE,02/11/21,USD,38692812.00,93.61,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+185,BID,2853BID SUST Y COMP FORESTAL,05/16/13,USD,38578196.08,93.72,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+186,CAF,11189CAF ACUEDUCTO RIO COL II,03/30/20,USD,38345776.99,93.82,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+187,CAF,11779CAF PROG  OBR PRIM Y SEC,08/19/22,USD,37000000.00,93.93,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+188,BID,1914BID-AP.PROD.ENTRE RIOS,04/17/08,USD,36092246.26,94.02,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+189,BID,4753BID FORT GEST PCIAL,09/04/19,USD,35980845.17,94.12,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+190,BID,2777BID-PROG.DE INNOV.TECN.III,03/19/13,USD,35821669.49,94.22,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+191,CAF,11191CAF PFIR,03/10/20,USD,35733054.28,94.32,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+192,BID,4694BID  PROG MODER COMPL HIDR,05/03/19,USD,35516939.72,94.42,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+193,BID,2763BID CRED.DESA.PROD.SANJUAN,05/17/13,USD,35096061.28,94.51,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+194,BIRF,9083BIRFPROY EMERG COVID 2019,05/05/20,USD,35000000.00,94.61,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+195,CAF,10094 CAF PROG APOY DESARR,11/15/17,USD,35000000.00,94.70,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+196,FONPLATA,FONPLATA 60-RUTA PROVINCIAL 13,12/13/24,USD,33400000.00,94.79,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+197,BID,3780BID PROG DES AREAS MET INT,05/31/17,USD,33278163.56,94.88,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+198,CAF,11686CAF OBRAS BÁS DE AGUA POT,02/10/22,USD,33000000.00,94.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+199,BIRF,7947BIRF-ADIC.PROG.INF.PBA,02/06/12,USD,31195425.28,95.06,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+200,BID,2923BID PROG.AP.COMPET.MPYMES,03/26/14,USD,31170523.65,95.15,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+201,CAF,12474CAF-EQUIL Y DESAR NEUQUEN,12/04/24,USD,31035419.43,95.23,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+202,CAF,11342CAF PLAN MANEJ INTEG CUEN,11/11/20,USD,30570426.79,95.31,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+203,BIRF,9455BIRF FORTAL A LA INFRAE,04/26/23,USD,30500000.00,95.40,no,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+204,BID,4822BID PROG SANEAM CIUD CUENC,09/18/20,USD,30338191.92,95.48,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+205,BID,4802BID  APOY GEST INT GTO PUB,03/20/20,USD,30323505.06,95.56,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+206,CAF,11744CAF CORRED LOGÍST DE INT,06/24/22,USD,30164889.00,95.65,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+207,FONPLATA,39FONP PROY RUT PCIAL 13 CHACO,12/02/19,USD,29366551.32,95.73,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+208,CAF,8026CAF DES VIAL REGIONAL II,12/18/12,USD,29361811.55,95.81,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+209,BIRF,8707 BIRF PROY TRANSF URBA MET,12/21/17,USD,29311000.00,95.89,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+210,BIRF,8634BIRF PROY FOM. INNOV. PRO,12/28/16,USD,28969920.76,95.96,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+211,BID,2412BID-PR.FORT.SIST.INNV.AGR.,03/26/11,USD,28615056.52,96.04,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+212,BID,1851BID-INF.VIAL NORTE GDE,03/29/07,USD,28365498.93,96.12,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+213,BIRF,9521BIRF ENER LIMPIA PARA HOG,08/16/23,USD,28000000.00,96.20,no,FSL,Disbursing,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+214,FONPLATA,36/2017 PROY CONECT CONURB PRO,10/23/18,USD,27846894.08,96.27,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+215,BIRF,7853BIRF-SWAP SAN JUAN,08/31/11,USD,27245768.19,96.35,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+216,FONPLATA,42FONPLATA PROG FED DE INSF RE,09/09/19,USD,26655156.81,96.42,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+217,FONPLATA,FONPLATA 38/2018 SEGURIDAD FER,01/21/19,USD,26470392.59,96.49,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+218,CAF,10180/11326 CAFMEJ CON FERR CO,01/16/18,USD,25597872.14,96.56,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+219,BCIE,BCIE 2280 PROGR CONT VIOLENCIA,09/28/21,USD,25515291.00,96.63,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+220,CAF,8700 CAF SABIAMAR,10/21/14,USD,25484663.74,96.70,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+221,BID,2788BID APOY.MAN.INTEG.ENF.CRO,05/06/13,USD,24926990.83,96.77,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+222,BID,1991BID-JOR.ESCO.EXTEN.R.NEGRO,01/15/09,USD,23404994.30,96.83,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+223,BID,2514BID-PROG.ABAST.ELECT.,03/26/11,USD,23238290.23,96.90,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+224,CAF,11235CAFPROG APOY ASIST PCIAL,06/01/20,USD,22886004.80,96.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+225,BID,2835BID DES.TUR.SUST.PRO.SALTA,05/06/13,USD,22569057.40,97.02,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+226,BID,5597BID PROG PARA LA REAC CRED,03/27/23,USD,22499758.03,97.08,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+227,CAF,8653 CAF DES VIAL REGIONAL III,09/04/14,USD,22303706.67,97.14,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+228,BEI,BEI 88098 PLAN GIRSU,11/29/18,USD,21701377.16,97.20,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+229,BID,4113 BID PROG FED SEGURIDAD,11/03/17,USD,20927573.04,97.26,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+230,BID,2499BID-PROG.DES.AREAS METROP.,12/29/11,USD,20212433.56,97.32,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+231,BCIE,2193BCIE PROGERSA,01/20/18,USD,19725993.95,97.37,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+232,CAF,11955CAFPROG APOY PRO DEL C,03/14/23,USD,19200000.00,97.42,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+233,FONPLATA,48FONPLATA INVERS SOCIAL SAL P,03/03/21,USD,19179877.26,97.47,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+234,CAF,11553CAF PROG DES INSF MUNI II,11/03/21,USD,19000000.00,97.53,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+235,BID,3255BID PROG.DES.PESQ.ACU.SUST,12/09/14,USD,18445552.12,97.58,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+236,FONPLATA,47FONPLATA AGUA CLOACA MAS TRA,02/22/21,USD,18352941.16,97.63,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+237,CAF,CAF 11585 MODERNIZACION SIST T,10/18/21,USD,18293485.00,97.68,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+238,FONPLATA,64FNP-INTEGRACION TERRITORIAL,02/09/26,USD,17945740.52,97.73,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+239,BCIE,2161 BCIE Fort. de las Capac,10/21/16,USD,17922964.68,97.78,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+240,BIRF,8493BIRF PROY BOSQUES NAT Y CO,09/21/15,USD,17433909.74,97.82,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+241,BIRF,8008BIRF-APL1 PCIA.LA RIOJA,05/30/11,USD,17301992.16,97.87,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+242,CAF,7970CAF-PROG.DES.VIAL FASE II,11/15/12,USD,16767696.97,97.92,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+243,BIRF,9541BIRF AG DIGITAL DE SALUD,10/18/23,USD,16382210.68,97.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+244,BCIE,2314BCIE PROG FORT TECON RENAP,05/09/23,USD,16354995.28,98.01,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+245,BID,1895BID-AGUA POT.Y SANEAM.,04/06/08,USD,15820379.54,98.05,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+246,CAF,8945CAF PROG DE INFR UNIV II,06/15/15,USD,15800944.67,98.09,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+247,FONPLATA,ARG 65 FONP AGUA POT MENDOZA,11/25/25,USD,15784953.73,98.13,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+248,CAF,9458 CAF PROG DES AREAS RIES A,08/12/16,USD,15503231.57,98.18,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+249,BID,3688 BID PROG EMERG RTA INMED,10/25/16,USD,15500000.00,98.22,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+250,BIRF,7520BIRF-PROY.MANEJO SUST.RRNN,02/27/09,USD,15291999.38,98.26,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+251,BIRF,9335BIRF RECUP SUSTENTABLE,06/14/22,USD,15200000.00,98.30,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+252,BEI,BEI FI86706 SOP FCERO APOY PYM,11/02/17,USD,15121285.73,98.34,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+253,BID,5557BID MEJOR. DE BARRIOS,01/05/23,USD,15000495.75,98.39,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+254,CAF,12895CAF-MISIONES,05/14/26,USD,15000000.00,98.43,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+255,FONPLATA,FONPLATA ARG-23/2015,06/25/15,USD,14795482.43,98.47,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+256,CAF,12418CAF-CAMINOS DLLO PRODUCTI,10/28/24,USD,14299871.23,98.51,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+257,BID,5567BIDGESTIÓN INTEGRAL,03/17/23,USD,14000000.00,98.54,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+258,BIRF,7583BIRF-PROY.RESTIT.AMB.MINER,02/01/10,USD,13880028.83,98.58,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+259,BID,2437BID-PROG.DE INNOV.TECN.II,03/26/11,USD,13875000.00,98.62,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+260,FONPLATA,FONPLATA 50 INV SOCIAL EDU CYT,06/29/21,USD,13644874.69,98.66,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+261,CAF,9410 CAF PROY REHAB INTEG MOLI,07/19/16,USD,13611111.14,98.69,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+262,BID,BID 4435/OC AR FORT CAP GEST B,12/20/18,USD,13609623.89,98.73,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+263,BID,1765BID-DES.SOC.CORDOBA,11/07/06,USD,13498817.87,98.77,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+264,FONPLATA,49FONPLATA AMPLIAC HOSPIT SAN,06/01/21,USD,12875664.88,98.80,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+265,BIRF,7861BIRF-SEGURIDAD VIAL,06/11/10,USD,12250960.31,98.84,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+266,BID,2210BID-PROG.SEG.CIUDADANA PBA,06/30/10,USD,11755262.74,98.87,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+267,CAF,12680CAF - DESARR. TERRIT.,08/05/25,USD,11657427.45,98.90,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+268,CAF,8581CAF PROG. DES. AREAS RIEGO,06/18/14,USD,11206827.97,98.93,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+269,BID,1855BID-PROG.MEJ.GEST.MUNICIP.,11/06/07,USD,10923332.65,98.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+270,BID,1764/2250BID-TRANSP.ELECT.NORT,11/06/06,USD,10806093.14,98.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+271,BID,2754BID - PROFIP II,09/28/12,USD,10512815.40,99.02,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+272,BID,2851BID PREINVERSION IV,03/10/14,USD,10317170.51,99.05,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+273,FONPLATA,FONPLATA ARG 17/2006,08/26/08,USD,10012374.09,99.08,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+274,CAF,12422 CAF-PROMACE,10/08/24,USD,10000000.00,99.10,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+275,CAF,8919CAF PROG DES INFR PROM CAP,05/19/15,USD,9557030.46,99.13,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+276,BID,3066BID PROG BECAS CIENCIA,03/29/14,USD,9285164.79,99.15,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+277,CAF,8031CAF-DESA.INTEG.SEC.ESP.NAC,12/18/12,USD,8870067.34,99.18,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+278,BCIE,2277BCIE RECUP Y DESAR RURAl,11/03/21,USD,8853506.00,99.20,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+279,BID,2740BID-DESA.RUR. Y AGRI.FLIAR,01/30/13,USD,8809420.12,99.23,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+280,BID,3759BID PROG FORT INST HAC Y F,07/26/17,USD,8797103.98,99.25,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+281,FONPLATA,28/16 FONPLATA PROG DESARR COM,05/11/17,USD,8651959.21,99.27,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+282,FONPLATA,FONPLATA 35/2017 INFRAE INTEGR,06/15/18,USD,8624543.56,99.30,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+283,CAF,11746 CAFINFR UNIVERS FASE IV,06/24/22,USD,8565402.00,99.32,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+284,BEI,BEI 86752 AMPL REHAB Y OPTIMI,11/29/18,USD,8500000.00,99.34,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+285,FONPLATA,40FONPLATA EMP. RUTA 56 CHACO,12/02/19,USD,8366427.13,99.37,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+286,CAF,9919 CAF PLAN ESTR TURIS SUST,07/04/17,USD,8238050.56,99.39,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+287,AVALES,AVAL 2/2008-BNA,10/29/08,USD,8100381.55,99.41,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+288,BID,2491BID-INF.PRODUC.TUR.R.NEGRO,01/19/12,USD,7772382.70,99.43,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+289,FONPLATA,FONPLATA ARG-21/2014,06/16/15,USD,7530545.14,99.45,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+290,BID,5364BID  DESARROLLO RED,01/17/22,USD,7400000.00,99.47,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+291,CAF,CAF 10703 PROG DESARR VIAL REG,02/22/19,USD,7162140.90,99.49,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+292,FONPLATA,FONPLATA ARG 41/19 PROY INT TR,08/07/19,USD,6587945.54,99.51,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+293,FIDA,FIDA 174PROG DESAR CADENAS CAP,04/21/17,USD,6587532.00,99.53,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+294,BID,1903BID-FORT.ATENC.PRIM.SALUD,11/04/08,USD,6424357.50,99.55,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+295,BCIE,2274BCIE TRANS DIG PYMES,10/05/21,USD,6000000.00,99.56,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+296,BID,1798BID-PROG.DES.PROD.CRED.SJ.,02/05/07,USD,5938968.74,99.58,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+297,CAF,12430CAF-MEJORA DE LA GESTIÓN,11/12/24,USD,5927450.00,99.60,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+298,FONPLATA,FONPLATA 19/2013,05/07/14,USD,5864454.18,99.61,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+299,BIRF,7617BIRF-PERMER II,01/18/10,USD,5675471.34,99.63,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+300,FONPLATA,FONPLATA ARG-22/2014,03/20/15,USD,5567488.38,99.64,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+301,CAF,8640CAF PROG.INSFRAEST. N.G,08/19/14,USD,5381007.88,99.66,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+302,BIRF,9887BIRF-NEUQUEN FASE 1,05/20/26,USD,5375000.00,99.67,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+303,FONPLATA,FONPLATA 46 EMERG COVID 19,05/28/20,USD,5333333.35,99.69,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+304,FONPLATA,FONPLATA 51 DES ARMONICO,06/03/21,USD,5226246.10,99.70,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+305,FONPLATA,24/16 FONPLATA PROG DE DES CUE,06/01/17,USD,5074005.12,99.71,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+306,FONPLATA,66FNP-INFRAESTRUCURA CHACO,04/24/26,USD,5000000.00,99.73,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+307,CAF,10059CAF PROG REHAB INFRAEST P,10/27/17,USD,4957109.61,99.74,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+308,FONPLATA,63FONP-EMERG ATENCIÓN PRIM,12/16/25,USD,4941184.98,99.76,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+309,BID,1865BID-GEST.AMBIENTAL PARA LA,11/06/07,USD,4816650.21,99.77,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+310,BID,5735BID PROG CIBERSEG INSF C,06/07/23,USD,4500000.00,99.78,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+311,BID,1465BID-PROG.APOY.DES.INT.TUR.,12/04/03,USD,4330447.62,99.79,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+312,BID,1868BID-MANEJ.DESECHOS SOLIDOS,11/06/07,USD,4278903.39,99.80,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+313,CAF,11783CAF PROG RECY DES AGROE,08/19/22,USD,4103807.00,99.82,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+314,BCIE,2215BCIE  PROG APOY AMP COB SA,09/17/20,USD,3588766.97,99.83,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+315,BIRF,7843BIRF-PREV.GRIPE A,03/30/10,USD,3347746.22,99.83,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+316,BID,2607BID-POL.NIÑEZ ADOL.Y FLIA.,07/31/12,USD,3297017.42,99.84,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+317,BID,2005BID-PROG.COMPET.NORTE GDE,02/27/09,USD,3212648.43,99.85,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+318,BID,5660BID PROSAMA,03/17/23,USD,3095000.00,99.86,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+319,FONPLATA,FONPLATA 58 PROG DE DESARRO,02/23/22,USD,2667500.00,99.87,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+320,FONPLATA,ARG 56FONPLATA  INFRAEST,01/11/22,USD,2614344.44,99.88,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+321,BID,1950BID-GEST.SAN.CALID.AGROA.,04/17/08,USD,2587022.33,99.88,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+322,BID,2048BID-PROG.AGUA POT.SANEAM.,07/31/09,USD,2476763.99,99.89,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+323,BANCA,PCIA.JUJUY - BBVA HONG KONG,12/14/18,USD,2466670.47,99.90,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+324,BID,5084BID RTA SITUAC DE CRISIS Y,01/20/21,USD,2410352.94,99.90,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+325,BID,5943BID-SALUD PORTEÑO,10/30/25,USD,2400000.00,99.91,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+326,FIDA,20000003982 FIDAPROSAF,11/30/21,USD,2215345.53,99.92,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+327,FONPLATA,57FONPL HOTEL N° 3 CHAPADMALAL,02/16/22,USD,2068441.28,99.92,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+328,CAF,8673CAF PROG.INFR.UNIV.II,09/30/14,USD,1875000.00,99.93,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+329,BID,4652BID 2DA ETAPA AMPLIAC CAP,06/11/19,USD,1816761.00,99.93,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+330,AVALES,AVAL 1/2008-BNA,08/30/07,USD,1698239.07,99.94,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+331,CAF,10099 CAF PROG INT DEL HABITAT,11/21/17,USD,1531716.72,99.94,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+332,BIRF,9390 BIRF PROY MODERNIZ TTE,10/28/22,USD,1500000.00,99.94,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+333,BID,5521BID PROG DESARR DEL TURISM,09/06/22,USD,1457000.25,99.95,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+334,BID,2523BID-FORT.MIN.REL.EXT. II,11/29/12,USD,1456712.35,99.95,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+335,FONPLATA,ARG 55FONPLATA  PROSAP,01/19/22,USD,1403150.00,99.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+336,BID,5490BID PROG MULTI FORTALECIMI,06/23/22,USD,1341945.00,99.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+337,FONPLATA,29/16 PROG DE MEJORA INTEG,06/01/17,USD,1326661.66,99.96,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+338,BID,2239BID-PROG.PROMOC.EXPO.,04/12/10,USD,1083326.27,99.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+339,FIDA,E4FIDA-DES.RURAL INCLUYENTE,11/25/11,XDR,1076232.11,99.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+340,FONPLATA,FONPLATA 54/2021 PROY VALORIZA,09/13/21,USD,1006666.66,99.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+341,BID,1884BID-PROG.ACCESO CRED.PYMES,11/06/07,USD,932879.23,99.97,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+342,BID,2185BID-1°PR.INF.VIAL PRODUC.,03/29/10,USD,899894.17,99.98,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+343,FONPLATA,FONPLATA 37/18 PROY BIBL NAC,10/23/18,USD,790075.26,99.98,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+344,FONPLATA,FONPLATA ARG-20/2014,02/20/15,USD,760348.68,99.98,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+345,BIRF,7572 BIRF-  SYNTIS II,01/13/09,USD,722335.50,99.98,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+346,BIRF,7703BIRF-PROY.PROTEC.BASICA,06/10/09,USD,695819.34,99.98,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+347,CAF,8967 CAF PROG DE SEGURIDAD,07/21/15,USD,570000.00,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+348,BID,5570BID MIPYMES PARA LA TRANSF,01/12/23,USD,550000.00,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+349,BIRF,9516BIRF  INFRA RES AL  CLIMA,08/11/23,USD,500000.00,99.99,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+350,BIRF,9587BIRF FINANC SOSTEN PARA,10/26/23,USD,500000.00,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+351,BID,5578BID PROG GEST REC HIDRICOS,01/31/23,USD,470100.00,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+352,BID,5824BID DESARROLLO PRODUCTIVO,08/02/24,USD,460670.00,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+353,BID,1843BID-INF.HIDR.DES.NORTE GDE,03/29/07,USD,387410.89,99.99,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+354,BIRF,9478BIRF2do PROY DE HÁBI Y,08/04/23,USD,375000.00,100.00,no,FSL,Fully Disbursed,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+355,BID,5569BID MEJORA DE LOS SCIOS,04/25/23,USD,350000.00,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+356,BIRF,8731BIRF2DO PROY INFRAEST HIDR,08/17/17,USD,288000.00,100.00,no,FSL,Repaying,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+357,BID,BID 5966-FORTALECIMIENTO,02/20/25,USD,260000.00,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+358,BID,5759BID ECONO DEL CONOCIMIENTO,08/22/23,USD,209074.45,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+359,BID,BID 4411 PROG IMPL ESTR NAC IN,06/19/18,USD,161286.39,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+360,FONPLATA,FONPLATA 53 REFEFO 3.1.,09/02/21,USD,138482.86,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+361,FONPLATA,FONPLATA 52 INST DE DIALOGO,07/23/21,USD,129333.32,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+362,BID,5736 BID PROVIAR II,03/17/23,USD,124031.00,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+363,BID,1777/OC-ARBID-DES.SIST.SATEL.,11/07/06,USD,83525.94,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+364,BID,5767BID PROG MODE SALTO GRANDE,08/22/23,USD,80000.00,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
+365,BID,5648BID PROG AGUA POT Y SANEAM,12/16/22,USD,476.00,100.00,no,,,no,,,,,,,sin contrato ubicado en esta corrida; no se asignan condiciones por pertenecer a la misma entidad
