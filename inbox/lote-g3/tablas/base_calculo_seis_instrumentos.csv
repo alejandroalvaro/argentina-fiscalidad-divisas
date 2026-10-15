@@ -1,0 +1,7 @@
+instrument_id,instrumento,base,estado,fuente,source_id,claim_id,observacion
+INS-C-0386,BONCER 2% 2026,30/360,confirmada en norma,Ley 27.556 Anexo III punto E,SRC-0623,CLM-G-049,fechas y cuotas contradicen a SRC-0106 y SIGADE (CLM-G-051)
+INS-C-0387,"BONCER 2,25% 2028",30/360,confirmada en norma,Ley 27.556 Anexo III punto F,SRC-0623,CLM-G-050,fechas y cuotas contradicen a SRC-0106 y SIGADE (CLM-G-052)
+INS-C-0413,"BONTE 15,50% 17-10-2026",30/360,confirmada en norma,RC 18-E/2016 art. 2,SRC-0624,CLM-G-053,
+INS-C-0425,Cuasipar pesos 2045,30/360,confirmada en prospecto aprobado por Res. 20/2005,Prospectus Supplement 10-01-2005,,,anexos de la Res. 20/2005 no publicados (CLM-G-054); documento no descargable desde la caja
+INS-C-0426,Discount pesos 2033,30/360,confirmada en prospecto aprobado por Res. 20/2005,Prospectus Supplement 10-01-2005,,,igual que INS-C-0425
+INS-C-0427,Discount yenes 2033,30/360 provisional,no confirmada,Prospectus Supplement 10-01-2005 (no cubre yenes),,,el prospecto remite los yenes a un prospecto japonés separado
