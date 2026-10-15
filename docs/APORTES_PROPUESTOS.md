@@ -1,5 +1,3 @@
-<cursor_untrusted_data_1337 source="CallDynamicTool">
-
 # Aportes propuestos del proyecto (borrador de Grok)
 
 Estado: cuarta versión (15 de octubre de 2026, aporte 6 con cuatro regímenes según D-007), tercera versión (sección 8, menú de opciones), segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
@@ -220,7 +218,4 @@ Las cinco opciones se pueden representar como variantes del régimen (c): todas 
 - Destino del resto del contravalor en el régimen (c): Alejandro pidió un menú de opciones (sección 8), sin decisión todavía.
 - Cómo tratar los sectores no relevados en la tabla de alícuotas (carnes, economías regionales, industria, minería) y el crudo con alícuota móvil.
 - Si se busca contacto o permiso para citar a Mosler más allá de sus textos públicos (no se hizo ningún contacto).
-
-
-</cursor_untrusted_data_1337>
 - Reglas del fondo del régimen (d): ingresos que acumula, regla de retiro, tope y quién decide. Opciones y precedentes en `inbox/lote-h/tablas/opciones_diseno_fondo_d.csv`, sin recomendación.
