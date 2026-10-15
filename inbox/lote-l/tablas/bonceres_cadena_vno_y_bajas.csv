@@ -1,0 +1,28 @@
+instrumento,ticker,corte_inicial,corte_final,vno_inicial_pesos_millones,emisiones_oncp_intervalo_pesos_millones,n_emisiones_oncp,vno_final_pesos_millones,baja_implicita_pesos_millones,estado,operacion_asociada
+INS-C-0373,TZXD7,2024-03-31,2024-06-30,11129411.149,24851.837,1,11154262.986,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2024-06-30,2024-09-30,11154262.986,790558.129,1,11944821.115,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2024-09-30,2024-12-31,11944821.115,0.000,0,11944821.115,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2024-12-31,2025-03-31,11944821.115,0.000,0,11944821.115,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2025-03-31,2025-06-30,11944821.115,0.000,0,11942457.493,2363.622,"baja de VN en el intervalo, sin emisión ONCP que la explique",sin norma ni operación hallada
+INS-C-0373,TZXD7,2025-06-30,2025-09-30,11942457.493,0.000,0,11942457.493,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2025-09-30,2025-12-31,11942457.493,0.000,0,10392457.493,1550000.000,"baja de VN en el intervalo, sin emisión ONCP que la explique","RC 64/2025 (BCRA, liquidada 2025-12-29): baja exacta de 1.550.000 millones"
+INS-C-0373,TZXD7,2025-12-31,2026-03-31,10392457.493,0.000,0,10392457.493,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0373,TZXD7,2026-03-31,2026-06-30,10392457.493,0.000,0,9092457.493,1300000.000,"baja de VN en el intervalo, sin emisión ONCP que la explique","RC 31/2026 (BCRA, liquidada 2026-06-08): baja exacta de 1.300.000 millones"
+INS-C-0379,TZX27,2024-03-31,2024-06-30,2547610.637,0.000,0,2547610.637,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2024-06-30,2024-09-30,2547610.637,15964.189,1,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2024-09-30,2024-12-31,2563574.827,0.000,0,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2024-12-31,2025-03-31,2563574.827,0.000,0,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2025-03-31,2025-06-30,2563574.827,0.000,0,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2025-06-30,2025-09-30,2563574.827,0.000,0,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2025-09-30,2025-12-31,2563574.827,0.000,0,2563574.827,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0379,TZX27,2025-12-31,2026-03-31,2563574.827,514937.730,4,2522244.610,556267.947,"baja de VN en el intervalo, sin emisión ONCP que la explique",sin norma ni operación hallada (ver unresolved.md)
+INS-C-0379,TZX27,2026-03-31,2026-06-30,2522244.610,0.000,0,2522244.610,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2024-03-31,2024-06-30,6677646.689,14911.102,1,6692557.792,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2024-06-30,2024-09-30,6692557.792,0.000,0,6692557.792,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2024-09-30,2024-12-31,6692557.792,0.000,0,6692557.792,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2024-12-31,2025-03-31,6692557.792,0.000,0,6692557.792,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2025-03-31,2025-06-30,6692557.792,0.000,0,6690726.228,1831.564,"baja de VN en el intervalo, sin emisión ONCP que la explique",sin norma ni operación hallada
+INS-C-0380,TZX28,2025-06-30,2025-09-30,6690726.228,0.000,0,6690726.228,0.000,sin variación no explicada por emisiones ONCP,
+INS-C-0380,TZX28,2025-09-30,2025-12-31,6690726.228,1359603.383,1,5700329.611,2350000.000,"baja de VN en el intervalo, sin emisión ONCP que la explique","RC 64/2025 (BCRA, liquidada 2025-12-29): baja exacta de 2.350.000 millones tras la emisión ONCP del 2025-12-15"
+INS-C-0380,TZX28,2025-12-31,2026-03-31,5700329.611,912764.196,5,6613094.490,-0.683,diferencia de redondeo del A3500 (emisiones ONCP incluidas),
+INS-C-0380,TZX28,2026-03-31,2026-06-30,6613094.490,0.000,0,5339258.590,1273835.899,"baja de VN en el intervalo, sin emisión ONCP que la explique","RC 31/2026 (BCRA, liquidada 2026-06-08): baja de 1.273.835,9 millones (derivada; incertidumbre de alrededor de 1 millón por el redondeo del trimestre previo)"

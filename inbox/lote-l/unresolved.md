@@ -1,0 +1,44 @@
+# Lote L: lo que no se pudo resolver (sin_revisar)
+
+Todo lo de este lote queda `sin_revisar`. No se infirió nada por analogía.
+
+## 1. VNO rescatado en las conversiones con el BCRA (pedido 1)
+
+**Para Claude:**
+
+a) **Ninguna norma ni informe oficial publica el VN rescatado de TZX28 ni de TZXD7** en la RC 64/2025 ni en la RC 31/2026. Las fórmulas del artículo de precios son imágenes que el texto del Boletín Oficial no trae (CLM-L-019 y CLM-L-020). ONCP y OPC publican solo lo emitido en BONAR y, en OPC de diciembre de 2025, el equivalente en pesos (CLM-L-021).
+b) Lo que sí hay es el **VN original en circulación de cada trimestre** en las planillas de Finanzas (hoja A.1.8, diez cortes de 2024-03-31 a 2026-06-30). Con ellas y las emisiones de ONCP, la cadena da: RC 64/2025 TZXD7 1.550.000 y TZX28 2.350.000 millones de pesos (exactos al milésimo); RC 31/2026 TZXD7 1.300.000 millones (exacto) y TZX28 1.273.835,9 millones (con incertidumbre de alrededor de 1 millón por el redondeo del corte previo). Son **derivados, no publicados**: ver `tablas/conversiones_bcra_vno_rescatado.csv` y las filas de `contratos/operaciones.csv` (tipo `canje_salida`, referencia "VNO DERIVADO").
+c) La prensa (no oficial, no cargada como fuente) dice de la RC 31/2026 tanto "la totalidad" como "parte" de las tenencias. Los números derivados muestran que no fue la totalidad: quedan 9.092.457,5 millones de TZXD7 y 5.339.258,6 millones de TZX28 al 2026-06-30 según Finanzas. No saqué conclusión sobre quién tenía el resto.
+d) **Bajas previas sin explicación** (cortes de `tablas/bonceres_cadena_vno_y_bajas.csv`): TZXD7 baja 2.363,622 y TZX28 baja 1.831,564 millones entre 2025-03-31 y 2025-06-30 (sin emisión de ONCP, sin norma hallada); TZX27 baja 556.267,947 millones entre 2025-12-31 y 2026-03-31, después de sumar las cuatro emisiones ONCP de 2026 (514.937,730 millones); en ese intervalo el total publicado por Finanzas tras la licitación del 2026-02-25 era 3.078.512 (CLM-L-023) y el corte del 2026-03-31 da 2.522.244,610 y se mantiene al 2026-06-30. Busqué TZX27 en los informes de OPC de enero, febrero y marzo de 2026 y solo aparece en cuadros de licitaciones, sin conversión ni recompra (esos informes no están cargados como fuentes). Dato neutro: 2.859.163 menos 2.522.245 da 336.918, cercano a la brecha de TMG27 en SIGADE del lote K (336.831); no afirmo relación.
+e) TZX27 no muestra ninguna baja de VN en 2024 ni en 2025 (las emisiones de 2024 de ONCP son CLM-L-012).
+
+## 2. TMG27 (pedido 2)
+
+**Para Claude:** **no hay un total publicado del TMG27 en una licitación posterior al corte.** Revisé las siete licitaciones del 2026-07-15 al 2026-10-14 (`tablas/tmg27_licitaciones_posteriores.csv`): ninguna reabre el TMG27 (a diferencia del TMF27, que reabrió el 2026-09-11 con total de $ 5.044.400 millones). El último total publicado sigue siendo el de la licitación del 2026-04-15 (1.950.739 millones, SRC-0938).
+Lo que sí hay, de otra fuente oficial: la planilla de Finanzas al 2026-06-30 (hoja A.1.7, fila 42) informa un VN original de 1.035.548,53985 miles de USD, que al A3500 del 2026-06-30 (1.483,0198) da 1.535.738,988 millones de pesos. Frente a los 1.950.738,988 millones acumulados por ONCP, la diferencia es **415.000,000 millones exactos**. Lo mismo pasa con el TMF27: 2.634.167,14396 miles de USD dan 3.906.522,031 millones, y la diferencia con los 4.391.522,029 de ONCP es **485.000,000 millones exactos** (CLM-L-025, CLM-L-026 y `tablas/tmf27_tmg27_vno_al_corte.csv`). Entre el 2026-03-31 y el 2026-06-30 el TMF27 pasó de 1.849.911,00255 a 2.634.167,14396 miles de USD, coherente con la emisión de abril menos esa baja. Los dos importes redondos sugieren una baja de VN por una operación, pero **no encontré qué operación ni la fecha**; no la cargué como `operaciones.csv`.
+
+## 3. BONAR Dual 2036 (pedido 3)
+
+**Para Claude:**
+
+a) **No encontré la RC 53/2023** (ni 53-E/2023). Intenté: Boletín Oficial por rubro Finanzas y Hacienda en octubre de 2023 (la RC 50/2023 es del 2023-09-27 y la RC 54/2023 del 2023-10-19, ya cargadas en lote K), Biblioteca de Normativas de argentina.gob.ar (búsqueda por número y por título) y el sitio de OPC. El único "Resolución Conjunta 53/2023" que aparece en el Boletín es de Economía y Defensa por haberes militares (no relacionado). La estructura de ONCP cita "Res.Conj. Nº 53-E/2023" con fecha 2023-09-29 (CLM-K-003), pero la RC de ampliación del 2023-09-27 es la 50. Sigo sin el texto de la norma de emisión.
+b) **Negociabilidad:** el Anexo III del DNU 164/2023 dice que serán negociables con pedido de cotización en el MAE y en bolsas del país (CLM-L-027). Eso es la intención de la norma de base; **no hay cotización ni código de negociación del BONAR Dual 2036 que yo haya visto** en ONCP, Finanzas ni OPC.
+c) **Quién lo tiene:** el diseño del DNU 164/2023 (CLM-L-028, CLM-L-030, CLM-L-031) los coloca en el sector público nacional: el art. 3 manda entregar en canje los títulos del Anexo II y el art. 4 manda suscribir el 70% del producido de las ventas; el informe de la UBA dice que la gran mayoría de los títulos involucrados eran del FGS. ONCP registra la emisión en seis tramos entre el 2023-10-20 y el 2023-11-24 por 224.717,8566 millones de pesos (CLM-K-001). **No hay publicación de los tenedores actuales**: SIGADE y Finanzas muestran el stock (USD 640.874,451 miles, igual en los diez cortes de 2024-03-31 a 2026-06-30, CLM-L-033) pero no el tenedor. Que el stock no cambie no prueba que las tenencias del sector público no se hayan vendido a privados; es solo que el VN total no varía.
+d) La fecha de emisión es 2023-10-20 en ONCP y 2023-09-29 en la estructura de ONCP, en SIGADE y en la planilla de Finanzas (`tablas/bonar_dual_2036_fechas_y_normas.csv`); el DNU define el tipo de cambio inicial como el A3500 del día hábil previo a la fecha de realización de la operación (CLM-L-027).
+
+## 4. BONCER con cupón (pedido 4)
+
+**Para Claude:**
+
+a) **Normas de emisión de 2020 de INS-C-0386 y 0387:** son los BONCER 2026 2,00% y 2028 2,25% del Decreto 676/2020, Anexo 4 (CLM-L-034 a CLM-L-036). Entregan los términos (emisión 2020-09-04, amortización semestral en cuotas iguales el 9 de mayo y 9 de noviembre, interés 360/30, CER con diez días hábiles de rezago, mínimo $ 1). Esos términos son los del anexo adecuado de la Ley 27.556; el texto convertido no dice qué RC colocó cada bono ni en qué fecha (ver 4c).
+b) **VNO publicado de los tres** (INS-C-0386, 0387 y 0388, tabla `tablas/boncer_vno_trimestral_finanzas.csv`): VN original en circulación al 2026-06-30 (Finanzas, hoja A.1.8, filas 21, 20 y 22): 149.782,98101, 53.644,2139 y 74.809,94856 miles de USD, que al A3500 de la planilla (1.483,0198) dan 222.131,127; 79.555,431 y 110.944,635 millones de pesos. El VN en pesos queda constante desde 2024-09-30 (0386) y desde 2024-03-31 (0387 y 0388). **Esa conversión es cálculo de Grok**; la planilla no publica pesos.
+c) Sin resolver: el BONCER 2026 2,00% (0386) pasa de 335.836,961 millones de pesos al 2024-06-30 a 222.131,127 al 2024-09-30 (baja de 113.705,834 millones) sin emisión, canje ni norma que haya hallado en ONCP ni en OPC; no explico la baja. No hallé las normas ni las fechas de colocación de los 335.836,961 originales. TX31 (0388): sin cambios, VN 110.944,635 millones; la norma ya está en lote K (CLM-K-042). No están los CER de 2020 y 2022 en este lote porque los baja Claude.
+
+## 5. RC 53/2026, RC 60/2026 y SIGADE al 2026-09-30 (pedido 5)
+
+**Para Claude:** no hay publicación (`tablas/rc53_rc60_2026_publicacion.csv`). ONCP: último archivo `colocaciones_31-08-26_preliminar.xlsx` (cubre hasta el 2026-08-31). OPC: último informe el de agosto (2026-09-23). Finanzas trimestral: último 2026-06-30. Ninguna fuente da aún el VN rescatado de la LECAP S30O6 ni lo emitido en D30S6, D30O6, D30N6, T30A7 y T31Y7 por las RC 53 y 60. Los totales en circulación de D30O6 que aparecen en las licitaciones del 2026-09-11 (USD 2.155 millones) y 2026-09-28 (USD 5.348 millones) mezclan varias operaciones, así que **no restan al monto de la RC 53**. Volver a buscar cuando ONCP publique el corte del 2026-09-30 y OPC el informe de septiembre.
+RC 54/2026 del Boletín Oficial (2026-09-08, `detalleAviso/primera/347105/20260908`) no la leí; OPC la lista como letra intransferible con el BCRA por USD 8,8 millones.
+
+## 6. Notas de proceso
+
+**Para Claude:** (1) los PDF de OPC se bajan con `?tmstv=` más Referer; la URL simple devuelve 410. Para leer el informe de diciembre de 2025 sin PDF: la página es `https://opc.gob.ar/operaciones-de-deuda-publica/operaciones-de-deuda-publica-diciembre-2025/` y el PDF solo trae imágenes (OCR). (2) El anexo del Decreto 676/2020 sale de la página del Boletín Oficial con el botón "Anexo - 4"; no hay URL estable del PDF. (3) Los enlaces del Boletín Oficial de este lote ya llevan la fecha: `/detalleAviso/primera/<id>/<YYYYMMDD>`.
