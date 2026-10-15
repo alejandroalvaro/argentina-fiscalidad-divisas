@@ -461,3 +461,32 @@ def test_merge_term_folders_replaces_rows_in_place(tmp_path: Path) -> None:
         "instrument_id,x", "A,1", "B,9", "C,1", "D,9",
     ]  # fmt: skip
     assert (out / "operaciones.csv").read_text().splitlines() == ["instrument_id,y", "A,5"]
+
+
+def test_operations_turn_pesos_into_cer_units_and_refuse_negative_balances(
+    tmp_path: Path,
+) -> None:
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
+        (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
+    with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    cer = next(r for r in rows if r["indexacion"] == "CER" and r["tipo_tasa"] == "cero")
+    iid = cer["instrument_id"]
+    ops = "instrument_id,fecha,tipo,valor_nominal,source_id,referencia\n"
+    (tmp_path / "operaciones.csv").write_text(
+        ops + f"{iid},2026-07-17,reapertura,800,SRC-0108,x\n", encoding="utf-8"
+    )
+    with pytest.raises(ValueError, match="indice_inicial"):
+        load_term_sheets(tmp_path)
+    for r in rows:
+        r["indice_inicial"] = "400" if r["instrument_id"] == iid else ""
+    with (tmp_path / "terminos.csv").open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    sheet = {s.obligation.instrument_id: s for s in load_term_sheets(tmp_path)}[iid]
+    assert sheet.face_changes == ((date(2026, 7, 17), 2.0),)
+    too_much = TermSheet(**{**sheet.__dict__, "face_changes": ((date(2026, 7, 17), -1e18),)})
+    with pytest.raises(ValueError, match="negative"):
+        generate(too_much)
