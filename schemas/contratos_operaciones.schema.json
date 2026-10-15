@@ -1,0 +1,51 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "instrument_id": {
+      "pattern": "^INS-[A-Z]-\\d{4}$",
+      "title": "Instrument Id",
+      "type": "string"
+    },
+    "fecha": {
+      "format": "date",
+      "title": "Fecha",
+      "type": "string"
+    },
+    "tipo": {
+      "enum": [
+        "emision",
+        "reapertura",
+        "rescate",
+        "canje_entrada",
+        "canje_salida"
+      ],
+      "title": "Tipo",
+      "type": "string"
+    },
+    "valor_nominal": {
+      "exclusiveMinimum": 0,
+      "title": "Valor Nominal",
+      "type": "number"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "referencia": {
+      "title": "Referencia",
+      "type": "string"
+    }
+  },
+  "required": [
+    "instrument_id",
+    "fecha",
+    "tipo",
+    "valor_nominal",
+    "source_id",
+    "referencia"
+  ],
+  "title": "OperationRow",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}
