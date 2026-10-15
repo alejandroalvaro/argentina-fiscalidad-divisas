@@ -41,3 +41,13 @@ Clasificación provisional, sin_revisar. Tres tipos: (T) tributo, regalía o der
 | Aduana Marítima China (tael Haikwan), Administración de la Deuda Pública Otomana (1881), Estados del Golfo, Ecuador, impuestos coloniales | sin clasificar | no buscados con fuente primaria por tiempo | pendiente |
 
 Cautelas: la distinción entre T y E puede ser contestable en casos como Chile, donde el gravamen recae sobre ventas de una empresa estatal. Bolivia y México muestran pagos en divisas admitidos u opcionales, lo que difiere de una obligación general de pago en divisas. La afirmación previa de este archivo ("no se encontró un precedente de percepción de un tributo de exportación en divisas") queda matizada: EE.UU. 1862 es un precedente de derechos de importación, no de exportación, y la propuesta de Mosler es un antecedente directo de la idea aunque no una política aplicada.
+
+## Opciones para el resto de las divisas de exportación (ampliación 2026-10-14)
+
+Se agregaron SRC-0219 a SRC-0225 y CLM-A-022 a CLM-A-029 (sin_revisar), usados en la sección 8 de `docs/APORTES_PROPUESTOS.md`.
+
+- FMI, Integrated Policy Framework (2020) e Institutional View (2012 y revisión 2022): imf.org devolvió 403 desde la caja y desde la Mac, y la ruta alternativa de elibrary devolvió 202 sin contenido. Solo se leyó el comunicado de prensa 22/97 de 2022 en línea, sin archivo ni sha256. No se registran como fuentes de este lote hasta descargarlos.
+- Amsden (Asia's Next Giant, 1989) y Wade (Governing the Market, 1990): libros sin acceso abierto; no descargados. Corea se documenta con Irwin (SRC-0223), que tiene una perspectiva distinta de la de esos autores.
+- Kregel y Vernengo: no se descargó texto propio en esta tanda.
+- Derogación del esquema 80/20 por el DNU 269/2025 (14 abr 2025): solo consta en el resumen de InfoLeg visto en búsqueda; falta descargar el texto.
+- Incidente de la caja: los originales locales de SRC-0201 a SRC-0205 (PDF del FMI) se borraron por error al limpiar descargas fallidas. Las sumas sha256 y el manifiesto ya registrados se conservaron sin cambios. Volver a descargarlos cuando imf.org deje de devolver 403.
