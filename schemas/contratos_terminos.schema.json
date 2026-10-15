@@ -109,7 +109,8 @@
         "30E/360",
         "ACT/365",
         "ACT/360",
-        "ACT/ACT"
+        "ACT/ACT",
+        "ACT/ACT_INICIO"
       ],
       "title": "Base",
       "type": "string"

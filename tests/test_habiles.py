@@ -121,3 +121,34 @@ def test_observed_history_does_not_project_tamar() -> None:
     assert s.value("TAMAR", CUTOFF) is not None
     assert s.value("TAMAR", date(2026, 7, 1)) is None
     assert s.average("TAMAR", date(2026, 6, 1), date(2026, 7, 15)) is None
+
+
+def test_actual_over_the_year_of_the_period_start() -> None:
+    from argfx.contracts.daycount import year_fraction
+
+    # A period from November 2024 into 2025 counts over 366 days, without splitting.
+    assert year_fraction(date(2024, 11, 17), date(2025, 2, 17), "ACT/ACT_INICIO") == 92 / 366
+    assert year_fraction(date(2025, 11, 17), date(2026, 2, 17), "ACT/ACT_INICIO") == 92 / 365
+
+
+def test_dollar_linked_settles_at_the_a3500_of_three_business_days_before() -> None:
+    # D30S6 paid on 2026-09-30 with the A 3500 of 2026-09-25 (payment notice, lote O).
+    cal = observed()
+    ob = Obligation(
+        instrument_id="INS-C-0627", name="t", debtor="Tesoro", creditor_type="desconocido",
+        holder_residency="desconocida", currency_of_account="USD", indexation="dolar_linked",
+        currency_of_settlement="ARS",
+    )  # fmt: skip
+    pay = date(2026, 9, 30)
+    ts = TermSheet(
+        obligation=ob, as_of=CUTOFF, outstanding=1.0, period_dates=(pay,), accrual_start=CUTOFF,
+        day_count="30/360", rate=ZeroRate(), amortization=((pay, 1.0),), index_lag_days=3,
+        calendar=cal,
+    )  # fmt: skip
+    s = Scenario("s", "observado")
+    s.set_path("FX:ARS", read_series(SERIES / "bcra_a3500.csv"))
+    (flow,) = generate(ts, s)
+    assert flow.index_date == date(2026, 9, 25)
+    v = value_flow(flow, s)
+    assert v.amount_usd == 1.0
+    assert v.amount_settlement == pytest.approx(1523.9662, abs=1e-4)

@@ -77,5 +77,6 @@ class CashFlow:
     lower_bound: float | None = None
     """When `amount` is unknown but a floor is known (a dual whose other leg has no path)."""
     index_date: date | None = None
-    """Date whose index level turns index units into currency: CER of ten business days before
-    the payment, for instance. None means the flow's own date."""
+    """Date whose index level turns index units into currency (CER of ten business days before
+    the payment), or whose exchange rate settles a dollar-linked flow (A 3500 of three business
+    days before). None means the flow's own date."""

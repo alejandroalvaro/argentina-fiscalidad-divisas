@@ -104,7 +104,8 @@ class TermSheet:
     listed_dates: bool = False
     """Period ends listed one by one in the norm (business-day adjusted), not a regular grid."""
     index_lag_days: int = 0
-    """CER or UVA flows use the index of this many business days before the payment."""
+    """CER or UVA flows use the index, and dollar-linked flows the exchange rate, of this many
+    business days before the payment."""
     index_rebase: float = 1.0
     """Index units of SIGADE (face / index of the issue date) times this give the units of the
     norm (face / index of `index_lag_days` business days before issue)."""
@@ -238,7 +239,9 @@ def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:
         )
 
     def index_date(d: date) -> date | None:
-        if ts.index_lag_days and ob.unit in INDEX_UNITS:
+        # CER or UVA units, or the exchange rate of a dollar-linked payment (A 3500 of the
+        # third business day before).
+        if ts.index_lag_days and (ob.unit in INDEX_UNITS or ob.indexation == "dolar_linked"):
             return ts.calendar.shift(d, ts.index_lag_days)
         return None
 

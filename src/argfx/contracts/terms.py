@@ -318,6 +318,8 @@ def load_term_sheets(folder: Path, calendar: BusinessCalendar | None = None) -> 
             )
         elif t.indice_base is not None:
             raise ValueError(f"{t.instrument_id}: indice_base without an index lag")
+        if t.indexacion == "dolar_linked" and t.rezago_habiles:
+            index_lag = t.rezago_habiles  # A 3500 of that many business days before payment
         if t.fecha_emision > t.fecha_corte:
             issued = [o for o in own_ops if o.tipo == "emision" and o.fecha == t.fecha_emision]
             if t.saldo_corte != 0 or not issued:

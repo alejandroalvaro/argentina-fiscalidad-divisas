@@ -143,8 +143,13 @@ def value_flow(flow: CashFlow, s: Scenario) -> Valuation:
         flow=flow,
         scenario_id=s.scenario_id,
         amount_account=account,
+        # A dollar-linked payment converts at the exchange rate of its index date.
         amount_settlement=_convert(
-            account, flow.currency_of_account, flow.currency_of_settlement, on, s
+            account,
+            flow.currency_of_account,
+            flow.currency_of_settlement,
+            (flow.index_date or on) if flow.indexation == "dolar_linked" else on,
+            s,
         ),
         amount_usd=_convert(account, flow.currency_of_account, "USD", on, s),
     )
