@@ -1,0 +1,8 @@
+instrument_id,tipo_tope,indice_tope,margen_ajuste_pp,diferencial_pp,source_id,referencia
+INS-C-0443,maximo,SOFR_TERM_1A,0.71513,-1.0,SRC-0106,hoja D
+INS-C-0440,maximo,SOFR_TERM_1A,0.71513,-1.0,SRC-0106,hoja D
+INS-C-0441,maximo,SOFR_TERM_1A,0.71513,-1.0,SRC-0106,hoja D
+INS-C-0444,maximo,LIBOR_1A,,-1.0,SRC-0106,hoja D
+INS-C-0445,maximo,LIBOR_1A,,-1.0,SRC-0106,hoja D
+INS-C-0442,sin_tope_en_la_fuente,,,,SRC-0106,"hoja D (solo tasa de reservas, sin tope en la descripción)"
+INS-C-0447,sin_tope_en_la_fuente,,,,SRC-0106,"hoja D (solo tasa de reservas, sin tope en la descripción)"

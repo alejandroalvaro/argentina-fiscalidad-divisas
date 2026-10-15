@@ -1,0 +1,5 @@
+mes,cobertura,primario_publicado_millones_ars,intereses_netos_publicados_millones_ars,financiero_publicado_millones_ars,devengado_no_pagado_derivado,interes_real_pagado_al_vto_derivado,interes_escenario_pago_mensual_derivado,diferencia_escenario_menos_real,financiero_ilustrativo_millones_ars,intereses_ilustrativos_millones_ars
+2026-07,"solo TEM fija (13 instrumentos, datos del nombre)",2960333,2715436,244897,1944985.3,733736.3,1944985.3,1211249.0,-966352.0,3926685.0
+2026-07,TEM fija más flotantes y duales con TEM implícita (supuesto),2960333,2715436,244897,3014116.3,733736.3,3014116.3,2280380.0,-2035483.0,4995816.0
+2026-08,"solo TEM fija (13 instrumentos, datos del nombre)",1990322,1354793,635529,1812852.0,931481.0,1770704.4,839223.4,-203694.4,2194016.4
+2026-08,TEM fija más flotantes y duales con TEM implícita (supuesto),1990322,1354793,635529,2910960.6,2689083.8,2839835.4,150751.6,484777.4,1505544.6

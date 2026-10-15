@@ -1,0 +1,7 @@
+periodo,perimetro_y_base,resultado_primario_millones_ars,intereses_netos_millones_ars,resultado_financiero_millones_ars,source_id,observacion
+H1 2026 (acumulado enero-junio),SPN base caja,7327029.2,5870835.1,1456194.1,SRC-0610,"Boletín Fiscal 2T26, cuadro I.2.3 (intereses netos = primario menos financiero; coincide con ""Intereses Netos 5.870.835,1"" del cuadro de la cuenta ahorro-inversión-financiamiento)"
+Abril 2026,SPN base caja,632844.1,,268102.9,SRC-0610,"Boletín Fiscal 2T26, evolución mensual (el título del cuadro dice ""2025""; los totales coinciden con 2026)"
+Mayo 2026,SPN base caja,1924366.9,1445753.7,478613.2,SRC-0610,"Boletín Fiscal 2T26, evolución mensual y cuadro SPN"
+Junio 2026,SPN base caja,-696842.9,,-1024891.4,SRC-0610,"Boletín Fiscal 2T26, evolución mensual"
+Julio 2026,SPN base caja,2960333,2715436,244897,SRC-0612,"Hacienda, noticia de julio"
+Agosto 2026,SPN base caja,1990322,1354793,635529,SRC-0611,"Hacienda, noticia de agosto"
