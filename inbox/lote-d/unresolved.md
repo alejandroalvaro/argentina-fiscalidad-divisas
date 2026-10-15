@@ -11,7 +11,7 @@ Fecha de acceso: 2026-10-14. Todas las afirmaciones están marcadas sin_revisar.
 ## Contradicciones (no resueltas)
 
 - **Saldo mensual de reservas frente al último dato diario de la API.** Hay diferencias en 6 de 280 meses: 2007-12 (+10), 2014-12 (+36), 2016-12 (-536), 2024-12 (-28), 2025-12 (+72) y 2026-03 (+1.329 millones de USD). Las de fin de año podrían deberse a la fecha de cierre, pero no se verificó.
-- **Derechos de exportación, IMIG frente a Recursos tributarios.** Mediana -2,7%, extremos -39% y +73% en la superposición de 127 meses (2016-01 a 2026-07). La cifra anterior (-3,4% en 83 meses) se calculó con la serie incompleta de la API.
+- **Derechos de exportación, IMIG frente a Recursos tributarios.** Mediana -2,7%, extremos -39% y +73% en la superposición de 128 meses (2016-01 a 2026-08). La cifra anterior (-3,4% en 83 meses) se calculó con la serie incompleta de la API.
 - **Descripción de la serie 144.2_PCIONFMI_0_T_20.** El texto dice "Anual" y la frecuencia es trimestral.
 
 ## Reservas: definiciones (ver `tablas/definiciones_reservas.csv`)
@@ -27,3 +27,7 @@ Fecha de acceso: 2026-10-14. Todas las afirmaciones están marcadas sin_revisar.
 - **Series vacías por la API (resuelto):** IMIG intereses netos anual (452.2_INTERESES_TOS_0_T_15_45, SRC-0314) y pasivos del gobierno general de la PII (144.4_PVOSGOLES_0_T_32, SRC-0315) sí tienen datos en los archivos estáticos (10 y 42 valores). Se agregaron a `tablas/series_lote_d.csv`. Hay dos rótulos que no coinciden con los datos, sin resolver: la distribución IMIG anual se titula "Valores anuales 2015-2018" pero cubre 2016 a 2025, y la columna de la PII se llama "..._anuales" pero es trimestral.
 - **Amortizaciones pagadas y deuda por moneda y acreedor:** se remite al Lote C (SRC-0103, perfil de vencimientos y cuadros A.1.4). No se descargó una serie histórica de pagos efectivos.
 - **No se descargaron** las series de balanza de pagos y deuda externa directamente de INDEC (indec.gob.ar). Se usó la redistribución oficial de datos.gob.ar, que cita a INDEC como fuente.
+
+## Agregado 2026-10-14: IMIG 2026-08
+
+- Se sumó a `series_lote_d.csv` el valor de 2026-08 de la IMIG mensual (452.2_DERECHOS_EION_0_T_20_42): 960.155,5 millones de ARS, tomado del archivo estático `imig-mensual.csv` (SRC-0306, sha256 sin cambios). Con ese mes, la superposición con Recursos tributarios llega a 128 meses; la mediana queda en -2,7% y los extremos en -39,5% y +72,9%. 2026-08: IMIG 5,45% menor.
