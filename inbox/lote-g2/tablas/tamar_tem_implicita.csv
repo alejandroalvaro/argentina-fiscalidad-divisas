@@ -1,0 +1,6 @@
+instrument_id,denominacion,fecha_emision,coeficiente_reportado_30-06-2026,tem_implicita_pct,tamar_mas_margen_tna_implicita_pct,margen_nombre_pct,tamar_media_implicita_tna_pct,source_id,metodo
+INS-C-0367,"BONCAP/$/TAMAR+5,40%/30-07-2027",2026-06-30,,,,,,SRC-0617,"emitido el 30-06-2026: sin capitalización al corte, no se deriva TEM"
+INS-C-0368,"BONCAP/$/TAMAR+6,00%/31-08-2027",2026-04-01,1.050900,2.5134,30.18,6.00,24.18,SRC-0609,"derivado: TEM = coeficiente^(1/k); TAMAR+MARGEN invertido de la fórmula de la resolución; es la TAMAR media devengada hasta el corte, no la del plazo completo"
+INS-C-0369,"BONCAP/$/TAMAR+6,50%/25-02-2028",2026-04-20,1.049650,2.4524,29.45,6.50,22.95,SRC-0616,"derivado: TEM = coeficiente^(1/k); TAMAR+MARGEN invertido de la fórmula de la resolución; es la TAMAR media devengada hasta el corte, no la del plazo completo"
+INS-C-0370,"BONCAP/$/TAMAR+6,50%/26-02-2027",2026-02-13,1.116310,2.7889,33.49,6.50,26.99,SRC-0615,"derivado: TEM = coeficiente^(1/k); TAMAR+MARGEN invertido de la fórmula de la resolución; es la TAMAR media devengada hasta el corte, no la del plazo completo"
+INS-C-0371,"BONCAP/$/TAMAR+6,90%/31-08-2028",2026-04-30,1.049610,2.4505,29.42,6.90,22.52,SRC-0606,"derivado: TEM = coeficiente^(1/k); TAMAR+MARGEN invertido de la fórmula de la resolución; es la TAMAR media devengada hasta el corte, no la del plazo completo"
