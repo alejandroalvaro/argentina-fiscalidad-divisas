@@ -1,0 +1,4 @@
+instrument_id,fecha_emision,norma,fecha_referencia_cer,cer_valor,source_id,fuente_calendario,fuente_norma,rol,metodo
+INS-C-0384,2026-04-01,Resolución Conjunta 16/2026 art. 7,2026-03-16,725.20640921375,SRC-0903,SRC-0906,SRC-0901,derivado,Décimo día hábil anterior a la fecha de emisión (días con Com. A 3500 publicada); el CER es el valor de esa fecha en la serie del BCRA
+INS-C-0385,2025-12-15,Resolución Conjunta 63/2025 art. 5,2025-11-28,659.67889566652,SRC-0904,SRC-0907,SRC-0902,derivado,Décimo día hábil anterior a la fecha de emisión (días con Com. A 3500 publicada); el CER es el valor de esa fecha en la serie del BCRA
+INS-I-0007,2026-08-14,Resolución Conjunta 48/2026 art. 2,2026-07-31,815.43451086916,SRC-0905,SRC-0908,SRC-0840,derivado,Décimo día hábil anterior a la fecha de emisión (días con Com. A 3500 publicada); el CER es el valor de esa fecha en la serie del BCRA

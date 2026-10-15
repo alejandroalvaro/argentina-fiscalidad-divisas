@@ -1,0 +1,6 @@
+instrument_id,fecha,tipo,valor_nominal,source_id,referencia
+INS-C-0384,2026-07-17,reapertura,1115622000000,SRC-0802,BONO DEL TESORO NACIONAL EN PESOS CERO CUPÓN CON AJUSTE POR CER VENCIMIENTO 31 DE MARZO DE 2028; Resolución Conjunta 44/2026; Resolución Conjunta 9/2019; adjudicada y liquidada según calendario del llamado
+INS-C-0385,2026-09-30,reapertura,834572000000,SRC-0825,BONO DEL TESORO NACIONAL EN PESOS CERO CUPÓN CON AJUSTE POR CER VENCIMIENTO 31 DE MAYO DE 2027; Resolución Conjunta 58/2026; Resolución Conjunta 9/2019; adjudicada y liquidada según calendario del llamado
+INS-I-0007,2026-08-14,emision,659715000000,SRC-0812,LETRA DEL TESORO NACIONAL EN PESOS AJUSTADA POR CER A DESCUENTO VENCIMIENTO 29 DE ENERO DE 2027; Resolución Conjunta 48/2026; Resolución Conjunta 9/2019; adjudicada y liquidada según calendario del llamado
+INS-I-0007,2026-08-31,reapertura,848347000000,SRC-0818,LETRA DEL TESORO NACIONAL EN PESOS AJUSTADA POR CER A DESCUENTO VENCIMIENTO 29 DE ENERO DE 2027; Resolución Conjunta 52/2026; Resolución Conjunta 9/2019; adjudicada y liquidada según calendario del llamado
+INS-I-0007,2026-09-15,reapertura,688547000000,SRC-0820,LETRA DEL TESORO NACIONAL EN PESOS AJUSTADA POR CER A DESCUENTO VENCIMIENTO 29 DE ENERO DE 2027; Resolución Conjunta 55/2026; Resolución Conjunta 9/2019; adjudicada y liquidada según calendario del llamado
