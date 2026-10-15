@@ -61,8 +61,8 @@ class TermRow(BaseModel):
     tope_margen: OptFloat = None
     capitaliza: bool
     indice_inicial: OptFloat = Field(default=None, gt=0)
-    """CER or UVA at the reference date of issue. Operations are published in pesos of face
-    value; dividing by it gives the index units in which saldo_corte is kept."""
+    """CER or UVA of the issue date, the base of SIGADE's index units. Operations are published
+    in pesos of face value; dividing by it gives the units in which saldo_corte is kept."""
     source_id: str = Field(pattern=SOURCE_REFS)
     referencia: str
     notas: OptStr = None
