@@ -19,6 +19,7 @@ from pathlib import Path
 
 from argfx.contracts.buckets import aggregate, bucket
 from argfx.contracts.engine import generate
+from argfx.contracts.habiles import BusinessCalendar, read_extra_holidays
 from argfx.contracts.model import CashFlow
 from argfx.contracts.options import dual_max
 from argfx.contracts.scenario import Scenario, Valuation, value_flow
@@ -86,14 +87,42 @@ def compare_with_sigade(
     return rows
 
 
+def read_series(path: Path, scale: float = 1.0) -> list[tuple[date, float]]:
+    with path.open(newline="", encoding="utf-8") as fh:
+        return [
+            (date.fromisoformat(r["fecha"]), float(r["valor"]) * scale) for r in csv.DictReader(fh)
+        ]
+
+
+def add_observed_history(scenario: Scenario, series_dir: Path, cutoff: date) -> None:
+    """BCRA CER and TAMAR observed before the cut-off, for lagged windows that start before it.
+
+    The scenario keeps its own values from the cut-off on; TAMAR, which the frozen SIGADE
+    scenario does not carry, stays unknown after the cut-off.
+    """
+    cer = [p for p in read_series(series_dir / "bcra_cer.csv") if p[0] < cutoff]
+    tamar = [p for p in read_series(series_dir / "bcra_tamar.csv", 0.01) if p[0] <= cutoff]
+    scenario.add_history("CER", cer)
+    scenario.add_history("TAMAR", tamar)
+
+
 def build_calendar(
-    terms_dir: Path, sigade_dir: Path, instruments_csv: Path, cutoff: date, out: Path
+    terms_dir: Path,
+    sigade_dir: Path,
+    instruments_csv: Path,
+    cutoff: date,
+    out: Path,
+    series_dir: Path = Path("series"),
 ) -> dict[str, int]:
     scenario = Scenario.frozen_from_sigade(sigade_dir / f"sigade_{cutoff}_tipos_de_cambio.csv")
+    add_observed_history(scenario, series_dir, cutoff)
+    business = BusinessCalendar.from_series(
+        series_dir / "bcra_a3500.csv", read_extra_holidays(series_dir / "feriados_decretados.csv")
+    )
     sigade = load_sigade_flows(
         sigade_dir, cutoff.isoformat(), read_instrument_index(instruments_csv)
     )
-    sheets = load_term_sheets(terms_dir)
+    sheets = load_term_sheets(terms_dir, business)
     for ts in sheets:
         if ts.as_of != cutoff:
             raise ValueError(f"{ts.obligation.instrument_id}: cut-off {ts.as_of} != {cutoff}")

@@ -15,6 +15,9 @@ Specialized pieces:
   that take effect from the start of the period in which they settle;
 - TAMAR rates turned into a monthly effective rate with the 32-day compounding of the norms,
   optionally averaged over the whole term;
+- lags in business days: a floating index averaged from n business days before the start to n
+  business days before the end (simple average of the business days, both ends included), and
+  CER or UVA read n business days before each payment (`argfx.contracts.habiles`);
 - options: see `argfx.contracts.options`.
 
 The engine reads only the term sheet and, for floating rates, the scenario. A rate it cannot
@@ -25,11 +28,12 @@ from __future__ import annotations
 
 import calendar
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, timedelta
 from itertools import pairwise
 
 from argfx.contracts.daycount import DayCount, year_fraction
-from argfx.contracts.model import CashFlow, Obligation
+from argfx.contracts.habiles import BusinessCalendar
+from argfx.contracts.model import INDEX_UNITS, CashFlow, Obligation
 from argfx.contracts.scenario import Scenario
 
 
@@ -65,6 +69,9 @@ class FloatingRate:
     per-period fixed rate (TAMAR instruments: d = 32)."""
     whole_term: bool = False
     """Average the index over the whole term (issue to maturity) instead of each period."""
+    lag_days: int = 0
+    """Business days by which the averaging window moves back (TAMAR and BADLAR: 10). With a
+    lag, the average is the simple mean over business days, both ends of the window included."""
 
 
 @dataclass(frozen=True)
@@ -96,6 +103,12 @@ class TermSheet:
     (the second leg of a dual, built from the first leg's balance)."""
     listed_dates: bool = False
     """Period ends listed one by one in the norm (business-day adjusted), not a regular grid."""
+    index_lag_days: int = 0
+    """CER or UVA flows use the index of this many business days before the payment."""
+    index_rebase: float = 1.0
+    """Index units of SIGADE (face / index of the issue date) times this give the units of the
+    norm (face / index of `index_lag_days` business days before issue)."""
+    calendar: BusinessCalendar = field(default_factory=BusinessCalendar)
     face_changes: tuple[tuple[date, float], ...] = ()
     """(settlement date, change in original face) after `as_of`: issues and reopenings add,
     buybacks and swaps out subtract. Proceeds and prices are financing, not contract flows."""
@@ -137,6 +150,24 @@ def _per_period(ts: TermSheet, r: float, start: date, end: date) -> float:
     return (1 + r) ** f - 1 if ts.capitalizes else r * f
 
 
+def _index_average(
+    ts: TermSheet, scenario: Scenario, name: str, start: date, end: date, lag: int
+) -> float | None:
+    if not lag:
+        return scenario.average(name, start, end)
+    a, b = ts.calendar.shift(start, lag), ts.calendar.shift(end, lag)
+    total, n = 0.0, 0
+    d = a
+    while d <= b:
+        if ts.calendar.is_business(d):
+            v = scenario.value(name, d)
+            if v is None:
+                return None
+            total, n = total + v, n + 1
+        d += timedelta(days=1)
+    return total / n if n else None
+
+
 def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -> float | None:
     """Interest per unit of principal over [start, end)."""
     rate = ts.rate
@@ -160,12 +191,12 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
     if scenario is None:
         return None
     a, b = (ts.accrual_start, ts.period_dates[-1]) if rate.whole_term else (start, end)
-    index = scenario.average(rate.index, a, b)
+    index = _index_average(ts, scenario, rate.index, a, b, rate.lag_days)
     if index is None:
         return None
     annual = index * rate.multiplier + rate.spread
     if rate.cap_index is not None:
-        cap = scenario.average(rate.cap_index, a, b)
+        cap = _index_average(ts, scenario, rate.cap_index, a, b, rate.lag_days)
         if cap is None:
             return None
         annual = min(annual, cap + rate.cap_spread)
@@ -203,7 +234,13 @@ def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:
             holder_residency=ob.holder_residency,
             scenario_id=sid,
             note=note,
+            index_date=index_date(d),
         )
+
+    def index_date(d: date) -> date | None:
+        if ts.index_lag_days and ob.unit in INDEX_UNITS:
+            return ts.calendar.shift(d, ts.index_lag_days)
+        return None
 
     past = [d for d in ts.period_dates if d <= ts.as_of]
     prev = past[-1] if past else ts.accrual_start

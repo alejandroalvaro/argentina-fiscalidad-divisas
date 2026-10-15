@@ -224,6 +224,32 @@
       "default": null,
       "title": "Indice Inicial"
     },
+    "rezago_habiles": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rezago Habiles"
+    },
+    "indice_base": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Indice Base"
+    },
     "source_id": {
       "pattern": "^SRC-\\d{4}(;SRC-\\d{4})*$",
       "title": "Source Id",

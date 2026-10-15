@@ -23,6 +23,7 @@ Research pipeline for an academic paper on collecting Argentine export duties in
 
 - Contract engine (phase 2): contract flows, scenario valuations and buckets stay separate. Engine flows come from `contratos/` term sheets; instruments without terms use the SIGADE projection, labeled `source=sigade`. See `docs/FASE2_MOTOR.md`.
 - SIGADE operations are keyed by (name, loan currency, rate type); names alone repeat. SIGADE dates have two-digit years: take Año/Mes/Día.
+- CER and TAMAR lags: 10 business days, from `series/` (BCRA A3500 days as observed calendar, Ley 27.399 rules after). A CER lag needs `indice_inicial` (issue-date CER, SIGADE's unit base) and `indice_base`; load it only where SIGADE's units are verified. See `docs/FASE2_MOTOR.md`.
 - LECAP/BONCAP: the SIGADE balance already includes capitalization up to the last monthly anniversary of issue, and SIGADE does not project later capitalization. Anchor periods on the issue date, with `periodo_final_corto=true` and `base=30E/360` (legal formula VPV = VNO x (1+Tm)^(DIAS/30)).
 
 ## Storage

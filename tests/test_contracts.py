@@ -556,7 +556,11 @@ def test_dual_rows_build_the_second_leg_from_the_first() -> None:
     first = {ts.obligation.instrument_id: ts for ts in sheets}["INS-C-0409"]
     leg = legs["INS-C-0409"]
     assert leg.obligation.indexation == "ninguna" and leg.outstanding_is_face
-    assert leg.outstanding == pytest.approx(first.outstanding * 788.9793474221)
+    # The CER leg is in the units of the norm (face / CER ten business days before issue); the
+    # TAMAR leg goes back to pesos of face with SIGADE's base, the CER of the issue date.
+    assert first.index_lag_days == 10
+    assert first.index_rebase == pytest.approx(788.9793474221 / 779.88639312623)
+    assert leg.outstanding == pytest.approx(first.outstanding / first.index_rebase * 788.9793474221)
     assert leg.period_dates[-1] == first.period_dates[-1] == date(2028, 12, 15)
 
 

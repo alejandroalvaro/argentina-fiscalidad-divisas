@@ -122,6 +122,19 @@
       "title": "Promedio Plazo",
       "type": "boolean"
     },
+    "rezago_habiles": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rezago Habiles"
+    },
     "capitaliza": {
       "title": "Capitaliza",
       "type": "boolean"
