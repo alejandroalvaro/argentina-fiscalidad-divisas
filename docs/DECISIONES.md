@@ -36,6 +36,8 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 
 ## D-004. Tres regímenes de percepción para el modelo SFC (2026-10-14)
 
+**Reemplazada por D-007**, que agrega un cuarto régimen y conserva las letras (a), (b) y (c).
+
 **Decisión.** El modelo stock-flujo consistente compara tres regímenes, con igual carga tributaria:
 
 - (a) Argentina actual: el derecho se determina en USD y se paga en pesos, y el exportador debe liquidar las divisas en el mercado de cambios según la normativa del BCRA.
@@ -55,3 +57,20 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 **Decisión.** La idea de cobrar los derechos de exportación directamente en dólares se atribuye a Warren Mosler, que la propuso en Buenos Aires el 1 de mayo de 2022 ("A 3% export tax payable in $US", CLM-A-015, SRC-0212).
 
 **Aplicación.** El proyecto presenta como propio la formalización, el modelo SFC y la cuantificación, y no la idea. Todo texto del manuscrito que describa la propuesta cita a Mosler.
+
+## D-007. Cuatro regímenes de percepción para el modelo SFC (2026-10-15)
+
+**Decisión.** El modelo compara cuatro regímenes, con igual carga tributaria. Reemplaza a D-004 y conserva sus letras, para que las referencias a (a), (b) y (c) en D-005 y en `docs/APORTES_PROPUESTOS.md` sigan valiendo.
+
+- (a) Pesos, el régimen argentino actual: el derecho se determina en USD y se paga en pesos, y el exportador liquida las divisas en el mercado de cambios según la normativa del BCRA.
+- (b) Brasil: el exportador vende las divisas a instituciones autorizadas por el BCB, a tipo libremente pactado, y puede mantenerlas en el exterior (Lei 14.286/2021, SRC-0505).
+- (c) Dólares, la propuesta de Mosler (D-006): el derecho se percibe directamente en USD y se acredita en una cuenta del Tesoro.
+- (d) Dólares con fondo de estabilización: el derecho se percibe en USD como en (c), y las divisas entran a un fondo con reglas de acumulación y de uso.
+
+**Relación con el protocolo.** `docs/protocolo/CLAUDE_CODE_TASKS.md` (fase 4) define tres regímenes: (1) cobro en ARS y compras FX, (2) cobro directo USD y (3) cobro USD con fondo de estabilización. Corresponden a (a), (c) y (d). D-007 agrega Brasil, (b), y prevalece sobre el protocolo.
+
+**Aplicación.**
+- En (c) y (d) la fracción percibida en divisas es la alícuota vigente (D-005), de modo que los dos regímenes en USD recaudan lo mismo y difieren sólo en el destino de las divisas.
+- Las reglas del fondo en (d) (cuándo acumula, cuándo y para qué se usa, su tope) siguen abiertas. No se fijan por defecto; se definen antes de la fase 4 a partir de los precedentes de fondos de estabilización (CLM-A-008) y de la decisión de Alejandro.
+- El modelo no codifica en los supuestos la superioridad de ningún régimen, como pide el protocolo.
+
