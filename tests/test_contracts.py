@@ -558,3 +558,19 @@ def test_dual_rows_build_the_second_leg_from_the_first() -> None:
     assert leg.obligation.indexation == "ninguna" and leg.outstanding_is_face
     assert leg.outstanding == pytest.approx(first.outstanding * 788.9793474221)
     assert leg.period_dates[-1] == first.period_dates[-1] == date(2028, 12, 15)
+
+
+def test_boncap_tamar_from_original_face_pays_the_legal_formula() -> None:
+    # TMF28 (INS-C-0369): saldo_corte is the VNO in circulation, capitalized from issue.
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    ts = {t.obligation.instrument_id: t for t in load_term_sheets(repo)}["INS-C-0369"]
+    assert ts.outstanding_is_face and ts.outstanding == pytest.approx(9_984_903e6)
+    issue, maturity = ts.accrual_start, ts.period_dates[-1]
+    s = Scenario("s", "test")
+    s.set_path("TAMAR", [(date(2025, 1, 1), 0.25)])
+    n = 365 / 32
+    tem = (1 + (0.25 + 0.065) / n) ** (n / 12) - 1
+    dias = year_fraction(issue, maturity, "30E/360") * 360
+    paid = [f for f in generate(ts, s) if f.is_payment]
+    assert len(paid) == 1
+    assert paid[0].amount == pytest.approx(ts.outstanding * (1 + tem) ** (dias / 30))

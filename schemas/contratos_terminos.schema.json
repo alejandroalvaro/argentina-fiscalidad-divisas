@@ -206,6 +206,11 @@
       "title": "Promedio Plazo",
       "type": "boolean"
     },
+    "saldo_es_valor_nominal": {
+      "default": false,
+      "title": "Saldo Es Valor Nominal",
+      "type": "boolean"
+    },
     "indice_inicial": {
       "anyOf": [
         {
