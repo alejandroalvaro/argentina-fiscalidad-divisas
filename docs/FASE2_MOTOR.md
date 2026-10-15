@@ -94,6 +94,10 @@ Por D-008, el análisis suma las operaciones del Tesoro posteriores al corte de 
 - Las reaperturas suman valor nominal y los rescates y canjes de salida lo restan. El cambio rige desde el inicio del período en que se liquida, porque quien compra a mitad de período cobra el cupón completo (y paga el devengado en el precio).
 - El motor convierte valor nominal en saldo con el factor de capitalización acumulado desde la emisión, en los instrumentos que capitalizan, o con la fracción aún no amortizada, en los demás.
 - El precio de colocación o de rescate es financiamiento y no entra como flujo contractual.
+- En los instrumentos CER o UVA, el valor nominal publicado está en pesos y el saldo en unidades del índice. La columna `indice_inicial` de `terminos.csv` (el CER o la UVA de la fecha de referencia de la emisión) hace la conversión, y el cargador rechaza operaciones sobre esos instrumentos si falta.
+- Si una operación deja el saldo negativo, el motor se detiene: falta alguna operación anterior.
+- Rige la fecha de liquidación: entra toda operación liquidada después del corte, porque el saldo de SIGADE ya incluye lo liquidado hasta ese día.
+- `comparacion_sigade.csv` marca con `con_operaciones` los instrumentos que tienen operaciones posteriores al corte, en los que la diferencia con SIGADE es esperable.
 
 ## Prueba piloto: bonos step up 2030 y 2035 en USD
 

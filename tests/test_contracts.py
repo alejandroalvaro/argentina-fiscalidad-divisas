@@ -14,7 +14,7 @@ from argfx.contracts.options import dual_max
 from argfx.contracts.scenario import Scenario, value_flow
 from argfx.contracts.schedule import add_months, regular_dates
 from argfx.contracts.sigade import load_sigade_flows, read_instrument_index
-from argfx.contracts.terms import load_term_sheets, merge_term_folders
+from argfx.contracts.terms import TERM_FILES, load_term_sheets, merge_term_folders
 
 CUTOFF = date(2026, 6, 30)
 
@@ -282,7 +282,7 @@ def test_term_loader_rejects_unknown_rate_rows(tmp_path: Path) -> None:
     sheets = load_term_sheets(repo)
     assert {ts.obligation.instrument_id for ts in sheets} >= {"INS-C-0398", "INS-C-0405"}
 
-    for name in ("terminos.csv", "amortizaciones.csv", "fechas.csv"):
+    for name in TERM_FILES[:1] + TERM_FILES[2:]:
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     rates = (repo / "tasas.csv").read_text(encoding="utf-8")
     (tmp_path / "tasas.csv").write_text(rates + "INS-C-9999,2020-01-01,0.1,SRC-0106,x\n")
@@ -336,7 +336,7 @@ def test_floating_rate_cap() -> None:
 
 def test_explicit_dates_replace_the_grid(tmp_path: Path) -> None:
     repo = Path(__file__).resolve().parent.parent / "contratos"
-    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
+    for name in TERM_FILES:
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     dates = [d.isoformat() for d in semiannual(date(2021, 7, 9), date(2030, 7, 9))]
     listed = (repo / "fechas.csv").read_text(encoding="utf-8").splitlines()[1:]
@@ -400,7 +400,7 @@ def test_issue_after_the_cutoff_and_amortizing_buyback() -> None:
 
 def test_loader_requires_an_issue_row_for_post_cutoff_instruments(tmp_path: Path) -> None:
     repo = Path(__file__).resolve().parent.parent / "contratos"
-    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
+    for name in TERM_FILES:
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
@@ -417,11 +417,8 @@ def test_loader_requires_an_issue_row_for_post_cutoff_instruments(tmp_path: Path
     (tmp_path / "amortizaciones.csv").write_text("\n".join(amorts + extra) + "\n", encoding="utf-8")
     with pytest.raises(ValueError, match="emision row"):
         load_term_sheets(tmp_path)
-    (tmp_path / "operaciones.csv").write_text(
-        "instrument_id,fecha,tipo,valor_nominal,source_id,referencia\n"
-        "INS-C-9001,2026-08-01,emision,1000,SRC-0108,x\n",
-        encoding="utf-8",
-    )
+    with (tmp_path / "operaciones.csv").open("a", encoding="utf-8") as fh:
+        fh.write("INS-C-9001,2026-08-01,emision,1000,SRC-0108,x\n")
     sheets = {s.obligation.instrument_id: s for s in load_term_sheets(tmp_path)}
     sheet = sheets["INS-C-9001"]
     assert sheet.face_changes == ((date(2026, 8, 1), 1000.0),)
@@ -467,16 +464,14 @@ def test_operations_turn_pesos_into_cer_units_and_refuse_negative_balances(
     tmp_path: Path,
 ) -> None:
     repo = Path(__file__).resolve().parent.parent / "contratos"
-    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
+    for name in TERM_FILES:
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     cer = next(r for r in rows if r["indexacion"] == "CER" and r["tipo_tasa"] == "cero")
     iid = cer["instrument_id"]
-    ops = "instrument_id,fecha,tipo,valor_nominal,source_id,referencia\n"
-    (tmp_path / "operaciones.csv").write_text(
-        ops + f"{iid},2026-07-17,reapertura,800,SRC-0108,x\n", encoding="utf-8"
-    )
+    with (tmp_path / "operaciones.csv").open("a", encoding="utf-8") as fh:
+        fh.write(f"{iid},2026-07-17,reapertura,800,SRC-0108,x\n")
     with pytest.raises(ValueError, match="indice_inicial"):
         load_term_sheets(tmp_path)
     for r in rows:
