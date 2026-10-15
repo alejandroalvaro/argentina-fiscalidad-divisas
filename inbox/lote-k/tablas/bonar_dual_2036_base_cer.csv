@@ -1,0 +1,3 @@
+alternativa,fecha_emision_supuesta,cer_dia_emision,dia_habil_10_antes,cer_10_dias_habiles_antes,factor_saldo_tci_sobre_cer_dia_emision,factor_saldo_tci_sobre_cer_base_norma (usado en duales.csv para la primera fila),fuente
+ONCP Colocaciones (usada en contratos/duales.csv),2023-10-20,145.15731561177,2023-10-04,136.4111244672,2.4156037615,2.5704835949,SRC-0945; CER SRC-0953; dia habil = dia con A3500 publicada (SRC-0952)
+Estructura financiera ONCP (no usada),2023-09-29,133.77924389884,2023-09-15,126.67700643817,2.6210535161,2.7680047663,SRC-0106 hoja B fila 50; CER SRC-0953; dia habil con A3500 SRC-0951

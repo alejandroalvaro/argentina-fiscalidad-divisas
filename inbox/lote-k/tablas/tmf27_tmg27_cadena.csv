@@ -1,0 +1,13 @@
+instrumento,fecha,concepto,vno_millones,acumulado_millones,fuente,referencia
+TMF27,2026-02-13,emisión (hoja Bonos),181927.415569,181927.415569,SRC-0947,hoja Bonos fila 10
+TMF27,2026-03-16,emisión (hoja Bonos),397417.800069,579345.215638,SRC-0947,hoja Bonos fila 21
+TMF27,2026-03-31,emisión (hoja Bonos),1978633.65,2557978.865638,SRC-0947,hoja Bonos fila 33
+TMF27,2026-04-17,emisión (hoja Bonos),1833543.162911,4391522.028549,SRC-0947,hoja Bonos fila 36
+TMG27,2026-04-01,emisión por conversión (hoja Canjes- Conversiones),1171673.379122,1171673.379122,SRC-0947,hoja Canjes- Conversiones fila 16
+TMG27,2026-04-17,emisión (hoja Bonos),779065.609334,1950738.988456,SRC-0947,hoja Bonos fila 37
+TMF27,2026-04-17,total en circulación publicado por Finanzas tras la licitación del 2026-04-15,4391522,,SRC-0938,columna VNO Total en Circulación
+TMG27,2026-04-17,total en circulación publicado por Finanzas tras la licitación del 2026-04-15,1950739,,SRC-0938,columna VNO Total en Circulación
+TMF27,2026-09-11,licitación del 2026-09-11: VNO adjudicado,1137878,,SRC-0950,TMF27 - reapertura
+TMF27,2026-09-11,licitación del 2026-09-11: VNO total en circulación publicado (incluye lo adjudicado),5044400,,SRC-0950,columna VNO Total en Circulación
+TMF27,2026-09-11,circulación previa implícita (5.044.400 menos 1.137.878),3906522,,derivado,
+TMF27,2026-09-11,diferencia entre la circulación implícita y el VNO emitido al 2026-04-17 (4.391.522),-485000,,derivado,una baja de exactamente 485.000 millones sin operación documentada

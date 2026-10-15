@@ -1,0 +1,8 @@
+paso,fecha,concepto,vno_millones,fuente,referencia
+1,2025-01-29,emisión por conversión (VNO a emitir publicado),3500632,SRC-0948,"tabla Nuevos Instrumentos, TTD26: $ 3.500.632"
+1b,2025-01-29,suma de las 11 filas de ONCP (control),3500632.412143,SRC-0946,"hoja Canjes- Conversiones filas 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53"
+2,2025-05-19,reapertura TTD26 adjudicada en la conversión del 2025-05-14,5700388,SRC-0949,tabla Detalle de Instrumentos a ser suscripto con BONCER TZX26: VNO Adjudicado $ 5.700.388
+2b,2025-05-19,fila de ONCP (control; la fila lleva la etiqueta BONCAP TASA DUAL y vencimiento 2025-12-15),5700388.090066,SRC-0946,hoja Canjes- Conversiones fila 57
+3,2026-05-04,rescate del TTD26 en la conversión del 2026-04-28 (RC 23/2026),-4576956.660389,SRC-0947,"hoja Canjes- Conversiones fila 24, columna de título rescatado"
+total,2026-06-30,VNO en circulación derivado (pasos 1b + 2b + 3),4624063.84182,derivado,suma
+comparación,2026-06-30,VNO derivado por Claude y cargado en contratos/terminos.csv (INS-C-0362 saldo_corte),4618994,contratos/terminos.csv,diferencia = 5069.842 millones (0.110%)
