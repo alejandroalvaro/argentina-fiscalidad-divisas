@@ -30,5 +30,5 @@ validate-grok:
 	git fetch -q origin
 	rm -rf data/inbox && mkdir -p data/inbox
 	for b in $$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/grok/); do \
-		git archive $$b inbox | tar -x -C data/inbox; done
+		if git cat-file -e $$b:inbox 2>/dev/null; then git archive $$b inbox | tar -x -C data/inbox; fi; done
 	uv run argfx validate data/inbox/inbox --out data/validacion
