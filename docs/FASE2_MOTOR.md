@@ -107,17 +107,24 @@ La prueba encontró un error en la fuente oficial. En SRC-0106, la fila del Glob
 - El principal de base suma 471.689.807.580 USD, frente a un saldo de 471.689.788.348 USD en SIGADE y en el cuadro A.1.1. La diferencia de 19.232 USD es ese mismo redondeo.
 - SIGADE escribe la fecha de servicio con año de dos dígitos, y Python lee 69 a 99 como 1969 a 1999. Los vencimientos de 2069 a 2089 quedaban en el pasado. El cargador toma la fecha de las columnas Año, Mes y Día y verifica que coincida con la fecha de servicio.
 
-## Lote G: términos de bonos y letras
+## Lotes G y G3: términos de bonos y letras
 
-El lote G agregó 70 instrumentos, de modo que `contratos/` cubre 74. El motor los compara con SIGADE fecha por fecha (`comparacion_sigade.csv`). Un flujo coincide si la diferencia es de hasta 0,01 unidades o de hasta una parte en cien millones del monto de SIGADE (columna `max_dif_rel`).
+El lote G agregó 70 instrumentos y el G3 otros siete (BONAR USD 6%, los cuatro Par y el bono del Consenso Fiscal), de modo que `contratos/` cubre 81. El motor los compara con SIGADE fecha por fecha (`comparacion_sigade.csv`). Un flujo coincide si la diferencia es de hasta 0,01 unidades o de hasta una parte en cien millones del monto de SIGADE (columna `max_dif_rel`).
 
 | Resultado | Instrumentos | Motivo |
 |---|---|---|
-| Coinciden | 47 | |
-| Flotantes sin trayectoria | 13 | BADLAR, rendimiento de las reservas y Bocon PR17: el interés queda sin monto. La amortización y los flujos con monto coinciden |
+| Coinciden | 54 | |
+| Flotantes sin trayectoria | 12 | BADLAR, rendimiento de las reservas y Bocon PR17: el interés queda sin monto. La amortización y los flujos con monto coinciden |
 | LECAP y BONCAP a tasa fija | 9 | Diferencia esperable: SIGADE no proyecta la capitalización posterior al corte. El motor paga entre 5% y 37% más al vencimiento, en total unos 14,1 billones de pesos, en línea con los 14,2 billones que calcula Grok |
 | BONCAP TAMAR | 5 | Capitalizan por mes desde la emisión (lote G2). El pago al vencimiento queda sin monto porque depende de la TAMAR promedio de todo el plazo |
 | Discount CER 2033 | 1 | Diferencia relativa de 2,1 por cien mil: SIGADE no reparte las cuotas en partes exactamente iguales |
+
+### Base 30/360 y febrero
+
+El lote G3 mostró dos reglas de SIGADE que el motor ahora reproduce:
+
+- El último día de febrero, al inicio de un período, cuenta como día 30 (base US). Del 29-02-2028 al 31-03-2028 hay 30 días, no 32 (BONAR USD 6% 2028, INS-C-0360).
+- En una grilla regular de fin de mes, cada período completo devenga sus meses nominales: del 31-01 al 28-02 es un mes, como del 28-02 al 31-03 (Consenso Fiscal, INS-C-0358). Cuando las fechas vienen listadas en la norma (`fechas.csv`), que ya están corridas a días hábiles, se cuenta día por día: del 26-02-2027 al 31-03-2027 hay 35 días, y SIGADE paga eso.
 
 Las correcciones que Claude Code hizo sobre la entrega están en `docs/verificaciones/2026-10-15_lotes-g-h.md`.
 

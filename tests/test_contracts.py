@@ -14,7 +14,7 @@ from argfx.contracts.options import dual_max
 from argfx.contracts.scenario import Scenario, value_flow
 from argfx.contracts.schedule import add_months, regular_dates
 from argfx.contracts.sigade import load_sigade_flows, read_instrument_index
-from argfx.contracts.terms import load_term_sheets
+from argfx.contracts.terms import load_term_sheets, merge_term_folders
 
 CUTOFF = date(2026, 6, 30)
 
@@ -282,7 +282,7 @@ def test_term_loader_rejects_unknown_rate_rows(tmp_path: Path) -> None:
     sheets = load_term_sheets(repo)
     assert {ts.obligation.instrument_id for ts in sheets} >= {"INS-C-0398", "INS-C-0405"}
 
-    for name in ("terminos.csv", "amortizaciones.csv"):
+    for name in ("terminos.csv", "amortizaciones.csv", "fechas.csv"):
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     rates = (repo / "tasas.csv").read_text(encoding="utf-8")
     (tmp_path / "tasas.csv").write_text(rates + "INS-C-9999,2020-01-01,0.1,SRC-0106,x\n")
@@ -336,10 +336,11 @@ def test_floating_rate_cap() -> None:
 
 def test_explicit_dates_replace_the_grid(tmp_path: Path) -> None:
     repo = Path(__file__).resolve().parent.parent / "contratos"
-    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv"):
+    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     dates = [d.isoformat() for d in semiannual(date(2021, 7, 9), date(2030, 7, 9))]
-    rows = [f"INS-C-0398,{d},SRC-0108,x" for d in dates]
+    listed = (repo / "fechas.csv").read_text(encoding="utf-8").splitlines()[1:]
+    rows = listed + [f"INS-C-0398,{d},SRC-0108,x" for d in dates]
     (tmp_path / "fechas.csv").write_text(
         "instrument_id,fecha,source_id,referencia\n" + "\n".join(rows) + "\n", encoding="utf-8"
     )
@@ -399,7 +400,7 @@ def test_issue_after_the_cutoff_and_amortizing_buyback() -> None:
 
 def test_loader_requires_an_issue_row_for_post_cutoff_instruments(tmp_path: Path) -> None:
     repo = Path(__file__).resolve().parent.parent / "contratos"
-    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv"):
+    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv"):
         (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
     with (tmp_path / "terminos.csv").open(newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
@@ -444,3 +445,19 @@ def test_thirty_360_february_and_full_monthly_periods() -> None:
     listed = TermSheet(**{**kw, "listed_dates": True})
     flows = {f.date: f.amount for f in generate(listed) if f.flow_type == "interes"}
     assert flows[date(2027, 2, 28)] == pytest.approx(1200 * 0.12 * 28 / 360)
+
+
+def test_merge_term_folders_replaces_rows_in_place(tmp_path: Path) -> None:
+    base, over, out = tmp_path / "b", tmp_path / "o", tmp_path / "m"
+    base.mkdir()
+    over.mkdir()
+    (base / "terminos.csv").write_text("instrument_id,x\nA,1\nB,1\nC,1\n", encoding="utf-8")
+    (base / "tasas.csv").write_text("instrument_id,x\nA,1\nB,1\nB,2\nC,1\n", encoding="utf-8")
+    (over / "terminos.csv").write_text("instrument_id,x\nB,9\nD,9\n", encoding="utf-8")
+    (over / "tasas.csv").write_text("instrument_id,x\nB,9\nD,9\n", encoding="utf-8")
+    (over / "operaciones.csv").write_text("instrument_id,y\nA,5\n", encoding="utf-8")
+    merge_term_folders(base, over, out)
+    assert (out / "tasas.csv").read_text().splitlines() == [
+        "instrument_id,x", "A,1", "B,9", "C,1", "D,9",
+    ]  # fmt: skip
+    assert (out / "operaciones.csv").read_text().splitlines() == ["instrument_id,y", "A,5"]
