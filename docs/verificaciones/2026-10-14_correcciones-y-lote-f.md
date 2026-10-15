@@ -60,3 +60,15 @@ El documento cumple D-003: separa lo que existe en la literatura de lo que propo
 | `grok/lote-e` | Espera la fila NTN-B1 en el mapeo |
 | `grok/lote-f-regimenes` | Espera CLM-F-002 y SRC-0508 |
 | `grok/aportes` | Se incorpora junto con los lotes E y F |
+
+## Segunda ronda (2026-10-14, noche)
+
+`make validate-grok`: 26 archivos, 19.712 filas, 3 errores, todos en el lote E por la misma causa (SRC-0426 citado pero ausente de `sources.csv`).
+
+- **`grok/lote-d-2026-08`.** La fila nueva (IMIG, 2026-08, 960.155,5 millones de ARS) coincide con el archivo estático. CLM-D-009 se recalculó: 128 meses, mediana -2,71%, extremos -39,5% y +72,9%, y 2026-08 en -5,45%. El hash de la tabla coincide con el manifiesto. **Se incorpora.**
+- **`grok/lote-f-regimenes`.** CLM-F-002 cita ahora SRC-0006. SRC-0508 tiene la URL directa del PDF, el hash coincide con el de Grok y la cita de CLM-F-011 está en la p. 1. El PDF quedó en R2. **Se incorpora.**
+- **`grok/lote-e`.**
+  - Con la fila NTN-B1 en el mapeo y la regla de prefijo documentada en `unresolved.md`, `dpf_por_indexador_derivado.csv` se reconstruye exactamente: 642 de 642 celdas, en stock y en participación.
+  - La clasificación de NTN-B1 en `ipca_precos` se apoya en el Decreto 12.814/2026, art. 8, inc. V. La copia de Grok es idéntica a la de planalto.gov.br salvo el token F5, y quedó en R2.
+  - Falta registrar SRC-0426 en `sources.csv` y su fila `original` en `documents_manifest.csv`. **Espera esa corrección.**
+- **`grok/aportes`.** Se incorpora junto con el lote E.
