@@ -13,6 +13,8 @@ Specialized pieces:
   at each date, so that buybacks and partial exchanges are respected;
 - operations after the cut-off (issues, reopenings, buybacks, swaps), as changes in face value
   that take effect from the start of the period in which they settle;
+- TAMAR rates turned into a monthly effective rate with the 32-day compounding of the norms,
+  optionally averaged over the whole term;
 - options: see `argfx.contracts.options`.
 
 The engine reads only the term sheet and, for floating rates, the scenario. A rate it cannot
@@ -57,6 +59,12 @@ class FloatingRate:
     cap_index: str | None = None
     """The rate never exceeds cap_index + cap_spread (BCRA notes: LIBOR or SOFR minus a point)."""
     cap_spread: float = 0.0
+    tem_days: int | None = None
+    """When set, the annual rate becomes a monthly effective rate (TEM) compounding every
+    `tem_days` days: [(1 + r / (365/d))^(365/d)]^(1/12) - 1, and applies once per month like a
+    per-period fixed rate (TAMAR instruments: d = 32)."""
+    whole_term: bool = False
+    """Average the index over the whole term (issue to maturity) instead of each period."""
 
 
 @dataclass(frozen=True)
@@ -83,6 +91,9 @@ class TermSheet:
     capitalizes: bool = False
     frequency_months: int | None = None
     """Nominal period length; a per-period rate needs it to scale short periods."""
+    outstanding_is_face: bool = False
+    """`outstanding` is face value before capitalization; the engine capitalizes it from issue
+    (the second leg of a dual, built from the first leg's balance)."""
     listed_dates: bool = False
     """Period ends listed one by one in the norm (business-day adjusted), not a regular grid."""
     face_changes: tuple[tuple[date, float], ...] = ()
@@ -117,6 +128,15 @@ def _full_period(start: date, end: date, months: int) -> bool:
     return span == months and (end.day >= start.day or month_end)
 
 
+def _per_period(ts: TermSheet, r: float, start: date, end: date) -> float:
+    """A rate that applies once per full period, scaled on short periods by their 30/360 share."""
+    if ts.frequency_months is None or _full_period(start, end, ts.frequency_months):
+        return r
+    basis = ts.day_count if ts.day_count in ("30/360", "30E/360") else "30/360"
+    f = year_fraction(start, end, basis) * 12 / ts.frequency_months
+    return (1 + r) ** f - 1 if ts.capitalizes else r * f
+
+
 def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -> float | None:
     """Interest per unit of principal over [start, end)."""
     rate = ts.rate
@@ -124,14 +144,7 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
         return 0.0
     if isinstance(rate, FixedRate):
         if rate.per_period:
-            r = rate.rate_on(start)
-            if ts.frequency_months is None:
-                return r
-            if _full_period(start, end, ts.frequency_months):
-                return r
-            basis = ts.day_count if ts.day_count in ("30/360", "30E/360") else "30/360"
-            f = year_fraction(start, end, basis) * 12 / ts.frequency_months
-            return (1 + r) ** f - 1 if ts.capitalizes else r * f
+            return _per_period(ts, rate.rate_on(start), start, end)
         cuts = sorted({start, end, *(d for d, _ in rate.steps if start < d < end)})
         if (
             ts.day_count == "30/360"
@@ -146,15 +159,21 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
         return sum(rate.rate_on(a) * year_fraction(a, b, ts.day_count) for a, b in pairwise(cuts))
     if scenario is None:
         return None
-    index = scenario.average(rate.index, start, end)
+    a, b = (ts.accrual_start, ts.period_dates[-1]) if rate.whole_term else (start, end)
+    index = scenario.average(rate.index, a, b)
     if index is None:
         return None
     annual = index * rate.multiplier + rate.spread
     if rate.cap_index is not None:
-        cap = scenario.average(rate.cap_index, start, end)
+        cap = scenario.average(rate.cap_index, a, b)
         if cap is None:
             return None
         annual = min(annual, cap + rate.cap_spread)
+    if rate.tem_days is not None:
+        n = 365 / rate.tem_days
+        tem = (1 + annual / n) ** (n / 12) - 1
+        months = ts.frequency_months or 1
+        return _per_period(ts, (1 + tem) ** months - 1, start, end)
     return annual * year_fraction(start, end, ts.day_count)
 
 
@@ -199,6 +218,9 @@ def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:
         for a, b in pairwise((ts.accrual_start, *past)):
             acc = _accrual(ts, a, b, scenario)
             factor = None if factor is None or acc is None else factor * (1 + acc)
+
+    if ts.outstanding_is_face:
+        principal = None if factor is None else ts.outstanding * factor
 
     for d in (x for x in ts.period_dates if x > ts.as_of):
         change = sum(v for c, v in ts.face_changes if prev <= c < d)

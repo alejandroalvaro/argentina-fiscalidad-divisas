@@ -53,7 +53,8 @@ class CashFlow:
     """One contractual flow, in the obligation's contract unit.
 
     `amount` is None when the contract makes it depend on a path (a floating rate, for example)
-    that the scenario does not provide. `is_payment` is False for interest that capitalizes.
+    that the scenario does not provide; `lower_bound` then carries a floor when one is known.
+    `is_payment` is False for interest that capitalizes.
     """
 
     instrument_id: str
@@ -73,3 +74,5 @@ class CashFlow:
     holder_residency: Residency
     scenario_id: str | None = None
     note: str | None = None
+    lower_bound: float | None = None
+    """When `amount` is unknown but a floor is known (a dual whose other leg has no path)."""

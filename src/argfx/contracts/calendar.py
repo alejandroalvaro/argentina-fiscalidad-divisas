@@ -20,9 +20,10 @@ from pathlib import Path
 from argfx.contracts.buckets import aggregate, bucket
 from argfx.contracts.engine import generate
 from argfx.contracts.model import CashFlow
+from argfx.contracts.options import dual_max
 from argfx.contracts.scenario import Scenario, Valuation, value_flow
 from argfx.contracts.sigade import load_sigade_flows, read_instrument_index
-from argfx.contracts.terms import load_term_sheets
+from argfx.contracts.terms import load_duals, load_term_sheets
 
 
 def _write(path: Path, rows: list[dict[str, object]]) -> None:
@@ -96,7 +97,16 @@ def build_calendar(
     for ts in sheets:
         if ts.as_of != cutoff:
             raise ValueError(f"{ts.obligation.instrument_id}: cut-off {ts.as_of} != {cutoff}")
-    engine = [f for ts in sheets for f in generate(ts, scenario)]
+    duals = load_duals(terms_dir, sheets)
+    engine = [
+        f
+        for ts in sheets
+        for f in (
+            dual_max(ts, duals[ts.obligation.instrument_id], scenario)
+            if ts.obligation.instrument_id in duals
+            else generate(ts, scenario)
+        )
+    ]
     with_terms = {ts.obligation.instrument_id for ts in sheets}
 
     valued: list[tuple[Valuation, bool]] = []

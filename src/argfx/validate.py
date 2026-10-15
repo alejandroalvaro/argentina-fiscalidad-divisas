@@ -22,9 +22,11 @@ from pydantic import ValidationError
 from argfx.contracts.terms import (
     AmortizationRow,
     DateRow,
+    DualRow,
     OperationRow,
     RateRow,
     TermRow,
+    load_duals,
     load_term_sheets,
     merge_term_folders,
 )
@@ -50,6 +52,7 @@ TERM_SCHEMAS = {
     "contratos/amortizaciones.csv": AmortizationRow,
     "contratos/fechas.csv": DateRow,
     "contratos/operaciones.csv": OperationRow,
+    "contratos/duales.csv": DualRow,
 }
 
 
@@ -379,9 +382,9 @@ def _check_terms(b: Batch, instruments: dict[str, Instrument], issues: list[Issu
             with tempfile.TemporaryDirectory() as tmp:
                 if (folder / "operaciones.csv").exists() and REPO_TERMS.exists():
                     merge_term_folders(REPO_TERMS, folder, Path(tmp))
-                    load_term_sheets(Path(tmp))
+                    load_duals(Path(tmp), load_term_sheets(Path(tmp)))
                 else:
-                    load_term_sheets(folder)
+                    load_duals(folder, load_term_sheets(folder))
         except (ValueError, FileNotFoundError) as exc:
             issues.append(Issue(b.lote, rel, "", "error", "term_sheet_invalid", str(exc)))
 

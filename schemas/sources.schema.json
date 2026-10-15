@@ -56,6 +56,7 @@
     "sha256": {
       "anyOf": [
         {
+          "pattern": "^[0-9a-f]{64}$",
           "type": "string"
         },
         {

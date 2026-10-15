@@ -133,11 +133,21 @@ El lote G3 mostró dos reglas de SIGADE que el motor ahora reproduce:
 
 Las correcciones que Claude Code hizo sobre la entrega están en `docs/verificaciones/2026-10-15_lotes-g-h.md`.
 
+## Duales y tasas TAMAR
+
+Un dual paga, al vencimiento, la mayor de dos ramas. La primera es la fila de `terminos.csv`, cargada como la clasifica SIGADE; la segunda va en `contratos/duales.csv`, una fila por instrumento, con su moneda, indexación, tasa, capitalización, base y calendario. El saldo de la segunda rama es el de la primera por `factor_saldo`: en un dual CER/TAMAR, las unidades CER de SIGADE por el CER del día de emisión dan el valor nominal en pesos. Con `saldo_es_valor_nominal`, el motor capitaliza ese valor nominal desde la emisión. Las operaciones posteriores al corte pasan a la segunda rama con el mismo factor.
+
+Las dos ramas se valúan en la moneda de pago y se elige la mayor. Si a una le falta trayectoria (TAMAR, por ejemplo, en el escenario congelado de SIGADE), el pago queda sin monto y `lower_bound` lleva el de la primera rama: el dual paga por lo menos eso.
+
+Las tasas TAMAR de las normas recientes se cargan como flotantes con `tem_dias` = 32 y `promedio_plazo` = true. El motor convierte la tasa anual (índice más margen) en TEM = [(1 + r/(365/32))^(365/32)]^(1/12) − 1, la aplica por mes con el período final corto en 30/360 y promedia la TAMAR desde la emisión hasta el vencimiento. Así reproduce VPV = VNO × (1 + TAMAR TEM)^((DÍAS/360) × 12) de la RC 32/2026 (fórmulas en imagen guardadas en R2 bajo SRC-0910). El rezago de diez días hábiles del promedio queda pendiente, como el del CER.
+
+Cargados: TXMD8 y TXMD9 (INS-C-0409 e INS-C-0408), CER o TAMAR más 3%. Con el escenario congelado de SIGADE quedan sin monto, con piso en la rama CER.
+
 ## Lo que falta
 
 - **Términos para el resto de los títulos.** Quedan 51 operaciones del lote G sin cargar (duales, Par, BONAR USD con fechas listadas, letras vencidas y antiguas); ver `inbox/lote-g/unresolved.md`.
-- **BONCAP TAMAR.** Los términos ya están anclados en la emisión (lote G2). La norma (RC 9, 16, 21, 23 y 36 de 2026; imágenes de la RC 36/2026 en R2) fija VPV = VNO × (1 + TAMAR TEM)^((DÍAS/360) × 12), con TAMAR TEM = [(1 + (TAMAR + MARGEN)/(365/32))^(365/32)]^(1/12) − 1 y TAMAR igual al promedio simple desde 10 días hábiles antes de la emisión hasta 10 días hábiles antes del vencimiento. El motor todavía no implementa esa conversión ni el promedio de todo el plazo. Como el saldo de SIGADE incorpora la TAMAR transcurrida hasta el corte, hará falta además el valor nominal original para aplicar la fórmula exacta. Se resuelve antes de la fase 4, junto con las trayectorias de TAMAR; hasta entonces el pago queda sin monto.
-- **Duales.** TXMD8 y TXMD9 (CER o TAMAR más 3%) están cargados sólo con la rama CER, como los clasifica SIGADE; si la rama TAMAR resultara mayor, el pago real supera al modelado. TMVE8 (TAMAR o dólar) queda afuera. El módulo de opciones existe, pero `contratos/` todavía no tiene una forma de cargar las dos ramas. Hasta entonces, los duales quedan con la proyección de SIGADE.
+- **BONCAP TAMAR.** El motor ya convierte la TAMAR en TEM y la promedia en todo el plazo (ver "Duales y tasas TAMAR"). Falta cargar el valor nominal original de los cinco bonos: el saldo de SIGADE incorpora la TAMAR transcurrida hasta el corte con una tasa que no es la del promedio final, así que la fórmula exacta se aplica sobre el VNO. Hasta entonces el pago queda sin monto.
+- **Duales pendientes.** TMVE8 (TAMAR o dólar), los BONCAP duales de tasa fija o TAMAR, el BONAR Dual 2036 (dólar o CER más 3%) y los BONTE duales CER/TAMAR 2028 a 2030 (INS-C-0410 a 0412) esperan sus términos.
 - **CER con rezago y días hábiles.** El motor no aplica el rezago de 10 días hábiles del CER ni ajusta las fechas por feriados. Con el escenario congelado no cambia nada; con trayectorias de CER sí, y hay que agregarlo antes de la fase 4.
 - **Préstamos de organismos.** Los préstamos a tasa SOFR quedan con la proyección de SIGADE, que congela la tasa al corte. Para la fase 4 hacen falta trayectorias de SOFR.
 - **Perímetro.** El inventario cubre la Administración Central. El BCRA y el sector público consolidado se agregan en la fase 3, junto con la eliminación de tenencias intra sector público.

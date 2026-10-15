@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
@@ -14,7 +15,7 @@ from argfx.contracts.options import dual_max
 from argfx.contracts.scenario import Scenario, value_flow
 from argfx.contracts.schedule import add_months, regular_dates
 from argfx.contracts.sigade import load_sigade_flows, read_instrument_index
-from argfx.contracts.terms import TERM_FILES, load_term_sheets, merge_term_folders
+from argfx.contracts.terms import TERM_FILES, load_duals, load_term_sheets, merge_term_folders
 
 CUTOFF = date(2026, 6, 30)
 
@@ -494,3 +495,66 @@ def test_operations_turn_pesos_into_cer_units_and_refuse_negative_balances(
     too_much = TermSheet(**{**sheet.__dict__, "face_changes": ((date(2026, 7, 17), -1e18),)})
     with pytest.raises(ValueError, match="negative"):
         generate(too_much)
+
+
+def tamar_leg(face: float, issue: date, maturity: date) -> TermSheet:
+    return TermSheet(
+        obligation=obligation(currency_of_account="ARS", currency_of_settlement="ARS"),
+        as_of=CUTOFF, outstanding=face, outstanding_is_face=True,
+        period_dates=tuple(regular_dates(add_months(issue, 1), maturity, 1, final_stub=True)),
+        accrual_start=issue, day_count="30/360",
+        rate=FloatingRate("TAMAR", 0.03, tem_days=32, whole_term=True), capitalizes=True,
+        frequency_months=1, amortization=((maturity, 1.0),),
+    )  # fmt: skip
+
+
+def test_tamar_tem_over_the_whole_term_pays_the_legal_formula() -> None:
+    # RC 32/2026: VPV = VNO x (1 + TAMAR TEM)^((DIAS/360) x 12), with
+    # TAMAR TEM = [(1 + (TAMAR + 3%)/(365/32))^(365/32)]^(1/12) - 1, TAMAR averaged over the term.
+    issue, maturity = date(2026, 6, 12), date(2028, 12, 15)
+    s = Scenario("s", "test")
+    s.set_path("TAMAR", [(date(2026, 1, 1), 0.30), (date(2027, 6, 12), 0.20)])
+    flows = generate(tamar_leg(1000.0, issue, maturity), s)
+    tamar = s.average("TAMAR", issue, maturity)
+    assert tamar is not None
+    n = 365 / 32
+    tem = (1 + (tamar + 0.03) / n) ** (n / 12) - 1
+    dias = year_fraction(issue, maturity, "30/360") * 360
+    assert flows[-1].flow_type == "amortizacion"
+    assert flows[-1].amount == pytest.approx(1000 * (1 + tem) ** (dias / 360 * 12))
+
+
+def test_dual_keeps_the_larger_leg_in_pesos_or_a_floor() -> None:
+    issue, maturity = date(2026, 6, 12), date(2028, 12, 15)
+    units = 1000 / 800  # 1000 pesos of face at a CER of 800 on the issue date
+    cer = TermSheet(
+        obligation=obligation(currency_of_account="ARS", currency_of_settlement="ARS",
+                              indexation="CER"),
+        as_of=CUTOFF, outstanding=units, period_dates=(maturity,), accrual_start=issue,
+        day_count="30/360", rate=ZeroRate(), amortization=((maturity, 1.0),),
+    )  # fmt: skip
+    tamar = replace(
+        tamar_leg(1000.0, issue, maturity),
+        obligation=replace(cer.obligation, indexation="ninguna"),
+    )
+    s = Scenario("s", "test")
+    s.set_path("CER", [(date(2026, 1, 1), 1600.0)])  # CER doubles: 2000 pesos
+    floor = dual_max(cer, tamar, s)
+    assert floor[-1].amount is None and floor[-1].lower_bound == pytest.approx(units)
+    s.set_path("TAMAR", [(date(2026, 1, 1), 0.20)])  # about 1.7x over the term
+    chosen = dual_max(cer, tamar, s)
+    assert chosen[-1].unit == "CER" and chosen[-1].amount == pytest.approx(units)
+    s.set_path("TAMAR", [(date(2026, 1, 1), 0.40)])  # about 2.6x
+    chosen = dual_max(cer, tamar, s)
+    assert chosen[-1].unit == "ARS" and chosen[-1].amount > 2000
+
+
+def test_dual_rows_build_the_second_leg_from_the_first() -> None:
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    sheets = load_term_sheets(repo)
+    legs = load_duals(repo, sheets)
+    first = {ts.obligation.instrument_id: ts for ts in sheets}["INS-C-0409"]
+    leg = legs["INS-C-0409"]
+    assert leg.obligation.indexation == "ninguna" and leg.outstanding_is_face
+    assert leg.outstanding == pytest.approx(first.outstanding * 788.9793474221)
+    assert leg.period_dates[-1] == first.period_dates[-1] == date(2028, 12, 15)
