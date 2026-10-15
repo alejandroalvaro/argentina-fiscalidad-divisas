@@ -1,0 +1,3 @@
+codigo,instrument_id,fecha_licitacion,dato_1,valor_1,dato_2,valor_2,calculo_1,calculo_2,cociente,cer_comparado,source_id
+TXMD8,INS-C-0409,2026-07-29,VNO en circulación publicado tras la licitación (millones de pesos),3807626,VNO adjudicado (millones),947748,circulación previa 2859878,saldo SIGADE en unidades 3624.78299652 millones,cociente 788.9791,CER del 2026-06-12 788.9793,SRC-0809;SRC-0102;SRC-0912
+TZXM8,INS-C-0384,2026-07-15,VNO en circulación publicado tras la licitación (millones de pesos),17968752,VNO adjudicado (millones),1115622,circulación previa 16853130,saldo SIGADE en unidades 22898.70980461 millones,cociente 736.0,CER del 2026-04-01 735.9860,SRC-0802;SRC-0102

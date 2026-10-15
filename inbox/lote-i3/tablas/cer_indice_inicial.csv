@@ -1,0 +1,3 @@
+instrument_id,codigo,fecha_emision,fecha_referencia_norma,cer_referencia_norma,fecha_emision_cer,cer_fecha_emision,source_id,rol,metodo
+INS-C-0408,TXMD9,2026-06-12,2026-05-29,779.88639312623,2026-06-12,788.9793474221,SRC-0912;SRC-0913;SRC-0910,derivado,indice_inicial cargado = CER del décimo día hábil anterior a la emisión (norma). Alternativa = CER del día de emisión
+INS-C-0409,TXMD8,2026-06-12,2026-05-29,779.88639312623,2026-06-12,788.9793474221,SRC-0912;SRC-0913;SRC-0910,derivado,indice_inicial cargado = CER del décimo día hábil anterior a la emisión (norma). Alternativa = CER del día de emisión
