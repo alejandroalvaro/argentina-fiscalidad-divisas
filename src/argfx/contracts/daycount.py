@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 from typing import Literal
 
-DayCount = Literal["30/360", "30E/360", "ACT/365", "ACT/360", "ACT/ACT"]
+DayCount = Literal["30/360", "30E/360", "ACT/365", "ACT/360", "ACT/ACT", "ACT/ACT_INICIO"]
 
 
 def _last_of_february(d: date) -> bool:
@@ -42,4 +42,9 @@ def year_fraction(start: date, end: date, convention: DayCount) -> float:
             total += (piece_end - cursor).days / year_days
             cursor = piece_end
         return total
+    if convention == "ACT/ACT_INICIO":
+        # Actual days over the length of the year in which the period starts, without splitting
+        # a period that crosses into the next year (BONTE BADLAR payment notices, lote O).
+        year_days = (date(start.year + 1, 1, 1) - date(start.year, 1, 1)).days
+        return (end - start).days / year_days
     raise ValueError(f"unknown day count {convention}")

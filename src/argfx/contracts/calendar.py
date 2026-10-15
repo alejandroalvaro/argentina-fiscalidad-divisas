@@ -95,15 +95,20 @@ def read_series(path: Path, scale: float = 1.0) -> list[tuple[date, float]]:
 
 
 def add_observed_history(scenario: Scenario, series_dir: Path, cutoff: date) -> None:
-    """BCRA CER and TAMAR observed before the cut-off, for lagged windows that start before it.
+    """BCRA CER, A 3500, TAMAR and BADLAR observed before the cut-off, for lagged windows and
+    index dates that fall before it.
 
-    The scenario keeps its own values from the cut-off on; TAMAR, which the frozen SIGADE
-    scenario does not carry, stays unknown after the cut-off.
+    The scenario keeps its own values from the cut-off on; TAMAR and BADLAR, which the frozen
+    SIGADE scenario does not carry, stay unknown after the cut-off.
     """
     cer = [p for p in read_series(series_dir / "bcra_cer.csv") if p[0] < cutoff]
+    fx = [p for p in read_series(series_dir / "bcra_a3500.csv") if p[0] < cutoff]
     tamar = [p for p in read_series(series_dir / "bcra_tamar.csv", 0.01) if p[0] <= cutoff]
+    badlar = [p for p in read_series(series_dir / "bcra_badlar.csv", 0.01) if p[0] <= cutoff]
     scenario.add_history("CER", cer)
+    scenario.add_history("FX:ARS", fx)
     scenario.add_history("TAMAR", tamar)
+    scenario.add_history("BADLAR_PRIVADA", badlar)
 
 
 def build_calendar(
