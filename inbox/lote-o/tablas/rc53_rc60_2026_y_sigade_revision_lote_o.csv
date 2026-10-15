@@ -1,0 +1,10 @@
+item,consulta_2026_10_15,resultado,fuente
+RC 53/2026 (BO 2026-09-07),monitor de novedades normativas de la OPC,"figura; trae topes (LELINK 30/09/2026 hasta USD 800 millones, LELINK 30/10/2026 hasta USD 1.200 millones), sin monto ejecutado; ver comunicado de MAE 14.664 en la fila siguiente",SRC-1100
+"RC 53/2026, montos que MAE dio de alta o baja",comunicado de A3 Mercados 14.664 (2026-09-07),alta D30S6 USD 800.000.000 y D30O6 USD 1.200.000.000; baja S30O6 $2.294.163.543.181; coinciden con los topes del monitor; el comunicado no cita la RC 53,SRC-1104
+RC 60/2026,monitor de novedades normativas de la OPC,no figura; el listado llega hasta la RC 59/2026 (2026-10-06) y la RC 58/2026 (2026-09-28),SRC-1100
+RC 59/2026,monitor de novedades normativas de la OPC,"figura (novedad respecto de lote N); trae topes, sin montos ejecutados",SRC-1100
+montos ejecutados (licitación 2026-09-28),comunicado de MAE 14.715 y anuncio de la Secretaría de Finanzas,altas por la licitación del 28/09/2026 y resultado; no hay planilla ONCP con ese corte,SRC-1106;SRC-1107
+montos ejecutados (operación del 22/09/2026),comunicado de A3 Mercados 14.699 (2026-09-25),bajas y altas de LELINK y TZV28; no cita la resolución,SRC-1105
+"montos ejecutados, planilla oficial",ONCP colocaciones,última planilla 31-08-2026; las direcciones de septiembre y octubre que se probaron devuelven 404,SRC-1102
+"montos ejecutados, informe mensual",OPC operaciones de deuda pública,los informes 2026 llegan hasta agosto; no hay septiembre,SRC-1101
+SIGADE al 2026-09-30,Finanzas datos trimestrales,último trimestre II Trimestre 2026 (30-06-2026); deuda_publica_30-09-2026.xlsx devuelve 404,SRC-1103
