@@ -424,3 +424,23 @@ def test_loader_requires_an_issue_row_for_post_cutoff_instruments(tmp_path: Path
     sheets = {s.obligation.instrument_id: s for s in load_term_sheets(tmp_path)}
     sheet = sheets["INS-C-9001"]
     assert sheet.face_changes == ((date(2026, 8, 1), 1000.0),)
+
+
+def test_thirty_360_february_and_full_monthly_periods() -> None:
+    # US basis: the last day of February at the start counts as day 30.
+    assert year_fraction(date(2028, 2, 29), date(2028, 3, 31), "30/360") * 360 == 30
+    assert year_fraction(date(2027, 2, 26), date(2027, 3, 31), "30/360") * 360 == 35
+    # On a regular month-end grid each full month is 1/12, as SIGADE pays the Consenso Fiscal
+    # bond; with dates listed in the norm, the plain day count applies.
+    dates = tuple(regular_dates(date(2026, 7, 31), date(2027, 3, 31), 1, eom=True))
+    kw = dict(
+        obligation=obligation(currency_of_account="ARS", currency_of_settlement="ARS"),
+        as_of=CUTOFF, outstanding=1200.0, period_dates=dates, accrual_start=date(2026, 6, 30),
+        day_count="30/360", rate=FixedRate(((date(2026, 1, 1), 0.12),)),
+        amortization=((dates[-1], 1.0),), frequency_months=1,
+    )  # fmt: skip
+    grid = {f.date: f.amount for f in generate(TermSheet(**kw)) if f.flow_type == "interes"}
+    assert grid[date(2027, 2, 28)] == pytest.approx(12.0)
+    listed = TermSheet(**{**kw, "listed_dates": True})
+    flows = {f.date: f.amount for f in generate(listed) if f.flow_type == "interes"}
+    assert flows[date(2027, 2, 28)] == pytest.approx(1200 * 0.12 * 28 / 360)

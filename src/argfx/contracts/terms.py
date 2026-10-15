@@ -158,6 +158,40 @@ def _period_dates(t: TermRow, explicit: list[date] | None) -> tuple[date, ...]:
     )  # fmt: skip
 
 
+TERM_FILES = ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv", "operaciones.csv")
+
+
+def merge_term_folders(base: Path, overlay: Path, out: Path) -> None:
+    """Write into `out` the term tables of `base` with those of `overlay` on top.
+
+    An instrument in the overlay's terminos.csv replaces every row of that instrument in the
+    base; rows of other instruments in the overlay (operations on instruments of the base, for
+    instance) are added.
+    """
+
+    def rows(path: Path) -> tuple[list[str], list[dict[str, str]]]:
+        if not path.exists():
+            return [], []
+        with path.open(newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            return list(reader.fieldnames or []), list(reader)
+
+    _, new_terms = rows(overlay / "terminos.csv")
+    replaced = {r["instrument_id"] for r in new_terms}
+    out.mkdir(parents=True, exist_ok=True)
+    for name in TERM_FILES:
+        head_b, base_rows = rows(base / name)
+        head_o, over_rows = rows(overlay / name)
+        if not head_b and not head_o:
+            continue
+        header = head_b + [c for c in head_o if c not in head_b]
+        kept = [r for r in base_rows if r["instrument_id"] not in replaced]
+        with (out / name).open("w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=header, restval="", lineterminator="\n")
+            w.writeheader()
+            w.writerows(kept + over_rows)
+
+
 def load_term_sheets(folder: Path) -> list[TermSheet]:
     terms: list[TermRow] = _read(folder / "terminos.csv", TermRow)
     rates: dict[str, list[RateRow]] = defaultdict(list)
@@ -212,6 +246,7 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
                 as_of=t.fecha_corte,
                 outstanding=t.saldo_corte,
                 period_dates=_period_dates(t, explicit.get(t.instrument_id)),
+                listed_dates=bool(explicit.get(t.instrument_id)),
                 accrual_start=t.fecha_emision,
                 day_count=t.base,
                 rate=_rate(t, rates.get(t.instrument_id, [])),
