@@ -1,6 +1,6 @@
 # Aportes propuestos del proyecto (borrador de Grok)
 
-Estado: tercera versión (sección 8, menú de opciones), segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
+Estado: cuarta versión (15 de octubre de 2026, aporte 6 con cuatro regímenes según D-007), tercera versión (sección 8, menú de opciones), segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
 
 Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
@@ -19,7 +19,7 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 | 3. Matriz de obligaciones | H3 | SALM y directrices (CLM-A-001, 006) | Matriz por operación con SIGADE | Parcial |
 | 4. Cobertura proyectada en USD | H4 | Adecuación de reservas (CLM-A-005) | Cobertura fiscal por horizonte | Sí |
 | 5. Secuencia intertemporal | H5 | Diamand y Crovetto (CLM-A-012) | Escenarios de brecha con calendario | Sí |
-| 6. Modelo SFC con tres regímenes | H1 a H5 | Godley (CLM-A-010, 011) | Comparación con stocks y flujos completos | Sí |
+| 6. Modelo SFC con cuatro regímenes | H1 a H5 | Godley (CLM-A-010, 011); fondos de estabilización (CLM-A-008, lote H) | Comparación con stocks y flujos completos | Sí |
 | 7. Contraste acotado con Brasil | H3, H4 | Jerarquía monetaria (CLM-A-013) | Indicadores sintéticos comparables | Parcial |
 
 ## 1. Percepción directa de derechos de exportación en divisas (propuesta de Warren Mosler)
@@ -114,7 +114,7 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
 **Pendiente.** Todo el aporte depende de escenarios no construidos. Los cobros de exportaciones (caja) y las exportaciones FOB (devengado) son conceptos distintos (CLM-D-011), y la elección de cada uno se documentará.
 
-## 6. Modelo stock-flujo consistente con tres regímenes
+## 6. Modelo stock-flujo consistente con cuatro regímenes
 
 **Hipótesis:** H1 a H5.
 
@@ -124,14 +124,15 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
 **Lo que el proyecto propone.**
 
-- Un modelo SFC que compare tres regímenes de percepción con igual carga tributaria. Separa el Tesoro, el BCRA y el sector público consolidado, y evita contar un mismo activo externo dos veces (principios del protocolo, D-001).
+- Un modelo SFC que compare cuatro regímenes de percepción con igual carga tributaria. Separa el Tesoro, el BCRA y el sector público consolidado, y evita contar un mismo activo externo dos veces (principios del protocolo, D-001).
 - Sensibilidad a exportaciones, tipo de cambio, refinanciación y shocks productivos.
 
 **Regímenes (definidos por Alejandro, comparación en `inbox/lote-f/tablas/regimenes_comparados.csv`):**
 
 - (a) Argentina actual: derechos determinados en USD, pagados en pesos, con obligación de liquidar divisas de exportación según el BCRA.
 - (b) Brasil: los exportadores venden divisas en el mercado de cambio a instituciones autorizadas por el BCB, a tipo libremente pactado, y pueden mantenerlas en el exterior (CLM-F-008, CLM-F-009). El imposto de exportação existe pero alcanza a pocos productos y se paga en reales (CLM-F-012 a CLM-F-014).
-- (c) Propuesta: derechos percibidos directamente en USD para el Tesoro.
+- (c) Propuesta (Mosler): derechos percibidos directamente en USD para el Tesoro.
+- (d) Dólares con fondo de estabilización (D-007): como (c), con un fondo de estabilización que acumula parte de lo percibido. Las reglas del fondo (qué ingresos acumula, con qué regla se retira, si tiene tope y quién decide su uso) las decide Alejandro. El relevamiento de fondos comparables (Chile FEES, Noruega, Colombia FAE y Perú FEF) y sus opciones están en `inbox/lote-h/` (`tablas/fondos_comparacion.csv`, `tablas/opciones_diseno_fondo_d.csv`), todo `sin_revisar` y sin recomendación.
 
 **Pendiente.** Fase 4 del repositorio.
 
@@ -159,11 +160,11 @@ Fuentes del FMI no descargadas: el Integrated Policy Framework (2020) y la Insti
 
 | Opción | Mecanismo | Literatura y precedentes | Régimen del modelo SFC |
 |---|---|---|---|
-| 1. Liquidación total en el MULC con BCRA o Tesoro como creador de mercado | El exportador vende todo el resto en el mercado de cambios; la autoridad cotiza o respalda precios como operador de última instancia | Mehrling (CLM-A-024); Mosler sobre flotación (CLM-A-029) | Variante de (a) con percepción en USD de (c) |
-| 2. Liquidación parcial (tipo blend) | Una fracción por el MULC y otra por un canal de valores negociables | DNU 28/2023, 80/20 (CLM-A-023); AREAER sobre tipos múltiples y dólar soja (CLM-A-022) | Variante de (a) o (c) con dos precios |
-| 3. Retención por el exportador con libre uso | El exportador decide cuándo y dónde vender, como en Brasil | Lei 14.286/2021 (CLM-F-008, CLM-F-009) | (b), combinable con (c) |
-| 4. Asignación prioritaria a importaciones estratégicas | Divisas entregadas al Estado o vinculadas a exportaciones se destinan con prioridad a bienes de capital e insumos | Corea 1963-1964 (CLM-A-026); Prebisch (CLM-A-028); Diamand y Crovetto (CLM-A-012) | (c) con un bloque de asignación |
-| 5. Medidas prudenciales sobre flujos de capital, sobre 1 o 3 | Encaje no remunerado a ingresos de capital u otras medidas de cuenta de capital | Chile 1991-1998 (CLM-A-025); Ocampo (CLM-A-027); FMI, revisión de la IV de 2022 (comunicado) | Capa sobre (a), (b) o (c) |
+| 1. Liquidación total en el MULC con BCRA o Tesoro como creador de mercado | El exportador vende todo el resto en el mercado de cambios; la autoridad cotiza o respalda precios como operador de última instancia | Mehrling (CLM-A-024); Mosler sobre flotación (CLM-A-029) | Variante de (a) con percepción en USD de (c); también variante de (d) si parte del contravalor se acumula en el fondo |
+| 2. Liquidación parcial (tipo blend) | Una fracción por el MULC y otra por un canal de valores negociables | DNU 28/2023, 80/20 (CLM-A-023); AREAER sobre tipos múltiples y dólar soja (CLM-A-022) | Variante de (a), (c) o (d) con dos precios |
+| 3. Retención por el exportador con libre uso | El exportador decide cuándo y dónde vender, como en Brasil | Lei 14.286/2021 (CLM-F-008, CLM-F-009) | (b), combinable con (c) y (d) |
+| 4. Asignación prioritaria a importaciones estratégicas | Divisas entregadas al Estado o vinculadas a exportaciones se destinan con prioridad a bienes de capital e insumos | Corea 1963-1964 (CLM-A-026); Prebisch (CLM-A-028); Diamand y Crovetto (CLM-A-012) | (c) o (d) con un bloque de asignación |
+| 5. Medidas prudenciales sobre flujos de capital, sobre 1 o 3 | Encaje no remunerado a ingresos de capital u otras medidas de cuenta de capital | Chile 1991-1998 (CLM-A-025); Ocampo (CLM-A-027); FMI, revisión de la IV de 2022 (comunicado) | Capa sobre (a), (b), (c) o (d) |
 
 ### Opción 1. Liquidación total en el MULC con creador de mercado
 
@@ -200,9 +201,9 @@ Fuentes del FMI no descargadas: el Integrated Policy Framework (2020) y la Insti
 - **Efectos según las fuentes.** Cambio de composición hacia mayor plazo en Chile; efectos pequeños o no significativos sobre el tipo de cambio real.
 - **Riesgos.** Elusión (los autores describen una disputa continua entre autoridades y sector privado) y la condición del FMI de que estas medidas no sustituyan un ajuste macroeconómico necesario.
 
-### Compatibilidad con el modelo de tres regímenes
+### Compatibilidad con el modelo de cuatro regímenes
 
-Las cinco opciones se pueden representar como variantes del régimen (c): todas suponen que el derecho se percibe en USD y difieren en el destino del resto. Las opciones 1 y 2 se acercan al régimen (a) y la 3 al (b). La 4 requiere un bloque de asignación de divisas por tipo de importación, y la 5 una ecuación de flujos de capital con un parámetro de encaje.
+Las cinco opciones se pueden representar como variantes del régimen (c): todas suponen que el derecho se percibe en USD y difieren en el destino del resto. El régimen (d) agrega a (c) un fondo de estabilización, por lo que cada variante puede tener una versión con fondo según la fracción del contravalor que se acumule; las reglas del fondo siguen abiertas. Las opciones 1 y 2 se acercan al régimen (a) y la 3 al (b). La 4 requiere un bloque de asignación de divisas por tipo de importación, y la 5 una ecuación de flujos de capital con un parámetro de encaje.
 
 ### Brechas de esta sección
 
@@ -213,7 +214,8 @@ Las cinco opciones se pueden representar como variantes del régimen (c): todas 
 
 ## Cuestiones abiertas para Alejandro
 
-- Resueltas el 2026-10-14: regímenes del aporte 6 (arriba), fracción en divisas igual a las alícuotas vigentes, y atribución del aporte 1 a Mosler.
+- Resueltas el 2026-10-14 y 2026-10-15: regímenes del aporte 6 (arriba, cuatro regímenes según D-007), fracción en divisas igual a las alícuotas vigentes, y atribución del aporte 1 a Mosler.
 - Destino del resto del contravalor en el régimen (c): Alejandro pidió un menú de opciones (sección 8), sin decisión todavía.
 - Cómo tratar los sectores no relevados en la tabla de alícuotas (carnes, economías regionales, industria, minería) y el crudo con alícuota móvil.
 - Si se busca contacto o permiso para citar a Mosler más allá de sus textos públicos (no se hizo ningún contacto).
+- Reglas del fondo del régimen (d): ingresos que acumula, regla de retiro, tope y quién decide. Opciones y precedentes en `inbox/lote-h/tablas/opciones_diseno_fondo_d.csv`, sin recomendación.
