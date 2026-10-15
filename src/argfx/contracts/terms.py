@@ -28,6 +28,7 @@ from pydantic import BaseModel, BeforeValidator, ConfigDict, Field
 
 from argfx.contracts.daycount import DayCount
 from argfx.contracts.engine import FixedRate, FloatingRate, Rate, TermSheet, ZeroRate
+from argfx.contracts.habiles import BusinessCalendar
 from argfx.contracts.model import CreditorType, Indexation, Obligation, Residency, Status
 from argfx.contracts.schedule import regular_dates
 from argfx.schemas import INSTRUMENT_ID, SOURCE_ID, Opt, OptFloat, OptStr
@@ -77,6 +78,11 @@ class TermRow(BaseModel):
     indice_inicial: OptFloat = Field(default=None, gt=0)
     """CER or UVA of the issue date, the base of SIGADE's index units. Operations are published
     in pesos of face value; dividing by it gives the units in which saldo_corte is kept."""
+    rezago_habiles: OptInt = Field(default=None, ge=0)
+    """Business-day lag of the norm: CER or UVA read that many business days before issue and
+    before each payment; a floating index averaged over a window moved back as much."""
+    indice_base: OptFloat = Field(default=None, gt=0)
+    """CER or UVA of `rezago_habiles` business days before issue, the base of the norm."""
     source_id: str = Field(pattern=SOURCE_REFS)
     referencia: str
     notas: OptStr = None
@@ -155,6 +161,7 @@ class DualRow(BaseModel):
     tope_margen: OptFloat = None
     tem_dias: OptInt = Field(default=None, gt=0)
     promedio_plazo: Flag = False
+    rezago_habiles: OptInt = Field(default=None, ge=0)
     capitaliza: bool
     base: DayCount
     primer_periodo: date
@@ -184,6 +191,7 @@ def _rate(t: TermRow | DualRow, steps: list[RateRow]) -> Rate:
             cap_spread=t.tope_margen or 0.0,
             tem_days=t.tem_dias,
             whole_term=t.promedio_plazo,
+            lag_days=t.rezago_habiles or 0,
         )
     if not steps:
         raise ValueError(f"{t.instrument_id}: fixed rate without rows in tasas.csv or a tasa")
@@ -258,7 +266,10 @@ def merge_term_folders(base: Path, overlay: Path, out: Path) -> None:
             w.writerows(merged)
 
 
-def load_term_sheets(folder: Path) -> list[TermSheet]:
+def load_term_sheets(folder: Path, calendar: BusinessCalendar | None = None) -> list[TermSheet]:
+    """Term sheets of `folder`. Business-day lags use `calendar`, by default the rules of Ley
+    27.399 alone (`build_calendar` passes the one observed in BCRA data)."""
+    calendar = calendar or BusinessCalendar()
     terms: list[TermRow] = _read(folder / "terminos.csv", TermRow)
     rates: dict[str, list[RateRow]] = defaultdict(list)
     for r in _read(folder / "tasas.csv", RateRow):
@@ -282,14 +293,29 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
             raise ValueError(f"duplicate instrument in terminos.csv: {t.instrument_id}")
         seen.add(t.instrument_id)
         own_ops = ops.get(t.instrument_id, [])
+        indexed = t.indexacion in ("CER", "UVA")
         face_unit = 1.0
-        if own_ops and t.indexacion in ("CER", "UVA"):
+        if own_ops and indexed:
             if t.indice_inicial is None:
                 raise ValueError(
                     f"{t.instrument_id}: operations on a {t.indexacion}-indexed instrument need "
                     "indice_inicial to turn pesos of face value into index units"
                 )
             face_unit = t.indice_inicial
+        index_lag, rebase = 0, 1.0
+        if indexed and t.rezago_habiles:
+            if t.indice_inicial is None or t.indice_base is None:
+                raise ValueError(
+                    f"{t.instrument_id}: a {t.indexacion} lag needs indice_inicial and "
+                    "indice_base to move SIGADE's units onto the base of the norm"
+                )
+            index_lag, rebase, face_unit = (
+                t.rezago_habiles,
+                t.indice_inicial / t.indice_base,
+                (t.indice_base),
+            )
+        elif t.indice_base is not None:
+            raise ValueError(f"{t.instrument_id}: indice_base without an index lag")
         if t.fecha_emision > t.fecha_corte:
             issued = [o for o in own_ops if o.tipo == "emision" and o.fecha == t.fecha_emision]
             if t.saldo_corte != 0 or not issued:
@@ -318,8 +344,11 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
             TermSheet(
                 obligation=obligation,
                 as_of=t.fecha_corte,
-                outstanding=t.saldo_corte,
+                outstanding=t.saldo_corte * rebase,
                 outstanding_is_face=t.saldo_es_valor_nominal,
+                index_lag_days=index_lag,
+                index_rebase=rebase,
+                calendar=calendar,
                 period_dates=_period_dates(t, explicit.get(t.instrument_id)),
                 listed_dates=bool(explicit.get(t.instrument_id)),
                 accrual_start=t.fecha_emision,
@@ -375,7 +404,7 @@ def load_duals(folder: Path, sheets: list[TermSheet]) -> dict[str, TermSheet]:
             obligation=replace(
                 first.obligation, currency_of_account=d.moneda_cuenta, indexation=d.indexacion
             ),
-            outstanding=first.outstanding * d.factor_saldo,
+            outstanding=first.outstanding / first.index_rebase * d.factor_saldo,
             outstanding_is_face=d.saldo_es_valor_nominal,
             period_dates=dates,
             day_count=d.base,
@@ -384,7 +413,11 @@ def load_duals(folder: Path, sheets: list[TermSheet]) -> dict[str, TermSheet]:
             capitalizes=d.capitaliza,
             frequency_months=d.frecuencia_meses,
             listed_dates=False,
-            face_changes=tuple((c, v * d.factor_saldo) for c, v in first.face_changes),
+            face_changes=tuple(
+                (c, v / first.index_rebase * d.factor_saldo) for c, v in first.face_changes
+            ),
+            index_lag_days=0,
+            index_rebase=1.0,
             source_id=d.source_id,
             reference=d.referencia,
             notes=(d.notas,) if d.notas else (),

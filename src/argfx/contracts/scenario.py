@@ -14,7 +14,7 @@ from __future__ import annotations
 import bisect
 import csv
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from itertools import pairwise
 from pathlib import Path
 
@@ -29,15 +29,39 @@ class Scenario:
     scenario_id: str
     description: str
     paths: dict[str, list[tuple[date, float]]] = field(default_factory=dict)
+    until: dict[str, date] = field(default_factory=dict)
+    """Last date a path covers; after it the value is unknown (observed history only)."""
 
-    def set_path(self, name: str, points: list[tuple[date, float]]) -> None:
+    def set_path(
+        self, name: str, points: list[tuple[date, float]], until: date | None = None
+    ) -> None:
         self.paths[name] = sorted(points)
+        if until is None:
+            self.until.pop(name, None)
+        else:
+            self.until[name] = until
+
+    def add_history(self, name: str, points: list[tuple[date, float]]) -> None:
+        """Observed points before the path's first point (all of them if there is no path).
+
+        A path that did not exist covers only the history: nothing is assumed after it.
+        """
+        current = self.paths.get(name, [])
+        if not current:
+            if points:
+                self.set_path(name, points, until=max(d for d, _ in points))
+            return
+        first = current[0][0]
+        self.paths[name] = sorted([p for p in points if p[0] < first] + current)
 
     def value(self, name: str, on: date) -> float | None:
         if name == "FX:USD":
             return 1.0
         points = self.paths.get(name)
         if not points:
+            return None
+        limit = self.until.get(name)
+        if limit is not None and on > limit:
             return None
         i = bisect.bisect_right([d for d, _ in points], on) - 1
         return points[i][1] if i >= 0 else None
@@ -49,7 +73,9 @@ class Scenario:
             return None
         if self.value(name, start) is None:
             return None
-        cuts = sorted({start, end, *(d for d, _ in points if start < d < end)})
+        limit = self.until.get(name)
+        extra = {limit + timedelta(days=1)} if limit is not None and start <= limit < end else set()
+        cuts = sorted({start, end, *extra, *(d for d, _ in points if start < d < end)})
         total = 0.0
         for a, b in pairwise(cuts):
             v = self.value(name, a)
@@ -94,13 +120,15 @@ class Valuation:
     amount_usd: float | None
 
 
-def _convert(amount: float | None, src: str, dst: str, on: date, s: Scenario) -> float | None:
+def _convert(
+    amount: float | None, src: str, dst: str, on: date, s: Scenario, index_on: date | None = None
+) -> float | None:
     if amount is None:
         return None
     if src == dst:
         return amount
     if src in INDEX_UNITS:
-        level = s.value(src, on)
+        level = s.value(src, index_on or on)
         return None if level is None else _convert(amount * level, "ARS", dst, on, s)
     per_usd_src, per_usd_dst = s.value(f"FX:{src}", on), s.value(f"FX:{dst}", on)
     if per_usd_src is None or per_usd_dst is None:
@@ -110,7 +138,7 @@ def _convert(amount: float | None, src: str, dst: str, on: date, s: Scenario) ->
 
 def value_flow(flow: CashFlow, s: Scenario) -> Valuation:
     on = flow.date
-    account = _convert(flow.amount, flow.unit, flow.currency_of_account, on, s)
+    account = _convert(flow.amount, flow.unit, flow.currency_of_account, on, s, flow.index_date)
     return Valuation(
         flow=flow,
         scenario_id=s.scenario_id,

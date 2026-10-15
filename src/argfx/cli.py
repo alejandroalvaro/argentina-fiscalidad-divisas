@@ -106,7 +106,12 @@ def cmd_calendario(args: argparse.Namespace) -> int:
     from argfx.contracts.calendar import build_calendar
 
     counts = build_calendar(
-        args.terminos, args.sigade, args.instrumentos, date.fromisoformat(args.corte), args.out
+        args.terminos,
+        args.sigade,
+        args.instrumentos,
+        date.fromisoformat(args.corte),
+        args.out,
+        args.series,
     )
     for k, v in counts.items():
         print(f"{k}: {v:,}")
@@ -151,6 +156,7 @@ def build_parser() -> argparse.ArgumentParser:
     cal.add_argument("--sigade", type=Path, default=Path("inbox/lote-c/tablas_sigade"))
     cal.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
     cal.add_argument("--out", type=Path, default=Path("data/calendario"))
+    cal.add_argument("--series", type=Path, default=Path("series"), help="observed BCRA series")
     cal.set_defaults(func=cmd_calendario)
     return parser
 
