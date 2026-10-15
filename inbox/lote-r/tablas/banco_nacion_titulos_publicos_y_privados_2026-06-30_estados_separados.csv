@@ -1,0 +1,43 @@
+source_id,grupo_1,grupo_2,origen,clase,concepto,codigo_especie,tipo_fila,saldo_de_libros_2026-06-30_miles_de_pesos,saldo_de_libros_2025-12-31_miles_de_pesos,posicion_final_miles_de_pesos
+SRC-1180,Títulos de Deuda a valor razonable con cambios en resultados,,,,Títulos de Deuda a valor razonable con cambios en resultados,,subtotal,216880239,,216880239
+SRC-1180,Títulos de Deuda a valor razonable con cambios en resultados,,Del país,,Del país,,subtotal,216880239,,216880239
+SRC-1180,Títulos de Deuda a valor razonable con cambios en resultados,,Del país,Títulos Públicos,Títulos Públicos,,subtotal,216880239,,216880239
+SRC-1180,Títulos de Deuda a valor razonable con cambios en resultados,,Del país,Títulos Públicos,Otros,,otros,216880239,,216880239
+SRC-1180,Otros Títulos de Deuda,,,,Otros Títulos de Deuda,,subtotal,30869353545,34285154557,30869353545
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,,,Medidos a valor razonable con cambios en ORI,,subtotal,15665243025,19293192696,15665243025
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,,Del país,,subtotal,15665243025,19293192696,15665243025
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Títulos Públicos,,subtotal,15613729371,19236512594,15613729371
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Letra del Tesoro Nacional a tasa TAMAR con vto. 31.08.2026,9358,especie,3082705438,2549674826,3082705438
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Lecap en pesos con vto. 31.08.2026,9357,especie,1364705336,1361031727,1364705336
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Lecap en pesos con vto. 30.11.2026,9368,especie,1359892807,1343177810,1359892807
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Letra del Tesoro Nacional a tasa TAMAR con vto. 31.08.2028,9403,especie,1175031415,,1175031415
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Bono del Tesoro Nacional Capitalizable en pesos con vto. 31.05.2027,9370,especie,971129458,929273772,971129458
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Títulos Públicos,Otros,,otros,7660264917,13053354459,7660264917
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Notas del B.C.R.A.,Notas del B.C.R.A.,,subtotal,51513654,56680102,51513654
+SRC-1180,Otros Títulos de Deuda,Medidos a valor razonable con cambios en ORI,Del país,Notas del B.C.R.A.,Otros,,otros,51513654,56680102,51513654
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,,,Medición a costo amortizado,,subtotal,15204110520,14991961861,15204110520
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,,Del país,,subtotal,15068603735,14870222290,15068603735
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Títulos Públicos,,subtotal,14888463686,14704461649,14888463686
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Bonos del Tesoro de la Nación Arg. a desc. en pesos aj por CER con vto. 15.12.2027,09250,especie,2802787515,3561860935,2802787515
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Bonos del Tesoro de la Nación Arg. a desc. en pesos aj por CER con vto. 15.12.2026,09249,especie,2425802332,4512254642,2425802332
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Bonos del Tesoro de la Nación Arg. a desc. en pesos aj por CER con vto. 31.03.2028,09398,especie,2285736651,,2285736651
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Bonos del Tesoro de la Nación Arg. a desc. en pesos aj por CER con vto. 30.06.2028,09242,especie,1981936528,3073284103,1981936528
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Bonos de la Rep. Arg. En dólares Step Up 35,05922,especie,1314442056,1514393945,1314442056
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Públicos,Otros,,otros,4077758604,2042668024,4077758604
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Privados,Títulos Privados,,subtotal,180140049,165760641,180140049
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del país,Títulos Privados,Otros,,otros,180140049,165760641,180140049
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del exterior,,Del exterior,,subtotal,135506785,121739571,135506785
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del exterior,Títulos Públicos,Títulos Públicos,,subtotal,118394952,1684838,118394952
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del exterior,Títulos Públicos,Otros,,otros,118394952,1684838,118394952
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del exterior,Títulos Privados,Títulos Privados,,subtotal,17111833,120054733,17111833
+SRC-1180,Otros Títulos de Deuda,Medición a costo amortizado,Del exterior,Títulos Privados,Otros,,otros,17111833,120054733,17111833
+SRC-1180,Instrumentos de Patrimonio,,,,Instrumentos de Patrimonio,,subtotal,170406647,143593404,170406647
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en resultados,,,Medidos a valor razonable con cambios en resultados,,subtotal,43822082,38483041,43822082
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en resultados,Del país,,Del país,,subtotal,43822082,37657279,43822082
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en resultados,Del país,,Otros,,otros,43822082,37657279,43822082
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en resultados,Del exterior,,Del exterior,,subtotal,,825762,
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en resultados,Del exterior,,Otros,,otros,,825762,
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en ORI,,,Medidos a valor razonable con cambios en ORI,,subtotal,126584565,105110363,126584565
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en ORI,Del exterior,,Del exterior,,subtotal,126584565,105110363,126584565
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en ORI,Del exterior,,Otros,,otros,126584565,105110363,126584565
+SRC-1180,Instrumentos de Patrimonio,Medidos a valor razonable con cambios en ORI,Del exterior,,TOTAL DE TITULOS PUBLICOS Y PRIVADOS,,total,31256640431,34428747961,31256640431
