@@ -1,6 +1,6 @@
 # Aportes propuestos del proyecto (borrador de Grok)
 
-Estado: segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
+Estado: tercera versión (sección 8, menú de opciones), segunda versión, 14 de octubre de 2026 (atribución a Mosler, regímenes y alícuotas incorporados), primera versión del mismo día, según la decisión D-003 (`docs/DECISIONES.md`). Este documento contiene propuestas y no evidencia. Nada de lo que sigue entra en `claims.csv`. Las referencias a `SRC-` y `CLM-` remiten a los lotes de `inbox/` y siguen marcadas `sin_revisar` hasta que Claude Code y Alejandro las validen. Lo que depende de resultados todavía no calculados se indica en cada caso.
 
 Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
@@ -151,9 +151,69 @@ Hipótesis de referencia (`docs/protocolo/RESEARCH_PROTOCOL.md`):
 
 **Pendiente.** El cotejo con el RMD del Tesouro (`inbox/lote-e/unresolved.md`). El contraste no pretende reconstruir cada título brasileño.
 
+## 8. Menú de opciones para el resto de las divisas de exportación
+
+**Contexto.** Alejandro planteó (14 de octubre de 2026) qué hacer con las divisas que quedan al exportador después de pagar el derecho en USD. Había pensado en venderlas en el MULC a tipo libre con el Estado como creador de mercado, y duda de que convenga aplicar principios de libre mercado a un activo estratégico en un país periférico con escasez de divisas. Esta sección ofrece un menú de opciones con su literatura. No contiene una recomendación. Los efectos se citan solo como los informan las fuentes, sin cifras propias, y todo queda sin_revisar.
+
+Fuentes del FMI no descargadas: el Integrated Policy Framework (2020) y la Institutional View (2012, revisión 2022) no se pudieron descargar (imf.org devolvió 403). Lo que se cita de ellos proviene del comunicado de prensa 22/97 de 2022, leído en línea, sin archivo ni sha256 (`inbox/lote-a/unresolved.md`).
+
+| Opción | Mecanismo | Literatura y precedentes | Régimen del modelo SFC |
+|---|---|---|---|
+| 1. Liquidación total en el MULC con BCRA o Tesoro como creador de mercado | El exportador vende todo el resto en el mercado de cambios; la autoridad cotiza o respalda precios como operador de última instancia | Mehrling (CLM-A-024); Mosler sobre flotación (CLM-A-029) | Variante de (a) con percepción en USD de (c) |
+| 2. Liquidación parcial (tipo blend) | Una fracción por el MULC y otra por un canal de valores negociables | DNU 28/2023, 80/20 (CLM-A-023); AREAER sobre tipos múltiples y dólar soja (CLM-A-022) | Variante de (a) o (c) con dos precios |
+| 3. Retención por el exportador con libre uso | El exportador decide cuándo y dónde vender, como en Brasil | Lei 14.286/2021 (CLM-F-008, CLM-F-009) | (b), combinable con (c) |
+| 4. Asignación prioritaria a importaciones estratégicas | Divisas entregadas al Estado o vinculadas a exportaciones se destinan con prioridad a bienes de capital e insumos | Corea 1963-1964 (CLM-A-026); Prebisch (CLM-A-028); Diamand y Crovetto (CLM-A-012) | (c) con un bloque de asignación |
+| 5. Medidas prudenciales sobre flujos de capital, sobre 1 o 3 | Encaje no remunerado a ingresos de capital u otras medidas de cuenta de capital | Chile 1991-1998 (CLM-A-025); Ocampo (CLM-A-027); FMI, revisión de la IV de 2022 (comunicado) | Capa sobre (a), (b) o (c) |
+
+### Opción 1. Liquidación total en el MULC con creador de mercado
+
+- **Mecanismo.** El resto del contravalor se liquida en el mercado de cambios. El BCRA o el Tesoro actúa como creador de mercado en un esquema híbrido: los operadores privados hacen el comercio diario y la autoridad sostiene la liquidez en los extremos (Mehrling, CLM-A-024, SRC-0221).
+- **Literatura.** Mehrling distingue tres casos: banco central que fija el precio y absorbe todo el flujo, banco central que se abstiene, y el caso híbrido de operador de última instancia. Mosler (2022) sostiene que el pleno empleo solo puede sostenerse con tipo de cambio flotante y que la flotación conserva reservas (CLM-A-029, SRC-0212).
+- **Efectos según las fuentes.** Mosler asocia la flotación a la conservación de reservas. Sobre traspaso a precios e importaciones de inversión, las fuentes de esta tanda no informan efectos para Argentina.
+- **Riesgos señalados en la literatura.** El comunicado del FMI de 2022 menciona riesgos sistémicos por descalces de moneda ante reversiones de flujos. Prebisch y Diamand describen la restricción de divisas como límite al crecimiento, lo que sugiere tensión con una venta íntegra a precio de mercado en períodos de escasez (interpretación, sin_revisar).
+
+### Opción 2. Liquidación parcial (tipo blend)
+
+- **Mecanismo.** Una fracción se liquida en el MULC y otra por un canal alternativo con otro precio. El DNU 28/2023 fijó 80% por el MLC y 20% mediante compraventa de valores negociables (CLM-A-023, SRC-0220). Según InfoLeg, el DNU 269/2025 lo derogó en abril de 2025 (sin archivo descargado).
+- **Literatura.** El AREAER del FMI registra como prácticas de tipos de cambio múltiples los casos en que los tipos difieren en más de 2%, y describe el tipo preferencial para exportadores de soja en Argentina (CLM-A-022, SRC-0219).
+- **Efectos según las fuentes.** El AREAER clasifica estos esquemas como prácticas de tipos múltiples sujetas al marco del FMI. No se relevaron evaluaciones del efecto del blend sobre reservas o precios.
+- **Riesgos.** Clasificación como práctica de tipos múltiples; brecha entre precios; posibles incentivos a cambiar el momento de liquidar (este último punto es una inferencia y no proviene de las fuentes).
+
+### Opción 3. Retención por el exportador con libre uso (tipo Brasil)
+
+- **Mecanismo.** El exportador puede mantener las divisas en el exterior y venderlas cuando quiera a instituciones autorizadas, a tipo libremente pactado (Lei 14.286/2021, CLM-F-008, CLM-F-009).
+- **Literatura.** Kaltenbrunner y Painceira estudian la integración financiera subordinada de Brasil y la acumulación de reservas desde la jerarquía monetaria (CLM-A-013).
+- **Efectos según las fuentes.** Las fuentes de esta tanda no cuantifican efectos sobre reservas o traspaso a precios. En el modelo, las divisas del exportador quedarían fuera de las reservas salvo que se vendan al sistema.
+- **Riesgos.** Kaltenbrunner y Painceira y Orsi y otros (CLM-A-014) asocian la internacionalización de monedas periféricas con vulnerabilidad externa. Es un argumento de los autores, sin_revisar.
+
+### Opción 4. Asignación prioritaria a importaciones estratégicas
+
+- **Mecanismo.** Una parte de las divisas, ya sea entregada al Estado o vinculada a la exportación, se asigna con prioridad a bienes de capital e insumos para la inversión.
+- **Literatura y precedentes.** Irwin documenta que Corea reintrodujo en 1963 un vínculo exportación-importación en el que los exportadores recibían derechos no transferibles para usar parte de sus divisas en importaciones. El sistema se canceló a fines de 1964 dentro de una simplificación del régimen de asignación (CLM-A-026, SRC-0223). Prebisch (1949) plantea reducir importaciones no esenciales para ampliar las de bienes de capital (CLM-A-028, SRC-0225). Diamand y Crovetto tratan la limitación por insuficiencia de divisas (CLM-A-012). Amsden y Wade, autores centrales de la literatura del Estado desarrollista, no se descargaron (libros sin acceso abierto).
+- **Efectos según las fuentes.** Según el resumen de Irwin, el aumento de las exportaciones coreanas siguió a cambios de política cambiaria y comercial a mediados de los sesenta, incluida una devaluación y una reforma del régimen de divisas impulsadas por presión de EE.UU.; el vínculo exportación-importación aparece como una etapa transitoria. Las fuentes no aportan cifras de efecto sobre la inversión que puedan trasladarse a Argentina.
+- **Riesgos.** El AREAER trataría los tipos o accesos diferenciados como restricciones o prácticas múltiples. Las fuentes de esta tanda no documentan riesgos de captura o de discrecionalidad, aunque son habituales en la literatura (punto pendiente de fuente).
+
+### Opción 5. Medidas prudenciales sobre flujos de capital (sobre 1 o 3)
+
+- **Mecanismo.** Encaje no remunerado u otras medidas sobre ingresos de capital, superpuestos a la opción 1 o a la 3.
+- **Literatura y precedentes.** De Gregorio, Edwards y Valdés evalúan el encaje chileno de 1991 a 1998. Encuentran efectos de largo plazo difíciles de identificar sobre tasas y tipo de cambio, y un efecto más persistente sobre la composición de los ingresos de capital, hacia mayor plazo (CLM-A-025, SRC-0222). Ocampo trata la regulación de la cuenta de capital como instrumento contracíclico y macroprudencial (CLM-A-027, SRC-0224). Según el comunicado del FMI de 2022, la revisión de la IV admite medidas preventivas sobre ingresos de deuda cuando hay descalces de moneda elevados.
+- **Efectos según las fuentes.** Cambio de composición hacia mayor plazo en Chile; efectos pequeños o no significativos sobre el tipo de cambio real.
+- **Riesgos.** Elusión (los autores describen una disputa continua entre autoridades y sector privado) y la condición del FMI de que estas medidas no sustituyan un ajuste macroeconómico necesario.
+
+### Compatibilidad con el modelo de tres regímenes
+
+Las cinco opciones se pueden representar como variantes del régimen (c): todas suponen que el derecho se percibe en USD y difieren en el destino del resto. Las opciones 1 y 2 se acercan al régimen (a) y la 3 al (b). La 4 requiere un bloque de asignación de divisas por tipo de importación, y la 5 una ecuación de flujos de capital con un parámetro de encaje.
+
+### Brechas de esta sección
+
+- Kregel y Vernengo: no se descargó texto propio.
+- FMI, IPF e IV: sin archivo (403).
+- Evaluaciones del blend 2023-2025 sobre reservas y precios: no relevadas.
+- Ninguna fuente de esta tanda informa efectos cuantitativos sobre el traspaso a precios en Argentina.
+
 ## Cuestiones abiertas para Alejandro
 
 - Resueltas el 2026-10-14: regímenes del aporte 6 (arriba), fracción en divisas igual a las alícuotas vigentes, y atribución del aporte 1 a Mosler.
-- Si el régimen (c) mantiene o elimina la obligación de liquidar el resto del contravalor en el mercado de cambios.
+- Destino del resto del contravalor en el régimen (c): Alejandro pidió un menú de opciones (sección 8), sin decisión todavía.
 - Cómo tratar los sectores no relevados en la tabla de alícuotas (carnes, economías regionales, industria, minería) y el crudo con alícuota móvil.
 - Si se busca contacto o permiso para citar a Mosler más allá de sus textos públicos (no se hizo ningún contacto).
