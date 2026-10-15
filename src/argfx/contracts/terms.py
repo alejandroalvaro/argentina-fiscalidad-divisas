@@ -185,11 +185,23 @@ def merge_term_folders(base: Path, overlay: Path, out: Path) -> None:
         if not head_b and not head_o:
             continue
         header = head_b + [c for c in head_o if c not in head_b]
-        kept = [r for r in base_rows if r["instrument_id"] not in replaced]
+        # Each replaced instrument takes the place of its first row in the base; the rest of
+        # the overlay goes at the end, so a merge changes only the rows it has to.
+        incoming: dict[str, list[dict[str, str]]] = defaultdict(list)
+        for r in over_rows:
+            incoming[r["instrument_id"]].append(r)
+        merged: list[dict[str, str]] = []
+        for r in base_rows:
+            iid = r["instrument_id"]
+            if iid not in replaced:
+                merged.append(r)
+            elif iid in incoming:
+                merged.extend(incoming.pop(iid))
+        merged.extend(r for rows_ in incoming.values() for r in rows_)
         with (out / name).open("w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=header, restval="", lineterminator="\n")
             w.writeheader()
-            w.writerows(kept + over_rows)
+            w.writerows(merged)
 
 
 def load_term_sheets(folder: Path) -> list[TermSheet]:
