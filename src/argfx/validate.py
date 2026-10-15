@@ -18,6 +18,7 @@ from typing import Literal
 
 from pydantic import ValidationError
 
+from argfx.contracts.terms import AmortizationRow, RateRow, TermRow, load_term_sheets
 from argfx.schemas import (
     FILE_SCHEMAS,
     SERIES_GLOB,
@@ -32,6 +33,12 @@ from argfx.schemas import (
 
 Severity = Literal["error", "warning"]
 SRC_TOKEN = re.compile(r"SRC-\d{4}")
+# Term sheets for the contract engine (phase 2), optional in any batch.
+TERM_SCHEMAS = {
+    "contratos/terminos.csv": TermRow,
+    "contratos/tasas.csv": RateRow,
+    "contratos/amortizaciones.csv": AmortizationRow,
+}
 
 
 @dataclass
@@ -49,6 +56,7 @@ class Issue:
 @dataclass
 class Batch:
     lote: str
+    path: str = ""
     rows: dict[str, list[tuple[int, Row]]] = field(default_factory=dict)  # file -> (line, model)
 
 
@@ -121,8 +129,11 @@ def _batches(root: Path, issues: list[Issue]) -> tuple[list[Batch], list[str], i
     files: list[str] = []
     rows_read = 0
     for lote_dir in sorted(p for p in root.iterdir() if p.is_dir() and p.name.startswith("lote-")):
-        batch = Batch(lote_dir.name)
-        targets = [(name, lote_dir / name, schema) for name, schema in FILE_SCHEMAS.items()]
+        batch = Batch(lote_dir.name, str(lote_dir))
+        targets = [
+            (name, lote_dir / name, schema)
+            for name, schema in {**FILE_SCHEMAS, **TERM_SCHEMAS}.items()
+        ]
         targets += [
             (p.relative_to(lote_dir).as_posix(), p, SeriesObservation)
             for p in sorted(lote_dir.glob(SERIES_GLOB))
@@ -236,13 +247,21 @@ def _cross_checks(batches: list[Batch], issues: list[Issue]) -> None:
                 )
             )
 
+    instruments = {
+        ins.instrument_id: ins
+        for b in batches
+        for _line, ins in b.rows.get("instruments.csv", [])
+        if isinstance(ins, Instrument)
+    }
     for b in batches:
         for rel, rows in b.rows.items():
             for line, row in rows:
                 if isinstance(row, Claim | Instrument | SeriesObservation):
                     known(b.lote, rel, row.source_id, line)
-            if rel.startswith("tablas/") and not rows:
-                continue
+                if isinstance(row, TermRow | RateRow | AmortizationRow):
+                    for sid in row.source_id.split(";"):
+                        known(b.lote, rel, sid, line)
+        _check_terms(b, instruments, issues)
         _check_manifest(b, sources, issues)
         _check_content(b, issues)
 
@@ -312,6 +331,40 @@ def _check_manifest(b: Batch, sources: dict[str, tuple[str, Source]], issues: li
                     line,
                 )
             )
+
+
+def _check_terms(b: Batch, instruments: dict[str, Instrument], issues: list[Issue]) -> None:
+    """Term sheets must point at a known instrument, start from its SIGADE balance and build."""
+    rel = "contratos/terminos.csv"
+    for line, t in b.rows.get(rel, []):
+        assert isinstance(t, TermRow)
+        ins = instruments.get(t.instrument_id)
+        if ins is None:
+            issues.append(
+                Issue(b.lote, rel, "instrument_id", "error", "unknown_instrument",
+                      f"{t.instrument_id} not in any instruments.csv", line)
+            )  # fmt: skip
+            continue
+        balance = ins.outstanding_principal
+        if balance is None or abs(balance - t.saldo_corte) > 1e-6 * max(1.0, abs(balance)):
+            issues.append(
+                Issue(b.lote, rel, "saldo_corte", "error", "balance_mismatch",
+                      f"{t.saldo_corte} vs outstanding_principal {balance} in instruments.csv",
+                      line)
+            )  # fmt: skip
+    folder = Path(b.path) / "contratos" if b.path else None
+    if (
+        folder
+        and (folder / "terminos.csv").exists()
+        and not any(
+            i.lote == b.lote and i.file.startswith("contratos/") and i.severity == "error"
+            for i in issues
+        )
+    ):
+        try:
+            load_term_sheets(folder)
+        except (ValueError, FileNotFoundError) as exc:
+            issues.append(Issue(b.lote, rel, "", "error", "term_sheet_invalid", str(exc)))
 
 
 def _check_content(b: Batch, issues: list[Issue]) -> None:

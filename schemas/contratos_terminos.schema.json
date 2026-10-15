@@ -1,0 +1,209 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "instrument_id": {
+      "pattern": "^INS-[A-Z]-\\d{4}$",
+      "title": "Instrument Id",
+      "type": "string"
+    },
+    "nombre": {
+      "title": "Nombre",
+      "type": "string"
+    },
+    "deudor": {
+      "title": "Deudor",
+      "type": "string"
+    },
+    "tipo_acreedor": {
+      "enum": [
+        "privado",
+        "multilateral",
+        "bilateral",
+        "BCRA",
+        "sector_publico",
+        "desconocido"
+      ],
+      "title": "Tipo Acreedor",
+      "type": "string"
+    },
+    "residencia_tenedor": {
+      "enum": [
+        "residente",
+        "no_residente",
+        "mixta",
+        "desconocida"
+      ],
+      "title": "Residencia Tenedor",
+      "type": "string"
+    },
+    "moneda_cuenta": {
+      "pattern": "^[A-Z]{3}$",
+      "title": "Moneda Cuenta",
+      "type": "string"
+    },
+    "indexacion": {
+      "enum": [
+        "ninguna",
+        "CER",
+        "UVA",
+        "dolar_linked"
+      ],
+      "title": "Indexacion",
+      "type": "string"
+    },
+    "moneda_liquidacion": {
+      "pattern": "^[A-Z]{3}$",
+      "title": "Moneda Liquidacion",
+      "type": "string"
+    },
+    "estado": {
+      "enum": [
+        "firme",
+        "contingente"
+      ],
+      "title": "Estado",
+      "type": "string"
+    },
+    "fecha_corte": {
+      "format": "date",
+      "title": "Fecha Corte",
+      "type": "string"
+    },
+    "saldo_corte": {
+      "minimum": 0,
+      "title": "Saldo Corte",
+      "type": "number"
+    },
+    "fecha_emision": {
+      "format": "date",
+      "title": "Fecha Emision",
+      "type": "string"
+    },
+    "primer_periodo": {
+      "format": "date",
+      "title": "Primer Periodo",
+      "type": "string"
+    },
+    "vencimiento": {
+      "format": "date",
+      "title": "Vencimiento",
+      "type": "string"
+    },
+    "frecuencia_meses": {
+      "exclusiveMinimum": 0,
+      "title": "Frecuencia Meses",
+      "type": "integer"
+    },
+    "fin_de_mes": {
+      "title": "Fin De Mes",
+      "type": "boolean"
+    },
+    "base": {
+      "enum": [
+        "30/360",
+        "ACT/365",
+        "ACT/360",
+        "ACT/ACT"
+      ],
+      "title": "Base",
+      "type": "string"
+    },
+    "tipo_tasa": {
+      "enum": [
+        "fija",
+        "fija_por_periodo",
+        "flotante",
+        "cero"
+      ],
+      "title": "Tipo Tasa",
+      "type": "string"
+    },
+    "indice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Indice"
+    },
+    "margen": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Margen"
+    },
+    "multiplicador": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Multiplicador"
+    },
+    "capitaliza": {
+      "title": "Capitaliza",
+      "type": "boolean"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}(;SRC-\\d{4})*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "referencia": {
+      "title": "Referencia",
+      "type": "string"
+    },
+    "notas": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notas"
+    }
+  },
+  "required": [
+    "instrument_id",
+    "nombre",
+    "deudor",
+    "tipo_acreedor",
+    "residencia_tenedor",
+    "moneda_cuenta",
+    "indexacion",
+    "moneda_liquidacion",
+    "estado",
+    "fecha_corte",
+    "saldo_corte",
+    "fecha_emision",
+    "primer_periodo",
+    "vencimiento",
+    "frecuencia_meses",
+    "fin_de_mes",
+    "base",
+    "tipo_tasa",
+    "capitaliza",
+    "source_id",
+    "referencia"
+  ],
+  "title": "TermRow",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

@@ -21,6 +21,9 @@ Research pipeline for an academic paper on collecting Argentine export duties in
 - SIGADE amounts are in USD units; Secretaría de Finanzas cuadros (A.1.x...) are in thousands of USD.
 - Originals are immutable and content-addressed by SHA-256 (`argfx.storage.put_immutable`). Register them in `manifests/` via `argfx ingest`.
 
+- Contract engine (phase 2): contract flows, scenario valuations and buckets stay separate. Engine flows come from `contratos/` term sheets; instruments without terms use the SIGADE projection, labeled `source=sigade`. See `docs/FASE2_MOTOR.md`.
+- SIGADE operations are keyed by (name, loan currency, rate type); names alone repeat. SIGADE dates have two-digit years: take Año/Mes/Día.
+
 ## Storage
 
 - Git: code, Markdown, tests, small CSV manifests. No PDFs, Parquet, DuckDB, zips or Git LFS.
@@ -34,6 +37,7 @@ Research pipeline for an academic paper on collecting Argentine export duties in
 make install   # uv sync
 make check     # ruff + pytest (offline)
 make storage-check
+uv run argfx calendario   # phase 2: obligations calendar into data/calendario/
 ```
 
 ## Git
