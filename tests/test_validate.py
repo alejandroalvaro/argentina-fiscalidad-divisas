@@ -147,3 +147,48 @@ def test_report_files(tmp_path: Path) -> None:
     csv_path, md_path = write_report(validate_inbox(tmp_path), tmp_path / "out")
     assert "unknown_source" in md_path.read_text()
     assert len(list(csv.DictReader(csv_path.open()))) == 1
+
+
+def test_term_sheets_checked_against_instruments(tmp_path: Path) -> None:
+    make_batch(tmp_path, "lote-c", [source("SRC-0001")], [], [manifest("SRC-0001")])
+    ins_cols = [
+        "instrument_id", "issuer", "currency_of_account", "currency_of_payment", "indexation",
+        "outstanding_principal", "as_of_date", "source_id", "review_status",
+    ]  # fmt: skip
+    write(tmp_path / "lote-c" / "instruments.csv", ins_cols, [{
+        "instrument_id": "INS-C-0001", "issuer": "Tesoro", "currency_of_account": "USD",
+        "currency_of_payment": "USD", "indexation": "ninguna", "outstanding_principal": "100",
+        "as_of_date": "2026-06-30", "source_id": "SRC-0001",
+        "review_status": "candidato_sin_revisar",
+    }])  # fmt: skip
+    term = {
+        "instrument_id": "INS-C-0001", "nombre": "x", "deudor": "Tesoro",
+        "tipo_acreedor": "desconocido", "residencia_tenedor": "desconocida",
+        "moneda_cuenta": "USD", "indexacion": "ninguna", "moneda_liquidacion": "USD",
+        "estado": "firme", "fecha_corte": "2026-06-30", "saldo_corte": "100",
+        "fecha_emision": "2026-01-01", "primer_periodo": "2026-07-01",
+        "vencimiento": "2027-01-01", "frecuencia_meses": "6", "fin_de_mes": "false",
+        "base": "30/360", "tipo_tasa": "cero", "indice": "", "margen": "", "multiplicador": "",
+        "capitaliza": "false", "source_id": "SRC-0001", "referencia": "p. 1", "notas": "",
+    }  # fmt: skip
+    d = tmp_path / "lote-g" / "contratos"
+    make_batch(tmp_path, "lote-g", [], [], [])
+    write(d / "terminos.csv", list(term), [term])
+    write(d / "tasas.csv", ["instrument_id", "desde", "tasa", "source_id", "referencia"], [])
+    amort_cols = ["instrument_id", "fecha", "fraccion", "source_id", "referencia"]
+    write(d / "amortizaciones.csv", amort_cols, [])
+    assert "term_sheet_invalid" not in codes(tmp_path)
+    assert "balance_mismatch" not in codes(tmp_path)
+
+    write(d / "terminos.csv", list(term), [term | {"saldo_corte": "90"}])
+    assert codes(tmp_path)["balance_mismatch"] == 1
+
+    write(d / "terminos.csv", list(term), [term | {"instrument_id": "INS-C-0002"}])
+    assert codes(tmp_path)["unknown_instrument"] == 1
+
+    write(d / "terminos.csv", list(term), [term])
+    write(d / "amortizaciones.csv", amort_cols, [{
+        "instrument_id": "INS-C-0001", "fecha": "2027-01-01", "fraccion": "0.5",
+        "source_id": "SRC-0001", "referencia": "p. 2",
+    }])  # fmt: skip
+    assert codes(tmp_path)["term_sheet_invalid"] == 1

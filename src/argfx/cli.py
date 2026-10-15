@@ -100,6 +100,20 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 1 if report.errors else 0
 
 
+def cmd_calendario(args: argparse.Namespace) -> int:
+    from datetime import date
+
+    from argfx.contracts.calendar import build_calendar
+
+    counts = build_calendar(
+        args.terminos, args.sigade, args.instrumentos, date.fromisoformat(args.corte), args.out
+    )
+    for k, v in counts.items():
+        print(f"{k}: {v:,}")
+    print(f"tablas en {args.out}/")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -130,6 +144,14 @@ def build_parser() -> argparse.ArgumentParser:
     val.add_argument("inbox", type=Path, help="directory containing lote-*/ folders")
     val.add_argument("--out", type=Path, help="write resumen.md and issues.csv here")
     val.set_defaults(func=cmd_validate)
+
+    cal = sub.add_parser("calendario", help="contract engine: obligations calendar by bucket")
+    cal.add_argument("--corte", default="2026-06-30", help="cut-off date (YYYY-MM-DD)")
+    cal.add_argument("--terminos", type=Path, default=Path("contratos"))
+    cal.add_argument("--sigade", type=Path, default=Path("inbox/lote-c/tablas_sigade"))
+    cal.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
+    cal.add_argument("--out", type=Path, default=Path("data/calendario"))
+    cal.set_defaults(func=cmd_calendario)
     return parser
 
 

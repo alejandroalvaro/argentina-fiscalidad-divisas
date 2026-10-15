@@ -25,10 +25,12 @@ storage-check:
 clean-cache:
 	rm -rf data/cache
 
-# Snapshot every grok/* branch's inbox/ into data/inbox and validate it (no checkout needed)
+# Snapshot main's inbox/, overlay every grok/* branch's inbox/, and validate (no checkout needed).
+# Merged batches are included so new batches can cite their sources and instruments.
 validate-grok:
-	git fetch -q origin
+	git fetch -q --prune origin
 	rm -rf data/inbox && mkdir -p data/inbox
+	git archive origin/main inbox | tar -x -C data/inbox
 	for b in $$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/grok/); do \
 		if git cat-file -e $$b:inbox 2>/dev/null; then git archive $$b inbox | tar -x -C data/inbox; fi; done
 	uv run argfx validate data/inbox/inbox --out data/validacion
