@@ -8,7 +8,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from argfx.contracts.terms import AmortizationRow, RateRow, TermRow
+from argfx.contracts.terms import AmortizationRow, DateRow, RateRow, TermRow
 from argfx.schemas import Claim, Instrument, ManifestRow, SeriesObservation, Source
 
 OUT = Path(__file__).resolve().parent.parent / "schemas"
@@ -21,6 +21,7 @@ MODELS = {
     "contratos_terminos": TermRow,
     "contratos_tasas": RateRow,
     "contratos_amortizaciones": AmortizationRow,
+    "contratos_fechas": DateRow,
 }
 
 if __name__ == "__main__":

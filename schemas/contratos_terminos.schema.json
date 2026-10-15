@@ -98,9 +98,15 @@
       "title": "Fin De Mes",
       "type": "boolean"
     },
+    "periodo_final_corto": {
+      "default": false,
+      "title": "Periodo Final Corto",
+      "type": "boolean"
+    },
     "base": {
       "enum": [
         "30/360",
+        "30E/360",
         "ACT/365",
         "ACT/360",
         "ACT/ACT"
@@ -153,6 +159,30 @@
       ],
       "default": null,
       "title": "Multiplicador"
+    },
+    "tope_indice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tope Indice"
+    },
+    "tope_margen": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tope Margen"
     },
     "capitaliza": {
       "title": "Capitaliza",

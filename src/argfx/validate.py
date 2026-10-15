@@ -18,7 +18,7 @@ from typing import Literal
 
 from pydantic import ValidationError
 
-from argfx.contracts.terms import AmortizationRow, RateRow, TermRow, load_term_sheets
+from argfx.contracts.terms import AmortizationRow, DateRow, RateRow, TermRow, load_term_sheets
 from argfx.schemas import (
     FILE_SCHEMAS,
     SERIES_GLOB,
@@ -38,6 +38,7 @@ TERM_SCHEMAS = {
     "contratos/terminos.csv": TermRow,
     "contratos/tasas.csv": RateRow,
     "contratos/amortizaciones.csv": AmortizationRow,
+    "contratos/fechas.csv": DateRow,
 }
 
 

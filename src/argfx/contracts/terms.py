@@ -3,6 +3,8 @@
 - `terminos.csv`: one row per instrument (dimensions, balance at the cut-off, schedule, rate type).
 - `tasas.csv`: fixed-rate steps (instrument_id, desde, tasa).
 - `amortizaciones.csv`: amortization dates and fractions of the original face.
+- `fechas.csv` (optional): the full list of period ends, for instruments whose norm enumerates
+  them instead of following a grid. It replaces primer_periodo/frecuencia for that instrument.
 
 A blank cell is unknown. The engine refuses a term sheet with missing required terms instead of
 guessing them.
@@ -46,11 +48,14 @@ class TermRow(BaseModel):
     vencimiento: date
     frecuencia_meses: int = Field(gt=0)
     fin_de_mes: bool
+    periodo_final_corto: bool = False
     base: DayCount
     tipo_tasa: Literal["fija", "fija_por_periodo", "flotante", "cero"]
     indice: OptStr = None
     margen: OptFloat = None
     multiplicador: OptFloat = None
+    tope_indice: OptStr = None
+    tope_margen: OptFloat = None
     capitaliza: bool
     source_id: str = Field(pattern=SOURCE_REFS)
     referencia: str
@@ -77,6 +82,15 @@ class AmortizationRow(BaseModel):
     referencia: str
 
 
+class DateRow(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    instrument_id: str = Field(pattern=INSTRUMENT_ID)
+    fecha: date
+    source_id: str = Field(pattern=SOURCE_ID)
+    referencia: str
+
+
 def _read(path: Path, model: type[BaseModel]) -> list:  # type: ignore[type-arg]
     with path.open(newline="", encoding="utf-8") as fh:
         return [model.model_validate(r) for r in csv.DictReader(fh)]
@@ -88,8 +102,14 @@ def _rate(t: TermRow, steps: list[RateRow]) -> Rate:
     if t.tipo_tasa == "flotante":
         if not t.indice:
             raise ValueError(f"{t.instrument_id}: floating rate without index")
+        if t.tope_indice is None and t.tope_margen is not None:
+            raise ValueError(f"{t.instrument_id}: tope_margen without tope_indice")
         return FloatingRate(
-            t.indice, t.margen or 0.0, 1.0 if t.multiplicador is None else t.multiplicador
+            t.indice,
+            t.margen or 0.0,
+            1.0 if t.multiplicador is None else t.multiplicador,
+            cap_index=t.tope_indice,
+            cap_spread=t.tope_margen or 0.0,
         )
     if not steps:
         raise ValueError(f"{t.instrument_id}: fixed rate without rows in tasas.csv")
@@ -97,6 +117,22 @@ def _rate(t: TermRow, steps: list[RateRow]) -> Rate:
         tuple(sorted((s.desde, s.tasa) for s in steps)),
         per_period=t.tipo_tasa == "fija_por_periodo",
     )
+
+
+def _period_dates(t: TermRow, explicit: list[date] | None) -> tuple[date, ...]:
+    if explicit:
+        dates = sorted(set(explicit))
+        if len(dates) != len(explicit):
+            raise ValueError(f"{t.instrument_id}: repeated date in fechas.csv")
+        if dates[-1] != t.vencimiento:
+            raise ValueError(f"{t.instrument_id}: fechas.csv does not end at maturity")
+        return tuple(dates)
+    return tuple(
+        regular_dates(
+            t.primer_periodo, t.vencimiento, t.frecuencia_meses, t.fin_de_mes,
+            final_stub=t.periodo_final_corto,
+        )
+    )  # fmt: skip
 
 
 def load_term_sheets(folder: Path) -> list[TermSheet]:
@@ -107,6 +143,10 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
     amort: dict[str, list[AmortizationRow]] = defaultdict(list)
     for a in _read(folder / "amortizaciones.csv", AmortizationRow):
         amort[a.instrument_id].append(a)
+    explicit: dict[str, list[date]] = defaultdict(list)
+    if (folder / "fechas.csv").exists():
+        for r in _read(folder / "fechas.csv", DateRow):
+            explicit[r.instrument_id].append(r.fecha)
 
     sheets = []
     seen: set[str] = set()
@@ -136,14 +176,13 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
                 obligation=obligation,
                 as_of=t.fecha_corte,
                 outstanding=t.saldo_corte,
-                period_dates=tuple(
-                    regular_dates(t.primer_periodo, t.vencimiento, t.frecuencia_meses, t.fin_de_mes)
-                ),
+                period_dates=_period_dates(t, explicit.get(t.instrument_id)),
                 accrual_start=t.fecha_emision,
                 day_count=t.base,
                 rate=_rate(t, rates.get(t.instrument_id, [])),
                 amortization=tuple(sorted((a.fecha, a.fraccion) for a in amortization)),
                 capitalizes=t.capitaliza,
+                frequency_months=t.frecuencia_meses,
                 source_id=t.source_id,
                 reference=t.referencia,
                 notes=(t.notas,) if t.notas else (),

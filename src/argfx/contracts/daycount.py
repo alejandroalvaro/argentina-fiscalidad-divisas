@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date
 from typing import Literal
 
-DayCount = Literal["30/360", "ACT/365", "ACT/360", "ACT/ACT"]
+DayCount = Literal["30/360", "30E/360", "ACT/365", "ACT/360", "ACT/ACT"]
 
 
 def year_fraction(start: date, end: date, convention: DayCount) -> float:
@@ -15,6 +15,11 @@ def year_fraction(start: date, end: date, convention: DayCount) -> float:
         # US bond basis (30/360 ISDA): day 31 becomes 30; the end day only when the start is 30.
         d1 = min(start.day, 30)
         d2 = 30 if end.day == 31 and d1 == 30 else end.day
+        days = 360 * (end.year - start.year) + 30 * (end.month - start.month) + (d2 - d1)
+        return days / 360
+    if convention == "30E/360":
+        # Months of thirty days: day 31 counts as 30 at both ends (Argentine LECAP and BONCAP).
+        d1, d2 = min(start.day, 30), min(end.day, 30)
         days = 360 * (end.year - start.year) + 30 * (end.month - start.month) + (d2 - d1)
         return days / 360
     if convention == "ACT/365":

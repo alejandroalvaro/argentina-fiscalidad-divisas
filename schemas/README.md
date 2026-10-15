@@ -28,6 +28,7 @@ La validación no corrige nada. Cada problema queda registrado con el archivo, l
 | `contratos/terminos.csv` | `TermRow` | Cuando el lote trae términos contractuales |
 | `contratos/tasas.csv` | `RateRow` | Junto con `terminos.csv` (puede tener sólo el encabezado) |
 | `contratos/amortizaciones.csv` | `AmortizationRow` | Junto con `terminos.csv` (puede tener sólo el encabezado) |
+| `contratos/fechas.csv` | `DateRow` | Optativa: fechas de fin de período listadas por la norma |
 
 Los términos contractuales tienen controles propios: el `instrument_id` debe existir en algún `instruments.csv`, `saldo_corte` debe coincidir con su `outstanding_principal`, y el conjunto debe poder armarse como término (fracciones de amortización que suman 1, fechas dentro del calendario de pagos). El significado de cada columna está en `docs/FASE2_MOTOR.md`.
 
