@@ -99,3 +99,9 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - En la fase 3 se reconstruye el resultado financiero con intereses devengados y se lo compara con el publicado, citando la metodología oficial de registro de intereses capitalizados y de descuentos de emisión.
 - La comparación de costo usa las tasas de las licitaciones y se presenta como estimación, con sus supuestos explícitos.
 - El texto describe lo que muestran los números y deja la valoración al lector, como pide el protocolo.
+
+## D-010. Valor nominal de los instrumentos CER en pesos (2026-10-15)
+
+**Decisión.** Las operaciones sobre instrumentos ajustados por CER se cargan con el valor nominal en pesos, tal como lo publican los resultados de licitación y las resoluciones.
+
+**Aplicación.** El saldo de esos instrumentos sigue en unidades CER, como en SIGADE. La columna `indice_inicial` de `contratos/terminos.csv` (el CER de la fecha de referencia de la emisión) convierte los pesos en unidades, y el cargador rechaza operaciones sobre instrumentos CER o UVA si falta.
