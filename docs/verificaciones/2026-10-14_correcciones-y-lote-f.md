@@ -72,3 +72,7 @@ El documento cumple D-003: separa lo que existe en la literatura de lo que propo
   - La clasificación de NTN-B1 en `ipca_precos` se apoya en el Decreto 12.814/2026, art. 8, inc. V. La copia de Grok es idéntica a la de planalto.gov.br salvo el token F5, y quedó en R2.
   - Falta registrar SRC-0426 en `sources.csv` y su fila `original` en `documents_manifest.csv`. **Espera esa corrección.**
 - **`grok/aportes`.** Se incorpora junto con el lote E.
+
+## Tercera ronda
+
+`grok/lote-e` agregó SRC-0426 a `sources.csv` (URL de planalto.gov.br, sha256 `7497eae0…2774`, igual al objeto en R2) y su fila `original` al manifiesto. La validación da 0 errores en todas las ramas. Antes del squash se quitaron de la rama los dos originales de `documentos/` (SRC-0424 y SRC-0426), que ya están en R2. **Se incorporan `grok/lote-e` y `grok/aportes`.** `main` queda con los seis lotes: 26 archivos, 19.714 filas y 0 errores.
