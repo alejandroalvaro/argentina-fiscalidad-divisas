@@ -1,0 +1,6 @@
+instrument_id,bono,fecha_licitacion,margen_oficial,margen_cargado_del_nombre,coincide,source_id,claim_id
+INS-C-0370,TMF27,2026-02-11,0.065,0.065,true,SRC-0618,CLM-G-043
+INS-C-0368,TMG27,2026-03-27,0.06,0.06,true,SRC-0619,CLM-G-044
+INS-C-0369,TMF28,2026-04-15,0.065,0.065,true,SRC-0620,CLM-G-045
+INS-C-0371,TMG28,2026-04-28,0.069,0.069,true,SRC-0621,CLM-G-046
+INS-C-0367,TML27,2026-06-26,0.054,0.054,true,SRC-0622,CLM-G-047
