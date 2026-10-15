@@ -107,7 +107,7 @@ El lote G agregó 70 instrumentos, de modo que `contratos/` cubre 74. El motor l
 | Coinciden | 47 | |
 | Flotantes sin trayectoria | 13 | BADLAR, rendimiento de las reservas y Bocon PR17: el interés queda sin monto. La amortización y los flujos con monto coinciden |
 | LECAP y BONCAP a tasa fija | 9 | Diferencia esperable: SIGADE no proyecta la capitalización posterior al corte. El motor paga entre 5% y 37% más al vencimiento, en total unos 14,1 billones de pesos, en línea con los 14,2 billones que calcula Grok |
-| BONCAP TAMAR | 5 | Cargados como un solo período con pago al vencimiento, sin capitalización mensual (ver pendientes) |
+| BONCAP TAMAR | 5 | Capitalizan por mes desde la emisión (lote G2). El pago al vencimiento queda sin monto porque depende de la TAMAR promedio de todo el plazo |
 | Discount CER 2033 | 1 | Diferencia relativa de 2,1 por cien mil: SIGADE no reparte las cuotas en partes exactamente iguales |
 
 Las correcciones que Claude Code hizo sobre la entrega están en `docs/verificaciones/2026-10-15_lotes-g-h.md`.
@@ -115,7 +115,7 @@ Las correcciones que Claude Code hizo sobre la entrega están en `docs/verificac
 ## Lo que falta
 
 - **Términos para el resto de los títulos.** Quedan 51 operaciones del lote G sin cargar (duales, Par, BONAR USD con fechas listadas, letras vencidas y antiguas); ver `inbox/lote-g/unresolved.md`.
-- **BONCAP TAMAR.** Capitalizan por mes a TAMAR TEM más margen (CLM-G-020). Falta cargarlos con períodos mensuales, como los de tasa fija, y definir cómo la TAMAR anual se convierte en TEM según la norma de cada emisión.
+- **BONCAP TAMAR.** Los términos ya están anclados en la emisión (lote G2). La norma (RC 9, 16, 21, 23 y 36 de 2026; imágenes de la RC 36/2026 en R2) fija VPV = VNO × (1 + TAMAR TEM)^((DÍAS/360) × 12), con TAMAR TEM = [(1 + (TAMAR + MARGEN)/(365/32))^(365/32)]^(1/12) − 1 y TAMAR igual al promedio simple desde 10 días hábiles antes de la emisión hasta 10 días hábiles antes del vencimiento. El motor todavía no implementa esa conversión ni el promedio de todo el plazo. Como el saldo de SIGADE incorpora la TAMAR transcurrida hasta el corte, hará falta además el valor nominal original para aplicar la fórmula exacta. Se resuelve antes de la fase 4, junto con las trayectorias de TAMAR; hasta entonces el pago queda sin monto.
 - **Duales.** El módulo de opciones existe, pero `contratos/` todavía no tiene una forma de cargar las dos ramas. Hasta entonces, los duales quedan con la proyección de SIGADE.
 - **CER con rezago y días hábiles.** El motor no aplica el rezago de 10 días hábiles del CER ni ajusta las fechas por feriados. Con el escenario congelado no cambia nada; con trayectorias de CER sí, y hay que agregarlo antes de la fase 4.
 - **Préstamos de organismos.** Los préstamos a tasa SOFR quedan con la proyección de SIGADE, que congela la tasa al corte. Para la fase 4 hacen falta trayectorias de SOFR.
