@@ -1,0 +1,208 @@
+{
+  "additionalProperties": false,
+  "description": "Second leg of a dual. Its balance is the first leg's times `factor_saldo` (CER units times\nthe issue CER gives pesos of face, for instance); `saldo_es_valor_nominal` marks a balance\nthat the engine must still capitalize from issue.",
+  "properties": {
+    "instrument_id": {
+      "pattern": "^INS-[A-Z]-\\d{4}$",
+      "title": "Instrument Id",
+      "type": "string"
+    },
+    "moneda_cuenta": {
+      "pattern": "^[A-Z]{3}$",
+      "title": "Moneda Cuenta",
+      "type": "string"
+    },
+    "indexacion": {
+      "enum": [
+        "ninguna",
+        "CER",
+        "UVA",
+        "dolar_linked"
+      ],
+      "title": "Indexacion",
+      "type": "string"
+    },
+    "tipo_tasa": {
+      "enum": [
+        "fija",
+        "fija_por_periodo",
+        "flotante",
+        "cero"
+      ],
+      "title": "Tipo Tasa",
+      "type": "string"
+    },
+    "tasa": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tasa"
+    },
+    "indice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Indice"
+    },
+    "margen": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Margen"
+    },
+    "multiplicador": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Multiplicador"
+    },
+    "tope_indice": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tope Indice"
+    },
+    "tope_margen": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tope Margen"
+    },
+    "tem_dias": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tem Dias"
+    },
+    "promedio_plazo": {
+      "default": false,
+      "title": "Promedio Plazo",
+      "type": "boolean"
+    },
+    "capitaliza": {
+      "title": "Capitaliza",
+      "type": "boolean"
+    },
+    "base": {
+      "enum": [
+        "30/360",
+        "30E/360",
+        "ACT/365",
+        "ACT/360",
+        "ACT/ACT"
+      ],
+      "title": "Base",
+      "type": "string"
+    },
+    "primer_periodo": {
+      "format": "date",
+      "title": "Primer Periodo",
+      "type": "string"
+    },
+    "frecuencia_meses": {
+      "exclusiveMinimum": 0,
+      "title": "Frecuencia Meses",
+      "type": "integer"
+    },
+    "fin_de_mes": {
+      "title": "Fin De Mes",
+      "type": "boolean"
+    },
+    "periodo_final_corto": {
+      "default": false,
+      "title": "Periodo Final Corto",
+      "type": "boolean"
+    },
+    "factor_saldo": {
+      "exclusiveMinimum": 0,
+      "title": "Factor Saldo",
+      "type": "number"
+    },
+    "saldo_es_valor_nominal": {
+      "title": "Saldo Es Valor Nominal",
+      "type": "boolean"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}(;SRC-\\d{4})*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "referencia": {
+      "title": "Referencia",
+      "type": "string"
+    },
+    "notas": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notas"
+    }
+  },
+  "required": [
+    "instrument_id",
+    "moneda_cuenta",
+    "indexacion",
+    "tipo_tasa",
+    "capitaliza",
+    "base",
+    "primer_periodo",
+    "frecuencia_meses",
+    "fin_de_mes",
+    "factor_saldo",
+    "saldo_es_valor_nominal",
+    "source_id",
+    "referencia"
+  ],
+  "title": "DualRow",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

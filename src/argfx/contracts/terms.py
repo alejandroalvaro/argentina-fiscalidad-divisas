@@ -5,6 +5,8 @@
 - `amortizaciones.csv`: amortization dates and fractions of the original face.
 - `fechas.csv` (optional): the full list of period ends, for instruments whose norm enumerates
   them instead of following a grid. It replaces primer_periodo/frecuencia for that instrument.
+- `duales.csv` (optional): the second leg of each dual, one row per instrument. The first leg is
+  the row in `terminos.csv`; the dual pays the larger of the two in the settlement currency.
 - `operaciones.csv` (optional): issues, reopenings, buybacks and swaps after the cut-off, in
   original face value (D-008). An instrument issued after the cut-off has saldo_corte 0 and an
   `emision` row on its issue date.
@@ -17,9 +19,10 @@ from __future__ import annotations
 
 import csv
 from collections import defaultdict
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -27,7 +30,9 @@ from argfx.contracts.daycount import DayCount
 from argfx.contracts.engine import FixedRate, FloatingRate, Rate, TermSheet, ZeroRate
 from argfx.contracts.model import CreditorType, Indexation, Obligation, Residency, Status
 from argfx.contracts.schedule import regular_dates
-from argfx.schemas import INSTRUMENT_ID, SOURCE_ID, OptFloat, OptStr
+from argfx.schemas import INSTRUMENT_ID, SOURCE_ID, Opt, OptFloat, OptStr
+
+OptInt = Annotated[int | None, Opt]
 
 SOURCE_REFS = r"^SRC-\d{4}(;SRC-\d{4})*$"
 
@@ -60,6 +65,10 @@ class TermRow(BaseModel):
     tope_indice: OptStr = None
     tope_margen: OptFloat = None
     capitaliza: bool
+    tem_dias: OptInt = Field(default=None, gt=0)
+    """Floating rates: days of the compounding that turns the annual rate into a TEM (TAMAR: 32)."""
+    promedio_plazo: bool = False
+    """Floating rates: the index is averaged over the whole term, not period by period."""
     indice_inicial: OptFloat = Field(default=None, gt=0)
     """CER or UVA of the issue date, the base of SIGADE's index units. Operations are published
     in pesos of face value; dividing by it gives the units in which saldo_corte is kept."""
@@ -122,7 +131,39 @@ def _read(path: Path, model: type[BaseModel]) -> list:  # type: ignore[type-arg]
         return [model.model_validate(r) for r in csv.DictReader(fh)]
 
 
-def _rate(t: TermRow, steps: list[RateRow]) -> Rate:
+class DualRow(BaseModel):
+    """Second leg of a dual. Its balance is the first leg's times `factor_saldo` (CER units times
+    the issue CER gives pesos of face, for instance); `saldo_es_valor_nominal` marks a balance
+    that the engine must still capitalize from issue."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    instrument_id: str = Field(pattern=INSTRUMENT_ID)
+    moneda_cuenta: str = Field(pattern=r"^[A-Z]{3}$")
+    indexacion: Indexation
+    tipo_tasa: Literal["fija", "fija_por_periodo", "flotante", "cero"]
+    tasa: OptFloat = None
+    indice: OptStr = None
+    margen: OptFloat = None
+    multiplicador: OptFloat = None
+    tope_indice: OptStr = None
+    tope_margen: OptFloat = None
+    tem_dias: OptInt = Field(default=None, gt=0)
+    promedio_plazo: bool = False
+    capitaliza: bool
+    base: DayCount
+    primer_periodo: date
+    frecuencia_meses: int = Field(gt=0)
+    fin_de_mes: bool
+    periodo_final_corto: bool = False
+    factor_saldo: float = Field(gt=0)
+    saldo_es_valor_nominal: bool
+    source_id: str = Field(pattern=SOURCE_REFS)
+    referencia: str
+    notas: OptStr = None
+
+
+def _rate(t: TermRow | DualRow, steps: list[RateRow]) -> Rate:
     if t.tipo_tasa == "cero":
         return ZeroRate()
     if t.tipo_tasa == "flotante":
@@ -136,9 +177,11 @@ def _rate(t: TermRow, steps: list[RateRow]) -> Rate:
             1.0 if t.multiplicador is None else t.multiplicador,
             cap_index=t.tope_indice,
             cap_spread=t.tope_margen or 0.0,
+            tem_days=t.tem_dias,
+            whole_term=t.promedio_plazo,
         )
     if not steps:
-        raise ValueError(f"{t.instrument_id}: fixed rate without rows in tasas.csv")
+        raise ValueError(f"{t.instrument_id}: fixed rate without rows in tasas.csv or a tasa")
     return FixedRate(
         tuple(sorted((s.desde, s.tasa) for s in steps)),
         per_period=t.tipo_tasa == "fija_por_periodo",
@@ -161,7 +204,10 @@ def _period_dates(t: TermRow, explicit: list[date] | None) -> tuple[date, ...]:
     )  # fmt: skip
 
 
-TERM_FILES = ("terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv", "operaciones.csv")
+TERM_FILES = (
+    "terminos.csv", "tasas.csv", "amortizaciones.csv", "fechas.csv", "operaciones.csv",
+    "duales.csv",
+)  # fmt: skip
 
 
 def merge_term_folders(base: Path, overlay: Path, out: Path) -> None:
@@ -291,3 +337,50 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
     if unknown:
         raise ValueError(f"rows for instruments not in terminos.csv: {unknown}")
     return sheets
+
+
+def load_duals(folder: Path, sheets: list[TermSheet]) -> dict[str, TermSheet]:
+    """Second legs from `duales.csv`, keyed by instrument, built on the first leg's term sheet."""
+    path = folder / "duales.csv"
+    if not path.exists():
+        return {}
+    by_id = {ts.obligation.instrument_id: ts for ts in sheets}
+    legs: dict[str, TermSheet] = {}
+    for d in _read(path, DualRow):
+        first = by_id.get(d.instrument_id)
+        if first is None:
+            raise ValueError(f"{d.instrument_id}: dual leg without a row in terminos.csv")
+        if d.instrument_id in legs:
+            raise ValueError(f"{d.instrument_id}: more than one row in duales.csv")
+        if d.tipo_tasa in ("fija", "fija_por_periodo") and d.tasa is None:
+            raise ValueError(f"{d.instrument_id}: fixed second leg without tasa")
+        steps = (
+            [RateRow(instrument_id=d.instrument_id, desde=first.accrual_start, tasa=d.tasa,
+                     source_id=d.source_id.split(";")[0], referencia=d.referencia)]
+            if d.tasa is not None else []
+        )  # fmt: skip
+        maturity = first.period_dates[-1]
+        dates = tuple(
+            regular_dates(d.primer_periodo, maturity, d.frecuencia_meses, d.fin_de_mes,
+                          final_stub=d.periodo_final_corto)
+        )  # fmt: skip
+        legs[d.instrument_id] = replace(
+            first,
+            obligation=replace(
+                first.obligation, currency_of_account=d.moneda_cuenta, indexation=d.indexacion
+            ),
+            outstanding=first.outstanding * d.factor_saldo,
+            outstanding_is_face=d.saldo_es_valor_nominal,
+            period_dates=dates,
+            day_count=d.base,
+            rate=_rate(d, steps),
+            amortization=((maturity, 1.0),) if len(first.amortization) == 1 else first.amortization,
+            capitalizes=d.capitaliza,
+            frequency_months=d.frecuencia_meses,
+            listed_dates=False,
+            face_changes=tuple((c, v * d.factor_saldo) for c, v in first.face_changes),
+            source_id=d.source_id,
+            reference=d.referencia,
+            notes=(d.notas,) if d.notas else (),
+        )
+    return legs

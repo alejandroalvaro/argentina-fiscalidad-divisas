@@ -188,6 +188,37 @@
       "title": "Capitaliza",
       "type": "boolean"
     },
+    "tem_dias": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tem Dias"
+    },
+    "promedio_plazo": {
+      "default": false,
+      "title": "Promedio Plazo",
+      "type": "boolean"
+    },
+    "indice_inicial": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Indice Inicial"
+    },
     "source_id": {
       "pattern": "^SRC-\\d{4}(;SRC-\\d{4})*$",
       "title": "Source Id",
