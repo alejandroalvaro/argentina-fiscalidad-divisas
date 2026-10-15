@@ -14,7 +14,7 @@ Se creó un lote nuevo (Lote F, rama grok/lote-f-regimenes, carpeta inbox/lote-f
 - Crudo: la alícuota efectiva depende del precio internacional (PI) y no se calculó. El texto del Decreto 59/2026 en Boletín Oficial no se descargó; se usa la descripción de la Res. SE 42/2026.
 - Moneda de pago en Argentina (pesos) y obligación de liquidación BCRA: no se descargaron las normas ARCA ni BCRA en este lote. Quedan como planteo de trabajo.
 - Brasil: los porcentajes de cobertura cambial del período 2006 a 2008 (resoluciones CMN posteriores a la Lei 11.371) no se verificaron con texto primario. No se afirma ninguna cifra.
-- SRC-0508: no se registró la URL exacta de descarga del cuadro comparativo del BCB.
+- SRC-0508: corregido el 2026-10-14. La URL directa es https://www.bcb.gov.br/rex/RMCCI/Ftp/comparativo_marco_2005.pdf; la nueva descarga tiene el mismo sha256 que el archivo original.
 - La vigencia del 12% brasileño sobre crudo hasta alrededor del 6 de noviembre de 2026 es un cálculo (8 de septiembre más 60 días) y no un dato publicado.
 - Una medida cautelar judicial sobre el impuesto al crudo y su revocación el 31 de agosto solo constan en prensa (Poder360), no en fuente primaria.
 
