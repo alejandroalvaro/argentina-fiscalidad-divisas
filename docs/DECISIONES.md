@@ -74,3 +74,27 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - Las reglas del fondo en (d) (cuándo acumula, cuándo y para qué se usa, su tope) siguen abiertas. No se fijan por defecto; se definen antes de la fase 4 a partir de los precedentes de fondos de estabilización (CLM-A-008) y de la decisión de Alejandro.
 - El modelo no codifica en los supuestos la superioridad de ningún régimen, como pide el protocolo.
 
+
+## D-008. Análisis lo más cerca posible de la fecha actual (2026-10-15)
+
+**Decisión.** El análisis incorpora las emisiones, los rescates y los canjes posteriores al corte de SIGADE, hasta la fecha más reciente con información oficial. Un corte trimestral publicado con casi tres meses de demora deja fuera justamente la coyuntura que el trabajo quiere describir.
+
+**Fundamento.** La base SIGADE se publica por trimestre: la del 30/06/2026 apareció el 18/09/2026 (SRC-0102). Entre un corte y su publicación el Tesoro licita LECAP, BONCAP, duales y bonos en dólares cada dos semanas, y esos instrumentos vencen dentro del horizonte de 12 meses que mide la necesidad de divisas.
+
+**Aplicación.**
+- El saldo al corte de SIGADE sigue siendo la base auditada. Las operaciones posteriores se cargan aparte: las emisiones como instrumentos nuevos, y los rescates y canjes como reducciones del saldo, cada una con su resolución y el resultado de la licitación como fuente. El motor necesita para eso una forma de registrar emisiones y rescates después del corte.
+- La fecha hasta la que llegan esas operaciones (`fecha_datos`) se informa en cada salida junto al corte de SIGADE, y en el manuscrito se distingue lo que viene de SIGADE de lo que se reconstruyó desde las licitaciones.
+- Cuando se publica un corte nuevo de SIGADE, se coteja con la reconstrucción, se publican las diferencias y el corte avanza.
+- No se proyectan emisiones futuras como si fueran contratos. El refinanciamiento de lo que vence pertenece a los escenarios de la fase 4.
+
+## D-009. Intereses capitalizados y resultado financiero (2026-10-15)
+
+**Decisión.** El trabajo mide los intereses en base devengada, además de la base caja que usa el resultado fiscal publicado, y muestra la diferencia.
+
+**Fundamento.** LECAP, BONCAP y otros instrumentos que capitalizan intereses o se colocan con descuento no registran gasto de intereses hasta el vencimiento, y en algunos casos ni siquiera entonces, según cómo se contabilice el pago. El resultado financiero publicado puede así mostrar superávit mientras los intereses se acumulan en el saldo de la deuda. Pagar al vencimiento lo capitalizado modifica el resultado financiero y no el primario, de modo que el debate argentino sobre el superávit financiero depende de este criterio de registro. También interesa el costo: capitalizar a tasas de licitación puede resultar más caro que pagar los intereses a su vencimiento con otra fuente.
+
+**Aplicación.**
+- El motor ya separa `interes_capitalizado` (devengado, sin pago) de `interes` y `amortizacion`. Con esos flujos se construye, mes a mes, el interés devengado de la Administración Central.
+- En la fase 3 se reconstruye el resultado financiero con intereses devengados y se lo compara con el publicado, citando la metodología oficial de registro de intereses capitalizados y de descuentos de emisión.
+- La comparación de costo usa las tasas de las licitaciones y se presenta como estimación, con sus supuestos explícitos.
+- El texto describe lo que muestran los números y deja la valoración al lector, como pide el protocolo.
