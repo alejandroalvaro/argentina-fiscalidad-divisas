@@ -205,6 +205,11 @@ def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:
         if change:
             unit = factor if ts.capitalizes else remaining
             principal = None if principal is None or unit is None else principal + change * unit
+            if principal is not None and principal < -1e-6 * max(1.0, abs(change)):
+                raise ValueError(
+                    f"{ob.instrument_id}: balance turns negative ({principal}) after the "
+                    f"operations of the period ending {d}"
+                )
         accrual = _accrual(ts, prev, d, scenario)
         if ts.capitalizes:
             factor = None if factor is None or accrual is None else factor * (1 + accrual)

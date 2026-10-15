@@ -134,6 +134,10 @@ def build_calendar(
         by=("source", "flow_type", "currency_of_settlement", "depends_on_scenario"),
     )
     comparison = compare_with_sigade(engine, sigade)
+    # SIGADE projects the balance at the cut-off; operations after it are expected differences.
+    with_ops = {ts.obligation.instrument_id for ts in sheets if ts.face_changes}
+    for row in comparison:
+        row["con_operaciones"] = row["instrument_id"] in with_ops
 
     _write(out / "flujos.csv", flow_rows)
     _write(out / "calendario.csv", calendar)
@@ -144,4 +148,5 @@ def build_calendar(
         "flujos_motor": len(engine),
         "instrumentos_con_terminos": len(with_terms),
         "instrumentos_coinciden_con_sigade": sum(bool(r["coincide"]) for r in comparison),
+        "instrumentos_con_operaciones": len(with_ops),
     }

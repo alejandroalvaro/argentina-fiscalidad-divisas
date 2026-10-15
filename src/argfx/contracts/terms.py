@@ -60,6 +60,9 @@ class TermRow(BaseModel):
     tope_indice: OptStr = None
     tope_margen: OptFloat = None
     capitaliza: bool
+    indice_inicial: OptFloat = Field(default=None, gt=0)
+    """CER or UVA at the reference date of issue. Operations are published in pesos of face
+    value; dividing by it gives the index units in which saldo_corte is kept."""
     source_id: str = Field(pattern=SOURCE_REFS)
     referencia: str
     notas: OptStr = None
@@ -228,6 +231,14 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
             raise ValueError(f"duplicate instrument in terminos.csv: {t.instrument_id}")
         seen.add(t.instrument_id)
         own_ops = ops.get(t.instrument_id, [])
+        face_unit = 1.0
+        if own_ops and t.indexacion in ("CER", "UVA"):
+            if t.indice_inicial is None:
+                raise ValueError(
+                    f"{t.instrument_id}: operations on a {t.indexacion}-indexed instrument need "
+                    "indice_inicial to turn pesos of face value into index units"
+                )
+            face_unit = t.indice_inicial
         if t.fecha_emision > t.fecha_corte:
             issued = [o for o in own_ops if o.tipo == "emision" and o.fecha == t.fecha_emision]
             if t.saldo_corte != 0 or not issued:
@@ -266,7 +277,10 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
                 capitalizes=t.capitaliza,
                 frequency_months=t.frecuencia_meses,
                 face_changes=tuple(
-                    sorted((o.fecha, OPERATION_SIGN[o.tipo] * o.valor_nominal) for o in own_ops)
+                    sorted(
+                        (o.fecha, OPERATION_SIGN[o.tipo] * o.valor_nominal / face_unit)
+                        for o in own_ops
+                    )
                 ),
                 source_id=t.source_id,
                 reference=t.referencia,

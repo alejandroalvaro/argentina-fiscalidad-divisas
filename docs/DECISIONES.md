@@ -83,6 +83,7 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 
 **Aplicación.**
 - El saldo al corte de SIGADE sigue siendo la base auditada. Las operaciones posteriores se cargan aparte: las emisiones como instrumentos nuevos, y los rescates y canjes como reducciones del saldo, cada una con su resolución y el resultado de la licitación como fuente. El motor necesita para eso una forma de registrar emisiones y rescates después del corte.
+- La frontera es la fecha de liquidación: entra lo liquidado después del corte, porque el saldo de SIGADE incluye lo liquidado hasta ese día.
 - La fecha hasta la que llegan esas operaciones (`fecha_datos`) se informa en cada salida junto al corte de SIGADE, y en el manuscrito se distingue lo que viene de SIGADE de lo que se reconstruyó desde las licitaciones.
 - Cuando se publica un corte nuevo de SIGADE, se coteja con la reconstrucción, se publican las diferencias y el corte avanza.
 - No se proyectan emisiones futuras como si fueran contratos. El refinanciamiento de lo que vence pertenece a los escenarios de la fase 4.
