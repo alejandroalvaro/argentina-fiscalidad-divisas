@@ -1,0 +1,60 @@
+source_id,hoja,periodo,bloque,instrumento,miles_de_usd,miles_de_pesos
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Adelantos Transitorios del BCRA,1234982.0,1707681026.7
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Préstamos Organismos Multilaterales,1326343.0,1834011087.2
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Letras del Tesoro - Organismos Públicos,23706279.5,32780042947.5
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Letras Intransferibles,29939.2,41398712.1
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Titulos del Tesoro,70782794.6,97875461394.8
+SRC-1182,A.2.2,2do. trimestre de 2026,"financiamiento, canjes y emisiones",Préstamos Organismos Oficiales,1333.3,1843627.2
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Adelantos Transitorios del BCRA,1234982.0,1707681026.7
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Préstamos Organismos Multilaterales,539071.8,745405800.4
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Letras del Tesoro - Organismos Públicos,45319025.9,62665236594.7
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Letras Intransferibles,22284123.8,30813545976.2
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",TItulos del Tesoro,40574994.7,56105390371.3
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Préstamos Organismos Oficiales,8250.7,11408705.9
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Otros,33932.0,46919734.9
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",a) Operaciones netas del período ( 1 - 2 ),-12912709.2,-17855149414.4
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",b) Avales netos de cancelaciones,-29492.1,-40780400.0
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",c) Letras en garantía,-318278.8,-440102511.3
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",d) Ajustes de valuación - Excluyendo la deuda elegible pendiente de reestructuración,3613661.5,52299935668.7
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Tipo de Cambio (excluye deudas ajustables por CER),-6537319.6,25579644403.5
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Variación de la deuda ajustable por CER (efectos tipo de cambio y CER),1674627.1,14999546700.5
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones","Capitalización de Bonos, Letras y otros préstamos (*)",8675938.8,11996722070.4
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Otras Operaciones (Amparos y excepciones y otros ajustes),-199584.8,-275977505.8
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",e) Ajustes de valuación sobre deuda elegible pendiente de reestructuración,-9712.1,227489294.8
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Tipo de Cambio (excluye deudas ajustables por CER),-10564.4,219854664.7
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",Variación de la deuda ajustable por CER (efectos tipo de cambio y CER),852.4,7634756.4
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones","Otras Operaciones (Bajas Ley n° 27.249, amparos y excepciones y otros ajustes)",-0.1,-126.4
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones",IV - TOTAL VARIACIONES (a+b+c+d+e),-9656530.7,34191392637.8
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones","V - DEUDA BRUTA, AL 30/06/2026 (III + IV)",474197959.0,703244962364.1
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones","VI - DEUDA ELEGIBLE PENDIENTE DE REESTRUCTURACIÓN, AL 30/06/2026 (**)",2402892.2,3563536751.5
+SRC-1182,A.2.2,2do. trimestre de 2026,"amortizaciones, canjes y cancelaciones","VII - DEUDA BRUTA (EXCLUIDA LA ELEGIBLE PENDIENTE DE REESTRUCTURACIÓN), AL 30/06/2026 (V - VI)",471795066.8,699681425612.6
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Adelantos Transitorios del BCRA,1863602.6,2625100370.4
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Préstamos Organismos Multilaterales,1972815.1,2777483351.9
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Letras del Tesoro - Organismos Públicos,57376432.8,81918826912.5
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Letras Intransferibles,60494.1,85990954.4
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",TÍtulos del Tesoro,94082272.0,131879107740.4
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Préstamos Organismos Oficiales,4729.2,6799667.9
+SRC-1182,A.2.3,enero a junio de 2026,"financiamiento, canjes y emisiones",Otros,25167.5,36729868.5
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Adelantos Transitorios del BCRA,1863602.6,2625100370.4
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Préstamos Organismos Multilaterales,1125327.4,1600996975.6
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Letras del Tesoro - Organismos Públicos,77741540.1,109983195286.5
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Letras Intransferibles,22284123.8,30813545976.2
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Títulos del Tesoro,64396898.4,90871474514.2
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Préstamos Organismos Oficiales,394335.7,574867661.5
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Otros,36577.0,50779943.4
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",a) Operaciones netas del período ( 1 - 2 ),-12456891.8,-17189921861.7
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",b) Avales netos de cancelaciones,-51267.2,-72559419.1
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",c) Letras en garantía,-318278.8,-440102511.3
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",d) Ajustes de valuación - Excluyendo la deuda elegible pendiente de reestructuración,31964476.1,56768782563.6
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Tipo de Cambio (excluye deudas ajustables por CER),-2274421.6,4236409688.4
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Variación de la deuda ajustable por CER (efectos tipo de cambio y CER),17262671.0,28406772160.4
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","Capitalización de Bonos, Letras y otros préstamos (*)",17175830.0,24401605164.8
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","Otras Operaciones (Registro CCF, amparos y excepciones y otros ajustes)",-199603.3,-276004450.0
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",e) Ajustes de valuación sobre deuda elegible pendiente de reestructuración,-16762.7,32252008.3
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Tipo de Cambio (excluye deudas ajustables por CER),-25742.3,17627030.1
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",Variación de la deuda ajustable por CER (efectos tipo de cambio y CER),8979.8,14625104.6
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","Otras Operaciones (Bajas Ley n° 27.249, amparos y excepciones y otros ajustes)",-0.1,-126.4
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones",IV - TOTAL VARIACIONES (a+b+c+d+e),19121275.6,39098450779.8
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","V - DEUDA BRUTA, AL 30/06/2026 (III + IV)",474197959.0,703244962364.1
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","VI - DEUDA ELEGIBLE PENDIENTE DE REESTRUCTURACIÓN, AL 30/06/2026 (**)",2402892.2,3563536751.5
+SRC-1182,A.2.3,enero a junio de 2026,"amortizaciones, canjes y cancelaciones","VII - DEUDA BRUTA (EXCLUIDA LA ELEGIBLE PENDIENTE DE REESTRUCTURACIÓN), AL 30/06/2026 (V - VI)",471795066.8,699681425612.6
