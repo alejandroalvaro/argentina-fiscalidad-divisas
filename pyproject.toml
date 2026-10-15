@@ -40,6 +40,8 @@ markers = ["network: needs real R2 credentials and network access (skipped by de
 line-length = 100
 target-version = "py311"
 src = ["src", "tests"]
+# Grok deliveries are kept as delivered, scripts included.
+extend-exclude = ["inbox"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
