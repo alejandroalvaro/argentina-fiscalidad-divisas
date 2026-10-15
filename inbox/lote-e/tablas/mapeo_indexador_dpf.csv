@@ -38,6 +38,7 @@ LTN,Dívida Interna,prefixado,"LTN: rendimiento definido por deságio sobre valo
 NDB,Dívida Externa,cambio,Dívida Externa: metadatos indican conversión de todas las monedas a US$ y luego a R$ (moneda extranjera),SRC-0423,,Grok (no oficial)
 NTN-A,Dívida Interna,cambio,"NTN-A/NTN-D/NTN-I: actualización por cotización de venta del dólar (Decreto 3.859/2001, arts. 7, 10, 13)",SRC-0424,,Grok (no oficial)
 NTN-B,Dívida Interna,ipca_precos,"NTN-B: actualización por IPCA (Decreto 3.859/2001, art. 8)",SRC-0424,,Grok (no oficial)
+NTN-B1,Dívida Interna,ipca_precos,"NTN-B1 (Tesouro RendA+ y Educa+): actualización por IPCA (Decreto 12.814/2026, art. 8, inciso V)",SRC-0426,,Grok (no oficial)
 NTN-C,Dívida Interna,ipca_precos,"NTN-C: actualización por IGP-M (Decreto 3.859/2001, art. 9); agrupado en precios",SRC-0424,,Grok (no oficial)
 NTN-F,Dívida Interna,prefixado,"NTN-F: rendimiento por deságio (Decreto 3.859/2001, art. 11)",SRC-0424,,Grok (no oficial)
 NTN-I,Dívida Interna,cambio,"NTN-A/NTN-D/NTN-I: actualización por cotización de venta del dólar (Decreto 3.859/2001, arts. 7, 10, 13)",SRC-0424,,Grok (no oficial)

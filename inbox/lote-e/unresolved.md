@@ -10,7 +10,7 @@
 - PII: no se encontró en el catálogo el código del Activo total ni de la posición neta. Solo están el Passivo total (24040) y tres componentes del activo, así que la posición neta no se calculó.
 - Clasificación de la DPF por indexador (`tablas/mapeo_indexador_dpf.csv` y `tablas/dpf_por_indexador_derivado.csv`): DERIVADA POR GROK, NO OFICIAL. Debe cotejarse con el Relatório Mensal da Dívida (RMD) del Tesouro, que no fue descargado. Puntos a revisar:
   - Deuda externa asignada en bloque a cambio según los metadatos (conversión desde moneda extranjera). Algunos préstamos podrían tener otra moneda o indexador.
-  - Global BRL (denominado en reales), TDA, CVS, títulos de securitización (HCF*, HSTN), ECTN, AINSS y otros quedan sin_clasificar (0,30% del stock en 2026-07).
+  - Global BRL (denominado en reales), TDA, CVS, títulos de securitización (HCF*, HSTN), ECTN, AINSS y otros quedan sin_clasificar (0,15% del stock en 2026-07, después de clasificar NTN-B1).
   - LFT-TD asignada a Selic solo por prefijo.
   - NTN-C (IGP-M) agrupada en ipca_precos.
   - Las valoraciones del CSV usan la TIR media de emisión (metadatos), por lo que las participaciones pueden diferir de las del RMD.
@@ -23,3 +23,9 @@
 - Las fechas anuales (WEO) y mensuales (DPF) pasaron a formato completo con el primer día del período (`2000-01-01`, `2017-09-01`).
 - `mapeo_indexador_dpf.csv`: las 23 filas sin `source_id` son los prefijos sin regla documentada (`sin_clasificar`). Se agregó la columna `nota_fuente`, que lo explica.
 - SRC-0424 (Decreto 3.859/2001) se sube a `inbox/lote-e/documentos/decreto_3859_2001.htm`, porque planalto.gov.br cierra la conexión desde el entorno de Claude Code. Desde aquí sí se descargó.
+
+## Corrección NTN-B1 y extracción del prefijo (2026-10-14)
+
+- Extracción del prefijo del título en `mk_E_idx.py`: se toma la secuencia inicial de letras y guiones de `Titulo/Contrato` (expresión `[A-Za-z\-]+`), se quita un guion final, y hay dos excepciones: los títulos que empiezan con `Global BRL` usan ese prefijo, y los que empiezan con `NTN-B1` (sin letra ni dígito siguiente) usan `NTN-B1`. Sin esta segunda excepción, NTN-B1 quedaba con el prefijo `NTN-B` en el mapeo, aunque su regla de clasificación no coincidía y caía en `sin_clasificar`; por eso la tabla derivada no se podía reconstruir desde el mapeo.
+- NTN-B1 (Tesouro RendA+ y Educa+) se clasifica en `ipca_precos` según el Decreto 12.814/2026, art. 8, inciso V (SRC-0426, CLM-E-014). El cambio afecta 86 celdas desde 2023-01, solo en `ipca_precos` y `sin_clasificar`. En 2026-07, sin_clasificar pasa de 0,30% a 0,15% e IPCA/precios de 27,09% a 27,24%.
+- El Decreto 12.814/2026 es posterior al 3.859/2001 citado en las demás reglas. No se verificó si lo reemplaza; las reglas del 3.859/2001 se mantienen como estaban.
