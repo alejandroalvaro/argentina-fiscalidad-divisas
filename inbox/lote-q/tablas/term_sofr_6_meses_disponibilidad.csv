@@ -1,0 +1,3 @@
+punto,resultado,fuente
+serie histórica de CME Term SOFR 6 meses desde 2023-01-01,"no pública: CME la licencia (el acceso a históricos es por DataMine con licencia; las páginas públicas son de solo lectura y la redistribución requiere licencia); FRED y el NY Fed publican solo la SOFR overnight, los promedios y el índice; no se descargó ni se reconstruyó","CME Group, página Term SOFR y FAQ (leídas con herramienta web; la descarga directa devolvió 403, sin archivo ni sha256)"
+alternativa pública derivada del NY Fed,"promedios de SOFR a 30, 90 y 180 días e índice SOFR, en tablas/sofr_indice_y_promedios_ny_fed_2023-01-03_a_2026-10-15.csv; no son Term SOFR",SRC-1134
