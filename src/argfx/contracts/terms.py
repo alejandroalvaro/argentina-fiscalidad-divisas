@@ -24,7 +24,7 @@ from datetime import date
 from pathlib import Path
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, BeforeValidator, ConfigDict, Field
 
 from argfx.contracts.daycount import DayCount
 from argfx.contracts.engine import FixedRate, FloatingRate, Rate, TermSheet, ZeroRate
@@ -33,6 +33,8 @@ from argfx.contracts.schedule import regular_dates
 from argfx.schemas import INSTRUMENT_ID, SOURCE_ID, Opt, OptFloat, OptStr
 
 OptInt = Annotated[int | None, Opt]
+# A blank cell in an optional flag column (one an older table lacks) means false.
+Flag = Annotated[bool, BeforeValidator(lambda v: False if v in ("", None) else v)]
 
 SOURCE_REFS = r"^SRC-\d{4}(;SRC-\d{4})*$"
 
@@ -67,8 +69,11 @@ class TermRow(BaseModel):
     capitaliza: bool
     tem_dias: OptInt = Field(default=None, gt=0)
     """Floating rates: days of the compounding that turns the annual rate into a TEM (TAMAR: 32)."""
-    promedio_plazo: bool = False
+    promedio_plazo: Flag = False
     """Floating rates: the index is averaged over the whole term, not period by period."""
+    saldo_es_valor_nominal: Flag = False
+    """saldo_corte is original face value (VNO) that the engine capitalizes from issue, as the
+    legal formula does, instead of SIGADE's balance already capitalized to the last anniversary."""
     indice_inicial: OptFloat = Field(default=None, gt=0)
     """CER or UVA of the issue date, the base of SIGADE's index units. Operations are published
     in pesos of face value; dividing by it gives the units in which saldo_corte is kept."""
@@ -149,7 +154,7 @@ class DualRow(BaseModel):
     tope_indice: OptStr = None
     tope_margen: OptFloat = None
     tem_dias: OptInt = Field(default=None, gt=0)
-    promedio_plazo: bool = False
+    promedio_plazo: Flag = False
     capitaliza: bool
     base: DayCount
     primer_periodo: date
@@ -314,6 +319,7 @@ def load_term_sheets(folder: Path) -> list[TermSheet]:
                 obligation=obligation,
                 as_of=t.fecha_corte,
                 outstanding=t.saldo_corte,
+                outstanding_is_face=t.saldo_es_valor_nominal,
                 period_dates=_period_dates(t, explicit.get(t.instrument_id)),
                 listed_dates=bool(explicit.get(t.instrument_id)),
                 accrual_start=t.fecha_emision,
