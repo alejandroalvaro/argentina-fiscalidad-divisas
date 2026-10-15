@@ -479,17 +479,22 @@ def test_operations_turn_pesos_into_cer_units_and_refuse_negative_balances(
         and r["instrument_id"] not in with_ops
     )
     iid = cer["instrument_id"]
+
+    def write(**values: str) -> None:
+        for r in rows:
+            if r["instrument_id"] == iid:
+                r.update(values)
+        with (tmp_path / "terminos.csv").open("w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+
     with (tmp_path / "operaciones.csv").open("a", encoding="utf-8") as fh:
         fh.write(f"{iid},2026-07-17,reapertura,800,SRC-0108,x\n")
+    write(indice_inicial="", indice_base="", rezago_habiles="")
     with pytest.raises(ValueError, match="indice_inicial"):
         load_term_sheets(tmp_path)
-    for r in rows:
-        if r["instrument_id"] == iid:
-            r["indice_inicial"] = "400"
-    with (tmp_path / "terminos.csv").open("w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
-        w.writeheader()
-        w.writerows(rows)
+    write(indice_inicial="400")
     sheet = {s.obligation.instrument_id: s for s in load_term_sheets(tmp_path)}[iid]
     assert sheet.face_changes == ((date(2026, 7, 17), 2.0),)
     too_much = TermSheet(**{**sheet.__dict__, "face_changes": ((date(2026, 7, 17), -1e18),)})
