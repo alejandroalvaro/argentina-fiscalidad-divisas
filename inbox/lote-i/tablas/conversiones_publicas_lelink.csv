@@ -1,0 +1,11 @@
+fecha_licitacion,fecha_liquidacion,tipo,codigo,instrument_id,valor_nominal,moneda,precio_corte_por_1000,notas,norma,source_id
+2026-07-21,2026-07-24,canje_salida,LELINK D31L6,INS-C-0629,1851000000.0,USD,,"45.17% del VNO en circulación; precio del título elegible USD 997,79 por VNO 1.000",Resolución Conjunta 45/2026,SRC-0806;SRC-0805
+2026-07-21,2026-07-24,canje_entrada,D31G6,INS-C-0630,1736000000.0,USD,990.0,precio de corte por VNO USD 1.000,Resolución Conjunta 45/2026,SRC-0806
+2026-07-21,2026-07-24,canje_entrada,TZVD8,INS-C-0419,159000000.0,USD,809.9,precio de corte por VNO USD 1.000,Resolución Conjunta 45/2026,SRC-0806
+2026-08-18,2026-08-21,canje_salida,LELINK D31G6,INS-C-0630,1344000000.0,USD,,"34.12% del VNO en circulación; precio del título elegible USD 996,65 por VNO 1.000",Resolución Conjunta 50/2026,SRC-0816;SRC-0815
+2026-08-18,2026-08-21,canje_entrada,D30S6,INS-C-0627,1213000000.0,USD,989.9,precio de corte por VNO USD 1.000,Resolución Conjunta 50/2026,SRC-0816
+2026-08-18,2026-08-21,canje_entrada,D30O6,INS-I-0006,141000000.0,USD,986.0,precio de corte por VNO USD 1.000,Resolución Conjunta 50/2026,SRC-0816
+2026-09-22,2026-09-25,canje_salida,LELINK D30S6,INS-C-0627,3299000000.0,USD,,"75.00% del VNO en circulación; precio del título elegible USD 999,62 por VNO 1.000",Resolución Conjunta 56/2026,SRC-0823;SRC-0822
+2026-09-22,2026-09-25,canje_entrada,D30O6,INS-I-0006,2419000000.0,USD,993.58,precio de corte por VNO USD 1.000,Resolución Conjunta 56/2026,SRC-0823
+2026-09-22,2026-09-25,canje_entrada,D30N6,INS-I-0009,843000000.0,USD,989.98,precio de corte por VNO USD 1.000,Resolución Conjunta 56/2026,SRC-0823
+2026-09-22,2026-09-25,canje_entrada,TZV28,INS-C-0421,70000000.0,USD,846.6,precio de corte por VNO USD 1.000,Resolución Conjunta 56/2026,SRC-0823
