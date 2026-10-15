@@ -1,0 +1,17 @@
+# Grok a Claude: lote L (rama grok/lote-l, inbox/lote-l/)
+
+Todo `sin_revisar`. Fuentes SRC-0986 a SRC-1013, claims CLM-L-001 a CLM-L-036. `argfx validate` real (venv, mismo código del repo): main solo y main más lote-l dan el mismo resultado, 1 error (INS-I-0007, lote-i, previo) y 2.273 advertencias, ninguna de lote-l. Detalle y huecos en `inbox/lote-l/unresolved.md`; resumen en `sintesis.md`.
+
+**Para Claude:**
+
+1. **VNO rescatado (pedido 1).** Ningún texto oficial lo publica. Lo derivé de las diez planillas trimestrales de Finanzas (hoja A.1.8, VN original en miles de USD por el A3500 de la planilla) más las emisiones de ONCP. Resultado en millones de pesos: RC 64/2025 (liquidada 2025-12-29) TZXD7 1.550.000 y TZX28 2.350.000 (exactos); RC 31/2026 (liquidada 2026-06-08) TZXD7 1.300.000 (exacto) y TZX28 1.273.835,9 (incertidumbre de alrededor de 1 millón). Cargué cuatro filas `canje_salida` en `contratos/operaciones.csv` con "VNO DERIVADO"; son tuyas para aceptar o descartar. Tablas: `bonceres_cadena_vno_y_bajas.csv`, `conversiones_bcra_vno_rescatado.csv`, `bonceres_emisiones_oncp.csv`, `boncer_vno_trimestral_finanzas.csv`. Tres bajas siguen sin explicación (TZXD7 2.363,622 y TZX28 1.831,564 entre 2025-03-31 y 2025-06-30; TZX27 556.267,947 entre 2025-12-31 y 2026-03-31).
+2. **TMG27 (pedido 2).** No hay total publicado en una licitación posterior (siete revisadas, ninguna lo reabre). Hay otra cifra oficial: Finanzas al 2026-06-30, hoja A.1.7 fila 42, 1.035.548,53985 miles de USD, igual a 1.535.738,988 millones, o sea 415.000 exactos menos que el acumulado de ONCP. El TMF27 da 485.000 exactos de baja. No sé qué operación fue.
+3. **BONAR Dual 2036 (pedido 3).** RC 53/2023 no encontrada (ni en el Boletín Oficial ni en la Biblioteca de Normativas). Hay: Anexo III del DNU 164/2023 (negociable, cotización en MAE; CLM-L-027), arts. 1 a 4 y 6 (sector público nacional; CLM-L-028), informe de la UBA (FGS; CLM-L-030 a 032), y VN constante de 640.874,451 miles de USD en los diez cortes (CLM-L-033). No hay publicación de tenedores actuales.
+4. **BONCER con cupón (pedido 4).** 0386 y 0387 son los BONCER 2,00% 2026 y 2,25% 2028 del Decreto 676/2020, Anexo 4 (CLM-L-034 a 036). VN al 2026-06-30 en pesos (cálculo mío con el A3500 1.483,0198): 0386 222.131,127; 0387 79.555,431; 0388 110.944,635 millones. El 0386 baja 113.705,834 millones entre 2024-06-30 y 2024-09-30 sin norma hallada.
+5. **RC 53 y 60/2026 y SIGADE 2026-09-30 (pedido 5).** Nada publicado: ONCP llega al 2026-08-31, OPC al informe de agosto, Finanzas trimestral al 2026-06-30.
+
+**Preguntas para Claude:** (a) ¿aceptás las cuatro filas derivadas de `operaciones.csv` o preferís que queden solo en tablas? (b) ¿Querés que busque el origen de las bajas sin explicar con otra fuente (por ejemplo los boletines de ONCP por trimestre)?
+
+**Para Alejandro:** para la consolidación de fase 3, el DNU 164/2023 dirige el Bono Dual 2036 a entes del sector público nacional y la UBA dice que la mayoría de lo involucrado era del FGS, pero no hay dato oficial hallado sobre quién lo tiene hoy.
+
+Proceso: los PDF de OPC se bajan con `?tmstv=` y Referer (la URL simple devuelve 410); el informe de diciembre de 2025 tiene su página en `https://opc.gob.ar/operaciones-de-deuda-publica/operaciones-de-deuda-publica-diciembre-2025/`. Los enlaces del Boletín Oficial del lote llevan `/detalleAviso/primera/<id>/<YYYYMMDD>`. Originales y sha256 en la caja de Grok (`/workspace/lote_L`) y en `documents_manifest.csv`.

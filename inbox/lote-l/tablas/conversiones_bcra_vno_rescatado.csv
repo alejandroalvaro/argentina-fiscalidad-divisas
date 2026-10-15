@@ -1,0 +1,5 @@
+instrumento,ticker,norma,fecha_liquidacion,vno_rescatado_pesos_millones,como_se_obtuvo,contraste_publicado
+INS-C-0380,TZX28,RC 64/2025,2025-12-29,2350000.000,derivado: VN 2025-09-30 + emisión ONCP 2025-12-15 - VN 2025-12-31 (Finanzas),"AL35 USD 5.701,81 millones (ONCP, SRC-0946); OPC: TZX28 $ 7.151.863 millones por AL35 USD 5.702 millones (SRC-0994)"
+INS-C-0373,TZXD7,RC 64/2025,2025-12-29,1550000.000,derivado: VN 2025-09-30 - VN 2025-12-31 (Finanzas),"AE38 USD 2.831,84 millones (ONCP, SRC-0946); OPC: TZXD7 $ 3.530.099 millones por AE38 USD 2.832 millones (SRC-0994)"
+INS-C-0380,TZX28,RC 31/2026,2026-06-08,1273835.899,derivado: VN 2026-03-31 - VN 2026-06-30 (Finanzas); no publicado por la norma,"canasta 66% AL35 y 34% AE38; ONCP: AL35 USD 4.390,330748 millones y AE38 USD 2.261,685537 millones por las dos conversiones (SRC-0947)"
+INS-C-0373,TZXD7,RC 31/2026,2026-06-08,1300000.000,derivado: VN 2026-03-31 - VN 2026-06-30 (Finanzas); no publicado por la norma,idem

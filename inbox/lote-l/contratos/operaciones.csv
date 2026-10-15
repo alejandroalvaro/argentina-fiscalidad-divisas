@@ -1,0 +1,5 @@
+instrument_id,fecha,tipo,valor_nominal,source_id,referencia
+INS-C-0373,2025-12-29,canje_salida,1550000000000,SRC-0993,"TZXD7 entregado por el BCRA en la conversión de la RC 64/2025 (AE38); VNO DERIVADO de la planilla trimestral de Finanzas (SRC-1002 y SRC-1003, cadena 2025-09-30 a 2025-12-31); baja exacta de 1.550.000 millones; lectura de Grok"
+INS-C-0380,2025-12-29,canje_salida,2350000000000,SRC-0993,TZX28 entregado por el BCRA en la conversión de la RC 64/2025 (AL35); VNO DERIVADO de la cadena de Finanzas más la emisión ONCP del 2025-12-15; baja exacta de 2.350.000 millones; lectura de Grok
+INS-C-0373,2026-06-08,canje_salida,1300000000000,SRC-0992,TZXD7 entregado por el BCRA en la conversión de la RC 31/2026; VNO DERIVADO de la planilla de Finanzas (SRC-1004 y SRC-1005); baja exacta de 1.300.000 millones; lectura de Grok
+INS-C-0380,2026-06-08,canje_salida,1273835900000,SRC-0992,"TZX28 entregado por el BCRA en la conversión de la RC 31/2026; VNO DERIVADO de la planilla de Finanzas (SRC-1004 y SRC-1005) (1.273.835,9 millones, incertidumbre de alrededor de 1 millón); lectura de Grok"
