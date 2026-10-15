@@ -1,0 +1,6 @@
+punto,lo_que_dice_la_fuente,source_id,claim_id
+tasa vigente en el texto de 2022,"LIBOR USD a 6 meses (ICE) más margen de 3,8% anual; base ACT/360",SRC-1129,CLM-Q-021
+mecanismo de reemplazo,cláusula 35.3: enmienda con consentimiento del Agente (Prestamistas Mayoritarios) y del Prestatario; ajuste según designación del Relevant Nominating Body si existe,SRC-1129,CLM-Q-020
+enmienda o nota del prestamista con el reemplazo,no encontrada al 2026-10-15,SRC-1129,CLM-Q-022
+"ajuste de spread de mercado (por indicación de Claude, sin suponer más)","0,42826% para LIBOR USD a 6 meses, sobre CME Term SOFR a 6 meses según el ARRC; ajuste fijo de ISDA",SRC-1146;SRC-1147,CLM-Q-023
+qué no se sabe,"si el crédito adoptó CME Term SOFR a 6 meses, SOFR compuesta u otra base, desde cuándo y con qué ajuste; SIGADE lo trae como TASA SOFR",SRC-0102,

@@ -1,0 +1,13 @@
+# Lote Q: síntesis (sin_revisar)
+
+Todo queda `sin_revisar`. No se infirió nada por analogía. Los documentos por prestamista son los que cada organismo publica para toda su cartera; donde el texto es un contrato modelo se dice.
+
+1. **Condiciones de tasa por prestamista** (`tablas/condiciones_generales_de_tasa_por_prestamista.csv`):
+   - **BID:** SOFR compuesta diaria con el Índice SOFR del NY Fed, más Costo de Fondeo (trimestral; 42 pb en el segundo trimestre de 2026) más margen del Capital Ordinario (80 pb en 2026), más 1,15% en Financiamiento Especial para el Desarrollo. ACT/360, pago semestral, sin fecha de fijación (la tasa se conoce al cerrar el período) (CLM-Q-007 a CLM-Q-011).
+   - **BIRF:** SOFR (Tasa de Referencia) más margen variable, período de seis meses, pago semestral, tasa no menor a 0%. Las Condiciones Generales no dicen si la SOFR es a plazo o compuesta, ni la base de días, ni el día de fijación. Los contratos de 2017 o antes dicen LIBOR a 6 meses (CLM-Q-001 a CLM-Q-006).
+   - **CAF:** CME Term SOFR a plazo similar al período (6 meses), fijada dos días hábiles antes del inicio, ACT/360, pago el último día hábil de cada semestre (CLM-Q-012 y CLM-Q-013).
+   - **BCIE:** Term SOFR a 6 meses fijada dos días hábiles antes del inicio de cada período, ACT/360, pago semestral, margen que el BCIE ajusta cada trimestre (CLM-Q-014 y CLM-Q-015).
+   - **FONPLATA:** por defecto SOFR compuesta a plazo vencido con el Índice SOFR, bloqueo de 30 días y corrección en el período siguiente; base de 360 días; pago semestral (15 de marzo y 15 de septiembre en el modelo) (CLM-Q-016 y CLM-Q-017).
+2. **SOFR del NY Fed:** serie diaria 2023-01-03 a 2026-10-14 (944 observaciones) y el Índice SOFR con promedios de 30, 90 y 180 días hasta 2026-10-15 (945). Son públicas (CLM-Q-018 y CLM-Q-019). **CME Term SOFR a 6 meses no es pública**: CME la licencia y el acceso a históricos es por DataMine (`tablas/term_sofr_6_meses_disponibilidad.csv`). No se descargó ni se reconstruyó.
+3. **Revisión:** la planilla de Finanzas del III trimestre, la base SIGADE al 2026-09-30 y los montos ejecutados de la RC 60/2026 siguen sin publicarse al 2026-10-15 (CLM-Q-025 a CLM-Q-027).
+4. **Represas Kirchner-Cepernic:** no se encontró enmienda ni nota del prestamista con el reemplazo de la LIBOR. La cláusula 35.3 permite enmendar con la Tasa Sustituta y un ajuste según lo que designe el Relevant Nominating Body, sin nombrar SOFR ni cifra. El ajuste de 0,42826% para LIBOR a 6 meses sobre CME Term SOFR a 6 meses es el que recomienda el ARRC y fijó ISDA/Bloomberg; no hay documento que diga que el crédito lo adoptó (CLM-Q-020 a CLM-Q-024, `tablas/represas_kirchner_cepernic_reemplazo_de_libor.csv`).
