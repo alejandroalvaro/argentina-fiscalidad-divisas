@@ -38,9 +38,16 @@ def _write(path: Path, rows: list[dict[str, object]]) -> None:
 
 
 def compare_with_sigade(
-    engine: list[CashFlow], sigade: list[CashFlow], tolerance: float = 0.01
+    engine: list[CashFlow],
+    sigade: list[CashFlow],
+    tolerance: float = 0.01,
+    rel_tolerance: float = 1e-8,
 ) -> list[dict[str, object]]:
-    """One row per instrument with a term sheet: matched keys, maximum and total differences."""
+    """One row per instrument with a term sheet: matched keys and the largest difference.
+
+    A flow matches within `tolerance` (absolute, in contract units) or `rel_tolerance` (relative
+    to the SIGADE amount): SIGADE rounds each flow, and large CER balances accumulate cents.
+    """
     s: dict[tuple[str, date, str], float] = defaultdict(float)
     e: dict[tuple[str, date, str], float | None] = {}
     for f in sigade:
@@ -52,8 +59,14 @@ def compare_with_sigade(
     for iid in sorted({k[0] for k in e}):
         keys = {k for k in e if k[0] == iid} | {k for k in s if k[0] == iid}
         unknown = sum(1 for k in keys if k in e and e[k] is None)
-        diffs = [abs((e.get(k) or 0.0) - s.get(k, 0.0)) for k in keys if e.get(k, 0.0) is not None]
+        known = [k for k in keys if e.get(k, 0.0) is not None]
+        diffs = [abs((e.get(k) or 0.0) - s.get(k, 0.0)) for k in known]
+        rels = [
+            d / abs(s[k]) if s.get(k) else (0.0 if d == 0 else 1.0)
+            for k, d in zip(known, diffs, strict=True)
+        ]
         worst = max(diffs, default=0.0)
+        worst_rel = max(rels, default=0.0)
         rows.append(
             {
                 "instrument_id": iid,
@@ -62,7 +75,11 @@ def compare_with_sigade(
                 "solo_sigade": sum(1 for k in keys if k not in e),
                 "motor_sin_monto": unknown,
                 "max_dif_abs": round(worst, 6),
-                "coincide": unknown == 0 and worst <= tolerance,
+                "max_dif_rel": float(f"{worst_rel:.3g}"),
+                "coincide": unknown == 0
+                and all(
+                    d <= tolerance or r <= rel_tolerance for d, r in zip(diffs, rels, strict=True)
+                ),
             }
         )
     return rows

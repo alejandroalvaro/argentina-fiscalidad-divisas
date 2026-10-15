@@ -1,0 +1,33 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "instrument_id": {
+      "pattern": "^INS-[A-Z]-\\d{4}$",
+      "title": "Instrument Id",
+      "type": "string"
+    },
+    "fecha": {
+      "format": "date",
+      "title": "Fecha",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{4}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "referencia": {
+      "title": "Referencia",
+      "type": "string"
+    }
+  },
+  "required": [
+    "instrument_id",
+    "fecha",
+    "source_id",
+    "referencia"
+  ],
+  "title": "DateRow",
+  "type": "object",
+  "$comment": "Generated from src/argfx/schemas.py; do not edit by hand."
+}

@@ -2,8 +2,11 @@
 
 Specialized pieces:
 - fixed coupons with step-ups (`FixedRate`), annual or per period (monthly effective, TEM);
-- floating coupons (`FloatingRate`): index x multiplier + spread, averaged over the period;
+- floating coupons (`FloatingRate`): index x multiplier + spread, averaged over the period,
+  optionally capped at another index plus a spread;
 - capitalization: interest added to principal at each period end, paid with the principal;
+- short periods under a per-period rate: the rate scales with the 30/360 fraction of a full
+  period, compounding when interest capitalizes ((1+r)^f - 1, the LECAP and BONCAP formula);
 - amortization by fractions of the original face, applied pro rata to the balance outstanding
   at each date, so that buybacks and partial exchanges are respected;
 - options: see `argfx.contracts.options`.
@@ -14,6 +17,7 @@ obtain leaves the interest as None and every later amount that depends on it as 
 
 from __future__ import annotations
 
+import calendar
 from dataclasses import dataclass, field
 from datetime import date
 from itertools import pairwise
@@ -46,6 +50,9 @@ class FloatingRate:
     index: str
     spread: float = 0.0
     multiplier: float = 1.0
+    cap_index: str | None = None
+    """The rate never exceeds cap_index + cap_spread (BCRA notes: LIBOR or SOFR minus a point)."""
+    cap_spread: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -70,6 +77,8 @@ class TermSheet:
     amortization: tuple[tuple[date, float], ...]
     """(date, fraction of the original face). Fractions must add up to 1."""
     capitalizes: bool = False
+    frequency_months: int | None = None
+    """Nominal period length; a per-period rate needs it to scale short periods."""
     source_id: str | None = None
     reference: str | None = None
     notes: tuple[str, ...] = field(default_factory=tuple)
@@ -86,6 +95,13 @@ class TermSheet:
             )
 
 
+def _full_period(start: date, end: date, months: int) -> bool:
+    """True when [start, end) spans exactly `months` calendar months on the grid's day."""
+    span = (end.year - start.year) * 12 + end.month - start.month
+    month_end = end.day == calendar.monthrange(end.year, end.month)[1]
+    return span == months and (end.day >= start.day or month_end)
+
+
 def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -> float | None:
     """Interest per unit of principal over [start, end)."""
     rate = ts.rate
@@ -93,7 +109,14 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
         return 0.0
     if isinstance(rate, FixedRate):
         if rate.per_period:
-            return rate.rate_on(start)
+            r = rate.rate_on(start)
+            if ts.frequency_months is None:
+                return r
+            if _full_period(start, end, ts.frequency_months):
+                return r
+            basis = ts.day_count if ts.day_count in ("30/360", "30E/360") else "30/360"
+            f = year_fraction(start, end, basis) * 12 / ts.frequency_months
+            return (1 + r) ** f - 1 if ts.capitalizes else r * f
         cuts = sorted({start, end, *(d for d, _ in rate.steps if start < d < end)})
         return sum(rate.rate_on(a) * year_fraction(a, b, ts.day_count) for a, b in pairwise(cuts))
     if scenario is None:
@@ -101,7 +124,13 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
     index = scenario.average(rate.index, start, end)
     if index is None:
         return None
-    return (index * rate.multiplier + rate.spread) * year_fraction(start, end, ts.day_count)
+    annual = index * rate.multiplier + rate.spread
+    if rate.cap_index is not None:
+        cap = scenario.average(rate.cap_index, start, end)
+        if cap is None:
+            return None
+        annual = min(annual, cap + rate.cap_spread)
+    return annual * year_fraction(start, end, ts.day_count)
 
 
 def generate(ts: TermSheet, scenario: Scenario | None = None) -> list[CashFlow]:

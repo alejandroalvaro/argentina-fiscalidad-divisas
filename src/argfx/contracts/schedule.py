@@ -16,8 +16,13 @@ def add_months(d: date, months: int, day: int | None = None, eom: bool = False) 
     return date(year, month, target)
 
 
-def regular_dates(first: date, last: date, every_months: int, eom: bool = False) -> list[date]:
-    """Dates from `first` to `last` inclusive, every `every_months`, anchored on first's day."""
+def regular_dates(
+    first: date, last: date, every_months: int, eom: bool = False, final_stub: bool = False
+) -> list[date]:
+    """Dates from `first` to `last` inclusive, every `every_months`, anchored on first's day.
+
+    With `final_stub`, a `last` that falls off the grid closes a short final period.
+    """
     if every_months <= 0:
         raise ValueError("every_months must be positive")
     out: list[date] = []
@@ -28,6 +33,8 @@ def regular_dates(first: date, last: date, every_months: int, eom: bool = False)
             break
         out.append(d)
         k += 1
+    if final_stub and (not out or out[-1] != last):
+        out.append(last)
     if not out or out[-1] != last:
         raise ValueError(f"{last} is not on the schedule that starts {first} every {every_months}m")
     return out

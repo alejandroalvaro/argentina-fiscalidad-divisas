@@ -288,3 +288,67 @@ def test_term_loader_rejects_unknown_rate_rows(tmp_path: Path) -> None:
     (tmp_path / "tasas.csv").write_text(rates + "INS-C-9999,2020-01-01,0.1,SRC-0106,x\n")
     with pytest.raises(ValueError, match="not in terminos"):
         load_term_sheets(tmp_path)
+
+
+def test_final_stub_and_thirty_e_day_count() -> None:
+    dates = regular_dates(date(2026, 7, 15), date(2026, 10, 31), 1, final_stub=True)
+    assert dates[-2:] == [date(2026, 10, 15), date(2026, 10, 31)]
+    with pytest.raises(ValueError, match="not on the schedule"):
+        regular_dates(date(2026, 7, 15), date(2026, 10, 31), 1)
+    # Months of thirty days: day 31 counts as 30 at the end even when the start is the 15th.
+    assert year_fraction(date(2027, 5, 15), date(2027, 5, 31), "30E/360") * 360 == 15
+    assert year_fraction(date(2027, 5, 15), date(2027, 5, 31), "30/360") * 360 == 16
+
+
+def test_lecap_pays_the_legal_formula_from_a_mid_life_balance() -> None:
+    # BONCAP 2,05% 15-01-2027 (INS-C-0363): issued 2025-01-31, anniversaries at month end.
+    # SIGADE carries VNO x 1.0205^17 at the cut-off; the legal value at maturity is
+    # VNO x (1+Tm)^((DIAS/360) x 12) with DIAS on months of thirty days (RC 23/2026).
+    issue, maturity, tem, vno = date(2025, 1, 31), date(2027, 1, 15), 0.0205, 1000.0
+    ts = TermSheet(
+        obligation=obligation(currency_of_account="ARS", currency_of_settlement="ARS"),
+        as_of=CUTOFF, outstanding=vno * (1 + tem) ** 17,
+        period_dates=tuple(regular_dates(date(2025, 2, 28), maturity, 1, eom=True,
+                                         final_stub=True)),
+        accrual_start=issue, day_count="30E/360",
+        rate=FixedRate(((issue, tem),), per_period=True), capitalizes=True,
+        frequency_months=1, amortization=((maturity, 1.0),),
+    )  # fmt: skip
+    flows = generate(ts)
+    dias = year_fraction(issue, maturity, "30E/360") * 360
+    assert dias == 705
+    assert flows[-1].amount == pytest.approx(vno * (1 + tem) ** (dias / 360 * 12))
+    stub = ts.outstanding * (1 + tem) ** 6 * ((1 + tem) ** 0.5 - 1)  # 31-12 to 15-01: half a month
+    assert flows[-2].amount == pytest.approx(stub)
+
+
+def test_floating_rate_cap() -> None:
+    ts = floating_sheet(rate=FloatingRate("RESERVAS", cap_index="SOFR", cap_spread=-0.01))
+    s = Scenario("s", "test")
+    s.set_path("RESERVAS", [(date(2026, 1, 1), 0.05)])
+    assert generate(ts, s)[0].amount is None  # cap index without a path
+    s.set_path("SOFR", [(date(2026, 1, 1), 0.04)])
+    days = (date(2026, 12, 30) - CUTOFF).days
+    assert generate(ts, s)[0].amount == pytest.approx(1000 * 0.03 * days / 365)
+    s.set_path("SOFR", [(date(2026, 1, 1), 0.08)])
+    assert generate(ts, s)[0].amount == pytest.approx(1000 * 0.05 * days / 365)
+
+
+def test_explicit_dates_replace_the_grid(tmp_path: Path) -> None:
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    for name in ("terminos.csv", "tasas.csv", "amortizaciones.csv"):
+        (tmp_path / name).write_text((repo / name).read_text(encoding="utf-8"), encoding="utf-8")
+    dates = [d.isoformat() for d in semiannual(date(2021, 7, 9), date(2030, 7, 9))]
+    rows = [f"INS-C-0398,{d},SRC-0108,x" for d in dates]
+    (tmp_path / "fechas.csv").write_text(
+        "instrument_id,fecha,source_id,referencia\n" + "\n".join(rows) + "\n", encoding="utf-8"
+    )
+    by_id = {ts.obligation.instrument_id: ts for ts in load_term_sheets(tmp_path)}
+    grid = {ts.obligation.instrument_id: ts for ts in load_term_sheets(repo)}
+    assert by_id["INS-C-0398"].period_dates == grid["INS-C-0398"].period_dates
+    (tmp_path / "fechas.csv").write_text(
+        "instrument_id,fecha,source_id,referencia\n" + "\n".join(rows[:-1]) + "\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="does not end at maturity"):
+        load_term_sheets(tmp_path)
