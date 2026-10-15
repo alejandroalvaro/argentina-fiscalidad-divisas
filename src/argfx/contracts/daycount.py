@@ -2,18 +2,23 @@
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, timedelta
 from typing import Literal
 
 DayCount = Literal["30/360", "30E/360", "ACT/365", "ACT/360", "ACT/ACT"]
+
+
+def _last_of_february(d: date) -> bool:
+    return d.month == 2 and (d + timedelta(days=1)).month == 3
 
 
 def year_fraction(start: date, end: date, convention: DayCount) -> float:
     if end < start:
         raise ValueError(f"end {end} before start {start}")
     if convention == "30/360":
-        # US bond basis (30/360 ISDA): day 31 becomes 30; the end day only when the start is 30.
-        d1 = min(start.day, 30)
+        # US bond basis: day 31 becomes 30, and so does the last day of February at the start;
+        # the end day only when the start is 30 (SIGADE: 29-02-2028 to 31-03-2028 is 30 days).
+        d1 = 30 if _last_of_february(start) else min(start.day, 30)
         d2 = 30 if end.day == 31 and d1 == 30 else end.day
         days = 360 * (end.year - start.year) + 30 * (end.month - start.month) + (d2 - d1)
         return days / 360

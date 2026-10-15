@@ -5,6 +5,8 @@ Specialized pieces:
 - floating coupons (`FloatingRate`): index x multiplier + spread, averaged over the period,
   optionally capped at another index plus a spread;
 - capitalization: interest added to principal at each period end, paid with the principal;
+- a full period of a regular grid under 30/360 accrues its nominal months, whatever February
+  does;
 - short periods under a per-period rate: the rate scales with the 30/360 fraction of a full
   period, compounding when interest capitalizes ((1+r)^f - 1, the LECAP and BONCAP formula);
 - amortization by fractions of the original face, applied pro rata to the balance outstanding
@@ -81,6 +83,8 @@ class TermSheet:
     capitalizes: bool = False
     frequency_months: int | None = None
     """Nominal period length; a per-period rate needs it to scale short periods."""
+    listed_dates: bool = False
+    """Period ends listed one by one in the norm (business-day adjusted), not a regular grid."""
     face_changes: tuple[tuple[date, float], ...] = ()
     """(settlement date, change in original face) after `as_of`: issues and reopenings add,
     buybacks and swaps out subtract. Proceeds and prices are financing, not contract flows."""
@@ -129,6 +133,16 @@ def _accrual(ts: TermSheet, start: date, end: date, scenario: Scenario | None) -
             f = year_fraction(start, end, basis) * 12 / ts.frequency_months
             return (1 + r) ** f - 1 if ts.capitalizes else r * f
         cuts = sorted({start, end, *(d for d, _ in rate.steps if start < d < end)})
+        if (
+            ts.day_count == "30/360"
+            and ts.frequency_months is not None
+            and not ts.listed_dates
+            and len(cuts) == 2
+            and _full_period(start, end, ts.frequency_months)
+        ):
+            # A full regular period counts its nominal months, also when it starts or ends on
+            # the last day of February (SIGADE: 31-01 to 28-02 and 29-02 to 31-03 are 30 days).
+            return rate.rate_on(start) * ts.frequency_months / 12
         return sum(rate.rate_on(a) * year_fraction(a, b, ts.day_count) for a, b in pairwise(cuts))
     if scenario is None:
         return None

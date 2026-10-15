@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import csv
 import re
+import tempfile
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -25,6 +26,7 @@ from argfx.contracts.terms import (
     RateRow,
     TermRow,
     load_term_sheets,
+    merge_term_folders,
 )
 from argfx.schemas import (
     FILE_SCHEMAS,
@@ -39,6 +41,7 @@ from argfx.schemas import (
 )
 
 Severity = Literal["error", "warning"]
+REPO_TERMS = Path(__file__).resolve().parents[2] / "contratos"
 SRC_TOKEN = re.compile(r"SRC-\d{4}")
 # Term sheets for the contract engine (phase 2), optional in any batch.
 TERM_SCHEMAS = {
@@ -371,7 +374,14 @@ def _check_terms(b: Batch, instruments: dict[str, Instrument], issues: list[Issu
         )
     ):
         try:
-            load_term_sheets(folder)
+            # Operations may refer to instruments whose terms are already in the repository,
+            # so a batch that brings them is checked on top of `contratos/`.
+            with tempfile.TemporaryDirectory() as tmp:
+                if (folder / "operaciones.csv").exists() and REPO_TERMS.exists():
+                    merge_term_folders(REPO_TERMS, folder, Path(tmp))
+                    load_term_sheets(Path(tmp))
+                else:
+                    load_term_sheets(folder)
         except (ValueError, FileNotFoundError) as exc:
             issues.append(Issue(b.lote, rel, "", "error", "term_sheet_invalid", str(exc)))
 

@@ -92,7 +92,7 @@ class Source(Row):
     accessed_at: date
     period_covered: OptStr = None
     document_type: str
-    sha256: Annotated[str | None, Opt, Field(pattern=SHA256)] = None
+    sha256: Annotated[Annotated[str, Field(pattern=SHA256)] | None, Opt] = None
     license_notes: OptStr = None
     local_object_key: OptStr = None
 
