@@ -1,0 +1,35 @@
+mes,fecha_del_dato,depositos_gobierno_en_moneda_extranjera_millones_de_pesos,tipo_de_cambio_pesos_por_usd,depositos_en_moneda_extranjera_millones_de_usd_calculado,variacion_contra_el_mes_anterior_millones_de_usd,control_balance_mensual_millones_de_pesos_SRC-1160,diferencia_control_millones_de_pesos,nota,source_id,review_status
+2024-01,2024-01-31,2286628,826.25,2767.5,,2286627.573,-0.427,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-02,2024-02-29,1486519,842.25,1764.9,-1002.5,1486519.166,0.166,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-03,2024-03-27,886470,857.4167,1033.9,-731.1,886469.720,-0.280,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-04,2024-04-30,950292,876.75,1083.9,50.0,950292.291,0.291,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-05,2024-05-31,383156,895.25,428.0,-655.9,383156.210,0.210,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-06,2024-06-28,942654,911.75,1033.9,605.9,942654.423,0.423,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-07,2024-07-31,1159248,932.75,1242.8,208.9,1159247.789,-0.211,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-08,2024-08-30,795954,952.8333,835.4,-407.5,795953.757,-0.243,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-09,2024-09-30,1540884,970.9167,1587.0,751.7,1540884.220,0.220,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-10,2024-10-31,1264155,990.75,1276.0,-311.1,1264155.313,0.313,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-11,2024-11-29,3602087,1011.75,3560.3,2284.3,3602086.501,-0.499,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2024-12,2024-12-30,6189529,1032.5,5994.7,2434.4,6189529.439,0.439,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-01,2025-01-31,3356534,1053.5,3186.1,-2808.6,3356534.397,0.397,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-02,2025-02-28,2937339,1064.375,2759.7,-426.4,2937338.690,-0.310,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-03,2025-03-31,2095646,1073.875,1951.5,-808.2,2095645.940,-0.060,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-04,2025-04-30,18104955,1172.0,15447.9,13496.4,18104955.462,0.462,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-05,2025-05-30,3666729,1195.3333,3067.5,-12380.4,3666728.826,-0.174,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-06,2025-06-30,5588038,1194.0833,4679.8,1612.2,5588038.329,0.329,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-07,2025-07-31,3660592,1351.8333,2707.9,-1971.9,3660591.724,-0.276,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-08,2025-08-29,2231612,1323.8333,1685.7,-1022.2,2231611.535,-0.465,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-09,2025-09-30,3180588,1366.5833,2327.4,641.7,3180587.804,-0.196,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-10,2025-10-31,132675,1443.0,91.9,-2235.5,132674.756,-0.244,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-11,2025-11-28,308358,1450.75,212.6,120.6,308358.185,0.185,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2025-12,2025-12-30,2874846,1459.4167,1969.9,1757.3,2874845.876,-0.124,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-01,2026-01-30,761825,1447.6657,526.2,-1443.6,761825.005,0.005,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-02,2026-02-27,750684,1408.9662,532.8,6.5,750684.128,0.128,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-03,2026-03-31,671030,1382.7578,485.3,-47.5,671029.791,-0.209,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-04,2026-04-30,1885272,1381.0954,1365.1,879.8,1885271.694,-0.306,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-05,2026-05-29,4312505,1410.2904,3057.9,1692.8,4312504.882,-0.118,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-06,2026-06-30,5813012,1483.0198,3919.7,861.8,5813011.842,-0.158,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-07,2026-07-31,5366730,1488.4531,3605.6,-314.1,5366730.474,0.474,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-08,2026-08-31,4194914,1509.4686,2779.1,-826.5,4194914.486,0.486,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-09,2026-09-30,1706500,1517.5209,1124.5,-1654.5,1706499.817,-0.183,último día con dato de la serie diaria,SRC-1212;SRC-1213;SRC-1160,sin_revisar
+2026-10,2026-10-13,1864154,1515.8543,1229.8,105.2,,,último día con dato de la serie diaria (mes incompleto: último dato 2026-10-13),SRC-1212;SRC-1214,sin_revisar

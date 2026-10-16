@@ -1,0 +1,4 @@
+fecha_del_calculo,cifra_publicada,cifra_publicada_millones_de_usd,calculo_propio_millones_de_usd,diferencia,nota,source_id,review_status
+2026-09-10,"USD 2.762 millones (el texto dice $ 4,1 billones a 1.512 pesos; atribuye el dato al informe monetario del BCRA)",2762,2760.4,-1.6,,SRC-1219;SRC-1212;SRC-1213,sin_revisar
+2026-09-25,"USD 1.409 millones (nota del 30 de septiembre: ""habían caído en los últimos días""; la fecha exacta no figura)",1409,1409.5,0.5,la fecha 2026-09-25 es la del primer día con ese nivel en la serie diaria,SRC-1217;SRC-1212;SRC-1213,sin_revisar
+2026-10-05,"USD 1.177 millones (consultora 1816, dato del lunes 5 de octubre)",1177,1176.7,-0.3,,SRC-1218;SRC-1212;SRC-1213,sin_revisar
