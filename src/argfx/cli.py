@@ -127,6 +127,7 @@ def cmd_conciliacion(args: argparse.Namespace) -> int:
     from datetime import date
 
     from argfx.reconcile.conciliacion import Materiality, build_reconciliation
+    from argfx.reconcile.consolidacion import build_consolidation
 
     xlsx = args.finanzas
     if xlsx is None:
@@ -144,6 +145,17 @@ def cmd_conciliacion(args: argparse.Namespace) -> int:
         Materiality(args.umbral_abs, args.umbral_rel),
     )
     for k, v in counts.items():
+        print(f"{k}: {v:,}")
+    consolidated = build_consolidation(
+        args.tenencias / f"composicion_acreedor_{args.corte}.csv",
+        args.tenencias / f"tenencias_identificadas_{args.corte}.csv",
+        args.instrumentos,
+        args.calendario / "flujos.csv",
+        args.terminos,
+        date.fromisoformat(args.corte),
+        args.out,
+    )
+    for k, v in consolidated.items():
         print(f"{k}: {v:,}")
     print(f"tablas en {args.out}/")
     return 0
@@ -196,6 +208,7 @@ def build_parser() -> argparse.ArgumentParser:
     con.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
     con.add_argument("--calendario", type=Path, default=Path("data/calendario"))
     con.add_argument("--terminos", type=Path, default=Path("contratos"))
+    con.add_argument("--tenencias", type=Path, default=Path("tenencias"))
     con.add_argument("--out", type=Path, default=Path("data/conciliacion"))
     con.add_argument("--umbral-abs", type=float, default=10.0, help="millions of USD")
     con.add_argument("--umbral-rel", type=float, default=0.001)
