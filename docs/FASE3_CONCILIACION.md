@@ -57,6 +57,21 @@ Entre la necesidad bruta y la consolidada hay 3.370 millones de USD. Solo la par
 
 **Letras en garantía (D-011).** Las 109 letras en garantía del FODER (3.774 millones de USD) son deuda contingente en poder de un fideicomiso público: salen de la necesidad firme (266 millones a 12 meses) y entran como tenencia identificada del sector público.
 
+### Deuda en pesos en poder del sector público
+
+`argfx conciliacion` también reparte la deuda pagadera en pesos (`src/argfx/reconcile/pesos.py`). La capa oficial aplica la composición por moneda de lo que tienen las agencias del sector público (SRC-1014) a su total. La capa identificada suma lo que informa cada tenedor (`tenencias/tenencias_pesos_2026-06-30.csv`): el balance mensual del BCRA (títulos públicos en pesos), el informe mensual del FGS por categoría y los estados del Banco Nación. Las valuaciones no son las mismas (contable, de mercado, de libros), así que esta capa sirve para controlar el orden de magnitud de la oficial y no la reemplaza.
+
+| Grupo (SIGADE) | Deuda bruta | En poder del sector público (oficial) | % | En otras manos |
+|---|---|---|---|---|
+| Pesos ajustados por CER | 112.637 | 78.881 | 70,0 | 33.756 |
+| Pesos nominales (fija, variable, duales y adelantos del BCRA) | 103.563 | 54.034 | 52,2 | 49.530 |
+| Dólar-linked pagadera en pesos | 8.954 | 2.169 | 24,2 | 6.785 |
+| **Total en pesos** | **225.154** | **135.084** | **60,0** | **90.070** |
+
+En millones de USD al tipo de cambio del corte. Lo identificado suma 125.315: BCRA 52.843, FGS 52.644 y Banco Nación 19.828. Es el 93% de la cifra oficial. El Banco Nación incluye 8.061 de filas "otros" que pueden tener bonos en dólares o provinciales, y no está claro si la nota de Finanzas lo cuenta entre los "organismos del sector público nacional".
+
+Seis de cada diez pesos de deuda están en manos del propio sector público, y siete de cada diez en la deuda CER. La deuda en pesos en manos privadas, que es la que se refinancia en el mercado, ronda los 90.000 millones de USD.
+
 ## Intereses capitalizados devengados (D-009, `argfx devengados`)
 
 La planilla trimestral de Finanzas (A.2.2) tiene una línea oficial de capitalización de intereses ("Capitalización de Bonos, Letras y otros préstamos"), separada de la variación por CER y por tipo de cambio. Según su nota (*), incluye la capitalización acumulada por las ampliaciones de bonos y letras. Al reabrir una LECAP o una BONCAP, el valor nominal nuevo entra a la par y lo capitalizado desde la emisión entra por esta línea. Esa parte la pagó el comprador en efectivo, así que no es interés devengado en el trimestre. Por eso el módulo resta, colocación por colocación (planillas de colocaciones de ONCP 2024 a 2026), lo capitalizado que trae cada ampliación:
@@ -113,6 +128,6 @@ La categoría de bonos en pesos a tasa fija aparece en diciembre de 2024 y la de
 
 ## Lo que falta en la fase 3
 
-1. **Tenencias en pesos.** La consolidación de la deuda en pesos (BCRA, Banco Nación, FGS) queda para después: no cambia la necesidad de divisas, y las tenencias por especie del BCRA son del 31-12-2025, con muchas LECAP vencidas y reemplazadas en 2026.
+1. **Tenencias en pesos.** Hecha por grupo de moneda e indexación (ver arriba). Falta abrirla por instrumento: las tenencias por especie del BCRA son del 31-12-2025.
 2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado y los descuentos de colocación. La tenencia del FGS está descontada, como rango, en todos los trimestres.
 3. **Movimientos sin conciliar anotados.** RC 30/2026: USD 1.040 millones que no se ven en los depósitos del Tesoro (lotes V a X). Bajas sin operación de TMF27, TMG27 y TZX27 (lotes L y M).
