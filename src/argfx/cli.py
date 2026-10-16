@@ -213,6 +213,51 @@ def cmd_devengados(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_derechos(args: argparse.Namespace) -> int:
+    import csv
+
+    from argfx.simulation.alicuotas import load_book
+    from argfx.simulation.exportaciones import (
+        build_duty_table,
+        crude_prices,
+        monthly_average,
+        observed_duties_usd,
+        read_month,
+    )
+
+    settings = get_settings()
+    store = get_store(settings)
+
+    def cached(sha256: str, suffix: str) -> Path:
+        dest = settings.cache_dir / "arca" / f"{sha256}{suffix}"
+        if not dest.is_file():
+            fetch_verified(store, sha256, dest, settings.cache_dir)
+        return dest
+
+    with args.descargas.open(newline="", encoding="utf-8") as fh:
+        rows = [r for r in csv.DictReader(fh) if r["sha256"]]
+    latest = {r["source_id"]: r["sha256"] for r in rows}
+    zips = [latest[s] for s in sorted(latest) if args.desde <= s <= args.hasta]
+    months = [read_month(cached(h, ".zip")) for h in zips]
+    months = [(m, f) for m, f in months if m >= args.mes_desde]
+    rows_out = build_duty_table(
+        months,
+        load_book(args.alicuotas),
+        crude_prices(cached(latest[args.pi], ".xlsx")),
+        observed_duties_usd(args.recaudacion, monthly_average(args.a3500)),
+        args.out,
+    )
+    for r in rows_out:
+        cobrado = r["derecho_cobrado_musd"] or 0
+        print(
+            f"{r['mes']}: FOB {r['fob_musd']:>8,.0f}"
+            f"  con alícuota {r['fob_con_alicuota_musd']:>8,.0f}"
+            f"  estimado {r['derecho_estimado_musd']:>6,.0f}  cobrado {cobrado:>6,.0f}"
+        )
+    print(f"tablas en {args.out}/ (millones de USD)")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -277,6 +322,20 @@ def build_parser() -> argparse.ArgumentParser:
     dev.add_argument("--fgs", type=Path, default=Path("tenencias/fgs_cartera_categorias.csv"))
     dev.add_argument("--out", type=Path, default=Path("data/conciliacion"))
     dev.set_defaults(func=cmd_devengados)
+
+    der = sub.add_parser("derechos", help="phase 4: export duties estimated by NCM position")
+    der.add_argument("--descargas", type=Path, default=Path("manifests/downloads.csv"))
+    der.add_argument("--desde", default="SRC-1375", help="first ARCA monthly zip")
+    der.add_argument("--hasta", default="SRC-1491", help="last ARCA monthly zip")
+    der.add_argument("--mes-desde", default="2020-03", help="first month (rates start 2020-03)")
+    der.add_argument("--pi", default="SRC-1566", help="international crude price workbook")
+    der.add_argument("--alicuotas", type=Path, default=Path("alicuotas/eventos.csv"))
+    der.add_argument("--a3500", type=Path, default=Path("series/bcra_a3500.csv"))
+    der.add_argument(
+        "--recaudacion", type=Path, default=Path("inbox/lote-d/tablas/series_lote_d.csv")
+    )
+    der.add_argument("--out", type=Path, default=Path("data/simulacion"))
+    der.set_defaults(func=cmd_derechos)
     return parser
 
 

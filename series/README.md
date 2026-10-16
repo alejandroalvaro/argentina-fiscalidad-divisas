@@ -4,7 +4,7 @@ Datos observados que el motor usa junto con los escenarios. No son términos con
 
 | Archivo | Contenido | Fuente |
 |---|---|---|
-| `bcra_a3500.csv` | Tipo de cambio de referencia Com. A 3500, 2024-01-02 a 2026-10-14. Los días con dato son los días hábiles observados del sistema financiero | SRC-1900 |
+| `bcra_a3500.csv` | Tipo de cambio de referencia Com. A 3500, 2017-01-02 a 2026-10-14. Los días con dato son los días hábiles observados del sistema financiero | SRC-1907 (2017 a 2023) y SRC-1900 |
 | `bcra_cer.csv` | CER diario, 2024-01-01 a 2026-10-14 | SRC-1901 |
 | `bcra_tamar.csv` | TAMAR de bancos privados en TNA, en porcentaje, 2024-10-01 a 2026-10-13 | SRC-1902 |
 | `bcra_badlar.csv` | BADLAR de bancos privados en TNA, en porcentaje, 2024-01-02 a 2026-10-14 | SRC-1906 |
