@@ -182,11 +182,17 @@ def cmd_devengados(args: argparse.Namespace) -> int:
         ]
     with args.colocaciones.open(newline="", encoding="utf-8") as fh:
         placements = [_cached_object(r["sha256"], "oncp") for r in csv.DictReader(fh)]
-    rows = build_accrual_table(quarterly, placements, args.spn, args.out)
+    rows = build_accrual_table(quarterly, placements, args.spn, args.out, args.fgs)
     for r in rows:
         print(
             f"{r['trimestre']}: capitalizado devengado {r['interes_capitalizado_devengado']:>9,.1f}"
             f"  (línea A.2.2 {r['capitalizacion_a22']:>9,.1f})"
+            f"  descuentos {r['descuento_colocacion_devengado']:>7,.1f}"
+            + (
+                f"  FGS {r['fgs_participacion_min_pct']}-{r['fgs_participacion_max_pct']}%"
+                if r["fgs_participacion_min_pct"] is not None
+                else ""
+            )
         )
     print(f"tabla en {args.out}/devengados_trimestral.csv (miles de millones de pesos)")
     return 0
@@ -253,6 +259,7 @@ def build_parser() -> argparse.ArgumentParser:
     dev.add_argument(
         "--spn", type=Path, default=Path("inbox/lote-i/tablas/series_spn_base_caja.csv")
     )
+    dev.add_argument("--fgs", type=Path, default=Path("tenencias/fgs_cartera_categorias.csv"))
     dev.add_argument("--out", type=Path, default=Path("data/conciliacion"))
     dev.set_defaults(func=cmd_devengados)
     return parser

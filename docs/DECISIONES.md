@@ -98,6 +98,7 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 **Aplicación.**
 - El motor ya separa `interes_capitalizado` (devengado, sin pago) de `interes` y `amortizacion`. Con esos flujos se construye, mes a mes, el interés devengado de la Administración Central.
 - En la fase 3 se reconstruye el resultado financiero con intereses devengados y se lo compara con el publicado, citando la metodología oficial de registro de intereses capitalizados y de descuentos de emisión.
+- `argfx devengados` (2026-10-16): interés capitalizado neto de lo que traen las ampliaciones, descuentos y primas de colocación repartidos hasta el vencimiento, y la tenencia del FGS acotada por categoría para el perímetro del SPN. Ver `docs/FASE3_CONCILIACION.md`.
 - La comparación de costo usa las tasas de las licitaciones y se presenta como estimación, con sus supuestos explícitos.
 - El texto describe lo que muestran los números y deja la valoración al lector, como pide el protocolo.
 

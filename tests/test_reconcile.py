@@ -141,6 +141,21 @@ def test_capitalized_interest_accrued_nets_out_reopenings(tmp_path: Path) -> Non
     a22 = fin.active
     a22.title = "A.2.2"
     a22.append(["Capitalización de Bonos, Letras y otros préstamos (*)", 1.0, 5e9])  # miles de $
+    a11 = fin.create_sheet("A.1.1")
+    a11.append(["III- DEUDA EN SITUACIÓN DE PAGO NORMAL", 1.0, 1000.0])  # 1.000 pesos per USD
+    a17 = fin.create_sheet("A.1.7")
+    a17.append(["Fecha de emisión", "Denominación", "Tasa vigente", "Vencimiento",
+                "Valor nominal original en circulación",
+                "Valor nominal residual en circulación (1)",
+                "Valor nominal actualizado en circulación (2)"])  # fmt: skip
+    a17.append(["LETRAS DEL TESORO", None, None, None, 9.0, 9.0, 9.0])  # subtotal: skipped
+    for name, rate, usd_thousands in [
+        ("LECAP/$/2,00%/30-06-2026 (4)", 0.02, 4e6),  # 4.000 miles de millones de pesos
+        ("BONCAP/$/TAMAR+5%/31-08-2026", "Tamar + 5,00%", 4e6),
+        ("LELINKS/DLK/31-07-2026 (3)", "Tasa Cero", 1e6),
+        ("BONTE/$/29,50%/30-05-2030", 0.295, 2e6),
+    ]:
+        a17.append([datetime(2026, 1, 1), name, rate, 2026, 1.0, 1.0, usd_thousands])
     fin_path = tmp_path / "fin.xlsx"
     fin.save(fin_path)  # 5.000 miles de millones of capitalization in the quarter
 
@@ -168,11 +183,40 @@ def test_capitalized_interest_accrued_nets_out_reopenings(tmp_path: Path) -> Non
         w.writerow(["series_id", "fecha", "valor", "unidad", "source_id"])
         for m in ("2026-04-30", "2026-05-31", "2026-06-30"):
             w.writerow(["spn_caja_resultado_financiero", m, 100_000.0, "millones", "SRC-0001"])
-    (row,) = build_accrual_table([(date(2026, 6, 30), fin_path)], [oncp_path], spn, tmp_path)
+    fgs = tmp_path / "fgs.csv"
+    with fgs.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["fecha", "categoria", "millones_ars", "source_id", "referencia"])
+        w.writerow(["2026-06-30", "Letras, $", 1_600_000, "SRC-0001", "x"])  # 1.600 mm
+        w.writerow(["2026-06-30", "Bonos, $, tasa fija", 2_400_000, "SRC-0001", "x"])
+        w.writerow(["2026-06-30", "Bonos, $, tasa variable (TAMAR)", 800_000, "SRC-0001", "x"])
+    (row,) = build_accrual_table([(date(2026, 6, 30), fin_path)], [oncp_path], spn, tmp_path, fgs)
     carried = 1_000_000.0 * (1.02**3 - 1) / 1e3  # 61,208 miles de millones
     assert row["trimestre"] == "2026T2"
     assert row["capitalizacion_en_ampliaciones_tasa_fija"] == round(carried, 1)
     assert row["capitalizacion_en_ampliaciones_aproximada"] == 10.0
-    assert row["interes_capitalizado_devengado"] == round(5000.0 - carried - 10.0, 1)
+    accrued = 5000.0 - carried - 10.0
+    assert row["interes_capitalizado_devengado"] == round(accrued, 1)
     assert row["spn_resultado_financiero_caja"] == 300.0
-    assert row["resultado_financiero_con_capitalizado"] == round(300.0 - (5000 - carried - 10), 1)
+    assert row["resultado_financiero_con_capitalizado"] == round(300.0 - accrued, 1)
+    # The reopening paid 1.080.000 for a technical value of 1.061.208: a premium, accrued
+    # between settlement and maturity, all inside the quarter. The new issue was at face.
+    premium = (1_080_000.0 - 1_000_000.0 * 1.02**3) / 1e3
+    assert row["descuento_colocacion_devengado"] == round(-premium, 1)
+    total = accrued - premium
+    # FGS over 8.000 of LECAP and BONCAP. Letters 1.600: at least 600 beyond the LELINKs (1.000),
+    # at most 1.600. Fixed-rate bonds 2.400: none, since no fixed-rate bond capitalizes here
+    # (what exceeds the BONTE belongs to bonds outside A.1.7). TAMAR 800: all of it.
+    assert (row["fgs_participacion_min_pct"], row["fgs_participacion_max_pct"]) == (17.5, 30.0)
+    assert row["devengado_no_pagado_spn_min"] == round(total * (1 - 2400 / 8000), 1)
+    assert row["devengado_no_pagado_spn_max"] == round(total * (1 - 1400 / 8000), 1)
+
+
+def test_discounts_accrue_by_days_across_quarters() -> None:
+    from argfx.reconcile.devengados import Discount, accrue_discounts
+
+    out = accrue_discounts([Discount(date(2026, 3, 1), date(2026, 4, 30), 60.0)])
+    assert round(out["2026T1"], 6) == round(60.0 * 31 / 60, 6)  # 1 Mar to 1 Apr
+    assert round(out["2026T2"], 6) == round(60.0 * 29 / 60, 6)
+    out = accrue_discounts([Discount(date(2026, 12, 15), date(2027, 1, 14), 30.0)])
+    assert out == {"2026T4": 17.0, "2027T1": 13.0}

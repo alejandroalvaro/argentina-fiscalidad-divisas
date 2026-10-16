@@ -66,34 +66,45 @@ La planilla trimestral de Finanzas (A.2.2) tiene una línea oficial de capitaliz
 
 Las planillas usadas están registradas por sha256 en `series/finanzas_planillas_trimestrales.csv` y `series/oncp_colocaciones.csv`. La serie fiscal es el resultado del sector público nacional en base caja (lote I), sumado por trimestre. Unidades: miles de millones de pesos corrientes.
 
-| Trimestre | Línea A.2.2 | Capitalización en ampliaciones | Capitalizado devengado | Resultado financiero SPN (caja) | Con capitalizado devengado |
-|---|---|---|---|---|---|
-| 2024T1 | 6 | 0 | 6 | 1.133 | 1.127 |
-| 2024T2 | 879 | 21 | 858 | 1.439 | 581 |
-| 2024T3 | 6.562 | 1.245 | 5.318 | −131 | −5.448 |
-| 2024T4 | 7.484 | 1.150 | 6.334 | −677 | −7.011 |
-| 2025T1 | 12.577 | 6.249 | 6.327 | 1.309 | −5.018 |
-| 2025T2 | 17.193 | 8.323 | 8.870 | 1.786 | −7.084 |
-| 2025T3 | 34.219 | 22.963 | 11.256 | 531 | −10.725 |
-| 2025T4 | 16.607 | 7.172 | 9.436 | −2.173 | −11.608 |
-| 2026T1 | 12.405 | 2.555 | 9.850 | 1.734 | −8.116 |
-| 2026T2 | 11.997 | 2.943 | 9.054 | −278 | −9.332 |
+| Trimestre | Línea A.2.2 | Capitalización en ampliaciones | Capitalizado devengado | Descuento de colocación devengado | Resultado financiero SPN (caja) | Con lo devengado no pagado |
+|---|---|---|---|---|---|---|
+| 2024T1 | 6 | 0 | 6 | 0 | 1.133 | 1.127 |
+| 2024T2 | 879 | 21 | 858 | 0 | 1.439 | 581 |
+| 2024T3 | 6.562 | 1.245 | 5.318 | −13 | −131 | −5.435 |
+| 2024T4 | 7.484 | 1.150 | 6.334 | −157 | −677 | −6.854 |
+| 2025T1 | 12.577 | 6.249 | 6.327 | −436 | 1.309 | −4.582 |
+| 2025T2 | 17.193 | 8.323 | 8.870 | −706 | 1.786 | −6.378 |
+| 2025T3 | 34.219 | 22.963 | 11.256 | −426 | 531 | −10.298 |
+| 2025T4 | 16.607 | 7.172 | 9.436 | 174 | −2.173 | −11.782 |
+| 2026T1 | 12.405 | 2.555 | 9.850 | −43 | 1.734 | −8.073 |
+| 2026T2 | 11.997 | 2.943 | 9.054 | 0 | −278 | −9.332 |
 
 Los resultados en base caja de 2026 suman 1.456 en el semestre, igual al Boletín Fiscal del segundo trimestre (SRC-0610).
+
+**Descuentos de colocación.** El Tesoro debe el valor técnico y recibe el valor efectivo. Para cada colocación en efectivo de LECAP y BONCAP con valor técnico conocido (el nominal en una emisión nueva, el nominal por el factor de capitalización en una ampliación a tasa fija), la diferencia se reparte por días entre la liquidación y el vencimiento. El neto es chico y casi siempre negativo: con las tasas en baja, los compradores pagaron por encima del valor técnico, y esa prima baja el costo. Va de −706 a +174 por trimestre, contra 5.000 a 11.000 de capitalización.
+
+**Perímetro del SPN (tenencia del FGS).** El informe mensual del FGS da la cartera por categoría y no por especie (`tenencias/fgs_cartera_categorias.csv`, junio de 2026, SRC-1166). Contra el valor nominal actualizado de A.1.7, cada categoría acota la parte del FGS en las LECAP y BONCAP que capitalizan: como máximo, lo que tiene en la categoría hasta el saldo capitalizable de esa categoría; como mínimo, lo que tiene más allá de los instrumentos que no capitalizan y pueden estar en la misma categoría (las LELINKs entre las letras, los BONTE a tasa fija entre los bonos). Al 30-06-2026, con 125.100 miles de millones de saldo capitalizable, el FGS tiene entre 10,6% y 16,3%:
+
+| 2026T2 | Administración Central, todos los tenedores | Perímetro SPN (sin el FGS) |
+|---|---|---|
+| Devengado no pagado | 9.054 | 7.578 a 8.093 |
+| Resultado financiero con lo devengado | −9.332 | −8.371 a −7.856 |
+
+Los otros trimestres quedan sin ajustar hasta tener el informe del FGS de cada cierre. El resultado sigue siendo deficitario con cualquier valor del rango.
 
 **Cómo leerlo.**
 - La línea oficial de capitalización sobrestima el interés del trimestre cuando hay muchas ampliaciones. En 2025T3, dos tercios de la línea (22.963 de 34.219) eran capitalización ya pagada por los compradores.
 - El interés capitalizado devengado va de 5 a 11 billones de pesos por trimestre desde mediados de 2024. Como no pasa por los intereses en base caja (JGM, Informe 144, pregunta 58), el resultado financiero que lo incluye es deficitario en todos los trimestres desde 2024T3.
 
 **Limitaciones.**
-- **Perímetros.** A.2.2 es la Administración Central con todos los tenedores. Los intereses netos del SPN excluyen los pagos dentro del SPN, por ejemplo al FGS. Lo que el FGS tenga en LECAP y BONCAP está en la columna de devengado y no debería estarlo para el SPN, así que la columna sobrestima en esa medida.
+- **Perímetros.** A.2.2 es la Administración Central con todos los tenedores. Los intereses netos del SPN excluyen los pagos dentro del SPN. El ajuste por el FGS solo está hecho para 2026T2, como rango. Otros organismos del SPN (fondos fiduciarios, por ejemplo) también pueden tener LECAP y BONCAP, y no están descontados. El FGS valúa a precio de mercado y A.1.7 a valor técnico, lo que mueve el rango en la diferencia entre ambos.
 - **2024T1.** La línea no incluía todavía la LECAP: el rótulo la suma desde 2024T2.
-- **Descuentos.** No se suman los descuentos de colocación (valor efectivo por debajo del valor técnico), que también son costo devengado. Tampoco el ajuste por CER, que la planilla registra aparte (7.000 a 41.000 miles de millones por trimestre).
+- **Descuentos.** Faltan las ampliaciones TAMAR y duales, cuyo valor técnico no se conoce (su capitalización se aproxima con el valor efectivo, así que la prima queda adentro), y los canjes. No se suma el ajuste por CER, que la planilla registra aparte (7.000 a 41.000 miles de millones por trimestre).
 - **Filas sin dato.** Son tres ampliaciones TAMAR o duales, sin valor efectivo.
 - **Comparación externa.** La estimación de CEPA para enero a mayo de 2026 (11,37 billones, lote I) no es comparable sin conocer su método.
 
 ## Lo que falta en la fase 3
 
 1. **Tenencias en pesos.** La consolidación de la deuda en pesos (BCRA, Banco Nación, FGS) queda para después: no cambia la necesidad de divisas, y las tenencias por especie del BCRA son del 31-12-2025, con muchas LECAP vencidas y reemplazadas en 2026.
-2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado (ver arriba). Falta separar la tenencia del FGS para el perímetro del SPN y sumar los descuentos de colocación.
+2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado y los descuentos de colocación. La tenencia del FGS está descontada en 2026T2; para los trimestres anteriores hacen falta los informes del FGS de cada cierre (pedidos a Grok).
 3. **Movimientos sin conciliar anotados.** RC 30/2026: USD 1.040 millones que no se ven en los depósitos del Tesoro (lotes V a X). Bajas sin operación de TMF27, TMG27 y TZX27 (lotes L y M).
