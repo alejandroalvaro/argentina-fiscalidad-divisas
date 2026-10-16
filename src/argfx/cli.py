@@ -161,6 +161,37 @@ def cmd_conciliacion(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cached_object(sha256: str, folder: str) -> Path:
+    settings = get_settings()
+    dest = settings.cache_dir / folder / f"{sha256}.xlsx"
+    if not dest.is_file():
+        fetch_verified(get_store(settings), sha256, dest, settings.cache_dir)
+    return dest
+
+
+def cmd_devengados(args: argparse.Namespace) -> int:
+    import csv
+    from datetime import date
+
+    from argfx.reconcile.devengados import build_accrual_table
+
+    with args.planillas.open(newline="", encoding="utf-8") as fh:
+        quarterly = [
+            (date.fromisoformat(r["corte"]), _cached_object(r["sha256"], "finanzas"))
+            for r in csv.DictReader(fh)
+        ]
+    with args.colocaciones.open(newline="", encoding="utf-8") as fh:
+        placements = [_cached_object(r["sha256"], "oncp") for r in csv.DictReader(fh)]
+    rows = build_accrual_table(quarterly, placements, args.spn, args.out)
+    for r in rows:
+        print(
+            f"{r['trimestre']}: capitalizado devengado {r['interes_capitalizado_devengado']:>9,.1f}"
+            f"  (línea A.2.2 {r['capitalizacion_a22']:>9,.1f})"
+        )
+    print(f"tabla en {args.out}/devengados_trimestral.csv (miles de millones de pesos)")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -213,6 +244,17 @@ def build_parser() -> argparse.ArgumentParser:
     con.add_argument("--umbral-abs", type=float, default=10.0, help="millions of USD")
     con.add_argument("--umbral-rel", type=float, default=0.001)
     con.set_defaults(func=cmd_conciliacion)
+
+    dev = sub.add_parser("devengados", help="phase 3: capitalized interest accrued (D-009)")
+    dev.add_argument(
+        "--planillas", type=Path, default=Path("series/finanzas_planillas_trimestrales.csv")
+    )
+    dev.add_argument("--colocaciones", type=Path, default=Path("series/oncp_colocaciones.csv"))
+    dev.add_argument(
+        "--spn", type=Path, default=Path("inbox/lote-i/tablas/series_spn_base_caja.csv")
+    )
+    dev.add_argument("--out", type=Path, default=Path("data/conciliacion"))
+    dev.set_defaults(func=cmd_devengados)
     return parser
 
 

@@ -41,6 +41,7 @@ make check     # ruff + pytest (offline)
 make storage-check
 uv run argfx calendario   # phase 2: obligations calendar into data/calendario/
 uv run argfx conciliacion # phase 3: reconcile with the Finanzas workbook into data/conciliacion/
+uv run argfx devengados   # phase 3 / D-009: capitalized interest accrued by quarter
 ```
 
 ## Git

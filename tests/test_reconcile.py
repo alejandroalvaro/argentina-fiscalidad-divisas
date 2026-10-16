@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
@@ -129,3 +130,49 @@ def test_consolidation_splits_public_holdings_by_method_and_law(tmp_path: Path) 
     assert float(rows["INS-C-0004"]["consolidada_musd"]) == 10.0
     assert float(rows["INS-C-0002"]["sector_publico_proporcional_musd"]) == 2.0
     assert float(rows["INS-C-0003"]["sector_publico_proporcional_musd"]) == 3.75
+
+
+def test_capitalized_interest_accrued_nets_out_reopenings(tmp_path: Path) -> None:
+    from datetime import datetime
+
+    from argfx.reconcile.devengados import build_accrual_table
+
+    fin = Workbook()
+    a22 = fin.active
+    a22.title = "A.2.2"
+    a22.append(["Capitalización de Bonos, Letras y otros préstamos (*)", 1.0, 5e9])  # miles de $
+    fin_path = tmp_path / "fin.xlsx"
+    fin.save(fin_path)  # 5.000 miles de millones of capitalization in the quarter
+
+    oncp = Workbook()
+    letras = oncp.active
+    letras.title = "Letras"
+    letras.append(["Nombre del Instrumento", "Fecha de emisión", "Vencimiento", "Cupón",
+                   "Amortización", "Tipo Moneda", "Moneda de Origen",
+                   "Fecha colocación/liquidación", "Valor Nominal", "Valor Efectivo"])  # fmt: skip
+    letras.append(["LECAP/$/30-06-2026", datetime(2026, 1, 30), datetime(2026, 6, 30),
+                   "Tasa efectiva mensual capitalizable 2%", "Íntegra", "MN", "ARP",
+                   datetime(2026, 1, 30), 1_000_000.0, 1_000_000.0])  # new issue  # fmt: skip
+    letras.append(["LECAP/$/30-06-2026", datetime(2026, 1, 30), datetime(2026, 6, 30),
+                   "Tasa efectiva mensual capitalizable 2%", "Íntegra", "MN", "ARP",
+                   datetime(2026, 4, 30), 1_000_000.0, 1_080_000.0])  # 3 months later  # fmt: skip
+    letras.append(["LECAP/$/TAMAR+5%/31-08-2026", datetime(2026, 1, 15), datetime(2026, 8, 31),
+                   "Tasa efectiva mensual “TAMAR TEM”", "Íntegra", "MN", "ARP",
+                   datetime(2026, 5, 15), 100_000.0, 110_000.0])  # fmt: skip
+    oncp_path = tmp_path / "oncp.xlsx"
+    oncp.save(oncp_path)
+
+    spn = tmp_path / "spn.csv"
+    with spn.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["series_id", "fecha", "valor", "unidad", "source_id"])
+        for m in ("2026-04-30", "2026-05-31", "2026-06-30"):
+            w.writerow(["spn_caja_resultado_financiero", m, 100_000.0, "millones", "SRC-0001"])
+    (row,) = build_accrual_table([(date(2026, 6, 30), fin_path)], [oncp_path], spn, tmp_path)
+    carried = 1_000_000.0 * (1.02**3 - 1) / 1e3  # 61,208 miles de millones
+    assert row["trimestre"] == "2026T2"
+    assert row["capitalizacion_en_ampliaciones_tasa_fija"] == round(carried, 1)
+    assert row["capitalizacion_en_ampliaciones_aproximada"] == 10.0
+    assert row["interes_capitalizado_devengado"] == round(5000.0 - carried - 10.0, 1)
+    assert row["spn_resultado_financiero_caja"] == 300.0
+    assert row["resultado_financiero_con_capitalizado"] == round(300.0 - (5000 - carried - 10), 1)

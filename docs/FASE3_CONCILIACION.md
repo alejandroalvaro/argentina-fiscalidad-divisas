@@ -57,8 +57,43 @@ Entre la necesidad bruta y la consolidada hay 3.720 millones de USD. Solo la par
 
 **Sensibilidad abierta: letras en garantía.** Las 109 letras en garantía de SIGADE (3.774 millones de USD, 266 millones en la necesidad a 12 meses) respaldan contratos de energías renovables. Hoy cuentan como deuda firme. Si las tiene el FODER, que es un fondo fiduciario público, son tenencia del sector público y probablemente deuda contingente. En ese caso salen de la necesidad firme, y la parte proporcional de los Bonares baja de 50% a 41%. Pedido a Grok.
 
+## Intereses capitalizados devengados (D-009, `argfx devengados`)
+
+La planilla trimestral de Finanzas (A.2.2) tiene una línea oficial de capitalización de intereses ("Capitalización de Bonos, Letras y otros préstamos"), separada de la variación por CER y por tipo de cambio. Según su nota (*), incluye la capitalización acumulada por las ampliaciones de bonos y letras. Al reabrir una LECAP o una BONCAP, el valor nominal nuevo entra a la par y lo capitalizado desde la emisión entra por esta línea. Esa parte la pagó el comprador en efectivo, así que no es interés devengado en el trimestre. Por eso el módulo resta, colocación por colocación (planillas de colocaciones de ONCP 2024 a 2026), lo capitalizado que trae cada ampliación:
+
+- **LECAP y BONCAP a tasa fija:** valor nominal × [(1 + TEM)^(DÍAS/30) − 1], con DÍAS entre la emisión y la liquidación en 30E/360, que es la fórmula legal.
+- **Ampliaciones TAMAR y duales:** su TEM no figura en la planilla, así que se usa como aproximación el valor efectivo menos el nominal.
+
+Las planillas usadas están registradas por sha256 en `series/finanzas_planillas_trimestrales.csv` y `series/oncp_colocaciones.csv`. La serie fiscal es el resultado del sector público nacional en base caja (lote I), sumado por trimestre. Unidades: miles de millones de pesos corrientes.
+
+| Trimestre | Línea A.2.2 | Capitalización en ampliaciones | Capitalizado devengado | Resultado financiero SPN (caja) | Con capitalizado devengado |
+|---|---|---|---|---|---|
+| 2024T1 | 6 | 0 | 6 | 1.133 | 1.127 |
+| 2024T2 | 879 | 21 | 858 | 1.439 | 581 |
+| 2024T3 | 6.562 | 1.245 | 5.318 | −131 | −5.448 |
+| 2024T4 | 7.484 | 1.150 | 6.334 | −677 | −7.011 |
+| 2025T1 | 12.577 | 6.249 | 6.327 | 1.309 | −5.018 |
+| 2025T2 | 17.193 | 8.323 | 8.870 | 1.786 | −7.084 |
+| 2025T3 | 34.219 | 22.963 | 11.256 | 531 | −10.725 |
+| 2025T4 | 16.607 | 7.172 | 9.436 | −2.173 | −11.608 |
+| 2026T1 | 12.405 | 2.555 | 9.850 | 1.734 | −8.116 |
+| 2026T2 | 11.997 | 2.943 | 9.054 | −278 | −9.332 |
+
+Los resultados en base caja de 2026 suman 1.456 en el semestre, igual al Boletín Fiscal del segundo trimestre (SRC-0610).
+
+**Cómo leerlo.**
+- La línea oficial de capitalización sobrestima el interés del trimestre cuando hay muchas ampliaciones. En 2025T3, dos tercios de la línea (22.963 de 34.219) eran capitalización ya pagada por los compradores.
+- El interés capitalizado devengado va de 5 a 11 billones de pesos por trimestre desde mediados de 2024. Como no pasa por los intereses en base caja (JGM, Informe 144, pregunta 58), el resultado financiero que lo incluye es deficitario en todos los trimestres desde 2024T3.
+
+**Limitaciones.**
+- **Perímetros.** A.2.2 es la Administración Central con todos los tenedores. Los intereses netos del SPN excluyen los pagos dentro del SPN, por ejemplo al FGS. Lo que el FGS tenga en LECAP y BONCAP está en la columna de devengado y no debería estarlo para el SPN, así que la columna sobrestima en esa medida.
+- **2024T1.** La línea no incluía todavía la LECAP: el rótulo la suma desde 2024T2.
+- **Descuentos.** No se suman los descuentos de colocación (valor efectivo por debajo del valor técnico), que también son costo devengado. Tampoco el ajuste por CER, que la planilla registra aparte (7.000 a 41.000 miles de millones por trimestre).
+- **Filas sin dato.** Son tres ampliaciones TAMAR o duales, sin valor efectivo.
+- **Comparación externa.** La estimación de CEPA para enero a mayo de 2026 (11,37 billones, lote I) no es comparable sin conocer su método.
+
 ## Lo que falta en la fase 3
 
 1. **Tenencias en pesos.** La consolidación de la deuda en pesos (BCRA, Banco Nación, FGS) queda para después: no cambia la necesidad de divisas, y las tenencias por especie del BCRA son del 31-12-2025, con muchas LECAP vencidas y reemplazadas en 2026.
-2. **Resultado financiero con intereses devengados (D-009).** Intereses devengados por instrumento con el motor (capitalización de LECAP y BONCAP, descuentos de emisión) contra el gasto en intereses de base caja. El control anual es la identidad devengado = pagado + variación del stock de devengados no exigibles (Anexo G de la Cuenta de Inversión, lote R).
+2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado (ver arriba). Falta separar la tenencia del FGS para el perímetro del SPN y sumar los descuentos de colocación.
 3. **Movimientos sin conciliar anotados.** RC 30/2026: USD 1.040 millones que no se ven en los depósitos del Tesoro (lotes V a X). Bajas sin operación de TMF27, TMG27 y TZX27 (lotes L y M).
