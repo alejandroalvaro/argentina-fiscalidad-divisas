@@ -1,0 +1,24 @@
+Transcripcion de lectura web (no es el original). Fuente: ANSES, Fondo de Garantia de Sustentabilidad, "Informe Anual del FGS 2024", Subdireccion Ejecutiva de Operacion del FGS.
+URL: https://www.anses.gob.ar/sites/default/files/inline-files/Anuario%202024.pdf
+Leido el 2026-10-16 con la herramienta de lectura web (el sitio responde 403 Incapsula a curl).
+Solo se transcriben el Cuadro 4 y el Cuadro 5 (titulos publicos nacionales) y el total de la cartera de dic-24.
+
+Cuadro 4 - Inversiones en renta fija (inc. a) (en millones de pesos)
+Categoria | dic-23 | mar-24 | jun-24 | sep-24 | dic-24 | % del total del inciso a dic 2024
+Bonos, $, tasa variable (CER) | 11.199.448 | 25.732.408 | 28.982.963 | 32.091.088 | 37.581.175 | 66,4%
+Bonos, USD, tasa fija | 4.203.708 | 5.864.974 | 7.423.612 | 7.873.646 | 10.537.433 | 18,6%
+Bonos, $, tasa variable (Dolar-linked) | 11.992.320 | 3.511.340 | 4.187.461 | 4.234.768 | 4.665.598 | 8,2%
+Letras, $ | 21.098 | - | 691.207 | 2.226.171 | 1.218.491 | 2,2%
+Bonos, $, tasa fija | - | - | - | - | 1.150.155 | 2,0%
+Letras, USD | 858.713 | 918.291 | 982.489 | 1.051.362 | 1.122.361 | 2,0%
+Bonos, EUR, tasa variable (PBI) | 94.796 | 125.266 | 152.350 | 138.862 | 169.218 | 0,3%
+Bonos, USD, tasa variable (PBI) | 57.935 | 168.107 | 138.686 | 111.042 | 151.244 | 0,3%
+Bonos, $, tasa variable (BADLAR) | 39.917 | 39.320 | 38.245 | 34.356 | 34.359 | 0,1%
+Bonos, $, tasa variable (PBI) | 68 | 354 | 304 | 364 | 1.377 | 0,002%
+Total Titulos Publicos Nacionales | 28.468.004 | 36.360.061 | 42.597.319 | 47.761.660 | 56.631.411 | 100%
+(La lectura web desalinea algunas columnas en las filas con celdas vacias. Las cifras de dic-24 se asignaron por orden y se verificaron: la suma de las diez categorias da 56.631.411, igual al total; mar, jun y sep de 2024 coinciden con los informes mensuales del lote AB.)
+
+Cuadro 5 - Bonos y letras del inc. a) por moneda (en millones de pesos), dic-24
+Bonos en pesos 43.432.664 | Bonos en dolares 10.688.677 | Bonos en euros 169.218 | Letras en pesos 1.218.491 | Letras en dolares 1.122.361 | Total 56.631.411
+
+Cuadro 1 - Total FGS dic-24: 76.904.936 millones de pesos; Titulos Publicos Nacionales 56.631.411 (73,6%): no garantizados negociables 47.494.785, garantizados 401.427, Cuasipar 8.735.199.
