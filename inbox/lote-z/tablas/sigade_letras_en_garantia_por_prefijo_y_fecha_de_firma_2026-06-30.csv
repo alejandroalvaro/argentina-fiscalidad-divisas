@@ -1,0 +1,13 @@
+prefijo_del_nombre,lectura_del_prefijo,fecha_de_firma_sigade,cantidad_de_letras,saldo_usd_millones,source_id
+BG,biogás (inferido del prefijo BG),2017-08-31,4,18.899,SRC-0102
+BM,biomasa (inferido del prefijo BM),2017-08-31,3,119.188,SRC-0102
+EOL,eólica (inferido solo del prefijo EOL; SIGADE no lo dice),2017-08-31,24,1584.532,SRC-0102
+PAH,pequeño aprovechamiento hidroeléctrico (inferido del prefijo PAH),2017-08-31,5,22.827,SRC-0102
+SFV,solar fotovoltaica (inferido del prefijo SFV),2017-08-31,20,670.307,SRC-0102
+BG,biogás (inferido del prefijo BG),2018-12-21,20,126.983,SRC-0102
+BM,biomasa (inferido del prefijo BM),2018-12-21,9,181.331,SRC-0102
+BRS,biogás de relleno sanitario (inferido del prefijo BRS),2018-12-21,3,20.185,SRC-0102
+EOL,eólica (inferido solo del prefijo EOL; SIGADE no lo dice),2018-12-21,9,710.259,SRC-0102
+PAH,pequeño aprovechamiento hidroeléctrico (inferido del prefijo PAH),2018-12-21,6,35.180,SRC-0102
+SFV,solar fotovoltaica (inferido del prefijo SFV),2018-12-21,6,284.048,SRC-0102
+TOTAL,,,109,3773.738,SRC-0102
