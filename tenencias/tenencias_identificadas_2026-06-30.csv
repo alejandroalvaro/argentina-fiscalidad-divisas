@@ -1,0 +1,15 @@
+instrument_id,tenedor,valor_nominal_original_usd,metodo,fecha_dato,source_id,referencia
+INS-C-0443,BCRA,10025291113.33,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/16-01-2033: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0440,BCRA,8069560627.18,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/07-01-2034: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0444,BCRA,4413717781.5,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/20-04-2032: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0445,BCRA,2961672406.0,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/2032: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0442,BCRA,2165869311.0,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/15-09-2033: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0441,BCRA,1600000000.0,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/08-01-2034: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0447,BCRA,1069903003.0,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/30-12-2032: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0446,BCRA,3878320.0,directo,2026-06-30,SRC-0102,LETRA/U$S/BCRA/30-06-2031: SIGADE la registra con acreedor BCRA; la tenencia es todo el saldo
+INS-C-0631,sector público (sin detalle),1228159232.62,directo,2026-06-30,SRC-0102,LETRA/U$S/INTRA SP/19-02-2027: el nombre en SIGADE dice intra sector público; la tenencia es todo el saldo
+INS-C-0399,BCRA,21962000.0,estimado,2025-12-31,SRC-1156,"Bono Global USD Step Up Vto 2035 Ley Ext.: Anexo III de los estados contables del BCRA al 31-12-2025 (mapeo del lote S, confianza media); se supone sin cambios hasta el corte"
+INS-C-0397,BCRA,61555000.0,estimado,2025-12-31,SRC-1156,"Bono Global USD Step Up Vto 2038 Ley Ext.: Anexo III de los estados contables del BCRA al 31-12-2025 (mapeo del lote S, confianza media); se supone sin cambios hasta el corte"
+INS-C-0396,BCRA,5465000.0,estimado,2025-12-31,SRC-1156,"Bono Global USD 1% Vto 2029 Ley Ext.: Anexo III de los estados contables del BCRA al 31-12-2025 (mapeo del lote S, confianza media); se supone sin cambios hasta el corte"
+INS-C-0405,BCRA,4390330748,estimado,2026-06-08,SRC-0947,"entregado al BCRA en la conversión de la RC 31/2026 (ONCP, colocaciones 2026, Otras Operaciones fila 22); que lo tuviera al corte es un supuesto"
+INS-C-0403,BCRA,2261685537,estimado,2026-06-08,SRC-0947,"entregado al BCRA en la conversión de la RC 31/2026 (ONCP, colocaciones 2026, Otras Operaciones fila 23); que lo tuviera al corte es un supuesto"

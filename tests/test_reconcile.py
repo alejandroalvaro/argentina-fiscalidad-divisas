@@ -66,3 +66,66 @@ def test_stock_and_flow_controls(tmp_path: Path) -> None:
     assert adv["diferencia_musd"] == -0.001 and not adv["material"]
     flows = flow_identities(lines(x, "A.2.2"), m)
     assert [r["material"] for r in flows] == [False, False, False, False]
+
+
+def test_consolidation_splits_public_holdings_by_method_and_law(tmp_path: Path) -> None:
+    from datetime import date
+
+    from argfx.contracts.terms import TERM_FILES
+    from argfx.reconcile.consolidacion import build_consolidation
+
+    repo = Path(__file__).resolve().parent.parent / "contratos"
+    terms = tmp_path / "contratos"
+    terms.mkdir()
+    for name in TERM_FILES:  # headers only: no term sheets, every bond is bullet
+        header = (repo / name).read_text(encoding="utf-8").splitlines()[0]
+        (terms / name).write_text(header + "\n", encoding="utf-8")
+
+    def write(name: str, rows: list[list[object]]) -> Path:
+        p = tmp_path / name
+        with p.open("w", newline="", encoding="utf-8") as fh:
+            csv.writer(fh).writerows(rows)
+        return p
+
+    comp = write("comp.csv", [
+        ["partida", "millones_usd", "porcentaje", "source_id", "referencia"],
+        ["agencias_sector_publico", 100, "", "SRC-0001", "x"],
+        ["sector_publico_moneda_total", 100, "", "SRC-0001", "x"],
+        ["sector_publico_dolares", "", 60, "SRC-0001", "x"],
+        ["sector_publico_legislacion_extranjera", "", 10, "SRC-0001", "x"],
+    ])  # fmt: skip
+    holdings = write("ten.csv", [
+        ["instrument_id", "tenedor", "valor_nominal_original_usd", "metodo", "fecha_dato",
+         "source_id", "referencia"],
+        ["INS-C-0001", "BCRA", 30e6, "directo", "2026-06-30", "SRC-0001", "x"],
+        ["INS-C-0003", "BCRA", 5e6, "estimado", "2026-06-30", "SRC-0001", "x"],
+    ])  # fmt: skip
+    inst = write("inst.csv", [
+        ["instrument_id", "instrument_family", "operation_name_sigade",
+         "outstanding_usd_equiv_sigade"],
+        ["INS-C-0001", "USD", "LETRA/U$S/BCRA", 30e6],
+        ["INS-C-0002", "USD", "BONO GLOBAL/U$S/2030", 50e6],
+        ["INS-C-0003", "USD", "BONO R.A./U$S/2030", 40e6],
+        ["INS-C-0004", "multilateral", "BID", 20e6],
+    ])  # fmt: skip
+    head = ["instrument_id", "date", "base", "is_payment", "status", "currency_of_settlement",
+            "monto_usd"]  # fmt: skip
+    flows = write("flujos.csv", [head] + [
+        [iid, "2026-07-09", "True", "True", "firme", "USD", 10e6]
+        for iid in ("INS-C-0001", "INS-C-0002", "INS-C-0003", "INS-C-0004")
+    ])  # fmt: skip
+    out = tmp_path / "out"
+    t = build_consolidation(comp, holdings, inst, flows, terms, date(2026, 6, 30), out)
+    # Public USD 60: identified 30 (direct) + 5 (estimated); foreign law 10 goes to the
+    # Global (10/50 = 20%); the remaining 15 to the free part of the local bond (15/35).
+    assert t["bruta_musd"] == 40.0
+    assert t["sector_publico_directo_musd"] == 10.0
+    assert t["sector_publico_estimado_musd"] == 1.2  # 10 x 5/40, rounded
+    assert t["proporcion_ley_extranjera_pct"] == 20.0
+    assert t["proporcion_ley_nacional_pct"] == 42.86
+    assert t["consolidada_musd"] == 23.0  # 40 - 10 - 1.25 - 2 - 3.75
+    with (out / "necesidad_divisas_consolidada.csv").open(encoding="utf-8") as fh:
+        rows = {r["instrument_id"]: r for r in csv.DictReader(fh)}
+    assert float(rows["INS-C-0004"]["consolidada_musd"]) == 10.0
+    assert float(rows["INS-C-0002"]["sector_publico_proporcional_musd"]) == 2.0
+    assert float(rows["INS-C-0003"]["sector_publico_proporcional_musd"]) == 3.75

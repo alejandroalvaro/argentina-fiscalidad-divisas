@@ -1,0 +1,11 @@
+partida,millones_usd,porcentaje,source_id,referencia
+deuda_bruta,474198,,SRC-1014,"Deuda de la Administración Central, II Trimestre 2026, cuadro Deuda Bruta por acreedor (p. 20 del texto extraído); igual a A.1.1 V (SRC-0103)"
+agencias_sector_publico,197213,41.6,SRC-1014,"cuadro Deuda Bruta por acreedor, columna 30-06-2026"
+sector_privado,177738,37.5,SRC-1014,"cuadro Deuda Bruta por acreedor, columna 30-06-2026"
+multilaterales_y_bilaterales,99247,20.9,SRC-1014,"cuadro Deuda Bruta por acreedor, columna 30-06-2026"
+sector_publico_moneda_total,197203,,SRC-1014,"Estructura de la deuda en poder del sector público, deuda por tipo de moneda (total del gráfico)"
+sector_publico_dolares,,31.5,SRC-1014,"Estructura de la deuda en poder del sector público, deuda por tipo de moneda"
+sector_publico_pesos_cer,,40.0,SRC-1014,"Estructura de la deuda en poder del sector público, deuda por tipo de moneda"
+sector_publico_pesos,,27.4,SRC-1014,"Estructura de la deuda en poder del sector público, deuda por tipo de moneda"
+sector_publico_dolar_linked,,1.1,SRC-1014,"Estructura de la deuda en poder del sector público, deuda por tipo de moneda"
+sector_publico_legislacion_extranjera,,1.2,SRC-1014,"Deuda bruta en poder del sector público por legislación"
