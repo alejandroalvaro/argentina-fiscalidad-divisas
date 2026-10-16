@@ -2,7 +2,7 @@
   "additionalProperties": true,
   "properties": {
     "claim_id": {
-      "pattern": "^CLM-[A-Z]-\\d{3}$",
+      "pattern": "^CLM-[A-Z]{1,2}-\\d{3}$",
       "title": "Claim Id",
       "type": "string"
     },

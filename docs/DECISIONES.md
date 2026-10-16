@@ -121,5 +121,5 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - `src/argfx/contracts/sigade.py`: sus flujos salen con `status = contingente` y quedan fuera de la necesidad firme de divisas. La necesidad bruta a 12 meses baja de 22.411 a 22.145 millones de USD.
 - `scripts/build_tenencias.py`: figuran como tenencia `directo` del FODER en la consolidación.
 - No se encontró evidencia de que se haya ejercido alguna opción de venta. Si apareciera, el tramo ejecutado pasa a firme.
-- El saldo de SIGADE (3.774 millones) es la mitad de lo emitido (7.417 millones), y la diferencia no está documentada (lote Z, `unresolved.md`).
+- Lo emitido (7.417 millones) baja hasta el saldo de SIGADE (3.774 millones) en ocho bajas registradas en la planilla trimestral de Finanzas (A.1.2 y A.2.2, línea "Letras en garantía", lote AA), siete en cuartos trimestres. Son compatibles con vencimientos anuales sin pago, aunque la planilla no dice la causa. La baja de junio de 2026 (318 millones) no tiene explicación.
 
