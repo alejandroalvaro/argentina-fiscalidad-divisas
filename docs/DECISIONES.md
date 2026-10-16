@@ -9,6 +9,7 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - Reservas brutas: activos líquidos del BCRA frente a no residentes en moneda convertible (BPM6).
 - Se restan: pasivos en divisas con vencimiento original de hasta un año, compras netas al FMI desde el inicio del programa, forwards netos, swaps (PBOC, BIS, ESF), encajes en moneda extranjera, SEDESA, ALADI y depósitos de no residentes.
 - **No se restan los depósitos en divisas del Tesoro en el BCRA.** Texto del TMU: "Neither the Federal government's foreign liabilities nor its FX deposits at the BCRA are considered as gross foreign liabilities of the BCRA."
+- El TMU de la segunda revisión (informe del personal técnico del FMI de mayo de 2026, SRC-1263, p. 117 del PDF) mantiene esa definición y la misma frase (verificado el 2026-10-15). Las tenencias de DEG del BCRA suman a los activos; los depósitos del Tesoro en DEG solo se informan.
 
 **Fundamento.** Los encajes en divisas respaldan depósitos del sector privado, que puede retirarlos, y por eso se restan. Los depósitos del Tesoro son una acreencia dentro del sector público; al consolidar Tesoro y BCRA se cancelan, y las divisas quedan disponibles para quien las necesite.
 
