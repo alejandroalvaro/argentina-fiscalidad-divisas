@@ -3,6 +3,11 @@
 Estado: diseño inicial, 14 de octubre de 2026. No constituye evidencia empírica ni conclusiones.
 
 ## Pregunta principal
+Reformulada el 16-10-2026 (D-015). Cuando los derechos de exportación se cobran en pesos y el sector público compra después los dólares con pesos, ¿cuántos pasivos remunerados en pesos se emiten para esterilizar esas compras, cuánto cuestan sus intereses, quién los paga (Tesoro o BCRA) y quién los cobra? ¿Cuánto de ese costo evita cobrar los derechos directamente en dólares, con igual carga tributaria?
+
+H0: el costo de la esterilización es un flujo negativo de pesos para el Tesoro o el BCRA y un flujo positivo para el sector financiero, y cobrar en dólares lo reduce en la medida en que evita comprar con pesos los dólares del derecho. Las hipótesis H1 a H5 quedan como secundarias.
+
+Pregunta original del 14-10-2026, como antecedente:
 ¿Bajo qué condiciones una regla de percepción directa de derechos de exportación en divisas mejora la previsibilidad de la liquidez externa del Tesoro argentino, reduce necesidades de intermediación cambiaria y esterilización, y afecta el riesgo de refinanciación, frente a un régimen de cobro en pesos de igual carga tributaria?
 
 ## Alcance
