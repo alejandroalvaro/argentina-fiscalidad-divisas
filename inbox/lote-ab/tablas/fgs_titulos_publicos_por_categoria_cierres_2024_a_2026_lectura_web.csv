@@ -1,0 +1,103 @@
+fecha,categoria,millones_de_pesos,pct_del_total_de_titulos,pct_del_total_del_fgs,source_id,tipo_de_lectura
+2024-03-31,"Bonos, $, tasa variable (CER)",25.732.408,"70,8%","51,1%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, USD, tasa fija",5.864.974,"16,1%","11,6%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, $, tasa variable (Dólar-linked)",3.511.340,"9,7%","7,0%",SRC-1311,lectura web del PDF
+2024-03-31,"Letras, USD",918.291,"2,5%","1,8%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, USD, tasa variable (PBI)",168.107,"0,5%","0,3%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, €, tasa variable (PBI)",125.266,"0,3%","0,2%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, $, tasa variable (BADLAR)",39.320,"0,1%","0,1%",SRC-1311,lectura web del PDF
+2024-03-31,"Bonos, $, tasa variable (PBI)",354,"0,00%","0,00%",SRC-1311,lectura web del PDF
+2024-03-31,Total Títulos Públicos Nacionales,36.360.061,"100,0%","72,2%",SRC-1311,lectura web del PDF
+2024-06-30,"Bonos, $, tasa variable (CER)",28.982.963,"68,0%","48,8%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, USD, tasa fija",7.423.612,"17,4%","12,5%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, $, tasa variable (Dólar-linked)",4.187.461,"9,8%","7,1%",SRC-1312,lectura web del PDF
+2024-06-30,"Letras, USD",982.489,"2,3%","1,7%",SRC-1312,lectura web del PDF
+2024-06-30,"Letras, $",691.207,"1,6%","1,2%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, €, tasa variable (PBI)",152.350,"0,4%","0,3%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, USD, tasa variable (PBI)",138.686,"0,3%","0,2%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, $, tasa variable (BADLAR)",38.245,"0,1%","0,1%",SRC-1312,lectura web del PDF
+2024-06-30,"Bonos, $, tasa variable (PBI)",304,"0,0%","0,0%",SRC-1312,lectura web del PDF
+2024-06-30,Total Títulos Públicos Nacionales,42.597.319,"100,0%","71,7%",SRC-1312,lectura web del PDF
+2024-09-30,"Bonos, $, tasa variable (CER)",32.091.088,"67,2%","50,3%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, USD, tasa fija",7.873.646,"16,5%","12,3%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, $, tasa variable (Dólar-linked)",4.234.768,"8,9%","6,6%",SRC-1313,lectura web del PDF
+2024-09-30,"Letras, $",2.226.171,"4,7%","3,5%",SRC-1313,lectura web del PDF
+2024-09-30,"Letras, USD",1.051.362,"2,2%","1,6%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, €, tasa variable (PBI)",138.862,"0,3%","0,2%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, USD, tasa variable (PBI)",111.042,"0,2%","0,2%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, $, tasa variable (BADLAR)",34.356,"0,1%","0,1%",SRC-1313,lectura web del PDF
+2024-09-30,"Bonos, $, tasa variable (PBI)",364,"0,0%","0,0%",SRC-1313,lectura web del PDF
+2024-09-30,Total Títulos Públicos Nacionales,47.761.660,"100,0%","74,8%",SRC-1313,lectura web del PDF
+2025-03-31,"Bonos, $, tasa variable (CER)",38.005.054,"63,1%","48,2%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, USD, tasa fija",10.972.909,"18,2%","13,9%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, $, tasa fija",5.062.684,"8,4%","6,4%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, $, tasa variable (TAMAR)",3.297.419,"5,5%","4,2%",SRC-1314,lectura web del PDF
+2025-03-31,"Letras, USD",1.172.574,"1,9%","1,5%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, $, tasa variable (Dólar-linked)",696.176,"1,2%","0,9%",SRC-1314,lectura web del PDF
+2025-03-31,"Letras, $",574.953,"1,0%","0,7%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, USD, tasa variable (PBI)",187.510,"0,3%","0,2%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, €, tasa variable (PBI)",184.513,"0,3%","0,2%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, $, tasa variable (BADLAR)",30.633,"0,05%","0,04%",SRC-1314,lectura web del PDF
+2025-03-31,"Bonos, $, tasa variable (PBI)",1.011,"0,002%","0,001%",SRC-1314,lectura web del PDF
+2025-03-31,Total Títulos Públicos Nacionales,60.185.436,"100,0%","76,3%",SRC-1314,lectura web del PDF
+2025-06-30,"Bonos, $, tasa variable (CER)",35.650.458,"55,1%","43,0%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, USD, tasa fija",10.768.461,"16,7%","13,0%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, $, tasa fija",8.652.224,"13,4%","10,4%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, $, tasa variable (TAMAR)",6.879.153,"10,6%","8,3%",SRC-1315,lectura web del PDF
+2025-06-30,"Letras, USD",1.314.259,"2,0%","1,6%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, $, tasa variable (Dólar-linked)",768.761,"1,2%","0,9%",SRC-1315,lectura web del PDF
+2025-06-30,"Letras, $",259.029,"0,4%","0,3%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, €, tasa variable (PBI)",189.591,"0,3%","0,2%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, USD, tasa variable (PBI)",159.063,"0,2%","0,2%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, $, tasa variable (BADLAR)",30.211,"0,05%","0,04%",SRC-1315,lectura web del PDF
+2025-06-30,"Bonos, $, tasa variable (PBI)",753,"0,001%","0,001%",SRC-1315,lectura web del PDF
+2025-06-30,Total Títulos Públicos Nacionales,64.671.962,"100,0%","78,1%",SRC-1315,lectura web del PDF
+2025-09-30,"Bonos, $, tasa variable (CER)",34.860.838,"55,6%","43,2%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, USD, tasa fija",10.115.363,"16,1%","12,5%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, $, tasa fija",8.433.246,"13,4%","10,4%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, $, tasa variable (TAMAR)",6.317.322,"10,1%","7,8%",SRC-1316,lectura web del PDF
+2025-09-30,"Letras, USD",1.512.181,"2,4%","1,9%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, $, tasa variable (Dólar-linked)",806.050,"1,3%","1,0%",SRC-1316,lectura web del PDF
+2025-09-30,"Letras, $",291.683,"0,5%","0,4%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, €, tasa variable (PBI)",220.061,"0,4%","0,3%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, USD, tasa variable (PBI)",166.455,"0,3%","0,2%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, $, tasa variable (BADLAR)",27.619,"0,04%","0,03%",SRC-1316,lectura web del PDF
+2025-09-30,"Bonos, $, tasa variable (PBI)",637,"0,001%","0,001%",SRC-1316,lectura web del PDF
+2025-09-30,Total Títulos Públicos Nacionales,62.751.455,"100,0%","77,7%",SRC-1316,lectura web del PDF
+2025-12-31,"Bonos, $, tasa variable (CER)",40.955.341,"51,0%","38,6%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, USD, tasa fija",14.558.835,"18,1%","13,7%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, $, tasa fija",9.333.957,"11,6%","8,8%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, $, tasa variable (TAMAR)",8.635.125,"10,8%","8,1%",SRC-1317,lectura web del PDF
+2025-12-31,"Letras, $",3.824.941,"4,8%","3,6%",SRC-1317,lectura web del PDF
+2025-12-31,"Letras, USD",1.600.853,"2,0%","1,5%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, $, tasa variable (Dólar-linked)",874.382,"1,1%","0,8%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, €, tasa variable (PBI)",253.917,"0,3%","0,2%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, USD, tasa variable (PBI)",161.091,"0,2%","0,2%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, $, tasa variable (BADLAR)",28.269,"0,04%","0,03%",SRC-1317,lectura web del PDF
+2025-12-31,"Bonos, $, tasa variable (PBI)",722,"0,001%","0,001%",SRC-1317,lectura web del PDF
+2025-12-31,Total Títulos Públicos Nacionales,80.227.432,"100,0%","75,6%",SRC-1317,lectura web del PDF
+2026-03-31,"Bonos, $, tasa variable (CER)",49.959.049,"57,4%","44,3%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, USD, tasa fija",12.728.680,"14,6%","11,3%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, $, tasa variable (TAMAR)",8.348.019,"9,6%","7,4%",SRC-1318,lectura web del PDF
+2026-03-31,"Letras, $",6.707.605,"7,7%","6,0%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, $, tasa fija",6.282.142,"7,2%","5,6%",SRC-1318,lectura web del PDF
+2026-03-31,"Letras, USD",1.525.713,"1,8%","1,4%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, $, tasa variable (Dólar-linked)",946.642,"1,1%","0,8%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, €, tasa variable (PBI)",303.007,"0,3%","0,3%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, USD, tasa variable (PBI)",225.770,"0,3%","0,2%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, $, tasa variable (BADLAR)",25.107,"0,03%","0,02%",SRC-1318,lectura web del PDF
+2026-03-31,"Bonos, $, tasa variable (PBI)",579,"0,001%","0,001%",SRC-1318,lectura web del PDF
+2026-03-31,Total Títulos Públicos Nacionales,87.052.314,"100,0%","77,3%",SRC-1318,lectura web del PDF
+2026-06-30,"Bonos, $, tasa variable (CER)",54.679.488,"57,0%","44,3%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, USD, tasa fija",15.448.057,"16,1%","12,5%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa variable (TAMAR)",9.102.296,"9,5%","7,4%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa fija",5.984.826,"6,2%","4,8%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Letras, $",5.314.279,"5,5%","4,3%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa variable (CER/TAMAR)",1.920.568,"2,0%","1,6%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Letras, USD",1.642.890,"1,7%","1,3%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa variable (Dólar-linked)",1.045.821,"1,1%","0,8%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, USD, tasa variable (PBI)",382.788,"0,4%","0,3%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, €, tasa variable (PBI)",304.700,"0,3%","0,2%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa variable (BADLAR)",24.737,"0,0%","0,0%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,"Bonos, $, tasa variable (PBI)",598,"0,0%","0,0%",SRC-1166,lectura web del PDF (lote R)
+2026-06-30,Total Títulos Públicos Nacionales,95.851.048,"100,0%","77,7%",SRC-1166,lectura web del PDF (lote R)
