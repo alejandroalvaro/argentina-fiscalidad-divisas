@@ -114,3 +114,32 @@ def maturity_profile(path: Path, sheet: str = "A.3.1") -> list[ProfileRow]:
             if month is not None:
                 out.append(ProfileRow(group, concept, month, value))
     return out
+
+
+@dataclass(frozen=True)
+class PesoInstrument:
+    name: str
+    rate: object  # a number (fixed or monthly effective rate) or the published text
+    updated_usd_thousands: float  # residual face times the capitalization coefficient
+
+
+def peso_instruments(path: Path) -> list[PesoInstrument]:
+    """Instruments of A.1.7 (bonds and letters issued in pesos) with their updated face."""
+    wb = load_workbook(path, read_only=True, data_only=True)
+    try:
+        header: list[str] | None = None
+        out = []
+        for row in wb["A.1.7"].iter_rows(values_only=True):
+            if header is None:
+                if row and any(isinstance(c, str) and c.startswith("Denominación") for c in row):
+                    header = [str(c or "") for c in row]
+                continue
+            rec = dict(zip(header, row, strict=False))
+            name = rec.get("Denominación")
+            value = next((v for k, v in rec.items() if k.startswith("Valor nominal actualizado")),
+                         None)  # fmt: skip
+            if isinstance(name, str) and isinstance(value, int | float):
+                out.append(PesoInstrument(" ".join(name.split()), rec.get("Tasa vigente"), value))
+        return out
+    finally:
+        wb.close()
