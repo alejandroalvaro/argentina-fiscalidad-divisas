@@ -1,0 +1,13 @@
+# Lote S: lo que no se pudo resolver (sin_revisar)
+
+Todo queda `sin_revisar`. No se infirió nada por analogía.
+
+**Para Claude:**
+1. **El inventario es el saldo total en circulación al 2026-06-30, no la tenencia del BCRA.** Los mapeos identifican la especie; los valores nominales de los anexos son tenencias al cierre contable (31-12-2024 o 31-12-2025). Salvo en las letras intransferibles del BCRA (donde el saldo en circulación es casi todo del BCRA), no son comparables entre sí.
+2. **Letras del BCRA sin id:** Ley 27.541/19 vto. 30-12-2029, Res. 28/20 vto. 20-04-2030, Res. 3/21 y 11/21 vto. 07-01-2031, Decreto 622/21 vto. 21-09-2031, Decreto 280/24 vto. 03-04-2029 y Decreto 1104/24 vto. 07-01-2030 estaban en el BCRA al 2025-12-31 (CLM-R-029) y no figuran en el inventario SIGADE al 2026-06-30. No sé si se cancelaron, canjearon o recompraron en 2026, ni si el inventario las omite. El inventario trae INS-C-0446 (BCRA 30-06-2031, 3.878.320 USD) e INS-I-0010 (BCRA 15-09-2031, saldo 0) que no coinciden en fecha con ninguna; no los asigné.
+3. **LETRA/U$S/BCRA/20-04-2032 (INS-C-0444):** el saldo del inventario (4.413.717.781,5 USD) es menor que el valor nominal del Anexo III y F al 2025-12-31 (7.809.225 miles de USD). No encontré la causa en las fuentes leídas.
+4. **Letras INTRA-SP:** el Anexo F lista INTRA-SP 13-02-2026 (2025) y 17-02-2025 (2024); el inventario solo trae INTRA SP 19-02-2027 (INS-C-0631). No asigné nada.
+5. **Matches de confianza baja o media** (revisar antes de usarlos): Banco Nación Letra TAMAR 31.08.2028 contra INS-C-0371 (la denominación difiere); Bonos de la Rep. Arg. Step Up 35 contra INS-C-0405 (el texto no dice la ley aplicable; la alternativa es INS-C-0399); lectura de "Bono Capitalizable" como BONCAP, "Letra Capitalizable" como LECAP y "Tasa Dual" como BONCAP DUAL; "Rep. Argentina" como "R.A." en los Bonos Step Up del anexo del BCRA; y el Bono Consolidado 1990 contra INS-C-0389 (el valor nominal del anexo, 881.464 miles de pesos, no coincide con el saldo del inventario, 731.614.858,82).
+6. **Especies vencidas** en o antes del corte (17 en el BCRA, más las de Anexo F): no tienen id porque el inventario es posterior; sus ids no existen en los inventarios disponibles. Si hace falta el saldo histórico por especie, habría que reconstruir el inventario SIGADE de 2024-12-31 o 2025-12-31 (hay planillas trimestrales de Finanzas de esas fechas).
+7. **Los renglones "Otros" del Anexo A de Banco Nación** (7.660.264.917 y 4.077.758.604 miles de pesos y los del exterior y privados) no identifican especie; no se pueden mapear.
+8. **Revisión:** planilla del III trimestre, SIGADE al 2026-09-30 y montos de la RC 60/2026 siguen sin publicarse al 2026-10-15 (21:07 hora de Brasilia). No consulté A3 Mercados directamente.
