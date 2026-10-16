@@ -1,0 +1,12 @@
+# Sin resolver, lote V
+
+1. RC 30/2026: la norma fija USD 1.040,4 millones con liquidación el 2026-05-29, pero la variable 80 muestra menos USD 507 millones ese día (más USD 150 millones el 28). Los depósitos del Tesoro quedan en USD 3.058 millones. Puede deberse a otra fecha de acreditación, a una contabilización distinta o a que el pago se compensó en otra cuenta. Ninguna fuente de este lote lo aclara.
+2. Compras del Tesoro al BCRA en 2025: el cálculo da USD 2.727 millones y el Balance Cambiario de diciembre de 2025 da USD 1.216 millones (diferencia USD 1.511 millones). Coinciden 2024 y diciembre de 2024 y de 2025. No se probó cuál mes causa la diferencia; los Balances Cambiarios de enero a agosto de 2026 están descargados pero sin texto extraíble, y los de 2025 anteriores a diciembre no se bajaron.
+3. Compras de dólares del Tesoro en el mercado (USD 1.257 millones en 2025 según el Balance Cambiario): no hay serie diaria que las separe. Quedan dentro de la variable 80.
+4. Apertura por instrumento: no hay serie oficial que separe BONTE, BONAR, repo, bonos y letras dentro de la variable 80. Las colocaciones y pagos de bonos solo se atribuyen donde un informe da monto o mes. El repo del BCRA de USD 3.000 millones (enero de 2026) y el de USD 2.000 millones (junio de 2025) son del BCRA, no entran en el saldo del Tesoro.
+5. Residuos mensuales de USD 30 millones o más sin explicación: 2024-02 (+66), 2024-05 (+73), 2024-08 (+74), 2024-12 (-49), 2025-02 (+56), 2025-05 (+46), 2025-09 (-38), 2025-10 (-94), 2026-02 (+44), 2026-04 (-71), 2026-05 (+44), 2026-08 (+47), 2026-09 (+30).
+6. Días grandes sin atribuir: 2024-06-18, 2024-11-07, 2025-09-26, 2025-11-05, 2026-01-07, 2026-02-05, 2026-05-06, 2026-05-18, 2026-07-08, 2026-08-03 (ver tabla). Septiembre de 2025 no tiene párrafo ubicable en el informe monetario.
+7. El 2024-01-31 entran USD 2.637 millones de organismos, pero el informe de enero de 2024 habla de un desembolso del FMI de USD 4.700 millones: no se concilia con las fuentes.
+8. Documentos del FMI (comunicados y páginas de eLibrary) dan 403 desde la caja y la Mac; no se pudo verificar el monto de cada desembolso contra el FMI. Se usaron el informe monetario, las normas y el comunicado del BCRA.
+9. Solo se mide el saldo del Tesoro en el BCRA. No se miden cuentas del Tesoro en otros bancos ni en el exterior.
+10. Revisión: SIGADE al 2026-09-30, planilla del III trimestre y montos de la RC 60/2026 siguen sin publicarse al 2026-10-15 a las 22:02 (hora de Brasilia).
