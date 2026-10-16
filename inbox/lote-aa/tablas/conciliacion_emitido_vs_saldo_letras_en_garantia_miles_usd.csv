@@ -1,0 +1,13 @@
+concepto,corte,miles_usd,fuente
+"emitido: Res. 147-E/2017 (4.498.549) + RC 32/2018 (2.918.576,5)",,7417125.5,SRC-1284; SRC-1285; SRC-0103 (stock en planilla 2019-03-31 igual a la suma)
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2019-12-31",2019-12-31,-48686.05,SRC-1290
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2020-12-31",2020-12-31,-287970.125,SRC-1294
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2021-12-31",2021-12-31,-670075.775,SRC-1298
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2022-12-31",2022-12-31,-1313563.4,SRC-1302
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2023-12-31",2023-12-31,-437969.5,SRC-1306
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2024-12-31",2024-12-31,-278734.5,SRC-0999
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2025-12-31",2025-12-31,-288109.5,SRC-1003
+"variación en la línea ""Letras en garantía"" de A.2.2, trimestre al 2026-06-30",2026-06-30,-318278.813,SRC-0103
+saldo calculado (emitido + variaciones),,3773737.837,cálculo
+"saldo en A.1.2 al 30-06-2026 (= SIGADE SRC-0102, 109 letras)",2026-06-30,3773737.837,SRC-0103
+diferencia (calculado menos planilla),,0,cálculo

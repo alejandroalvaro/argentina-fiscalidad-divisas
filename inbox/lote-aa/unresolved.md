@@ -1,0 +1,9 @@
+# Sin resolver, lote AA
+
+1. **Opción de venta nunca ejercida: no confirmada.** No hay estados contables del FODER ni del BICE accesibles. La CGN dice que el FODER no presentó la Cuenta Ahorro-Inversión-Financiamiento de 2025. Faltan: estados contables del FODER (BICE como fiduciario), el informe de la AGN (2016 a 2019), o una comunicación de Finanzas que diga si alguna letra se pagó. Las bajas de A.2.2 no distinguen causa.
+2. **Baja de USD 318,3 millones al 2026-06-30.** Es la única baja fuera de un cuarto trimestre. No hay norma ni nota que la explique. Puede revisarse con la planilla del III trimestre (en pausa) y las notas de Finanzas.
+3. **Causa de cada baja anual.** Los importes de 2019 a 2025 coinciden con el vencimiento anual de las letras (Decreto 882 art. 14), pero ninguna fuente de este lote liga cada importe a ese vencimiento. Faltan los anexos de las emisiones (cronogramas por letra), que no se pidieron.
+4. **Cambios del valor nominal original en la planilla.** La columna "valor nominal original en circulación" de A.1.9 pasa de 4.498.549 a 3.479.520 miles (emisión 2017) y de 2.918.576,5 a 1.835.329 miles (2018). En 2024 la de 2017 sube (3.697.345 a 3.726.595) y la de 2018 baja (2.052.095 a 2.035.595). No hay nota que lo explique.
+5. **Cifras de la Cuenta de Inversión.** El patrimonio neto del FODER (5.539.906 millones de pesos, igual en 2024 y 2025) y la deuda indirecta de 14.236.671 millones de pesos no se concilian con los USD de la planilla; la Nota 14 b) no lista letras en garantía. Falta saber con qué criterio las expone la CGN.
+6. **SRC-1286 (OPC).** El servidor rechazó la conexión desde la Mac; reintentar desde otra red. Sigue válido el uso del lote Z.
+7. **Planillas anteriores a 2019 y A.2.2 sin la línea.** En 2019 T1 a T3 y en 2025 T3 la hoja A.2.2 no tiene fila de letras en garantía; el stock no cambió esos trimestres, así que lo asumo sin variación, pero no hay dato.
