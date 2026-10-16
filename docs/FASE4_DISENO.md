@@ -4,10 +4,14 @@ Borrador del 16-10-2026, antes de escribir el código. Fija qué se mide, cómo 
 
 ## 1. Qué se mide
 
+La medida central es el costo de la esterilización y quién lo cobra (D-015). Las medidas de liquidez en dólares quedan como contexto: el flujo de dólares es el mismo con cualquier mecanismo.
+
 La comparación es entre regímenes con la misma carga tributaria: el mismo derecho en dólares (alícuota por valor FOB) en todos. Cambian la moneda en que se paga, el momento y el destino de las divisas. Cada corrida produce, mes a mes:
 
 | Medida | Hipótesis | Qué responde |
 |---|---|---|
+| Pasivos remunerados en pesos emitidos para esterilizar compras de divisas (pases y LEFI del BCRA, deuda en pesos del Tesoro colocada para comprar dólares) | H0 | El stock que deja el mecanismo |
+| Intereses de esos pasivos, devengados (D-009), por pagador (Tesoro o BCRA) y por tenedor (bancos, fondos comunes, resto) | H0 | Quién paga y quién cobra la esterilización: la medida central (D-015) |
 | Ingresos del Tesoro en divisas y su dispersión | H1 | Cuánto entra, cuándo y con qué variabilidad |
 | Cobertura de la necesidad firme en divisas (calendario de la fase 2, neto de pagos dentro del sector público) | H1, H4 | Qué parte de los pagos se cubre sin comprar divisas |
 | Meses con faltante: depósitos del Tesoro en divisas menores que los pagos del mes | H1 | La previsibilidad vista desde la caja |
