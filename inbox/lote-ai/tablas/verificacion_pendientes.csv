@@ -1,0 +1,11 @@
+url,codigo_http,tipo,resultado,fecha_de_prueba,hora_america_bahia
+https://www.argentina.gob.ar/sites/default/files/deuda_publica_30-09-2026.xlsx,404,html,"corte de deuda al 30-09-2026, no publicado",2026-10-16,20:50
+https://www.argentina.gob.ar/sites/default/files/presentacion_grafica_3er_trim_26.pdf,404,html,"presentación gráfica III trimestre 2026, nombre probable según la serie; no publicada",2026-10-16,20:50
+https://www.argentina.gob.ar/sites/default/files/presentacion_grafica_3er_trim_2026.pdf,404,html,variante del nombre; no publicada,2026-10-16,20:50
+https://www.argentina.gob.ar/economia/finanzas/datos-trimestrales-de-la-deuda,200,html,la página lista como último corte 30-06-2026 (deuda_publica_30-06-2026_0.xlsx y presentacion_grafica_2do_trim_26.pdf),2026-10-16,20:50
+https://www.argentina.gob.ar/sites/default/files/deuda_publica_30-06-2026.xlsx,200,xlsx,"corte anterior, ya publicado (el enlace de la página usa el sufijo _0)",2026-10-16,20:50
+https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/informe-mercado-cambios-balance-cambiario-2026-09.pdf,404,html,"informe de septiembre de 2026 con el patrón de nombre de 2026, no publicado",2026-10-16,20:50
+https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Informe_Septiembre_2026.pdf,404,html,"informe de septiembre de 2026 con el patrón de nombre de 2024-2025, no publicado",2026-10-16,20:50
+https://www.bcra.gob.ar/publicaciones/informe-de-la-evolucion-del-mercado-de-cambios-y-balance-cambiario-septiembre-de-2026/,404,html,"página del informe de septiembre de 2026, no publicada",2026-10-16,20:50
+https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/anexo-estadistico-mercado-cambios-balance-cambiario.xlsx,200,xlsx,el anexo estadístico llega hasta agosto de 2026 (SRC-1604),2026-10-16,20:50
+https://www.argentina.gob.ar/noticias/el-tesoro-nacional-cancelara-letras-intransferibles-en-poder-del-bcra,200,html,comunicado de Economía del 14-05-2026 sobre la recompra con los dividendos del BCRA,2026-10-16,20:50

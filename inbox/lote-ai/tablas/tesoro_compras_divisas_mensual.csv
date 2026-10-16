@@ -1,0 +1,35 @@
+mes,compras_tesoro_al_bcra_usd_millones_derivado_var48,operaciones_al_bcra_n,compras_directas_al_bcra_usd_millones_informe_bcra,compras_netas_tesoro_en_mercado_usd_millones_informe_bcra,deposito_tesoro_moneda_extranjera_fin_de_mes_usd_millones_derivado,fecha_del_saldo,source_id,fuentes_adicionales,observaciones
+2024-01,444,5,445,0,2767,2024-01-31,SRC-1628,SRC-1640;SRC-1357;SRC-1164;SRC-1214,
+2024-02,1014,4,1015,0,1765,2024-02-29,SRC-1629,SRC-1641;SRC-1357;SRC-1164;SRC-1214,
+2024-03,468,2,469,0,1034,2024-03-27,SRC-1630,SRC-1642;SRC-1357;SRC-1164;SRC-1214,
+2024-04,2323,3,2325,0,1084,2024-04-30,SRC-1631,SRC-1643;SRC-1357;SRC-1164;SRC-1214,"el informe de abril de 2024 publicó 468 para el mes; el informe de abril de 2025 (columna del año anterior) lo corrige a 2.325, coincide con la variable 48"
+2024-05,373,1,373,0,428,2024-05-31,SRC-1632,SRC-1644;SRC-1357;SRC-1164;SRC-1214,
+2024-06,212,1,212,0,1034,2024-06-28,SRC-1633,SRC-1645;SRC-1357;SRC-1164;SRC-1214,
+2024-07,3821,1,3822,0,1243,2024-07-31,SRC-1634,SRC-1646;SRC-1357;SRC-1164;SRC-1214,
+2024-08,0,0,0,0,835,2024-08-30,SRC-1635,SRC-1647;SRC-1357;SRC-1164;SRC-1214,
+2024-09,1528,1,1529,0,1587,2024-09-30,SRC-1636,SRC-1648;SRC-1357;SRC-1164;SRC-1214,
+2024-10,1136,2,1137,0,1276,2024-10-31,SRC-1637,SRC-1649;SRC-1357;SRC-1164;SRC-1214,
+2024-11,2813,1,2814,0,3560,2024-11-29,SRC-1638,SRC-1650;SRC-1357;SRC-1164;SRC-1214,
+2024-12,1499,1,1500,0,5995,2024-12-30,SRC-1639,SRC-1262;SRC-1357;SRC-1164;SRC-1214,
+2025-01,1000,1,1000,0,3186,2025-01-31,SRC-1640,SRC-1357;SRC-1164;SRC-1214,"compras al BCRA de enero y febrero de 2025 (1.500 en total) figuran en los informes hasta septiembre de 2025 y desaparecen del acumulado a partir del informe de octubre de 2025 (acumulado 2025: 124 en octubre, 1.216 en noviembre y diciembre)"
+2025-02,500,1,500,0,2760,2025-02-28,SRC-1641,SRC-1357;SRC-1164;SRC-1214,ver nota de enero de 2025
+2025-03,0,0,0,0,1951,2025-03-31,SRC-1642,SRC-1357;SRC-1164;SRC-1214,
+2025-04,0,0,0,0,15448,2025-04-30,SRC-1643,SRC-1357;SRC-1164;SRC-1214,"desembolso del FMI por USD 12.000 millones el 15-04-2025; el Tesoro lo usó para recomprar Letras Intransferibles el 06-05-2025 (RC 21/2025), sin pasar por el mercado de cambios"
+2025-05,0,0,0,0,3068,2025-05-30,SRC-1644,SRC-1357;SRC-1164;SRC-1214,
+2025-06,0,0,0,175,4680,2025-06-30,SRC-1645,SRC-1357;SRC-1164;SRC-1214,la prensa informa dos bloques de USD 100 millones cada uno el 23-06-2025 (USD 200 millones en total) más otra compra el 03-07; el informe del BCRA registra 175 en junio y 1.229 en julio
+2025-07,0,0,0,1229,2708,2025-07-31,SRC-1646,SRC-1357;SRC-1164;SRC-1214,
+2025-08,0,0,0,-207,1686,2025-08-29,SRC-1647,SRC-1357;SRC-1164;SRC-1214,venta neta del Tesoro de USD 207 millones; el depósito del Tesoro en moneda extranjera cayó por el pago al FMI y a otros organismos
+2025-09,0,0,0,1650,2327,2025-09-30,SRC-1648,SRC-1357;SRC-1164;SRC-1214,
+2025-10,123,1,124,-2060,92,2025-10-31,SRC-1649,SRC-1357;SRC-1164;SRC-1214,venta neta de USD 2.060 millones en el mercado de cambios por parte del Tesoro (techo de la banda)
+2025-11,1105,3,1091,247,213,2025-11-28,SRC-1650,SRC-1357;SRC-1164;SRC-1214,
+2025-12,0,0,0,224,1970,2025-12-30,SRC-1262,SRC-1357;SRC-1164;SRC-1214,
+2026-01,2757,3,2753,265,526,2026-01-30,SRC-1651,SRC-1357;SRC-1164;SRC-1214,"compras al BCRA del 7, 14 y 19 de enero; el informe da 2.753 y la variable 48 da 2.757"
+2026-02,787,1,0,2,533,2026-02-27,SRC-1652,SRC-1357;SRC-1164;SRC-1214,"el 5-02-2026 el Tesoro compró 787 al BCRA para pagar al FMI según la prensa y la variable 48; la tabla del informe de febrero no lo cuenta en ""directo con BCRA"" (muestra ""-"" y acumulado 2.753)"
+2026-03,115,1,166,0,485,2026-03-31,SRC-1653,SRC-1357;SRC-1164;SRC-1214,el informe da 166 y la variable 48 da 115 (30-03-2026)
+2026-04,0,0,0,0,1365,2026-04-30,SRC-1654,SRC-1357;SRC-1164;SRC-1214,
+2026-05,1700,1,1700,150,3058,2026-05-29,SRC-1655,SRC-1357;SRC-1164;SRC-1214,
+2026-06,597,1,600,0,3920,2026-06-30,SRC-1656,SRC-1357;SRC-1164;SRC-1214,el informe da 600 y la variable 48 da 597 (17-06-2026)
+2026-07,919,1,919,-146,3606,2026-07-31,SRC-1657,SRC-1357;SRC-1164;SRC-1214,
+2026-08,0,0,0,0,2779,2026-08-31,SRC-1607,SRC-1357;SRC-1164;SRC-1214,"el acumulado 2026 de ""directo con BCRA"" del informe de agosto (3.335) es menor que el de julio (6.088): hay una revisión del acumulado que el informe no explica. El 03-08-2026 los depósitos del Tesoro subieron a USD 4.387 millones por una operación Tesoro-BCRA con Bopreal y Letras (fuente: prensa)"
+2026-09,0,0,n/d,n/d,1125,2026-09-30,SRC-1357,SRC-1164;SRC-1214,no está publicado el informe de septiembre de 2026; la variable 48 no registra compras del Tesoro al BCRA en el mes
+2026-10,0,0,n/d,n/d,1230,2026-10-14,SRC-1357,SRC-1164;SRC-1214,"parcial al 2026-10-14; la prensa (PPI, vía Ámbito) informa una compra del Tesoro en el mercado de USD 50 millones el 7 de octubre, sin confirmación oficial"
