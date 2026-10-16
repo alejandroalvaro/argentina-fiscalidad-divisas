@@ -1,0 +1,6 @@
+serie,fecha,valor,unidad,source_id
+"Compra de dólares del Tesoro al BCRA, prensa",2024-09-12,1528,millones de USD,SRC-1369
+"Giro del Tesoro al Bank of New York para intereses de enero de 2025, prensa",2024-10,1050,millones de USD (aprox.),SRC-1370
+"Compra de dólares del Tesoro al BCRA, prensa (al menos)",2025-01-15,836,millones de USD,SRC-1371
+"Compra de dólares del Tesoro al BCRA, prensa (suma de esos días)",2025-01,835,millones de USD (aprox.),SRC-1373
+"Depósitos en dólares del Tesoro en el BCRA, fin de 2024, prensa",2024-12,6100,millones de USD (arriba de),SRC-1370

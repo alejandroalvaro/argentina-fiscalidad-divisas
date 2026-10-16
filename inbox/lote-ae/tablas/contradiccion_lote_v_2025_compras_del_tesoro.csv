@@ -1,0 +1,9 @@
+serie,fecha,valor,unidad,source_id
+Compras del Tesoro al BCRA calculadas en el lote V (variable 48 dividida por el tipo de cambio),2025-01,999.5,millones de USD,SRC-1262
+Compras del Tesoro al BCRA calculadas en el lote V (variable 48 dividida por el tipo de cambio),2025-02,499.8,millones de USD,SRC-1262
+Compras del Tesoro al BCRA calculadas en el lote V (variable 48 dividida por el tipo de cambio),2025-10,123.2,millones de USD,SRC-1262
+Compras del Tesoro al BCRA calculadas en el lote V (variable 48 dividida por el tipo de cambio),2025-11,1104.9,millones de USD,SRC-1262
+Suma de los cuatro meses (lote V),2025,2727.4,millones de USD,SRC-1262
+"Balance Cambiario de diciembre de 2025, Cuadro I.1, Tesoro Nacional directo con BCRA (signo positivo)",2025,1216,millones de USD,SRC-1262
+Suma octubre y noviembre de 2025 (hipótesis: lo que cuenta el Balance Cambiario),2025-10 a 2025-11,1228.1,millones de USD,SRC-1262
+Suma enero y febrero de 2025 (hipótesis: lo que el Balance Cambiario no cuenta),2025-01 a 2025-02,1499.3,millones de USD,SRC-1262
