@@ -124,3 +124,46 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - No se encontró evidencia de que se haya ejercido alguna opción de venta. Si apareciera, el tramo ejecutado pasa a firme.
 - Lo emitido (7.417 millones) baja hasta el saldo de SIGADE (3.774 millones) en ocho bajas registradas en la planilla trimestral de Finanzas (A.1.2 y A.2.2, línea "Letras en garantía", lote AA), siete en cuartos trimestres. Son compatibles con vencimientos anuales sin pago, aunque la planilla no dice la causa. La baja de junio de 2026 (318 millones) no tiene explicación.
 
+
+## D-012. Fondo de estabilización del régimen (d): configuración base (2026-10-16)
+
+**Origen.** Alejandro pidió la configuración que mejor sirva al objetivo, no una preferencia suya. Esta es la configuración base, armada con los precedentes del lote H. La fase 4 la contrasta con sus variantes y con el régimen (c) sin fondo, y se confirma o se corrige con esos resultados.
+
+**Objetivo del fondo en este trabajo.** Los derechos llegan con la cosecha y varían mucho de un mes a otro y de un año a otro. Los pagos en divisas se concentran en enero y julio. El fondo existe para convertir un ingreso volátil y estacional en un flujo previsible para el Tesoro, que es lo que mide H1.
+
+**Configuración base.**
+- **Ingresos: regla de referencia.** Cada mes, el Tesoro recibe una transferencia fija igual a la doceava parte de la recaudación de referencia: el promedio de los derechos en dólares de los últimos cinco años, recalculado con las alícuotas vigentes para que una rebaja decretada no infle la referencia. Lo que entra por encima de esa referencia va al fondo. Precedentes: el promedio móvil de seis años de Colombia (CLM-H-016, CLM-H-017) y la pauta de rendimiento de Noruega (CLM-H-011).
+- **Retiros: automáticos y por fórmula.** Si en un mes entra menos que la referencia, el fondo completa la diferencia. Ante una caída de la recaudación anual de 20% o más (sequía, precios), el fondo puede adelantar hasta el pago en divisas del semestre siguiente. No hay retiros discrecionales. Precedente: el disparador del 20% de Colombia.
+- **Tope: en meses de servicio.** Cuando el saldo supera doce meses del servicio en divisas a acreedores fuera del sector público (la necesidad consolidada de la fase 3), el excedente se destina a cancelar deuda en divisas. Precedente: el umbral de 4% del PBI de Perú, que habilita destinar el exceso a deuda (CLM-H-020, CLM-H-021), medido aquí en la unidad que importa para el problema.
+- **Rendimientos:** quedan en el fondo, como en Chile y Noruega.
+- **Custodia:** depósito en dólares del Tesoro en el BCRA, separado por ley. Cuenta una sola vez, como reservas (D-001).
+- **Gobierno:** la ley fija las fórmulas, un directorio con Economía, el BCRA y la Jefatura de Gabinete administra (como el FEF de Perú) y el Congreso es el único que puede cambiar las reglas. Publicación mensual del saldo y de los movimientos, como piden los Principios de Santiago (CLM-H-027 a CLM-H-029).
+
+**Variantes que la fase 4 contrasta:** referencia de tres, cinco o seis años; tope de seis, doce o dieciocho meses; retiro solo por fórmula frente a fórmula más disparador; y el régimen (c) sin fondo. El criterio para elegir son las medidas de `docs/FASE4_DISENO.md` (meses con faltante, dispersión del ingreso del Tesoro, compras de divisas con pesos), sin fijar de antemano cuál gana.
+
+## D-013. Destino del resto de las divisas del exportador: configuración base (2026-10-16)
+
+**Origen.** Alejandro pidió la opción que no desaliente al exportador a liquidar y traer las divisas, y que no afecte la caja del Estado.
+
+**Punto de partida.** En los regímenes (c) y (d) la caja del Tesoro ya queda cubierta con el derecho cobrado en dólares, sea cual sea el destino del resto. Lo que se decide aquí afecta las reservas del BCRA y el mercado de cambios, no la recaudación.
+
+**Qué desalienta a liquidar, según los precedentes:**
+- la brecha entre el tipo de cambio oficial y otro precio disponible;
+- los tipos diferenciales transitorios, que enseñan a esperar el próximo programa. El dólar soja anticipó liquidaciones grandes y concentradas (CLM-AD-019 a CLM-AD-022), y la ventana de 0% de 2025 adelantó pagos y DJVE (CLM-AD-011, CLM-AD-012);
+- la obligación de vender a un precio que el exportador considera atrasado.
+
+**Configuración base: opción 1 del menú, con tipo de cambio único.**
+- **Tipo único.** El resto se liquida en el mercado de cambios a un tipo único, sin desdoblamiento ni blend, y el BCRA actúa como creador de mercado de última instancia (Mehrling, CLM-A-024).
+- **Plazos estables.** Rigen los plazos de liquidación vigentes (lote B), sin programas transitorios ni alícuotas que cambien de un mes a otro, porque la expectativa de un cambio es lo que demora la liquidación.
+- **Previsibilidad de la alícuota.** El derecho se fija al registrar la DJVE (Ley 21.453) y se paga en dólares al embarque. Cuanto más previsible es la alícuota, menos sentido tiene esperar.
+
+**Por qué no las otras como base:**
+- el blend (opción 2) crea dos precios, cuenta para el FMI como práctica de tipos múltiples (CLM-A-022) e invita a elegir el momento;
+- la retención tipo Brasil (opción 3) le da al exportador la mayor libertad, pero deja fuera del país las divisas que no vende, justo en los momentos de tensión;
+- la asignación a importaciones (opción 4) y las medidas sobre flujos de capital (opción 5) quedan como capas opcionales.
+
+**Variantes que la fase 4 contrasta:** la opción 3 (que equivale al régimen (b) para el resto) y la opción 2, con el mismo criterio de D-012. El efecto de la brecha sobre la liquidación entra como parámetro de comportamiento, rotulado como supuesto mientras no haya una estimación con fuente.
+
+## D-014. Sectores sin alícuota relevada (2026-10-16)
+
+**Decisión.** Antes de decidir cómo tratarlos, se relevan las alícuotas vigentes de todos los sectores y su historia desde 2018 (pedido del lote AF a Grok). Hasta entonces sigue D-005: los sectores sin alícuota quedan fuera del modelo, y cada salida informa qué fracción de las exportaciones cubre.

@@ -63,13 +63,15 @@ Por eso el comportamiento del BCRA (compra todo, compra una parte, no compra) es
 - **BCRA:** compra todo, compra una parte, no compra.
 - **Horizonte:** mensual hasta 36 meses y anual hasta 2036, que cubre la meseta de vencimientos de 2028 a 2034.
 
-## 6. Decisiones abiertas
+## 6. Configuraciones base
 
-Siguen pendientes de Alejandro:
+Alejandro delegó las tres decisiones en lo que mejor sirva al objetivo. Las configuraciones base y sus variantes están en `docs/DECISIONES.md`:
 
-1. **Las reglas del fondo del régimen (d):** qué acumula, cuándo se retira, si tiene tope y quién decide. Las opciones y precedentes están en `inbox/lote-h/tablas/opciones_diseno_fondo_d.csv`. Sin esto, (d) no se puede correr.
-2. **El destino del resto de las divisas en (c):** el menú de `docs/APORTES_PROPUESTOS.md`, sección 8. Mientras no se decida, (c) supone que el exportador liquida el resto como hoy (variante de la opción 1).
-3. **Los sectores sin alícuota relevada** (carnes, economías regionales, industria, minería, crudo): quedan fuera hasta que se releven (D-005).
+1. **El fondo del régimen (d), D-012.** Una regla de referencia que le da al Tesoro un flujo mensual fijo y deja en el fondo lo que exceda, con retiros por fórmula, un tope medido en meses de servicio de la deuda en divisas y gobierno por ley.
+2. **El resto de las divisas, D-013.** Liquidación en el mercado de cambios a un tipo único, con el BCRA como creador de mercado de última instancia y sin programas transitorios.
+3. **Los sectores sin alícuota, D-014.** Primero se relevan (lote AF). Mientras tanto quedan fuera, y cada salida informa qué parte de las exportaciones cubre.
+
+Las tres son puntos de partida. La simulación las contrasta con sus variantes antes de fijarlas.
 
 ## 7. Código
 
