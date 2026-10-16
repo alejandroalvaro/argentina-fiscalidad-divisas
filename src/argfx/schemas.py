@@ -13,7 +13,7 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, field_validator
 
 SOURCE_ID = r"^SRC-\d{4}$"
-CLAIM_ID = r"^CLM-[A-Z]-\d{3}$"
+CLAIM_ID = r"^CLM-[A-Z]{1,2}-\d{3}$"  # one or two letters: lote A ... lote AA
 INSTRUMENT_ID = r"^INS-[A-Z]-\d{4}$"
 SHA256 = r"^[0-9a-f]{64}$"
 
