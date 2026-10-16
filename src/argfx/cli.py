@@ -119,6 +119,36 @@ def cmd_calendario(args: argparse.Namespace) -> int:
     return 0
 
 
+# Finanzas quarterly debt workbook at 2026-06-30 (SRC-0103, also SRC-1005).
+FINANZAS_2026_06_30 = "e481f24585ef40b8ce7c2b515e66235c8b8ebcb4001a769091cb531a6373922e"
+
+
+def cmd_conciliacion(args: argparse.Namespace) -> int:
+    from datetime import date
+
+    from argfx.reconcile.conciliacion import Materiality, build_reconciliation
+
+    xlsx = args.finanzas
+    if xlsx is None:
+        settings = get_settings()
+        xlsx = settings.cache_dir / "finanzas" / f"{args.finanzas_sha}.xlsx"
+        if not xlsx.is_file():
+            fetch_verified(get_store(settings), args.finanzas_sha, xlsx, settings.cache_dir)
+    counts = build_reconciliation(
+        xlsx,
+        args.instrumentos,
+        args.calendario,
+        args.terminos,
+        date.fromisoformat(args.corte),
+        args.out,
+        Materiality(args.umbral_abs, args.umbral_rel),
+    )
+    for k, v in counts.items():
+        print(f"{k}: {v:,}")
+    print(f"tablas en {args.out}/")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -158,6 +188,18 @@ def build_parser() -> argparse.ArgumentParser:
     cal.add_argument("--out", type=Path, default=Path("data/calendario"))
     cal.add_argument("--series", type=Path, default=Path("series"), help="observed BCRA series")
     cal.set_defaults(func=cmd_calendario)
+
+    con = sub.add_parser("conciliacion", help="phase 3: reconcile with the Finanzas workbook")
+    con.add_argument("--corte", default="2026-06-30")
+    con.add_argument("--finanzas", type=Path, help="local copy of the Finanzas workbook")
+    con.add_argument("--finanzas-sha", default=FINANZAS_2026_06_30, help="R2 object to use")
+    con.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
+    con.add_argument("--calendario", type=Path, default=Path("data/calendario"))
+    con.add_argument("--terminos", type=Path, default=Path("contratos"))
+    con.add_argument("--out", type=Path, default=Path("data/conciliacion"))
+    con.add_argument("--umbral-abs", type=float, default=10.0, help="millions of USD")
+    con.add_argument("--umbral-rel", type=float, default=0.001)
+    con.set_defaults(func=cmd_conciliacion)
     return parser
 
 
