@@ -1,0 +1,12 @@
+tenedor,categoria,millones_ars,valuacion,source_id,referencia
+BCRA,titulos_publicos_en_pesos,78366796.6,contable,SRC-1160,"Balance mensual del BCRA, visión monetaria, junio de 2026, títulos públicos en pesos (lote R)"
+FGS,"cer: Bonos, $, tasa variable (CER)",54679488,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Bonos, $, tasa variable (TAMAR)",9102296,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Bonos, $, tasa fija",5984826,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Letras, $",5314279,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Bonos, $, tasa variable (CER/TAMAR)",1920568,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"dolar_linked: Bonos, $, tasa variable (Dólar-linked)",1045821,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Bonos, $, tasa variable (BADLAR)",24737,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+FGS,"pesos: Bonos, $, tasa variable (PBI)",598,mercado,SRC-1166,"Informe Estadístico Mensual del FGS, junio de 2026 (tenencias/fgs_cartera_categorias.csv)"
+Banco Nación,especies en pesos identificadas,17449727.5,libros,SRC-1180,"Estados separados al 30-06-2026, especies en pesos con código (lote R)"
+Banco Nación,"otros títulos públicos del país, sin abrir",11954903.8,libros,SRC-1180,"Idem, filas Otros: pueden incluir bonos en dólares y provinciales"

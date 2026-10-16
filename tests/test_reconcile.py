@@ -220,3 +220,46 @@ def test_discounts_accrue_by_days_across_quarters() -> None:
     assert round(out["2026T2"], 6) == round(60.0 * 29 / 60, 6)
     out = accrue_discounts([Discount(date(2026, 12, 15), date(2027, 1, 14), 30.0)])
     assert out == {"2026T4": 17.0, "2027T1": 13.0}
+
+
+def test_peso_consolidation_applies_official_shares_and_converts_holdings(tmp_path: Path) -> None:
+    from argfx.reconcile.pesos import build_peso_consolidation
+
+    def write(name: str, rows: list[list[object]]) -> Path:
+        p = tmp_path / name
+        with p.open("w", newline="", encoding="utf-8") as fh:
+            csv.writer(fh).writerows(rows)
+        return p
+
+    comp = write("comp.csv", [
+        ["partida", "millones_usd", "porcentaje", "source_id", "referencia"],
+        ["sector_publico_moneda_total", 100, "", "SRC-0001", "x"],
+        ["sector_publico_pesos_cer", "", 40, "SRC-0001", "x"],
+        ["sector_publico_pesos", "", 20, "SRC-0001", "x"],
+        ["sector_publico_dolar_linked", "", 0, "SRC-0001", "x"],
+    ])  # fmt: skip
+    inst = write("inst.csv", [
+        ["instrument_id", "instrument_family", "outstanding_usd_equiv_sigade"],
+        ["A", "ARS CER", 50e6],
+        ["B", "ARS nominal", 30e6],
+        ["C", "dual", 10e6],
+        ["D", "dólar-linked", 5e6],
+        ["E", "USD", 99e6],  # not payable in pesos
+    ])  # fmt: skip
+    holdings = write("ten.csv", [
+        ["tenedor", "categoria", "millones_ars", "valuacion", "source_id", "referencia"],
+        ["BCRA", "x", 30_000, "contable", "SRC-0001", "x"],
+        ["FGS", "x", 15_000, "mercado", "SRC-0001", "x"],
+        ["FGS", "y", 5_000, "mercado", "SRC-0001", "x"],
+    ])  # fmt: skip
+    t = build_peso_consolidation(comp, holdings, inst, 1000.0, tmp_path)
+    assert t == {
+        "pesos_bruta_musd": 95.0,
+        "pesos_sector_publico_oficial_musd": 60.0,
+        "pesos_sector_publico_pct": 63.2,
+        "pesos_identificado_musd": 50.0,
+    }
+    with (tmp_path / "pesos_sector_publico.csv").open(encoding="utf-8") as fh:
+        rows = {r["grupo"]: r for r in csv.DictReader(fh)}
+    assert float(rows["cer"]["sector_publico_pct"]) == 80.0
+    assert float(rows["pesos"]["en_otras_manos_musd"]) == 20.0

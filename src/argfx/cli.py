@@ -157,6 +157,21 @@ def cmd_conciliacion(args: argparse.Namespace) -> int:
     )
     for k, v in consolidated.items():
         print(f"{k}: {v:,}")
+    pesos_csv = args.tenencias / f"tenencias_pesos_{args.corte}.csv"
+    if pesos_csv.exists():
+        from argfx.reconcile.finanzas import find, lines
+        from argfx.reconcile.pesos import build_peso_consolidation
+
+        iii = find(lines(xlsx, "A.1.1"), "III-").values
+        pesos = build_peso_consolidation(
+            args.tenencias / f"composicion_acreedor_{args.corte}.csv",
+            pesos_csv,
+            args.instrumentos,
+            iii[1] / iii[0],
+            args.out,
+        )
+        for k, v in pesos.items():
+            print(f"{k}: {v:,}")
     print(f"tablas en {args.out}/")
     return 0
 
