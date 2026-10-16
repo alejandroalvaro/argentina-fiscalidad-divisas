@@ -1,0 +1,298 @@
+mes,concepto,usd_millones,source_ids
+2024-01,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",59.3,SRC-1212;SRC-1213;SRC-1214
+2024-01,"saldo final (depósitos del Tesoro en el BCRA, USD)",2767.5,SRC-1212;SRC-1213;SRC-1214
+2024-01,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),2637.2,SRC-1254
+2024-01,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-44.3,SRC-1254
+2024-01,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),647.6,SRC-1255
+2024-01,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-966.4,SRC-1255
+2024-01,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),429.1,SRC-1256;SRC-1213;SRC-1214
+2024-01,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-01,residuo (variación menos suma explicada),4.9,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-02,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",2767.5,SRC-1212;SRC-1213;SRC-1214
+2024-02,"saldo final (depósitos del Tesoro en el BCRA, USD)",1764.9,SRC-1212;SRC-1213;SRC-1214
+2024-02,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.0,SRC-1254
+2024-02,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-974.4,SRC-1254
+2024-02,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-02,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-1108.4,SRC-1255
+2024-02,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1014.0,SRC-1256;SRC-1213;SRC-1214
+2024-02,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-02,residuo (variación menos suma explicada),66.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-03,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1764.9,SRC-1212;SRC-1213;SRC-1214
+2024-03,"saldo final (depósitos del Tesoro en el BCRA, USD)",1033.9,SRC-1212;SRC-1213;SRC-1214
+2024-03,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),3.1,SRC-1254
+2024-03,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-517.8,SRC-1254
+2024-03,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-03,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-676.9,SRC-1255
+2024-03,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),468.2,SRC-1256;SRC-1213;SRC-1214
+2024-03,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-03,residuo (variación menos suma explicada),-7.6,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-04,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1033.9,SRC-1212;SRC-1213;SRC-1214
+2024-04,"saldo final (depósitos del Tesoro en el BCRA, USD)",1083.9,SRC-1212;SRC-1213;SRC-1214
+2024-04,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),3.2,SRC-1254
+2024-04,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-2161.0,SRC-1254
+2024-04,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-04,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-110.4,SRC-1255
+2024-04,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),2323.4,SRC-1256;SRC-1213;SRC-1214
+2024-04,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-04,residuo (variación menos suma explicada),-5.2,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-05,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1083.9,SRC-1212;SRC-1213;SRC-1214
+2024-05,"saldo final (depósitos del Tesoro en el BCRA, USD)",428.0,SRC-1212;SRC-1213;SRC-1214
+2024-05,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),12.2,SRC-1254
+2024-05,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1225.4,SRC-1254
+2024-05,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),196.3,SRC-1255
+2024-05,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-85.0,SRC-1255
+2024-05,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),372.6,SRC-1256;SRC-1213;SRC-1214
+2024-05,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-05,residuo (variación menos suma explicada),73.5,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-06,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",428.0,SRC-1212;SRC-1213;SRC-1214
+2024-06,"saldo final (depósitos del Tesoro en el BCRA, USD)",1033.9,SRC-1212;SRC-1213;SRC-1214
+2024-06,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),787.5,SRC-1254
+2024-06,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-196.5,SRC-1254
+2024-06,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-06,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-195.5,SRC-1255
+2024-06,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),212.0,SRC-1256;SRC-1213;SRC-1214
+2024-06,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-06,residuo (variación menos suma explicada),-1.5,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-07,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1033.9,SRC-1212;SRC-1213;SRC-1214
+2024-07,"saldo final (depósitos del Tesoro en el BCRA, USD)",1242.8,SRC-1212;SRC-1213;SRC-1214
+2024-07,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.4,SRC-1254
+2024-07,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-784.3,SRC-1254
+2024-07,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),119.7,SRC-1255
+2024-07,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-2959.5,SRC-1255
+2024-07,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),3821.3,SRC-1256;SRC-1213;SRC-1214
+2024-07,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-07,residuo (variación menos suma explicada),11.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-08,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1242.8,SRC-1212;SRC-1213;SRC-1214
+2024-08,"saldo final (depósitos del Tesoro en el BCRA, USD)",835.4,SRC-1212;SRC-1213;SRC-1214
+2024-08,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),650.7,SRC-1254
+2024-08,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-986.4,SRC-1254
+2024-08,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-08,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-145.4,SRC-1255
+2024-08,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-08,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-08,residuo (variación menos suma explicada),73.6,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-09,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",835.4,SRC-1212;SRC-1213;SRC-1214
+2024-09,"saldo final (depósitos del Tesoro en el BCRA, USD)",1587.0,SRC-1212;SRC-1213;SRC-1214
+2024-09,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),1.2,SRC-1254
+2024-09,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-610.6,SRC-1254
+2024-09,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),46.0,SRC-1255
+2024-09,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-213.8,SRC-1255
+2024-09,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1527.6,SRC-1256;SRC-1213;SRC-1214
+2024-09,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-09,residuo (variación menos suma explicada),1.2,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-10,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1587.0,SRC-1212;SRC-1213;SRC-1214
+2024-10,"saldo final (depósitos del Tesoro en el BCRA, USD)",1276.0,SRC-1212;SRC-1213;SRC-1214
+2024-10,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),13.6,SRC-1254
+2024-10,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-290.6,SRC-1254
+2024-10,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-10,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-1166.1,SRC-1255
+2024-10,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1136.3,SRC-1256;SRC-1213;SRC-1214
+2024-10,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-10,residuo (variación menos suma explicada),-4.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-11,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1276.0,SRC-1212;SRC-1213;SRC-1214
+2024-11,"saldo final (depósitos del Tesoro en el BCRA, USD)",3560.3,SRC-1212;SRC-1213;SRC-1214
+2024-11,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),704.3,SRC-1254
+2024-11,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1180.3,SRC-1254
+2024-11,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2024-11,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-64.9,SRC-1255
+2024-11,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),2812.5,SRC-1256;SRC-1213;SRC-1214
+2024-11,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-11,residuo (variación menos suma explicada),12.7,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2024-12,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3560.3,SRC-1212;SRC-1213;SRC-1214
+2024-12,"saldo final (depósitos del Tesoro en el BCRA, USD)",5994.7,SRC-1212;SRC-1213;SRC-1214
+2024-12,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),1141.9,SRC-1254
+2024-12,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-139.3,SRC-1254
+2024-12,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),141.6,SRC-1255
+2024-12,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-159.1,SRC-1255
+2024-12,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1498.7,SRC-1256;SRC-1213;SRC-1214
+2024-12,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2024-12,residuo (variación menos suma explicada),-49.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-01,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",5994.7,SRC-1212;SRC-1213;SRC-1214
+2025-01,"saldo final (depósitos del Tesoro en el BCRA, USD)",3186.1,SRC-1212;SRC-1213;SRC-1214
+2025-01,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.0,SRC-1254
+2025-01,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-156.8,SRC-1254
+2025-01,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2025-01,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-3653.4,SRC-1255
+2025-01,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),999.5,SRC-1256;SRC-1213;SRC-1214
+2025-01,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-01,residuo (variación menos suma explicada),2.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-02,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3186.1,SRC-1212;SRC-1213;SRC-1214
+2025-02,"saldo final (depósitos del Tesoro en el BCRA, USD)",2759.7,SRC-1212;SRC-1213;SRC-1214
+2025-02,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),2.2,SRC-1254
+2025-02,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-849.9,SRC-1254
+2025-02,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2025-02,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-134.4,SRC-1255
+2025-02,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),499.8,SRC-1256;SRC-1213;SRC-1214
+2025-02,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-02,residuo (variación menos suma explicada),55.8,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-03,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",2759.7,SRC-1212;SRC-1213;SRC-1214
+2025-03,"saldo final (depósitos del Tesoro en el BCRA, USD)",1951.5,SRC-1212;SRC-1213;SRC-1214
+2025-03,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.2,SRC-1254
+2025-03,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-440.5,SRC-1254
+2025-03,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2025-03,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-372.7,SRC-1255
+2025-03,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-03,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-03,residuo (variación menos suma explicada),4.8,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-04,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1951.5,SRC-1212;SRC-1213;SRC-1214
+2025-04,"saldo final (depósitos del Tesoro en el BCRA, USD)",15447.9,SRC-1212;SRC-1213;SRC-1214
+2025-04,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),13662.7,SRC-1254
+2025-04,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-71.6,SRC-1254
+2025-04,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2025-04,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-116.8,SRC-1255
+2025-04,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-04,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-04,residuo (variación menos suma explicada),22.1,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-05,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",15447.9,SRC-1212;SRC-1213;SRC-1214
+2025-05,"saldo final (depósitos del Tesoro en el BCRA, USD)",3067.5,SRC-1212;SRC-1213;SRC-1214
+2025-05,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),707.4,SRC-1254
+2025-05,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1044.9,SRC-1254
+2025-05,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),0.0,SRC-1255
+2025-05,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-12088.9,SRC-1255
+2025-05,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-05,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-05,residuo (variación menos suma explicada),46.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-06,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3067.5,SRC-1212;SRC-1213;SRC-1214
+2025-06,"saldo final (depósitos del Tesoro en el BCRA, USD)",4679.8,SRC-1212;SRC-1213;SRC-1214
+2025-06,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),156.9,SRC-1254
+2025-06,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-166.3,SRC-1254
+2025-06,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),1713.4,SRC-1255
+2025-06,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-94.8,SRC-1255
+2025-06,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-06,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-06,residuo (variación menos suma explicada),3.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-07,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",4679.8,SRC-1212;SRC-1213;SRC-1214
+2025-07,"saldo final (depósitos del Tesoro en el BCRA, USD)",2707.9,SRC-1212;SRC-1213;SRC-1214
+2025-07,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),1198.4,SRC-1254
+2025-07,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-147.8,SRC-1254
+2025-07,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),1225.8,SRC-1255
+2025-07,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-4248.8,SRC-1255
+2025-07,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-07,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-07,residuo (variación menos suma explicada),0.5,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-08,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",2707.9,SRC-1212;SRC-1213;SRC-1214
+2025-08,"saldo final (depósitos del Tesoro en el BCRA, USD)",1685.7,SRC-1212;SRC-1213;SRC-1214
+2025-08,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),2141.3,SRC-1254
+2025-08,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-838.5,SRC-1254
+2025-08,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),69.5,SRC-1255
+2025-08,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-2408.0,SRC-1255
+2025-08,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-08,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-08,residuo (variación menos suma explicada),13.6,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-09,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1685.7,SRC-1212;SRC-1213;SRC-1214
+2025-09,"saldo final (depósitos del Tesoro en el BCRA, USD)",2327.4,SRC-1212;SRC-1213;SRC-1214
+2025-09,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),47.8,SRC-1254
+2025-09,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-691.4,SRC-1254
+2025-09,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),2076.5,SRC-1255
+2025-09,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-753.4,SRC-1255
+2025-09,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-09,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-09,residuo (variación menos suma explicada),-37.9,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-10,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",2327.4,SRC-1212;SRC-1213;SRC-1214
+2025-10,"saldo final (depósitos del Tesoro en el BCRA, USD)",91.9,SRC-1212;SRC-1213;SRC-1214
+2025-10,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),115.6,SRC-1254
+2025-10,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-316.8,SRC-1254
+2025-10,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),21.4,SRC-1255
+2025-10,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-2085.2,SRC-1255
+2025-10,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),123.2,SRC-1256;SRC-1213;SRC-1214
+2025-10,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-10,residuo (variación menos suma explicada),-93.7,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-11,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",91.9,SRC-1212;SRC-1213;SRC-1214
+2025-11,"saldo final (depósitos del Tesoro en el BCRA, USD)",212.6,SRC-1212;SRC-1213;SRC-1214
+2025-11,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),19.2,SRC-1254
+2025-11,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1225.8,SRC-1254
+2025-11,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),316.7,SRC-1255
+2025-11,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-111.9,SRC-1255
+2025-11,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1104.9,SRC-1256;SRC-1213;SRC-1214
+2025-11,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-11,residuo (variación menos suma explicada),17.4,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2025-12,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",212.6,SRC-1212;SRC-1213;SRC-1214
+2025-12,"saldo final (depósitos del Tesoro en el BCRA, USD)",1969.9,SRC-1212;SRC-1213;SRC-1214
+2025-12,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),886.2,SRC-1254
+2025-12,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-159.6,SRC-1254
+2025-12,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),1551.9,SRC-1255
+2025-12,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-526.2,SRC-1255
+2025-12,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-12,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2025-12,residuo (variación menos suma explicada),5.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-01,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1969.9,SRC-1212;SRC-1213;SRC-1214
+2026-01,"saldo final (depósitos del Tesoro en el BCRA, USD)",526.2,SRC-1212;SRC-1213;SRC-1214
+2026-01,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),2.2,SRC-1254
+2026-01,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-118.8,SRC-1254
+2026-01,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),930.0,SRC-1255
+2026-01,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-5010.6,SRC-1255
+2026-01,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),2756.5,SRC-1256;SRC-1213;SRC-1214
+2026-01,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-01,residuo (variación menos suma explicada),-2.8,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-02,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",526.2,SRC-1212;SRC-1213;SRC-1214
+2026-02,"saldo final (depósitos del Tesoro en el BCRA, USD)",532.8,SRC-1212;SRC-1213;SRC-1214
+2026-02,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.2,SRC-1254
+2026-02,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1012.7,SRC-1254
+2026-02,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),377.6,SRC-1255
+2026-02,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-190.0,SRC-1255
+2026-02,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),787.1,SRC-1256;SRC-1213;SRC-1214
+2026-02,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-02,residuo (variación menos suma explicada),44.4,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-03,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",532.8,SRC-1212;SRC-1213;SRC-1214
+2026-03,"saldo final (depósitos del Tesoro en el BCRA, USD)",485.3,SRC-1212;SRC-1213;SRC-1214
+2026-03,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.2,SRC-1254
+2026-03,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-562.6,SRC-1254
+2026-03,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),677.5,SRC-1255
+2026-03,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-288.3,SRC-1255
+2026-03,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),114.7,SRC-1256;SRC-1213;SRC-1214
+2026-03,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-03,residuo (variación menos suma explicada),11.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-04,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",485.3,SRC-1212;SRC-1213;SRC-1214
+2026-04,"saldo final (depósitos del Tesoro en el BCRA, USD)",1365.1,SRC-1212;SRC-1213;SRC-1214
+2026-04,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),46.1,SRC-1254
+2026-04,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-330.0,SRC-1254
+2026-04,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),1347.6,SRC-1255
+2026-04,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-113.4,SRC-1255
+2026-04,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-04,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-04,residuo (variación menos suma explicada),-70.6,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-05,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",1365.1,SRC-1212;SRC-1213;SRC-1214
+2026-05,"saldo final (depósitos del Tesoro en el BCRA, USD)",3057.9,SRC-1212;SRC-1213;SRC-1214
+2026-05,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),1043.8,SRC-1254
+2026-05,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1172.6,SRC-1254
+2026-05,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),624.7,SRC-1255
+2026-05,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-547.9,SRC-1255
+2026-05,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),1700.5,SRC-1256;SRC-1213;SRC-1214
+2026-05,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-05,residuo (variación menos suma explicada),44.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-06,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3057.9,SRC-1212;SRC-1213;SRC-1214
+2026-06,"saldo final (depósitos del Tesoro en el BCRA, USD)",3919.7,SRC-1212;SRC-1213;SRC-1214
+2026-06,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),0.5,SRC-1254
+2026-06,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-188.7,SRC-1254
+2026-06,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),601.2,SRC-1255
+2026-06,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-156.5,SRC-1255
+2026-06,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),597.3,SRC-1256;SRC-1213;SRC-1214
+2026-06,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-06,residuo (variación menos suma explicada),8.0,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-07,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3919.7,SRC-1212;SRC-1213;SRC-1214
+2026-07,"saldo final (depósitos del Tesoro en el BCRA, USD)",3605.6,SRC-1212;SRC-1213;SRC-1214
+2026-07,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),17.5,SRC-1254
+2026-07,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-110.5,SRC-1254
+2026-07,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),1543.4,SRC-1255
+2026-07,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-2683.2,SRC-1255
+2026-07,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),919.2,SRC-1256;SRC-1213;SRC-1214
+2026-07,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-07,residuo (variación menos suma explicada),-0.6,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-08,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",3605.6,SRC-1212;SRC-1213;SRC-1214
+2026-08,"saldo final (depósitos del Tesoro en el BCRA, USD)",2779.1,SRC-1212;SRC-1213;SRC-1214
+2026-08,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),79.1,SRC-1254
+2026-08,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-965.0,SRC-1254
+2026-08,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),873.4,SRC-1255
+2026-08,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-860.8,SRC-1255
+2026-08,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-08,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-08,residuo (variación menos suma explicada),46.8,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
+2026-09,"saldo inicial (depósitos del Tesoro en el BCRA, USD)",2779.1,SRC-1212;SRC-1213;SRC-1214
+2026-09,"saldo final (depósitos del Tesoro en el BCRA, USD)",1124.5,SRC-1212;SRC-1213;SRC-1214
+2026-09,ingresos: operaciones con organismos internacionales (suma de días positivos de la variable 79),49.2,SRC-1254
+2026-09,egresos: operaciones con organismos internacionales (suma de días negativos de la variable 79),-1428.7,SRC-1254
+2026-09,ingresos: otras operaciones del sector público (suma de días positivos de la variable 80; incluye colocaciones de deuda en USD y otros ingresos),3.8,SRC-1255
+2026-09,egresos: otras operaciones del sector público (suma de días negativos de la variable 80; incluye pagos de bonos y letras compradas al BCRA),-309.1,SRC-1255
+2026-09,ingresos: compras de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-09,egresos: ventas de divisas del Tesoro al BCRA (menos la variable 48 dividida por el tipo de cambio),0.0,SRC-1256;SRC-1213;SRC-1214
+2026-09,residuo (variación menos suma explicada),30.3,SRC-1212;SRC-1213;SRC-1214;SRC-1254;SRC-1255;SRC-1256
