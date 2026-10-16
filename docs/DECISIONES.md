@@ -106,3 +106,20 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 **Decisión.** Las operaciones sobre instrumentos ajustados por CER se cargan con el valor nominal en pesos, tal como lo publican los resultados de licitación y las resoluciones.
 
 **Aplicación.** El saldo de esos instrumentos sigue en unidades CER, como en SIGADE. La columna `indice_inicial` de `contratos/terminos.csv` (el CER de la fecha de referencia de la emisión) convierte los pesos en unidades, y el cargador rechaza operaciones sobre instrumentos CER o UVA si falta.
+
+## D-011. Letras en garantía del FODER: deuda contingente en poder del sector público (2026-10-16)
+
+**Decisión.** Las 109 "LETRAS EN GARANTÍA" de SIGADE (USD 3.774 millones al 30-06-2026) se tratan como deuda contingente, igual que los avales, y como tenencia del sector público.
+
+**Fundamento.**
+- El Tesoro emite estas letras y las entrega al FODER como garantía del pago del precio de venta de las centrales de energías renovables. Solo hay que pagar si un generador ejerce la opción de venta (Decreto 882/2016, art. 14, verificado en el texto oficial, SRC-1279; Ley 27.191, art. 7).
+- Si no se ejerce, vencen cada 31 de diciembre y vuelven al fiduciante sin pago (Decreto 471/2017, art. 3; OPC, Análisis de la Deuda Pública Indirecta, SRC-1286, lote Z).
+- El FODER es un fideicomiso con el Estado Nacional como fiduciante y fideicomisario.
+- SIGADE las registra en deuda en situación de pago normal, con un calendario mecánico de USD 266 millones por año. Eso es una decisión de registro, no un compromiso de pago.
+
+**Aplicación.**
+- `src/argfx/contracts/sigade.py`: sus flujos salen con `status = contingente` y quedan fuera de la necesidad firme de divisas. La necesidad bruta a 12 meses baja de 22.411 a 22.145 millones de USD.
+- `scripts/build_tenencias.py`: figuran como tenencia `directo` del FODER en la consolidación.
+- No se encontró evidencia de que se haya ejercido alguna opción de venta. Si apareciera, el tramo ejecutado pasa a firme.
+- El saldo de SIGADE (3.774 millones) es la mitad de lo emitido (7.417 millones), y la diferencia no está documentada (lote Z, `unresolved.md`).
+

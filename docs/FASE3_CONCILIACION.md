@@ -30,7 +30,7 @@ Montos en millones de USD a los tipos de cambio del corte, que son los de A.3.1 
 | Duales | | +10 |
 | Flujos sin monto en el escenario congelado (TAMAR, BADLAR, duales) | −7.997 | −391 |
 
-Las operaciones posteriores al corte son casi todas en pesos. La necesidad de divisas sigue en 22.410 millones de USD (fase 2).
+Las operaciones posteriores al corte son casi todas en pesos. La necesidad de divisas no cambia por estas causas (22.145 millones de USD con D-011).
 
 ## Consolidación del sector público (también en `argfx conciliacion`)
 
@@ -41,21 +41,21 @@ Saca de la necesidad de divisas los pagos a tenedores del sector público. Sin e
   - `directo`: las letras intransferibles que SIGADE registra con acreedor BCRA y la LETRA/U$S/INTRA SP/19-02-2027 (31.538 millones);
   - `estimado`: los Globales del BCRA al 31-12-2025 (Anexo III, lote S) y los AL35 y AE38 que recibió en la conversión de la RC 31/2026 (6.739 millones). Que el BCRA los tuviera al corte es un supuesto.
 
-Lo que el sector público tiene en dólares y no se identifica por instrumento (23.842 millones) se reparte en proporción (`proporcional`) entre los bonos en dólares de SIGADE que no están del todo en su poder, separando por legislación. A los Globales (ley extranjera) les toca lo que falta para llegar al 1,2% oficial: 4,1% de su saldo libre. Al resto (Bonares, BONAR y BONTE en dólares, ley local) le toca el remanente: 50,3% de su saldo libre. Los préstamos del FMI, multilaterales y bilaterales nunca se reparten.
+Lo que el sector público tiene en dólares y no se identifica por instrumento (20.068 millones, tras sumar las letras en garantía del FODER a lo identificado, D-011) se reparte en proporción (`proporcional`) entre los bonos en dólares de SIGADE que no están del todo en su poder, separando por legislación. A los Globales (ley extranjera) les toca lo que falta para llegar al 1,2% oficial: 4,1% de su saldo libre. Al resto (Bonares, BONAR y BONTE en dólares, ley local) le toca el remanente: 41,5% de su saldo libre. Los préstamos del FMI, multilaterales y bilaterales nunca se reparten.
 
 ### Necesidad de divisas consolidada a 12 meses
 
 | Componente | Millones de USD |
 |---|---|
-| Necesidad bruta (fase 2) | 22.411 |
+| Necesidad bruta (fase 2, con D-011) | 22.145 |
 | Pagos al sector público, directo (LETRA/U$S/INTRA SP) | −1.228 |
 | Pagos al sector público, estimado (bonos del BCRA) | −299 |
-| Pagos al sector público, proporcional | −2.192 |
-| **Necesidad consolidada** | **18.691** |
+| Pagos al sector público, proporcional | −1.842 |
+| **Necesidad consolidada** | **18.775** |
 
-Entre la necesidad bruta y la consolidada hay 3.720 millones de USD. Solo la parte directa es firme. Con las capas directa y estimada, la necesidad consolidada queda en 20.883 millones, y la proporcional la baja hasta 18.691. El detalle por instrumento está en `data/conciliacion/necesidad_divisas_consolidada.csv`. Las letras intransferibles no aparecen porque sus intereses dependen del rendimiento de las reservas y quedan sin monto en el escenario congelado.
+Entre la necesidad bruta y la consolidada hay 3.370 millones de USD. Solo la parte directa es firme. Con las capas directa y estimada, la necesidad consolidada queda en 20.618 millones, y la proporcional la baja hasta 18.775. El detalle por instrumento está en `data/conciliacion/necesidad_divisas_consolidada.csv`. Las letras intransferibles no aparecen porque sus intereses dependen del rendimiento de las reservas y quedan sin monto en el escenario congelado.
 
-**Sensibilidad abierta: letras en garantía.** Las 109 letras en garantía de SIGADE (3.774 millones de USD, 266 millones en la necesidad a 12 meses) respaldan contratos de energías renovables. Hoy cuentan como deuda firme. Si las tiene el FODER, que es un fondo fiduciario público, son tenencia del sector público y probablemente deuda contingente. En ese caso salen de la necesidad firme, y la parte proporcional de los Bonares baja de 50% a 41%. Pedido a Grok.
+**Letras en garantía (D-011).** Las 109 letras en garantía del FODER (3.774 millones de USD) son deuda contingente en poder de un fideicomiso público: salen de la necesidad firme (266 millones a 12 meses) y entran como tenencia identificada del sector público.
 
 ## Intereses capitalizados devengados (D-009, `argfx devengados`)
 
