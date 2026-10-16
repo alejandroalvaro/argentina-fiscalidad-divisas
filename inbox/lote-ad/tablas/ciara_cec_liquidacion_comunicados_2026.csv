@@ -1,0 +1,5 @@
+serie,fecha,valor,unidad,source_id
+CIARA-CEC liquidación mensual,2026-09,3228,millones de USD,SRC-1321
+CIARA-CEC liquidación acumulada enero a septiembre,2026-09,22275,millones de USD,SRC-1321
+CIARA-CEC liquidación mensual (cifra citada por prensa),2025-09,7100,millones de USD,SRC-1322
+"CIARA-CEC liquidación mensual (cifra citada por prensa, ""más de"")",2022-09,8100,millones de USD,SRC-1322

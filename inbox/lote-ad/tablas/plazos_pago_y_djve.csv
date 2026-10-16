@@ -1,0 +1,10 @@
+concepto,regla_o_valor,source_id
+Pago anticipado,"al oficializar la destinación, al tipo de cambio comprador del último día hábil anterior",SRC-1326
+"Plazo de espera general (art. 54 inc. a Decreto 1001/82, primer párrafo)",15 días corridos desde el día siguiente al libramiento,SRC-1325
+"Plazo de espera máximo, segundo párrafo","el menor entre 120 días corridos desde el libramiento, la fecha de liquidación efectiva de divisas, y el vencimiento para liquidar divisas (según la síntesis de la búsqueda sobre RG 4852/2020, punto 2.1.2)",SRC-1325
+Tipo de cambio para pagos con plazo de espera,"vendedor divisa del Banco de la Nación, cierre del día hábil cambiario anterior al pago",SRC-1325
+Momento imponible,fecha de oficialización del permiso de embarque,SRC-1326
+"Alícuota aplicable (Ley 21.453, art. 6)","la vigente a la fecha de cierre de cada venta (DJVE), con independencia de la fecha de ingreso de divisas (art. 7)",SRC-1323
+Cumplimiento de la DJVE,90% de la cantidad declarada con declaración aduanera registrada dentro del plazo,SRC-1323
+Modalidades de ingreso (art. 5 sustituido),las fija el Ministerio de Economía (Res. 296/2002 aplica art. 54 inc. a del Decreto 1001/82 a los productos de la Ley 21.453),SRC-1324
+Opción de embarque en DJVE vistas el 2026-10-15,"30 o 360 (columna ""Opción""), con período de embarque de 30 días en los ejemplos de opción 30",SRC-1327

@@ -1,0 +1,15 @@
+fecha_norma,norma,producto,alicuota_anterior,alicuota_nueva,temporal_hasta,observacion,source_id
+2018-09-03,Decreto 793/2018,soja y aceite de soja,no confirmada en la lectura,18% + $4 por USD,,esquema mixto de porcentaje más monto fijo,SRC-1337
+2019-12-14,Decreto 37/2019,soja y aceite de soja,18% + $4 por USD,30%,,porcentaje fijo,SRC-1337
+2020-03-04,Decreto 230/2020,soja y aceite de soja,30%,33%,,en el marco de la Ley 27.541,SRC-1337
+2020-10,Decreto 790/2020,productos y subproductos de soja,33%,cronograma gradual hacia un nivel fijo en enero de 2021,,"niveles finales (33% poroto, 31% subproductos) solo en la síntesis de una búsqueda, no leídos en el anexo",SRC-1338
+2022-03-19,Decreto 131/2022,productos y subproductos de soja,cronograma del Decreto 790/2020,vuelven las alícuotas del Decreto 230/2020,2022-12-31,suspensión de las alícuotas del 790/2020,SRC-1338
+2025-01,Decreto 38/2025,"complejos agro del Anexo II (soja, trigo, maíz, cebada, girasol según ARCA)",soja 33%,soja 26% para quien liquide el 95% en 15 días hábiles de la DJVE,2025-06-30,las alícuotas generales siguieron; ARCA describe 33%/26% para soja en abril y junio de 2025,SRC-1329
+2025-07-30,Decreto 526/2025,soja (1201.90.00) y derivados,33% general o 26% diferencial (ARCA),"soja 26%; mezclas con aceite de soja 20%; mezclas con soja 24,5%",,permanente según los considerandos del 877/2025,SRC-1330
+2025-09-22,Decreto 682/2025,"soja, trigo, maíz, cebada, sorgo, girasol, carnes entre otros (anexo)",alícuotas vigentes,0%,2025-10-31,vale hasta el 31/10/2025 o hasta DJVE por USD 7.000 millones; el cupo se alcanzó en septiembre de 2025,SRC-1331
+2025-12-12,Decreto 877/2025,soja,26%,24%,,permanente,SRC-1333
+2025-12-12,Decreto 877/2025,aceite y pellets de soja,"24,5%","22,5%",,promedios según consultora; el anexo no se leyó,SRC-1333
+2025-12-12,Decreto 877/2025,trigo y cebada,"9,5%","7,5%",,promedios según consultora,SRC-1333
+2025-12-12,Decreto 877/2025,maíz y sorgo,"9,5%","8,5%",,promedios según consultora,SRC-1333
+2025-12-12,Decreto 877/2025,girasol,"5,5%","4,5%",,promedios según consultora,SRC-1333
+2026-06,Decreto 423/2026,trigo,"7,5%","5,5%",,según ARCA; el decreto está en lote F,SRC-1334
