@@ -8,6 +8,7 @@ authors = [{ name = "Alejandro Álvaro", email = "alejandro.alvaro@gmail.com" }]
 dependencies = [
     "boto3>=1.35",
     "duckdb>=1.1",
+    "openpyxl>=3.1",
     "pyarrow>=17",
     "pydantic>=2.8",
     "pydantic-settings>=2.4",
