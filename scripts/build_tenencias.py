@@ -1,8 +1,8 @@
 """Build tenencias/tenencias_identificadas_2026-06-30.csv: Treasury debt held inside the public
 sector, instrument by instrument, with the method of each row.
 
-- directo: SIGADE assigns the creditor (letras intransferibles with the BCRA) or the name says it
-  (LETRA/U$S/INTRA SP).
+- directo: SIGADE assigns the creditor (letras intransferibles with the BCRA), the name says it
+  (LETRA/U$S/INTRA SP), or the norm does (letters in guarantee, held by the FODER).
 - estimado: BCRA holdings of USD bonds at 2025-12-31 (Anexo III of its financial statements,
   mapped in lote S), and the AL35 and AE38 delivered to the BCRA in the RC 31/2026 conversion
   (ONCP, Otras Operaciones). Whether the BCRA still held them at the cut-off is not published.
@@ -35,6 +35,15 @@ def main() -> None:
                 })  # fmt: skip
     with (ROOT / "inbox" / "lote-c" / "instruments.csv").open(newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh):
+            if r["instrument_family"] == "letras en garantía":
+                rows.append({
+                    "instrument_id": r["instrument_id"], "tenedor": "FODER",
+                    "valor_nominal_original_usd": r["outstanding_principal"], "metodo": "directo",
+                    "fecha_dato": "2026-06-30", "source_id": "SRC-1279",
+                    "referencia": f"{r['operation_name_sigade']}: letra en garantía entregada al "
+                    "FODER, fondo fiduciario público (Ley 27.191 art. 7; Decreto 882/2016 art. 14)",
+                })  # fmt: skip
+                continue
             if "INTRA SP" in r["operation_name_sigade"].upper():
                 rows.append({
                     "instrument_id": r["instrument_id"], "tenedor": "sector público (sin detalle)",

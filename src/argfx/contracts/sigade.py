@@ -31,6 +31,9 @@ CREDITOR_BY_CLASS: dict[str, CreditorType] = {
 SCENARIO_RATES = {"TASA SOFR", "TASA LIBO", "TASA BADLAR", "DIVERSAS", "TASA FMI", "CAJA DE AHORRO"}
 
 
+CONTINGENT_CLASSES = frozenset({"AVALES", "LETRAS EN GARANTÍA"})
+
+
 def unit_dimensions(loan_code: str, payment_code: str) -> tuple[str, str, Indexation, str]:
     """(unit, currency of account, indexation, currency of settlement) for SIGADE codes."""
     settlement = SIGADE_CODE_TO_ISO.get(payment_code, payment_code)
@@ -99,7 +102,9 @@ def load_sigade_flows(
                 r["Moneda de Origen"], payment[key]
             )
             instrument_id, debtor = index.get(key, (name, "desconocido"))
-            status: Status = "contingente" if cls == "AVALES" else "firme"
+            # Guarantees: avales, and the letters given in guarantee to the FODER, which expire
+            # every 31 December without payment unless a put option is exercised (D-011).
+            status: Status = "contingente" if cls in CONTINGENT_CLASSES else "firme"
             floating = r["Tipo de Tasa"] in SCENARIO_RATES
             for kind, column in (
                 ("amortizacion", "Principal en Moneda del Prestamo"),
