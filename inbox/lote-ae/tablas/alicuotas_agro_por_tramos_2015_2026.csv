@@ -1,0 +1,23 @@
+producto,desde,hasta,alicuota,norma,source_id,confianza
+soja (poroto),2018-01,2018-08,"30% bajando 0,5 puntos por mes hasta 26% en agosto",norma no leída; ver Chequeado,SRC-1360,media
+soja (poroto),2018-09,2019-12,18% más el menor entre 12% y $4 por dólar (30% o menos),Decreto 793/2018,SRC-1360,media
+soja (poroto),2019-12,2020-03,30%,norma no leída,SRC-1360,media
+soja (poroto),2020-03,2020-09,33% (según Chequeado solo para exportaciones de más de 1.000 t),norma no leída,SRC-1360,media
+soja (poroto),2020-10,2020-12,"30% en octubre, 31,5% en noviembre, 32% en diciembre",Decreto 790/2020,SRC-1360,media
+soja (poroto),2021-01,2025-01,33% (el Decreto 1060/2020 no cambia la soja),Decreto 790/2020; Decreto 1060/2020,SRC-1361,media
+soja (poroto),2025-01,2025-06,33% general; baja temporal condicionada a liquidar el 95% de la DJVE,Decreto 38/2025,SRC-1360,media
+soja (poroto),2025-07,2025-12,"26% permanente (anexo 1201.90.00 26,00%)",Decreto 526/2025,SRC-1358,alta
+soja (poroto),2025-12,2026-10,24%,Decreto 877/2025,SRC-1359,alta
+harina y aceite de soja,2025-07,2025-12,"24,5% (1507.10, 2304.00)",Decreto 526/2025,SRC-1358,alta
+harina y aceite de soja,2025-12,2026-10,"22,5%",Decreto 877/2025,SRC-1359,alta
+trigo y cebada,2015-12,2018-08,0% (eliminadas),norma no leída,SRC-1360,media
+"trigo, maíz y girasol",2018-09,2019-11,"12% o $4 por dólar, el menor",Decreto 793/2018,SRC-1360,media
+"trigo, maíz y girasol",2019-12,2020-02,12%,norma no leída,SRC-1360,media
+girasol,2020-03,2025-01,7% desde marzo de 2020 (Chequeado),norma no leída,SRC-1360,baja
+trigo y maíz,2020-03,2025-01,12% (inferido: Chequeado indica que desde 2020 siguen en 12% hasta 2025; sin decreto leído),sin decreto leído para 2020 a 2024,SRC-1360,baja
+"trigo, cebada, maíz y sorgo",2025-07,2025-12,"9,5% (anexo 526/2025: 1001.99.00, 1003.90, 1005.90, 1007.90)",Decreto 526/2025,SRC-1358,alta
+trigo y cebada,2025-12,2026-05,"7,5%",Decreto 877/2025,SRC-1359,alta
+maíz y sorgo,2025-12,2026-10,"8,5%",Decreto 877/2025,SRC-1359,alta
+girasol,2025-07,2025-12,"5,5%",Decreto 526/2025,SRC-1358,alta
+girasol,2025-12,2026-10,"4,5%",Decreto 877/2025,SRC-1359,alta
+trigo y cebada,2026-06,2026-10,"5,5% (anuncio del 21/5/2026; en el lote AD ARCA lo cita para trigo y el norma no leída está en el lote F)",norma no leída,SRC-1360,media

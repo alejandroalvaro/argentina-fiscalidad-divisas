@@ -1,0 +1,40 @@
+ncm,producto,norma,alicuota,unidad,source_id,observacion
+1201.90.00,soja (poroto),Decreto 526/2025 (desde 2025-07-31),26.0,%,SRC-1358,
+1201.90.00,soja (poroto),Decreto 877/2025 (desde 2025-12-12),24.0,%,SRC-1359,
+1201.10.00,soja para siembra,Decreto 526/2025 (desde 2025-07-31),3.5,%,SRC-1358,
+1201.10.00,soja para siembra,Decreto 877/2025 (desde 2025-12-12),1.5,%,SRC-1359,
+1507.10.00,aceite de soja crudo,Decreto 526/2025 (desde 2025-07-31),24.5,%,SRC-1358,
+1507.10.00,aceite de soja crudo,Decreto 877/2025 (desde 2025-12-12),22.5,%,SRC-1359,
+1507.90.11,"aceite de soja refinado, envases (variante)",Decreto 526/2025 (desde 2025-07-31),20.0,%,SRC-1358,
+1507.90.11,"aceite de soja refinado, envases (variante)",Decreto 877/2025 (desde 2025-12-12),18.0,%,SRC-1359,
+1507.90.19,"aceite de soja refinado, otros (variante)",Decreto 526/2025 (desde 2025-07-31),24.0,%,SRC-1358,
+1507.90.19,"aceite de soja refinado, otros (variante)",Decreto 877/2025 (desde 2025-12-12),22.0,%,SRC-1359,
+1507.90.90,"aceite de soja, demás",Decreto 526/2025 (desde 2025-07-31),24.5,%,SRC-1358,
+1507.90.90,"aceite de soja, demás",Decreto 877/2025 (desde 2025-12-12),22.5,%,SRC-1359,
+2304.00.10,harina y pellets de soja (torta),Decreto 526/2025 (desde 2025-07-31),24.5,%,SRC-1358,
+2304.00.10,harina y pellets de soja (torta),Decreto 877/2025 (desde 2025-12-12),22.5,%,SRC-1359,
+2304.00.90,"harina de soja, demás",Decreto 526/2025 (desde 2025-07-31),24.5,%,SRC-1358,
+2304.00.90,"harina de soja, demás",Decreto 877/2025 (desde 2025-12-12),22.5,%,SRC-1359,
+2302.50.00,salvado de leguminosas,Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,"pellets de cáscara de soja y demás de soja: 24,5% en 526 y 22,5% en 877"
+2302.50.00,salvado de leguminosas,Decreto 877/2025 (desde 2025-12-12),8.5,%,SRC-1359,"pellets de cáscara de soja y demás de soja: 24,5% en 526 y 22,5% en 877"
+1001.99.00,"trigo pan, demás",Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1001.99.00,"trigo pan, demás",Decreto 877/2025 (desde 2025-12-12),7.5,%,SRC-1359,
+1001.19.00,"trigo duro, demás",Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1001.19.00,"trigo duro, demás",Decreto 877/2025 (desde 2025-12-12),7.5,%,SRC-1359,
+1003.90.90,"cebada, demás",Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1003.90.90,"cebada, demás",Decreto 877/2025 (desde 2025-12-12),7.5,%,SRC-1359,
+1005.90.10,"maíz, demás (excepto pisingallo 0%, flint o plata en envases chicos y a granel con hasta 15% de embolsado)",Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,excepciones por envase: ver extracto de la fuente
+1005.90.10,"maíz, demás (excepto pisingallo 0%, flint o plata en envases chicos y a granel con hasta 15% de embolsado)",Decreto 877/2025 (desde 2025-12-12),8.5,%,SRC-1359,excepciones por envase: ver extracto de la fuente
+1005.90.90,"maíz, demás",Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1005.90.90,"maíz, demás",Decreto 877/2025 (desde 2025-12-12),8.5,%,SRC-1359,
+1007.90.00,sorgo,Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1007.90.00,sorgo,Decreto 877/2025 (desde 2025-12-12),8.5,%,SRC-1359,
+1206.00.90,"girasol, demás",Decreto 526/2025 (desde 2025-07-31),5.5,%,SRC-1358,excepciones por descascarado y tipo confitera: 0%
+1206.00.90,"girasol, demás",Decreto 877/2025 (desde 2025-12-12),4.5,%,SRC-1359,excepciones por descascarado y tipo confitera: 0%
+1512.11.10,aceite de girasol crudo,Decreto 526/2025 (desde 2025-07-31),5.5,%,SRC-1358,
+1512.11.10,aceite de girasol crudo,Decreto 877/2025 (desde 2025-12-12),4.5,%,SRC-1359,
+1512.19.19,"aceite de girasol refinado, demás",Decreto 526/2025 (desde 2025-07-31),4.0,%,SRC-1358,
+1512.19.19,"aceite de girasol refinado, demás",Decreto 877/2025 (desde 2025-12-12),3.0,%,SRC-1359,
+1208.10.00,harina de soja (partida 1208),Decreto 526/2025 (desde 2025-07-31),9.5,%,SRC-1358,
+1208.10.00,harina de soja (partida 1208),Decreto 877/2025 (desde 2025-12-12),7.5,%,SRC-1359,
+0201.10.00,carne bovina fresca (ejemplo),Decreto 526/2025 (desde 2025-07-31),5.0,%,SRC-1358,no figura en el anexo del 877; se mantiene lo del 526
