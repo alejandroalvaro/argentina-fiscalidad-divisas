@@ -1,0 +1,4 @@
+sha256,size_bytes,object_key,media_type,original_filename,source_id,ingested_at,local_object_key,rol
+cfe1217cd1940236bfaa18f9274b9d0c0a336316bb352c571c671aad08ac534b,2566168,objects/sha256/cf/e1/cfe1217cd1940236bfaa18f9274b9d0c0a336316bb352c571c671aad08ac534b,application/pdf,informe-fmi-eff-revision-02-2026-05.pdf,SRC-1263,2026-10-16T01:00:00Z,docs/bcra/informe-fmi-eff-revision-02-2026-05.pdf,original
+47319409c832ed498a231866bd87134c17ab153baf43db7d3f969b45c96fedc1,1344507,objects/sha256/47/31/47319409c832ed498a231866bd87134c17ab153baf43db7d3f969b45c96fedc1,text/html,opc_nov.html,SRC-1264,2026-10-16T01:00:00Z,docs/rev/opc_nov.html,original
+02609e85c3f41b11e15d6344568ab8d20725447286ba810293727273dc3ad49f,120633,objects/sha256/02/60/02609e85c3f41b11e15d6344568ab8d20725447286ba810293727273dc3ad49f,text/html,adeba_ce.html,SRC-1265,2026-10-16T01:00:00Z,docs/rev/adeba_ce.html,original
