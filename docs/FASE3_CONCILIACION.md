@@ -83,14 +83,14 @@ Los resultados en base caja de 2026 suman 1.456 en el semestre, igual al Boletí
 
 **Descuentos de colocación.** El Tesoro debe el valor técnico y recibe el valor efectivo. Para cada colocación en efectivo de LECAP y BONCAP con valor técnico conocido (el nominal en una emisión nueva, el nominal por el factor de capitalización en una ampliación a tasa fija), la diferencia se reparte por días entre la liquidación y el vencimiento. El neto es chico y casi siempre negativo: con las tasas en baja, los compradores pagaron por encima del valor técnico, y esa prima baja el costo. Va de −706 a +174 por trimestre, contra 5.000 a 11.000 de capitalización.
 
-**Perímetro del SPN (tenencia del FGS).** El informe mensual del FGS da la cartera por categoría y no por especie (`tenencias/fgs_cartera_categorias.csv`: SRC-1166 del lote R y SRC-1311 a SRC-1318 del lote AB, lecturas web porque ANSES responde 403 a la descarga; en cada fecha las categorías suman el total publicado). Contra el valor nominal actualizado de A.1.7, cada categoría acota la parte del FGS en las LECAP y BONCAP que capitalizan: como máximo, lo que tiene en la categoría hasta el saldo capitalizable de esa categoría; como mínimo, lo que tiene más allá de los instrumentos que no capitalizan y pueden estar en la misma categoría (las LELINKs entre las letras, los BONTE a tasa fija entre los bonos). Ningún informe dice dónde van las LELINKs, y por eso el rango queda abierto. Al 30-06-2026, con 125.100 miles de millones de saldo capitalizable, el FGS tiene entre 10,6% y 16,3%.
+**Perímetro del SPN (tenencia del FGS).** El informe mensual del FGS da la cartera por categoría y no por especie (`tenencias/fgs_cartera_categorias.csv`: SRC-1166 del lote R y SRC-1311 a SRC-1318 del lote AB, lecturas web porque ANSES responde 403 a la descarga; diciembre de 2024 sale del Cuadro 4 del Informe Anual 2024, SRC-1319, cuyo original sí está en R2; en cada fecha las categorías suman el total publicado). Contra el valor nominal actualizado de A.1.7, cada categoría acota la parte del FGS en las LECAP y BONCAP que capitalizan: como máximo, lo que tiene en la categoría hasta el saldo capitalizable de esa categoría; como mínimo, lo que tiene más allá de los instrumentos que no capitalizan y pueden estar en la misma categoría (las LELINKs entre las letras, los BONTE a tasa fija entre los bonos). Ningún informe dice dónde van las LELINKs, y por eso el rango queda abierto. Al 30-06-2026, con 125.100 miles de millones de saldo capitalizable, el FGS tiene entre 10,6% y 16,3%.
 
 | Trimestre | FGS en LECAP y BONCAP | Devengado no pagado, AC | Devengado no pagado, SPN | Resultado financiero con lo devengado, AC | Ídem, perímetro SPN |
 |---|---|---|---|---|---|
 | 2024T1 | 0,0% a 0,0% | 6 | 6 a 6 | 1.127 | 1.128 a 1.128 |
 | 2024T2 | 0,0% a 3,8% | 858 | 826 a 858 | 581 | 581 a 613 |
 | 2024T3 | 0,0% a 7,1% | 5.304 | 4.929 a 5.304 | −5.435 | −5.435 a −5.060 |
-| 2024T4 | sin informe | 6.177 | n/d | −6.854 | n/d |
+| 2024T4 | 3,0% a 6,8% | 6.177 | 5.756 a 5.993 | −6.854 | −6.670 a −6.433 |
 | 2025T1 | 13,6% a 14,7% | 5.892 | 5.023 a 5.090 | −4.582 | −3.781 a −3.714 |
 | 2025T2 | 18,5% a 21,2% | 8.164 | 6.431 a 6.657 | −6.378 | −4.871 a −4.645 |
 | 2025T3 | 11,6% a 13,4% | 10.830 | 9.374 a 9.576 | −10.298 | −9.045 a −8.842 |
@@ -98,14 +98,14 @@ Los resultados en base caja de 2026 suman 1.456 en el semestre, igual al Boletí
 | 2026T1 | 10,5% a 17,4% | 9.808 | 8.097 a 8.779 | −8.073 | −7.045 a −6.362 |
 | 2026T2 | 10,6% a 16,3% | 9.054 | 7.578 a 8.093 | −9.332 | −8.371 a −7.856 |
 
-Falta el informe de diciembre de 2024 (no está publicado en las rutas de ANSES). Antes de marzo de 2025 el informe no tiene las categorías de bonos en pesos a tasa fija ni TAMAR, así que en 2024 el ajuste cubre solo las letras. Desde 2024T3 el resultado con lo devengado es deficitario en todos los trimestres con cualquier valor del rango.
+La categoría de bonos en pesos a tasa fija aparece en diciembre de 2024 y la de TAMAR en marzo de 2025, así que hasta septiembre de 2024 el ajuste cubre solo las letras. Desde 2024T3 el resultado con lo devengado es deficitario en todos los trimestres con cualquier valor del rango.
 
 **Cómo leerlo.**
 - La línea oficial de capitalización sobrestima el interés del trimestre cuando hay muchas ampliaciones. En 2025T3, dos tercios de la línea (22.963 de 34.219) eran capitalización ya pagada por los compradores.
 - El interés capitalizado devengado va de 5 a 11 billones de pesos por trimestre desde mediados de 2024. Como no pasa por los intereses en base caja (JGM, Informe 144, pregunta 58), el resultado financiero que lo incluye es deficitario en todos los trimestres desde 2024T3.
 
 **Limitaciones.**
-- **Perímetros.** A.2.2 es la Administración Central con todos los tenedores. Los intereses netos del SPN excluyen los pagos dentro del SPN. El ajuste por el FGS es un rango, y falta en 2024T4. Otros organismos del SPN (fondos fiduciarios, por ejemplo) también pueden tener LECAP y BONCAP, y no están descontados. El FGS valúa a precio de mercado y A.1.7 a valor técnico, lo que mueve el rango en la diferencia entre ambos.
+- **Perímetros.** A.2.2 es la Administración Central con todos los tenedores. Los intereses netos del SPN excluyen los pagos dentro del SPN. El ajuste por el FGS es un rango. Otros organismos del SPN (fondos fiduciarios, por ejemplo) también pueden tener LECAP y BONCAP, y no están descontados. El FGS valúa a precio de mercado y A.1.7 a valor técnico, lo que mueve el rango en la diferencia entre ambos.
 - **2024T1.** La línea no incluía todavía la LECAP: el rótulo la suma desde 2024T2.
 - **Descuentos.** Faltan las ampliaciones TAMAR y duales, cuyo valor técnico no se conoce (su capitalización se aproxima con el valor efectivo, así que la prima queda adentro), y los canjes. No se suma el ajuste por CER, que la planilla registra aparte (7.000 a 41.000 miles de millones por trimestre).
 - **Filas sin dato.** Son tres ampliaciones TAMAR o duales, sin valor efectivo.
@@ -114,5 +114,5 @@ Falta el informe de diciembre de 2024 (no está publicado en las rutas de ANSES)
 ## Lo que falta en la fase 3
 
 1. **Tenencias en pesos.** La consolidación de la deuda en pesos (BCRA, Banco Nación, FGS) queda para después: no cambia la necesidad de divisas, y las tenencias por especie del BCRA son del 31-12-2025, con muchas LECAP vencidas y reemplazadas en 2026.
-2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado y los descuentos de colocación. La tenencia del FGS está descontada, como rango, en todos los trimestres salvo 2024T4 (falta el informe de diciembre de 2024).
+2. **Resultado financiero con intereses devengados (D-009).** Hecho para el interés capitalizado y los descuentos de colocación. La tenencia del FGS está descontada, como rango, en todos los trimestres.
 3. **Movimientos sin conciliar anotados.** RC 30/2026: USD 1.040 millones que no se ven en los depósitos del Tesoro (lotes V a X). Bajas sin operación de TMF27, TMG27 y TZX27 (lotes L y M).
