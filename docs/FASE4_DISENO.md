@@ -76,3 +76,16 @@ Las tres son puntos de partida. La simulación las contrasta con sus variantes a
 ## 7. Código
 
 Se va a escribir en `src/argfx/simulation/`, separado del motor contractual: lectura de insumos, escenarios, una función por régimen, la matriz de transacciones con su control de cierre y las medidas de la sección 1. La primera prueba es contable: en cada mes, cada fila y cada columna de la matriz suman cero.
+
+### Estado (2026-10-16)
+
+Está escrito el núcleo de la capa contable:
+- `ledger.py`: un libro de doble entrada en el que cada transacción suma cero por instrumento;
+- `regimes.py`: la secuencia mensual de la sección 3 para (a), (b), (c) y (d), y las medidas de la sección 1.
+
+Las pruebas (`tests/test_simulation.py`) fijan tres propiedades:
+- las columnas cierran en todos los regímenes;
+- si el BCRA compra todas las divisas, (a) y (c) terminan con las mismas reservas, y la diferencia es cuántos dólares compra el Tesoro con pesos;
+- si el BCRA compra solo una parte, cobrar en dólares deja más reservas.
+
+Falta armar las trayectorias de entrada: los derechos por producto con los archivos de ARCA y las alícuotas del lote AF, y el calendario consolidado de la fase 3.
