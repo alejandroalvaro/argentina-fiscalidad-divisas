@@ -14,6 +14,7 @@ not as a substitute.
 
 from __future__ import annotations
 
+import contextlib
 import io
 import zipfile
 from collections import defaultdict
@@ -59,7 +60,14 @@ def _member(zf: zipfile.ZipFile) -> str:
 
 def read_month(path: Path) -> tuple[str, dict[str, float]]:
     """(YYYY-MM, FOB in USD by NCM position) from one monthly zip."""
+    month, fob, _ = read_month_detail(path)
+    return month, fob
+
+
+def read_month_detail(path: Path) -> tuple[str, dict[str, float], dict[str, float]]:
+    """(YYYY-MM, FOB in USD and net kilos, each by NCM position) from one monthly zip."""
     fob: dict[str, float] = defaultdict(float)
+    kilos: dict[str, float] = defaultdict(float)
     month = ""
     with zipfile.ZipFile(path) as zf, zf.open(_member(zf)) as raw:
         header: list[str] | None = None
@@ -73,11 +81,60 @@ def read_month(path: Path) -> tuple[str, dict[str, float]]:
                 continue
             rec = dict(zip(header, cells, strict=False))
             try:
-                fob[rec["POS_NCM"]] += float(rec["MONTO_FOB_DOLAR"])
+                v = float(rec["MONTO_FOB_DOLAR"])
             except ValueError:
                 continue
+            fob[rec["POS_NCM"]] += v
+            with contextlib.suppress(ValueError):
+                kilos[rec["POS_NCM"]] += float(rec.get("PESO_NETO_KILOS") or 0)
             month = month or f"{rec['FECHA_'][:4]}-{rec['FECHA_'][4:6]}"
-    return month, dict(fob)
+    return month, dict(fob), dict(kilos)
+
+
+# Some positions carry a FOB value that cannot match their weight: in 2021-02 soybeans show
+# USD 6.5 billion for 37 thousand tonnes (174 USD/kg against a median of 0.41), and two fuel
+# positions (2710.19.21, 2710.12.59) show 3 to 7 USD/kg in 53 months against medians near 0.7.
+# A position-month is set aside when its unit value, against the median of that position across
+# all months, is over 10 times with a FOB over USD 5 million, or over 3 times with a FOB over
+# USD 100 million. The second tier catches the large recurring errors and spares real price
+# swings of small positions (lithium in 2022). Works of art (chapter 97) are exempt: their value
+# per kilo has no typical level. The FOB set aside is not replaced by an estimate.
+TIERS = ((10.0, 5e6), (3.0, 100e6))  # (times the median, FOB floor in USD)
+MIN_MONTHS = 12
+
+
+def screen_unit_values(
+    months: list[tuple[str, dict[str, float], dict[str, float]]],
+) -> tuple[list[tuple[str, dict[str, float]]], list[dict[str, object]]]:
+    """(months with the anomalous position-months removed, the rows removed)."""
+    from statistics import median
+
+    unit: dict[str, list[float]] = defaultdict(list)
+    for _, fob, kg in months:
+        for c, v in fob.items():
+            if v > 0 and kg.get(c, 0) > 0:
+                unit[c].append(v / kg[c])
+    med = {c: median(u) for c, u in unit.items() if len(u) >= MIN_MONTHS}
+    clean, removed = [], []
+    for month, fob, kg in months:
+        keep = dict(fob)
+        for c, v in fob.items():
+            k = kg.get(c, 0)
+            if (
+                c in med
+                and not c.startswith("97")
+                and k > 0
+                and any(v > floor and v / k > times * med[c] for times, floor in TIERS)
+            ):
+                del keep[c]
+                removed.append({
+                    "mes": month, "ncm": c, "fob_musd": round(v / 1e6, 1),
+                    "toneladas": round(k / 1e3, 1), "usd_por_kg": round(v / k, 2),
+                    "mediana_usd_por_kg": round(med[c], 3),
+                    "fob_a_la_mediana_musd": round(k * med[c] / 1e6, 1),
+                })  # fmt: skip
+        clean.append((month, keep))
+    return clean, removed
 
 
 @dataclass

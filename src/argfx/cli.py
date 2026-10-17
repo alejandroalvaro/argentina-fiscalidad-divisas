@@ -222,7 +222,8 @@ def cmd_derechos(args: argparse.Namespace) -> int:
         crude_prices,
         monthly_average,
         observed_duties_usd,
-        read_month,
+        read_month_detail,
+        screen_unit_values,
     )
 
     settings = get_settings()
@@ -238,8 +239,11 @@ def cmd_derechos(args: argparse.Namespace) -> int:
         rows = [r for r in csv.DictReader(fh) if r["sha256"]]
     latest = {r["source_id"]: r["sha256"] for r in rows}
     zips = [latest[s] for s in sorted(latest) if args.desde <= s <= args.hasta]
-    months = [read_month(cached(h, ".zip")) for h in zips]
+    detail = [read_month_detail(cached(h, ".zip")) for h in zips]
+    # Unit values are screened over every month read, so the medians use the whole series.
+    months, removed = screen_unit_values(detail)
     months = [(m, f) for m, f in months if m >= args.mes_desde]
+    removed = [r for r in removed if str(r["mes"]) >= args.mes_desde]
     rows_out = build_duty_table(
         months,
         load_book(args.alicuotas),
@@ -254,6 +258,13 @@ def cmd_derechos(args: argparse.Namespace) -> int:
             f"  con alícuota {r['fob_con_alicuota_musd']:>8,.0f}"
             f"  estimado {r['derecho_estimado_musd']:>6,.0f}  cobrado {cobrado:>6,.0f}"
         )
+    from argfx.contracts.calendar import _write
+
+    _write(args.out / "exportaciones_valores_anomalos.csv", removed)
+    lost = sum(float(r["fob_musd"]) for r in removed)  # type: ignore[arg-type]
+    print(
+        f"{len(removed)} posiciones-mes apartadas por valor unitario: {lost:,.0f} millones de FOB"
+    )
     print(f"tablas en {args.out}/ (millones de USD)")
     return 0
 
