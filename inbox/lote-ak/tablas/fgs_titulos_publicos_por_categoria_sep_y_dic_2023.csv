@@ -1,0 +1,13 @@
+fecha,categoria,millones_de_pesos,pct_del_total_de_titulos,pct_del_total_del_fgs,source_id
+2023-09-30,"Bonos, $, tasa variable (CER)",5460928,"40,7","26,8",SRC-1761
+2023-09-30,"Bonos, $, tasa variable (Dólar-linked)",4498507,"33,5","22,1",SRC-1761
+2023-09-30,"Bonos, USD, tasa fija",2923433,"21,8","14,4",SRC-1761
+2023-09-30,"Letras, USD",368751,"2,7","1,8",SRC-1761
+2023-09-30,"Letras, $",1526,"0,01","0,01",SRC-1761
+2023-09-30,Total Títulos Públicos Nacionales,13410207,"100,0","65,9",SRC-1761
+2023-12-29,"Bonos, $, tasa variable (Dólar-linked)",11992320,"42,1","29,9",SRC-1762
+2023-12-29,"Bonos, $, tasa variable (CER)",11199448,"39,3","27,9",SRC-1762
+2023-12-29,"Bonos, USD, tasa fija",4203708,"14,8","10,5",SRC-1762
+2023-12-29,"Letras, USD",858713,"3,0","2,1",SRC-1762
+2023-12-29,"Letras, $",21098,"0,07","0,05",SRC-1762
+2023-12-29,Total Títulos Públicos Nacionales,28468004,"100,0","71,0",SRC-1762

@@ -1,0 +1,26 @@
+anio,lado,concepto,usd_miles_de_millones,pagina_pdf,source_id
+2026,necesidades,Total necesidades,19.2,4,SRC-1770
+2026,necesidades,Vencimientos de capital,9.3,4,SRC-1770
+2026,necesidades,Vencimientos de intereses,8.9,4,SRC-1770
+2026,necesidades,Capitalizacion del BCRA,1.0,4,SRC-1770
+2026,fuentes,Total fuentes,22.9,4,SRC-1770
+2026,fuentes,Compra de USD al BCRA,6.7,4,SRC-1770
+2026,fuentes,Roll over intra sector publico (capital + intereses),0.8,4,SRC-1770
+2026,fuentes,Prestamos con garantia de organismos internacionales,4.0,4,SRC-1770
+2026,fuentes,Desembolso del FMI,1.9,4,SRC-1770
+2026,fuentes,Organismos internacionales (ex FMI),2.8,4,SRC-1770
+2026,fuentes,Emisiones locales,6.0,4,SRC-1770
+2026,fuentes,Privatizaciones,0.8,4,SRC-1770
+2026,saldo,Fuentes menos necesidades,3.7,4,SRC-1770
+2027,necesidades,Total necesidades,24.9,5,SRC-1770
+2027,necesidades,Vencimientos de capital,15.7,5,SRC-1770
+2027,necesidades,Vencimientos de intereses,9.2,5,SRC-1770
+2027,fuentes,Total fuentes,24.9,5,SRC-1770
+2027,fuentes,Saldo del programa financiero 2026,3.7,5,SRC-1770
+2027,fuentes,Compra de USD al BCRA,4.9,5,SRC-1770
+2027,fuentes,Roll over intra sector publico (capital + intereses),1.8,5,SRC-1770
+2027,fuentes,Desembolso del FMI,1.7,5,SRC-1770
+2027,fuentes,Organismos internacionales (ex FMI),4.2,5,SRC-1770
+2027,fuentes,Emisiones locales,5.0,5,SRC-1770
+2027,fuentes,Otras fuentes de financiamiento,2.0,5,SRC-1770
+2027,fuentes,Privatizaciones,1.5,5,SRC-1770
