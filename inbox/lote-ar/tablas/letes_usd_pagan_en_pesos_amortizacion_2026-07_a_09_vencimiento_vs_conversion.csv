@@ -1,0 +1,11 @@
+mes,a4_amortizacion_fila_234_usd_m,fecha_conversion_oncp,instrumento_dado_de_baja,vn_baja_usd_m,instrumento_entregado,vn_entregado_usd_m,fuente_fila,norma_numero
+2026-07,4098.3,2026-07-24,LELINK/U$D/31-07-2026,1722.387517,LELINK/U$D/31-08-2026,1735.940451,Canjes- Conversiones fila 34,45/2026
+2026-07,4098.3,2026-07-24,LELINK/U$D/31-07-2026,128.838867,BONTE/U$S/15-12-2028 - Paga en pesos,158.728403,Canjes- Conversiones fila 35,45/2026
+2026-07,4098.3,TOTAL del mes,,conversion = 1851.2,,pago al vencimiento = 2247.1,A.4 fila 234 menos conversiones de ONCP,
+2026-08,4439.4,2026-08-21,LELINK/U$D/31-08-2026,1204.827402,LELINK/U$D/30-09-2026,1213.042967,Canjes- Conversiones fila 36,50/2026
+2026-08,4439.4,2026-08-21,LELINK/U$D/31-08-2026,139.441645,LELINK/U$D/30-10-2026,140.947785,Canjes- Conversiones fila 37,50/2026
+2026-08,4439.4,TOTAL del mes,,conversion = 1344.3,,pago al vencimiento = 3095.1,A.4 fila 234 menos conversiones de ONCP,
+2026-09,4397.1,2026-09-24,LELINK/U$D/30-09-2026,2404.00144,LELINK/U$D/30-10-2026,2418.615422,Canjes- Conversiones fila 38,56/2026
+2026-09,4397.1,2026-09-24,LELINK/U$D/30-09-2026,835.204211,LELINK/U$D/30-11-2026,843.337067,Canjes- Conversiones fila 39,56/2026
+2026-09,4397.1,2026-09-24,LELINK/U$D/30-09-2026,59.436615,BONTE/U$S/30-06-2028 - Paga en pesos,70.179576,Canjes- Conversiones fila 40,56/2026
+2026-09,4397.1,TOTAL del mes,,conversion = 3298.6,,pago al vencimiento = 1098.5,A.4 fila 234 menos conversiones de ONCP,
