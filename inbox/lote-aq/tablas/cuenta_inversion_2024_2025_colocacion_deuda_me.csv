@@ -1,0 +1,6 @@
+ejercicio,concepto,pesos_millones,fuente,detalle
+2024,"Colocación de deuda en moneda extranjera (narrativa y Anexo B), pesos millones",3745922.06,SRC-2055 y SRC-2057,"Bonos en dólares 2.446.322,06 (BONTE DLK vto. 30/06/2025 1.542.025,10; vto. 15/12/2025 491.601,82; vto. 30/06/2026 412.695,13) y Letras del Tesoro 1.299.600,00"
+2025,"Colocación de deuda en moneda extranjera (narrativa y Anexo B), pesos millones",3819755.68,SRC-2056 y SRC-2058,"BONTE 6,50% vto. 30/11/29 por 1.438.250,00 y LETE usd cupón cero 16/01/26 por 2.381.505,68"
+2025,"Colocación de deuda en moneda nacional (narrativa), pesos millones",67216608.13,SRC-2056,"Letras del Tesoro 36.382.150,29 (descripta como instrumentos ajustados por CER, LECAP vto. 31/01/2025) y Bonos 30.834.457,84"
+2025,"Suma mensual de la fila endeudamiento_moneda_extranjera de la AIF 2025 (Tesoro), pesos millones",35177828.2,AIF mensuales de 2025 (fuentes aif202501 a aif202512 del lote AM),Incluye préstamos de organismos; no es comparable de manera directa con la fila de títulos de la Cuenta de Inversión
+2025,"Suma mensual de la fila endeudamiento_moneda_local de la AIF 2025 (Tesoro), pesos millones",195630032.4,idem,"Contra 67.216.608,13 de la Cuenta de Inversión (títulos en pesos, base monetaria): la diferencia no se explicó"

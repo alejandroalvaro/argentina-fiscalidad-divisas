@@ -1,0 +1,21 @@
+source_id,archivo,nota_al_pie_columna_tipo_moneda,hoja,familia,tipo_moneda_oncp,moneda_origen,cantidad_de_filas
+SRC-2023,colocaciones_31-12-2023_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Bonos,BONAR DUAL U$S,MONEDA EXTRANJERA,DLK,11
+SRC-2023,colocaciones_31-12-2023_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Bonos,BONTE U$S/DLK,MONEDA EXTRANJERA,DLK,27
+SRC-2023,colocaciones_31-12-2023_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Canjes- Conversiones,BONAR DUAL U$S,MONEDA EXTRANJERA,DLK,39
+SRC-2023,colocaciones_31-12-2023_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Otras Operaciones,BONAR DUAL U$S,MONEDA EXTRANJERA,DLK,6
+SRC-2024,colocaciones_31-12-2024.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Bonos,BONTE U$S/DLK,MONEDA EXTRANJERA,DLK,10
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Bonos,BONTE U$S/DLK,MONEDA EXTRANJERA,DLK,3
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Bonos,BONTE U$S/DLK,MONEDA EXTRANJERA,USD,1
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Canjes- Conversiones,"DUAL en pesos (TAMAR/CER, o TAMAR/DLK)",MONEDA NACIONAL,ARP,45
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Letras,LELINK,MONEDA NACIONAL,USD,12
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Otras Operaciones,BONTE U$S/DLK,MONEDA EXTRANJERA,DLK,2
+SRC-2025,colocaciones_31-12-2025_0.xlsx,(*) Refiere al tipo de moneda s/norma de emisión.,Otras Operaciones,LELINK,MONEDA NACIONAL,USD,6
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Bonos,BONTE U$S/DLK,MONEDA NACIONAL,USD,7
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Bonos,"DUAL en pesos (TAMAR/CER, o TAMAR/DLK)",MONEDA NACIONAL,ARP,8
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Bonos,"DUAL en pesos (TAMAR/CER, o TAMAR/DLK)",MONEDA NACIONAL,USD,1
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Canjes- Conversiones,BONTE U$S/DLK,MONEDA NACIONAL,USD,6
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Canjes- Conversiones,"DUAL en pesos (TAMAR/CER, o TAMAR/DLK)",MONEDA NACIONAL,ARP,5
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Canjes- Conversiones,LELINK,MONEDA NACIONAL,USD,10
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Letras,LELINK,MONEDA NACIONAL,USD,22
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Otras Operaciones,BONTE U$S/DLK,MONEDA NACIONAL,USD,2
+SRC-2026,colocaciones_30-09-26.xlsx,(*) Refiere a la moneda de pago,Otras Operaciones,LELINK,MONEDA NACIONAL,USD,6
