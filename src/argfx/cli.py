@@ -280,7 +280,7 @@ def cmd_flujos(args: argparse.Namespace) -> int:
         ),
         ars_flows(
             read_csv(t / "aif_base_caja_mensual_resultados.csv"),
-            read_csv(t / "aif_base_caja_mensual_fuentes_y_aplicaciones_financieras.csv"),
+            read_csv(args.financiamiento),
             read_cpi(t / "indec_ipc_nacional_nivel_general_mensual.csv"),
             args.desde,
             args.hasta,
@@ -383,6 +383,13 @@ def build_parser() -> argparse.ArgumentParser:
     flu = sub.add_parser("flujos", help="report: peso and dollar flows of the mandate (Sankey)")
     flu.add_argument("--balance-sha", default=BALANCE_CAMBIARIO_SHA)
     flu.add_argument("--aif", type=Path, default=Path("inbox/lote-am/tablas"))
+    flu.add_argument(
+        "--financiamiento",
+        type=Path,
+        default=Path(
+            "inbox/lote-an/tablas/aif_base_caja_fuentes_y_aplicaciones_financieras_corregida.csv"
+        ),
+    )
     flu.add_argument("--desde", default="2023-12")
     flu.add_argument("--hasta", default="2026-09")
     flu.add_argument("--out", type=Path, default=Path("data/informe"))
