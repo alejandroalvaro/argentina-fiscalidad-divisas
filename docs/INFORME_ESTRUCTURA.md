@@ -21,7 +21,10 @@ La deuda pública argentina se mueve en dos circuitos. El de los pesos lo comand
 
 - Los pesos se informan en pesos y los dólares en dólares. La conversión es la excepción y se aclara.
 - Cada gráfico muestra una sola moneda. Los temas que cruzan las dos van en dos paneles.
-- Dos diagramas de Sankey del mandato, desde diciembre de 2023: uno de pesos, que cierra el capítulo 3, y otro de dólares, que cierra el capítulo 4.
+- Tres diagramas de Sankey del mandato, desde diciembre de 2023 (`argfx flujos`):
+  - el de pesos del sector público nacional, que cierra el capítulo 3. No lleva nada en dólares: la deuda en divisas, sus intereses (boletín de Finanzas, cuadro A.5, por moneda de pago) y los depósitos del Tesoro en dólares en el BCRA salen del diagrama, y queda un solo nodo de cruce, los pesos aplicados a obligaciones en dólares;
+  - el del mercado de cambios (balance cambiario), que cierra el capítulo 4;
+  - el del Tesoro en dólares, que va en el capítulo 5: lo que entró por deuda en divisas y lo que cubrieron los pesos, contra amortizaciones, intereses y depósitos. El cruce incluye la compra de dólares y la deuda en dólares con el BCRA cancelada con pesos (Letras Intransferibles, mayo de 2026).
 - Glosario final amplio (`docs/GLOSARIO.md`).
 
 ## Anexos

@@ -1,4 +1,13 @@
-from argfx.informe.flujos import GAP, ars_flows, sankey_html, usd_flows
+from argfx.informe.flujos import (
+    CROSS_ARS,
+    CROSS_USD,
+    GAP,
+    FxMonth,
+    ars_flows,
+    sankey_html,
+    treasury_usd_flows,
+    usd_flows,
+)
 
 
 def _bc(month: str, **codes: float) -> dict[str, dict[str, float]]:
@@ -51,7 +60,8 @@ def test_ars_flows_close_and_deflate() -> None:
     cpi = {"2024-01": 100.0, "2024-02": 200.0}
     res = [_aif("2024-01", **RES), _aif("2024-02", **RES)]
     fin = [{"mes": m, **{k: str(x) for k, x in FIN.items()}} for m in ("2024-01", "2024-02")]
-    f = ars_flows(res, fin, cpi, "2024-01", "2024-12")
+    fx = {m: FxMonth(1.0, 0.0, 0.0) for m in cpi}
+    f = ars_flows(res, fin, cpi, fx, "2024-01", "2024-12")
     assert f.unidad == "millones de pesos de 2024-02"
     assert f.entradas["Derechos de exportación"] == 10 * 2 + 10
     assert f.entradas["Utilidades del BCRA (rentas percibidas)"] == 4 * 3
@@ -68,7 +78,38 @@ def test_gap_is_drawn_not_absorbed() -> None:
             "inversion_financiera_total_spn": "30",
         }
     ]
-    f = ars_flows([_aif("2024-01", **RES)], fin, {"2024-01": 1.0}, "2024-01", "2024-01")
+    fx = {"2024-01": FxMonth(1.0, 0.0, 0.0)}
+    f = ars_flows([_aif("2024-01", **RES)], fin, {"2024-01": 1.0}, fx, "2024-01", "2024-01")
     assert f.descuadre == -10
     assert (GAP, f.hub, 10) in f.links()
     assert "plotly" in sankey_html(f, "t")
+
+
+def test_dollars_leave_the_peso_table_through_one_crossing() -> None:
+    # 12 of the 15 of interest are in dollars (2 USD at 6 pesos). The Treasury takes 60 pesos
+    # (10 USD) of new foreign debt, amortizes 90 (15 USD) and its dollar deposits fall by 1 USD
+    # (6 pesos), which the table counts among the 6 of "use of financial assets".
+    fin = {
+        **FIN,
+        "endeudamiento_moneda_extranjera_total_spn": 60,
+        "amortizacion_moneda_extranjera_total_spn": 90,
+        "endeudamiento_moneda_local_total_spn": 40 + 30,
+    }
+    fx = {"2024-01": FxMonth(6.0, 2.0, -1.0)}
+    rows = [{"mes": "2024-01", **{k: str(x) for k, x in fin.items()}}]
+    f = ars_flows([_aif("2024-01", **RES)], rows, {"2024-01": 1.0}, fx, "2024-01", "2024-01")
+    assert abs(f.descuadre) < 1e-9
+    assert f.salidas["Intereses de la deuda en pesos (netos)"] == 15 - 12
+    assert "Uso de activos financieros" not in f.entradas  # 6 - 6
+    assert f.salidas[CROSS_ARS] == 90 + 12 - 6 - 60  # pesos applied to dollar debt
+    assert not any("divisas" in n for n in [*f.entradas, *f.salidas])
+
+    t = treasury_usd_flows(rows, fx, "2024-01", "2024-01")
+    assert t.unidad == "millones de USD" and t.clave == "usd_tesoro"
+    assert t.entradas == {
+        "Deuda en divisas desembolsada": 10,
+        CROSS_USD: 6,
+        "Depósitos en dólares en el BCRA (variación)": 1,
+    }
+    assert t.salidas == {"Deuda en divisas amortizada": 15, "Intereses en divisas": 2}
+    assert abs(t.descuadre) < 1e-9

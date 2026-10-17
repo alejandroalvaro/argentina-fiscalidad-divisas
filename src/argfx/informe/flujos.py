@@ -8,6 +8,11 @@ Two flow tables, one per currency, never added to each other:
   financial result. Millions of pesos at the prices of the last month with a CPI index (INDEC,
   lote AM), deflated month by month.
 
+The peso table keeps only pesos (D-017). Foreign-currency debt, its interest (Secretaría de
+Finanzas boletín, sheet A.5, by currency of payment) and the Treasury's dollar deposits at the
+BCRA leave it; what is left of them on the peso side is a single crossing, the pesos applied
+to dollar obligations, net. A third table shows the Treasury's dollars, in millions of USD.
+
 Each table is a list of (origen, destino, monto) links around a single hub node, ready for a
 Sankey diagram. Inflows go origin -> hub and outflows hub -> destination; both sides add up to
 the same total, and any gap is reported, never absorbed.
@@ -23,6 +28,12 @@ from pathlib import Path
 
 HUB_USD = "Mercado de cambios"
 HUB_ARS = "Sector Público Nacional"
+HUB_TESORO_USD = "Tesoro Nacional (dólares)"
+# The single crossing between the two tables: pesos the Treasury applied to dollar obligations,
+# net. It covers dollars bought (from the BCRA or the market) and dollar debt held by the BCRA
+# cancelled with pesos (the Letras Intransferibles bought back in 2026-05 with BCRA profits).
+CROSS_ARS = "Hacia obligaciones en dólares (neto)"
+CROSS_USD = "Cubierto con pesos (neto)"
 GAP = "Sin identificar en la fuente"
 
 # Balance cambiario columns (sheet "Balance Cambiario", codes on row 11).
@@ -78,6 +89,7 @@ class Flows:
     hub: str
     entradas: dict[str, float]
     salidas: dict[str, float]
+    clave: str = ""  # file name; defaults to the currency
 
     @property
     def descuadre(self) -> float:
@@ -148,9 +160,10 @@ SPENDING = {
     "Transferencias a provincias": "transferencias_corrientes_a_provincias",
     "Universidades": "transferencias_a_universidades",
 }
+FX_DISBURSED = "endeudamiento_moneda_extranjera_total_spn"
+FX_AMORTIZED = "amortizacion_moneda_extranjera_total_spn"
 FIN_IN = {
     "Deuda en pesos colocada": "endeudamiento_moneda_local_total_spn",
-    "Deuda en divisas desembolsada (en pesos)": "endeudamiento_moneda_extranjera_total_spn",
     "Uso de activos financieros": "disminucion_inversion_financiera_total_spn",
     "Otros pasivos (aumento)": "incremento_otros_pasivos_total_spn",
     # Excluded from revenue by note (1) of each workbook, so only a financial source (lote AN).
@@ -158,7 +171,6 @@ FIN_IN = {
 }
 FIN_OUT = {
     "Deuda en pesos amortizada": "amortizacion_moneda_local_total_spn",
-    "Deuda en divisas amortizada (en pesos)": "amortizacion_moneda_extranjera_total_spn",
     "Activos financieros (aumento)": "inversion_financiera_total_spn",
     "Otros pasivos (disminución)": "disminucion_otros_pasivos_total_spn",
 }
@@ -170,7 +182,20 @@ def _num(row: dict[str, str], col: str) -> float:
     return float(v) if v not in ("", None) else 0.0
 
 
-def ars_month(r: dict[str, str], f: dict[str, str]) -> tuple[dict[str, float], dict[str, float]]:
+@dataclass
+class FxMonth:
+    """The dollar side of one month: average A 3500 rate (pesos per USD), foreign-currency
+    interest paid (millions of USD) and the change in the Treasury's dollar deposits at the
+    BCRA (millions of USD, positive when they grow)."""
+
+    tipo_de_cambio: float
+    intereses_usd: float
+    depositos_usd: float
+
+
+def ars_month(
+    r: dict[str, str], f: dict[str, str], fx: FxMonth
+) -> tuple[dict[str, float], dict[str, float]]:
     """One month of the peso circuit, in current pesos: (inflows, outflows)."""
     tax, dex, rent = (
         _num(r, c)
@@ -187,9 +212,29 @@ def ars_month(r: dict[str, str], f: dict[str, str]) -> tuple[dict[str, float], d
         outs.values()
     )
     outs["Gasto de capital"] = _num(r, "gastos_de_capital")
-    _add_signed("Intereses (deuda en pesos y en divisas)", -_num(r, "intereses_netos"), ins, outs)
     ins.update({k: _num(f, c) for k, c in FIN_IN.items()})
     outs.update({k: _num(f, c) for k, c in FIN_OUT.items()})
+    fx_interest = fx.intereses_usd * fx.tipo_de_cambio
+    deposits = fx.depositos_usd * fx.tipo_de_cambio
+    outs["Intereses de la deuda en pesos (netos)"] = _num(r, "intereses_netos") - fx_interest
+    # The dollar deposits sit inside the financial assets of the sources and uses table.
+    if deposits >= 0:
+        outs["Activos financieros (aumento)"] -= deposits
+    else:
+        ins["Uso de activos financieros"] += deposits
+    outs[CROSS_ARS] = _num(f, FX_AMORTIZED) + fx_interest + deposits - _num(f, FX_DISBURSED)
+    return ins, outs
+
+
+def _months(desde: str, hasta: str, *tables: dict[str, object]) -> list[str]:
+    first = tables[0]
+    return sorted(m for m in first if desde <= m <= hasta and all(m in t for t in tables[1:]))
+
+
+def _split(net: dict[str, float]) -> tuple[dict[str, float], dict[str, float]]:
+    """Signed totals over the window (inflow positive) into the two sides of the hub."""
+    ins = {n: v for n, v in net.items() if v > 0}
+    outs = {n: -v for n, v in net.items() if v < 0}
     return ins, outs
 
 
@@ -197,33 +242,116 @@ def ars_flows(
     results: list[dict[str, str]],
     financing: list[dict[str, str]],
     cpi: dict[str, float],
+    fx: dict[str, FxMonth],
     desde: str,
     hasta: str,
 ) -> Flows:
     """Pesos of the national public sector, at prices of the last month of the window.
 
-    Only months present in both tables and with a CPI index are used; the window shrinks to them.
+    Only months present in every input are used; the window shrinks to them. Each line is
+    netted over the window, so a line sits on one side of the hub only.
     """
     res = {r["mes"]: r for r in results}
     fin = {r["mes"]: r for r in financing}
-    months = sorted(m for m in res if desde <= m <= hasta and m in fin and m in cpi)
+    months = _months(desde, hasta, res, fin, cpi, fx)
     if not months:
-        raise ValueError(f"sin meses con resultado, financiamiento e IPC entre {desde} y {hasta}")
+        raise ValueError(
+            f"sin meses con resultado, financiamiento, IPC y divisas entre {desde} y {hasta}"
+        )
     base = cpi[months[-1]]
-    ins: dict[str, float] = {}
-    outs: dict[str, float] = {}
+    net: dict[str, float] = {}
     for m in months:
         k = base / cpi[m]
-        m_ins, m_outs = ars_month(res[m], fin[m])
+        m_ins, m_outs = ars_month(res[m], fin[m], fx[m])
         for name, v in m_ins.items():
-            _add_signed(name, k * v, ins, outs)
+            net[name] = net.get(name, 0.0) + k * v
         for name, v in m_outs.items():
-            _add_signed(name, -k * v, ins, outs)
-    ins = {n: v for n, v in ins.items() if v > 0}
-    outs = {n: v for n, v in outs.items() if v > 0}
+            net[name] = net.get(name, 0.0) - k * v
+    ins, outs = _split(net)
     return Flows(
         "ARS", f"millones de pesos de {months[-1]}", months[0], months[-1], HUB_ARS, ins, outs
     )
+
+
+def treasury_usd_flows(
+    financing: list[dict[str, str]], fx: dict[str, FxMonth], desde: str, hasta: str
+) -> Flows:
+    """The Treasury's dollars, millions of USD: debt in foreign currency, its interest, the
+    deposits at the BCRA and what pesos covered. Disbursements and amortizations,
+    recorded in pesos by the sources and uses table, are converted at the month's average rate."""
+    fin = {r["mes"]: r for r in financing}
+    months = _months(desde, hasta, fin, fx)
+    if not months:
+        raise ValueError(f"sin meses con financiamiento y divisas entre {desde} y {hasta}")
+    net: dict[str, float] = {}
+
+    def add(name: str, v: float) -> None:
+        net[name] = net.get(name, 0.0) + v
+
+    for m in months:
+        x, rate = fx[m], fx[m].tipo_de_cambio
+        disbursed, amortized = _num(fin[m], FX_DISBURSED) / rate, _num(fin[m], FX_AMORTIZED) / rate
+        add("Deuda en divisas desembolsada", disbursed)
+        add("Deuda en divisas amortizada", -amortized)
+        add("Intereses en divisas", -x.intereses_usd)
+        add("Depósitos en dólares en el BCRA (variación)", -x.depositos_usd)
+        add(CROSS_USD, amortized + x.intereses_usd + x.depositos_usd - disbursed)
+    ins, outs = _split(net)
+    return Flows(
+        "USD", "millones de USD", months[0], months[-1], HUB_TESORO_USD, ins, outs, "usd_tesoro"
+    )
+
+
+def read_a3500(path: Path) -> tuple[dict[str, float], dict[str, float]]:
+    """(monthly average, last observation of the month) of the A 3500 rate."""
+    acc: dict[str, list[tuple[str, float]]] = {}
+    for r in read_csv(path):
+        acc.setdefault(r["fecha"][:7], []).append((r["fecha"], float(r["valor"])))
+    avg = {m: sum(v for _, v in xs) / len(xs) for m, xs in acc.items()}
+    eom = {m: max(xs)[1] for m, xs in acc.items()}
+    return avg, eom
+
+
+def read_fx_interest(xlsx: Path) -> dict[str, float]:
+    """Interest paid in foreign currency, millions of USD by month (boletín, sheet A.5, rows
+    "MONEDA EXTRANJERA" then "INTERES")."""
+    from openpyxl import load_workbook
+
+    wb = load_workbook(xlsx, read_only=True, data_only=True)
+    rows = list(wb["A.5"].iter_rows(values_only=True))
+    header = next(r for r in rows if sum(isinstance(c, dt.datetime) for c in r) > 6)
+    cols = {
+        j: f"{c.year}-{c.month:02d}" for j, c in enumerate(header) if isinstance(c, dt.datetime)
+    }
+    labels = [next((str(c).strip() for c in r if c is not None), "") for r in rows]
+    start = labels.index("- MONEDA EXTRANJERA")
+    i = next(i for i in range(start + 1, len(rows)) if labels[i] == "INTERES")
+    return {m: float(rows[i][j]) for j, m in cols.items() if isinstance(rows[i][j], (int, float))}
+
+
+def fx_months(
+    a3500: tuple[dict[str, float], dict[str, float]],
+    fx_interest: dict[str, float],
+    deposits: list[dict[str, str]],
+) -> dict[str, FxMonth]:
+    """Join rate, interest and deposits. Deposits come in pesos at the end of each month; they
+    are turned into dollars at that day's rate before taking the monthly change."""
+    avg, eom = a3500
+    col = "gobierno_nacional_moneda_extranjera_expresada_en_pesos_millones"
+    usd = {
+        r["mes"]: float(r[col]) / eom[r["mes"]] for r in deposits if r.get(col) and r["mes"] in eom
+    }
+    out = {}
+    for m in sorted(usd):
+        prev = _previous(m)
+        if prev in usd and m in avg and m in fx_interest:
+            out[m] = FxMonth(avg[m], fx_interest[m], usd[m] - usd[prev])
+    return out
+
+
+def _previous(m: str) -> str:
+    y, mo = int(m[:4]), int(m[5:])
+    return f"{y - 1}-12" if mo == 1 else f"{y}-{mo - 1:02d}"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -242,7 +370,7 @@ def read_cpi(path: Path) -> dict[str, float]:
 
 def write_flows(flows: Flows, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / f"flujos_{flows.moneda.lower()}_{flows.desde}_{flows.hasta}.csv"
+    path = out_dir / f"flujos_{flows.clave or flows.moneda.lower()}_{flows.desde}_{flows.hasta}.csv"
     with path.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["origen", "destino", "monto", "unidad"])
