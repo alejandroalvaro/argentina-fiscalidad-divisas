@@ -284,6 +284,7 @@ def cmd_flujos(args: argparse.Namespace) -> int:
         read_cpi,
         read_csv,
         read_fx_interest,
+        read_purchases,
         sankey_html,
         treasury_usd_flows,
         usd_flows,
@@ -296,6 +297,7 @@ def cmd_flujos(args: argparse.Namespace) -> int:
         read_a3500(args.a3500),
         read_fx_interest(_cached_object(args.boletin_sha, "finanzas")),
         read_csv(args.depositos),
+        read_purchases(args.compras),
     )
     ars = ars_flows(
         read_csv(t / "aif_base_caja_mensual_resultados.csv"),
@@ -423,6 +425,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("inbox/lote-am/tablas/bcra_depositos_gobierno_nacional_fin_de_mes.csv"),
     )
     flu.add_argument("--a3500", type=Path, default=Path("series/bcra_a3500.csv"))
+    flu.add_argument(
+        "--compras",
+        type=Path,
+        default=Path("inbox/lote-ai/tablas/tesoro_compras_divisas_mensual.csv"),
+        help="Treasury purchases of dollars by month (lote AI)",
+    )
     flu.add_argument("--desde", default="2023-12")
     flu.add_argument("--hasta", default="2026-09")
     flu.add_argument("--out", type=Path, default=Path("data/informe"))
