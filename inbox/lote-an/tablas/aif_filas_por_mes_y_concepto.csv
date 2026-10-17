@@ -1,0 +1,430 @@
+mes,source_id,hoja,fila,etiqueta_en_la_planilla,concepto,valor_tesoro_millones_pesos_corrientes,valor_total_spn_millones_pesos_corrientes
+2023-12,SRC-1989,AI,71,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-2640052,-2400352.9
+2023-12,SRC-1989,AI,73,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2023-12,SRC-1989,AI,77,FUENTES FINANCIERAS,fuentes_financieras,7236941.2,7746403.3
+2023-12,SRC-1989,AI,78,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,1989341,2378474.6
+2023-12,SRC-1989,AI,80,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,4388774.5,4388776.7
+2023-12,SRC-1989,AI,81,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,858815.9,956089.7
+2023-12,SRC-1989,AI,82,. Incremento Otros Pasivos,incremento_otros_pasivos,0,7712.9
+2023-12,SRC-1989,AI,85,APLICACIONES FINANCIERAS,aplicaciones_financieras,4526386.4,5346050.4
+2023-12,SRC-1989,AI,86,- INVERSION FINANCIERA,inversion_financiera,21334.9,751559.9
+2023-12,SRC-1989,AI,88,. Amortización en Moneda Local,amortizacion_moneda_local,1753087.4,1760431.6
+2023-12,SRC-1989,AI,89,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,2523875.4,2526617.5
+2023-12,SRC-1989,AI,90,. Disminución Otros Pasivos,disminucion_otros_pasivos,212808,292150.9
+2024-01,SRC-1990,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-275611.3,518407.6
+2024-01,SRC-1990,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-01,SRC-1990,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,16421905.8,16745949.2
+2024-01,SRC-1990,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,24915.8,310544.4
+2024-01,SRC-1990,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,3985778.5,3985780.7
+2024-01,SRC-1990,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,11761211.5,11761211.5
+2024-01,SRC-1990,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,650000,657395.9
+2024-01,SRC-1990,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,16035664.7,17264356.8
+2024-01,SRC-1990,AIF,88,- INVERSION FINANCIERA,inversion_financiera,3886671.8,5003916.9
+2024-01,SRC-1990,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,3563293.1,3570707.9
+2024-01,SRC-1990,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,8399866.6,8407887.5
+2024-01,SRC-1990,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,154816.5,250827.8
+2024-02,SRC-1991,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-452167.2,338112.4
+2024-02,SRC-1991,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-02,SRC-1991,AI,79,FUENTES FINANCIERAS,fuentes_financieras,12716794.9,13110842.2
+2024-02,SRC-1991,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2160476.8,2519622.9
+2024-02,SRC-1991,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,9143329.9,9153945.2
+2024-02,SRC-1991,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1412988.2,1422113.3
+2024-02,SRC-1991,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,0,0
+2024-02,SRC-1991,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,12209952.5,13448954.6
+2024-02,SRC-1991,AI,88,- INVERSION FINANCIERA,inversion_financiera,1048103.9,2217051.8
+2024-02,SRC-1991,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,3091832,3102341.4
+2024-02,SRC-1991,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,8049460,8056144.6
+2024-02,SRC-1991,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,5395.8,58256
+2024-03,SRC-1992,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,329385.3,625034.1
+2024-03,SRC-1992,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-18264.9,276638.2
+2024-03,SRC-1992,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-03,SRC-1992,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,3697861.6,4475147
+2024-03,SRC-1992,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2052122.9,2784101.4
+2024-03,SRC-1992,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,1385915,1404915
+2024-03,SRC-1992,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,29404.4,37321.3
+2024-03,SRC-1992,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,230419.3,241452.9
+2024-03,SRC-1992,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,3603176.3,4751785.2
+2024-03,SRC-1992,AIF,88,- INVERSION FINANCIERA,inversion_financiera,2340705.6,3417800.4
+2024-03,SRC-1992,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,637556.9,648473.8
+2024-03,SRC-1992,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,376843.5,381293.4
+2024-03,SRC-1992,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,240713.9,296861.2
+2024-04,SRC-1993,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-342011.8,264951.6
+2024-04,SRC-1993,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-583245.9,17408.8
+2024-04,SRC-1993,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-04,SRC-1993,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,8311677.1,9010975.3
+2024-04,SRC-1993,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2100034.7,2711831.3
+2024-04,SRC-1993,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,5339842.6,5350842.6
+2024-04,SRC-1993,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,426297.8,430491.1
+2024-04,SRC-1993,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,445502,499415.8
+2024-04,SRC-1993,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,7690608.5,9028384.1
+2024-04,SRC-1993,AIF,88,- INVERSION FINANCIERA,inversion_financiera,2416905,3598790.5
+2024-04,SRC-1993,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,413692.4,421182.6
+2024-04,SRC-1993,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,4548786.5,4627889.5
+2024-04,SRC-1993,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,292830.1,362127.0
+2024-05,SRC-1994,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,1480139.6,2332205.4
+2024-05,SRC-1994,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,332229.3,1183571.0
+2024-05,SRC-1994,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-05,SRC-1994,AI,79,FUENTES FINANCIERAS,fuentes_financieras,18250621.3,18716555.2
+2024-05,SRC-1994,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2083150.7,2492250.4
+2024-05,SRC-1994,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,14693078,14714814
+2024-05,SRC-1994,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,709242.6,710212.5
+2024-05,SRC-1994,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,765150,776559.9
+2024-05,SRC-1994,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,18543891.5,19900126.2
+2024-05,SRC-1994,AI,88,- INVERSION FINANCIERA,inversion_financiera,13079266.8,14316327.5
+2024-05,SRC-1994,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,3082584.8,3115440.8
+2024-05,SRC-1994,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,1407693.1,1412123.3
+2024-05,SRC-1994,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,951628.4,1033516.2
+2024-06,SRC-1995,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,119778.7,488568.8
+2024-06,SRC-1995,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-129493,238188.8
+2024-06,SRC-1995,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-06,SRC-1995,AI,79,FUENTES FINANCIERAS,fuentes_financieras,8901900.2,9752692.1
+2024-06,SRC-1995,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,1079505.8,1829970.8
+2024-06,SRC-1995,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,5400000,5402964
+2024-06,SRC-1995,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,751563.2,758591.9
+2024-06,SRC-1995,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,1670831.2,1741307.5
+2024-06,SRC-1995,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,8749599.1,9990880.9
+2024-06,SRC-1995,AI,88,- INVERSION FINANCIERA,inversion_financiera,2603688,3740265.7
+2024-06,SRC-1995,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,5341054.1,5362814.3
+2024-06,SRC-1995,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,121745.4,124117.5
+2024-06,SRC-1995,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,663253.7,743825.5
+2024-07,SRC-1996,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-315045.6,908252.5
+2024-07,SRC-1996,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-1824127.4,-600957.3
+2024-07,SRC-1996,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-07,SRC-1996,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,22552161.7,23255262
+2024-07,SRC-1996,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2609428.3,3071317.5
+2024-07,SRC-1996,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,16057478.8,16065383.8
+2024-07,SRC-1996,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,3773254.6,3966032.3
+2024-07,SRC-1996,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,112000,140082.7
+2024-07,SRC-1996,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,20430578.2,22654304.7
+2024-07,SRC-1996,AIF,88,- INVERSION FINANCIERA,inversion_financiera,5352810.5,7476770.5
+2024-07,SRC-1996,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,7516187.7,7537929
+2024-07,SRC-1996,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,7203275.2,7207326.5
+2024-07,SRC-1996,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,345859.1,419833
+2024-08,SRC-1997,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,412840.2,899660.0
+2024-08,SRC-1997,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-483166.0,3530.5
+2024-08,SRC-1997,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-08,SRC-1997,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,12942865.8,13861571
+2024-08,SRC-1997,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,2175009.7,2991586.6
+2024-08,SRC-1997,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,6055281.9,6055281.9
+2024-08,SRC-1997,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,4625574.2,4666757.1
+2024-08,SRC-1997,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,87000,102156.7
+2024-08,SRC-1997,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,12339609.2,13865101.5
+2024-08,SRC-1997,AIF,88,- INVERSION FINANCIERA,inversion_financiera,2546061.7,3952397.9
+2024-08,SRC-1997,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,3375532.5,3384153.2
+2024-08,SRC-1997,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,5869447.6,5871663.9
+2024-08,SRC-1997,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,502778.7,611097.8
+2024-09,SRC-1998,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,589009.9,816447.1
+2024-09,SRC-1998,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,240053.1,466630.7
+2024-09,SRC-1998,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-09,SRC-1998,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,17752688.5,18899059
+2024-09,SRC-1998,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5328890.4,6371508.7
+2024-09,SRC-1998,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,11774966.5,11777831.6
+2024-09,SRC-1998,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,218093.4,251373.3
+2024-09,SRC-1998,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,430738.2,451482.1
+2024-09,SRC-1998,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,17957267.0,19365689.7
+2024-09,SRC-1998,AIF,88,- INVERSION FINANCIERA,inversion_financiera,3277765.9,4557080.3
+2024-09,SRC-1998,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,13759174.8,13765455.5
+2024-09,SRC-1998,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,743072,746660.6
+2024-09,SRC-1998,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,130391,249630
+2024-10,SRC-1999,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-288431.5,746920.5
+2024-10,SRC-1999,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-493607.7,523398.0
+2024-10,SRC-1999,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-10,SRC-1999,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,12097910.5,12559555.5
+2024-10,SRC-1999,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,4997041.3,5292492.4
+2024-10,SRC-1999,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,6642397.9,6645263
+2024-10,SRC-1999,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,189674.7,259750
+2024-10,SRC-1999,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,0,75393.8
+2024-10,SRC-1999,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,11517329.2,13082953.5
+2024-10,SRC-1999,AIF,88,- INVERSION FINANCIERA,inversion_financiera,4719415.7,5841660.0
+2024-10,SRC-1999,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,6582683.3,6596392
+2024-10,SRC-1999,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,109239.8,174343.8
+2024-10,SRC-1999,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,88130.7,183901.4
+2024-11,SRC-2000,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,815686,1381545.4
+2024-11,SRC-2000,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-208458.4,357162.2
+2024-11,SRC-2000,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-11,SRC-2000,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,13061718.7,14067820
+2024-11,SRC-2000,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,4984168.5,5895796.6
+2024-11,SRC-2000,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,7341405.3,7341410.2
+2024-11,SRC-2000,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,655191.6,712996.3
+2024-11,SRC-2000,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,80000,90137.7
+2024-11,SRC-2000,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,12731100.1,14424982.2
+2024-11,SRC-2000,AIF,88,- INVERSION FINANCIERA,inversion_financiera,3896229.7,5447286.8
+2024-11,SRC-2000,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,7719227.2,7750980.7
+2024-11,SRC-2000,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,378224.6,379895.1
+2024-11,SRC-2000,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,710892.7,819340.4
+2024-12,SRC-2001,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-1733139.9,-1301045.8
+2024-12,SRC-2001,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-1988783.0,-1557305.3
+2024-12,SRC-2001,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2024-12,SRC-2001,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,13034177.5,15531244
+2024-12,SRC-2001,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,4170190.8,6248810.6
+2024-12,SRC-2001,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,5403918.7,5403918.7
+2024-12,SRC-2001,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1371545.9,1779104.7
+2024-12,SRC-2001,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,2083000,2091876.5
+2024-12,SRC-2001,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,11043576.7,13973938.7
+2024-12,SRC-2001,AIF,88,- INVERSION FINANCIERA,inversion_financiera,3115471.9,4943467.8
+2024-12,SRC-2001,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,6171264.8,6175187.8
+2024-12,SRC-2001,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,160325,160325
+2024-12,SRC-2001,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,1594503.6,2687424.6
+2025-01,SRC-2002,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,1424313.6,2434865.3
+2025-01,SRC-2002,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-410772.6,599753.2
+2025-01,SRC-2002,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-01,SRC-2002,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,18750245.5,19752259.5
+2025-01,SRC-2002,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,7457966.9,8372459.2
+2025-01,SRC-2002,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,10085095.4,10087535.2
+2025-01,SRC-2002,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,60161.7,69913.9
+2025-01,SRC-2002,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,1147000,1167159.2
+2025-01,SRC-2002,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,18082150.8,20352012.7
+2025-01,SRC-2002,AIF,88,- INVERSION FINANCIERA,inversion_financiera,3549580.4,5701618.5
+2025-01,SRC-2002,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,4652181.1,4658638
+2025-01,SRC-2002,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,9175943.6,9178321.1
+2025-01,SRC-2002,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,649275.2,758243.1
+2025-02,SRC-2003,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,1272232.2,1176915.3
+2025-02,SRC-2003,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,408950.2,310726.2
+2025-02,SRC-2003,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-02,SRC-2003,AI,79,FUENTES FINANCIERAS,fuentes_financieras,15690427.7,16862486.8
+2025-02,SRC-2003,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,3574056.7,4683865.7
+2025-02,SRC-2003,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,9547444.7,9547670.9
+2025-02,SRC-2003,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1365869,1374115.3
+2025-02,SRC-2003,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,1203057.3,1214639
+2025-02,SRC-2003,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,16097161.8,17173213
+2025-02,SRC-2003,AI,88,- INVERSION FINANCIERA,inversion_financiera,5373950,6358893.2
+2025-02,SRC-2003,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,9203504.8,9210583.8
+2025-02,SRC-2003,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,1432073.8,1432113.9
+2025-02,SRC-2003,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,45437.3,129426.2
+2025-03,SRC-2004,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,400573.2,745339.5
+2025-03,SRC-2004,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,58541.6,398909.3
+2025-03,SRC-2004,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-03,SRC-2004,AI,79,FUENTES FINANCIERAS,fuentes_financieras,16785498.8,17803178.4
+2025-03,SRC-2004,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5609741.2,6565618.2
+2025-03,SRC-2004,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,9632618.1,9632618.1
+2025-03,SRC-2004,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,597428.9,612331.3
+2025-03,SRC-2004,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,945710.6,958771.7
+2025-03,SRC-2004,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,16820063.1,18202087.7
+2025-03,SRC-2004,AI,88,- INVERSION FINANCIERA,inversion_financiera,4201714.5,5448611.8
+2025-03,SRC-2004,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,10497104.3,10497275.9
+2025-03,SRC-2004,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,847155,851913.1
+2025-03,SRC-2004,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,1240250.2,1370447.8
+2025-04,SRC-2005,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,240471.9,845949.1
+2025-04,SRC-2005,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-28615.2,572341.0
+2025-04,SRC-2005,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,11976386.7,11976386.7
+2025-04,SRC-2005,AI,79,FUENTES FINANCIERAS,fuentes_financieras,31382597.1,32401699.2
+2025-04,SRC-2005,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,4164155.5,5101104.9
+2025-04,SRC-2005,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,10016061.9,10016061.9
+2025-04,SRC-2005,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,16732211.7,16763483.7
+2025-04,SRC-2005,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,470130,485247.5
+2025-04,SRC-2005,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,43294112.4,44950426.9
+2025-04,SRC-2005,AI,88,- INVERSION FINANCIERA,inversion_financiera,28228081.3,29742607.8
+2025-04,SRC-2005,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,14063878,14064036.6
+2025-04,SRC-2005,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,132621.2,135430
+2025-04,SRC-2005,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,833768.7,972551.3
+2025-05,SRC-2006,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,732889.8,1696917.4
+2025-05,SRC-2006,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-289034.5,662122.9
+2025-05,SRC-2006,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-05,SRC-2006,AI,79,FUENTES FINANCIERAS,fuentes_financieras,35051203.6,36271685.2
+2025-05,SRC-2006,AI,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,20608483.2,21778275.1
+2025-05,SRC-2006,AI,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,12821324.5,12821324.5
+2025-05,SRC-2006,AI,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,799375.3,809913.2
+2025-05,SRC-2006,AI,84,. Incremento Otros Pasivos,incremento_otros_pasivos,821882.4,843790.4
+2025-05,SRC-2006,AI,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,34727649,36933808.1
+2025-05,SRC-2006,AI,88,- INVERSION FINANCIERA,inversion_financiera,5866335.6,7909062.7
+2025-05,SRC-2006,AI,90,. Amortización en Moneda Local,amortizacion_moneda_local,13857158.9,13857317.6
+2025-05,SRC-2006,AI,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,14392257.3,14449361.9
+2025-05,SRC-2006,AI,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,593653.4,699683.9
+2025-06,SRC-2007,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-7393.1,790532.9
+2025-06,SRC-2007,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-241435.8,551234.2
+2025-06,SRC-2007,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-06,SRC-2007,AIF,80,FUENTES FINANCIERAS,fuentes_financieras,21572663.5,22707470.0
+2025-06,SRC-2007,AIF,81,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,6955458.6,8016644.8
+2025-06,SRC-2007,AIF,83,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,13679434.1,13679811.8
+2025-06,SRC-2007,AIF,84,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,284770.8,302386.2
+2025-06,SRC-2007,AIF,85,. Incremento Otros Pasivos,incremento_otros_pasivos,653000,674892.9
+2025-06,SRC-2007,AIF,88,APLICACIONES FINANCIERAS,aplicaciones_financieras,21093255.8,23258704.2
+2025-06,SRC-2007,AIF,89,- INVERSION FINANCIERA,inversion_financiera,6285585.7,8326989.7
+2025-06,SRC-2007,AIF,91,. Amortización en Moneda Local,amortizacion_moneda_local,11491641.6,11491849.3
+2025-06,SRC-2007,AIF,92,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,2587978.1,2592011.5
+2025-06,SRC-2007,AIF,93,. Disminución Otros Pasivos,disminucion_otros_pasivos,694322.7,814126.0
+2025-07,SRC-2008,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,745046.7,1749385.5
+2025-07,SRC-2008,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-1169877.2,-168515.2
+2025-07,SRC-2008,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-07,SRC-2008,AI,80,FUENTES FINANCIERAS,fuentes_financieras,58250479,60207265.8
+2025-07,SRC-2008,AI,81,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5664728,7519031.9
+2025-07,SRC-2008,AI,83,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,48896101.7,48897174.4
+2025-07,SRC-2008,AI,84,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,3077649.3,3144857.3
+2025-07,SRC-2008,AI,85,. Incremento Otros Pasivos,incremento_otros_pasivos,612000,627756
+2025-07,SRC-2008,AI,88,APLICACIONES FINANCIERAS,aplicaciones_financieras,56898930,60038750.6
+2025-07,SRC-2008,AI,89,- INVERSION FINANCIERA,inversion_financiera,9654668.3,12564596.6
+2025-07,SRC-2008,AI,91,. Amortización en Moneda Local,amortizacion_moneda_local,42522473.5,42522624.2
+2025-07,SRC-2008,AI,92,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,3790729.6,3792788.5
+2025-07,SRC-2008,AI,93,. Disminución Otros Pasivos,disminucion_otros_pasivos,912612.4,1140295.1
+2025-08,SRC-2009,AI,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,1229883.6,1556864.0
+2025-08,SRC-2009,AI,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,68532.5,390300.5
+2025-08,SRC-2009,AI,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-08,SRC-2009,AI,80,FUENTES FINANCIERAS,fuentes_financieras,32867047.7,34163953.2
+2025-08,SRC-2009,AI,81,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,9102971.3,10331822.7
+2025-08,SRC-2009,AI,83,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,20602296.6,20602296.6
+2025-08,SRC-2009,AI,84,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,3074779.8,3096170.5
+2025-08,SRC-2009,AI,85,. Incremento Otros Pasivos,incremento_otros_pasivos,87000,105334.6
+2025-08,SRC-2009,AI,88,APLICACIONES FINANCIERAS,aplicaciones_financieras,32933587.7,34554253.7
+2025-08,SRC-2009,AI,89,- INVERSION FINANCIERA,inversion_financiera,6475781.8,7942437.8
+2025-08,SRC-2009,AI,91,. Amortización en Moneda Local,amortizacion_moneda_local,22689771.7,22689922.4
+2025-08,SRC-2009,AI,92,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,2848877.2,2872690.7
+2025-08,SRC-2009,AI,93,. Disminución Otros Pasivos,disminucion_otros_pasivos,890828.2,1020874.0
+2025-09,SRC-2010,AI,70,RESULTADO PRIMARIO (XI-XII),resultado_primario,-106172.3,696965.1
+2025-09,SRC-2010,AI,71,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-488285.3,309623.4
+2025-09,SRC-2010,AI,73,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-09,SRC-2010,AI,77,FUENTES FINANCIERAS,fuentes_financieras,21242440.5,23233822.5
+2025-09,SRC-2010,AI,78,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,6592837.2,8445826.7
+2025-09,SRC-2010,AI,80,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,10634543.9,10634543.9
+2025-09,SRC-2010,AI,81,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,4015059.4,4093975.6
+2025-09,SRC-2010,AI,82,. Incremento Otros Pasivos,incremento_otros_pasivos,0,20814.9
+2025-09,SRC-2010,AI,85,APLICACIONES FINANCIERAS,aplicaciones_financieras,20683291.1,23543445.9
+2025-09,SRC-2010,AI,86,- INVERSION FINANCIERA,inversion_financiera,6761961.1,9477361.6
+2025-09,SRC-2010,AI,88,. Amortización en Moneda Local,amortizacion_moneda_local,12978352.3,12978536.7
+2025-09,SRC-2010,AI,89,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,805179.8,808762.7
+2025-09,SRC-2010,AI,90,. Disminución Otros Pasivos,disminucion_otros_pasivos,99136.5,240123.5
+2025-10,SRC-2011,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-275467.9,823924.8
+2025-10,SRC-2011,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-577573.5,517671.7
+2025-10,SRC-2011,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-10,SRC-2011,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,24739195.1,28203918.5
+2025-10,SRC-2011,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,14610182.8,17995909.4
+2025-10,SRC-2011,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,6866613,6866613
+2025-10,SRC-2011,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1928722.1,1982186.3
+2025-10,SRC-2011,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,0,16481.6
+2025-10,SRC-2011,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,24145842.5,28721590.2
+2025-10,SRC-2011,AIF,88,- INVERSION FINANCIERA,inversion_financiera,8688118.2,11771170.9
+2025-10,SRC-2011,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,11063828.4,11064244.2
+2025-10,SRC-2011,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,4324733.8,4353033.6
+2025-10,SRC-2011,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,60111.1,190413.3
+2025-11,SRC-2012,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,1246677.2,2128009.4
+2025-11,SRC-2012,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-278503.5,599953.8
+2025-11,SRC-2012,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-11,SRC-2012,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,29449719.4,31253089.3
+2025-11,SRC-2012,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,6815526.6,8527768.7
+2025-11,SRC-2012,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,22047498.8,22047498.8
+2025-11,SRC-2012,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,502818.5,565967.1
+2025-11,SRC-2012,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,80000,97537.8
+2025-11,SRC-2012,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,29146143,31853043.1
+2025-11,SRC-2012,AIF,88,- INVERSION FINANCIERA,inversion_financiera,6617939.3,9058165
+2025-11,SRC-2012,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,18270816.3,18270957.3
+2025-11,SRC-2012,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,4160085.8,4265802.5
+2025-11,SRC-2012,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,86860.2,243801.4
+2025-12,SRC-2013,AIF,72,RESULTADO PRIMARIO (XI-XII),resultado_primario,-3420607.2,-2876449.6
+2025-12,SRC-2013,AIF,73,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-3824315.4,-3290301.9
+2025-12,SRC-2013,AIF,75,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2025-12,SRC-2013,AIF,79,FUENTES FINANCIERAS,fuentes_financieras,36413212.8,39145536.3
+2025-12,SRC-2013,AIF,80,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,12873029.3,15155929.9
+2025-12,SRC-2013,AIF,82,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,20800999.7,20800999.7
+2025-12,SRC-2013,AIF,83,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,2738981.7,3094070.8
+2025-12,SRC-2013,AIF,84,. Incremento Otros Pasivos,incremento_otros_pasivos,0,31059
+2025-12,SRC-2013,AIF,87,APLICACIONES FINANCIERAS,aplicaciones_financieras,32496624.7,35855234.4
+2025-12,SRC-2013,AIF,88,- INVERSION FINANCIERA,inversion_financiera,10568346.2,13700733.9
+2025-12,SRC-2013,AIF,90,. Amortización en Moneda Local,amortizacion_moneda_local,18882605.4,18885745
+2025-12,SRC-2013,AIF,91,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,1890548.2,1910310.8
+2025-12,SRC-2013,AIF,92,. Disminución Otros Pasivos,disminucion_otros_pasivos,1091850.1,1294967.8
+2026-01,SRC-2014,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,2381696.7,3125737.3
+2026-01,SRC-2014,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,362575.1,1105159.0
+2026-01,SRC-2014,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-01,SRC-2014,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,29393847.9,31576377.5
+2026-01,SRC-2014,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5831067.3,7857774.2
+2026-01,SRC-2014,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,19420991.9,19420991.9
+2026-01,SRC-2014,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,860572.5,861085.8
+2026-01,SRC-2014,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,3281215.5,3310400.5
+2026-01,SRC-2014,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,28746674.1,32681536.5
+2026-01,SRC-2014,AIF,87,- INVERSION FINANCIERA,inversion_financiera,5569423.9,9256958.9
+2026-01,SRC-2014,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,13708579.5,13711043.2
+2026-01,SRC-2014,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,8675402.8,8709316.6
+2026-01,SRC-2014,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,667143.5,878092.7
+2026-02,SRC-2015,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,1188686.8,1410639.7
+2026-02,SRC-2015,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-74425.2,144421.3
+2026-02,SRC-2015,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-02,SRC-2015,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,23187447.9,24949672.7
+2026-02,SRC-2015,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5339471,7034311.0
+2026-02,SRC-2015,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,15593468.3,15593468.3
+2026-02,SRC-2015,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,2214508.6,2262626.5
+2026-02,SRC-2015,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,40000,58029.4
+2026-02,SRC-2015,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,23110493.3,25094094.0
+2026-02,SRC-2015,AIF,87,- INVERSION FINANCIERA,inversion_financiera,5615094.5,7485998.2
+2026-02,SRC-2015,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,13358057.8,13364633.8
+2026-02,SRC-2015,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,3042730.7,3068253.7
+2026-02,SRC-2015,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,1093372.8,1173970.8
+2026-03,SRC-2016,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,390764.2,930284.1
+2026-03,SRC-2016,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-52848.7,484789.1
+2026-03,SRC-2016,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-03,SRC-2016,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,27980812.6,29004577.8
+2026-03,SRC-2016,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5302662.0,6259124.3
+2026-03,SRC-2016,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,20953193.3,20953193.3
+2026-03,SRC-2016,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1494538,1521598.8
+2026-03,SRC-2016,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,230419.3,244541
+2026-03,SRC-2016,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,27905747.9,29489366.9
+2026-03,SRC-2016,AIF,87,- INVERSION FINANCIERA,inversion_financiera,9082746.3,10525594.3
+2026-03,SRC-2016,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,17578988,17585306.1
+2026-03,SRC-2016,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,726198.3,728869.2
+2026-03,SRC-2016,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,491694.9,623476.9
+2026-04,SRC-2017,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,-48131.6,632844.1
+2026-04,SRC-2017,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-408971.2,268102.9
+2026-04,SRC-2017,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-04,SRC-2017,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,27458949.2,29434606.8
+2026-04,SRC-2017,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,5137489.9,7037887.6
+2026-04,SRC-2017,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,17349965.8,17349965.8
+2026-04,SRC-2017,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,2655457.6,2695026.4
+2026-04,SRC-2017,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,2316035.9,2338286.7
+2026-04,SRC-2017,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,27045633.1,29702709.7
+2026-04,SRC-2017,AIF,87,- INVERSION FINANCIERA,inversion_financiera,10645835.8,13136045.9
+2026-04,SRC-2017,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,14240598.6,14242652.1
+2026-04,SRC-2017,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,1666385.4,1702474.3
+2026-04,SRC-2017,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,479373,608097.1
+2026-05,SRC-2018,AI,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,693647.1,1924366.9
+2026-05,SRC-2018,AI,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-742808.8,478613.2
+2026-05,SRC-2018,AI,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,24400000,24400000
+2026-05,SRC-2018,AI,78,FUENTES FINANCIERAS,fuentes_financieras,32978330.6,34463621.8
+2026-05,SRC-2018,AI,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,6202850.2,7574079.2
+2026-05,SRC-2018,AI,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,20891923.3,20891923.3
+2026-05,SRC-2018,AI,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,5299006.1,5355871.9
+2026-05,SRC-2018,AI,83,. Incremento Otros Pasivos,incremento_otros_pasivos,584551,607492.7
+2026-05,SRC-2018,AI,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,56612545.9,59342235.0
+2026-05,SRC-2018,AI,87,- INVERSION FINANCIERA,inversion_financiera,13745963.6,16252478.3
+2026-05,SRC-2018,AI,89,. Amortización en Moneda Local,amortizacion_moneda_local,22062016.9,22064061.5
+2026-05,SRC-2018,AI,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,20134436.2,20197368.1
+2026-05,SRC-2018,AI,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,635874.5,794072.4
+2026-06,SRC-2019,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,-1705423.5,-696842.9
+2026-06,SRC-2019,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-2032910.8,-1024891.4
+2026-06,SRC-2019,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-06,SRC-2019,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,33597547.4,36061274.5
+2026-06,SRC-2019,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,10484590.8,12226541.8
+2026-06,SRC-2019,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,16905456.5,16947827.3
+2026-06,SRC-2019,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,3368965.5,3388574.7
+2026-06,SRC-2019,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,2838534.6,2851916.9
+2026-06,SRC-2019,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,30964043.9,35036383.1
+2026-06,SRC-2019,AIF,87,- INVERSION FINANCIERA,inversion_financiera,8489364.8,12357224.3
+2026-06,SRC-2019,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,17954161.6,17954614.1
+2026-06,SRC-2019,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,3213128.2,3222445
+2026-06,SRC-2019,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,660975.5,855685.9
+2026-07,SRC-2020,AI,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,1436959.5,2960332.7
+2026-07,SRC-2020,AI,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-1277427.4,244897.1
+2026-07,SRC-2020,AI,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-07,SRC-2020,AI,78,FUENTES FINANCIERAS,fuentes_financieras,30598000.6,31774182.4
+2026-07,SRC-2020,AI,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,6068240.1,7118367.2
+2026-07,SRC-2020,AI,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,9567496.5,9567496.5
+2026-07,SRC-2020,AI,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,14650264,14667146.7
+2026-07,SRC-2020,AI,83,. Incremento Otros Pasivos,incremento_otros_pasivos,312000,320597.9
+2026-07,SRC-2020,AI,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,28835716.1,32019079.5
+2026-07,SRC-2020,AI,87,- INVERSION FINANCIERA,inversion_financiera,10594109.3,13507988.7
+2026-07,SRC-2020,AI,89,. Amortización en Moneda Local,amortizacion_moneda_local,8069493.4,8076479.4
+2026-07,SRC-2020,AI,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,8130840.4,8165541.8
+2026-07,SRC-2020,AI,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,1940698.9,2168495.5
+2026-08,SRC-2021,AIF,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,1437292.9,1990321.8
+2026-08,SRC-2021,AIF,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,82977.4,635528.6
+2026-08,SRC-2021,AIF,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
+2026-08,SRC-2021,AIF,78,FUENTES FINANCIERAS,fuentes_financieras,27942789.7,30056137
+2026-08,SRC-2021,AIF,79,- DISMINUC. DE LA INVERSION FINANCIERA,disminucion_inversion_financiera,10454735,12523075
+2026-08,SRC-2021,AIF,81,. Endeudamiento en Moneda Local,endeudamiento_moneda_local,15679814.9,15679814.9
+2026-08,SRC-2021,AIF,82,. Endeudamiento en Moneda Extranjera,endeudamiento_moneda_extranjera,1229015,1235606.6
+2026-08,SRC-2021,AIF,83,. Incremento Otros Pasivos,incremento_otros_pasivos,579224.8,597360.8
+2026-08,SRC-2021,AIF,86,APLICACIONES FINANCIERAS,aplicaciones_financieras,28022692.3,30691665.6
+2026-08,SRC-2021,AIF,87,- INVERSION FINANCIERA,inversion_financiera,9325801.8,11831991.1
+2026-08,SRC-2021,AIF,89,. Amortización en Moneda Local,amortizacion_moneda_local,13191789.7,13211371.8
+2026-08,SRC-2021,AIF,90,. Amortización en Moneda Extranjera,amortizacion_moneda_extranjera,5215691.8,5225351.8
+2026-08,SRC-2021,AIF,91,. Disminución Otros Pasivos,disminucion_otros_pasivos,269129.3,402671.2
+2026-09,SRC-2022,AI,71,RESULTADO PRIMARIO (XI-XII),resultado_primario,229762.7,1427640.0
+2026-09,SRC-2022,AI,72,RESULTADO FINANCIERO (XI-XIII),resultado_financiero,-220237.3,977173.4
+2026-09,SRC-2022,AI,74,- RENTAS PERCIBIDAS DEL BCRA,rentas_percibidas_del_bcra,0,0
