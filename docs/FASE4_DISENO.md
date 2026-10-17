@@ -93,3 +93,8 @@ Las pruebas (`tests/test_simulation.py`) fijan tres propiedades:
 - si el BCRA compra solo una parte, cobrar en dólares deja más reservas.
 
 Falta armar las trayectorias de entrada: los derechos por producto con los archivos de ARCA y las alícuotas del lote AF, y el calendario consolidado de la fase 3.
+
+### Estado (2026-10-17)
+
+Primera corrida con datos (`argfx simular`, D-018). El contrafáctico del mandato y la proyección a 2036 están en `src/argfx/simulation/corrida.py`, con pruebas en `tests/test_corrida.py`. Los resultados se presentan en el anexo A del informe. Sigue pendiente la capa de comportamiento (sección 2).
+

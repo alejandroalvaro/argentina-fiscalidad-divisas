@@ -2,11 +2,11 @@
 
 En el circuito de los pesos mandan el Tesoro y el BCRA. El BCRA crea pesos cuando compra divisas, le gira utilidades al Tesoro o paga intereses, y los absorbe cuando vende divisas o coloca pasivos que pagan interés. El Tesoro cobra impuestos, gasta, coloca deuda en pesos y la renueva. Este capítulo recorre los dos balances y muestra el cambio más importante del mandato: la absorción de pesos, y su costo, pasaron del BCRA al Tesoro.
 
-Las cifras están en billones de pesos de agosto de 2026, deflactadas mes a mes por el índice de precios al consumidor del INDEC (SRC-2028), salvo que se indique "pesos corrientes". Un peso de diciembre de 2023 equivale a 3,47 pesos de agosto de 2026.
+Las cifras están en billones de pesos de agosto de 2026, deflactadas mes a mes por el índice de precios al consumidor (IPC) del Instituto Nacional de Estadística y Censos (INDEC, SRC-2028), salvo que se indique "pesos corrientes". Un peso de diciembre de 2023 equivale a 3,47 pesos de agosto de 2026.
 
 ## 3.1 Del BCRA al Tesoro: el traspaso de los pasivos remunerados
 
-A fines de 2023, el BCRA debía en pases pasivos y LELIQ $25,8 billones de pesos corrientes, 2,68 veces la base monetaria. Esa deuda pagaba la tasa de política monetaria, que era del 100% nominal anual (171% efectiva). En el informe de política monetaria de junio de 2026, el mismo BCRA recuerda que sus títulos y pases llegaron a 2,5 veces la base hacia fines de 2023.
+A fines de 2023, el BCRA debía en pases pasivos y Letras de Liquidez (LELIQ) $25,8 billones de pesos corrientes, 2,68 veces la base monetaria. Esa deuda pagaba la tasa de política monetaria, que desde el 18 de diciembre era del 100% nominal anual. Como los pases eran a un día y el interés de cada día se volvía a colocar al día siguiente, en un año el rendimiento compuesto llegaba al 171%: (1 + 1/365)^365 − 1 = 1,71. Es la tasa efectiva que publica el propio BCRA. Hasta el 15 de diciembre la tasa había sido del 133% nominal sobre LELIQ a 28 días, que compuesta mes a mes daba un 255% efectivo, y parte del stock de fin de año todavía cobraba esa tasa (BCRA, Series.xlsm, SRC-1625). En el informe de política monetaria de junio de 2026, el mismo BCRA recuerda que sus títulos y pases llegaron a 2,5 veces la base hacia fines de 2023.
 
 En dos años y medio ese stock desapareció del balance del BCRA:
 
@@ -43,15 +43,21 @@ El diagrama 3.1 muestra por dónde entraron y salieron los pesos del BCRA en el 
 | Venta de divisas al Tesoro | 43,5 | Compra de divisas al sector privado | 64,7 |
 | Otras operaciones con el Tesoro | 63,1 | Utilidades transferidas al Tesoro | 42,9 |
 | Otros | 3,2 | Intereses, primas y remuneración de cuentas | 34,6 |
-| Operaciones con LEFI | 0,1 | Desarme de LELIQ y NOTALIQ | 22,9 |
+| Operaciones con LEFI | 0,1 | Desarme de LELIQ y Notas de Liquidez (NOTALIQ) | 22,9 |
 | | | Desarme de pases | 8,4 |
 | **Aumento de la base monetaria** | **63,5** | | |
 
-Cuatro lecturas salen del diagrama.
+Del diagrama salen varias lecturas.
 
 **El BCRA pagó intereses hasta julio de 2024 y después casi nada.** El factor de intereses suma 34,6 billones: 8,3 en diciembre de 2023 y 26,4 entre enero y julio de 2024. Desde agosto de 2024 es casi cero. Los estados contables del BCRA dan el mismo perfil: intereses perdidos por 28,0 billones de pesos corrientes en 2023, 17,1 en 2024 y 1,7 en 2025.
 
-**El Tesoro le devolvió al BCRA, por la venta de divisas, casi todo lo que recibió de utilidades.** Las utilidades transferidas suman 42,9 billones (11,98 billones corrientes en 2025 y 24,4 en mayo de 2026). En el mismo período, el Tesoro le compró al BCRA divisas por 43,5 billones. En mayo de 2026 el giro de utilidades volvió casi entero al BCRA el mismo mes: 24,4 billones salieron como utilidades y 22,8 volvieron como otras operaciones con el Tesoro, en línea con la recompra de Letras Intransferibles por $18,4 billones (capítulo 5).
+**El Tesoro le devolvió al BCRA, por la venta de divisas, casi todo lo que recibió de utilidades.** Las utilidades transferidas suman 42,9 billones (11,98 billones corrientes en 2025, por el ejercicio 2024, y 24,4 en mayo de 2026, por el ejercicio 2025). En el mismo período, el Tesoro le compró al BCRA divisas por 43,5 billones. En mayo de 2026 el giro de utilidades volvió casi entero al BCRA el mismo mes: 24,4 billones salieron como utilidades y 22,8 volvieron como otras operaciones con el Tesoro, en línea con la recompra de Letras Intransferibles por $18,4 billones (capítulo 5).
+
+**Las utilidades son, en su mayor parte, contables.** La Carta Orgánica del BCRA (artículo 38, SRC-0012) manda transferir al Tesoro las utilidades del ejercicio que no se capitalizan ni van a reservas, y lo que mide es el resultado contable, no el efectivo cobrado. En 2024 el BCRA ganó 19,4 billones de pesos de diciembre de 2024, pero las partidas de valuación y de interés devengado sin cobrar sumaron 43,6: el ajuste por CER de los bonos del Tesoro que tenía en cartera (27,2), la revaluación de sus activos en dólares por la suba del tipo de cambio (8,7) y el devengamiento de las Letras Intransferibles y de los adelantos al Tesoro (7,6). Sin ellas, el BCRA habría perdido unos 17 billones, sobre todo por los intereses de los pases. En 2025 ganó 34,3 billones de pesos de diciembre de 2025, y las mismas partidas sumaron 32,0, el 93% del resultado. La mayor ganancia efectiva de ese año fue de 6,3 billones, por la recompra de Letras Intransferibles que el Tesoro pagó con los dólares del FMI (estados contables 2024 y 2025, SRC-1157 y SRC-1156, nota 4.22; la separación entre lo cobrado y lo contable es propia).
+
+Buena parte de esa ganancia contable es un crédito contra el propio Tesoro que se revalúa: el CER de sus bonos y el tipo de cambio de sus Letras. Consolidando el sector público, la ganancia del BCRA es una pérdida igual del Tesoro. Aun así, el giro de utilidades le entrega al Tesoro pesos que pueden gastarse, y en el mandato el Tesoro los usó, en buena medida, para comprarle dólares al mismo BCRA.
+
+**Las pérdidas no las cubre el Tesoro.** El mismo artículo 38 dice que las pérdidas de un ejercicio se imputan a las reservas y, si no alcanzan, al capital del BCRA, y que el directorio puede usar las utilidades de los años siguientes para recomponerlos. Así se hizo con la pérdida de 2023: se imputó a reservas y capital en 2024, y en 2025 el BCRA retuvo 7,7 billones de las utilidades de 2024 para recomponerlos antes de girar el resto. La Carta Orgánica no obliga al Tesoro a capitalizar al BCRA cuando pierde.
 
 **La compra de divisas al sector privado fue el principal origen de pesos.** Sumó 64,7 billones, concentrados en el primer semestre de 2024 y en 2026. En 2025, con la banda cambiaria, el BCRA casi no compró.
 
@@ -61,11 +67,11 @@ Una aclaración sobre la fuente: una tabla de factores que recibimos en un lote 
 
 ## 3.3 El sector público nacional en pesos
 
-El diagrama 3.2 muestra el sector público nacional, en base caja, solo en pesos. La deuda en divisas, sus intereses y los depósitos del Tesoro en dólares salen del diagrama, y el cruce hacia los dólares queda como una salida propia.
+El diagrama 3.2 muestra el sector público nacional (SPN), en base caja, solo en pesos. La deuda en divisas, sus intereses y los depósitos del Tesoro en dólares salen del diagrama, y el cruce hacia los dólares queda como una salida propia.
 
 <iframe class="sankey" src="flujos_ars_2023-12_2026-08.html" title="Diagrama 3.2"></iframe>
 
-*Diagrama 3.2. Sector público nacional en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuentes: esquema ahorro-inversión-financiamiento en base caja (lotes AM y AN), boletín de la Secretaría de Finanzas, cuadro A.5 (SRC-9002), lotes AI, AR y AS. `argfx flujos`. Cada línea está neta en la ventana. El diagrama cierra con una diferencia de $214.000 millones de redondeo.*
+*Diagrama 3.2. Sector público nacional en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuentes: esquema ahorro-inversión-financiamiento (AIF) en base caja (lotes AM y AN), boletín de la Secretaría de Finanzas, cuadro A.5 (SRC-9002), lotes AI, AR y AS. `argfx flujos`. Cada línea está neta en la ventana. El diagrama cierra con una diferencia de $214.000 millones de redondeo.*
 
 | Entradas | Billones | Salidas | Billones |
 |---|---:|---|---:|
@@ -85,7 +91,9 @@ El diagrama 3.2 muestra el sector público nacional, en base caja, solo en pesos
 
 **El interés en efectivo es casi todo en dólares.** De los 44,6 billones de intereses pagados en efectivo, solo 2,2 corresponden a la deuda en pesos. El resto, unos 42,4 billones, es interés de la deuda en moneda extranjera (cuadro A.5 del boletín de Finanzas, por moneda de pago, convertido al tipo de cambio de cada mes). La deuda en pesos casi no paga interés en efectivo porque capitaliza: LECAP, BONCAP y LEFI acumulan el interés en el capital y lo pagan al vencimiento, cuando el pago se registra como amortización. El programa financiero oficial dice que "los intereses se pagan con superávit fiscal" (SRC-1770). En los hechos, el superávit primario en pesos alcanzó para pagar intereses que en su mayoría eran en dólares, y que por lo tanto exigieron conseguir dólares.
 
-**La deuda en pesos creció.** Se colocaron 610,5 billones y se amortizaron 507,8: una colocación neta de 102,8 billones. Al mismo tiempo, el sector público acumuló 75,6 billones netos en activos financieros, en su mayor parte depósitos en el BCRA. Una parte de la deuda colocada por encima de los vencimientos quedó depositada, como dijo el BCRA en abril de 2026.
+**Qué son los activos financieros.** En el esquema de Hacienda, el "aumento de activos financieros" es todo lo que el sector público hace con pesos que no es gastar ni pagar deuda: depositarlos en el BCRA o en el Banco Nación, comprar títulos (el Fondo de Garantía de Sustentabilidad de la ANSES, o FGS, compra bonos del Tesoro), prestarles a provincias o a empresas. El "uso de activos financieros" es lo contrario: retirar depósitos, vender títulos, cobrar préstamos. Las dos líneas son brutas y se mueven mucho mes a mes. En neto, en el mandato el sector público acumuló 75,6 billones en activos financieros, en su mayor parte depósitos en el BCRA.
+
+**La deuda en pesos creció.** Se colocaron 610,5 billones y se amortizaron 507,8: una colocación neta de 102,8 billones. Descontados los 75,6 billones que el sector público acumuló en activos, el financiamiento neto en pesos fue de unos 27 billones. Una parte de la deuda colocada por encima de los vencimientos quedó depositada, como dijo el BCRA en abril de 2026. Esos 27 billones son deuda neta de depósitos con quienes están fuera del sector público nacional: bancos, fondos, personas, pero también el BCRA y el Banco Nación, que no forman parte de él. Las fuentes en base caja no permiten separar cuánto es con privados.
 
 **El cruce hacia los dólares.** El Tesoro aplicó 71,4 billones a conseguir dólares (44,4 de compras y 27,0 de deuda con el BCRA cancelada con pesos). Aparte, pagó en pesos 79,3 billones de deuda escrita en dólares y cobró 31,9 por colocarla. Las fuentes en pesos del período fueron el superávit primario (46,1), las utilidades del BCRA (42,9) y la colocación neta de deuda en pesos (102,8), mientras se acumulaban depósitos. Con las fuentes publicadas no se puede saber qué peso financió qué. No hay un comunicado, compra por compra, que diga con qué pesos se compraron los dólares.
 
@@ -110,9 +118,13 @@ El informe lo reconstruye trimestre a trimestre con las planillas trimestrales d
 
 *Miles de millones de pesos corrientes. El rango del sector público nacional depende de cuánto de la deuda capitalizable tiene el FGS, que se descuenta porque es interés dentro del sector público (entre el 10,6% y el 16,3% al 30-06-2026). Fuente: `argfx devengados`, planillas trimestrales de Finanzas, línea A.2.2.*
 
+<iframe class="grafico" src="grafico_resultado_devengado.html" title="Gráfico 3.1"></iframe>
+
+*Gráfico 3.1. Resultado financiero del sector público nacional por trimestre: el publicado, en base caja (verde), y el que surge de sumar el interés capitalizado (rojo, punto medio del rango del FGS). Billones de pesos corrientes. Fuente: `argfx devengados`, `argfx graficos`.*
+
 El interés capitalizado neto va de 5 a 11 billones de pesos corrientes por trimestre desde mediados de 2024 y suma unos 66 billones corrientes hasta junio de 2026. Con lo devengado, el resultado financiero del sector público nacional es deficitario en todos los trimestres desde el tercero de 2024. Ese interés es, en buena medida, el costo de la absorción de pesos que el BCRA dejó de pagar en julio de 2024: cambió de pagador y de forma de registro.
 
-El cálculo tiene límites que conviene decir. No incluye las ampliaciones de bonos TAMAR y duales ni los canjes, y no suma el ajuste de capital por CER, que la planilla registra aparte y que va de 7 a 41 billones por trimestre. Por eso es una cota baja del interés que se devenga.
+Y el déficit real es mayor que el de la tabla. El cálculo deja afuera el ajuste del capital de los bonos CER por la inflación, que la planilla registra aparte y que va de 7 a 41 billones de pesos por trimestre. Ese ajuste también es un costo de la deuda en pesos que se acumula y no pasa por el resultado publicado. Tampoco incluye el interés de las ampliaciones de bonos TAMAR y duales ni el de los canjes. Lo que muestran la tabla y el gráfico es, por lo tanto, el piso del déficit financiero devengado: el resultado verdadero está por debajo de la barra roja.
 
 ## 3.5 La deuda del Tesoro en pesos
 

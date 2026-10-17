@@ -32,7 +32,10 @@ La lista completa de fuentes, con URL, fecha de descarga y huella sha256, está 
 | Conciliación, consolidación y tenencias | `argfx conciliacion` | `data/conciliacion/` |
 | Interés capitalizado por trimestre | `argfx devengados` | `data/conciliacion/devengados_trimestral.csv` |
 | Diagramas del mandato | `argfx flujos` | `data/informe/flujos_*.csv` y `.html` |
-| Derechos estimados y cobrados | `argfx derechos` | `data/simulacion/` |
+| Derechos estimados y cobrados | `argfx derechos` | `data/simulacion/derechos_*.csv` |
+| Modelo de la fase 4: el mandato con cobro en dólares y la proyección a 2036 | `argfx simular` | `data/simulacion/mandato_*` y `proyeccion_*` |
+| Gráficos de barras | `argfx graficos` | `data/informe/grafico_*.csv` y `.html` |
+| Proyección del FMI del saldo comercial | | `series/fmi_balanza_proyectada.csv` (SRC-1263) |
 
 Todas las salidas de este borrador se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
 
@@ -46,3 +49,4 @@ Las decisiones del investigador están en `docs/DECISIONES.md`. Las que más pes
 - **D-011.** Las letras en garantía del FODER son deuda contingente.
 - **D-016.** El informe trata la naturaleza bimonetaria de la deuda; el cobro en dólares pasa a anexo.
 - **D-017.** Cada moneda en su unidad, gráficos por moneda y glosario.
+- **D-018.** Los supuestos de la corrida del modelo de la fase 4.

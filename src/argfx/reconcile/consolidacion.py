@@ -183,6 +183,11 @@ def build_consolidation(
                       "source_id": "derivado"})  # fmt: skip
 
     _write(out / "sector_publico.csv", stock)
+    # The shares, for the phase 4 run beyond the twelve months of this table.
+    _write(out / "participacion_sector_publico.csv", [
+        {"instrument_id": iid, **{m: round(s.get(m, 0.0), 6) for m in methods}}
+        for iid, s in sorted(share.items())
+    ])  # fmt: skip
     _write(out / "necesidad_divisas_consolidada.csv", rows)
     return {k: round(v, 1) for k, v in totals.items()} | {
         "dolares_sin_identificar_musd": round(residual / 1e6, 1),

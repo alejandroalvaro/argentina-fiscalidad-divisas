@@ -317,35 +317,55 @@ def ars_flows(
     )
 
 
+def treasury_usd_months(
+    financing: list[dict[str, str]], fx: dict[str, FxMonth], desde: str, hasta: str
+) -> dict[str, dict[str, float]]:
+    """The Treasury's dollars month by month, millions of USD. Disbursements and amortizations,
+    recorded in pesos by the sources and uses table, are converted at the month's average rate;
+    debt written in dollars and paid in pesos leaves them (D-017)."""
+    fin = {r["mes"]: r for r in financing}
+    out = {}
+    for m in _months(desde, hasta, fin, fx):
+        x, rate = fx[m], fx[m].tipo_de_cambio
+        disbursed = _num(fin[m], FX_DISBURSED) / rate - x.colocado_por_pesos_usd
+        amortized = _num(fin[m], FX_AMORTIZED) / rate - x.pagado_en_pesos_usd
+        cross = amortized + x.intereses_usd + x.depositos_usd - disbursed
+        cancelled = x.cancelado_pesos / rate
+        out[m] = {
+            "desembolsada": disbursed,
+            "amortizada": amortized,
+            "intereses": x.intereses_usd,
+            "depositos": x.depositos_usd,
+            "compras": x.compras_usd,
+            "cancelado": cancelled,
+            "resto": cross - x.compras_usd - cancelled,
+        }
+    return out
+
+
 def treasury_usd_flows(
     financing: list[dict[str, str]], fx: dict[str, FxMonth], desde: str, hasta: str
 ) -> Flows:
     """The Treasury's dollars, millions of USD: debt in foreign currency, its interest, the
-    deposits at the BCRA and what pesos covered. Disbursements and amortizations,
-    recorded in pesos by the sources and uses table, are converted at the month's average rate."""
-    fin = {r["mes"]: r for r in financing}
-    months = _months(desde, hasta, fin, fx)
-    if not months:
+    deposits at the BCRA and what pesos covered."""
+    by_month = treasury_usd_months(financing, fx, desde, hasta)
+    if not by_month:
         raise ValueError(f"sin meses con financiamiento y divisas entre {desde} y {hasta}")
     net: dict[str, float] = {}
 
     def add(name: str, v: float) -> None:
         net[name] = net.get(name, 0.0) + v
 
-    for m in months:
-        x, rate = fx[m], fx[m].tipo_de_cambio
-        disbursed = _num(fin[m], FX_DISBURSED) / rate - x.colocado_por_pesos_usd
-        amortized = _num(fin[m], FX_AMORTIZED) / rate - x.pagado_en_pesos_usd
-        add("Deuda en divisas desembolsada", disbursed)
-        add("Deuda en divisas amortizada", -amortized)
-        add("Intereses en divisas", -x.intereses_usd)
-        add("Depósitos en dólares en el BCRA (variación)", -x.depositos_usd)
-        cross = amortized + x.intereses_usd + x.depositos_usd - disbursed
-        cancelled = x.cancelado_pesos / rate
-        add(CROSS_USD["compras"], x.compras_usd)
-        add(CROSS_USD["cancelado"], cancelled)
-        add(CROSS_USD["resto"], cross - x.compras_usd - cancelled)
+    for x in by_month.values():
+        add("Deuda en divisas desembolsada", x["desembolsada"])
+        add("Deuda en divisas amortizada", -x["amortizada"])
+        add("Intereses en divisas", -x["intereses"])
+        add("Depósitos en dólares en el BCRA (variación)", -x["depositos"])
+        add(CROSS_USD["compras"], x["compras"])
+        add(CROSS_USD["cancelado"], x["cancelado"])
+        add(CROSS_USD["resto"], x["resto"])
     ins, outs = _split(net)
+    months = sorted(by_month)
     return Flows(
         "USD", "millones de USD", months[0], months[-1], HUB_TESORO_USD, ins, outs, "usd_tesoro"
     )

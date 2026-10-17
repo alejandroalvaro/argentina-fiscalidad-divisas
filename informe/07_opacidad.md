@@ -20,7 +20,7 @@ El saldo de la deuda es transparente: SIGADE, la planilla trimestral y el perfil
 - **Las compras de divisas del Tesoro** separadas por vía (al BCRA, en el mercado, en operaciones en bloque). El BCRA informa las compras al BCRA en pesos, y las del mercado aparecen en comunicados con cifras que después cambian.
 - **Con qué pesos se compra cada dólar.** No hay un comunicado, compra por compra, que diga si los pesos vinieron del superávit, de deuda o de depósitos.
 - **El esquema ahorro-inversión-financiamiento abierto por instrumento o por acreedor.** La amortización y la colocación de deuda se publican como totales por moneda, sin decir qué se pagó.
-- **Una nota metodológica** sobre cómo se clasifica la deuda escrita en dólares que se paga en pesos (dólar linked, BONTE y LETES que pagan en pesos, BONAR DUAL). El Manual de Clasificaciones de 2026 no nombra esos instrumentos y tiene dos reglas escritas que se contradicen.
+- **Una nota metodológica** sobre cómo se clasifica la deuda escrita en dólares que se paga en pesos (dólar linked, BONTE y Letras del Tesoro (LETES) que pagan en pesos, BONAR DUAL). El Manual de Clasificaciones de 2026 no nombra esos instrumentos y tiene dos reglas escritas que se contradicen.
 - **La deuda en pesos en pesos.** La Secretaría de Finanzas publica la deuda en pesos convertida a dólares.
 - **La tenencia de cada bono.** No se publica quién tiene cada instrumento, ni dentro ni fuera del sector público. El FGS publica su cartera por categoría y nunca por especie.
 - **Las LEFI.** No hay serie del total emitido ni de la parte que quedó en el BCRA. La fórmula de capitalización está publicada como imagen en el Boletín Oficial.
@@ -50,7 +50,7 @@ El caso más importante para este informe es la clasificación de la deuda por m
 El criterio, además, cambia entre publicaciones:
 
 - la Cuenta de Inversión 2024 cuenta el BONTE dólar linked como colocación en moneda extranjera, y la de 2025 no;
-- la Oficina Nacional de Crédito Público clasificaba hasta 2025 los BONTE en dólares que pagan en pesos como moneda extranjera y las LELINK como moneda nacional; en 2026 pasó a clasificar por moneda de pago y movió los BONTE a moneda nacional;
+- la Oficina Nacional de Crédito Público clasificaba hasta 2025 los BONTE en dólares que pagan en pesos como moneda extranjera y las letras vinculadas al dólar (LELINK) como moneda nacional; en 2026 pasó a clasificar por moneda de pago y movió los BONTE a moneda nacional;
 - el boletín de Finanzas cuenta la deuda dólar linked como moneda local en el cuadro A.3 y como moneda extranjera en el A.1;
 - el cuadro A.4 del boletín incluye canjes sin caja: la RC 16/2024 dio de baja BONAR DUAL y BONTE en dólares por 25.173 millones que el esquema ahorro-inversión-financiamiento no muestra.
 
@@ -64,7 +64,7 @@ Un lector que quiera saber cuántos dólares necesitó el Tesoro y mire la "deud
 - **Tres letras en pesos** (TMF27, TMG27 y TZX27) bajan de saldo sin una operación publicada que lo explique.
 - **La RC 60/2026** nunca publicó sus montos.
 - **La RC 30/2026** autorizó un pago de 1.040 millones de dólares que no aparece en los depósitos del Tesoro.
-- **Los archivos de exportaciones de ARCA** traen 81 registros con precios imposibles. Por ejemplo, en febrero de 2021 la soja en grano (1201.90.00) figura con 6.508 millones de dólares FOB por 37.325 toneladas, 174 dólares por kilo contra una mediana de 0,41. El informe los aparta con un filtro de valor unitario y los lista.
+- **Los archivos de exportaciones de la Agencia de Recaudación y Control Aduanero (ARCA)** traen 81 registros con precios imposibles. Por ejemplo, en febrero de 2021 la soja en grano (1201.90.00) figura con 6.508 millones de dólares FOB por 37.325 toneladas, 174 dólares por kilo contra una mediana de 0,41. El informe los aparta con un filtro de valor unitario y los lista.
 
 ## 7.6 Demoras y portales
 

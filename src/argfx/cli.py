@@ -339,6 +339,195 @@ def cmd_flujos(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_simular(args: argparse.Namespace) -> int:
+    import csv
+    import json
+
+    from argfx.contracts.calendar import _write
+    from argfx.informe.flujos import (
+        fx_months,
+        read_a3500,
+        read_balance_cambiario,
+        read_base_factors,
+        read_csv,
+        read_fx_interest,
+        read_paid_in_pesos,
+        read_purchases,
+        treasury_usd_months,
+    )
+    from argfx.simulation import corrida as cr
+    from argfx.simulation.alicuotas import load_book
+    from argfx.simulation.exportaciones import (
+        crude_prices,
+        read_month_detail,
+        screen_unit_values,
+    )
+    from argfx.simulation.regimes import Opening
+
+    out: Path = args.out
+    out.mkdir(parents=True, exist_ok=True)
+
+    # 1. The mandate.
+    a3500 = read_a3500(args.a3500)
+    fx = fx_months(
+        a3500,
+        read_fx_interest(_cached_object(BOLETIN_FINANZAS_SHA, "finanzas")),
+        read_csv(args.depositos),
+        read_purchases(args.compras),
+        read_paid_in_pesos(args.pagados_en_pesos, args.colocados_por_pesos),
+    )
+    treasury = treasury_usd_months(read_csv(args.financiamiento), fx, args.desde, args.hasta)
+    market = {
+        r["mes"]: float(r["compras_netas_tesoro_en_mercado_usd_millones_informe_bcra"])
+        for r in read_csv(args.compras)
+        if r["compras_netas_tesoro_en_mercado_usd_millones_informe_bcra"] not in ("", "n/d")
+    }
+    factors = read_base_factors(_cached_object(BCRA_SERIES_SHA, "bcra"))
+    balance = read_balance_cambiario(_cached_object(BALANCE_CAMBIARIO_SHA, "bcra"))
+    duties = cr.observed_duties(args.derechos / "derechos_estimados.csv")
+    badlar = cr.monthly_rate(args.tasa_pesos)
+    first_rate = badlar[min(badlar)]
+    mandate = []
+    for m in sorted(treasury):
+        e = a3500[0][m]
+        x = treasury[m]
+        mandate.append(
+            cr.MandateMonth(
+                mes=m,
+                tipo_de_cambio=e,
+                derecho_usd=duties.get(m, 0.0),
+                exportaciones_mlc_usd=balance[m]["bal003"],
+                compras_bcra_usd=factors[m]["Compra de divisas al sector privado"] / e,
+                compras_tesoro_usd=x["compras"],
+                compras_tesoro_mercado_usd=min(x["compras"], max(0.0, market.get(m, 0.0))),
+                deuda_desembolsada_usd=x["desembolsada"],
+                tasa_pesos=badlar.get(m, first_rate),
+            )
+        )
+    _write(out / "mandato_insumos.csv", [vars(m) | {"proporcion_compra_bcra": round(
+        m.bcra_share, 3)} for m in mandate])  # fmt: skip
+    mandate_summary = []
+    for uso in ("compras", "deuda"):
+        for usd_rate in args.tasas_divisas:
+            rows, s = cr.mandate_counterfactual(mandate, uso, usd_rate)
+            mandate_summary.append(s)
+            if usd_rate == args.tasas_divisas[0]:
+                _write(out / f"mandato_contrafactico_{uso}.csv", rows)
+    bcra = cr.bcra_interest_on_purchases(factors, args.desde, args.hasta)
+    (out / "mandato_resumen.json").write_text(
+        json.dumps({"contrafactico": mandate_summary, "bcra_intereses": bcra}, indent=1,
+                   ensure_ascii=False), encoding="utf-8")  # fmt: skip
+
+    # 2. The years ahead.
+    settings = get_settings()
+    store = get_store(settings)
+
+    def cached(sha256: str, suffix: str) -> Path:
+        dest = settings.cache_dir / "arca" / f"{sha256}{suffix}"
+        if not dest.is_file():
+            fetch_verified(store, sha256, dest, settings.cache_dir)
+        return dest
+
+    with args.descargas.open(newline="", encoding="utf-8") as fh:
+        latest = {r["source_id"]: r["sha256"] for r in csv.DictReader(fh) if r["sha256"]}
+    zips = [latest[s] for s in sorted(latest) if args.zip_desde <= s <= args.zip_hasta]
+    months, _ = screen_unit_values([read_month_detail(cached(h, ".zip")) for h in zips])
+    base_months = sorted(m for m, _ in months)[-12:]
+    base = {int(m[5:]): fob for m, fob in months if m in base_months}
+    # The ratio skips the months after the 0% window of September 2025 (Decreto 682/2025),
+    # when duties paid in advance left October to December with a quarter of the estimate.
+    ratio_months = [m for m in base_months if m >= args.cobro_desde]
+    ratio = cr.collection_ratio(args.derechos / "derechos_estimados.csv", ratio_months)
+    rate_of = cr.rate_lookup(load_book(args.alicuotas), crude_prices(cached(latest[args.pi],
+                                                                           ".xlsx")))  # fmt: skip
+    horizon = cr.month_range(cr.month_range(base_months[-1], "2099-12")[1], args.horizonte)
+    shocks = {
+        "base": None,
+        "sequia_2027": cr.drought(horizon, "2027"),
+        "precios_-20%": cr.price_fall(horizon),
+    }
+    projected = {k: cr.project_duties(base, rate_of, horizon, ratio, v) for k, v in shocks.items()}
+    projected["cobro_pleno"] = cr.project_duties(base, rate_of, horizon, 1.0)
+    payments = {
+        renew: cr.projected_payments(
+            args.calendario / "flujos.csv",
+            args.conciliacion / "participacion_sector_publico.csv",
+            args.instrumentos,
+            horizon,
+            renew,
+        )
+        for renew in (False, True)
+    }
+    scenarios = [
+        cr.Scenario("base", {}, False, 1.0),
+        cr.Scenario("base", {}, True, 1.0),
+        cr.Scenario("cobro_pleno", {}, False, 1.0),
+        cr.Scenario("sequia_2027", {}, False, 1.0),
+        cr.Scenario("precios_-20%", {}, False, 1.0),
+    ]
+    monthly, summaries = cr.run_projection(
+        horizon,
+        projected,
+        payments,
+        a3500[0][max(a3500[0])],
+        scenarios,
+        Opening(reserves_usd=args.reservas, treasury_usd=args.depositos_tesoro),
+    )
+    _write(out / "proyeccion_mensual.csv", monthly)
+    _write(out / "proyeccion_derechos.csv", [
+        {"mes": m, **{f"derecho_{k}_usd": round(v[0][m], 1) for k, v in projected.items()},
+         "fob_base_usd": round(projected["base"][1][m], 1),
+         "servicio_consolidado_usd": round(payments[False][m], 1),
+         "servicio_si_renuevan_organismos_usd": round(payments[True][m], 1)}
+        for m in horizon
+    ])  # fmt: skip
+    (out / "proyeccion_resumen.json").write_text(
+        json.dumps({"base": base_months, "meses_del_cobro": ratio_months,
+                    "cobrado_sobre_estimado": round(ratio, 3),
+                    "resumen": summaries}, indent=1, ensure_ascii=False),
+        encoding="utf-8")  # fmt: skip
+
+    for s in mandate_summary:
+        print(json.dumps(s, ensure_ascii=False))
+    print(json.dumps(bcra, ensure_ascii=False))
+    print(
+        f"base de exportaciones {base_months[0]} a {base_months[-1]}, cobrado/estimado {ratio:.3f}"
+    )
+    for s in summaries:
+        print({k: v for k, v in s.items() if k != "por_anio"})
+    print(f"tablas en {out}/")
+    return 0
+
+
+def cmd_graficos(args: argparse.Namespace) -> int:
+    from argfx.informe import graficos as gr
+    from argfx.informe.flujos import read_a3500
+
+    _, eom = read_a3500(args.a3500)
+    normal = next(
+        float(r["propio_musd"])
+        for r in gr._read(args.conciliacion / "stock.csv")
+        if r["partida"].startswith("Deuda en situación de pago normal")
+    )
+    years = [str(y) for y in range(2027, 2037)]
+    charts = [
+        gr.debt_by_holder(
+            args.conciliacion / "sector_publico.csv",
+            args.conciliacion / "pesos_sector_publico.csv",
+            normal,
+            eom[args.corte[:7]],
+        ),
+        gr.maturities_by_creditor(args.calendario / "flujos.csv", args.instrumentos, years),
+        gr.trade_vs_service(args.fmi, args.simulacion / "proyeccion_derechos.csv"),
+        gr.accrued_result(args.conciliacion / "devengados_trimestral.csv"),
+        gr.duties_vs_service(args.simulacion / "proyeccion_derechos.csv"),
+        gr.fund_smoothing(args.simulacion / "proyeccion_mensual.csv", "2027-01", "2028-12"),
+    ]
+    for g in charts:
+        print(gr.write_chart(g, args.out))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -462,6 +651,49 @@ def build_parser() -> argparse.ArgumentParser:
     flu.add_argument("--hasta", default="2026-09")
     flu.add_argument("--out", type=Path, default=Path("data/informe"))
     flu.set_defaults(func=cmd_flujos)
+
+    sim = sub.add_parser("simular", help="phase 4: run the regimes on the mandate and ahead")
+    sim.add_argument("--desde", default="2023-12")
+    sim.add_argument("--hasta", default="2026-08")
+    sim.add_argument("--horizonte", default="2036-12")
+    sim.add_argument("--a3500", type=Path, default=Path("series/bcra_a3500.csv"))
+    sim.add_argument("--tasa-pesos", type=Path, default=Path("series/bcra_badlar.csv"))
+    sim.add_argument("--tasas-divisas", type=float, nargs="+", default=[7.0, 5.0, 9.0],
+                     help="assumed yearly rate of the dollar debt avoided, percent")  # fmt: skip
+    sim.add_argument("--derechos", type=Path, default=Path("data/simulacion"))
+    sim.add_argument("--calendario", type=Path, default=Path("data/calendario"))
+    sim.add_argument("--conciliacion", type=Path, default=Path("data/conciliacion"))
+    sim.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
+    sim.add_argument("--descargas", type=Path, default=Path("manifests/downloads.csv"))
+    sim.add_argument("--zip-desde", default="SRC-1375")
+    sim.add_argument("--zip-hasta", default="SRC-1491")
+    sim.add_argument("--pi", default="SRC-1566")
+    sim.add_argument(
+        "--cobro-desde", default="2026-01", help="first base month for collected/estimated"
+    )
+    sim.add_argument("--alicuotas", type=Path, default=Path("alicuotas/eventos.csv"))
+    sim.add_argument("--reservas", type=float, default=49_323.0,
+                     help="BCRA gross reserves at the start, millions of USD")  # fmt: skip
+    sim.add_argument(
+        "--depositos-tesoro", type=float, default=1_230.0, help="Treasury FX at the start, MUSD"
+    )
+    for name in ("financiamiento", "depositos", "compras", "pagados_en_pesos",
+                 "colocados_por_pesos"):  # fmt: skip
+        sim.add_argument(f"--{name.replace('_', '-')}", type=Path,
+                         default=flu.get_default(name))  # fmt: skip
+    sim.add_argument("--out", type=Path, default=Path("data/simulacion"))
+    sim.set_defaults(func=cmd_simular)
+
+    gra = sub.add_parser("graficos", help="report: bar charts, one currency per panel")
+    gra.add_argument("--a3500", type=Path, default=Path("series/bcra_a3500.csv"))
+    gra.add_argument("--corte", default="2026-06-30")
+    gra.add_argument("--conciliacion", type=Path, default=Path("data/conciliacion"))
+    gra.add_argument("--calendario", type=Path, default=Path("data/calendario"))
+    gra.add_argument("--simulacion", type=Path, default=Path("data/simulacion"))
+    gra.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
+    gra.add_argument("--fmi", type=Path, default=Path("series/fmi_balanza_proyectada.csv"))
+    gra.add_argument("--out", type=Path, default=Path("data/informe"))
+    gra.set_defaults(func=cmd_graficos)
     return parser
 
 

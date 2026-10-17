@@ -1,14 +1,21 @@
-"""Assemble the report: informe/*.md + docs/GLOSARIO.md -> data/informe/informe.html.
+"""Assemble the report: informe/*.md + docs/GLOSARIO.md -> data/informe/informe.html, and with
+--docx also informe.docx.
 
-Needs pandoc. The Sankey pages from `argfx flujos` must sit next to the output, since
-the chapters embed them with `<iframe src="flujos_....html">`.
+Needs pandoc. The Sankey pages from `argfx flujos` and the charts from `argfx graficos` must sit
+next to the output, since the chapters embed them with `<iframe src="....html">`. For Word, each
+embedded page is captured as an image with headless Chrome.
+
+The first time a glossary acronym appears in the text it links to its entry.
 """
 
 from __future__ import annotations
 
 import argparse
 import re
+import shutil
 import subprocess
+import tempfile
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +44,9 @@ blockquote { border-left:3px solid var(--gold); margin:1rem 0; padding:.2rem 1re
   color:var(--muted); }
 iframe.sankey { width:100%; height:560px; border:1px solid var(--rule); border-radius:8px;
   background:#fff; }
+iframe.grafico { width:100%; height:500px; border:1px solid var(--rule); border-radius:8px;
+  background:#fff; }
+a.glosario { color:inherit; text-decoration:underline dotted; text-underline-offset:3px; }
 nav#TOC { font-size:13.5px; border:1px solid var(--rule); border-radius:8px; padding:8px 16px; }
 nav#TOC ul { padding-left:18px; } a { color:#4E80EE; }
 footer { margin-top:4rem; color:var(--muted); font-size:12px; }
@@ -53,10 +63,69 @@ def chapters(src: Path) -> list[Path]:
     return sorted(p for p in src.glob("*.md") if re.match(r"\d\d_", p.name))
 
 
-def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
+IFRAME = re.compile(
+    r'<iframe class="(sankey|grafico)" src="([^"]+)\.html" title="([^"]+)"></iframe>'
+)
+ENTRY = re.compile(r"^\*\*(.+?)\.\*\*", re.M)
+ACRONYM = re.compile(r"\b[A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ0-9]+\b")
+SKIP_TERMS = {"SRC", "USD", "DE", "Y"}
+
+
+def slug(text: str) -> str:
+    plain = unicodedata.normalize("NFD", text).encode("ascii", "ignore").decode().lower()
+    return "g-" + re.sub(r"[^a-z0-9]+", "-", plain).strip("-")
+
+
+def glossary_with_anchors(glossary: str) -> tuple[str, dict[str, str]]:
+    """Give each entry an anchor and map every acronym in its title to it."""
+    terms: dict[str, str] = {}
+
+    def anchor(m: re.Match[str]) -> str:
+        title = m.group(1)
+        sid = slug(title)
+        for term in ACRONYM.findall(title):
+            if term not in SKIP_TERMS:
+                terms.setdefault(term, sid)
+        return f"[**{title}.**]{{#{sid}}}"
+
+    return ENTRY.sub(anchor, glossary), terms
+
+
+def link_first_uses(body: str, terms: dict[str, str]) -> str:
+    """Link the first use of each acronym in running text: not in headings, tables, captions,
+    embedded pages or code."""
+    pending = dict(terms)
+    out = []
+    for line in body.splitlines():
+        if not pending or line.startswith(("#", "|", "<", "*Fuente", "*Gráfico", "*Diagrama",
+                                           "*Cuadro", "    ", "```", ">")):  # fmt: skip
+            out.append(line)
+            continue
+
+        def repl(m: re.Match[str], line: str = line) -> str:
+            term = m.group(0)
+            before = line[: m.start()]
+            # Inside a code span or an existing link target: leave it.
+            if before.count("`") % 2 or before.endswith(("[", "(#", "/")) or term not in pending:
+                return term
+            return f"[{term}](#{pending.pop(term)}){{.glosario}}"
+
+        out.append(ACRONYM.sub(repl, line))
+    return "\n".join(out)
+
+
+TITLE = "La deuda en dos monedas"
+SUBTITLE = "Pesos y dólares de la deuda pública argentina, 2023-2026"
+
+
+def assemble(src: Path, glossary: Path) -> str:
+    gloss, terms = glossary_with_anchors(glossary.read_text(encoding="utf-8"))
     parts = [p.read_text(encoding="utf-8") for p in chapters(src)]
-    parts.append(glossary.read_text(encoding="utf-8"))
-    body = "\n\n".join(parts)
+    return link_first_uses("\n\n".join(parts), terms) + "\n\n" + gloss
+
+
+def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
+    body = assemble(src, glossary)
     head = (
         f"<link rel='stylesheet' href='{FONTS}'>\n<style>{CSS}</style>\n"
         "<meta name='viewport' content='width=device-width, initial-scale=1'>"
@@ -77,8 +146,8 @@ def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
             "--standalone",
             "--toc",
             "--toc-depth=1",
-            "--metadata=title:La deuda en dos monedas",
-            "--metadata=subtitle:Pesos y dólares de la deuda pública argentina, 2023-2026",
+            f"--metadata=title:{TITLE}",
+            f"--metadata=subtitle:{SUBTITLE}",
             f"--metadata=date:Borrador del {date}",
             "--metadata=lang:es",
             f"--include-in-header={header}",
@@ -95,15 +164,64 @@ def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
     return out
 
 
+CHROME = (
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "google-chrome",
+    "chromium",
+)
+WINDOW = {"sankey": "1400,760", "grafico": "900,500"}
+
+
+def capture(page: Path, kind: str, png: Path) -> None:
+    """Screenshot an embedded page with headless Chrome, at twice the resolution."""
+    chrome = next((c for c in CHROME if Path(c).exists() or shutil.which(c)), None)
+    if chrome is None:
+        raise SystemExit("hace falta Google Chrome o Chromium para pasar los gráficos a imagen")
+    subprocess.run(
+        [chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+         "--force-device-scale-factor=2", "--virtual-time-budget=8000",
+         f"--window-size={WINDOW[kind]}", f"--screenshot={png}", page.resolve().as_uri()],
+        check=True, capture_output=True,
+    )  # fmt: skip
+    if not png.is_file():
+        raise SystemExit(f"no se pudo capturar {page}")
+
+
+def build_docx(src: Path, glossary: Path, out: Path, date: str) -> Path:
+    """The same text in Word, with every embedded page as an image."""
+    pages = out.parent
+    with tempfile.TemporaryDirectory() as tmp:
+
+        def image(m: re.Match[str]) -> str:
+            kind, name, _ = m.groups()
+            png = Path(tmp) / f"{name}.png"
+            capture(pages / f"{name}.html", kind, png)
+            return f"![]({png}){{width=100%}}"
+
+        body = IFRAME.sub(image, assemble(src, glossary))
+        if "<iframe" in body:
+            raise SystemExit("quedó un iframe sin convertir")
+        subprocess.run(
+            ["pandoc", "--from=markdown", "--to=docx", "--toc", "--toc-depth=1",
+             f"--metadata=title:{TITLE}", f"--metadata=subtitle:{SUBTITLE}",
+             f"--metadata=date:Borrador del {date}", "--metadata=lang:es-AR", "-o", str(out)],
+            input=body, text=True, check=True,
+        )  # fmt: skip
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--src", type=Path, default=ROOT / "informe")
     ap.add_argument("--glosario", type=Path, default=ROOT / "docs" / "GLOSARIO.md")
     ap.add_argument("--out", type=Path, default=ROOT / "data" / "informe" / "informe.html")
     ap.add_argument("--fecha", default="17-10-2026")
+    ap.add_argument("--docx", action="store_true", help="also write informe.docx next to it")
     a = ap.parse_args()
     a.out.parent.mkdir(parents=True, exist_ok=True)
     print(build(a.src, a.glosario, a.out, a.fecha))
+    if a.docx:
+        print(build_docx(a.src, a.glosario, a.out.with_suffix(".docx"), a.fecha))
 
 
 if __name__ == "__main__":

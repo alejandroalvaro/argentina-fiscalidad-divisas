@@ -4,9 +4,13 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **A 3500.** Tipo de cambio de referencia que publica el BCRA cada día hábil (Comunicación A 3500). El informe lo usa para pasar pesos a dólares, y al revés, cuando hace falta comparar.
 
+**Activos financieros.** En el esquema ahorro-inversión-financiamiento, lo que el sector público hace con pesos que no es gastar ni pagar deuda: depositarlos en el BCRA o en el Banco Nación, comprar títulos, prestar. El "aumento" es colocar pesos en esos activos; el "uso", retirarlos. (Pesos.)
+
 **Adelantos transitorios.** Préstamos del BCRA al Tesoro en pesos, con límites fijados en la Carta Orgánica del BCRA. Crean base monetaria. (Pesos.)
 
 **Ahorro-inversión-financiamiento (AIF).** Esquema con que la Secretaría de Hacienda publica las cuentas del sector público nacional en base caja: ingresos, gastos, resultado y fuentes y aplicaciones financieras. Clasifica la deuda por la moneda en que está escrita, de modo que llama "moneda extranjera" a deuda que se paga en pesos (capítulo 7). (Pesos.)
+
+**ANSES.** Administración Nacional de la Seguridad Social. Paga jubilaciones y otras prestaciones, y administra el FGS. Forma parte del sector público nacional. (Pesos.)
 
 **ARCA.** Agencia de Recaudación y Control Aduanero, ex AFIP. Recauda los derechos de exportación y publica los archivos mensuales de exportaciones por posición.
 
@@ -22,7 +26,11 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Base monetaria.** Billetes y monedas en circulación más los depósitos de los bancos en sus cuentas corrientes en el BCRA. El BCRA la amplía cuando compra divisas, le presta al Tesoro o paga intereses, y la reduce cuando vende divisas o coloca pasivos remunerados. (Pesos.)
 
+**BCB.** Banco Central do Brasil, el banco central de Brasil (anexo B).
+
 **BCRA.** Banco Central de la República Argentina. Emite los pesos, administra las reservas y opera en el mercado de cambios.
+
+**BID y CAF.** Banco Interamericano de Desarrollo y Banco de Desarrollo de América Latina y el Caribe. Organismos multilaterales que le prestan al Tesoro en dólares, junto con el Banco Mundial. (Dólares.)
 
 **Blend.** Esquema vigente entre diciembre de 2023 y abril de 2025 por el que los exportadores liquidaban el 80% de sus divisas en el mercado oficial y el 20% por el contado con liquidación. (Dólares.)
 
@@ -34,9 +42,13 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **BOPREAL.** Bonos para la Reconstrucción de una Argentina Libre, emitidos por el BCRA en dólares desde 2024 para cancelar deudas comerciales de importadores. (Dólares, emitidos por el BCRA.)
 
+**CAFCI.** Cámara Argentina de Fondos Comunes de Inversión. Publica el patrimonio de los fondos por tipo.
+
 **Capitalización de intereses.** Los intereses no se pagan en cada período: se suman al capital y se pagan al vencimiento. El resultado fiscal en base caja no los registra hasta entonces (D-009). (Pesos.)
 
 **Caución.** Préstamo de corto plazo garantizado con títulos, que se pacta en la bolsa. Los fondos comunes de mercado de dinero colocan parte de su cartera en cauciones. (Pesos.)
+
+**CEPA.** Centro de Economía Política Argentina, centro de estudios privado. Se cita una estimación suya de reservas netas.
 
 **Cepo.** Nombre corriente del conjunto de restricciones a la compra de divisas por personas y empresas. Se levantó para personas humanas el 14 de abril de 2025.
 
@@ -45,6 +57,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Circuito de los dólares.** Las entradas y salidas de dólares del país y del sector público: exportaciones, importaciones, intereses, organismos, mercado, atesoramiento y reservas. Lo comandan los exportadores y los prestamistas (D-016).
 
 **Circuito de los pesos.** Las entradas y salidas de pesos del Tesoro y del BCRA: impuestos, gasto, deuda en pesos, emisión y pasivos remunerados. Lo comandan el Tesoro y el BCRA (D-016).
+
+**CNV.** Comisión Nacional de Valores. Regula el mercado de capitales y publica las carteras de los fondos comunes.
 
 **Consolidación.** Descontar la deuda que una parte del sector público tiene con otra (por ejemplo, las Letras Intransferibles en manos del BCRA), para medir solo lo que se le debe a terceros.
 
@@ -83,6 +97,10 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Fórmula móvil de hidrocarburos.** La alícuota de los derechos de exportación del crudo, el gas y varios combustibles depende del precio internacional del crudo: 0% hasta un precio base, el tope a partir de un precio de referencia y una línea recta en el medio (Decreto 488/2020). Desde julio de 2026, el tope de seis posiciones de combustibles baja todos los meses hasta llegar a 0% en junio de 2027 (Decreto 566/2026). (Dólares.)
 
 **Huella sha256.** Código de 64 caracteres que se calcula sobre el contenido de un archivo y cambia si cambia un solo byte. El informe guarda cada documento original con su huella, para que cualquiera pueda verificar que es el mismo.
+
+**Identidad entre regímenes.** Resultado del modelo del anexo A: si el BCRA compra todos los dólares que se liquidan, cobrar el derecho de exportación en pesos o en dólares deja al sector público consolidado con los mismos dólares y la misma deuda en pesos. Cambia el bolsillo (Tesoro o BCRA) y el momento.
+
+**INDEC.** Instituto Nacional de Estadística y Censos. Publica el índice de precios al consumidor (IPC) con que el informe pasa los pesos de cada mes a pesos de agosto de 2026.
 
 **Interés devengado.** El interés que corresponde a un período, se pague o no. Se distingue del interés pagado (base caja). La diferencia es el interés capitalizado (D-009). (Pesos.)
 
@@ -126,13 +144,17 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Sankey (diagrama de).** Diagrama de flujos en que el ancho de cada banda es proporcional al monto. En este informe, a la izquierda va lo que entra y a la derecha lo que sale, y cada diagrama está en una sola moneda.
 
+**Sector público nacional (SPN).** La Administración Central (el Tesoro y los ministerios), los organismos descentralizados, la ANSES con su FGS, las empresas y los fondos fiduciarios nacionales. No incluye al BCRA ni al Banco Nación. Es el perímetro del resultado fiscal que publica Hacienda. (Pesos.)
+
 **Selic e IPCA.** La tasa de política del Banco Central do Brasil y el índice de precios al consumidor de Brasil. Gran parte de la deuda pública brasileña se ajusta por una u otra (anexo B).
 
 **SIGADE.** Sistema de Gestión y Análisis de la Deuda. La base de la Oficina Nacional de Crédito Público con cada operación de deuda del Tesoro. Sus montos están en dólares (unidades).
 
-**Superávit fiscal.** Ingresos mayores que gastos. Un superávit en pesos es un sobrante de pesos: para pagar deuda en dólares con él, hay que comprar los dólares (D-016). (Pesos.)
+**Superávit fiscal.** El Estado le sacó al sector privado, con impuestos, más pesos de los que le puso con el gasto (superávit primario) o con el gasto y los intereses (superávit financiero). Los pesos que vuelven por impuestos dejan de circular: cobrar impuestos retira pesos de la economía, así como gastar los pone. Un superávit en pesos se mide en pesos; para pagar deuda en dólares con él, alguien tiene que vender los dólares y el Tesoro comprarlos. (Pesos.)
 
 **TAMAR.** Tasa que pagan los bancos grandes por depósitos a plazo fijo de más de mil millones de pesos. Sirve de referencia para bonos duales. (Pesos.)
+
+**Tasa efectiva.** Lo que rinde de verdad en un año una tasa nominal cuando el interés se reinvierte. Una tasa nominal del 100% anual en pases a un día, reinvertida cada día, rinde (1 + 1/365)^365 − 1 = 171% en un año. (Pesos.)
 
 **Tesoro.** El Tesoro Nacional, que emite la deuda de la Administración Central y recauda los impuestos.
 
@@ -140,6 +162,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **TMU.** Memorando técnico de entendimiento del acuerdo con el FMI. Define cómo se miden las metas, entre ellas las reservas netas (D-001).
 
-**Utilidades del BCRA.** La ganancia contable del BCRA que se transfiere al Tesoro. En las planillas de Hacienda figura como "rentas percibidas del BCRA" y queda fuera de los ingresos, de modo que no mejora el resultado fiscal publicado y aparece solo como fuente de financiamiento. En el mandato sumó $ 42,9 billones de pesos de agosto de 2026, con transferencias en abril de 2025 y mayo de 2026. (Pesos.)
+**USD.** Dólares estadounidenses, la moneda que emite la Reserva Federal de los Estados Unidos. El informe expresa en millones de USD todo lo que se paga en divisas. (Dólares.)
+
+**Utilidades del BCRA.** La ganancia contable del BCRA que se transfiere al Tesoro. En las planillas de Hacienda figura como "rentas percibidas del BCRA" y queda fuera de los ingresos, de modo que no mejora el resultado fiscal publicado y aparece solo como fuente de financiamiento. En el mandato sumó $ 42,9 billones de pesos de agosto de 2026, con transferencias en abril de 2025 y mayo de 2026. En 2024 y 2025 fueron en su mayor parte contables: revaluación de activos en dólares y ajuste por CER de bonos del Tesoro, sin cobro en efectivo (capítulo 3). Según el artículo 38 de la Carta Orgánica, las pérdidas no las cubre el Tesoro: se imputan a reservas y capital del BCRA. (Pesos.)
 
 **Valor nominal (VNO).** El capital escrito en un bono, que puede diferir de lo que se paga por él. El Tesoro recompró deuda al BCRA por debajo de su valor nominal (capítulo 6).

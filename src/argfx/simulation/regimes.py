@@ -15,8 +15,9 @@ Order inside a month:
    account (base money shrinks);
 5. sterilization of part of the pesos the BCRA issued;
 6. the fund rule of regime (d);
-7. debt service: the Treasury pays with its FX deposits; what is missing it buys from the BCRA
-   with its pesos and, if those fall short, with pesos borrowed from the private sector.
+7. debt service: new FX debt, if any, enters the Treasury's FX deposits, and the Treasury pays
+   out of them; what is missing it buys from the BCRA with its pesos and, if those fall short,
+   with pesos borrowed from the private sector.
 """
 
 from __future__ import annotations
@@ -33,6 +34,8 @@ class Month:
     duty_usd: float  # duty assessed, millions of USD (same in every regime)
     ars_per_usd: float
     payments_usd: float  # Treasury FX debt service to holders outside the public sector
+    new_debt_usd: float = 0.0  # FX debt disbursed to the Treasury in the month
+    bcra_buys: float | None = None  # overrides Behavior.bcra_buys for the month
 
 
 @dataclass(frozen=True)
@@ -100,7 +103,7 @@ def simulate(path: list[Month], regime: Regime, behavior: Behavior, opening: Ope
             to_treasury = 0.0 if regime.fund else m.duty_usd
         rest = m.exports_usd - (m.duty_usd if regime.duty_in_usd else 0.0)
         sold = rest * (1 - regime.retained_abroad)
-        bcra = sold * behavior.bcra_buys
+        bcra = sold * (behavior.bcra_buys if m.bcra_buys is None else m.bcra_buys)
         led.post(m.month, "liquidacion al BCRA",
                  ("EXP", "divisas", -bcra), ("BCRA", "divisas", bcra),
                  ("BCRA", "base", -bcra * e), ("EXP", "base", bcra * e))  # fmt: skip
@@ -135,6 +138,13 @@ def simulate(path: list[Month], regime: Regime, behavior: Behavior, opening: Ope
             if prepaid:
                 _pay(led, m.month, "cancelacion anticipada", "fondo_usd", prepaid)
 
+        if m.new_debt_usd:
+            led.post(m.month, "deuda nueva en divisas",
+                     ("ROW", "divisas", -m.new_debt_usd), ("BCRA", "divisas", m.new_debt_usd),
+                     ("BCRA", "dep_tes_usd", -m.new_debt_usd),
+                     ("TES", "dep_tes_usd", m.new_debt_usd),
+                     ("TES", "deuda_tes_usd", -m.new_debt_usd),
+                     ("ROW", "deuda_tes_usd", m.new_debt_usd))  # fmt: skip
         need = m.payments_usd
         bought = max(0.0, need - led.get("TES", "dep_tes_usd"))
         borrowed = max(0.0, bought * e - led.get("TES", "dep_tes_ars"))
