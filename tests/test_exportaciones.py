@@ -34,3 +34,11 @@ def test_reads_the_export_member_and_estimates_by_position(tmp_path: Path) -> No
     # Crude at a price of 70 pays the top 8%: 80.000 USD more.
     assert row["derecho_estimado_musd"] == round((480_000 + 22_500 + 80_000) / 1e6, 1)
     assert row["fob_con_alicuota_musd"] == 3.5
+
+
+def test_reads_members_nested_in_a_month_folder(tmp_path: Path) -> None:
+    z = tmp_path / "201712.zip"
+    with zipfile.ZipFile(z, "w") as zf:
+        zf.writestr("202606/impo_agregado_2026_06.lst", "ignored")
+        zf.writestr("202606/total_expo_agregado_2026_06.lst", LST)
+    assert read_month(z)[1]["1201.90.00"] == 2_000_000.0
