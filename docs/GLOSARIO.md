@@ -10,6 +10,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Balance cambiario.** Registro mensual del BCRA de todas las compras y ventas de divisas en el mercado de cambios, por concepto y por sector. Es la fuente de la tabla de fuentes y usos de dólares. (Dólares.)
 
+**Base caja.** Registrar un ingreso o un gasto cuando entra o sale la plata, y no cuando se genera la obligación. El resultado fiscal argentino se publica en base caja, y por eso no muestra los intereses que se capitalizan hasta que se pagan (D-009). (Pesos.)
+
 **Base monetaria.** Billetes y monedas en circulación más los depósitos de los bancos en sus cuentas corrientes en el BCRA. El BCRA la amplía cuando compra divisas, le presta al Tesoro o paga intereses, y la reduce cuando vende divisas o coloca pasivos remunerados. (Pesos.)
 
 **BCRA.** Banco Central de la República Argentina. Emite los pesos, administra las reservas y opera en el mercado de cambios.
@@ -20,9 +22,9 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **BOPREAL.** Bonos para la Reconstrucción de una Argentina Libre, emitidos por el BCRA en dólares desde 2024 para cancelar deudas comerciales de importadores. (Dólares, emitidos por el BCRA.)
 
-**Caución.** Préstamo de corto plazo garantizado con títulos, que se pacta en la bolsa. Los fondos comunes de mercado de dinero colocan parte de su cartera en cauciones. (Pesos.)
-
 **Capitalización de intereses.** Los intereses no se pagan en cada período: se suman al capital y se pagan al vencimiento. El resultado fiscal en base caja no los registra hasta entonces (D-009). (Pesos.)
+
+**Caución.** Préstamo de corto plazo garantizado con títulos, que se pacta en la bolsa. Los fondos comunes de mercado de dinero colocan parte de su cartera en cauciones. (Pesos.)
 
 **Cepo.** Nombre corriente del conjunto de restricciones a la compra de divisas por personas y empresas. Se levantó para personas humanas el 14 de abril de 2025.
 
@@ -33,6 +35,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Circuito de los pesos.** Las entradas y salidas de pesos del Tesoro y del BCRA: impuestos, gasto, deuda en pesos, emisión y pasivos remunerados. Lo comandan el Tesoro y el BCRA (D-016).
 
 **Consolidación.** Descontar la deuda que una parte del sector público tiene con otra (por ejemplo, las Letras Intransferibles en manos del BCRA), para medir solo lo que se le debe a terceros.
+
+**Cruce entre circuitos.** El único punto donde los pesos del sector público pasan al circuito de los dólares: los pesos que el Tesoro aplica a obligaciones en dólares, netos. Incluye las compras de divisas, al BCRA o en el mercado, y la deuda en dólares con el BCRA que el Tesoro cancela con pesos, como la recompra de Letras Intransferibles de mayo de 2026. En los diagramas figura como "Hacia obligaciones en dólares" del lado de los pesos y como "Cubierto con pesos" del lado de los dólares (D-017).
 
 **DEG.** Derecho especial de giro. Unidad de cuenta del FMI, formada por una canasta de cinco monedas. La deuda con el FMI está en DEG y su valor en dólares cambia con la cotización de la canasta.
 
@@ -56,6 +60,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **FOB.** Free on board. Valor de la mercadería puesta en el puerto de embarque, sin flete ni seguro. Es la base de los derechos de exportación.
 
+**Fórmula móvil de hidrocarburos.** La alícuota de los derechos de exportación del crudo, el gas y varios combustibles depende del precio internacional del crudo: 0% hasta un precio base, el tope a partir de un precio de referencia y una línea recta en el medio (Decreto 488/2020). Desde julio de 2026, el tope de seis posiciones de combustibles baja todos los meses hasta llegar a 0% en junio de 2027 (Decreto 566/2026). (Dólares.)
+
 **LECAP.** Letras del Tesoro en pesos a tasa fija que capitalizan intereses mensualmente y pagan todo al vencimiento, a menos de un año. (Pesos.)
 
 **LEFI.** Letras Fiscales de Liquidez. Letras del Tesoro que reemplazaron a los pases del BCRA entre julio de 2024 y julio de 2025. Las tenían los bancos y las pagaba el Tesoro. (Pesos.)
@@ -65,6 +71,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Letras Intransferibles.** Letras en dólares que el Tesoro le entregó al BCRA a cambio de reservas para pagar deuda, desde 2006. No se pueden negociar. Parte se recompró en 2025 y 2026 con fondos del FMI y con utilidades del BCRA. (Dólares, deuda dentro del sector público.)
 
 **MLC.** Mercado libre de cambios. El mercado oficial donde se compran y venden divisas, con el BCRA como regulador y participante.
+
+**Moneda de pago.** La moneda en que efectivamente se paga una deuda, que puede diferir de la moneda en que está escrita. Un bono dólar linked está escrito en dólares y se paga en pesos. El informe clasifica los flujos por moneda de pago, como el cuadro A.5 del boletín de la Secretaría de Finanzas.
 
 **NCM.** Nomenclatura Común del Mercosur. Código de cada producto en el comercio exterior. Las alícuotas de los derechos se fijan por posición NCM.
 
@@ -89,3 +97,5 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Tesoro.** El Tesoro Nacional, que emite la deuda de la Administración Central y recauda los impuestos.
 
 **Tipo de cambio único.** Un solo precio para comprar y vender divisas en el mercado oficial, sin desdoblamiento ni blend.
+
+**Utilidades del BCRA.** La ganancia contable del BCRA que se transfiere al Tesoro. En las planillas de Hacienda figura como "rentas percibidas del BCRA" y queda fuera de los ingresos, de modo que no mejora el resultado fiscal publicado y aparece solo como fuente de financiamiento. En el mandato sumó $ 42,9 billones de pesos de agosto de 2026, con transferencias en abril de 2025 y mayo de 2026. (Pesos.)
