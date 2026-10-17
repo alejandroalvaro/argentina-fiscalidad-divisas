@@ -1,0 +1,27 @@
+mes,fila_A4_seccion2,instrumento_A4,tipo_segun_moneda_de_pago_ONCP,a4_monto_usd_m,canje_sin_efectivo_oncp_usd_m,pago_al_vencimiento_o_cancelacion_usd_m,clasificacion,filas_oncp_canje,nota
+2025-10,234,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,3231.1,0.0,3231.1,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2025-11,234,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,4010,0.0,4010,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2026-01,234,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,7770.9,4793.9,2977.0,mixto o aproximado: A.4 agrega todas las LELINK en una fila; baja por conversion ONCP del mes tomada en USD millones,_30-09-26!fila11; _30-09-26!fila12; _30-09-26!fila13; _30-09-26!fila14,la hoja ONCP no indica unidad; la resta puede quedar negativa si A.4 mide distinto
+2026-02,234,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,2394.2,1539.4,854.8,mixto o aproximado: A.4 agrega todas las LELINK en una fila; baja por conversion ONCP del mes tomada en USD millones,_30-09-26!fila15,la hoja ONCP no indica unidad; la resta puede quedar negativa si A.4 mide distinto
+2026-04,234,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,3888.4,1626.3,2262.1,mixto o aproximado: A.4 agrega todas las LELINK en una fila; baja por conversion ONCP del mes tomada en USD millones,_30-09-26!fila22,la hoja ONCP no indica unidad; la resta puede quedar negativa si A.4 mide distinto
+2023-12,299,BONAR DUAL/U$S/28-02-2024,BONAR DUAL U$S,2449.5,0.0,2449.5,"inseparable: baja anticipada (antes del vencimiento 28-02-2024) sin conversion en ONCP; puede ser rescate, canje en licitacion o cancelacion",,"A.4 la cuenta en la seccion de amortizaciones, canjes y cancelaciones"
+2024-02,299,BONAR DUAL/U$S/28-02-2024,BONAR DUAL U$S,4938.7,0.0,4938.7,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2025-01,300,BONAR DUAL/U$S/31-01-2025,BONAR DUAL U$S,8596.4,0.0,8596.4,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2024-03,323,BONAR DUAL/U$S/29-11-2024,BONAR DUAL U$S,10914.1,10914.1,-0.0,canje sin efectivo (todo el monto),1-12-2024!fila24; 1-12-2024!fila39; 1-12-2024!fila54; 1-12-2024!fila69,
+2024-11,323,BONAR DUAL/U$S/29-11-2024,BONAR DUAL U$S,144.4,0.0,144.4,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2024-03,324,BONAR DUAL/U$S/30-04-2024,BONAR DUAL U$S,2885.6,2885.6,0.0,canje sin efectivo (todo el monto),1-12-2024!fila20; 1-12-2024!fila35; 1-12-2024!fila50; 1-12-2024!fila65,
+2024-04,324,BONAR DUAL/U$S/30-04-2024,BONAR DUAL U$S,753.5,0.0,753.5,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2024-03,325,BONAR DUAL/U$S/30-06-2024,BONAR DUAL U$S,2703.2,2703.2,-0.0,canje sin efectivo (todo el monto),1-12-2024!fila21; 1-12-2024!fila36; 1-12-2024!fila51; 1-12-2024!fila66,
+2024-06,325,BONAR DUAL/U$S/30-06-2024,BONAR DUAL U$S,293.6,0.0,293.6,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2024-07,325,BONAR DUAL/U$S/30-06-2024,BONAR DUAL U$S,2372.3,0.0,2372.3,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,vencimiento 30-06-2024 cayo en fin de semana; liquidado el mes siguiente
+2024-03,326,BONAR DUAL/U$S/30-08-2024,BONAR DUAL U$S,5329,5329.0,0.0,canje sin efectivo (todo el monto),1-12-2024!fila22; 1-12-2024!fila37; 1-12-2024!fila52; 1-12-2024!fila67,
+2024-08,326,BONAR DUAL/U$S/30-08-2024,BONAR DUAL U$S,1546.3,0.0,1546.3,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2025-06,407,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,2092.4,0.0,2092.4,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2025-12,408,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,2511.3,0.0,2511.3,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2026-05,409,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,288.6,288.6,0.0,canje sin efectivo (todo el monto),_30-09-26!fila23,
+2026-06,409,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,4855.2,2804.7,2050.5,mixto: parte canje y parte vencimiento,_30-09-26!fila32; _30-09-26!fila33,
+2024-03,410,"BONTE/U$S/0,40%/30-04-2024",BONTE U$S paga en pesos,1580.9,1580.9,0.0,canje sin efectivo (todo el monto),1-12-2024!fila12; 1-12-2024!fila27; 1-12-2024!fila42; 1-12-2024!fila57,
+2024-04,410,"BONTE/U$S/0,40%/30-04-2024",BONTE U$S paga en pesos,2417.4,0.0,2417.4,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2025-03,411,"BONTE/U$S/0,5%/31-03-2025",BONTE U$S paga en pesos,328.8,0.0,328.8,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
+2024-03,412,"BONTE/U$S/0,5%/30-09-2024",BONTE U$S paga en pesos,1760,1760.0,0.0,canje sin efectivo (todo el monto),1-12-2024!fila23; 1-12-2024!fila38; 1-12-2024!fila53; 1-12-2024!fila68,
+2024-09,412,"BONTE/U$S/0,5%/30-09-2024",BONTE U$S paga en pesos,315,0.0,315,pago al vencimiento o cancelacion (sin baja por canje en ONCP ese mes),,
