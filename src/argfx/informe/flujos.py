@@ -4,8 +4,9 @@ Two flow tables, one per currency, never added to each other:
 - dollars: the BCRA balance cambiario (lote AH, SRC-1604), gross inflows and outflows of the
   foreign-exchange market, closed by the change in reserves from transactions. Millions of USD.
 - pesos: the cash-basis result of the national public sector and its financial sources and uses
-  (lote AM, Secretaría de Hacienda), closed by the financial result. Millions of pesos at the
-  prices of the last month with a CPI index (INDEC, lote AM), deflated month by month.
+  (Secretaría de Hacienda, lote AM; financing table corrected in lote AN), closed by the
+  financial result. Millions of pesos at the prices of the last month with a CPI index (INDEC,
+  lote AM), deflated month by month.
 
 Each table is a list of (origen, destino, monto) links around a single hub node, ready for a
 Sankey diagram. Inflows go origin -> hub and outflows hub -> destination; both sides add up to
@@ -87,9 +88,10 @@ class Flows:
         out = [(k, self.hub, v) for k, v in self.entradas.items() if v > 0]
         out += [(self.hub, k, v) for k, v in self.salidas.items() if v > 0]
         gap = self.descuadre
-        if gap < -0.5:
+        tol = 1e-6 * sum(self.entradas.values())  # rounding in the source tables
+        if gap < -tol:
             out.append((GAP, self.hub, -gap))
-        elif gap > 0.5:
+        elif gap > tol:
             out.append((self.hub, GAP, gap))
         return out
 
@@ -149,18 +151,17 @@ SPENDING = {
 FIN_IN = {
     "Deuda en pesos colocada": "endeudamiento_moneda_local_total_spn",
     "Deuda en divisas desembolsada (en pesos)": "endeudamiento_moneda_extranjera_total_spn",
+    "Uso de activos financieros": "disminucion_inversion_financiera_total_spn",
     "Otros pasivos (aumento)": "incremento_otros_pasivos_total_spn",
+    # Excluded from revenue by note (1) of each workbook, so only a financial source (lote AN).
+    "Utilidades del BCRA (rentas percibidas)": "rentas_percibidas_del_bcra_total_spn",
 }
 FIN_OUT = {
     "Deuda en pesos amortizada": "amortizacion_moneda_local_total_spn",
     "Deuda en divisas amortizada (en pesos)": "amortizacion_moneda_extranjera_total_spn",
+    "Activos financieros (aumento)": "inversion_financiera_total_spn",
     "Otros pasivos (disminución)": "disminucion_otros_pasivos_total_spn",
 }
-# The financial-asset lines are taken as the rest of each side's total: in lote AM the
-# `inversion_financiera_total_spn` column is near zero while total uses exceed amortizations by
-# trillions, and the totals do close with the financial result every month.
-FIN_IN_REST = ("Uso de activos financieros", "fuentes_financieras_total_spn")
-FIN_OUT_REST = ("Activos financieros (aumento)", "aplicaciones_financieras_total_spn")
 SUFFIX = "_millones_pesos_corrientes"
 
 
@@ -187,10 +188,8 @@ def ars_month(r: dict[str, str], f: dict[str, str]) -> tuple[dict[str, float], d
     )
     outs["Gasto de capital"] = _num(r, "gastos_de_capital")
     _add_signed("Intereses (deuda en pesos y en divisas)", -_num(r, "intereses_netos"), ins, outs)
-    for side, table, (rest, total) in ((ins, FIN_IN, FIN_IN_REST), (outs, FIN_OUT, FIN_OUT_REST)):
-        lines = {k: _num(f, c) for k, c in table.items()}
-        side.update(lines)
-        side[rest] = _num(f, total) - sum(lines.values())
+    ins.update({k: _num(f, c) for k, c in FIN_IN.items()})
+    outs.update({k: _num(f, c) for k, c in FIN_OUT.items()})
     return ins, outs
 
 
