@@ -155,7 +155,8 @@ def test_bcra_flows_close_with_the_change_of_the_base() -> None:
     }  # fmt: skip
     f = bcra_flows(factors, {"2024-01": 1.0, "2024-02": 2.0}, "2024-01", "2024-12")
     assert f.hub == HUB_BCRA and f.clave == "ars_bcra"
-    assert f.entradas["Compra de divisas al sector privado"] == 200
-    assert f.salidas["Pases"] == 145
-    assert f.salidas["Base monetaria (variación)"] == 80 - 5
+    # Buying dollars and paying interest take pesos out of the BCRA; pases bring them in.
+    assert f.salidas["Compra de divisas al sector privado"] == 200
+    assert f.entradas["Pases"] == 145
+    assert f.entradas["Emisión neta (aumento de la base monetaria)"] == 80 - 5
     assert abs(f.descuadre) < 1e-9
