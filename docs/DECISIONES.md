@@ -196,3 +196,13 @@ El informe mide cada circuito en su propia moneda, muestra dónde se cruzan (las
 - **La opacidad es un resultado.** Se documenta lo que costó reconstruir los datos: cuántos instrumentos, fuentes y formatos hubo que reunir, qué series oficiales no existen, qué cifras cambian de una publicación a otra y qué portales bloquean la descarga. Los `unresolved.md` de cada lote y las verificaciones de `docs/verificaciones/` son la evidencia.
 - **La metodología es un capítulo.** El trabajo con agentes (protocolo, búsqueda, validación, originales guardados por sha256, conciliación y reglas que no se negocian) se describe como método reproducible, con sus límites.
 - **Estructura del informe:** `docs/INFORME_ESTRUCTURA.md`.
+
+## D-017. Cada moneda en su unidad, gráficos por moneda y glosario (2026-10-17)
+
+**Origen.** Alejandro: "Tengamos como base expresar en pesos los pesos y en dólares los dólares. Y agreguemos un glosario. Me gustaría tener gráficos también (sobretodo en monedas separadas) algún sankey si es posible que muestre a lo largo del mandato por donde entran pesos/ dólares y salen. Y un gran glosario final."
+
+**Decisión.**
+- **Unidad base.** Los flujos y saldos en pesos se informan en pesos y los de dólares en dólares. La conversión a la otra moneda es la excepción: se usa solo para comparar, con el tipo de cambio y la fecha a la vista, y con la aclaración de D-016. Los pesos de distintos años se presentan en moneda corriente y, cuando se comparan entre años, también en moneda constante con el índice indicado.
+- **Gráficos por moneda.** Cada gráfico muestra una sola moneda. Donde un tema cruza las dos (las compras de dólares con pesos), van dos paneles, uno por moneda.
+- **Dos diagramas de Sankey del mandato.** Desde diciembre de 2023 hasta el último mes con dato: uno de pesos (por dónde entran y salen pesos del Tesoro y del BCRA) y otro de dólares (por dónde entran y salen dólares del país y de las reservas). Si alguna serie no cubre todo el período, el diagrama dice hasta cuándo llega.
+- **Glosario final.** Un glosario amplio al cierre del informe, en `docs/GLOSARIO.md` mientras se escribe, con cada sigla, instrumento y concepto que aparece en el texto.
