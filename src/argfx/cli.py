@@ -299,7 +299,7 @@ def cmd_flujos(args: argparse.Namespace) -> int:
         read_fx_interest(_cached_object(args.boletin_sha, "finanzas")),
         read_csv(args.depositos),
         read_purchases(args.compras),
-        read_paid_in_pesos(args.pagados_en_pesos),
+        read_paid_in_pesos(args.pagados_en_pesos, args.colocados_por_pesos),
     )
     ars = ars_flows(
         read_csv(t / "aif_base_caja_mensual_resultados.csv"),
@@ -436,8 +436,16 @@ def build_parser() -> argparse.ArgumentParser:
     flu.add_argument(
         "--pagados-en-pesos",
         type=Path,
-        default=Path("inbox/lote-ap/tablas/resumen_mensual_usd_pagan_en_pesos.csv"),
-        help="debt written in dollars and paid in pesos (lote AP)",
+        default=Path("inbox/lote-ar/tablas/amortizacion_caja_resumen_mensual_2023-12_2026-09.csv"),
+        help="debt written in dollars and paid in pesos, amortized in cash (lote AR)",
+    )
+    flu.add_argument(
+        "--colocados-por-pesos",
+        type=Path,
+        default=Path(
+            "inbox/lote-ar/tablas/colocaciones_licitacion_efectivo_total_mensual_vs_aif_me.csv"
+        ),
+        help="debt written in dollars and paid in pesos, placed for cash (lote AR)",
     )
     flu.add_argument("--desde", default="2023-12")
     flu.add_argument("--hasta", default="2026-09")
