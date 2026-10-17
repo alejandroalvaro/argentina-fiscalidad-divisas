@@ -258,6 +258,8 @@ def cmd_derechos(args: argparse.Namespace) -> int:
     return 0
 
 
+# Secretaría de Finanzas monthly boletín through 2026-09 (SRC-9002): debt payments by currency.
+BOLETIN_FINANZAS_SHA = "4f172f544df60ee73c325e2e3186f3091db87cd65e48132647fb25fd053cc7fd"
 # BCRA balance cambiario workbook through 2026-08 (lote AH, SRC-1604).
 BALANCE_CAMBIARIO_SHA = "fda73048a4e09a8ef4a1cd7998920e0a4862e41c137e8a158ebf66b19c0ef5b2"
 
@@ -265,37 +267,48 @@ BALANCE_CAMBIARIO_SHA = "fda73048a4e09a8ef4a1cd7998920e0a4862e41c137e8a158ebf66b
 def cmd_flujos(args: argparse.Namespace) -> int:
     from argfx.informe.flujos import (
         ars_flows,
+        fx_months,
+        read_a3500,
         read_balance_cambiario,
         read_cpi,
         read_csv,
+        read_fx_interest,
         sankey_html,
+        treasury_usd_flows,
         usd_flows,
         write_flows,
     )
 
     t = args.aif
+    financing = read_csv(args.financiamiento)
+    fx = fx_months(
+        read_a3500(args.a3500),
+        read_fx_interest(_cached_object(args.boletin_sha, "finanzas")),
+        read_csv(args.depositos),
+    )
+    ars = ars_flows(
+        read_csv(t / "aif_base_caja_mensual_resultados.csv"),
+        financing,
+        read_cpi(t / "indec_ipc_nacional_nivel_general_mensual.csv"),
+        fx,
+        args.desde,
+        args.hasta,
+    )
     flows = [
         usd_flows(
             read_balance_cambiario(_cached_object(args.balance_sha, "bcra")), args.desde, args.hasta
         ),
-        ars_flows(
-            read_csv(t / "aif_base_caja_mensual_resultados.csv"),
-            read_csv(args.financiamiento),
-            read_cpi(t / "indec_ipc_nacional_nivel_general_mensual.csv"),
-            args.desde,
-            args.hasta,
-        ),
+        # Same months as the peso table: a month without the fiscal result has no financing yet.
+        treasury_usd_flows(financing, fx, ars.desde, ars.hasta),
+        ars,
     ]
-    names = {"USD": "Dólares", "ARS": "Pesos"}
     for f in flows:
         path = write_flows(f, args.out)
-        title = (
-            f"{names[f.moneda]}: por dónde entraron y salieron, {f.desde} a {f.hasta} ({f.unidad})"
-        )
+        title = f"{f.hub}: por dónde entraron y salieron, {f.desde} a {f.hasta} ({f.unidad})"
         path.with_suffix(".html").write_text(sankey_html(f, title), encoding="utf-8")
         total = sum(f.entradas.values())
         print(
-            f"{f.moneda} {f.desde} a {f.hasta}: entradas {total:,.0f} {f.unidad},"
+            f"{f.clave or f.moneda} {f.desde} a {f.hasta}: entradas {total:,.0f} {f.unidad},"
             f" sin identificar {-f.descuadre:,.0f} -> {path}"
         )
     return 0
@@ -390,6 +403,15 @@ def build_parser() -> argparse.ArgumentParser:
             "inbox/lote-an/tablas/aif_base_caja_fuentes_y_aplicaciones_financieras_corregida.csv"
         ),
     )
+    flu.add_argument(
+        "--boletin-sha", default=BOLETIN_FINANZAS_SHA, help="boletín with sheet A.5 (SRC-9002)"
+    )
+    flu.add_argument(
+        "--depositos",
+        type=Path,
+        default=Path("inbox/lote-am/tablas/bcra_depositos_gobierno_nacional_fin_de_mes.csv"),
+    )
+    flu.add_argument("--a3500", type=Path, default=Path("series/bcra_a3500.csv"))
     flu.add_argument("--desde", default="2023-12")
     flu.add_argument("--hasta", default="2026-09")
     flu.add_argument("--out", type=Path, default=Path("data/informe"))
