@@ -436,6 +436,82 @@ def _previous(m: str) -> str:
     return f"{y - 1}-12" if mo == 1 else f"{y}-{mo - 1:02d}"
 
 
+# BCRA in pesos: the factors that explain the monetary base (Series.xlsm, sheet BASE
+# MONETARIA, SRC-1625), millions of current pesos. The sheet holds four blocks, all with a date
+# in the first column: daily changes, monthly sums (dated the 1st), monthly average balances and
+# yearly sums (dated January 1st). Only the monthly sums are read; the daily changes add up to
+# them in every month. A positive factor created base money, a negative one absorbed it, and the
+# change of the base closes the table.
+HUB_BCRA = "BCRA (base monetaria)"
+BASE_FACTORS = {
+    3: "Compra de divisas al sector privado",
+    4: "Divisas con el Tesoro",
+    5: "Adelantos transitorios al Tesoro",
+    6: "Utilidades transferidas al Tesoro",
+    7: "Otras operaciones con el Tesoro",
+    8: "Pases",
+    9: "LELIQ y NOTALIQ",
+    10: "Redescuentos y adelantos a bancos",
+    11: "Intereses, primas y remuneración de cuentas corrientes",
+    12: "LEBAC y NOBAC",
+    13: "Rescate de cuasimonedas",
+    14: "Operaciones con LEFI",
+    15: "Otros",
+}
+BASE_TOTAL, BASE_CHANGE = 2, 21
+
+
+def read_base_factors(xlsx: Path) -> dict[str, dict[str, float]]:
+    """Monthly factors of the monetary base, with the change of the base under "base"."""
+    from openpyxl import load_workbook
+
+    wb = load_workbook(xlsx, read_only=True, data_only=True)
+    rows = [
+        r
+        for r in wb["BASE MONETARIA"].iter_rows(min_row=10, values_only=True)
+        if isinstance(r[0], dt.datetime)
+    ]
+    starts = [i for i in range(1, len(rows)) if rows[i][0] < rows[i - 1][0]]
+    out = {}
+    for r in rows[starts[0] : starts[1]]:  # the monthly sums
+        month = {name: float(r[j] or 0) for j, name in BASE_FACTORS.items()}
+        month["base"] = float(r[BASE_CHANGE] or 0)
+        if abs(sum(v for k, v in month.items() if k != "base") - month["base"]) > 1:
+            raise ValueError(f"los factores no suman la variación de la base en {r[0]:%Y-%m}")
+        out[f"{r[0].year}-{r[0].month:02d}"] = month
+    return out
+
+
+def bcra_flows(
+    factors: dict[str, dict[str, float]], cpi: dict[str, float], desde: str, hasta: str
+) -> Flows:
+    """Pesos the BCRA created and absorbed, at prices of the last month of the window. Each
+    factor is netted over the window; the change of the base closes the table."""
+    months = _months(desde, hasta, factors, cpi)
+    if not months:
+        raise ValueError(f"sin meses con factores de la base e IPC entre {desde} y {hasta}")
+    base = cpi[months[-1]]
+    net: dict[str, float] = {}
+    for m in months:
+        k = base / cpi[m]
+        for name, v in factors[m].items():
+            if name == "base":
+                name = "Base monetaria (variación)"
+                v = -v  # a growing base is where the created pesos went
+            net[name] = net.get(name, 0.0) + k * v
+    ins, outs = _split(net)
+    return Flows(
+        "ARS",
+        f"millones de pesos de {months[-1]}",
+        months[0],
+        months[-1],
+        HUB_BCRA,
+        ins,
+        outs,
+        "ars_bcra",
+    )
+
+
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))

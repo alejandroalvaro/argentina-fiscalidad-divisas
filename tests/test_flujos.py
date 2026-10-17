@@ -2,8 +2,10 @@ from argfx.informe.flujos import (
     CROSS_ARS,
     CROSS_USD,
     GAP,
+    HUB_BCRA,
     FxMonth,
     ars_flows,
+    bcra_flows,
     sankey_html,
     treasury_usd_flows,
     usd_flows,
@@ -141,3 +143,19 @@ def test_dollar_debt_paid_in_pesos_moves_to_the_peso_table() -> None:
     assert t.salidas["Deuda en divisas amortizada"] == 15 - 5
     assert t.entradas["Deuda en divisas desembolsada"] == 10 - 1
     assert abs(t.descuadre) < 1e-9
+
+
+def test_bcra_flows_close_with_the_change_of_the_base() -> None:
+    # January: buys 100 of dollars from the private sector, absorbs 70 with pases and pays 10
+    # of interest; the base grows 40. February, prices doubled: the base falls 5.
+    factors = {
+        "2024-01": {"Compra de divisas al sector privado": 100.0, "Pases": -70.0,
+                    "Intereses, primas y remuneración de cuentas corrientes": 10.0, "base": 40.0},
+        "2024-02": {"Pases": -5.0, "base": -5.0},
+    }  # fmt: skip
+    f = bcra_flows(factors, {"2024-01": 1.0, "2024-02": 2.0}, "2024-01", "2024-12")
+    assert f.hub == HUB_BCRA and f.clave == "ars_bcra"
+    assert f.entradas["Compra de divisas al sector privado"] == 200
+    assert f.salidas["Pases"] == 145
+    assert f.salidas["Base monetaria (variación)"] == 80 - 5
+    assert abs(f.descuadre) < 1e-9
