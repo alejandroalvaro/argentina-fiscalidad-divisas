@@ -17,8 +17,19 @@ La deuda pública argentina se mueve en dos circuitos. El de los pesos lo comand
 7. **La opacidad como dato.** Lo que costó reconstruir los dos circuitos: instrumentos, fuentes, series que no existen, cifras que cambian entre publicaciones y portales que bloquean la descarga.
 8. **Método.** Protocolo, agentes, originales guardados por sha256, validación, conciliación, reglas y límites. Cómo reproducir cada cifra.
 
+## Monedas, gráficos y glosario (D-017)
+
+- Los pesos se informan en pesos y los dólares en dólares. La conversión es la excepción y se aclara.
+- Cada gráfico muestra una sola moneda. Los temas que cruzan las dos van en dos paneles.
+- Dos diagramas de Sankey del mandato, desde diciembre de 2023: uno de pesos, que cierra el capítulo 3, y otro de dólares, que cierra el capítulo 4.
+- Glosario final amplio (`docs/GLOSARIO.md`).
+
 ## Anexos
 
 - **A. Cobrar los derechos de exportación en dólares.** La propuesta de Mosler (D-006), el costo de la esterilización (D-015) y la comparación de regímenes de la fase 4.
 - **B. Brasil.** El contraste acotado.
 - **C. Datos.** Inventario de fuentes, manifiestos y decisiones.
+
+## Cierre
+
+- **Glosario.**
