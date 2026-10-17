@@ -271,6 +271,8 @@ def cmd_derechos(args: argparse.Namespace) -> int:
 
 # Secretaría de Finanzas monthly boletín through 2026-09 (SRC-9002): debt payments by currency.
 BOLETIN_FINANZAS_SHA = "4f172f544df60ee73c325e2e3186f3091db87cd65e48132647fb25fd053cc7fd"
+# BCRA Series.xlsm through 2026-10-13 (SRC-1625): factors of the monetary base.
+BCRA_SERIES_SHA = "c9152a99361349604b9377d5db96466cd123e572280673f0e7356dc7bfa03c9b"
 # BCRA balance cambiario workbook through 2026-08 (lote AH, SRC-1604).
 BALANCE_CAMBIARIO_SHA = "fda73048a4e09a8ef4a1cd7998920e0a4862e41c137e8a158ebf66b19c0ef5b2"
 
@@ -278,9 +280,11 @@ BALANCE_CAMBIARIO_SHA = "fda73048a4e09a8ef4a1cd7998920e0a4862e41c137e8a158ebf66b
 def cmd_flujos(args: argparse.Namespace) -> int:
     from argfx.informe.flujos import (
         ars_flows,
+        bcra_flows,
         fx_months,
         read_a3500,
         read_balance_cambiario,
+        read_base_factors,
         read_cpi,
         read_csv,
         read_fx_interest,
@@ -316,6 +320,12 @@ def cmd_flujos(args: argparse.Namespace) -> int:
         # Same months as the peso table: a month without the fiscal result has no financing yet.
         treasury_usd_flows(financing, fx, ars.desde, ars.hasta),
         ars,
+        bcra_flows(
+            read_base_factors(_cached_object(args.series_sha, "bcra")),
+            read_cpi(t / "indec_ipc_nacional_nivel_general_mensual.csv"),
+            ars.desde,
+            ars.hasta,
+        ),
     ]
     for f in flows:
         path = write_flows(f, args.out)
@@ -410,6 +420,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     flu = sub.add_parser("flujos", help="report: peso and dollar flows of the mandate (Sankey)")
     flu.add_argument("--balance-sha", default=BALANCE_CAMBIARIO_SHA)
+    flu.add_argument("--series-sha", default=BCRA_SERIES_SHA, help="BCRA Series.xlsm (SRC-1625)")
     flu.add_argument("--aif", type=Path, default=Path("inbox/lote-am/tablas"))
     flu.add_argument(
         "--financiamiento",
