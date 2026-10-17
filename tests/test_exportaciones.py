@@ -5,7 +5,13 @@ from datetime import date
 from pathlib import Path
 
 from argfx.simulation.alicuotas import Event, RateBook
-from argfx.simulation.exportaciones import build_duty_table, estimate, group_of, read_month
+from argfx.simulation.exportaciones import (
+    build_duty_table,
+    estimate,
+    group_of,
+    read_month,
+    screen_unit_values,
+)
 
 LST = """FECHA_'POS_NCM   'UN'PESO_NETO_KILOS'MONTO_FOB_DOLAR'CANT_DECLARACIONES
 ------'----------'--'---------------'---------------'------------------
@@ -55,3 +61,20 @@ def test_fuels_follow_the_crude_formula_with_the_566_top(tmp_path: Path) -> None
     (row,) = build_duty_table([("2026-09", fob)], RateBook([]), {"2026-09": 70.0}, {}, tmp_path)
     assert row["derecho_estimado_musd"] == 6.0 + 8.0  # September top is 6%
     assert row["fob_con_alicuota_musd"] == 200.0
+
+
+def test_a_fob_that_cannot_match_its_weight_is_set_aside() -> None:
+    normal = [(f"2020-{m:02d}", {"1201.90.00": 40e6, "9701.10.00": 1e6},
+               {"1201.90.00": 100e6, "9701.10.00": 1.0}) for m in range(1, 13)]  # fmt: skip
+    odd = ("2021-02", {"1201.90.00": 6.5e9, "9701.10.00": 50e6}, {"1201.90.00": 37e6,
+           "9701.10.00": 1.0})  # fmt: skip
+    clean, removed = screen_unit_values([*normal, odd])
+    assert clean[-1] == ("2021-02", {"9701.10.00": 50e6})  # art is exempt
+    (row,) = removed
+    assert row["ncm"] == "1201.90.00" and row["fob_a_la_mediana_musd"] == 14.8
+    assert clean[0][1]["1201.90.00"] == 40e6
+    # Four times the median: set aside at USD 200 million, kept at USD 50 million.
+    big = ("2021-03", {"1201.90.00": 200e6}, {"1201.90.00": 125e6})
+    small = ("2021-04", {"1201.90.00": 50e6}, {"1201.90.00": 31.25e6})
+    clean, removed = screen_unit_values([*normal, big, small])
+    assert [r["mes"] for r in removed] == ["2021-03"] and clean[-1][1]["1201.90.00"] == 50e6
