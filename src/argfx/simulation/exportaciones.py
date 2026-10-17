@@ -50,7 +50,8 @@ def group_of(code: str) -> str:
 def _member(zf: zipfile.ZipFile) -> str:
     names = zf.namelist()
     for prefix in ("total_expo", "expo"):
-        hits = [n for n in names if n.lower().startswith(prefix)]
+        # Some months (2017-12) nest the files in a YYYYMM/ folder.
+        hits = [n for n in names if n.rsplit("/", 1)[-1].lower().startswith(prefix)]
         if hits:
             return hits[0]
     raise KeyError(f"no export file in {names}")
