@@ -440,9 +440,14 @@ def _previous(m: str) -> str:
 # MONETARIA, SRC-1625), millions of current pesos. The sheet holds four blocks, all with a date
 # in the first column: daily changes, monthly sums (dated the 1st), monthly average balances and
 # yearly sums (dated January 1st). Only the monthly sums are read; the daily changes add up to
-# them in every month. A positive factor created base money, a negative one absorbed it, and the
-# change of the base closes the table.
-HUB_BCRA = "BCRA (base monetaria)"
+# them in every month. A positive factor created base money, a negative one absorbed it. As in
+# the other tables, pesos that reach the hub are drawn on the left and pesos that leave it on the
+# right: an absorbing factor (the Treasury depositing, paying for dollars) enters the BCRA, a
+# creating one (buying dollars, profits, interest) leaves it. Net issuance, the change of the
+# base, closes the table.
+HUB_BCRA = "BCRA (pesos)"
+NET_ISSUE = "Emisión neta (aumento de la base monetaria)"
+NET_ABSORPTION = "Absorción neta (caída de la base monetaria)"
 BASE_FACTORS = {
     3: "Compra de divisas al sector privado",
     4: "Divisas con el Tesoro",
@@ -485,8 +490,8 @@ def read_base_factors(xlsx: Path) -> dict[str, dict[str, float]]:
 def bcra_flows(
     factors: dict[str, dict[str, float]], cpi: dict[str, float], desde: str, hasta: str
 ) -> Flows:
-    """Pesos the BCRA created and absorbed, at prices of the last month of the window. Each
-    factor is netted over the window; the change of the base closes the table."""
+    """Pesos that reached and left the BCRA, at prices of the last month of the window. Each
+    factor is netted over the window; net issuance closes the table."""
     months = _months(desde, hasta, factors, cpi)
     if not months:
         raise ValueError(f"sin meses con factores de la base e IPC entre {desde} y {hasta}")
@@ -495,10 +500,11 @@ def bcra_flows(
     for m in months:
         k = base / cpi[m]
         for name, v in factors[m].items():
-            if name == "base":
-                name = "Base monetaria (variación)"
-                v = -v  # a growing base is where the created pesos went
-            net[name] = net.get(name, 0.0) + k * v
+            # A factor that creates base money is pesos leaving the BCRA; the base change is
+            # the issuance that pays for them.
+            net[name] = net.get(name, 0.0) + k * (v if name == "base" else -v)
+    change = net.pop("base")
+    net[NET_ISSUE if change >= 0 else NET_ABSORPTION] = change
     ins, outs = _split(net)
     return Flows(
         "ARS",
