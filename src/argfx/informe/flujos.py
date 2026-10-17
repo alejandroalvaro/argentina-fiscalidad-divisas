@@ -36,22 +36,31 @@ HUB_TESORO_USD = "Tesoro Nacional (dólares)"
 # leave the dollar tables and enter the peso table as their own lines.
 # The crossing between the two tables: pesos the Treasury applied to dollar obligations, net,
 # in three parts. Dollars bought from the BCRA or in the market (lote AI); dollar debt held by
-# the BCRA cancelled with pesos (Letras Intransferibles, RC 27/2026); and the rest, which the
-# sources do not open: timing differences, gross renewals and the months without lote AP.
+# the BCRA cancelled with pesos (AL35 in 2024-02, Letras Intransferibles in 2026-05); and the
+# rest, which the sources do not open: timing differences and gross renewals.
 CROSS_ARS = {
     "compras": "Compra de dólares (al BCRA y en el mercado)",
-    "cancelado": "Letras Intransferibles canceladas con pesos",
+    "cancelado": "Deuda en dólares con el BCRA cancelada con pesos",
     "resto": "Diferencia entre monedas que la fuente no abre (neto)",
 }
 CROSS_USD = {
     "compras": "Comprados con pesos",
-    "cancelado": "Letras Intransferibles canceladas con pesos",
+    "cancelado": "Deuda en dólares con el BCRA cancelada con pesos",
     "resto": "Diferencia entre monedas que la fuente no abre (neto)",
 }
-# Letras Intransferibles bought back with pesos, millions of pesos (RC 27/2026, SRC-2031: $18,4
-# billones of the $24,4 billones of BCRA dividends, SRC-2047). The buybacks of 2025-05 and
-# 2025-08 used IMF dollars, and the one of 2026-08 dollars from the BCRA for BOPREAL (lote AO).
-CANCELLED_WITH_PESOS = {"2026-05": 18_400_000.0}
+# Dollar debt held by the BCRA that the Treasury bought back with pesos, millions of pesos:
+# - 2024-02, AL35 bought from the BCRA, VNO USD 7.595.881.596 at $38.850 per USD 100 (RC 13/2024,
+#   SRC-2064; OPC, SRC-2066), about USD 3.534 million at the month's average rate;
+# - 2026-05, Letras Intransferibles (RC 27/2026, SRC-2031: $18,4 billones of the $24,4 billones
+#   of BCRA dividends, SRC-2047).
+# The buybacks of Letras of 2025-05 and 2025-08 used IMF dollars, and the one of 2026-08 dollars
+# from the BCRA for BOPREAL (lote AO).
+CANCELLED_WITH_PESOS = {"2024-02": 7_595.881596 * 388.50, "2026-05": 18_400_000.0}
+# Debt written in dollars and paid in pesos that was swapped without cash, millions of USD, to
+# take out of the cash amortizations of lote AR: in 2025-01 the BCRA swapped its BONAR DUAL
+# TDE25 for LECAP a week before maturity (RC 5/2025, SRC-2063; VN USD 4.162 million derived by
+# Grok from the prices of article 4, lote AS).
+SWAPPED_WITHOUT_CASH = {"2025-01": 4_162.0}
 PAID_IN_PESOS = "Deuda escrita en dólares, pagada en pesos"
 PLACED_FOR_PESOS = "Deuda escrita en dólares, colocada por pesos"
 GAP = "Sin identificar en la fuente"
@@ -425,7 +434,7 @@ def read_paid_in_pesos(amortized: Path, placed: Path) -> dict[str, tuple[float, 
     for r in read_csv(amortized):
         out.setdefault(r["mes"], [0.0, 0.0])[0] = float(
             r["caja_estimada_maxima_incluye_inseparable"] or 0
-        )
+        ) - SWAPPED_WITHOUT_CASH.get(r["mes"], 0.0)
     for r in read_csv(placed):
         out.setdefault(r["mes"], [0.0, 0.0])[1] = float(r["total_con_bonte_dual_usd_millones"] or 0)
     return {m: (a, p) for m, (a, p) in out.items()}
