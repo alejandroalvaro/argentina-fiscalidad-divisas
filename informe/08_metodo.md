@@ -27,7 +27,7 @@ La validación no garantiza que las cifras sean correctas. Para eso, el agente d
 
 Todo cálculo es código, con pruebas, y nunca texto de un modelo de lenguaje. El modelo de lenguaje escribe el informe; no calcula.
 
-- **El motor contractual** (fase 2) arma el calendario de pagos instrumento por instrumento con sus condiciones de emisión: cupones, amortizaciones, capitalización, ajuste por CER con su rezago, tasas TAMAR y BADLAR, duales que pagan la mayor de dos ramas. Cada flujo guarda por separado la moneda en que está escrito, la indexación, la moneda en que se paga y el tenedor.
+- **El motor contractual** (fase 2) arma el calendario de pagos instrumento por instrumento con sus condiciones de emisión: cupones, amortizaciones, capitalización, ajuste por CER con su rezago, tasas TAMAR y BADLAR (la de los plazos fijos de más de un millón de pesos), duales que pagan la mayor de dos ramas. Cada flujo guarda por separado la moneda en que está escrito, la indexación, la moneda en que se paga y el tenedor.
 - **La conciliación** (fase 3) contrasta el inventario con la planilla oficial, descuenta los pagos a organismos del propio sector público y reconstruye el interés que se devenga y no se paga.
 - **Los diagramas de flujos** del mandato combinan el esquema ahorro-inversión-financiamiento, el boletín de Finanzas, el balance cambiario y los factores de la base monetaria. Cada línea se neta en la ventana, y cada diagrama tiene que cerrar: lo que entra es igual a lo que sale, y la diferencia que queda se muestra con nombre propio.
 
@@ -69,7 +69,9 @@ uv run argfx conciliacion               # consolidación y controles (capítulo 
 uv run argfx devengados                 # interés capitalizado (capítulo 3)
 uv run argfx flujos                     # los cuatro diagramas del mandato
 uv run argfx derechos                   # derechos de exportación (anexo A)
-python scripts/build_informe.py         # este informe en HTML
+uv run argfx simular                    # el modelo de la fase 4 (anexo A)
+uv run argfx graficos                   # los gráficos de barras
+python scripts/build_informe.py --docx  # este informe en HTML y en Word
 ```
 
 ## 8.8 Límites

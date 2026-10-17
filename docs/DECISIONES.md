@@ -206,3 +206,16 @@ El informe mide cada circuito en su propia moneda, muestra dónde se cruzan (las
 - **Gráficos por moneda.** Cada gráfico muestra una sola moneda. Donde un tema cruza las dos (las compras de dólares con pesos), van dos paneles, uno por moneda.
 - **Dos diagramas de Sankey del mandato.** Desde diciembre de 2023 hasta el último mes con dato: uno de pesos (por dónde entran y salen pesos del Tesoro y del BCRA) y otro de dólares (por dónde entran y salen dólares del país y de las reservas). Si alguna serie no cubre todo el período, el diagrama dice hasta cuándo llega.
 - **Glosario final.** Un glosario amplio al cierre del informe, en `docs/GLOSARIO.md` mientras se escribe, con cada sigla, instrumento y concepto que aparece en el texto.
+
+## D-018. Supuestos de la corrida del modelo de la fase 4 (2026-10-17)
+
+**Decisión.** La primera corrida con datos (`argfx simular`, `src/argfx/simulation/corrida.py`) usa estas configuraciones, cada una rotulada en el anexo A:
+
+- **El mandato.** Lo observado es el régimen (a). El contrafáctico (c) cambia solo el destino del derecho cobrado cada mes, pasado a dólares al A 3500 del mes. Como las fuentes no dicen qué habría hecho el Tesoro con esos dólares, se miden dos usos por separado: reemplazan compras con pesos o reemplazan deuda nueva en divisas. El BCRA compra del derecho la misma proporción de lo liquidado que compró ese mes (compras al sector privado sobre exportaciones de bienes del balance cambiario).
+- **Tasas.** La brecha de pesos del Tesoro se lleva a la tasa BADLAR del mes (diciembre de 2023 toma la primera observación, de enero de 2024). La deuda en divisas evitada, a una tasa supuesta del 7% anual, con sensibilidad al 5% y al 9%.
+- **El costo del BCRA atribuible a las compras de dólares** reparte los intereses en proporción a lo que creó los pesos (compras netas de divisas sobre el total de factores de creación acumulados). Es un supuesto: las fuentes no atan cada peso absorbido a su origen.
+- **La proyección.** Exportaciones de los últimos doce meses con datos, mes a mes, a las alícuotas decretadas de cada mes futuro; proporción cobrado/estimado de los meses posteriores a la ventana de alícuota cero de septiembre de 2025 (enero a septiembre de 2026); tipo de cambio fijo en el último observado; pagos firmes en divisas de la fase 2 netos de las tenencias del sector público de la fase 3, constantes en el tiempo. Escenarios: base, organismos que renuevan el capital, cobro igual a lo estimado, sequía como la de 2023 desde abril de 2027 (granos y oleaginosas al 65%) y precios 20% más bajos.
+- **Sin reservas proyectadas.** El modelo no tiene importaciones ni el resto del balance de pagos, de modo que el nivel de las reservas brutas proyectadas no se informa. Las medidas del Tesoro no dependen de cuánto compra el BCRA.
+
+**Por qué.** Son las configuraciones que menos suponen sobre el comportamiento, y dejan visible la identidad contable que ordena el resultado (anexo A.4). La capa de comportamiento queda para la versión siguiente.
+

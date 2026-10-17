@@ -42,6 +42,9 @@ make storage-check
 uv run argfx calendario   # phase 2: obligations calendar into data/calendario/
 uv run argfx conciliacion # phase 3: reconcile with the Finanzas workbook into data/conciliacion/
 uv run argfx devengados   # phase 3 / D-009: capitalized interest accrued by quarter
+uv run argfx simular      # phase 4 / D-018: mandate counterfactual and projection into data/simulacion/
+uv run argfx graficos     # report bar charts into data/informe/ (one currency per panel)
+uv run python scripts/build_informe.py --docx  # report HTML and Word
 ```
 
 ## Git

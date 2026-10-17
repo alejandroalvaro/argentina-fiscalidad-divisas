@@ -67,18 +67,20 @@ El informe usa la definición de reservas internacionales netas del acuerdo con 
 | 13-06-2025 | +0,2 | −3,3 | FMI, segunda revisión (SRC-1263), cuadro 2 |
 | Fin de 2025 | −1,6 | −12,1 | ídem |
 | Fin de marzo de 2026 (indicativa) | −1,6 | −10,5 | ídem |
-| Fin de junio de 2026 | de +3,2 a −8,6 | sin dato | ídem |
+| Fin de junio de 2026 | −8,6 (antes +3,2) | −6,7 (estimación propia; rango −9,7 a −4,7) | ídem; estimación propia con SRC-1625 |
 | Fin de 2026 | −4,1 | sin dato | ídem |
 
 *Miles de millones de USD, variación acumulada desde el inicio del programa.*
 
-Las metas de 2025 no se cumplieron, y la de fin de 2025 quedó unos 10.000 millones por debajo del piso. En lugar de declarar el incumplimiento, cada revisión bajó la meta siguiente. El nivel de las reservas netas a fin de 2025 fue de −11.800 millones según el mismo informe, y el FMI proyecta −1.800 para fin de 2026 (en julio de 2025 proyectaba +8.400).
+Las metas de 2025 no se cumplieron, y la de fin de 2025 quedó unos 10.000 millones por debajo del piso. En lugar de declarar el incumplimiento, cada revisión bajó la meta siguiente: la de junio de 2026 era de +3.200 millones y la segunda revisión la llevó a −8.600.
+
+**Junio de 2026, sin dato oficial.** El resultado de junio lo va a publicar el FMI con la tercera revisión, que al 17 de octubre no tenía acuerdo técnico. El informe lo estima con la planilla de reservas del BCRA (SRC-1625) y la definición del programa: a la variación de las reservas brutas del semestre (+3.775 millones) se le suma la caída de los encajes en divisas, que son un pasivo (+2.713), y se le resta el desembolso del FMI de mayo (−1.043), que el programa no cuenta. La acumulación del primer semestre da unos +5.400 millones, y la variación desde fin de 2024, unos −6.700: por encima del piso rebajado de −8.600. El nivel de las reservas netas a fin de junio queda en unos −6.400 millones. La estimación depende de dos supuestos. Si el repo de 3.000 millones con bancos de enero de 2026, a 372 días, se contara como pasivo, la variación sería de −9.700 y la meta no se habría cumplido. Si los pagos de los Bonos para la Reconstrucción de una Argentina Libre (BOPREAL) del semestre se trataran como cancelación de un pasivo de corto plazo, sería de −4.700. Dos estimaciones privadas van en la misma dirección (Equilibra, +6.300 en el semestre; Centro de Economía Política Argentina o CEPA, −3.100 desde fin de 2024 con la otra base de 2025). El nivel de las reservas netas a fin de 2025 fue de −11.800 millones según el mismo informe, y el FMI proyecta −1.800 para fin de 2026 (en julio de 2025 proyectaba +8.400).
 
 Dos cifras conviven sin contradecirse, aunque suelen presentarse como si se contradijeran. Las reservas brutas del BCRA eran 49.323 millones el 8 de octubre de 2026 (API del BCRA). El cuadro del FMI da "reservas brutas" de 27.600 millones para fin de 2025, con la medida del programa, que deja afuera partidas que el BCRA sí cuenta. Las dos responden preguntas distintas, y conviene citarlas con su nombre. Además, el mismo documento del FMI da para 2025 una variación de −12.100 en el informe del personal técnico y de −9.600 en la carta de intención, sin explicar la diferencia (capítulo 7).
 
 ## 4.5 Los dólares de los derechos de exportación
 
-Los derechos de exportación se determinan en dólares sobre el valor FOB y se pagan en pesos. Entre diciembre de 2023 y agosto de 2026 el Tesoro recaudó por ese concepto $28,6 billones de pesos de agosto de 2026. Medidos en dólares, rondaron los 6.600 millones en 2024, 6.000 en 2025 y 4.600 de enero a septiembre de 2026.
+Los derechos de exportación se determinan en dólares sobre el valor FOB (libre a bordo: el valor de la mercadería puesta en el barco) y se pagan en pesos. Entre diciembre de 2023 y agosto de 2026 el Tesoro recaudó por ese concepto $28,6 billones de pesos de agosto de 2026. Medidos en dólares, rondaron los 6.600 millones en 2024, 6.000 en 2025 y 4.600 de enero a septiembre de 2026.
 
 Esos dólares nunca pasaron por el Tesoro. El exportador vende las divisas en el mercado, el comprador (el BCRA o un privado) le paga en pesos, y con esos pesos el exportador paga el derecho. El circuito de los dólares registra la exportación entera; el de los pesos, el derecho. El anexo A estudia qué cambiaría si una parte de esos dólares fuera directamente al Tesoro.
 

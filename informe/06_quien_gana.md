@@ -35,7 +35,7 @@ Del lado del Tesoro, el interés en pesos casi no se pagó en efectivo: $2,2 bil
 
 En 2023, el resultado por títulos y las primas por pases equivalían al 122% del margen financiero de los bancos. En 2026 equivalen al 39%. Una parte de ese ingreso los bancos la trasladaron a sus depositantes: pagaron 109,6 billones de intereses en 2023. Las LEFI, entre julio de 2024 y julio de 2025, les dejaron unos $3,4 billones corrientes de interés, que pagó el Tesoro.
 
-**Los fondos comunes.** La deuda nacional en cartera de los fondos comunes abiertos pasó de $5,4 billones corrientes en diciembre de 2023 a $21,4 billones en agosto de 2026 (CAFCI). Los fondos de renta fija concentran casi todo: en una muestra de la CNV, a agosto de 2026 tenían 37% en bonos CER y 32% en LECAP. Los fondos de mercado de dinero, que tienen unos $63 billones de patrimonio, casi no tienen LECAP: colocan en plazo fijo y cauciones, de modo que su vínculo con la deuda pública pasa por los bancos.
+**Los fondos comunes.** La deuda nacional en cartera de los fondos comunes abiertos pasó de $5,4 billones corrientes en diciembre de 2023 a $21,4 billones en agosto de 2026 (Cámara Argentina de Fondos Comunes de Inversión, CAFCI). Los fondos de renta fija concentran casi todo: en una muestra de la Comisión Nacional de Valores (CNV), a agosto de 2026 tenían 37% en bonos CER y 32% en LECAP. Los fondos de mercado de dinero, que tienen unos $63 billones de patrimonio, casi no tienen LECAP: colocan en plazo fijo y cauciones, de modo que su vínculo con la deuda pública pasa por los bancos.
 
 **El propio sector público.** El 60% de la deuda en pesos está en manos del BCRA, el FGS y el Banco Nación (capítulo 2). Para ese 60%, el interés capitalizado es una transferencia dentro del Estado. El FGS tenía a junio de 2026 bonos CER por $54,7 billones (el 44% de su cartera) y entre el 10,6% y el 16,3% de las LECAP y BONCAP.
 
@@ -57,7 +57,7 @@ Las operaciones entre el Tesoro y el BCRA no cambian la deuda del sector públic
 
 | Operación | Qué entregó el BCRA | Qué recibió | Precio | Fuente |
 |---|---|---|---|---|
-| AL35, febrero de 2024 | Bonos AL35, VNO 7.596 millones de USD | $2,951 billones (unos 3.534 millones de USD) | 46% del nominal | RC 13/2024, SRC-2064 |
+| AL35, febrero de 2024 | Bonos AL35, valor nominal original (VNO) 7.596 millones de USD | $2,951 billones (unos 3.534 millones de USD) | 46% del nominal | RC 13/2024, SRC-2064 |
 | TDE25, enero de 2025 | BONAR DUAL por unos 4.162 millones de USD | LECAP, sin pago | | RC 5/2025, SRC-2063 |
 | Letras Intransferibles, mayo de 2025 | VNO 13.617 | 12.000 millones de USD del FMI | 88% promedio | RC 21/2025, SRC-1257 |
 | Letras Intransferibles, agosto de 2025 | VNO 3.269 | 2.000 millones de USD del FMI | 61% | RC 37/2025, SRC-2042 |
