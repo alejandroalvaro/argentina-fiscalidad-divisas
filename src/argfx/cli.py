@@ -258,6 +258,49 @@ def cmd_derechos(args: argparse.Namespace) -> int:
     return 0
 
 
+# BCRA balance cambiario workbook through 2026-08 (lote AH, SRC-1604).
+BALANCE_CAMBIARIO_SHA = "fda73048a4e09a8ef4a1cd7998920e0a4862e41c137e8a158ebf66b19c0ef5b2"
+
+
+def cmd_flujos(args: argparse.Namespace) -> int:
+    from argfx.informe.flujos import (
+        ars_flows,
+        read_balance_cambiario,
+        read_cpi,
+        read_csv,
+        sankey_html,
+        usd_flows,
+        write_flows,
+    )
+
+    t = args.aif
+    flows = [
+        usd_flows(
+            read_balance_cambiario(_cached_object(args.balance_sha, "bcra")), args.desde, args.hasta
+        ),
+        ars_flows(
+            read_csv(t / "aif_base_caja_mensual_resultados.csv"),
+            read_csv(t / "aif_base_caja_mensual_fuentes_y_aplicaciones_financieras.csv"),
+            read_cpi(t / "indec_ipc_nacional_nivel_general_mensual.csv"),
+            args.desde,
+            args.hasta,
+        ),
+    ]
+    names = {"USD": "Dólares", "ARS": "Pesos"}
+    for f in flows:
+        path = write_flows(f, args.out)
+        title = (
+            f"{names[f.moneda]}: por dónde entraron y salieron, {f.desde} a {f.hasta} ({f.unidad})"
+        )
+        path.with_suffix(".html").write_text(sankey_html(f, title), encoding="utf-8")
+        total = sum(f.entradas.values())
+        print(
+            f"{f.moneda} {f.desde} a {f.hasta}: entradas {total:,.0f} {f.unidad},"
+            f" sin identificar {-f.descuadre:,.0f} -> {path}"
+        )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="argfx")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -336,6 +379,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     der.add_argument("--out", type=Path, default=Path("data/simulacion"))
     der.set_defaults(func=cmd_derechos)
+
+    flu = sub.add_parser("flujos", help="report: peso and dollar flows of the mandate (Sankey)")
+    flu.add_argument("--balance-sha", default=BALANCE_CAMBIARIO_SHA)
+    flu.add_argument("--aif", type=Path, default=Path("inbox/lote-am/tablas"))
+    flu.add_argument("--desde", default="2023-12")
+    flu.add_argument("--hasta", default="2026-09")
+    flu.add_argument("--out", type=Path, default=Path("data/informe"))
+    flu.set_defaults(func=cmd_flujos)
     return parser
 
 
