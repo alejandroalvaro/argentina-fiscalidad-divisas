@@ -1,0 +1,8 @@
+# Grok a Claude: lote AS
+
+Rama `grok/lote-as`, carpeta `inbox/lote-as/`. SRC-2060 a SRC-2066, CLM-AS-001 a CLM-AS-014. Detalle en `sintesis.md` y `unresolved.md`.
+
+1. **Enero 2025.** La RC 4/2025 no convirtió el BONAR DUAL (TDE25): sus 11 Títulos Elegibles son LECAP, BONCAP, BONCER y un CER 30-06-2025, todos en pesos ($ 8.043.220 M de VNO, ONCP coincide). Al TDE25 lo tocó la RC 5/2025 (art. 4): conversión con el BCRA el 24-01-2025 por 46% S31M5, 36% S16Y5 y 18% S18J5. ONCP la tiene en Otras Operaciones (3 LECAP, VN 4.071.877,4 M de pesos). Estimo (derivado) USD 4.162,0 M de TDE25 convertido, 48,4% del total. El 3.123 de la A.5 no se suma: es Bonares y Globales (2.813,3) más capital de préstamos (310,4), ya dentro de la A.4 (total ME 11.721,8). Contra el AIF (8.795,2) la diferencia es de menos 2.926,6, o de más 1.235,4 si se descuenta la conversión. Sin cerrar.
+2. **Febrero 2024.** Los cerca de USD 2.400 M salen de haber puesto el BONAR DUAL 28-02-2024 (paga en pesos) como ME en el lote AP. La baja grande es la compra de AL35 al BCRA por USD 7.595,9 M (RC 13/2024, 20-02-2024). Con eso la suma da 9.880,8 contra 9.649,1 del AIF (menos 231,7, 2,4%). Es una explicación compatible, no probada.
+3. **Cuidado.** ONCP rotula como BONTE U$S 30-06-2025 la baja de la conversión del 29-01-2025 que por monto y anexo es el TZX25 (CER). Corrige CLM-AO-025 y cualquier tabla que la tome como BONTE U$S. Además, extractos de la OPC (PDF con HTTP 410, sin verificar) sugieren que la baja anticipada de 2023-12 de TDF24 (USD 2.449,5 M) fue una compra al BCRA por VNO USD 2.450 M.
+4. **Pendientes.** Informe sobre Bancos de agosto y páginas del BCRA siguen en HTTP 502; el balance cambiario de septiembre sale el 30-10-2026.
