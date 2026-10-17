@@ -95,20 +95,25 @@ def test_dollars_leave_the_peso_table_through_one_crossing() -> None:
         "amortizacion_moneda_extranjera_total_spn": 90,
         "endeudamiento_moneda_local_total_spn": 40 + 30,
     }
-    fx = {"2024-01": FxMonth(6.0, 2.0, -1.0)}
+    # Of the 46 pesos that cross, 3 USD (18 pesos) were bought and 12 cancelled debt with pesos.
+    fx = {"2024-01": FxMonth(6.0, 2.0, -1.0, 3.0, 12.0)}
     rows = [{"mes": "2024-01", **{k: str(x) for k, x in fin.items()}}]
     f = ars_flows([_aif("2024-01", **RES)], rows, {"2024-01": 1.0}, fx, "2024-01", "2024-01")
     assert abs(f.descuadre) < 1e-9
     assert f.salidas["Intereses de la deuda en pesos (netos)"] == 15 - 12
     assert "Uso de activos financieros" not in f.entradas  # 6 - 6
-    assert f.salidas[CROSS_ARS] == 90 + 12 - 6 - 60  # pesos applied to dollar debt
+    assert f.salidas[CROSS_ARS["compras"]] == 18
+    assert f.salidas[CROSS_ARS["cancelado"]] == 12
+    assert f.salidas[CROSS_ARS["resto"]] == 90 + 12 - 6 - 60 - 18 - 12
     assert not any("divisas" in n for n in [*f.entradas, *f.salidas])
 
     t = treasury_usd_flows(rows, fx, "2024-01", "2024-01")
     assert t.unidad == "millones de USD" and t.clave == "usd_tesoro"
     assert t.entradas == {
         "Deuda en divisas desembolsada": 10,
-        CROSS_USD: 6,
+        CROSS_USD["compras"]: 3,
+        CROSS_USD["cancelado"]: 2,
+        CROSS_USD["resto"]: 1,
         "Depósitos en dólares en el BCRA (variación)": 1,
     }
     assert t.salidas == {"Deuda en divisas amortizada": 15, "Intereses en divisas": 2}
