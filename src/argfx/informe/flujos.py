@@ -461,7 +461,8 @@ def write_flows(flows: Flows, out_dir: Path) -> Path:
     return path
 
 
-PLOTLY = "https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"
+# cdnjs has no 2.35.2 (404, the pages came out blank); 2.35.0 is served.
+PLOTLY = "https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.0/plotly.min.js"
 
 
 def sankey_html(flows: Flows, title: str) -> str:
@@ -490,7 +491,10 @@ def sankey_html(flows: Flows, title: str) -> str:
         "<!doctype html><html lang='es'><head><meta charset='utf-8'>"
         f"<title>{title}</title><script src='{PLOTLY}'></script></head><body>"
         "<div id='s'></div><script>"
-        f"Plotly.newPlot('s',[{json.dumps(data, ensure_ascii=False)}],"
-        f"{json.dumps(layout, ensure_ascii=False)},{{responsive:true}});"
+        # Say so on the page if the library did not load, instead of leaving it blank.
+        "if (typeof Plotly === 'undefined') { document.getElementById('s').textContent ="
+        f" 'No se pudo cargar Plotly desde {PLOTLY}. Los datos están en el CSV de al lado.'; }}"
+        f" else {{ Plotly.newPlot('s',[{json.dumps(data, ensure_ascii=False)}],"
+        f"{json.dumps(layout, ensure_ascii=False)},{{responsive:true}}); }}"
         "</script></body></html>"
     )
