@@ -3,7 +3,9 @@
 Downloads each annex from R2 by its sha256 (manifests/downloads.csv), extracts its text with
 `pdftotext -layout` (poppler) and parses it with argfx.simulation.alicuotas. The schedule of
 Decreto 423/2026 Annex II comes from the lote AF transcription, checked against the annex. The
-Decreto 566/2026 phase-out is a rule applied when the table is loaded (`load_book`).
+Decreto 566/2026 phase-out is a rule applied when the table is loaded (`load_book`). Gold in
+bars comes from the lote AH table; the fuels that follow the crude formula of Decreto 488/2020
+are handled by the estimate, not by this table (`alicuotas.FORMULA_488`).
 
 Run: uv run python scripts/build_alicuotas.py (needs R2 credentials and pdftotext).
 """
@@ -88,6 +90,25 @@ def soy_schedule_790(events: list[Event], tmp: Path) -> list[Event]:
     return out
 
 
+def gold_lote_ah(path: Path) -> list[Event]:
+    """Gold in bars (7108.12), lote AH: 8% from the Decreto 785/2020 (2020-10-03) and the
+    Decreto 908/2021 (2022 and 2023), then 0% from 2024-01-01, inferred because no later annex
+    lists it. The 2020 rows under the general rule of Decreto 793/2018 are left out: that rule
+    capped the duty in pesos per dollar, so 12% overstates it."""
+    grouped: dict[tuple[str, str, str, str], dict[str, float]] = {}
+    with path.open(newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            if r["ncm"].startswith("7108.12") and r["alicuota_pct"] and r["regla"] != "general":
+                norm = r["norma"] if r["norma"] != "ninguna encontrada" else (
+                    "Sin norma que grave el oro en bruto (inferido, lote AH)")  # fmt: skip
+                key = (r["desde"], r["hasta"], norm, r["source_id"])
+                grouped.setdefault(key, {})[r["ncm"]] = float(r["alicuota_pct"])
+    return [
+        Event(date.fromisoformat(d), date.fromisoformat(h) if h else None, rates, n, sid)
+        for (d, h, n, sid), rates in grouped.items()
+    ]
+
+
 def main() -> None:
     events: list[Event] = []
     with tempfile.TemporaryDirectory() as t:
@@ -102,6 +123,7 @@ def main() -> None:
             events.append(Event(start, end, rates, norm, sid))
         events += soy_schedule_790(events, Path(t))
     events += schedule_423(ROOT / "inbox/lote-af/tablas/cronograma_decreto_423_2026_anexo_ii.csv")
+    events += gold_lote_ah(ROOT / "inbox/lote-ah/tablas/derechos_mineria_combustibles.csv")
     OUT.parent.mkdir(exist_ok=True)
     with OUT.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh, lineterminator="\n")

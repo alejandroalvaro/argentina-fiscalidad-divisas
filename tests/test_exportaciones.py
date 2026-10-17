@@ -42,3 +42,16 @@ def test_reads_members_nested_in_a_month_folder(tmp_path: Path) -> None:
         zf.writestr("202606/impo_agregado_2026_06.lst", "ignored")
         zf.writestr("202606/total_expo_agregado_2026_06.lst", LST)
     assert read_month(z)[1]["1201.90.00"] == 2_000_000.0
+
+
+def test_fuels_follow_the_crude_formula_with_the_566_top(tmp_path: Path) -> None:
+    from argfx.simulation.alicuotas import formula_top
+
+    assert formula_top("2710.12.10", "2026-06") == 8.0
+    assert round(formula_top("2710.12.10", "2026-07"), 4) == 7.3333
+    assert formula_top("2710.12.10", "2027-06") == 0.0
+    assert formula_top("2711.11.00", "2026-09") == 8.0  # gas keeps the 8% top
+    fob = {"2710.12.10": 100e6, "2711.11.00": 100e6}
+    (row,) = build_duty_table([("2026-09", fob)], RateBook([]), {"2026-09": 70.0}, {}, tmp_path)
+    assert row["derecho_estimado_musd"] == 6.0 + 8.0  # September top is 6%
+    assert row["fob_con_alicuota_musd"] == 200.0

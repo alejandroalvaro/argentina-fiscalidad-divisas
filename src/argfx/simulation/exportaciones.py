@@ -104,9 +104,6 @@ def estimate(month: str, fob: dict[str, float], book: RateBook) -> MonthDuty:
     return out
 
 
-CRUDE_PREFIXES = ("2709",)
-
-
 def crude_prices(xlsx: Path) -> dict[str, float]:
     """International price of crude (Decreto 488/2020 art. 7) in force each month (SRC-1566)."""
     from openpyxl import load_workbook
@@ -156,30 +153,38 @@ def build_duty_table(
     out: Path,
 ) -> list[dict[str, object]]:
     from argfx.contracts.calendar import _write
-    from argfx.simulation.alicuotas import crude_rate
+    from argfx.simulation.alicuotas import (
+        FORMULA_488,
+        FORMULA_488_FROM,
+        crude_rate,
+        formula_top,
+    )
 
     rows, by_group = [], []
     for month, fob in sorted(months):
-        e = estimate(month, {c: v for c, v in fob.items() if not c.startswith(CRUDE_PREFIXES)},
+        e = estimate(month, {c: v for c, v in fob.items() if not c.startswith(FORMULA_488)},
                      book)  # fmt: skip
-        crude = sum(v for c, v in fob.items() if c.startswith(CRUDE_PREFIXES))
-        rate = crude_rate(pi[month]) if month in pi else None
-        crude_duty = crude * rate / 100 if rate is not None else 0.0
-        total = (e.duty_usd + crude_duty) / 1e6
+        formula = {c: v for c, v in fob.items() if c.startswith(FORMULA_488)}
+        formula_fob = sum(formula.values())
+        priced = month in pi and month >= FORMULA_488_FROM
+        formula_duty = sum(
+            v * crude_rate(pi[month], top=formula_top(c, month)) / 100 for c, v in formula.items()
+        ) if priced else 0.0  # fmt: skip
+        total = (e.duty_usd + formula_duty) / 1e6
         obs = observed.get(month)
         rows.append({
             "mes": month,
-            "fob_musd": round((e.fob_usd + crude) / 1e6, 1),
-            "fob_con_alicuota_musd": round((e.fob_with_rate_usd + (crude if rate is not None
-                                            else 0.0)) / 1e6, 1),
+            "fob_musd": round((e.fob_usd + formula_fob) / 1e6, 1),
+            "fob_con_alicuota_musd": round(
+                (e.fob_with_rate_usd + (formula_fob if priced else 0.0)) / 1e6, 1),
             "derecho_estimado_musd": round(total, 1),
             "derecho_cobrado_musd": None if obs is None else round(obs, 1),
             "cobrado_sobre_estimado": None if obs is None or not total else round(obs / total, 3),
         })  # fmt: skip
         groups = dict(e.by_group or {})
         groups["petroleo y combustibles"] = [
-            groups.get("petroleo y combustibles", [0.0, 0.0])[0] + crude,
-            groups.get("petroleo y combustibles", [0.0, 0.0])[1] + crude_duty,
+            groups.get("petroleo y combustibles", [0.0, 0.0])[0] + formula_fob,
+            groups.get("petroleo y combustibles", [0.0, 0.0])[1] + formula_duty,
         ]
         for g, (f, d) in sorted(groups.items()):
             by_group.append({"mes": month, "grupo": g, "fob_musd": round(f / 1e6, 2),
