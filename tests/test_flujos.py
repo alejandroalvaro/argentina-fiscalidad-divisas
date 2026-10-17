@@ -65,7 +65,7 @@ def test_gap_is_drawn_not_absorbed() -> None:
         {
             "mes": "2024-01",
             **{k: str(x) for k, x in FIN.items()},
-            "aplicaciones_financieras_total_spn": "65",
+            "inversion_financiera_total_spn": "30",
         }
     ]
     f = ars_flows([_aif("2024-01", **RES)], fin, {"2024-01": 1.0}, "2024-01", "2024-01")
