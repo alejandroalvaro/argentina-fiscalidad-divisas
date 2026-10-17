@@ -3,6 +3,9 @@
 Estado: diseño inicial, 14 de octubre de 2026. No constituye evidencia empírica ni conclusiones.
 
 ## Pregunta principal
+Reformulada el 17-10-2026 (D-016). ¿Cómo se mueve la deuda pública argentina en sus dos circuitos, el de los pesos (Tesoro y BCRA) y el de los dólares (exportadores y prestamistas), dónde se cruzan y quién gana y quién pierde en cada uno? La estructura del informe está en `docs/INFORME_ESTRUCTURA.md`.
+
+La pregunta de D-015 pasa al anexo A:
 Reformulada el 16-10-2026 (D-015). Cuando los derechos de exportación se cobran en pesos y el sector público compra después los dólares con pesos, ¿cuántos pasivos remunerados en pesos se emiten para esterilizar esas compras, cuánto cuestan sus intereses, quién los paga (Tesoro o BCRA) y quién los cobra? ¿Cuánto de ese costo evita cobrar los derechos directamente en dólares, con igual carga tributaria?
 
 H0: el costo de la esterilización es un flujo negativo de pesos para el Tesoro o el BCRA y un flujo positivo para el sector financiero, y cobrar en dólares lo reduce en la medida en que evita comprar con pesos los dólares del derecho. Las hipótesis H1 a H5 quedan como secundarias.

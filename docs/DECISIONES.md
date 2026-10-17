@@ -179,3 +179,20 @@ Registro de las definiciones metodológicas que tomó Alejandro. Cada una indica
 - **La liquidez en dólares pasa a ser contexto.** El flujo de dólares es el mismo con cualquier mecanismo. La cobertura de vencimientos, los meses con faltante y el fondo de D-012 se siguen calculando, pero ya no deciden entre regímenes.
 - **La equivalencia contable se muestra, no se supone.** Si el exportador paga el derecho en pesos al Tesoro y el Tesoro usa esos mismos pesos para comprarle los dólares al BCRA, (a) y (c) terminan con la misma base monetaria y las mismas reservas, porque el pago del derecho absorbe los pesos que el BCRA emitió al comprar esa parte de las divisas. El costo aparece cuando la secuencia se corta: el Tesoro gasta los pesos del derecho, el BCRA esteriliza lo que emitió y el Tesoro después necesita otros pesos, de superávit o de deuda remunerada, para comprar los dólares. El modelo tiene que mostrar en qué secuencia se produce el costo y estimar con datos cuál se dio en 2024 a 2026, sin dar por hecho que siempre aparece.
 - **Datos que pasan a ser prioritarios.** Los pasivos remunerados del BCRA y sus intereses, la deuda en pesos del Tesoro por tenedor y las compras de divisas del Tesoro con su fuente de pesos (lote AI).
+
+## D-016. El informe trata la naturaleza bimonetaria de la deuda; el cobro en dólares pasa a anexo (2026-10-17)
+
+**Origen.** Alejandro, después de ver el volumen y el detalle de los datos reunidos: "todo el análisis del manejo de la deuda en pesos y en dólares, esto es, la exposición de la naturaleza bimonetaria de la deuda pública argentina (y de cualquier economía periférica que comercializa con el mundo en una moneda ajena) con los pesos y los dólares por separado son la gran contribución. Superávits fiscales en pesos no se transforman mágicamente en dólares (...) El circuito de los pesos es comandado por el BCRA y el Tesoro, el de los dólares, por los exportadores y los prestamistas." Suma tres cosas al informe: la dificultad de reconstruir los flujos y los stocks como información nueva, quién se queda con los pesos y con los dólares, y la metodología como capítulo propio.
+
+**Decisión.** El objeto del informe final es la deuda pública argentina vista como dos circuitos separados:
+- **el de los pesos**, que comandan el Tesoro y el BCRA: deuda en pesos, pasivos remunerados, intereses capitalizados y superávit fiscal;
+- **el de los dólares**, que comandan los exportadores y los prestamistas: derechos y liquidación de exportaciones, organismos, mercado, atesoramiento y reservas.
+
+El informe mide cada circuito en su propia moneda, muestra dónde se cruzan (las compras de dólares con pesos) y quién gana y quién pierde en cada uno.
+
+**Consecuencias.**
+- **D-015 pasa a anexo.** El costo de la esterilización y el cobro de los derechos en dólares (D-006) quedan como un anexo que aplica el marco a una propuesta concreta. La simulación de regímenes de la fase 4 se acota a lo que ese anexo necesita.
+- **Pesos y dólares nunca se suman sin aclararlo.** Un superávit en pesos se informa en pesos. Si se lo expresa en dólares para comparar, se aclara que esa conversión no lo vuelve disponible en dólares.
+- **La opacidad es un resultado.** Se documenta lo que costó reconstruir los datos: cuántos instrumentos, fuentes y formatos hubo que reunir, qué series oficiales no existen, qué cifras cambian de una publicación a otra y qué portales bloquean la descarga. Los `unresolved.md` de cada lote y las verificaciones de `docs/verificaciones/` son la evidencia.
+- **La metodología es un capítulo.** El trabajo con agentes (protocolo, búsqueda, validación, originales guardados por sha256, conciliación y reglas que no se negocian) se describe como método reproducible, con sus límites.
+- **Estructura del informe:** `docs/INFORME_ESTRUCTURA.md`.
