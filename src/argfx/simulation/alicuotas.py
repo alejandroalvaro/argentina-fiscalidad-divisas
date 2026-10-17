@@ -181,6 +181,25 @@ def industrial_phase_out(book: RateBook, annex_ii_schedule: list[tuple[date, flo
     ]  # fmt: skip
 
 
+# Decreto 488/2020 art. 7 and Anexo (SRC-1589, SRC-1590, lote AH): crude, gas and the listed
+# fuels pay a rate that moves with the international price of crude, from 2020-05-19. The
+# Decreto 59/2026 formula for conventional crude (VB 65, VR 80) needs the SIM opening
+# 2709.00.10.910, which the ARCA monthly files do not carry, so it is not applied.
+FORMULA_488 = ("2709", "2711", "2710.12", "2710.19", "2707.30.00", "2707.99.90")
+FORMULA_488_FROM = "2020-06"  # first month whose 15th falls after 2020-05-19
+# Decreto 566/2026 art. 3 and Anexo III (SRC-1587): the 8% top of these positions falls by 8/12
+# of a point a month, 7,3333% in July 2026 to 0% from June 2027.
+ANNEX_III_566 = {"2707.30.00", "2707.99.90", "2710.12.10", "2710.12.30", "2710.12.90", "2710.19.19"}
+
+
+def formula_top(code: str, month: str) -> float:
+    """Top rate of the Decreto 488/2020 formula for a position in a month (YYYY-MM)."""
+    if code[:10] in ANNEX_III_566 and month >= "2026-07":
+        k = (int(month[:4]) - 2026) * 12 + int(month[5:7]) - 6
+        return max(0.0, 8.0 - 8.0 * k / 12)
+    return 8.0
+
+
 def crude_rate(pi_usd: float, vb: float = 45.0, vr: float = 60.0, top: float = 8.0) -> float:
     """Decreto 488/2020 art. 7: 0% up to VB, the top from VR, linear in between."""
     if pi_usd <= vb:
