@@ -1,0 +1,36 @@
+mes,fila_A4_seccion1,instrumento_A4,tipo_segun_moneda_de_pago_ONCP,a4_monto_usd_m,entrega_por_conversion_oncp_usd_m,colocacion_en_efectivo_estimada_usd_m,clasificacion,filas_oncp_conversion
+2025-02,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,79.3,0.0,79.3,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-03,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,202.2,0.0,202.2,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-04,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,221.6,0.0,221.6,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-07,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,897.4,0.0,897.4,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-09,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,4196.2,0.0,4196.2,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-10,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,6072.4,0.0,6072.4,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-11,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,1629.2,0.0,1629.2,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-12,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,1361.5,0.0,1361.5,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-01,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,5000.9,4800.3,200.6,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila11; _30-09-26!fila12; _30-09-26!fila13
+2026-02,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,1574.6,1555.2,19.4,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila15
+2026-03,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,178.7,0.0,178.7,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-04,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,726.7,0.0,726.7,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-05,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,1749.7,0.0,1749.7,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-06,27,LETES - U$S - Pagan en pesos,LETES U$S pagan en pesos,4086.1,2560.5,1525.6,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila32
+2024-02,190,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,502.4,0.0,502.4,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-04,190,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,444.8,0.0,444.8,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-05,190,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,578.8,0.0,578.8,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-07,190,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,236.7,0.0,236.7,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-03,190,BONTE/U$S/30-06-2025,BONTE U$S paga en pesos,329.8,0.0,329.8,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-07,200,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,369.9,0.0,369.9,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-10,200,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,157.1,0.0,157.1,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-07,200,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,42.1,0.0,42.1,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-09,200,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,485.1,0.0,485.1,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-10,200,BONTE/U$S/15-12-2025,BONTE U$S paga en pesos,1457.1,0.0,1457.1,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2024-07,201,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,448.5,0.0,448.5,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2025-10,201,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,1457.1,0.0,1457.1,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-01,201,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,22.1,22.1,0.0,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila14
+2026-04,201,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,1637.2,1637.2,-0.0,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila22
+2026-05,201,BONTE/U$S/30-06-2026,BONTE U$S paga en pesos,1578.9,0.0,1578.9,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-02,203,BONTE/U$S/30-06-2027,BONTE U$S paga en pesos,118.4,0.0,118.4,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-04,203,BONTE/U$S/30-06-2027,BONTE U$S paga en pesos,612.4,0.0,612.4,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-03,204,BONTE/U$S/30-06-2028,BONTE U$S paga en pesos,230.5,0.0,230.5,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-04,204,BONTE/U$S/30-06-2028,BONTE U$S paga en pesos,457.7,0.0,457.7,colocacion en efectivo (sin entrega por canje o conversion en ONCP ese mes),
+2026-05,204,BONTE/U$S/30-06-2028,BONTE U$S paga en pesos,336.2,336.2,-0.0,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila23
+2026-06,205,BONTE/U$S/15-12-2028,BONTE U$S paga en pesos,516.9,318.1,198.8,mixto o aproximado: hay entrega por conversion en ONCP; unidad no indicada por la hoja,_30-09-26!fila33

@@ -1,0 +1,11 @@
+componente,usd_m,fuente_celda
+"AIF amortizacion ME total SPN (A 3500 prom. 834,91)",9649.1,AIF 2024-02
+"A.5 capital moneda extranjera (solo prestamos: CAF 1.047,7 + BID 54,8 + BIRF 3,2 + otros 5,5)",1111.2,"A.5 filas 21, 43, 46, 49, 58"
+"A.4 letras USD organismos publicos (FGS 1.071,6 + FODER 74,9 + FONDCE 4,8 + Playas 22,4)",1173.7,"A.4 filas 253, 256, 258, 265"
+A.4 BONAR DUAL U$S 28-02-2024 (vencimiento; sin baja ONCP en febrero),4938.7,A.4 fila 299
+A.4 LETRA BCRA - U$S amortizacion,0,A.4 fila 420
+Suma de los cuatro componentes explicados,7223.6,calculo
+Residuo sin explicar (AIF menos suma),2425.5,calculo
+A.4 BONO R.A./U$S/STEP UP/09-07-2035 amortizacion o cancelacion (sin contrapartida en A.5 ni en emision de A.4; si fuera caja el AIF seria mayor),7595.9,A.4 fila 378
+"A.4 BONCER/$/4,25%+CER/13-12-2024 (instrumento en pesos, no ME)",1188.8,A.4 fila 356
+"A.4 LETES - $ (instrumento en pesos, no ME)",2507.8,A.4 fila 231
