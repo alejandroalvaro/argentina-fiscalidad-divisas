@@ -1,0 +1,41 @@
+grupo,fecha_cartera,ranking_en_el_universo,fondo,id_cnv,sociedad_gerente,patrimonio_neto_millones_de_pesos,lecap_millones_de_pesos,boncap_millones_de_pesos,tamar_millones_de_pesos,cer_millones_de_pesos,dual_millones_de_pesos,dolar_linked_millones_de_pesos,otros_tesoro_millones_de_pesos,cauciones_millones_de_pesos,pases_millones_de_pesos,plazo_fijo_millones_de_pesos,otros_titulos_de_deuda_millones_de_pesos,disponibilidades_millones_de_pesos,otros_y_pasivos_netos_millones_de_pesos,titulos_del_tesoro_pct_del_pn,source_id
+mercado_de_dinero,2023-12-29,1,Fima Premium,63383,Galicia Asset Management S.A.U.,2880465.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,48967.9,0.0,443879.8,0.0,2318486.9,69131.2,0.00,SRC-1908
+mercado_de_dinero,2023-12-29,2,Super Ahorro $,63209,Santander Asset Management G.F.C.I.S.A.,1762326.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,77189.9,0.0,352289.0,0.0,1289494.2,43353.2,0.00,SRC-1916
+mercado_de_dinero,2023-12-29,3,FBA Renta Pesos,63189,BBVA Asset Management Argentina S.A.U.S.G.F.C.I.,1234721.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,71613.9,0.0,1113225.2,49882.8,0.00,SRC-1920
+mercado_de_dinero,2023-12-29,4,Mercado Fondo,63968,Industrial Asset Management S.G.F.C.I.S.A.,878971.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,73394.1,0.0,16964.2,0.0,753102.8,35510.4,0.00,SRC-1912
+mercado_de_dinero,2023-12-29,5,Pionero Pesos Plus,63620,Macro Fondos S.G.F.C.I.S.A.,650275.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,59435.2,0.0,81674.6,0.0,491088.1,18077.7,0.00,SRC-1924
+mercado_de_dinero,2024-12-27,1,Fima Premium,63383,Galicia Asset Management S.A.U.,5900428.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,499766.3,0.0,3343772.5,0.0,2024436.8,32452.4,0.00,SRC-1909
+mercado_de_dinero,2024-12-27,2,Mercado Fondo,63968,Industrial Asset Management S.G.F.C.I.S.A.,3976884.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2121667.9,0.0,1286522.1,568694.5,0.00,SRC-1913
+mercado_de_dinero,2024-12-27,3,Super Ahorro $,63209,Santander Asset Management G.F.C.I.S.A.,3344030.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,829988.3,0.0,1816811.7,0.0,686863.8,10366.5,0.00,SRC-1917
+mercado_de_dinero,2024-12-27,4,FBA Renta Pesos,63189,BBVA Asset Management Argentina S.A.U.S.G.F.C.I.,2604496.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1512170.9,0.0,650863.8,441462.2,0.00,SRC-1921
+mercado_de_dinero,2024-12-27,5,Pionero Pesos Plus,63620,Macro Fondos S.G.F.C.I.S.A.,2000676.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,336713.9,0.0,1164994.0,0.0,490766.0,8202.8,0.00,SRC-1925
+mercado_de_dinero,2025-12-26,1,Fima Premium,63383,Galicia Asset Management S.A.U.,7819553.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1459910.7,0.0,3992664.1,0.0,2358377.4,8601.5,0.00,SRC-1910
+mercado_de_dinero,2025-12-26,2,Mercado Fondo,63968,Mercado Pago Asset Managemet S.A.,6556306.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,799869.4,0.0,3728571.6,0.0,2036388.9,-8523.2,0.00,SRC-1914
+mercado_de_dinero,2025-12-26,3,Super Ahorro $,63209,Santander Asset Management G.F.C.I.S.A.,4294458.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,855026.7,0.0,2117597.5,0.0,1316251.5,5582.8,0.00,SRC-1918
+mercado_de_dinero,2025-12-26,4,FBA Renta Pesos,63189,BBVA Asset Management Argentina S.A.U.S.G.F.C.I.,3165371.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,715057.4,0.0,1610224.4,0.0,835024.9,5064.6,0.00,SRC-1922
+mercado_de_dinero,2025-12-26,5,Pionero Pesos Plus,63620,Macro Fondos S.G.F.C.I.S.A.,2389370.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,394007.2,0.0,1298144.9,0.0,692917.4,4300.9,0.00,SRC-1926
+mercado_de_dinero,2026-08-28,1,Fima Premium,63383,Galicia Asset Management S.A.U.,9133277.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,800075.1,0.0,5678158.5,0.0,2646823.8,8219.9,0.00,SRC-1911
+mercado_de_dinero,2026-08-28,2,Mercado Fondo,63968,Mercado Pago Asset Managemet S.A.,8053654.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1129927.7,0.0,4700917.9,0.0,2234889.0,-12080.5,0.00,SRC-1915
+mercado_de_dinero,2026-08-28,3,Super Ahorro $,63209,Santander Asset Management G.F.C.I.S.A.,5699867.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,430910.0,0.0,3531637.7,0.0,1729339.7,7979.8,0.00,SRC-1919
+mercado_de_dinero,2026-08-28,4,FBA Money Market Pesos,63189,BBVA Asset Management Argentina S.A.U.S.G.F.C.I.,4038362.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,424835.8,0.0,2512669.3,0.0,1095607.8,5249.9,0.00,SRC-1923
+mercado_de_dinero,2026-08-28,5,Pionero Pesos Plus,63620,Macro Fondos S.G.F.C.I.S.A.,3188849.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,300070.7,0.0,1954127.0,0.0,930825.2,3826.6,0.00,SRC-1927
+renta_fija_T+1,2023-12-29,1,Supergestion Mix VI,63445,Santander Asset Management G.F.C.I.S.A.,124785.0,0.0,0.0,0.0,89970.0,0.0,0.0,0.0,21999.6,0.0,0.0,17357.6,0.0,-4542.2,72.10,SRC-1976
+renta_fija_T+1,2023-12-29,2,Fima Ahorro Plus,63592,Galicia Asset Management S.A.U.,99933.2,0.0,0.0,0.0,28790.8,26442.3,0.0,6795.5,0.0,0.0,0.0,13241.1,28071.2,-3407.7,62.07,SRC-1960
+renta_fija_T+1,2023-12-29,3,Fima Ahorro Pesos,63257,Galicia Asset Management S.A.U.,59508.7,0.0,0.0,0.0,19846.2,9515.4,0.0,6522.2,0.0,0.0,0.0,8426.4,17138.5,-1940.0,60.30,SRC-1964
+renta_fija_T+1,2023-12-29,4,Schroder Renta Plus,63663,Schroder S.A.S.G.F.C.I.,32326.0,0.0,0.0,0.0,2479.4,13939.0,5906.0,0.0,0.0,0.0,1752.1,5592.4,0.0,2657.2,69.06,SRC-1972
+renta_fija_T+1,2023-12-29,5,Balanz Capital Ahorro,63639,Balanz S.G.F.C.I.S.A.U.,31964.9,0.0,0.0,0.0,5584.3,12939.4,0.0,1061.2,1761.3,0.0,0.0,10695.5,0.0,-76.7,61.27,SRC-1968
+renta_fija_T+1,2024-12-27,1,Supergestion Mix VI,63445,Santander Asset Management G.F.C.I.S.A.,762460.3,510085.9,0.0,0.0,76932.2,1296.2,0.0,0.0,0.0,0.0,148298.5,37360.6,0.0,-11513.2,77.16,SRC-1977
+renta_fija_T+1,2024-12-27,2,Fima Ahorro Pesos,63257,Galicia Asset Management S.A.U.,409488.6,335534.9,0.0,0.0,9500.1,0.0,0.0,0.0,0.0,0.0,14045.5,56550.4,40.9,-6183.3,84.26,SRC-1965
+renta_fija_T+1,2024-12-27,3,Fima Ahorro Plus,63592,Galicia Asset Management S.A.U.,388178.4,306932.7,2523.2,0.0,38429.7,0.0,0.0,0.0,0.0,0.0,0.0,47551.9,77.6,-7336.6,89.62,SRC-1961
+renta_fija_T+1,2024-12-27,4,Schroder Renta Plus,63663,Schroder S.A.S.G.F.C.I.,232650.8,150106.3,22078.6,0.0,32734.0,0.0,0.0,0.0,0.0,0.0,27732.0,4001.6,0.0,-4001.6,88.08,SRC-1973
+renta_fija_T+1,2024-12-27,5,Balanz Capital Ahorro,63639,Balanz S.G.F.C.I.S.A.U.,214397.6,6346.2,0.0,0.0,167466.0,14600.5,0.0,0.0,0.0,0.0,0.0,32202.5,0.0,-6217.5,87.88,SRC-1969
+renta_fija_T+1,2025-12-26,1,Supergestion Mix VI,63445,Santander Asset Management G.F.C.I.S.A.,749004.9,106658.3,119466.3,28612.0,216762.0,105459.9,0.0,0.0,0.0,0.0,144408.1,49059.8,74.9,-21496.4,77.03,SRC-1978
+renta_fija_T+1,2025-12-26,2,Fima Ahorro Pesos,63257,Galicia Asset Management S.A.U.,493643.8,81895.5,244748.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,95816.3,89497.6,49.4,-18363.5,66.17,SRC-1966
+renta_fija_T+1,2025-12-26,3,Fima Ahorro Plus,63592,Galicia Asset Management S.A.U.,421362.1,106857.4,84398.8,0.0,67923.6,28273.4,0.0,0.0,0.0,0.0,77783.4,70072.5,42.1,-13989.2,68.22,SRC-1962
+renta_fija_T+1,2025-12-26,4,Balanz Capital Ahorro,63639,Balanz S.G.F.C.I.S.A.U.,287684.6,27071.1,32565.9,0.0,114814.9,57.5,0.0,0.0,2905.6,0.0,57019.1,65045.5,0.0,-11795.1,60.66,SRC-1970
+renta_fija_T+1,2025-12-26,5,Schroder Renta Plus,63663,Schroder S.A.S.G.F.C.I.,121803.0,0.0,0.0,0.0,54628.7,39500.7,0.0,0.0,20475.1,0.0,0.0,8075.5,0.0,-877.0,77.28,SRC-1974
+renta_fija_T+1,2026-08-28,1,Supergestion Mix VI,63445,Santander Asset Management G.F.C.I.S.A.,1065531.5,117315.0,37400.2,143100.9,502291.6,90996.4,0.0,0.0,0.0,0.0,101012.4,78316.6,106.6,-5008.0,83.63,SRC-1979
+renta_fija_T+1,2026-08-28,2,Fima Ahorro Plus,63592,Galicia Asset Management S.A.U.,746243.5,327974.0,0.0,28133.4,278050.3,0.0,0.0,0.0,0.0,0.0,40147.9,106265.1,373.1,-34700.3,84.98,SRC-1963
+renta_fija_T+1,2026-08-28,3,Fima Ahorro Pesos,63257,Galicia Asset Management S.A.U.,739197.8,496741.0,0.0,47234.7,0.0,3326.4,0.0,0.0,0.0,0.0,117015.0,133868.7,0.0,-58988.0,74.04,SRC-1967
+renta_fija_T+1,2026-08-28,4,Balanz Capital Ahorro,63639,Balanz S.G.F.C.I.S.A.U.,720678.6,137145.1,0.0,124893.6,291154.2,0.0,0.0,0.0,0.0,0.0,82013.2,121218.1,0.0,-35745.7,76.76,SRC-1971
+renta_fija_T+1,2026-08-28,5,Schroder Renta Plus,63663,Schroder S.A.S.G.F.C.I.,458345.4,94281.6,0.0,0.0,290086.8,0.0,0.0,0.0,3162.6,0.0,55414.0,24979.8,0.0,-9579.4,83.86,SRC-1975
