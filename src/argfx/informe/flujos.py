@@ -29,26 +29,32 @@ from pathlib import Path
 HUB_USD = "Mercado de cambios"
 HUB_ARS = "Sector Público Nacional"
 HUB_TESORO_USD = "Tesoro Nacional (dólares)"
+# Debt written in dollars and paid in pesos (BONAR DUAL, BONTE and LETES "paga en pesos",
+# LELINK) is a peso flow (D-017). Its amortizations, which the AIF books as foreign-currency
+# debt, leave the dollar tables and enter the peso table as their own line where lote AP opens
+# them (through 2026-06); later months stay in the rest below. Its placements are not moved:
+# in 2025-09 and 2025-10 they exceed the whole foreign-currency borrowing of the AIF, so the
+# AIF must book most of them as local-currency debt; how much it books in foreign currency is
+# not known, and it stays in the rest, which can then run either way.
 # The crossing between the two tables: pesos the Treasury applied to dollar obligations, net,
 # in three parts. Dollars bought from the BCRA or in the market (lote AI); dollar debt held by
 # the BCRA cancelled with pesos (Letras Intransferibles, RC 27/2026); and the rest, which the
-# sources do not open. The rest holds instruments written in dollars and paid in pesos (BONAR
-# DUAL, BONTE and LETES "paga en pesos"), which the AIF books as foreign-currency debt by the
-# currency of the instrument, and gross renewals and timing differences (lote AO).
+# sources do not open: timing differences, gross renewals and the months without lote AP.
 CROSS_ARS = {
     "compras": "Compra de dólares (al BCRA y en el mercado)",
     "cancelado": "Letras Intransferibles canceladas con pesos",
-    "resto": "Otras obligaciones en dólares (neto, la fuente no las abre)",
+    "resto": "Diferencia entre monedas que la fuente no abre (neto)",
 }
 CROSS_USD = {
     "compras": "Comprados con pesos",
     "cancelado": "Letras Intransferibles canceladas con pesos",
-    "resto": "Otras obligaciones cubiertas con pesos (neto, la fuente no las abre)",
+    "resto": "Diferencia entre monedas que la fuente no abre (neto)",
 }
 # Letras Intransferibles bought back with pesos, millions of pesos (RC 27/2026, SRC-2031: $18,4
 # billones of the $24,4 billones of BCRA dividends, SRC-2047). The buybacks of 2025-05 and
 # 2025-08 used IMF dollars, and the one of 2026-08 dollars from the BCRA for BOPREAL (lote AO).
 CANCELLED_WITH_PESOS = {"2026-05": 18_400_000.0}
+PAID_IN_PESOS = "Deuda escrita en dólares, pagada en pesos"
 GAP = "Sin identificar en la fuente"
 
 # Balance cambiario columns (sheet "Balance Cambiario", codes on row 11).
@@ -208,6 +214,8 @@ class FxMonth:
     depositos_usd: float
     compras_usd: float = 0.0  # dollars the Treasury bought with pesos
     cancelado_pesos: float = 0.0  # dollar debt cancelled with pesos, millions of pesos
+    # Debt written in dollars and paid in pesos, amortized in cash, millions of USD (lote AP).
+    pagado_en_pesos_usd: float = 0.0
 
 
 def ars_month(
@@ -239,7 +247,9 @@ def ars_month(
         outs["Activos financieros (aumento)"] -= deposits
     else:
         ins["Uso de activos financieros"] += deposits
-    cross = _num(f, FX_AMORTIZED) + fx_interest + deposits - _num(f, FX_DISBURSED)
+    paid = fx.pagado_en_pesos_usd * fx.tipo_de_cambio
+    outs[PAID_IN_PESOS] = paid
+    cross = _num(f, FX_AMORTIZED) - paid + fx_interest + deposits - _num(f, FX_DISBURSED)
     bought = fx.compras_usd * fx.tipo_de_cambio
     outs[CROSS_ARS["compras"]] = bought
     outs[CROSS_ARS["cancelado"]] = fx.cancelado_pesos
@@ -311,7 +321,8 @@ def treasury_usd_flows(
 
     for m in months:
         x, rate = fx[m], fx[m].tipo_de_cambio
-        disbursed, amortized = _num(fin[m], FX_DISBURSED) / rate, _num(fin[m], FX_AMORTIZED) / rate
+        disbursed = _num(fin[m], FX_DISBURSED) / rate
+        amortized = _num(fin[m], FX_AMORTIZED) / rate - x.pagado_en_pesos_usd
         add("Deuda en divisas desembolsada", disbursed)
         add("Deuda en divisas amortizada", -amortized)
         add("Intereses en divisas", -x.intereses_usd)
@@ -359,6 +370,7 @@ def fx_months(
     fx_interest: dict[str, float],
     deposits: list[dict[str, str]],
     purchases: dict[str, float] | None = None,
+    paid_in_pesos: dict[str, float] | None = None,
 ) -> dict[str, FxMonth]:
     """Join rate, interest, deposits and the Treasury's purchases of dollars. Deposits come in
     pesos at the end of each month; they are turned into dollars at that day's rate before
@@ -378,6 +390,7 @@ def fx_months(
                 usd[m] - usd[prev],
                 (purchases or {}).get(m, 0.0),
                 CANCELLED_WITH_PESOS.get(m, 0.0),
+                (paid_in_pesos or {}).get(m, 0.0),
             )
     return out
 
@@ -395,6 +408,19 @@ def read_purchases(path: Path) -> dict[str, float]:
         except ValueError:
             continue
     return out
+
+
+def read_paid_in_pesos(path: Path) -> dict[str, float]:
+    """Debt written in dollars and paid in pesos, amortized in cash, millions of USD by month
+    (lote AP, A.4 of the Finanzas boletín against the ONCP swaps sheet). Swaps without cash are
+    left out, as the AIF leaves them out. The approximate 2026 remainders and the early
+    redemption of 2023-12, which the AIF books as cash, count as cash."""
+    cols = (
+        "de_la_cual_pago_al_vencimiento_sin_canje",
+        "mixto_o_aproximado_neto_de_canje",
+        "inseparable_baja_anticipada",
+    )
+    return {r["mes"]: sum(float(r[c] or 0) for c in cols) for r in read_csv(path)}
 
 
 def _previous(m: str) -> str:
