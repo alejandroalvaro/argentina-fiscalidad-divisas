@@ -1,0 +1,13 @@
+concepto,usd_millones,fuente
+A.4 BONAR DUAL U$S 31-01-2025,8596.4,A.4 fila 300
+A.4 Bonares y Globales (9-1-2025),2813.3,A.4 filas 377 a 387
+"A.4 préstamos (organismos 95,2; bilaterales 216,1; otros 0,8)",312.1,"A.4 filas 423, 433, 443"
+Total A.4 en moneda extranjera,11721.8,suma
+A.5 capital moneda extranjera,3123.3,A.5 fila 21
+A.5 capital préstamos,310.4,A.5 fila 40
+Bonares y Globales + capital préstamos A.5,3123.7,"suma; coincide con A.5 fila 21 (3123,3) salvo 0,4"
+"AIF amortización ME total SPN (A 3500 prom. 1043,56)",8795.2,AIF 2025-01
+AIF menos total A.4,-2926.6,cálculo
+TDE25 convertido con BCRA (derivado),4162.0,tde25_conversion_bcra_rc5_2025.csv
+Total A.4 sin TDE25 convertido,7559.8,cálculo
+AIF menos total A.4 sin conversión,1235.4,cálculo

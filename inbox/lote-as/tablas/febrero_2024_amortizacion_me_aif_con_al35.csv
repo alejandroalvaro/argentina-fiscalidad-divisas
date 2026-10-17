@@ -1,0 +1,8 @@
+componente,usd_millones,fuente
+"AIF amortización ME total SPN (A 3500 prom. 834,91)",9649.1,AIF 2024-02
+A.4 AL35 comprado al BCRA (RC 13/2024),7595.9,A.4 fila 378; SRC-2064
+A.4 letras USD organismos públicos,1173.7,"A.4 filas 253, 256, 258, 265"
+A.5 capital préstamos ME,1111.2,A.5
+Suma de los tres,9880.8,cálculo
+AIF menos suma,-231.7,cálculo
+"Referencia: residuo del lote AP incluyendo BONAR DUAL 28-02-2024 (4.938,7) y sin AL35",2425.5,tablas de AP
