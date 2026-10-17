@@ -122,21 +122,22 @@ def test_dollars_leave_the_peso_table_through_one_crossing() -> None:
 
 def test_dollar_debt_paid_in_pesos_moves_to_the_peso_table() -> None:
     # Of the 90 pesos of foreign-currency amortization, 5 USD (30 pesos) were a dual bond paid
-    # in pesos.
+    # in pesos; of the 60 disbursed, 1 USD (6 pesos) was a LELINK placed for pesos.
     fin = {
         **FIN,
         "endeudamiento_moneda_extranjera_total_spn": 60,
         "amortizacion_moneda_extranjera_total_spn": 90,
         "endeudamiento_moneda_local_total_spn": 40 + 30,
     }
-    fx = {"2024-01": FxMonth(6.0, 2.0, -1.0, 3.0, 12.0, 5.0)}
+    fx = {"2024-01": FxMonth(6.0, 2.0, -1.0, 3.0, 12.0, 5.0, 1.0)}
     rows = [{"mes": "2024-01", **{k: str(x) for k, x in fin.items()}}]
     f = ars_flows([_aif("2024-01", **RES)], rows, {"2024-01": 1.0}, fx, "2024-01", "2024-01")
     assert abs(f.descuadre) < 1e-9
     assert f.salidas["Deuda escrita en dólares, pagada en pesos"] == 30
-    # 90 + 12 - 6 - 60 - 18 - 12 - 30 = -24: the rest flows back, an inflow
-    assert f.entradas[CROSS_ARS["resto"]] == 24
+    assert f.entradas["Deuda escrita en dólares, colocada por pesos"] == 6
+    # 90 + 12 - 6 - 60 - 18 - 12 - 30 + 6 = -18: the rest flows back, an inflow
+    assert f.entradas[CROSS_ARS["resto"]] == 18
     t = treasury_usd_flows(rows, fx, "2024-01", "2024-01")
     assert t.salidas["Deuda en divisas amortizada"] == 15 - 5
-    assert t.entradas["Deuda en divisas desembolsada"] == 10
+    assert t.entradas["Deuda en divisas desembolsada"] == 10 - 1
     assert abs(t.descuadre) < 1e-9
