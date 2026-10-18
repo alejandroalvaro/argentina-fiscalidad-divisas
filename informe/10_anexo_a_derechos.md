@@ -1,8 +1,8 @@
 # Anexo A. Cobrar los derechos de exportación en dólares
 
-Este anexo aplica el marco de los dos circuitos a una propuesta concreta. La idea de cobrar los derechos de exportación directamente en dólares es de Warren Mosler, que la presentó en Buenos Aires el 1 de mayo de 2022 ("A 3% export tax payable in $US", SRC-0212). El aporte de este trabajo es formalizarla, medir sus magnitudes con los datos del mandato y precisar qué cambia y qué no (D-006).
+Este anexo aplica el marco de los dos circuitos a una propuesta concreta. La idea de cobrar los derechos de exportación directamente en dólares es de Warren Mosler, que la presentó en Buenos Aires el 1 de mayo de 2022 ("A 3% export tax payable in $US", SRC-0212). El aporte de este trabajo es formalizarla, medir sus magnitudes con los datos del mandato y precisar qué cambia y qué no.
 
-El anexo presenta la propuesta, sus magnitudes en el mandato y los resultados del modelo de la fase 4, que compara los regímenes con los datos del mandato y con una proyección hasta 2036 (`argfx simular`).
+El anexo presenta la propuesta, sus magnitudes en el mandato y los resultados del modelo de la fase 4, que compara los regímenes con los datos del mandato y con una proyección hasta 2036.
 
 ::: {.destacado custom-style="Destacado"}
 **Cobrar los derechos en dólares cambia cuántas divisas quedan en el sector público y cuántas en manos privadas, sin crear divisas nuevas.**
@@ -16,14 +16,14 @@ Si el BCRA compra todos los dólares que se liquidan, cobrar el derecho en pesos
 
 Hoy el derecho se determina en dólares sobre el valor FOB y se paga en pesos. El exportador liquida las divisas en el mercado, cobra pesos y con ellos paga el derecho. La propuesta es que una fracción de las divisas, igual a la alícuota del derecho, vaya directo a una cuenta en dólares del Tesoro.
 
-El modelo compara cuatro regímenes con la misma carga tributaria (D-007):
+El modelo compara cuatro regímenes con la misma carga tributaria:
 
 - **(a) Pesos**, el régimen actual.
 - **(b) Brasil**: el exportador vende las divisas a tipo libre y puede mantenerlas en el exterior (anexo B).
-- **(c) Dólares**, la propuesta de Mosler: la fracción igual a la alícuota se paga en dólares al Tesoro (D-005).
-- **(d) Dólares con fondo de estabilización**: como (c), pero las divisas entran a un fondo que le transfiere al Tesoro una suma fija mensual, igual a la doceava parte del promedio de cinco años recalculado con las alícuotas vigentes; acumula los excedentes, cubre los faltantes por fórmula y destina a cancelar deuda lo que supere doce meses de servicio en divisas a terceros (D-012).
+- **(c) Dólares**, la propuesta de Mosler: la fracción igual a la alícuota se paga en dólares al Tesoro.
+- **(d) Dólares con fondo de estabilización**: como (c), pero las divisas entran a un fondo que le transfiere al Tesoro una suma fija mensual, igual a la doceava parte del promedio de cinco años recalculado con las alícuotas vigentes; acumula los excedentes, cubre los faltantes por fórmula y destina a cancelar deuda lo que supere doce meses de servicio en divisas a terceros.
 
-Para el resto de las divisas del exportador, la configuración base es liquidarlas a un tipo de cambio único, sin desdoblamiento, con plazos estables y alícuotas previsibles, porque la expectativa de un cambio es lo que demora la liquidación (D-013).
+Para el resto de las divisas del exportador, la configuración base es liquidarlas a un tipo de cambio único, sin desdoblamiento, con plazos estables y alícuotas previsibles, porque la expectativa de un cambio es lo que demora la liquidación.
 
 ## A.2 Qué cambia y qué no
 
@@ -43,7 +43,7 @@ La diferencia aparece cuando la secuencia se corta, que es lo que muestran los c
 | 2026 (enero a agosto) | 3.871 | 7.196 |
 | **Total** | **17.079** | **26.810** |
 
-*Millones de USD. Derechos: recaudación (datos.gob.ar, lote D) pasada a dólares al A 3500 promedio del mes. Compras: lote AI, con la compra de febrero de 2026 (capítulo 5).*
+*Millones de USD. Derechos: recaudación (datos.gob.ar) pasada a dólares al A 3500 promedio del mes. Compras: informe mensual del BCRA, con la compra de febrero de 2026 (capítulo 5).*
 
 Cobrados en dólares, los derechos del mandato habrían equivalido al 64% de los dólares que el Tesoro compró con pesos. La comparación pertinente es con las compras, porque la deuda con el BCRA cancelada con pesos no le dio al Tesoro dólares disponibles (capítulo 5). En 2025 habrían superado las compras del año.
 
@@ -58,7 +58,7 @@ Cobrados en dólares, los derechos del mandato habrían equivalido al 64% de los
 | 2025 | 95,1% | 8.267 | 6.000 | 0,73 |
 | 2026 (enero a septiembre) | 95,2% | 5.753 | 4.612 | 0,80 |
 
-*Millones de USD. Fuente: `argfx derechos`.*
+*Millones de USD. Fuente: elaboración propia.*
 
 En 2021 y 2022 el método reproduce la recaudación. Desde 2023 se cobra entre un 20% y un 36% menos de lo estimado. Hay cinco explicaciones candidatas, ninguna cuantificada todavía:
 
@@ -92,7 +92,7 @@ El ejercicio toma lo que pasó entre diciembre de 2023 y agosto de 2026 como el 
 | 2026 (enero a agosto) | 3.871 | 5.662 | 785 | 2.757 |
 | **Total** | **17.079** | **16.366** | **3.450** | **11.918** |
 
-*Cuadro A.1. Millones de USD. La última columna es el derecho, menos lo que el BCRA habría dejado de comprar en el mercado, menos las compras evitadas que el Tesoro hacía en el mercado y no al BCRA. Fuente: `argfx simular`, `data/simulacion/mandato_contrafactico_compras.csv`.*
+*Cuadro A.1. Millones de USD. La última columna es el derecho, menos lo que el BCRA habría dejado de comprar en el mercado, menos las compras evitadas que el Tesoro hacía en el mercado y no al BCRA. Fuente: elaboración propia.*
 
 Con el derecho en dólares, el Tesoro se habría ahorrado 16.366 de los 26.810 millones que compró con pesos. En pesos, el resultado casi no cambia: los pesos que el Tesoro no habría cobrado son casi los mismos que no habría tenido que gastar en dólares. La diferencia al cierre, con intereses a la tasa BADLAR, es de 1,2 billones de pesos, y se explica por el desfase: en 2025 los dólares del derecho habrían llegado antes de que el Tesoro los necesitara.
 
@@ -106,7 +106,7 @@ El efecto grande está en los dólares. En el mandato el BCRA compró, en promed
 | Deuda en divisas que se habría evitado, con intereses al 7% anual, al tipo de cambio de agosto de 2026 | 27,3 billones |
 | **Costo adicional de la deuda en pesos** | **2,1 billones** |
 
-*Cuadro A.2. Fuente: `argfx simular`. La tasa de la deuda en divisas es un supuesto: con 5% el costo adicional es de 2,7 billones, y con 9%, de 1,4.*
+*Cuadro A.2. Fuente: elaboración propia. La tasa de la deuda en divisas es un supuesto: con 5% el costo adicional es de 2,7 billones, y con 9%, de 1,4.*
 
 Cambiar deuda en dólares por deuda en pesos habría costado, visto después, entre un 5% y un 10% más. La razón es que en el mandato el tipo de cambio subió menos que la tasa en pesos: la deuda en dólares resultó barata medida en pesos. Ese resultado depende del período. Con una devaluación grande en el medio, la cuenta puede dar al revés. Lo que no depende del período es la moneda: con el derecho en dólares, el Tesoro habría terminado el mandato con unos 16.600 millones de dólares menos de deuda en divisas y con su equivalente en pesos, una deuda que el Estado emite y puede renovar en su propia moneda.
 
@@ -118,7 +118,7 @@ La proyección va de octubre de 2026 a diciembre de 2036. Toma las exportaciones
 
 <iframe class="grafico" src="grafico_derechos_vs_servicio.html" title="Gráfico A.1"></iframe>
 
-*Gráfico A.1. Derechos de exportación cobrados en dólares, proyección base, y vencimientos en divisas con acreedores fuera del sector público, con y sin refinanciación del capital de los organismos. Millones de USD por año. Fuente: `argfx simular`, `argfx graficos`.*
+*Gráfico A.1. Derechos de exportación cobrados en dólares, proyección base, y vencimientos en divisas con acreedores fuera del sector público, con y sin refinanciación del capital de los organismos. Millones de USD por año. Fuente: elaboración propia.*
 
 | Escenario | Derechos, oct. 2026 a 2036 | Vencimientos con terceros | Cobertura | Meses en que el Tesoro tiene que comprar dólares, (a) / (c) |
 |---|---:|---:|---:|---:|
@@ -128,15 +128,15 @@ La proyección va de octubre de 2026 a diciembre de 2036. Toma las exportaciones
 | Sequía como la de 2023, desde abril de 2027 | 43.270 | 206.858 | 20,9% | 122 / 97 |
 | Precios de exportación 20% más bajos | 35.720 | 206.858 | 17,3% | 122 / 108 |
 
-*Cuadro A.3. Millones de USD, 123 meses. Fuente: `argfx simular`, `data/simulacion/proyeccion_resumen.json`. En todos los escenarios, la deuda en pesos que el Tesoro toma para comprar los dólares que le faltan es la misma en (a) y en (c).*
+*Cuadro A.3. Millones de USD, 123 meses. Fuente: elaboración propia. En todos los escenarios, la deuda en pesos que el Tesoro toma para comprar los dólares que le faltan es la misma en (a) y en (c).*
 
 Los derechos cobrados en dólares cubrirían algo más de una quinta parte de los vencimientos con terceros si nadie refinancia, y algo más de un tercio si los organismos renuevan el capital, como hicieron en el mandato. Con la refinanciación de los organismos, el Tesoro dejaría de tener que comprar dólares en 86 de los 123 meses. Las alícuotas ya decretadas bajan la recaudación de unos 5.400 millones en 2027 a unos 4.150 por año desde 2029.
 
-**El fondo de estabilización, régimen (d).** Con la regla de D-012, el fondo le transfiere al Tesoro cada mes la doceava parte del promedio anual de los primeros cinco años proyectados, unos 381 millones, y guarda los excedentes de la cosecha. La variación mensual de lo que recibe el Tesoro (coeficiente de variación) baja de 0,21 a 0,12 en el escenario base, y de 0,20 a 0,06 en el de sequía. El fondo llega a un máximo de 1.242 millones, y no se dispara la regla de cancelar deuda con lo que supere doce meses de servicio, salvo en la sequía, donde se cancelan 147 millones. Con estos montos, el fondo ordena los meses; no cambia cuántos dólares llegan.
+**El fondo de estabilización, régimen (d).** Con esa regla, el fondo le transfiere al Tesoro cada mes la doceava parte del promedio anual de los primeros cinco años proyectados, unos 381 millones, y guarda los excedentes de la cosecha. La variación mensual de lo que recibe el Tesoro (coeficiente de variación) baja de 0,21 a 0,12 en el escenario base, y de 0,20 a 0,06 en el de sequía. El fondo llega a un máximo de 1.242 millones, y no se dispara la regla de cancelar deuda con lo que supere doce meses de servicio, salvo en la sequía, donde se cancelan 147 millones. Con estos montos, el fondo ordena los meses; no cambia cuántos dólares llegan.
 
 <iframe class="grafico" src="grafico_fondo_mensual.html" title="Gráfico A.2"></iframe>
 
-*Gráfico A.2. Dólares que recibe el Tesoro cada mes en 2027 y 2028, con el cobro directo en dólares (c) y con el fondo de estabilización (d). Millones de USD. Fuente: `argfx simular`, `argfx graficos`.*
+*Gráfico A.2. Dólares que recibe el Tesoro cada mes en 2027 y 2028, con el cobro directo en dólares (c) y con el fondo de estabilización (d). Millones de USD. Fuente: elaboración propia.*
 
 ## A.7 Qué dice y qué no dice el modelo
 

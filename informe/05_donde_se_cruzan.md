@@ -16,7 +16,7 @@ El diagrama 5.1 muestra todo lo que entró y salió de la caja en dólares del T
 
 <iframe class="sankey" src="flujos_usd_tesoro_2023-12_2026-08.html" title="Diagrama 5.1"></iframe>
 
-*Diagrama 5.1. Tesoro Nacional en dólares, diciembre de 2023 a agosto de 2026, en millones de USD. Fuentes: esquema ahorro-inversión-financiamiento de la Secretaría de Hacienda (lotes AM y AN), boletín de la Secretaría de Finanzas, cuadro A.5, pagos por moneda de pago (SRC-9002), depósitos del Gobierno Nacional en el BCRA (lote AM), compras de divisas del Tesoro (lote AI), resoluciones conjuntas (lotes AO a AS). `argfx flujos`.*
+*Diagrama 5.1. Tesoro Nacional en dólares, diciembre de 2023 a agosto de 2026, en millones de USD. Fuentes: esquema ahorro-inversión-financiamiento de la Secretaría de Hacienda, boletín de la Secretaría de Finanzas, cuadro A.5, pagos por moneda de pago (SRC-9002), depósitos del Gobierno Nacional en el BCRA, compras de divisas del Tesoro (informe mensual del BCRA), resoluciones conjuntas de deuda. Elaboración propia.*
 
 | Entradas | Millones de USD | Salidas | Millones de USD |
 |---|---:|---|---:|
@@ -51,7 +51,7 @@ La diferencia que la fuente no abre, 4.309 millones, es lo que no se pudo atribu
 
 ## 5.2 Lo que parece un cruce y no lo es
 
-Una parte grande de la deuda que las estadísticas llaman "en moneda extranjera" nunca pasó por el circuito de los dólares. Son bonos escritos en dólares que se pagan en pesos: los dólar linked, el BONTE y los duales que pagan en pesos y las letras atadas al dólar (lote AR).
+Una parte grande de la deuda que las estadísticas llaman "en moneda extranjera" nunca pasó por el circuito de los dólares. Son bonos escritos en dólares que se pagan en pesos: los dólar linked, el BONTE y los duales que pagan en pesos y las letras atadas al dólar.
 
 - El Tesoro pagó en pesos 45.325 millones de dólares de esa deuda (49.487 en caja, menos los 4.162 millones del BONAR DUAL TDE25 que el BCRA convirtió por LECAP una semana antes del vencimiento, sin caja, por la RC 5/2025). En pesos fueron $79,3 billones de agosto de 2026.
 - Colocó en el mismo período 19.413 millones de deuda escrita en dólares y cobrada en pesos, $31,9 billones.
@@ -81,6 +81,6 @@ Tomada sola, una recompra entre el Tesoro y el BCRA no cambia la deuda del secto
 
 ## 5.5 Lo que viene
 
-El calendario contractual (capítulo 2) da una necesidad consolidada de 18.775 millones de dólares entre julio de 2026 y junio de 2027, y una meseta de entre 27.000 y 30.000 millones por año frente a acreedores fuera del sector público entre 2028 y 2032. Con depósitos del Tesoro en dólares de 1.230 millones al 14 de octubre de 2026 y reservas netas que el FMI proyecta en −1.800 millones para fin de año, esa necesidad se cubre por las mismas tres vías del mandato: deuda nueva en divisas, compra de dólares con pesos y operaciones con el BCRA. El programa financiero oficial prevé compras al BCRA por 6.700 millones en 2026 y 4.900 en 2027 (CLM-AD-024).
+El calendario contractual (capítulo 2) da una necesidad consolidada de 18.775 millones de dólares entre julio de 2026 y junio de 2027, y una meseta de entre 27.000 y 30.000 millones por año frente a acreedores fuera del sector público entre 2028 y 2032. Con depósitos del Tesoro en dólares de 1.230 millones al 14 de octubre de 2026 y reservas netas que el FMI proyecta en −1.800 millones para fin de año, esa necesidad se cubre por las mismas tres vías del mandato: deuda nueva en divisas, compra de dólares con pesos y operaciones con el BCRA. El programa financiero oficial prevé compras al BCRA por 6.700 millones en 2026 y 4.900 en 2027 (Bloomberg Línea, SRC-1344).
 
 Cuál de las tres vías se usa decide quién financia la diferencia. Con deuda nueva, los prestamistas. Con compras en el mercado, los que venden dólares, a cambio de pesos que alguien tiene que absorber. Con operaciones con el BCRA, las reservas.

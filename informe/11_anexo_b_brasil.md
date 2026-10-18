@@ -2,7 +2,7 @@
 
 Brasil sirve de contraste acotado. Es una economía grande de la región, exportadora de materias primas como la Argentina, en la que los dos circuitos casi no se cruzan en el Tesoro.
 
-**La deuda está casi toda en su moneda.** Según una clasificación derivada de los códigos de los títulos, que no es oficial (D-002), en julio de 2026 la deuda pública federal se repartía así: 46,4% atada a la tasa Selic, 27,2% indexada por el índice de precios al consumidor amplio (IPCA), 23,5% a tasa fija y 2,7% atada al tipo de cambio. En septiembre de 2017 la parte cambiaria era del 2,4%. El Tesoro brasileño no necesita comprar dólares para pagar casi nada de su deuda.
+**La deuda está casi toda en su moneda.** Según una clasificación derivada de los códigos de los títulos, que no es oficial, en julio de 2026 la deuda pública federal se repartía así: 46,4% atada a la tasa Selic, 27,2% indexada por el índice de precios al consumidor amplio (IPCA), 23,5% a tasa fija y 2,7% atada al tipo de cambio. En septiembre de 2017 la parte cambiaria era del 2,4%. El Tesoro brasileño no necesita comprar dólares para pagar casi nada de su deuda.
 
 **El exportador decide dónde tener las divisas.** Desde la Lei 14.286/2021, las operaciones de cambio son libres, se hacen con instituciones autorizadas por el Banco Central do Brasil (BCB) a un tipo pactado libremente, y mantener en el exterior las divisas de exportación es optativo (SRC-0505). La obligación de liquidarlas se flexibilizó en 2006 y en 2021.
 
