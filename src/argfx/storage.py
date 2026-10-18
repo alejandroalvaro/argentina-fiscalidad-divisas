@@ -114,6 +114,26 @@ def r2_client(settings: Settings) -> S3Client:
     )
 
 
+def public_store(settings: Settings) -> ObjectStore:
+    """The public bucket, written with a token scoped to it."""
+    import boto3
+
+    key, secret = settings.r2_public_access_key_id, settings.r2_public_secret_access_key
+    if not (settings.r2_endpoint and key and secret):
+        raise RuntimeError(
+            "public bucket credentials missing: set R2_PUBLIC_ACCESS_KEY_ID and "
+            "R2_PUBLIC_SECRET_ACCESS_KEY"
+        )
+    client = boto3.client(
+        "s3",
+        endpoint_url=settings.r2_endpoint,
+        aws_access_key_id=key.get_secret_value(),
+        aws_secret_access_key=secret.get_secret_value(),
+        region_name="auto",
+    )
+    return S3ObjectStore(client, settings.r2_public_bucket)
+
+
 def get_store(settings: Settings) -> ObjectStore:
     if settings.resolved_storage == "r2":
         return S3ObjectStore(r2_client(settings), settings.r2_bucket)

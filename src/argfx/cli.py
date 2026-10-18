@@ -14,6 +14,21 @@ from argfx.manifest import ingest_file
 from argfx.storage import fetch_verified, get_store
 
 
+def cmd_publicar(args: argparse.Namespace) -> int:
+    from argfx.publicacion import build_table, copy_public, write_table
+    from argfx.storage import public_store
+
+    rows = build_table(args.objects, args.inbox)
+    write_table(rows, args.out)
+    public = sum(r["publicar"] == "si" for r in rows)
+    print(f"{args.out}: {public} originales públicos, {len(rows) - public} privados")
+    if args.copiar:
+        settings = get_settings()
+        n = copy_public(rows, get_store(settings), public_store(settings))
+        print(f"copiados al bucket {settings.r2_public_bucket}: {n}")
+    return 0
+
+
 def cmd_config(_: argparse.Namespace) -> int:
     for key, value in get_settings().public_summary().items():
         print(f"{key:22} {value}")
@@ -724,6 +739,13 @@ def build_parser() -> argparse.ArgumentParser:
     gra.add_argument("--pesos-de", default="2026-08", help="month of the constant pesos")
     gra.add_argument("--out", type=Path, default=Path("data/informe"))
     gra.set_defaults(func=cmd_graficos)
+
+    pub = sub.add_parser("publicar", help="table of republishable originals; copy them")
+    pub.add_argument("--objects", type=Path, default=Path("manifests/objects.csv"))
+    pub.add_argument("--inbox", type=Path, default=Path("inbox"))
+    pub.add_argument("--out", type=Path, default=Path("manifests/publicacion.csv"))
+    pub.add_argument("--copiar", action="store_true", help="copy them to the public bucket")
+    pub.set_defaults(func=cmd_publicar)
     return parser
 
 
