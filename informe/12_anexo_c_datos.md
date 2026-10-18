@@ -22,7 +22,7 @@
 | IPC nacional, INDEC | Deflactor de los pesos | SRC-2028 | 3, 5 |
 | Comunicación A 3500, BCRA | Tipo de cambio de referencia | `series/bcra_a3500.csv` | todos |
 
-La lista completa de fuentes, con URL, fecha de descarga y huella sha256, está en `manifests/downloads.csv` y en el `sources.csv` de cada lote (`inbox/`).
+Un lote es una entrega del agente de búsqueda, guardada en la carpeta `inbox/lote-…` del repositorio con su lista de fuentes, sus tablas y sus notas. La lista completa de fuentes, con URL, fecha de descarga y huella sha256, está en `manifests/downloads.csv` y en el `sources.csv` de cada lote.
 
 ## C.2 Salidas que sostienen el informe
 
@@ -37,11 +37,11 @@ La lista completa de fuentes, con URL, fecha de descarga y huella sha256, está 
 | Gráficos de barras | `argfx graficos` | `data/informe/grafico_*.csv` y `.html` |
 | Proyección del FMI del saldo comercial | | `series/fmi_balanza_proyectada.csv` (SRC-1263) |
 
-Todas las salidas de este borrador se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
+Todas las salidas de esta versión se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
 
 ## C.3 Decisiones de método
 
-Las decisiones del investigador están en `docs/DECISIONES.md`. Las que más pesan en este informe son:
+Las decisiones del investigador están en `docs/DECISIONES.md`, con fecha y fundamento. Las que más pesan en este informe son:
 
 - **D-001.** Reservas netas con la definición del acuerdo con el FMI, sin restar los depósitos del Tesoro.
 - **D-008.** El análisis incorpora las operaciones posteriores al corte de SIGADE.
@@ -50,3 +50,16 @@ Las decisiones del investigador están en `docs/DECISIONES.md`. Las que más pes
 - **D-016.** El informe trata la naturaleza bimonetaria de la deuda; el cobro en dólares pasa a anexo.
 - **D-017.** Cada moneda en su unidad, gráficos por moneda y glosario.
 - **D-018.** Los supuestos de la corrida del modelo de la fase 4.
+
+## C.4 Cómo verificar una cifra
+
+Todo lo que sostiene este informe es público:
+
+- **El repositorio**, con el código, las pruebas, los manifiestos, las tablas de cada lote, las decisiones de método y los mensajes entre los agentes, con su historial completo: https://github.com/alejandroalvaro/argentina-fiscalidad-divisas
+- **Los documentos originales oficiales**, tal como se bajaron, en https://datos.8kgm.com.br. Cada original está en `objects/sha256/` seguido de su huella. La tabla `manifests/publicacion.csv` da, para cada código SRC, el emisor, la URL de origen, la huella y la dirección pública.
+- **Los documentos de terceros** (notas de prensa, trabajos académicos, informes de cámaras privadas y copias de textos oficiales alojadas en sitios de terceros), 140 de 1.214, no se reproducen porque sus derechos son de sus autores. La misma tabla da su URL de origen y su huella, para que quien los baje pueda comprobar que es el mismo archivo.
+
+Para comprobar un original alcanza con bajarlo y calcular su huella (`shasum -a 256 archivo` en macOS o Linux, `certutil -hashfile archivo SHA256` en Windows): tiene que coincidir con el nombre del objeto. Para rehacer un cálculo, el repositorio explica cómo instalar el código y qué comando produce cada salida (sección C.2).
+
+El código se distribuye con la licencia MIT, y los textos y las tablas propias, con la licencia Creative Commons Atribución 4.0 (CC BY 4.0). Los documentos originales siguen siendo de sus emisores.
+

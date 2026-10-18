@@ -1,6 +1,6 @@
 # Glosario
 
-Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada sigla, instrumento o concepto que aparece en el texto tiene que estar acá. Orden alfabético. Entre paréntesis, la moneda del circuito al que pertenece cuando corresponde.
+Cada sigla, instrumento o concepto que aparece en el texto está acá, en orden alfabético. Entre paréntesis, la moneda del circuito al que pertenece cuando corresponde.
 
 **A 3500.** Tipo de cambio de referencia que publica el BCRA cada día hábil (Comunicación A 3500). El informe lo usa para pasar pesos a dólares, y al revés, cuando hace falta comparar.
 

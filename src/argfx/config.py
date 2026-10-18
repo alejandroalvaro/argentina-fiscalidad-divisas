@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     r2_access_key_id: SecretStr | None = None
     r2_secret_access_key: SecretStr | None = None
     r2_bucket: str = "argentina-fx-research"
+    # Public bucket for republishable originals, written with its own token.
+    r2_public_bucket: str = "argentina-fx-public"
+    r2_public_access_key_id: SecretStr | None = None
+    r2_public_secret_access_key: SecretStr | None = None
+    r2_public_base_url: str | None = None
 
     # Local paths. Everything under data_dir is regenerable or mirrored in R2 and stays out of Git.
     data_dir: Path = Field(default=Path("data"), validation_alias=AliasChoices("ARGFX_DATA_DIR"))
@@ -72,6 +77,9 @@ class Settings(BaseSettings):
             "r2_endpoint": self.r2_endpoint or "(missing R2_ACCOUNT_ID)",
             "r2_access_key_id": "present" if self.r2_access_key_id else "missing",
             "r2_secret_access_key": "present" if self.r2_secret_access_key else "missing",
+            "r2_public_bucket": self.r2_public_bucket,
+            "r2_public_keys": "present" if self.r2_public_access_key_id else "missing",
+            "r2_public_base_url": self.r2_public_base_url or "(missing)",
             "data_dir": str(self.data_dir),
             "manifests_dir": str(self.manifests_dir),
             "duckdb_path": str(self.duckdb_path),

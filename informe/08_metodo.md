@@ -23,7 +23,7 @@ Los dos agentes se comunicaron por escrito, en 134 mensajes guardados en el repo
 
 Cada documento que sostiene una cifra se guarda una sola vez, sin modificar, en un almacenamiento de objetos, con su huella sha256 como nombre. Si dos fuentes entregan el mismo archivo, se guarda una vez. Si una fuente cambia el archivo, la huella cambia y se guarda la nueva versión al lado de la vieja. Los manifiestos del repositorio registran, para cada fuente, la URL, la fecha de descarga, el código de respuesta, el tamaño y la huella, y si coincide con la que calculó el agente de búsqueda.
 
-Al cierre de este borrador había 1.214 originales guardados. Algunas fuentes no se pudieron guardar porque el portal bloquea la descarga automática (ANSES y el FMI, capítulo 7); en esos casos se usó la lectura web, y se indica.
+Al cierre de esta versión había 1.214 originales guardados. Los 1.074 que son documentos oficiales se pueden bajar de https://datos.8kgm.com.br; los otros 140, de terceros, figuran con su URL de origen y su huella. El anexo C, sección C.4, explica cómo verificar cada uno. Algunas fuentes no se pudieron guardar porque el portal bloquea la descarga automática (ANSES y el FMI, capítulo 7); en esos casos se usó la lectura web, y se indica.
 
 ## 8.3 Validación y verificación
 
