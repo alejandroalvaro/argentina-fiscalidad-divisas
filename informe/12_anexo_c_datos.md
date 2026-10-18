@@ -37,7 +37,7 @@ Un lote es una entrega del agente de búsqueda, guardada en la carpeta `inbox/lo
 | Gráficos de barras | `argfx graficos` | `data/informe/grafico_*.csv` y `.html` |
 | Proyección del FMI del saldo comercial | | `series/fmi_balanza_proyectada.csv` (SRC-1263) |
 
-Todas las salidas de este borrador se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
+Todas las salidas de esta versión se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
 
 ## C.3 Decisiones de método
 

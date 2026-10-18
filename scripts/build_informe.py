@@ -146,7 +146,7 @@ def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
     header.write_text(head, encoding="utf-8")
     after = out.parent / "_after.html"
     after.write_text(
-        f"<footer>Borrador del {date}. Generado con scripts/build_informe.py desde "
+        f"<footer>Versión del {date}. Generado con scripts/build_informe.py desde "
         "informe/*.md y docs/GLOSARIO.md.</footer>",
         encoding="utf-8",
     )
@@ -160,7 +160,7 @@ def build(src: Path, glossary: Path, out: Path, date: str) -> Path:
             "--toc-depth=1",
             f"--metadata=title:{TITLE}",
             f"--metadata=subtitle:{SUBTITLE}",
-            f"--metadata=date:Borrador del {date}",
+            f"--metadata=date:Versión del {date}",
             "--metadata=lang:es",
             f"--include-in-header={header}",
             f"--include-after-body={after}",
@@ -216,7 +216,7 @@ def build_docx(src: Path, glossary: Path, out: Path, date: str) -> Path:
         subprocess.run(
             ["pandoc", "--from=markdown", "--to=docx", "--toc", "--toc-depth=1",
              f"--metadata=title:{TITLE}", f"--metadata=subtitle:{SUBTITLE}",
-             f"--metadata=date:Borrador del {date}", "--metadata=lang:es-AR", "-o", str(out)],
+             f"--metadata=date:Versión del {date}", "--metadata=lang:es-AR", "-o", str(out)],
             input=body, text=True, check=True,
         )  # fmt: skip
     return out
