@@ -428,15 +428,24 @@ def fx_months(
     return out
 
 
+# Purchases from the BCRA that the BCRA's monthly report leaves out of "directo con BCRA" and its
+# daily series (variable 48) records, millions of USD. 2026-02: USD 787 million on 2026-02-05 to
+# pay the IMF (lote AI notes); without it the month's Treasury dollar table is short by 731.
+# The other gaps between the two series are under 60 a month and keep the report's figure.
+OMITTED_FROM_REPORT = {"2026-02": 787.0}
+
+
 def read_purchases(path: Path) -> dict[str, float]:
     """Dollars the Treasury bought, millions of USD by month (lote AI): directly from the BCRA
-    plus net in the market, as the BCRA reports them. Months marked n/d count as unknown and are
-    left out, so the rest of the crossing absorbs them."""
+    plus net in the market, as the BCRA reports them, plus OMITTED_FROM_REPORT. Months marked
+    n/d count as unknown and are left out, so the rest of the crossing absorbs them."""
     out = {}
     for r in read_csv(path):
         try:
-            out[r["mes"]] = float(r["compras_directas_al_bcra_usd_millones_informe_bcra"]) + float(
-                r["compras_netas_tesoro_en_mercado_usd_millones_informe_bcra"]
+            out[r["mes"]] = (
+                float(r["compras_directas_al_bcra_usd_millones_informe_bcra"])
+                + float(r["compras_netas_tesoro_en_mercado_usd_millones_informe_bcra"])
+                + OMITTED_FROM_REPORT.get(r["mes"], 0.0)
             )
         except ValueError:
             continue

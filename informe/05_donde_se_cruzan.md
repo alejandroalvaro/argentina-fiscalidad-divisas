@@ -2,6 +2,14 @@
 
 Los dos circuitos se tocan en el Tesoro. El Tesoro debe dólares, y la mayor parte de sus ingresos son pesos. Este capítulo mide cuántos dólares necesitó el Tesoro en el mandato, de dónde los sacó y cuántos pesos aplicó a conseguirlos. Los dólares se informan en millones de USD y los pesos en billones de pesos de agosto de 2026.
 
+::: {.destacado custom-style="Destacado"}
+**El superávit en pesos no trae dólares por sí solo.**
+
+El Tesoro pagó 100.639 millones de dólares de deuda en divisas. Cubrió 64.150 con deuda nueva en divisas y 26.810 comprándolos con pesos. Además canceló con pesos deuda en dólares que le debía al BCRA, por un valor nominal de 28.030 millones.
+
+*Alcance.* Las tres vías tienen distinto contenido económico. Comprar dólares al mercado los saca de manos privadas; comprarlos al BCRA los saca de las reservas; cancelar con pesos una deuda en dólares con el BCRA no consigue ningún dólar disponible, porque solo cambia una deuda dentro del sector público.
+:::
+
 ## 5.1 El Tesoro en dólares
 
 El diagrama 5.1 muestra todo lo que entró y salió de la caja en dólares del Tesoro entre diciembre de 2023 y agosto de 2026.
@@ -13,21 +21,33 @@ El diagrama 5.1 muestra todo lo que entró y salió de la caja en dólares del T
 | Entradas | Millones de USD | Salidas | Millones de USD |
 |---|---:|---|---:|
 | Deuda en divisas desembolsada | 64.150 | Deuda en divisas amortizada | 76.080 |
-| Dólares comprados con pesos | 26.023 | Intereses en divisas | 24.559 |
-| Deuda en dólares con el BCRA cancelada con pesos | 16.703 | Aumento de los depósitos en el BCRA | 2.715 |
-| | | Diferencia que la fuente no abre | 3.522 |
-| **Total** | **106.876** | **Total** | **106.876** |
+| Dólares comprados con pesos | 26.810 | Intereses en divisas | 24.559 |
+| Deuda en dólares con el BCRA cancelada con pesos (equivalente en dólares de lo pagado) | 16.703 | Aumento de los depósitos en el BCRA | 2.715 |
+| | | Diferencia que la fuente no abre | 4.309 |
+| **Total** | **107.663** | **Total** | **107.663** |
 
-En casi tres años el Tesoro pagó 100.639 millones de dólares de capital e intereses de deuda en divisas. Con nueva deuda en divisas, sobre todo de organismos internacionales, cubrió 64.150. El resto, unos 42.700 millones, salió del circuito de los pesos por dos vías.
+*Millones de USD.*
 
-**Compró dólares con pesos.** Fueron 26.023 millones: 25.234 directamente al BCRA y 1.529 netos en el mercado. Le costaron $44,4 billones de pesos de agosto de 2026. Las compras se concentraron en 2024 (15.631 millones al BCRA, con meses de 3.821 en julio y 2.813 en noviembre), cayeron en 2025 (2.728 al BCRA y 1.258 en el mercado) y volvieron en 2026 (6.875 al BCRA y 271 en el mercado hasta agosto). En octubre de 2025, con el tipo de cambio en el techo de la banda, el Tesoro vendió 2.060 millones en el mercado.
+En casi tres años el Tesoro pagó 100.639 millones de dólares de capital e intereses de deuda en divisas. Con nueva deuda en divisas, sobre todo de organismos internacionales, cubrió 64.150. El resto salió del circuito de los pesos por dos vías, que conviene leer por separado porque no son equivalentes.
 
-**Canceló con pesos deuda en dólares que tenía con el BCRA.** Fueron dos operaciones, por 16.703 millones de dólares de valor nominal y $27,0 billones de pesos de agosto de 2026:
+**Compró dólares con pesos.** Fueron 26.810 millones: 25.281 directamente al BCRA y 1.529 netos en el mercado. Le costaron $45,7 billones de pesos de agosto de 2026. Las compras se concentraron en 2024 (15.641 millones al BCRA, con meses de 3.822 en julio y 2.814 en noviembre), cayeron en 2025 (2.715 al BCRA y 1.258 netos en el mercado) y volvieron en 2026 (6.925 al BCRA y 271 en el mercado hasta agosto). En octubre de 2025, con el tipo de cambio en el techo de la banda, el Tesoro vendió 2.060 millones en el mercado.
+
+Las cifras por vía salen del informe mensual del BCRA, que es la serie que usa el diagrama, con una corrección. El 5 de febrero de 2026 el Tesoro le compró al BCRA 787 millones para pagarle al FMI: la serie diaria del BCRA (variable 48) y la prensa la registran, y el informe mensual no la cuenta como compra directa. Sin ella, a la cuenta en dólares del Tesoro de febrero le faltaban 731 millones; con ella, la diferencia del mes queda en 56. La serie diaria da para todo el período 25.234 millones al BCRA, 47 menos que la cifra corregida: son diferencias de menos de 60 millones por mes entre las dos series, que el informe deja como están (capítulo 7).
+
+**Canceló con pesos deuda en dólares que tenía con el BCRA.** Fueron dos operaciones, por un valor nominal de 28.030 millones de dólares. El Tesoro pagó por ellas $27,0 billones de pesos de agosto de 2026, que al tipo de cambio promedio de cada mes equivalen a 16.703 millones de dólares. Esa es la cifra que registra la cuenta de financiamiento como amortización, y por eso es la que entra en el cuadro; la diferencia con el valor nominal, unos 11.300 millones, es el descuento con que el BCRA entregó los títulos:
 
 - en febrero de 2024 el Tesoro le compró al BCRA bonos AL35 por un valor nominal de 7.596 millones de dólares y pagó $2,951 billones de pesos de ese momento, unos 3.534 millones de dólares, menos de la mitad del valor nominal (RC 13/2024, SRC-2064);
-- en mayo de 2026 recompró Letras Intransferibles por un valor nominal de 20.434 millones y pagó $18,4 billones de pesos, unos 13.225 millones de dólares a $1.391,31 (RC 27/2026, SRC-2031 y SRC-2047). Los pesos salieron de las utilidades del BCRA del ejercicio 2025, que sumaron $24,4 billones: 18,4 fueron a la recompra y 6 a depósitos.
+- en mayo de 2026 recompró Letras Intransferibles por un valor nominal de 20.434 millones y pagó $18,4 billones de pesos, unos 13.225 millones de dólares al tipo de cambio de la operación ($1.391,31) y 13.169 al promedio del mes (RC 27/2026, SRC-2031 y SRC-2047). Los pesos salieron de las utilidades del BCRA del ejercicio 2025, que sumaron $24,4 billones: 18,4 fueron a la recompra y 6 a depósitos.
 
-La diferencia que la fuente no abre, 3.522 millones, es lo que no se pudo atribuir a ninguna de esas vías. Equivale al 3,3% del flujo del Tesoro en dólares, y ningún mes supera los 1.600 millones en valor absoluto. Los meses más grandes (febrero de 2024, −1.165, y enero de 2025, +1.163) coinciden con operaciones que se registran en un mes en una fuente y en otro mes en la otra. El informe lo trata como desfasaje de calendario y de registro y lo deja a la vista, sin repartirlo.
+| Operación | Valor nominal | Pesos pagados | Equivalente en dólares, al promedio del mes |
+|---|---:|---:|---:|
+| AL35, febrero de 2024 | 7.596 | $2,951 billones corrientes | 3.534 |
+| Letras Intransferibles, mayo de 2026 | 20.434 | $18,4 billones corrientes | 13.169 |
+| **Total** | **28.030** | **$27,0 billones de agosto de 2026** | **16.703** |
+
+*Millones de USD salvo los pesos.*
+
+La diferencia que la fuente no abre, 4.309 millones, es lo que no se pudo atribuir a ninguna de esas vías. Equivale al 4,0% del flujo del Tesoro en dólares, y ningún mes supera los 1.600 millones en valor absoluto. Los meses más grandes (diciembre de 2025, −1.586; junio de 2025, +1.455; mayo de 2024, +1.371, y abril de 2026, −1.357) son de signo contrario y coinciden con operaciones que una fuente registra en un mes y la otra en otro. El informe lo trata como desfasaje de calendario y de registro y lo deja a la vista, sin repartirlo. Al sumar la compra de febrero de 2026 el total de la diferencia subió de 3.522 a 4.309 millones, aunque el mes de febrero quedó casi en cero: la suma de los meses compensa errores de signo contrario, y por eso un número total más chico no garantiza un mejor ajuste.
 
 ## 5.2 Lo que parece un cruce y no lo es
 
@@ -40,7 +60,7 @@ Esos flujos van en el circuito de los pesos (capítulo 3), porque los pesos entr
 
 ## 5.3 El cruce visto desde los pesos
 
-Del lado de los pesos, el cruce suma $71,4 billones de agosto de 2026: $44,4 billones de compra de dólares y $27,0 billones de deuda con el BCRA cancelada con pesos. La diferencia entre monedas que la fuente no abre aparece aquí como una entrada de $6,5 billones, la contracara de los 3.522 millones del lado de los dólares.
+Del lado de los pesos, el cruce suma $72,7 billones de agosto de 2026: $45,7 billones de compra de dólares y $27,0 billones de deuda con el BCRA cancelada con pesos. Son dos usos distintos de los pesos. Con los primeros el Tesoro consiguió dólares que pudo usar para pagar a terceros; con los segundos canceló una deuda con el BCRA, sin conseguir ningún dólar disponible. La diferencia entre monedas que la fuente no abre aparece aquí como una entrada de $7,7 billones, la contracara de los 4.309 millones del lado de los dólares.
 
 Para dar escala, el Tesoro aplicó a obligaciones en dólares más pesos de los que cobró en todo el período por derechos de exportación ($28,6 billones), y casi tanto como recibió en utilidades del BCRA ($42,9 billones). Son comparaciones de magnitud dentro de la misma moneda. Que el Tesoro tenga pesos no dice que haya dólares para comprar: ese es el punto de partida del informe.
 
@@ -57,7 +77,7 @@ Entre 2025 y 2026 el Tesoro recompró al BCRA Letras Intransferibles por un valo
 
 *Millones de USD.*
 
-Consolidando Tesoro y BCRA, estas recompras no cambian la deuda con terceros. Cambian la composición de los dos balances. El BCRA entrega un activo en dólares contra el Tesoro, que no podía vender, y recibe dólares líquidos o pesos. El Tesoro reemplaza una deuda con el BCRA por una deuda con el FMI (en las dos primeras) o por el uso de utilidades del propio BCRA (en la tercera). En la tercera, además, el BCRA terminó cobrando con pesos que había generado él mismo. El capítulo 6 vuelve sobre quién gana y quién pierde en estas operaciones.
+Tomada sola, una recompra entre el Tesoro y el BCRA no cambia la deuda del sector público con terceros: cambia la composición de los dos balances. Pero las dos primeras se pagaron con el desembolso del FMI, y tomadas junto con ese desembolso sí la cambian: el sector público canceló 16.886 millones de valor nominal de deuda consigo mismo y tomó 14.000 millones de deuda nueva con el FMI, que es un acreedor externo. En cada operación, el BCRA entrega un activo en dólares contra el Tesoro, que no podía vender, y recibe dólares líquidos o pesos. El Tesoro reemplaza una deuda con el BCRA por una deuda con el FMI (en las dos primeras) o por el uso de utilidades del propio BCRA (en la tercera). En la tercera, además, el BCRA terminó cobrando con pesos que había generado él mismo. El capítulo 6 vuelve sobre quién gana y quién pierde en estas operaciones.
 
 ## 5.5 Lo que viene
 

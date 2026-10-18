@@ -4,6 +4,14 @@ En el circuito de los pesos mandan el Tesoro y el BCRA. El BCRA crea pesos cuand
 
 Las cifras están en billones de pesos de agosto de 2026, deflactadas mes a mes por el índice de precios al consumidor (IPC) del Instituto Nacional de Estadística y Censos (INDEC, SRC-2028), salvo que se indique "pesos corrientes". Un peso de diciembre de 2023 equivale a 3,47 pesos de agosto de 2026.
 
+::: {.destacado custom-style="Destacado"}
+**El costo de absorber pesos pasó del BCRA al Tesoro, y buena parte se acumula fuera del resultado fiscal publicado.**
+
+Hasta julio de 2024 el BCRA pagó $34,6 billones de pesos de agosto de 2026 de intereses por los pesos que absorbía. Desde entonces paga el Tesoro, sobre todo como interés que se suma al capital de sus letras y bonos: entre 5 y 11 billones de pesos corrientes por trimestre, unos 66 billones hasta junio de 2026. El resultado en base caja no lo registra hasta que se paga, y entonces lo registra como amortización.
+
+*Alcance.* El interés capitalizado aumenta las obligaciones del Tesoro aunque no se pague en el período. La serie no incluye el ajuste de capital de los bonos CER ni el interés de las ampliaciones de bonos TAMAR y duales.
+:::
+
 ## 3.1 Del BCRA al Tesoro: el traspaso de los pasivos remunerados
 
 A fines de 2023, el BCRA debía en pases pasivos y Letras de Liquidez (LELIQ) $25,8 billones de pesos corrientes, 2,68 veces la base monetaria. Esa deuda pagaba la tasa de política monetaria, que desde el 18 de diciembre era del 100% nominal anual. Como los pases eran a un día y el interés de cada día se volvía a colocar al día siguiente, en un año el rendimiento compuesto llegaba al 171%: (1 + 1/365)^365 − 1 = 1,71. Es la tasa efectiva que publica el propio BCRA. Hasta el 15 de diciembre la tasa había sido del 133% nominal sobre LELIQ a 28 días, que compuesta mes a mes daba un 255% efectivo, y parte del stock de fin de año todavía cobraba esa tasa (BCRA, Series.xlsm, SRC-1625). En el informe de política monetaria de junio de 2026, el mismo BCRA recuerda que sus títulos y pases llegaron a 2,5 veces la base hacia fines de 2023.
@@ -84,7 +92,7 @@ El diagrama 3.2 muestra el sector público nacional (SPN), en base caja, solo en
 | Deuda escrita en dólares, colocada por pesos | 31,9 | Deuda escrita en dólares, pagada en pesos | 79,3 |
 | Uso de activos financieros | 279,1 | Aumento de activos financieros | 354,7 |
 | Otros pasivos (aumento) | 33,7 | Otros pasivos (disminución) | 35,4 |
-| Diferencia entre monedas | 6,5 | Compra de dólares | 44,4 |
+| Diferencia entre monedas | 7,7 | Compra de dólares | 45,7 |
 | | | Deuda en dólares con el BCRA cancelada con pesos | 27,0 |
 
 **El resultado.** El superávit primario del período fue de 46,1 billones. Los intereses en efectivo, en todas las monedas, fueron 44,6, de modo que el resultado financiero en base caja quedó en +1,5 billones. En pesos corrientes, el primario pasó de −2,0 billones en diciembre de 2023 a +10,4 en 2024, +11,8 en 2025 y +12,3 entre enero y agosto de 2026.
@@ -95,15 +103,21 @@ El diagrama 3.2 muestra el sector público nacional (SPN), en base caja, solo en
 
 **La deuda en pesos creció.** Se colocaron 610,5 billones y se amortizaron 507,8: una colocación neta de 102,8 billones. Descontados los 75,6 billones que el sector público acumuló en activos, el financiamiento neto en pesos fue de unos 27 billones. Una parte de la deuda colocada por encima de los vencimientos quedó depositada, como dijo el BCRA en abril de 2026. Esos 27 billones son deuda neta de depósitos con quienes están fuera del sector público nacional: bancos, fondos, personas, pero también el BCRA y el Banco Nación, que no forman parte de él. Las fuentes en base caja no permiten separar cuánto es con privados.
 
-**El cruce hacia los dólares.** El Tesoro aplicó 71,4 billones a conseguir dólares (44,4 de compras y 27,0 de deuda con el BCRA cancelada con pesos). Aparte, pagó en pesos 79,3 billones de deuda escrita en dólares y cobró 31,9 por colocarla. Las fuentes en pesos del período fueron el superávit primario (46,1), las utilidades del BCRA (42,9) y la colocación neta de deuda en pesos (102,8), mientras se acumulaban depósitos. Con las fuentes publicadas no se puede saber qué peso financió qué. No hay un comunicado, compra por compra, que diga con qué pesos se compraron los dólares.
+**El cruce hacia los dólares.** El Tesoro aplicó 72,7 billones a obligaciones en dólares: 45,7 a comprar dólares y 27,0 a cancelar deuda en dólares con el BCRA, que no le dio ningún dólar disponible (capítulo 5). Aparte, pagó en pesos 79,3 billones de deuda escrita en dólares y cobró 31,9 por colocarla. Las fuentes en pesos del período fueron el superávit primario (46,1), las utilidades del BCRA (42,9) y la colocación neta de deuda en pesos (102,8), mientras se acumulaban depósitos. Con las fuentes publicadas no se puede saber qué peso financió qué. No hay un comunicado, compra por compra, que diga con qué pesos se compraron los dólares.
 
 ## 3.4 El interés que no se ve
 
 Las LECAP y BONCAP capitalizan el interés y lo pagan todo al vencimiento. En base caja, ese interés no figura como gasto mientras se acumula, y al vencer se paga como amortización de capital. El resultado financiero publicado no lo registra nunca. La Jefatura de Gabinete lo confirmó en el Informe 144 (pregunta 58): el interés capitalizado no se registra como interés en base caja.
 
-El informe lo reconstruye trimestre a trimestre con las planillas trimestrales de la Secretaría de Finanzas, netas de lo que traen las ampliaciones, los descuentos y las primas de colocación (`argfx devengados`, D-009).
+Conviene nombrar con precisión tres medidas distintas del resultado:
 
-| Trimestre | Interés capitalizado neto, Administración Central | Resultado financiero en caja | Resultado financiero con lo devengado (SPN) |
+- el **resultado financiero en base caja** es el que publica la Secretaría de Hacienda: registra el interés cuando se paga en efectivo;
+- el **resultado financiero con intereses capitalizados devengados** le suma el interés que las LECAP, BONCAP y LEFI acumulan en el capital en cada trimestre, aunque todavía no se haya pagado. Es el que reconstruye este capítulo;
+- un **resultado ajustado por inflación** trataría además el ajuste de capital de los bonos CER, y la parte del interés nominal que solo compensa la inflación, de manera homogénea en toda la deuda en pesos. El informe no lo calcula.
+
+El informe reconstruye la segunda medida trimestre a trimestre con las planillas trimestrales de la Secretaría de Finanzas, netas de lo que traen las ampliaciones, los descuentos y las primas de colocación (`argfx devengados`, D-009).
+
+| Trimestre | Interés capitalizado neto, Administración Central | Resultado financiero en base caja | Resultado financiero con intereses capitalizados devengados (SPN) |
 |---|---:|---:|---|
 | 2024 T1 | 6 | +1.133 | +1.128 |
 | 2024 T2 | 858 | +1.439 | +581 a +613 |
@@ -120,13 +134,31 @@ El informe lo reconstruye trimestre a trimestre con las planillas trimestrales d
 
 <iframe class="grafico" src="grafico_resultado_devengado.html" title="Gráfico 3.1"></iframe>
 
-*Gráfico 3.1. Resultado financiero del sector público nacional por trimestre: el publicado, en base caja (verde), y el que surge de sumar el interés capitalizado (rojo, punto medio del rango del FGS). Billones de pesos corrientes. Fuente: `argfx devengados`, `argfx graficos`.*
+*Gráfico 3.1. Resultado financiero del sector público nacional por trimestre: en base caja, el publicado (verde), y con intereses capitalizados devengados (rojo, punto medio del rango del FGS). Billones de pesos corrientes. Fuente: `argfx devengados`, `argfx graficos`.*
 
-El interés capitalizado neto va de 5 a 11 billones de pesos corrientes por trimestre desde mediados de 2024 y suma unos 66 billones corrientes hasta junio de 2026. Con lo devengado, el resultado financiero del sector público nacional es deficitario en todos los trimestres desde el tercero de 2024. Ese interés es, en buena medida, el costo de la absorción de pesos que el BCRA dejó de pagar en julio de 2024: cambió de pagador y de forma de registro.
+El interés capitalizado neto va de 5 a 11 billones de pesos corrientes por trimestre desde mediados de 2024 y suma unos 66 billones corrientes hasta junio de 2026. Con intereses capitalizados devengados, el resultado financiero del sector público nacional es deficitario en todos los trimestres desde el tercero de 2024. Ese interés es, en buena medida, el costo de la absorción de pesos que el BCRA dejó de pagar en julio de 2024: cambió de pagador y de forma de registro.
 
-Y el déficit real es mayor que el de la tabla. El cálculo deja afuera el ajuste del capital de los bonos CER por la inflación, que la planilla registra aparte y que va de 7 a 41 billones de pesos por trimestre. Ese ajuste también es un costo de la deuda en pesos que se acumula y no pasa por el resultado publicado. Tampoco incluye el interés de las ampliaciones de bonos TAMAR y duales ni el de los canjes. Lo que muestran la tabla y el gráfico es, por lo tanto, el piso del déficit financiero devengado: el resultado verdadero está por debajo de la barra roja.
+La medida tiene un faltante conocido, que va en contra del resultado. Deja afuera el ajuste del capital de los bonos CER por la inflación, que la planilla registra aparte y que va de 7 a 41 billones de pesos corrientes por trimestre, y el interés de las ampliaciones de bonos TAMAR y duales y de los canjes. Si se sumara el ajuste CER, el resultado financiero devengado en términos nominales quedaría por debajo de la barra roja. En una medida ajustada por inflación, en cambio, ese ajuste y la parte inflacionaria del interés de toda la deuda en pesos se tratarían como compensación por la pérdida de valor del capital, y el déficit sería menor que el nominal. Las dos lecturas responden preguntas distintas, y el informe presenta la barra roja con su nombre: el resultado nominal con el interés capitalizado, sin el ajuste CER.
 
-## 3.5 La deuda del Tesoro en pesos
+## 3.5 Escala fiscal: universidades e intereses
+
+En la discusión fiscal del mandato, el financiamiento de las universidades nacionales ocupó un lugar central. Conviene ver su peso en las cuentas al lado de otros flujos del presupuesto, con la misma fuente, el mismo período y la misma unidad.
+
+| Año 2025, gasto devengado de la Administración Nacional | Billones de pesos de agosto de 2026 |
+|---|---:|
+| Transferencias a universidades nacionales | 6,0 |
+| Intereses de la deuda, según el presupuesto | 13,9 |
+| Transferencias corrientes en energía y transporte | 9,9 |
+| Prestaciones de la seguridad social | 77,1 |
+| *Fuera del presupuesto: interés capitalizado neto de la deuda en pesos (sección 3.4)* | *39,6 a 46,9* |
+
+*Fuentes: Presupuesto Abierto, crédito anual 2025, devengado (Secretaría de Hacienda, repositorio de la DGSIAF, actualizado al 5-07-2026); universidades: programa 26 "Desarrollo de la Educación Superior", inciso 5, partida 6; intereses: inciso 7, solo intereses, sin comisiones ni primas; energía y transporte: transferencias corrientes de esas funciones, una aproximación propia a los subsidios económicos. Interés capitalizado: `argfx devengados`, trimestres de 2025, entre el sector público nacional sin el FGS (39,6) y la Administración Central (46,9). Deflactado mes a mes con el IPC del INDEC. Originales: SRC-9009 a SRC-9012 (`inbox/claude-revision-2026-10-18/`); tabla en `series/presupuesto_abierto_devengado.csv`.*
+
+En 2025 los intereses que registra el presupuesto fueron 2,3 veces las transferencias a las universidades nacionales; entre enero y septiembre de 2026, 2,9 veces (13,1 contra 4,5 billones de pesos de agosto de 2026). Si se suma el interés que la deuda en pesos capitalizó en 2025 y que el presupuesto no registra como interés, la relación pasa a ser de nueve a diez veces. La comparación sirve para medir el tamaño relativo del ajuste universitario frente a otros flujos. No dice que el gasto universitario sea eficiente, ni que no tenga costo fiscal, ni que un peso de intereses se pueda reasignar sin más a otro destino, porque los intereses son obligaciones contractuales.
+
+Dos cuidados más. Las dos columnas de intereses son devengadas y no incluyen amortizaciones ni colocaciones brutas, que son movimientos de deuda y no gasto. Y en 2026 hay crédito asignado a universidades sin devengar (1,5 billones corrientes en "universidades sin discriminar"), en un año en que la aplicación de la Ley de Financiamiento Universitario (27.795) está en discusión judicial, según la prensa.
+
+## 3.6 La deuda del Tesoro en pesos
 
 La Secretaría de Finanzas publica la deuda del Tesoro en pesos convertida a dólares (cuadro A.1.7), sin una serie oficial en pesos. Por instrumento, el cambio de composición es claro:
 

@@ -219,3 +219,15 @@ El informe mide cada circuito en su propia moneda, muestra dónde se cruzan (las
 
 **Por qué.** Son las configuraciones que menos suponen sobre el comportamiento, y dejan visible la identidad contable que ordena el resultado (anexo A.4). La capa de comportamiento queda para la versión siguiente.
 
+
+## D-019. Deuda con terceros, compras del Tesoro y recuadros (2026-10-18)
+
+**Decisión.** Después de la lectura externa del segundo borrador (nota de GPT del 18-10-2026):
+
+- **Compras de dólares del Tesoro.** Una sola serie, el informe mensual del BCRA (lote AI), más las compras que ese informe omite y la serie diaria (variable 48) registra, cuando la cuenta en dólares del Tesoro del mes lo confirma. Hoy es una: 787 millones el 2026-02-05 (`OMITTED_FROM_REPORT` en `flujos.py`). Las demás diferencias entre las dos series, de menos de 60 millones por mes, quedan con la cifra del informe mensual.
+- **Deuda con terceros.** Se mide en cada moneda con el mismo perímetro en las dos fechas: deuda en situación de pago normal, sin la deuda en default no reestructurada. En divisas, privados y organismos. En pesos, los títulos del Tesoro en manos privadas, vueltos a pesos al A 3500 del corte, más los pasivos remunerados del BCRA, porque a fines de 2023 la absorción estaba en el BCRA y el traspaso al Tesoro no es deuda nueva (`argfx graficos`, `src/argfx/informe/terceros.py`).
+- **Lo cancelado con pesos.** La deuda en dólares con el BCRA cancelada con pesos entra al Tesoro en dólares por el equivalente de lo pagado al tipo de cambio promedio del mes (16.703 millones), que es lo que registra la cuenta de financiamiento, y se informa al lado su valor nominal (28.030). Se presenta separada de la compra de dólares porque no le da al Tesoro dólares disponibles.
+- **Capítulo 6.** Pasa a llamarse "Quién recibe los flujos y quién asume las obligaciones", porque los datos no miden ganancias ni pérdidas finales.
+- **Recuadros.** Cada capítulo abre con un recuadro: una frase, el dato que la sostiene y su alcance.
+
+**Por qué.** La suma por vías del segundo borrador no coincidía con su total porque mezclaba dos series. Medir la deuda en pesos del Tesoro sin el BCRA mostraba como aumento de la deuda con terceros lo que en parte fue un cambio de deudor: con el BCRA, la deuda en pesos con terceros bajó un 21% en pesos constantes.

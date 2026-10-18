@@ -177,6 +177,45 @@ def debt_by_holder(
     )
 
 
+def third_parties(rows: list[dict[str, object]]) -> Grafico:
+    """Debt with holders outside the public sector at each cut-off: in pesos, the Treasury's
+    with private holders plus the BCRA's remunerated liabilities, in constant pesos; in foreign
+    currency, private holders and agencies, in millions of USD (`terceros`)."""
+    months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+    x = [
+        f"{months[int(str(r['corte'])[5:7]) - 1].capitalize()} {str(r['corte'])[:4]}" for r in rows
+    ]
+
+    def col(k: str) -> list[float | None]:
+        return [float(r[k]) for r in rows]  # type: ignore[arg-type]
+
+    base = str(rows[0]["pesos_de"])
+    return Grafico(
+        "deuda_con_terceros",
+        "Deuda con acreedores fuera del sector público, por moneda de pago",
+        x,
+        [
+            Serie(
+                "Tesoro: deuda en pesos con privados",
+                col("pesos_privados_tesoro_constantes"),
+                GOLD,
+                0,
+            ),
+            Serie(
+                "BCRA: pases, LELIQ y otros pasivos remunerados",
+                col("pasivos_remunerados_bcra_constantes"),
+                BLUE,
+                0,
+            ),
+            Serie("Privados", col("divisas_privados_usd"), GOLD, 1),
+            Serie("Deuda en default no reestructurada", col("divisas_holdouts_usd"), GRAY, 1),
+            Serie("Organismos internacionales", col("divisas_organismos_usd"), NAVY, 1),
+        ],
+        [f"billones de pesos de {months[int(base[5:7]) - 1]} de {base[:4]}", "millones de USD"],
+        titulos_panel=["Se paga en pesos", "Se paga en divisas"],
+    )
+
+
 def creditor_class(row: dict[str, str]) -> str:
     name = row.get("operation_name_sigade", "").upper()
     family = row.get("instrument_family", "")
@@ -276,11 +315,11 @@ def accrued_result(devengados_csv: Path) -> Grafico:
     ]
     return Grafico(
         "resultado_devengado",
-        "Resultado financiero publicado y con el interés capitalizado",
+        "Resultado financiero en base caja y con intereses capitalizados devengados",
         q,
         [
-            Serie("Publicado, base caja", published, GREEN),
-            Serie("Con el interés capitalizado", accrued, RED),
+            Serie("En base caja (publicado)", published, GREEN),
+            Serie("Con intereses capitalizados devengados, sin ajuste CER", accrued, RED),
         ],
         ["billones de pesos corrientes"],
         modo="group",

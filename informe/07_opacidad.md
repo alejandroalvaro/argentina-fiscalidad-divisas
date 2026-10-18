@@ -2,12 +2,20 @@
 
 Reconstruir los dos circuitos llevó más trabajo del que debería. Este capítulo trata ese esfuerzo como un resultado: qué hubo que reunir, qué series no existen, qué cifras cambian de una publicación oficial a otra y qué errores aparecieron en archivos oficiales. Ninguno de estos problemas impide, por sí solo, saber cuánto debe el Estado. Juntos hacen muy difícil saber en qué moneda, a quién y con qué recursos se paga.
 
+::: {.destacado custom-style="Destacado"}
+**El saldo de la deuda es transparente; reconstruir sus movimientos exige cruzar publicaciones con criterios distintos.**
+
+Entre diciembre de 2023 y agosto de 2026, el esquema ahorro-inversión-financiamiento de la Secretaría de Hacienda registra 121.405 millones de dólares de amortización de deuda "en moneda extranjera". De esa cifra, 45.325 millones fueron deuda escrita en dólares que se pagó en pesos. Leer toda esa amortización como pagos efectivos en divisas sobreestimaría estos últimos, que fueron 76.080 millones, en aproximadamente un 60%.
+
+*Alcance.* El porcentaje vale para la amortización de esa fuente en esa ventana, con los pagos efectivos en divisas como denominador; no se extiende al stock de la deuda. Responde al criterio de clasificar por moneda de denominación, que la estadística aplica de manera coherente, y no supone ninguna intención de ocultar.
+:::
+
 ## 7.1 El tamaño del trabajo
 
 Para llegar a los diagramas y tablas de este informe hubo que reunir:
 
 - 1.291 fuentes distintas, en 50 lotes de búsqueda, con 1.404 afirmaciones registradas;
-- 1.198 documentos originales guardados, cada uno identificado por su huella sha256, y 1.534 descargas registradas;
+- 1.207 documentos originales guardados, cada uno identificado por su huella sha256, y 1.534 descargas registradas;
 - más de 750 operaciones de deuda en SIGADE y los términos de emisión de 101 instrumentos, cargados a mano desde prospectos y resoluciones;
 - cerca de 640 preguntas que quedaron sin respuesta en los registros de lo no encontrado de cada lote.
 
@@ -54,7 +62,7 @@ El criterio, además, cambia entre publicaciones:
 - el boletín de Finanzas cuenta la deuda dólar linked como moneda local en el cuadro A.3 y como moneda extranjera en el A.1;
 - el cuadro A.4 del boletín incluye canjes sin caja: la RC 16/2024 dio de baja BONAR DUAL y BONTE en dólares por 25.173 millones que el esquema ahorro-inversión-financiamiento no muestra.
 
-Un lector que quiera saber cuántos dólares necesitó el Tesoro y mire la "deuda en moneda extranjera" sobreestima la amortización en un 60%. Para corregirlo, el informe tuvo que reconstruir la deuda pagada en pesos operación por operación desde las licitaciones y las resoluciones (lotes AQ y AR).
+Un lector que quiera saber cuántos dólares necesitó el Tesoro y lea toda la amortización "en moneda extranjera" como pagos en divisas los sobreestima en aproximadamente un 60% (121.405 contra 76.080 millones, entre diciembre de 2023 y agosto de 2026). La clasificación por moneda de denominación es un criterio estadístico legítimo; el problema es que no se publica, al lado, la clasificación por moneda de pago. Para corregirlo, el informe tuvo que reconstruir la deuda pagada en pesos operación por operación desde las licitaciones y las resoluciones (lotes AQ y AR).
 
 ## 7.5 Errores en archivos oficiales y operaciones sin explicación
 
@@ -82,9 +90,11 @@ El método detectó también errores de los agentes que hicieron este trabajo, y
 - una tabla de factores de la base monetaria preparada en un lote estaba mal en 27 de 45 meses, porque sumaba el bloque anual de la planilla al mes de enero;
 - se leyó como dólares una cifra de intereses que estaba en miles de millones de pesos;
 - se supuso que dos recompras de Letras Intransferibles se habían pagado con pesos, cuando se pagaron con dólares del FMI y con dólares que el BCRA entregó por BOPREAL;
-- se infirió que la colocación de deuda en dólares por pesos se registraba como moneda local, y los datos de licitación mostraron lo contrario.
+- se infirió que la colocación de deuda en dólares por pesos se registraba como moneda local, y los datos de licitación mostraron lo contrario;
+- en el segundo borrador, el total de las compras de dólares del Tesoro salía del informe mensual del BCRA y su apertura por vía, de la serie diaria. Las dos no suman lo mismo, porque el informe mensual omite una compra de 787 millones al BCRA del 5 de febrero de 2026. El tercer borrador usa una sola serie, el informe mensual, con esa compra agregada (capítulo 5);
+- en el mismo borrador, 16.703 millones de dólares figuraban como valor nominal de la deuda con el BCRA cancelada con pesos. Es el equivalente en dólares de lo que se pagó; el valor nominal fue de 28.030 millones.
 
-Cada error se corrigió contra el documento original. La diferencia sin explicar del Tesoro en dólares bajó, a medida que entraron las correcciones, de −18.221 a −4.150 y finalmente a −3.522 millones.
+Cada error se corrigió contra el documento original. La diferencia sin explicar del Tesoro en dólares bajó, a medida que entraron las correcciones, de −18.221 a −4.150 y a −3.522 millones, y subió a −4.309 cuando se agregó la compra de febrero de 2026: esa compra cierra el mes en que ocurrió, y la suma de todos los meses, que compensa errores de signo contrario, se agranda.
 
 ## 7.8 Qué haría falta
 

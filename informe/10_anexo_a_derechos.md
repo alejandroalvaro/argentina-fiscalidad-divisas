@@ -4,6 +4,14 @@ Este anexo aplica el marco de los dos circuitos a una propuesta concreta. La ide
 
 El anexo presenta la propuesta, sus magnitudes en el mandato y los resultados del modelo de la fase 4, que compara los regímenes con los datos del mandato y con una proyección hasta 2036 (`argfx simular`).
 
+::: {.destacado custom-style="Destacado"}
+**Cobrar los derechos en dólares cambia cuántas divisas quedan en el sector público y cuántas en manos privadas, sin crear divisas nuevas.**
+
+Si el BCRA compra todos los dólares que se liquidan, cobrar el derecho en pesos o en dólares deja al sector público con los mismos dólares y la misma deuda en pesos. Cuando el BCRA no compra, la diferencia aparece: con las compras que el BCRA hizo en el mandato, el cobro en dólares habría dejado en el sector público unos 11.900 millones de dólares más.
+
+*Alcance.* Es un resultado contrafáctico condicionado. Cambia una sola cosa y deja todo lo demás como fue: no incorpora qué habrían hecho los exportadores, los compradores de dólares ni el tipo de cambio. No es una estimación de las reservas adicionales que se habrían obtenido.
+:::
+
 ## A.1 La propuesta y los regímenes
 
 Hoy el derecho se determina en dólares sobre el valor FOB y se paga en pesos. El exportador liquida las divisas en el mercado, cobra pesos y con ellos paga el derecho. La propuesta es que una fracción de las divisas, igual a la alícuota del derecho, vaya directo a una cuenta en dólares del Tesoro.
@@ -32,12 +40,12 @@ La diferencia aparece cuando la secuencia se corta, que es lo que muestran los c
 | 2023 (diciembre) | 643 | 0 |
 | 2024 | 6.565 | 15.641 |
 | 2025 | 6.000 | 3.973 |
-| 2026 (enero a agosto) | 3.871 | 6.409 |
-| **Total** | **17.079** | **26.023** |
+| 2026 (enero a agosto) | 3.871 | 7.196 |
+| **Total** | **17.079** | **26.810** |
 
-*Millones de USD. Derechos: recaudación (datos.gob.ar, lote D) pasada a dólares al A 3500 promedio del mes. Compras: lote AI.*
+*Millones de USD. Derechos: recaudación (datos.gob.ar, lote D) pasada a dólares al A 3500 promedio del mes. Compras: lote AI, con la compra de febrero de 2026 (capítulo 5).*
 
-Cobrados en dólares, los derechos del mandato habrían equivalido al 66% de los dólares que el Tesoro compró con pesos, y al 40% de todo el cruce entre monedas (26.023 de compras más 16.703 de deuda con el BCRA cancelada con pesos). En 2025 habrían superado las compras del año.
+Cobrados en dólares, los derechos del mandato habrían equivalido al 64% de los dólares que el Tesoro compró con pesos. La comparación pertinente es con las compras, porque la deuda con el BCRA cancelada con pesos no le dio al Tesoro dólares disponibles (capítulo 5). En 2025 habrían superado las compras del año.
 
 **La brecha entre lo estimado y lo cobrado.** El informe estima los derechos posición por posición con los archivos de exportaciones de ARCA y las alícuotas vigentes en cada mes, incluida la fórmula móvil de hidrocarburos.
 
@@ -81,14 +89,14 @@ El ejercicio toma lo que pasó entre diciembre de 2023 y agosto de 2026 como el 
 | 2023 (diciembre) | 643 | 0 | 492 | 151 |
 | 2024 | 6.565 | 7.208 | 1.869 | 4.696 |
 | 2025 | 6.000 | 3.495 | 303 | 4.315 |
-| 2026 (enero a agosto) | 3.871 | 5.662 | 785 | 2.731 |
-| **Total** | **17.079** | **16.366** | **3.450** | **11.892** |
+| 2026 (enero a agosto) | 3.871 | 5.662 | 785 | 2.757 |
+| **Total** | **17.079** | **16.366** | **3.450** | **11.918** |
 
 *Cuadro A.1. Millones de USD. La última columna es el derecho, menos lo que el BCRA habría dejado de comprar en el mercado, menos las compras evitadas que el Tesoro hacía en el mercado y no al BCRA. Fuente: `argfx simular`, `data/simulacion/mandato_contrafactico_compras.csv`.*
 
-Con el derecho en dólares, el Tesoro se habría ahorrado 16.366 de los 26.023 millones que compró con pesos. En pesos, el resultado casi no cambia: los pesos que el Tesoro no habría cobrado son casi los mismos que no habría tenido que gastar en dólares. La diferencia al cierre, con intereses a la tasa BADLAR, es de 1,2 billones de pesos, y se explica por el desfase: en 2025 los dólares del derecho habrían llegado antes de que el Tesoro los necesitara.
+Con el derecho en dólares, el Tesoro se habría ahorrado 16.366 de los 26.810 millones que compró con pesos. En pesos, el resultado casi no cambia: los pesos que el Tesoro no habría cobrado son casi los mismos que no habría tenido que gastar en dólares. La diferencia al cierre, con intereses a la tasa BADLAR, es de 1,2 billones de pesos, y se explica por el desfase: en 2025 los dólares del derecho habrían llegado antes de que el Tesoro los necesitara.
 
-El efecto grande está en los dólares. En el mandato el BCRA compró, en promedio, una parte chica de lo que liquidaron los exportadores: el 27% entre diciembre de 2023 y marzo de 2025 y el 9% desde abril de 2025, con la banda cambiaria. El resto lo compraron privados. Con el derecho en dólares, esa parte del derecho habría quedado en el Tesoro en lugar de ir a manos privadas: 11.892 millones de dólares más en el sector público consolidado, una cuarta parte del atesoramiento neto del mandato. El modelo no dice qué habría pasado del otro lado. Los privados habrían tenido menos dólares para comprar, y eso pudo resolverse con menos atesoramiento, con menos importaciones o con un tipo de cambio más alto; el modelo no tiene esas respuestas.
+El efecto grande está en los dólares. En el mandato el BCRA compró, en promedio, una parte chica de lo que liquidaron los exportadores: el 27% entre diciembre de 2023 y marzo de 2025 y el 9% desde abril de 2025, con la banda cambiaria. El resto lo compraron privados. Con el derecho en dólares, esa parte del derecho habría quedado en el Tesoro en lugar de ir a manos privadas: 11.918 millones de dólares más en el sector público consolidado, una cuarta parte del atesoramiento neto del mandato. Es un resultado condicionado a que todo lo demás hubiera pasado igual. El modelo no dice qué habría pasado del otro lado. Los privados habrían tenido menos dólares para comprar, y eso pudo resolverse con menos atesoramiento, con menos importaciones o con un tipo de cambio más alto; el modelo no tiene esas respuestas.
 
 **Segundo uso: los dólares del derecho reemplazan deuda nueva en divisas.** El Tesoro habría tomado 16.575 millones menos de deuda en divisas y habría tenido que conseguir con deuda en pesos los pesos del derecho que dejaba de cobrar. Las dos deudas, llevadas con sus intereses hasta agosto de 2026, quedan así:
 

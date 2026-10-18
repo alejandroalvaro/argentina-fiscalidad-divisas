@@ -1,12 +1,20 @@
 # 1. Dos monedas, dos circuitos
 
+::: {.destacado custom-style="Destacado"}
+**Expresar en dólares una deuda en pesos no la vuelve una obligación de conseguir dólares.**
+
+El Estado argentino puede emitir pesos. Para pagar dólares tiene que conseguirlos. De los 471.690 millones de dólares de deuda en situación de pago normal al 30 de junio de 2026, 225.154 (el 48%) se pagan en pesos, incluidos 9.595 que están escritos en dólares y se pagan en pesos.
+
+*Alcance.* La moneda de pago define la necesidad contractual de divisas. La deuda indexada al dólar no exige divisas, pero su monto en pesos sube con el tipo de cambio, y eso es un riesgo fiscal y cambiario indirecto.
+:::
+
 ## 1.1 El planteo
 
 La deuda pública argentina suele presentarse como un solo número. A fines de junio de 2026 ese número era de unos 472.000 millones de dólares, y con él se discuten su peso sobre el producto, su sostenibilidad y la credibilidad del programa económico. El número sirve para algunas preguntas, pero esconde la que más importa en una economía como la argentina: en qué moneda hay que pagar y de dónde sale esa moneda.
 
 Este informe parte de una observación simple. El Estado argentino maneja dos monedas que no puede convertir una en otra por decisión propia.
 
-Los pesos los emite el Banco Central de la República Argentina (BCRA), y el Tesoro los toma prestados, los gasta y los recauda, en ese orden. El orden importa. Como el presupuesto se ejecuta año tras año, lo que el Tesoro recauda en un ejercicio lo vuelve a gastar en el siguiente, y eso da la impresión de que primero recauda y después gasta. Pero en cada ejercicio el gasto va adelante: los pesos con que se pagan los impuestos son pesos que el propio Estado puso antes en circulación.
+Los pesos los emite el Banco Central de la República Argentina (BCRA), y el Tesoro los toma prestados, los gasta y los recauda. Ese es el orden lógico: para que alguien pague un impuesto en pesos o le preste pesos al Tesoro, esos pesos tienen que haber sido creados antes, por el BCRA o por los bancos, y en última instancia el sistema descansa sobre la moneda que emite el Estado. La secuencia cronológica es otra historia, porque en la práctica institucional las tres cosas ocurren a la vez. El Tesoro tiene depósitos, coloca deuda, cobra impuestos y paga gastos todos los días, y en un ejercicio dado puede recaudar antes de gastar o gastar antes de colocar deuda. Del orden lógico se desprende que el Estado no necesita recaudar pesos para poder gastarlos, aunque sus reglas lo obliguen a financiar el gasto con recaudación o con deuda.
 
 Los dólares, en cambio, no los emite nadie en el país. Los emite únicamente la Reserva Federal de los Estados Unidos. Entran a la Argentina cuando alguien le vende algo al exterior o cuando alguien presta, y salen cuando se importa, se paga deuda o alguien decide guardarlos.
 
@@ -23,9 +31,11 @@ Los dos circuitos se tocan en pocos puntos: cuando el Tesoro compra dólares con
 
 El informe mide cada circuito en su propia moneda, muestra dónde se cruzan y cuánto pasó por cada cruce entre diciembre de 2023 y agosto de 2026, y pregunta quién se quedó con los pesos y quién con los dólares.
 
+Además de cuánto debe el Estado, el informe pregunta qué obligaciones requieren recursos frente a terceros, en qué moneda hay que cancelarlas y cómo se consigue esa moneda. Una caída de la deuda con organismos del propio sector público puede reducir el total publicado mientras aumentan los compromisos con otros acreedores. Un superávit fiscal en pesos puede convivir con una necesidad persistente de financiamiento en dólares. Y el financiamiento del sector público, la política cambiaria y la compra de dólares por parte de los privados se explican mejor como un proceso conjunto que por separado. El informe reconstruye esas diferencias y los flujos que las conectan.
+
 ## 1.2 Por qué medir cada moneda por separado
 
-Sumar pesos y dólares a un tipo de cambio produce un número que existe en la contabilidad y en ningún otro lado. Tres razones justifican separarlos.
+Sumar pesos y dólares a un tipo de cambio sirve para algunas comparaciones, como la deuda sobre el producto o entre países, pero no describe con qué moneda hay que pagar cada parte. Tres razones justifican separarlos.
 
 **Porque no se sustituyen.** Un peso de superávit no paga un dólar de vencimiento sin pasar por el mercado de cambios o por las reservas. La conversión es una operación con contraparte, con precio y con consecuencias sobre la base monetaria, y por eso conviene mostrarla como operación y no como un tipo de cambio aplicado en una planilla.
 
@@ -48,10 +58,12 @@ El argumento no es exclusivo de la Argentina. Vale, con matices, para cualquier 
 
 ## 1.4 Qué aporta el informe
 
-1. **Los dos circuitos medidos por separado y cerrados.** Cuatro diagramas de flujos del mandato, cada uno en una sola moneda, que cierran contra sus fuentes: el mercado de cambios y el Tesoro en dólares, el sector público nacional y el BCRA en pesos. Hasta donde llega nuestra búsqueda, no existe una presentación oficial equivalente.
+Ni la distinción entre la deuda en pesos y en dólares ni el registro del interés capitalizado son ideas nuevas: las discuten analistas, consultoras y la propia Jefatura de Gabinete. El aporte está en reconstruirlas de forma integrada, cuantificarlas para todo el mandato y hacer trazable cada cifra hasta su documento original.
+
+1. **Los dos circuitos medidos por separado y cerrados.** Cuatro diagramas de flujos del mandato, cada uno en una sola moneda, que cierran contra sus fuentes: el mercado de cambios y el Tesoro en dólares, el sector público nacional y el BCRA en pesos.
 2. **El cruce entre monedas cuantificado.** Cuántos pesos aplicó el Tesoro a obligaciones en dólares, por qué vía (compra de divisas o cancelación con pesos de deuda en dólares con el BCRA) y qué queda sin explicar, separando la deuda escrita en dólares que se paga en pesos, que no requiere divisas.
 3. **Un calendario de pagos en divisas armado contrato por contrato**, consolidado por tenedor, que separa lo que hay que pagar a terceros de lo que el Estado se debe a sí mismo.
-4. **El interés que no se ve.** El interés capitalizado de la deuda en pesos, que no pasa por el resultado fiscal publicado, reconstruido trimestre por trimestre.
+4. **El interés capitalizado, trimestre por trimestre.** Una serie del interés capitalizado de la deuda en pesos, neta de lo que traen las colocaciones, para comparar el resultado publicado en base caja con el que incluye ese interés.
 5. **La opacidad como resultado.** Qué hubo que reunir para reconstruir los dos circuitos, qué series no existen y qué cifras cambian entre publicaciones oficiales.
 6. **Un método reproducible.** Cada cifra se puede rehacer desde los documentos originales, guardados e identificados por su huella digital (sha256), con el código del repositorio.
 

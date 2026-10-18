@@ -47,6 +47,11 @@ iframe.sankey { width:100%; height:560px; border:1px solid var(--rule); border-r
 iframe.grafico { width:100%; height:500px; border:1px solid var(--rule); border-radius:8px;
   background:#fff; }
 a.glosario { color:inherit; text-decoration:underline dotted; text-underline-offset:3px; }
+div.destacado { border:1px solid var(--gold); border-left:4px solid var(--gold); border-radius:8px;
+  padding:.4rem 1.1rem; margin:1.2rem 0 1.6rem; background:rgba(225,181,62,.08); }
+div.destacado p:first-child { font-family:var(--font-display); font-size:1.15rem;
+  line-height:1.35; }
+div.destacado p:last-child { color:var(--muted); font-size:13.5px; }
 nav#TOC { font-size:13.5px; border:1px solid var(--rule); border-radius:8px; padding:8px 16px; }
 nav#TOC ul { padding-left:18px; } a { color:#4E80EE; }
 footer { margin-top:4rem; color:var(--muted); font-size:12px; }
@@ -215,7 +220,7 @@ def main() -> None:
     ap.add_argument("--src", type=Path, default=ROOT / "informe")
     ap.add_argument("--glosario", type=Path, default=ROOT / "docs" / "GLOSARIO.md")
     ap.add_argument("--out", type=Path, default=ROOT / "data" / "informe" / "informe.html")
-    ap.add_argument("--fecha", default="17-10-2026")
+    ap.add_argument("--fecha", default="18-10-2026")
     ap.add_argument("--docx", action="store_true", help="also write informe.docx next to it")
     a = ap.parse_args()
     a.out.parent.mkdir(parents=True, exist_ok=True)

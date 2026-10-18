@@ -2,9 +2,17 @@
 
 Este capítulo describe cómo se hizo el trabajo, para que cualquiera pueda rehacer cada cifra y juzgar sus límites. El trabajo se hizo con agentes de inteligencia artificial bajo la dirección del investigador, en cuatro días de octubre de 2026. El método importa tanto como los resultados: es lo que permite que un trabajo de este volumen sea verificable.
 
+::: {.destacado custom-style="Destacado"}
+**Cada cifra se puede reconstruir desde su fuente hasta su resultado.**
+
+Los más de 1.200 documentos originales están guardados con su huella sha256, cada cálculo es código con pruebas automáticas, y el saldo de las 753 operaciones de SIGADE coincide con la planilla oficial sin un dólar de diferencia.
+
+*Alcance.* Los cierres contables, las pruebas y las huellas verifican cosas distintas. La huella prueba que el documento es el que se bajó; la prueba automática, que el código hace lo que dice; el cierre contable, que las cuentas suman. Ninguno garantiza por sí solo que la interpretación económica sea correcta.
+:::
+
 ## 8.1 Roles
 
-- **El investigador** define la pregunta, toma las decisiones de método y revisa. Las decisiones están registradas, con fecha y fundamento, de D-001 a D-017 (`docs/DECISIONES.md`).
+- **El investigador** define la pregunta, toma las decisiones de método y revisa. Las decisiones están registradas, con fecha y fundamento, de D-001 a D-019 (`docs/DECISIONES.md`).
 - **Un primer modelo (GPT)** diseñó el protocolo de investigación y de auditoría (`docs/protocolo/`): la pregunta, las hipótesis, las fuentes prioritarias y diez controles que cada cambio tiene que pasar.
 - **Un agente de búsqueda (Grok)** encuentra las fuentes y arma lotes: la lista de fuentes con su URL oficial, las afirmaciones con la cita textual y la página, las tablas extraídas, una síntesis y un registro de lo que no encontró. Entrega cada lote en una rama de GitHub y no tiene acceso al almacenamiento de los originales. No presenta pedidos de acceso a la información pública.
 - **Un agente de código (Claude Code)** baja cada documento desde la URL oficial, calcula su huella sha256, lo guarda, valida el lote, coteja contra el original las cifras que se van a usar, escribe el código que calcula y fusiona el lote solo si pasa las pruebas.
@@ -15,13 +23,13 @@ Los dos agentes se comunicaron por escrito, en 134 mensajes guardados en el repo
 
 Cada documento que sostiene una cifra se guarda una sola vez, sin modificar, en un almacenamiento de objetos, con su huella sha256 como nombre. Si dos fuentes entregan el mismo archivo, se guarda una vez. Si una fuente cambia el archivo, la huella cambia y se guarda la nueva versión al lado de la vieja. Los manifiestos del repositorio registran, para cada fuente, la URL, la fecha de descarga, el código de respuesta, el tamaño y la huella, y si coincide con la que calculó el agente de búsqueda.
 
-Al cierre de este borrador había 1.198 originales guardados. Algunas fuentes no se pudieron guardar porque el portal bloquea la descarga automática (ANSES y el FMI, capítulo 7); en esos casos se usó la lectura web, y se indica.
+Al cierre de este borrador había 1.207 originales guardados. Algunas fuentes no se pudieron guardar porque el portal bloquea la descarga automática (ANSES y el FMI, capítulo 7); en esos casos se usó la lectura web, y se indica.
 
 ## 8.3 Validación y verificación
 
 Cada lote pasa por un validador que revisa los esquemas de las tablas, los identificadores, las referencias cruzadas entre fuentes, afirmaciones e instrumentos y los duplicados. Un lote que no pasa no se fusiona.
 
-La validación no garantiza que las cifras sean correctas. Para eso, el agente de código coteja contra el documento original cada cifra que va a usar en un cálculo. Los resultados de esas verificaciones están en los mensajes y en `docs/verificaciones/`. Las 1.404 afirmaciones de los lotes siguen marcadas como "sin revisar" en sus tablas, porque la verificación se hizo sobre las que se usan y no sobre todas.
+La validación no garantiza que las cifras sean correctas, y la trazabilidad tampoco. Que una cifra se pueda rehacer desde su fuente dice que el cálculo es el que el informe declara; no dice que la fuente mida lo que el informe cree que mide, ni que la lectura económica sea la correcta. El error de las compras de dólares del segundo borrador, por ejemplo, era trazable de punta a punta y estaba mal igual: mezclaba dos series que miden casi lo mismo (capítulo 7). Por eso, además de las pruebas, cada borrador pasa por una lectura externa. Para eso, el agente de código coteja contra el documento original cada cifra que va a usar en un cálculo. Los resultados de esas verificaciones están en los mensajes y en `docs/verificaciones/`. Las 1.404 afirmaciones de los lotes siguen marcadas como "sin revisar" en sus tablas, porque la verificación se hizo sobre las que se usan y no sobre todas.
 
 ## 8.4 Cálculo
 
@@ -52,7 +60,7 @@ Las pruebas automáticas (88 al cierre) fijan las propiedades que no se pueden r
 | Perfil oficial de vencimientos a doce meses | Reproducido en sus 24 casillas |
 | Calendario del motor contra el perfil oficial | Diferencia de 32.913 millones de capital explicada sin residuo |
 | Mercado de cambios del mandato | 493.513 millones de USD de cada lado |
-| Tesoro en dólares | Cierra; diferencia entre monedas de 3.522 millones a la vista |
+| Tesoro en dólares | Cierra; diferencia entre monedas de 4.309 millones a la vista |
 | Sector público nacional en pesos | Cierra con $214.000 millones de redondeo |
 | BCRA en pesos | Cierra exacto contra la variación de la base |
 | Utilidades del BCRA | Iguales en la planilla del BCRA y en la de Hacienda ($42,9 billones) |
@@ -79,6 +87,6 @@ python scripts/build_informe.py --docx  # este informe en HTML y en Word
 - La verificación contra el original se hizo sobre las cifras que se usan, no sobre todas las afirmaciones reunidas.
 - Algunas fuentes son lecturas web sin huella guardada.
 - Hay estimaciones propias, rotuladas en cada caso: el interés devengado de las LEFI, la parte del TDE25 que el BCRA convirtió sin pago, el reparto proporcional de la tenencia del sector público y las conversiones de tipo de cambio.
-- La diferencia sin explicar del Tesoro en dólares, 3.522 millones, se atribuye a desfasajes de calendario y de registro, sin poder probarlo mes a mes.
+- La diferencia sin explicar del Tesoro en dólares, 4.309 millones, se atribuye a desfasajes de calendario y de registro, sin poder probarlo mes a mes.
 - El stock se mide al 30 de junio de 2026, con las operaciones posteriores hasta el 16 de octubre; los flujos llegan hasta agosto de 2026.
 - Los agentes se equivocan. El capítulo 7 lista los errores que la verificación encontró. Los que no encontró son el límite principal de este trabajo, y la razón de que todo sea reproducible.
