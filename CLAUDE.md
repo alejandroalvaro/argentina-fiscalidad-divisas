@@ -1,6 +1,6 @@
 # CLAUDE.md: argentina-fiscalidad-divisas
 
-Research pipeline for an academic paper on collecting Argentine export duties in USD. This is **not a web app**: the 8 Group web conventions (FastAPI, port, `/health`, design system) don't apply. The Python conventions do (3.11+, `pyproject.toml`, ruff, type hints, Pydantic). A debt dashboard may come later as a separate project that consumes this repo's outputs.
+Research pipeline for an academic paper on collecting Argentine export duties in USD. This is **not a web app**. Python conventions: 3.11+, `pyproject.toml`, ruff, type hints, Pydantic. A debt dashboard may come later as a separate project that consumes this repo's outputs.
 
 ## Read first
 
