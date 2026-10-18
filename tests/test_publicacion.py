@@ -34,8 +34,9 @@ def test_only_public_objects_are_copied_once(tmp_path: Path) -> None:
         f = tmp_path / "f"
         f.write_text(key)
         src.upload(f, key)
-    rows = build_table(objects, tmp_path / "inbox")
+    rows = build_table(objects, tmp_path / "inbox", "https://datos.example/")
     assert [r["publicar"] for r in rows] == ["si", "no"]
+    assert [r["url_publica"] for r in rows] == ["https://datos.example/objects/aa", ""]
     assert copy_public(rows, src, dst) == 1
     assert dst.exists("objects/aa") and not dst.exists("objects/bb")
     assert copy_public(rows, src, dst) == 0

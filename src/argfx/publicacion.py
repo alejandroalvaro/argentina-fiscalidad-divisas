@@ -31,7 +31,10 @@ THIRD_PARTY = (
 # "la nación" also ends many official names (Presidencia de la Nación).
 THIRD_PARTY_PREFIX = ("la nación", "ciara-cec")
 
-FIELDS = ["source_id", "sha256", "object_key", "media_type", "issuer", "url", "publicar", "motivo"]
+FIELDS = [
+    "source_id", "sha256", "object_key", "media_type", "issuer", "url", "publicar", "motivo",
+    "url_publica",
+]  # fmt: skip
 
 
 def classify(issuer: str) -> tuple[bool, str]:
@@ -56,7 +59,9 @@ def read_sources(inbox: Path) -> dict[str, dict[str, str]]:
     return out
 
 
-def build_table(objects_csv: Path, inbox: Path) -> list[dict[str, str]]:
+def build_table(
+    objects_csv: Path, inbox: Path, base_url: str | None = None
+) -> list[dict[str, str]]:
     sources = read_sources(inbox)
     rows: list[dict[str, str]] = []
     with objects_csv.open(encoding="utf-8") as f:
@@ -64,11 +69,13 @@ def build_table(objects_csv: Path, inbox: Path) -> list[dict[str, str]]:
             src = sources.get(obj["source_id"], {})
             issuer = (src.get("issuer") or "").strip()
             ok, why = classify(issuer)
+            public_url = f"{base_url.rstrip('/')}/{obj['object_key']}" if ok and base_url else ""
             rows.append({
                 "source_id": obj["source_id"], "sha256": obj["sha256"],
                 "object_key": obj["object_key"], "media_type": obj["media_type"],
                 "issuer": issuer, "url": (src.get("url") or "").strip(),
                 "publicar": "si" if ok else "no", "motivo": why,
+                "url_publica": public_url,
             })  # fmt: skip
     return rows
 

@@ -53,12 +53,20 @@ docs/          protocolo de investigación y documentación técnica
 ## Fases
 
 - [x] Fase 0: repositorio, almacenamiento R2, caché DuckDB, tests offline
-- [ ] Fase 1: ingesta y validación de los lotes de Grok
-- [ ] Fase 2: motor contractual de flujos de deuda
-- [ ] Fase 3: reconciliación con series oficiales
-- [ ] Fase 4: simulación de los tres regímenes
-- [ ] Fase 5: manuscrito reproducible
+- [x] Fase 1: ingesta y validación de los lotes de Grok
+- [x] Fase 2: motor contractual de flujos de deuda
+- [x] Fase 3: reconciliación con series oficiales
+- [x] Fase 4: simulación de los regímenes
+- [ ] Fase 5: manuscrito reproducible (tercer borrador en `informe/`)
 
 ## Seguridad
 
 Las credenciales viven sólo en `.env` local o en secretos de CI. El token de R2 tiene permiso de lectura y escritura sobre este bucket y nada más. Ningún documento con licencia restrictiva se publica antes de revisar sus derechos.
+
+## Datos públicos
+
+Los documentos originales oficiales (1.074 de 1.214) se pueden bajar de https://dados.8kgm.com.br, con la misma clave que en el bucket privado: `objects/sha256/<aa>/<bb>/<huella>`. La tabla `manifests/publicacion.csv` da, para cada original, la fuente, la URL de origen, la huella sha256 y la dirección pública. Los 140 documentos de terceros (prensa, trabajos académicos, cámaras privadas, copias en sitios de terceros) no se reproducen; la tabla da su URL y su huella. `argfx publicar` regenera la tabla y, con `--copiar`, sube al bucket público los originales oficiales que falten, con un token propio de ese bucket (`R2_PUBLIC_ACCESS_KEY_ID`, `R2_PUBLIC_SECRET_ACCESS_KEY`, `R2_PUBLIC_BASE_URL`).
+
+## Licencias
+
+Código: MIT (`LICENSE`). Textos, documentación y tablas propias: CC BY 4.0 (`LICENSE-CONTENIDO.md`). Los documentos originales son de sus emisores.

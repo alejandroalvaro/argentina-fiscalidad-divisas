@@ -18,7 +18,7 @@ def cmd_publicar(args: argparse.Namespace) -> int:
     from argfx.publicacion import build_table, copy_public, write_table
     from argfx.storage import public_store
 
-    rows = build_table(args.objects, args.inbox)
+    rows = build_table(args.objects, args.inbox, args.base_url or get_settings().r2_public_base_url)
     write_table(rows, args.out)
     public = sum(r["publicar"] == "si" for r in rows)
     print(f"{args.out}: {public} originales públicos, {len(rows) - public} privados")
@@ -744,6 +744,7 @@ def build_parser() -> argparse.ArgumentParser:
     pub.add_argument("--objects", type=Path, default=Path("manifests/objects.csv"))
     pub.add_argument("--inbox", type=Path, default=Path("inbox"))
     pub.add_argument("--out", type=Path, default=Path("manifests/publicacion.csv"))
+    pub.add_argument("--base-url", help="public address of the bucket (default: from .env)")
     pub.add_argument("--copiar", action="store_true", help="copy them to the public bucket")
     pub.set_defaults(func=cmd_publicar)
     return parser
