@@ -23,7 +23,7 @@ Clasificada por la moneda en que se paga, la mitad es de cada circuito. En la pa
 | *Con el propio sector público, en forma directa* | |
 | Letras Intransferibles del BCRA | 30.310 |
 | Letra en dólares con el sector público | 1.228 |
-| Letras en garantía del Fondo para el Desarrollo de Energías Renovables, FODER (contingentes, D-011) | 3.774 |
+| Letras en garantía del Fondo para el Desarrollo de Energías Renovables, FODER (contingentes) | 3.774 |
 | **Subtotal con el sector público** | **35.312** |
 | *Con acreedores de afuera, en su mayor parte* | |
 | Globales (ley extranjera) | 55.870 |
@@ -51,7 +51,7 @@ Tres detalles de esta tabla importan para el resto del informe.
 
 - **La deuda dólar linked está escrita en dólares y se paga en pesos.** El informe la cuenta en el circuito de los pesos. El boletín de Finanzas hace lo mismo en el cuadro A.3, pero no en el A.1, que la clasifica por moneda de cuenta. El mismo bono cambia de lado según la hoja que se mire (capítulo 7).
 - **Las Letras Intransferibles son deuda en dólares del Tesoro con el BCRA.** Consolidando el sector público, se cancelan con el activo del BCRA. Su peso bajó de 67.190 millones en diciembre de 2023 a 30.310 en junio de 2026, por las recompras que describe el capítulo 5.
-- **Las letras en garantía del FODER no son una deuda firme.** El Tesoro las entrega como garantía y solo paga si un generador de energía renovable ejerce una opción de venta. Si no, vencen sin pago cada 31 de diciembre. SIGADE las registra como deuda normal; el informe las trata como contingentes (D-011).
+- **Las letras en garantía del FODER no son una deuda firme.** El Tesoro las entrega como garantía y solo paga si un generador de energía renovable ejerce una opción de venta. Si no, vencen sin pago cada 31 de diciembre. SIGADE las registra como deuda normal; el informe las trata como contingentes.
 
 ## 2.2 Cómo cambió desde diciembre de 2023
 
@@ -77,7 +77,7 @@ En divisas el saldo bajó 17.945 millones, de 264.481 a 246.536. Esa baja combin
 | **Total** | **264.481** | **246.536** | **−17.945** |
 | *De la cual, con acreedores fuera del sector público* | *170.282* | *184.635* | *+14.353* |
 
-*Millones de USD. Fuentes: total, boletín de Finanzas, cuadros A.1 y A.3 (SRC-9002); organismos, Finanzas, deuda por tenedor (SRC-1706 y SRC-1602); privados, cálculo propio con la estructura por moneda de la deuda en poder del sector privado que publica Finanzas (`series/finanzas_privados_por_moneda.csv`); sector público, por diferencia. `argfx graficos`, tabla `deuda_con_terceros.csv`. Sin la deuda en default no reestructurada (2.346 y 2.403 millones), que se paga en divisas y está en manos privadas.*
+*Millones de USD. Fuentes: total, boletín de Finanzas, cuadros A.1 y A.3 (SRC-9002); organismos, Finanzas, deuda por tenedor (SRC-1706 y SRC-1602); privados, cálculo propio con la estructura por moneda de la deuda en poder del sector privado que publica Finanzas; sector público, por diferencia. Sin la deuda en default no reestructurada (2.346 y 2.403 millones), que se paga en divisas y está en manos privadas.*
 
 Leído por acreedor, el sector público cambió deuda en dólares consigo mismo por deuda en dólares con el FMI. El total publicado bajó, y lo que el Estado les debe en divisas a otros subió.
 
@@ -94,7 +94,7 @@ Leído por acreedor, el sector público cambió deuda en dólares consigo mismo 
 
 <iframe class="grafico" src="grafico_deuda_por_tenedor.html" title="Gráfico 2.1"></iframe>
 
-*Gráfico 2.1. Deuda al 30-06-2026 por moneda de pago y tenedor. A la izquierda, la que se paga en pesos, en billones de pesos (A 3500 del 30-06-2026); a la derecha, la que se paga en divisas, en millones de USD. Los organismos internacionales solo tienen deuda en divisas. Fuente: `argfx conciliacion`, `argfx graficos`.*
+*Gráfico 2.1. Deuda al 30-06-2026 por moneda de pago y tenedor. A la izquierda, la que se paga en pesos, en billones de pesos (A 3500 del 30-06-2026); a la derecha, la que se paga en divisas, en millones de USD. Los organismos internacionales solo tienen deuda en divisas. Fuente: elaboración propia.*
 
 **Un cuidado con la columna de privados.** Las cifras de privados de esta tabla suman todas las monedas: incluyen la deuda en pesos, la CER y la dólar linked, pasadas a dólares, y la deuda en default no reestructurada. Entre diciembre de 2023 y junio de 2026 crecieron unos 52.000 millones de dólares, y casi todo ese aumento es deuda en pesos. La parte que se les paga en divisas bajó 6.007 millones (sección 2.2). La sección 2.4 abre cada moneda en su unidad.
 
@@ -121,11 +121,11 @@ En pesos hay que mirar además al BCRA. A fines de 2023 el costo de absorber pes
 | El mismo saldo, en billones de pesos de agosto de 2026 | 89,6 | 3,7 | −96% |
 | **Tesoro y BCRA juntos, en billones de pesos de agosto de 2026** | **180,2** | **142,2** | **−21%** |
 
-*Fuentes: Finanzas, deuda por tenedor y estructura por moneda de la deuda en poder del sector privado (SRC-1706 y SRC-1602), cálculo propio; A 3500 del 29-12-2023 ($808,48) y del 30-06-2026 ($1.483,02); BCRA, Series.xlsm, pasivos remunerados (SRC-1625, lote AJ); IPC del INDEC (SRC-2028). `argfx graficos`, tabla `deuda_con_terceros.csv`. En junio de 2026 el pasivo remunerado del BCRA son operaciones de corto plazo con bancos, netas de activos.*
+*Fuentes: Finanzas, deuda por tenedor y estructura por moneda de la deuda en poder del sector privado (SRC-1706 y SRC-1602), cálculo propio; A 3500 del 29-12-2023 ($808,48) y del 30-06-2026 ($1.483,02); BCRA, Series.xlsm, pasivos remunerados (SRC-1625); IPC del INDEC (SRC-2028). Elaboración propia. En junio de 2026 el pasivo remunerado del BCRA son operaciones de corto plazo con bancos, netas de activos.*
 
 <iframe class="grafico" src="grafico_deuda_con_terceros.html" title="Gráfico 2.2"></iframe>
 
-*Gráfico 2.2. Deuda con acreedores fuera del sector público, diciembre de 2023 y junio de 2026. A la izquierda, la que se paga en pesos, en billones de pesos de agosto de 2026; a la derecha, la que se paga en divisas, en millones de USD. Fuente: `argfx graficos`.*
+*Gráfico 2.2. Deuda con acreedores fuera del sector público, diciembre de 2023 y junio de 2026. A la izquierda, la que se paga en pesos, en billones de pesos de agosto de 2026; a la derecha, la que se paga en divisas, en millones de USD. Fuente: elaboración propia.*
 
 La deuda del Tesoro en pesos con privados se multiplicó por cinco en pesos corrientes y creció un 53% en pesos constantes. Pero los pasivos remunerados del BCRA casi desaparecieron, y con ellos la deuda en pesos del sector público con terceros, contando Tesoro y BCRA juntos, cayó un 21% en pesos constantes. Detrás de esa caída hay tres movimientos que el informe no puede separar con precisión: el traspaso de la absorción del BCRA al Tesoro, que cambió el deudor sin cambiar la deuda; la inflación de diciembre de 2023 y los primeros meses de 2024, que con tasas por debajo de la inflación redujo el valor real del stock; y el aumento de la base monetaria, de 33,4 a 47,5 billones de pesos de agosto de 2026, que es dinero y no paga interés.
 
@@ -150,7 +150,7 @@ El calendario se armó contrato por contrato con el motor de la fase 2: 101 inst
 | Menos pagos a tenedores del sector público | −3.370 |
 | **Necesidad consolidada** | **18.775** |
 
-*Fuente: `argfx calendario` y `argfx conciliacion`, corte SIGADE 30-06-2026. De los 3.370 que se descuentan, solo 1.228 son firmes (la letra con el sector público); 299 son bonos del BCRA estimados y 1.842 salen del reparto proporcional. Sin ese reparto, la necesidad consolidada es de 20.618.*
+*Fuente: elaboración propia con SIGADE, corte SIGADE 30-06-2026. De los 3.370 que se descuentan, solo 1.228 son firmes (la letra con el sector público); 299 son bonos del BCRA estimados y 1.842 salen del reparto proporcional. Sin ese reparto, la necesidad consolidada es de 20.618.*
 
 Julio de 2026 (5.079) y enero de 2027 (5.067) concentran el 46% del año, porque los Globales y Bonares pagan cupón y amortización el 9 de cada semestre. Entre octubre y diciembre de 2026 vencen 2.374 millones.
 
@@ -169,11 +169,11 @@ Julio de 2026 (5.079) y enero de 2027 (5.067) concentran el 46% del año, porque
 | 2035 | 17.303 | 1.583 | 3.019 | 6.942 | 5.650 | 0 |
 | 2036 | 6.934 | 87 | 2.826 | 2.528 | 1.388 | 0 |
 
-*Millones de USD. Fuente: `argfx calendario`, flujos firmes en divisas, corte 30-06-2026. Otros organismos excluye al FMI. Las columnas no suman el total porque faltan bilaterales y otras monedas.*
+*Millones de USD. Fuente: elaboración propia, flujos firmes en divisas, corte 30-06-2026. Otros organismos excluye al FMI. Las columnas no suman el total porque faltan bilaterales y otras monedas.*
 
 <iframe class="grafico" src="grafico_vencimientos_por_acreedor.html" title="Gráfico 2.3"></iframe>
 
-*Gráfico 2.3. Vencimientos firmes en divisas por año y acreedor, capital más interés, sin refinanciación. En gris, las letras con el BCRA y el sector público, que se pagan dentro del Estado. Millones de USD. Fuente: `argfx calendario`, `argfx graficos`.*
+*Gráfico 2.3. Vencimientos firmes en divisas por año y acreedor, capital más interés, sin refinanciación. En gris, las letras con el BCRA y el sector público, que se pagan dentro del Estado. Millones de USD. Fuente: elaboración propia.*
 
 Entre 2028 y 2034 la necesidad bruta forma una meseta de 27.000 a 35.000 millones por año. El pico de 2032 a 2034 lo explican sobre todo las Letras Intransferibles que vencen esos años (29.080 millones en tres años), que son pagos al BCRA y en la práctica se renuevan. Sin ellas, la necesidad frente a acreedores fuera del sector público tiene su máximo en 2031 y 2032, entre 27.000 y 30.000 millones por año, y empieza a bajar en 2033. El FMI explica entre un 30% y un 37% de la meseta de 2028 a 2031, y los bonos del canje de 2020 entre 11.700 y 14.900 millones por año hasta 2035. Desde 2036, la necesidad baja a menos de 7.000 millones por año.
 
@@ -181,7 +181,7 @@ Entre 2028 y 2034 la necesidad bruta forma una meseta de 27.000 a 35.000 millone
 
 <iframe class="grafico" src="grafico_balanza_vs_servicio.html" title="Gráfico 2.4"></iframe>
 
-*Gráfico 2.4. Saldo comercial de bienes proyectado por el FMI y vencimientos en divisas con acreedores fuera del sector público, sin refinanciación. Millones de USD. Fuentes: FMI, segunda revisión del acuerdo de Servicio Ampliado, EFF por su sigla en inglés (SRC-1263), cuadro 2 (`series/fmi_balanza_proyectada.csv`); `argfx simular`, proyección de pagos consolidada.*
+*Gráfico 2.4. Saldo comercial de bienes proyectado por el FMI y vencimientos en divisas con acreedores fuera del sector público, sin refinanciación. Millones de USD. Fuentes: FMI, segunda revisión del acuerdo de Servicio Ampliado, EFF por su sigla en inglés (SRC-1263), cuadro 2; proyección de pagos consolidada, elaboración propia.*
 
 Hasta 2029 los vencimientos superan el superávit de bienes proyectado; en 2030 y 2031 el superávit los supera por unos 2.500 millones. El superávit de bienes no descuenta ningún interés, y por eso se puede comparar con el servicio completo, capital más interés. Aun así, la comparación es optimista, por tres razones.
 
@@ -195,4 +195,4 @@ Los controles de conciliación cierran todos: el saldo de SIGADE contra la plani
 
 El calendario del motor da 32.913 millones de dólares más de capital a doce meses que el perfil oficial. La diferencia se explica sin residuo. Hay 36.328 millones de operaciones posteriores al corte, 3.638 de intereses capitalizados que SIGADE no proyecta y 943 de rezagos de índices, contra 7.997 de flujos que no tienen monto hasta que se conozcan las tasas. Casi toda la diferencia es en pesos. La necesidad de divisas no cambia.
 
-Después del corte se cargaron 67 operaciones liquidadas hasta el 16 de octubre de 2026: emisiones, reaperturas, canjes y rescates, casi todas en pesos (D-008). La deuda bruta provisoria de agosto de 2026 es de 484.917 millones. Quedan sin explicar un pago de 1.040 millones de la Resolución Conjunta (RC) 30/2026 que no aparece en los depósitos del Tesoro, las bajas de saldo de tres letras (TMF27, TMG27 y TZX27) sin una operación que las justifique, y una baja de 318 millones de las letras del FODER en junio de 2026.
+Después del corte se cargaron 67 operaciones liquidadas hasta el 16 de octubre de 2026: emisiones, reaperturas, canjes y rescates, casi todas en pesos. La deuda bruta provisoria de agosto de 2026 es de 484.917 millones. Quedan sin explicar un pago de 1.040 millones de la Resolución Conjunta (RC) 30/2026 que no aparece en los depósitos del Tesoro, las bajas de saldo de tres letras (TMF27, TMG27 y TZX27) sin una operación que las justifique, y una baja de 318 millones de las letras del FODER en junio de 2026.

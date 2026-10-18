@@ -28,7 +28,7 @@ En dos años y medio ese stock desapareció del balance del BCRA:
 | Dic 2025 | 43,0 | | | 0,8 | 0,02 |
 | Jul 2026 | 46,2 | | | 1,6 | 0,04 |
 
-*Billones de pesos corrientes. Fuente: BCRA, Series.xlsm, hoja de instrumentos del BCRA (SRC-1625), lote AJ. Desde julio de 2025 el remunerado son repos con bancos.*
+*Billones de pesos corrientes. Fuente: BCRA, Series.xlsm, hoja de instrumentos del BCRA (SRC-1625). Desde julio de 2025 el remunerado son repos con bancos.*
 
 El traspaso tuvo tres etapas.
 
@@ -44,7 +44,7 @@ El diagrama 3.1 muestra por dónde entraron y salieron los pesos del BCRA en el 
 
 <iframe class="sankey" src="flujos_ars_bcra_2023-12_2026-08.html" title="Diagrama 3.1"></iframe>
 
-*Diagrama 3.1. BCRA en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuente: BCRA, Series.xlsm, hoja de base monetaria, bloque mensual (SRC-1625). `argfx flujos`.*
+*Diagrama 3.1. BCRA en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuente: BCRA, Series.xlsm, hoja de base monetaria, bloque mensual (SRC-1625). Elaboración propia.*
 
 | Absorbieron pesos | Billones | Crearon pesos | Billones |
 |---|---:|---|---:|
@@ -71,7 +71,7 @@ Buena parte de esa ganancia contable es un crédito contra el propio Tesoro que 
 
 **La base monetaria creció 63,5 billones.** Es lo que quedó en la economía después de todas las operaciones.
 
-Una aclaración sobre la fuente: una tabla de factores que recibimos en un lote intermedio estaba mal en 27 de los 45 meses, porque mezclaba la suma anual con el mes de enero. El código lee la planilla original del BCRA y verifica que los factores sumen la variación de la base en cada mes (capítulo 7).
+Una aclaración sobre la fuente: una versión intermedia de la tabla de factores estaba mal en 27 de los 45 meses, porque mezclaba la suma anual con el mes de enero. El código lee la planilla original del BCRA y verifica que los factores sumen la variación de la base en cada mes (capítulo 7).
 
 ## 3.3 El sector público nacional en pesos
 
@@ -79,7 +79,7 @@ El diagrama 3.2 muestra el sector público nacional (SPN), en base caja, solo en
 
 <iframe class="sankey" src="flujos_ars_2023-12_2026-08.html" title="Diagrama 3.2"></iframe>
 
-*Diagrama 3.2. Sector público nacional en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuentes: esquema ahorro-inversión-financiamiento (AIF) en base caja (lotes AM y AN), boletín de la Secretaría de Finanzas, cuadro A.5 (SRC-9002), lotes AI, AR y AS. `argfx flujos`. Cada línea está neta en la ventana. El diagrama cierra con una diferencia de $214.000 millones de redondeo.*
+*Diagrama 3.2. Sector público nacional en pesos, diciembre de 2023 a agosto de 2026, en millones de pesos de agosto de 2026. Fuentes: esquema ahorro-inversión-financiamiento (AIF) en base caja, boletín de la Secretaría de Finanzas, cuadro A.5 (SRC-9002), compras de divisas del Tesoro y resoluciones conjuntas de deuda. Elaboración propia. Cada línea está neta en la ventana. El diagrama cierra con una diferencia de $214.000 millones de redondeo.*
 
 | Entradas | Billones | Salidas | Billones |
 |---|---:|---|---:|
@@ -115,7 +115,7 @@ Conviene nombrar con precisión tres medidas distintas del resultado:
 - el **resultado financiero con intereses capitalizados devengados** le suma el interés que las LECAP, BONCAP y LEFI acumulan en el capital en cada trimestre, aunque todavía no se haya pagado. Es el que reconstruye este capítulo;
 - un **resultado ajustado por inflación** trataría además el ajuste de capital de los bonos CER, y la parte del interés nominal que solo compensa la inflación, de manera homogénea en toda la deuda en pesos. El informe no lo calcula.
 
-El informe reconstruye la segunda medida trimestre a trimestre con las planillas trimestrales de la Secretaría de Finanzas, netas de lo que traen las ampliaciones, los descuentos y las primas de colocación (`argfx devengados`, D-009).
+El informe reconstruye la segunda medida trimestre a trimestre con las planillas trimestrales de la Secretaría de Finanzas, netas de lo que traen las ampliaciones, los descuentos y las primas de colocación.
 
 | Trimestre | Interés capitalizado neto, Administración Central | Resultado financiero en base caja | Resultado financiero con intereses capitalizados devengados (SPN) |
 |---|---:|---:|---|
@@ -130,11 +130,11 @@ El informe reconstruye la segunda medida trimestre a trimestre con las planillas
 | 2026 T1 | 9.808 | +1.734 | −7.045 a −6.363 |
 | 2026 T2 | 9.054 | −278 | −8.371 a −7.856 |
 
-*Miles de millones de pesos corrientes. El rango del sector público nacional depende de cuánto de la deuda capitalizable tiene el FGS, que se descuenta porque es interés dentro del sector público (entre el 10,6% y el 16,3% al 30-06-2026). Fuente: `argfx devengados`, planillas trimestrales de Finanzas, línea A.2.2.*
+*Miles de millones de pesos corrientes. El rango del sector público nacional depende de cuánto de la deuda capitalizable tiene el FGS, que se descuenta porque es interés dentro del sector público (entre el 10,6% y el 16,3% al 30-06-2026). Fuente: elaboración propia con las planillas trimestrales de Finanzas, línea A.2.2.*
 
 <iframe class="grafico" src="grafico_resultado_devengado.html" title="Gráfico 3.1"></iframe>
 
-*Gráfico 3.1. Resultado financiero del sector público nacional por trimestre: en base caja, el publicado (verde), y con intereses capitalizados devengados (rojo, punto medio del rango del FGS). Billones de pesos corrientes. Fuente: `argfx devengados`, `argfx graficos`.*
+*Gráfico 3.1. Resultado financiero del sector público nacional por trimestre: en base caja, el publicado (verde), y con intereses capitalizados devengados (rojo, punto medio del rango del FGS). Billones de pesos corrientes. Fuente: elaboración propia.*
 
 El interés capitalizado neto va de 5 a 11 billones de pesos corrientes por trimestre desde mediados de 2024 y suma unos 66 billones corrientes hasta junio de 2026. Con intereses capitalizados devengados, el resultado financiero del sector público nacional es deficitario en todos los trimestres desde el tercero de 2024. Ese interés es, en buena medida, el costo de la absorción de pesos que el BCRA dejó de pagar en julio de 2024: cambió de pagador y de forma de registro.
 
@@ -152,7 +152,7 @@ En la discusión fiscal del mandato, el financiamiento de las universidades naci
 | Prestaciones de la seguridad social | 77,1 |
 | *Fuera del presupuesto: interés capitalizado neto de la deuda en pesos (sección 3.4)* | *39,6 a 46,9* |
 
-*Fuentes: Presupuesto Abierto, crédito anual 2025, devengado (Secretaría de Hacienda, repositorio de la DGSIAF, actualizado al 5-07-2026); universidades: programa 26 "Desarrollo de la Educación Superior", inciso 5, partida 6; intereses: inciso 7, solo intereses, sin comisiones ni primas; energía y transporte: transferencias corrientes de esas funciones, una aproximación propia a los subsidios económicos. Interés capitalizado: `argfx devengados`, trimestres de 2025, entre el sector público nacional sin el FGS (39,6) y la Administración Central (46,9). Deflactado mes a mes con el IPC del INDEC. Originales: SRC-9009 a SRC-9012 (`inbox/claude-revision-2026-10-18/`); tabla en `series/presupuesto_abierto_devengado.csv`.*
+*Fuentes: Presupuesto Abierto, crédito anual 2025, devengado (Secretaría de Hacienda, repositorio de la DGSIAF, actualizado al 5-07-2026); universidades: programa 26 "Desarrollo de la Educación Superior", inciso 5, partida 6; intereses: inciso 7, solo intereses, sin comisiones ni primas; energía y transporte: transferencias corrientes de esas funciones, una aproximación propia a los subsidios económicos. Interés capitalizado: elaboración propia, trimestres de 2025, entre el sector público nacional sin el FGS (39,6) y la Administración Central (46,9). Deflactado mes a mes con el IPC del INDEC. Originales: SRC-9009 a SRC-9012.*
 
 En 2025 los intereses que registra el presupuesto fueron 2,3 veces las transferencias a las universidades nacionales; entre enero y septiembre de 2026, 2,9 veces (13,1 contra 4,5 billones de pesos de agosto de 2026). Si se suma el interés que la deuda en pesos capitalizó en 2025 y que el presupuesto no registra como interés, la relación pasa a ser de nueve a diez veces. La comparación sirve para medir el tamaño relativo del ajuste universitario frente a otros flujos. No dice que el gasto universitario sea eficiente, ni que no tenga costo fiscal, ni que un peso de intereses se pueda reasignar sin más a otro destino, porque los intereses son obligaciones contractuales.
 
@@ -169,6 +169,6 @@ La Secretaría de Finanzas publica la deuda del Tesoro en pesos convertida a dó
 | Dic 2025 | 42.661 | 19.171 | 19.071 | 0 | 9.325 | 92.446 |
 | Jun 2026 | 30.467 | 46.391 | 7.512 | 0 | 8.954 | 95.428 |
 
-*Millones de USD a valor actualizado, como lo publica la fuente. Finanzas, cuadro A.1.7, lote AJ. La columna de bonos CER de esa tabla parece incompleta y se revisa antes de la versión final.*
+*Millones de USD a valor actualizado, como lo publica la fuente. Finanzas, cuadro A.1.7. La columna de bonos CER de esa tabla parece incompleta y se revisa antes de la versión final.*
 
 En la conciliación al 30-06-2026 (capítulo 2), la deuda en pesos suma 225.154 millones de dólares a valor de SIGADE, de los cuales unos 112.600 están ajustados por CER y 100.800 son a tasa fija, variable o dual. El 60% de la deuda en pesos está en manos del propio sector público, según la planilla oficial.

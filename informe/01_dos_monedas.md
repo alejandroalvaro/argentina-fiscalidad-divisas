@@ -43,7 +43,7 @@ Sumar pesos y dólares a un tipo de cambio sirve para algunas comparaciones, com
 
 **Porque las mismas palabras significan cosas distintas en cada moneda.** Una deuda "en moneda extranjera" puede estar escrita en dólares y pagarse en pesos (los bonos dólar linked, el Bono del Tesoro Nacional (BONTE) y los duales que pagan en pesos), y una deuda en pesos puede no requerir un solo dólar en toda su vida. El informe clasifica cada flujo por moneda de pago, que es la que determina de qué circuito sale la plata, y conserva por separado la moneda en que está escrita, la indexación y el tenedor.
 
-La regla de trabajo (D-017) es entonces que los pesos se informan en pesos y los dólares en dólares. Cuando un flujo en pesos se convierte para comparar, se dice a qué tipo de cambio y se aclara que la conversión no vuelve disponibles esos dólares. Los pesos de distintos meses se presentan en pesos de agosto de 2026, deflactados por el índice de precios al consumidor, salvo que se indique otra cosa. Cada gráfico muestra una sola moneda.
+Por eso, en este informe los pesos se informan en pesos y los dólares en dólares. Cuando un flujo en pesos se convierte para comparar, se dice a qué tipo de cambio y se aclara que la conversión no vuelve disponibles esos dólares. Los pesos de distintos meses se presentan en pesos de agosto de 2026, deflactados por el índice de precios al consumidor, salvo que se indique otra cosa. Cada gráfico muestra una sola moneda.
 
 ## 1.3 El caso y el período
 
@@ -52,7 +52,7 @@ El período va de diciembre de 2023, cuando asumió el gobierno actual, hasta ag
 - en los pesos, el BCRA dejó de remunerar pasivos propios y la esterilización pasó al Tesoro, primero con las Letras Fiscales de Liquidez (LEFI) y después con Letras Capitalizables (LECAP), Bonos Capitalizables (BONCAP) y bonos duales; el Tesoro mostró superávit en base caja mientras capitalizaba intereses que no aparecen en ese resultado;
 - en los dólares, se firmó un nuevo acuerdo con el FMI en abril de 2025, se levantaron las restricciones a la compra de divisas por personas humanas ese mismo mes, el atesoramiento privado volvió a ser la principal salida del mercado de cambios y el Tesoro empezó a comprar divisas con pesos para pagar su deuda.
 
-El stock de deuda se mide al 30 de junio de 2026, el último corte publicado del Sistema de Gestión y Análisis de la Deuda (SIGADE), con las operaciones posteriores cargadas desde las resoluciones y las licitaciones (D-008). Los flujos se miden mes a mes desde diciembre de 2023.
+El stock de deuda se mide al 30 de junio de 2026, el último corte publicado del Sistema de Gestión y Análisis de la Deuda (SIGADE), con las operaciones posteriores cargadas desde las resoluciones y las licitaciones. Los flujos se miden mes a mes desde diciembre de 2023.
 
 El argumento no es exclusivo de la Argentina. Vale, con matices, para cualquier economía que comercia con el mundo en una moneda que no emite. Brasil sirve de contraste acotado (anexo B): una economía grande de la región con deuda pública casi toda en su propia moneda y un régimen cambiario que deja al exportador decidir dónde tener las divisas.
 

@@ -22,7 +22,7 @@ El cambio central del mandato es de pagador. Hasta julio de 2024, el costo de re
 | 2024 | 17,1 | 16,1 | 29,5 | +19,4 |
 | 2025 | 1,6 | 0,3 | 23,3 | +34,3 |
 
-*Billones de pesos de cada cierre. Fuente: estados contables del BCRA (SRC-1673 y siguientes, lote AJ).*
+*Billones de pesos de cada cierre. Fuente: estados contables del BCRA (SRC-1673 y siguientes).*
 
 En 2023 el BCRA pagaba a los bancos 28 billones de pesos por LELIQ y pases, y perdía plata. En 2025 casi no pagaba intereses y cobraba 23,3 billones por los títulos del Tesoro que tiene en cartera. Con esa ganancia transfirió utilidades al Tesoro: $42,9 billones de pesos de agosto de 2026 en el mandato (abril de 2025 y mayo de 2026). En buena medida, las utilidades que el Tesoro registra como fuente de financiamiento son intereses que el propio Tesoro le pagó antes al BCRA.
 
@@ -39,7 +39,7 @@ Del lado del Tesoro, el interés en pesos casi no se pagó en efectivo: $2,2 bil
 | 2025 | 50,2 | 22,8 | 0,0 | 2,6 |
 | 2026, enero a agosto | 37,4 | 14,2 | 0,3 | 3,6 |
 
-*Billones de pesos de agosto de 2026. Fuente: BCRA, Informe sobre Bancos (lote AJ).*
+*Billones de pesos de agosto de 2026. Fuente: BCRA, Informe sobre Bancos.*
 
 En 2023, el resultado por títulos y las primas por pases equivalían al 122% del margen financiero de los bancos. En 2026 equivalen al 39%. Una parte de ese ingreso los bancos la trasladaron a sus depositantes: pagaron 109,6 billones de intereses en 2023. Las LEFI, entre julio de 2024 y julio de 2025, les dejaron unos $3,4 billones corrientes de interés, que pagó el Tesoro.
 

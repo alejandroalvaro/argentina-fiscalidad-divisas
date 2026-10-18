@@ -16,7 +16,7 @@ Por el mercado de cambios pasaron 493.513 millones de dólares de cada lado en 3
 
 <iframe class="sankey" src="flujos_usd_2023-12_2026-08.html" title="Diagrama 4.1"></iframe>
 
-*Diagrama 4.1. Mercado de cambios, diciembre de 2023 a agosto de 2026, en millones de USD. Fuente: balance cambiario del BCRA (SRC-1604), `argfx flujos`. Las líneas están netas en el período cuando la fuente registra el mismo concepto de los dos lados.*
+*Diagrama 4.1. Mercado de cambios, diciembre de 2023 a agosto de 2026, en millones de USD. Fuente: balance cambiario del BCRA (SRC-1604), elaboración propia. Las líneas están netas en el período cuando la fuente registra el mismo concepto de los dos lados.*
 
 | Entradas | Millones de USD | Salidas | Millones de USD |
 |---|---:|---|---:|
@@ -58,7 +58,7 @@ Lo que entró del FMI con el nuevo acuerdo, unos 15.500 millones desde abril de 
 
 ## 4.3 El FMI y los otros organismos
 
-El acuerdo de Servicio Ampliado (EFF) de abril de 2025 es por 15.267 millones de DEG a 48 meses (SRC-1611, lote AH). Hasta el 30 de septiembre de 2026 se giraron 11.452 millones de DEG:
+El acuerdo de Servicio Ampliado (EFF) de abril de 2025 es por 15.267 millones de DEG a 48 meses (SRC-1611). Hasta el 30 de septiembre de 2026 se giraron 11.452 millones de DEG:
 
 - 9.160 millones de DEG, unos 12.000 millones de dólares, el 15 de abril de 2025;
 - 1.529 millones de DEG, unos 2.000 millones, el 4 de agosto de 2025, con la primera revisión;
@@ -88,7 +88,7 @@ Entre 2025 y 2026 el sector público pagó su deuda en dólares, sostuvo un rég
 | Ago 2026 | Renovación por cinco años del acuerdo de swap con el Banco Popular de China | stock, sin flujo nuevo | realizada | prensa (Europa Press), confianza media |
 | Pendiente | Tercera revisión del FMI | unos +870 | pendiente | prensa |
 
-*Signo positivo: ingreso al BCRA o al Tesoro. Fuentes reunidas el 18 de octubre de 2026 (`inbox/claude-revision-2026-10-18/sources.csv` e `inbox/claude-esf-2026-10-18/sources.csv`). Los originales con código SRC están guardados con su huella; dos comunicados del BCRA se leyeron en la web porque el portal devolvió error al guardarlos, y las fuentes de prensa se citan con su medio. Ninguna fuente primaria documenta, al 18 de octubre, que la tercera revisión del FMI tenga acuerdo técnico.*
+*Signo positivo: ingreso al BCRA o al Tesoro. Fuentes reunidas el 18 de octubre de 2026. Los originales con código SRC están guardados con su huella; dos comunicados del BCRA se leyeron en la web porque el portal devolvió error al guardarlos, y las fuentes de prensa se citan con su medio. Ninguna fuente primaria documenta, al 18 de octubre, que la tercera revisión del FMI tenga acuerdo técnico.*
 
 **El FMI.** Es el único apoyo de la tabla que dejó dólares por un monto grande y a un plazo largo: giró unos 15.000 millones entre abril de 2025 y mayo de 2026, que en un acuerdo de Servicio Ampliado se devuelven entre cuatro años y medio y diez años después de cada giro. En el mismo lapso el Tesoro le siguió pagando capital e intereses del programa anterior, y por eso el aporte neto del FMI en todo el mandato fue de 7.286 millones (sección 4.3). Sus condiciones se refieren a la acumulación de reservas y a la flexibilidad cambiaria. Las metas de reservas se incumplieron en junio y en diciembre de 2025, y el FMI aprobó igual las dos revisiones, después de que el gobierno adoptara medidas correctivas y con las metas siguientes rebajadas (sección 4.5). Los comunicados del FMI no fijan la banda cambiaria: la banda y su ajuste por inflación desde enero de 2026 son decisiones del BCRA.
 
@@ -123,7 +123,7 @@ Con esos datos la ganancia queda entre dos extremos. Si la pérdida por revaluac
 
 ## 4.5 Las reservas
 
-El informe usa la definición de reservas internacionales netas del acuerdo con el FMI (D-001): reservas brutas menos los pasivos en divisas de corto plazo del BCRA, sin restar los depósitos del Tesoro. Con esa definición las metas del programa son pisos para la variación acumulada de las reservas netas, y no para su nivel.
+El informe usa la definición de reservas internacionales netas del acuerdo con el FMI: reservas brutas menos los pasivos en divisas de corto plazo del BCRA, sin restar los depósitos del Tesoro. Con esa definición las metas del programa son pisos para la variación acumulada de las reservas netas, y no para su nivel.
 
 | Fecha | Meta (ajustada) | Resultado | Fuente |
 |---|---:|---:|---|

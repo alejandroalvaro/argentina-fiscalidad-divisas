@@ -62,7 +62,7 @@ El criterio, además, cambia entre publicaciones:
 - el boletín de Finanzas cuenta la deuda dólar linked como moneda local en el cuadro A.3 y como moneda extranjera en el A.1;
 - el cuadro A.4 del boletín incluye canjes sin caja: la RC 16/2024 dio de baja BONAR DUAL y BONTE en dólares por 25.173 millones que el esquema ahorro-inversión-financiamiento no muestra.
 
-Un lector que quiera saber cuántos dólares necesitó el Tesoro y lea toda la amortización "en moneda extranjera" como pagos en divisas los sobreestima en aproximadamente un 60% (121.405 contra 76.080 millones, entre diciembre de 2023 y agosto de 2026). La clasificación por moneda de denominación es un criterio estadístico legítimo; el problema es que no se publica, al lado, la clasificación por moneda de pago. Para corregirlo, el informe tuvo que reconstruir la deuda pagada en pesos operación por operación desde las licitaciones y las resoluciones (lotes AQ y AR).
+Un lector que quiera saber cuántos dólares necesitó el Tesoro y lea toda la amortización "en moneda extranjera" como pagos en divisas los sobreestima en aproximadamente un 60% (121.405 contra 76.080 millones, entre diciembre de 2023 y agosto de 2026). La clasificación por moneda de denominación es un criterio estadístico legítimo; el problema es que no se publica, al lado, la clasificación por moneda de pago. Para corregirlo, el informe tuvo que reconstruir la deuda pagada en pesos operación por operación desde las licitaciones y las resoluciones.
 
 ## 7.5 Errores en archivos oficiales y operaciones sin explicación
 
