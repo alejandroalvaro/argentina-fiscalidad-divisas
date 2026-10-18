@@ -15,7 +15,7 @@ Entre diciembre de 2023 y agosto de 2026, el esquema ahorro-inversión-financiam
 Para llegar a los diagramas y tablas de este informe hubo que reunir:
 
 - 1.291 fuentes distintas, en 50 lotes de búsqueda, con 1.404 afirmaciones registradas;
-- 1.207 documentos originales guardados, cada uno identificado por su huella sha256, y 1.534 descargas registradas;
+- 1.214 documentos originales guardados, cada uno identificado por su huella sha256, y 1.540 descargas registradas;
 - más de 750 operaciones de deuda en SIGADE y los términos de emisión de 101 instrumentos, cargados a mano desde prospectos y resoluciones;
 - cerca de 640 preguntas que quedaron sin respuesta en los registros de lo no encontrado de cada lote.
 

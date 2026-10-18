@@ -1548,3 +1548,9 @@ SRC-9020,https://www.bcra.gob.ar/noticias/el-bcra-y-el-departamento-del-tesoro-d
 SRC-9021,https://www.bcra.gob.ar/noticias/el-bcra-amplia-en-usd-2-000-millones-sus-operaciones-de-repo-con-bancos-internacionales/,2026-10-18T12:01:54Z,502,,,,,,HTTPError: HTTP Error 502: Bad Gateway
 SRC-9022,https://www.bcra.gob.ar/noticias/el-bcra-fortalece-sus-reservas-al-concertar-un-nuevo-repo-con-bancos-internacionales-por-usd-3-000-millones/,2026-10-18T12:01:56Z,200,cc7ee90b7752b814026c23a911a0bff3ece8c29ca91c5ca9b978bd8743d64f61,73013,,,True,
 SRC-9023,https://www.bcra.gob.ar/noticias/bcra-repo-renovacion-total-hasta-2028/,2026-10-18T12:01:58Z,502,,,,,,HTTPError: HTTP Error 502: Bad Gateway
+SRC-9024,https://www.newyorkfed.org/medialibrary/media/newsevents/news/markets/2025/q4-2025-fx-quarterly-report.pdf,2026-10-18T14:50:15Z,200,aeefe309ab1caad1cd2eeed5af92224f2c5c43730470ef0b7529c279d1eaec99,372598,,,True,
+SRC-9025,https://home.treasury.gov/system/files/206/ESF-November-2025-FS-Trunc-Notes.pdf,2026-10-18T14:50:19Z,200,8612bf217b7b54ade92c9ad33328064e51041ddd37e5981aae32904be7268218,226695,,,True,
+SRC-9026,https://home.treasury.gov/system/files/206/ESF-April-2026-FS_Trunc_Notes.pdf,2026-10-18T14:50:32Z,200,349ed7c63e095fe83025df5f2e505424ce0456fbf91ea253a3d06b488adc7b9f,266674,,,True,
+SRC-9027,https://home.treasury.gov/system/files/206/FY24-25-Audi-Report.pdf,2026-10-18T14:50:45Z,200,eab3c635b6ab4fa1dd913ec18056c8f854ac34eab0955c4ee047dd08b294123c,1357853,,,True,
+SRC-9028,https://www.newyorkfed.org/medialibrary/media/newsevents/news/markets/2026/q2-2026-fx-quarterly-report.pdf,2026-10-18T14:50:57Z,200,339f2c7335a2386914d143cb323d95089f78351986ff868bb43e882a80778d79,390532,,,True,
+SRC-9029,https://www.banking.senate.gov/imo/media/doc/argentina_letter.pdf,2026-10-18T14:51:01Z,403,,,,,,HTTPError: HTTP Error 403: Forbidden
