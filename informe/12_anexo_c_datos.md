@@ -56,7 +56,7 @@ Las decisiones del investigador están en `docs/DECISIONES.md`, con fecha y fund
 Todo lo que sostiene este informe es público:
 
 - **El repositorio**, con el código, las pruebas, los manifiestos, las tablas de cada lote, las decisiones de método y los mensajes entre los agentes, con su historial completo: https://github.com/alejandroalvaro/argentina-fiscalidad-divisas
-- **Los documentos originales oficiales**, tal como se bajaron, en https://dados.8kgm.com.br. Cada original está en `objects/sha256/` seguido de su huella. La tabla `manifests/publicacion.csv` da, para cada código SRC, el emisor, la URL de origen, la huella y la dirección pública.
+- **Los documentos originales oficiales**, tal como se bajaron, en https://datos.8kgm.com.br. Cada original está en `objects/sha256/` seguido de su huella. La tabla `manifests/publicacion.csv` da, para cada código SRC, el emisor, la URL de origen, la huella y la dirección pública.
 - **Los documentos de terceros** (notas de prensa, trabajos académicos, informes de cámaras privadas y copias de textos oficiales alojadas en sitios de terceros), 140 de 1.214, no se reproducen porque sus derechos son de sus autores. La misma tabla da su URL de origen y su huella, para que quien los baje pueda comprobar que es el mismo archivo.
 
 Para comprobar un original alcanza con bajarlo y calcular su huella (`shasum -a 256 archivo` en macOS o Linux, `certutil -hashfile archivo SHA256` en Windows): tiene que coincidir con el nombre del objeto. Para rehacer un cálculo, el repositorio explica cómo instalar el código y qué comando produce cada salida (sección C.2).
