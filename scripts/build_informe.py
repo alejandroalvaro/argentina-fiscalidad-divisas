@@ -96,14 +96,21 @@ def glossary_with_anchors(glossary: str) -> tuple[str, dict[str, str]]:
     return ENTRY.sub(anchor, glossary), terms
 
 
+# Lines that never get glossary links: headings, tables, embeds, code, quotes and captions
+# (Spanish, Portuguese and English, for the translated exports).
+CAPTIONS = (
+    "#", "|", "<", "    ", "```", ">", "*Fuente", "*Fonte", "*Source", "*Gráfico", "*Chart",
+    "*Diagrama", "*Diagram", "*Cuadro", "*Quadro", "*Table",
+)  # fmt: skip
+
+
 def link_first_uses(body: str, terms: dict[str, str]) -> str:
     """Link the first use of each acronym in running text: not in headings, tables, captions,
     embedded pages or code."""
     pending = dict(terms)
     out = []
     for line in body.splitlines():
-        if not pending or line.startswith(("#", "|", "<", "*Fuente", "*Gráfico", "*Diagrama",
-                                           "*Cuadro", "    ", "```", ">")):  # fmt: skip
+        if not pending or line.startswith(CAPTIONS):
             out.append(line)
             continue
 

@@ -48,6 +48,22 @@ def body_html(src: Path, glossary: Path, lang: str) -> tuple[str, list[str]]:
     return html, charts
 
 
+def chart_labels(path: Path) -> dict[str, str]:
+    """Spanish chart string -> translation, longest first so that no label is cut by a shorter
+    one it contains."""
+    labels: dict[str, str] = json.loads(path.read_text(encoding="utf-8"))
+    return dict(sorted(labels.items(), key=lambda kv: -len(kv[0])))
+
+
+def translate_chart(page: str, labels: dict[str, str], lang: str) -> str:
+    """Swap whole quoted strings (and the page title) only, so numbers and code stay intact."""
+    for es, tr in labels.items():
+        for q in ('"', "'"):
+            page = page.replace(f"{q}{es}{q}", f"{q}{tr}{q}")
+        page = page.replace(f"<title>{es}</title>", f"<title>{tr}</title>")
+    return page.replace("<html lang='es'>", f"<html lang='{lang}'>")
+
+
 def toc(html: str) -> list[dict[str, str]]:
     return [{"id": i, "title": " ".join(TAG.sub("", t).split())} for i, t in H2.findall(html)]
 
@@ -76,13 +92,17 @@ def main() -> None:
     )
     dest = args.site / "public" / "blog" / SLUG / lang
     dest.mkdir(parents=True, exist_ok=True)
+    labels = chart_labels(src / "graficos.json") if lang != "es" else {}
     for name in sorted(set(charts)):
-        for ext in (".html", ".csv"):
-            f = args.charts / f"{name}{ext}"
-            if f.exists():
-                shutil.copy2(f, dest / f.name)
-            elif ext == ".html":
-                raise SystemExit(f"falta el gráfico {f}")
+        page = args.charts / f"{name}.html"
+        if not page.exists():
+            raise SystemExit(f"falta el gráfico {page}")
+        (dest / page.name).write_text(
+            translate_chart(page.read_text(encoding="utf-8"), labels, lang), encoding="utf-8"
+        )
+        data = args.charts / f"{name}.csv"
+        if data.exists():
+            shutil.copy2(data, dest / data.name)
     print(f"{out}: {len(html):,} caracteres, {len(set(charts))} gráficos en {dest}")
 
 
