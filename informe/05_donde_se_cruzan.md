@@ -5,7 +5,7 @@ Los dos circuitos se tocan en el Tesoro. El Tesoro debe dólares, y la mayor par
 ::: {.destacado custom-style="Destacado"}
 **El superávit en pesos no trae dólares por sí solo.**
 
-El Tesoro pagó 100.639 millones de dólares de deuda en divisas. Cubrió 64.150 con deuda nueva en divisas y 26.810 comprándolos con pesos. Además canceló con pesos deuda en dólares que le debía al BCRA, por un valor nominal de 28.030 millones.
+El Tesoro registró 100.639 millones de dólares de pagos de deuda en divisas. De ese total, 16.703 fueron deuda con el BCRA cancelada con pesos (un valor nominal de 28.030, entregado con descuento), y 83.936 se pagaron con dólares. Esos dólares salieron de deuda nueva en divisas (64.150) y de compras con pesos (26.810); lo que sobró fue a los depósitos en el BCRA (2.715) o queda como diferencia que la fuente no abre (4.309).
 
 *Alcance.* Las tres vías tienen distinto contenido económico. Comprar dólares al mercado los saca de manos privadas; comprarlos al BCRA los saca de las reservas; cancelar con pesos una deuda en dólares con el BCRA no consigue ningún dólar disponible, porque solo cambia una deuda dentro del sector público.
 :::
@@ -28,7 +28,7 @@ El diagrama 5.1 muestra todo lo que entró y salió de la caja en dólares del T
 
 *Millones de USD.*
 
-En casi tres años el Tesoro pagó 100.639 millones de dólares de capital e intereses de deuda en divisas. Con nueva deuda en divisas, sobre todo de organismos internacionales, cubrió 64.150. El resto salió del circuito de los pesos por dos vías, que conviene leer por separado porque no son equivalentes.
+En casi tres años el Tesoro registró 100.639 millones de dólares de capital e intereses de deuda en divisas (76.080 más 24.559). La cuenta se lee mejor separando una parte. De esos pagos, 16.703 fueron la cancelación con pesos de deuda en dólares con el BCRA: la cuenta de financiamiento la anota como amortización en divisas, y por eso aparece también entre las entradas, aunque no entró ni salió ningún dólar. Los 83.936 restantes se pagaron con dólares. Con nueva deuda en divisas, sobre todo de organismos internacionales, el Tesoro consiguió 64.150, y compró 26.810 con pesos. Esas dos fuentes suman 90.960, 7.024 más que lo pagado: 2.715 quedaron en los depósitos del Tesoro en el BCRA y 4.309 son la diferencia que la fuente no abre. Las dos vías que pasan por los pesos conviene leerlas por separado, porque no son equivalentes.
 
 **Compró dólares con pesos.** Fueron 26.810 millones: 25.281 directamente al BCRA y 1.529 netos en el mercado. Le costaron $45,7 billones de pesos de agosto de 2026. Las compras se concentraron en 2024 (15.641 millones al BCRA, con meses de 3.822 en julio y 2.814 en noviembre), cayeron en 2025 (2.715 al BCRA y 1.258 netos en el mercado) y volvieron en 2026 (6.925 al BCRA y 271 en el mercado hasta agosto). En octubre de 2025, con el tipo de cambio en el techo de la banda, el Tesoro vendió 2.060 millones en el mercado.
 
