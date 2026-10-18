@@ -70,7 +70,9 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Derechos de exportación.** Impuesto que paga el exportador sobre el valor FOB de lo que vende al exterior. Se conocen también como retenciones. Hoy se determinan en dólares y se pagan en pesos.
 
-**Diferencia entre monedas que la fuente no abre.** La parte del cruce entre pesos y dólares que no se puede atribuir a una operación identificada. En el mandato fue de 3.522 millones de dólares, un 3% del flujo del Tesoro en dólares, y se muestra en los diagramas con ese nombre en lugar de repartirse.
+**Deuda con terceros.** La deuda del sector público con acreedores que no forman parte de él: privados, residentes y del exterior, y organismos internacionales. En pesos, el informe suma a los títulos del Tesoro en manos privadas los pasivos remunerados del BCRA, porque a fines de 2023 la absorción de pesos estaba en el BCRA (capítulo 2.4, D-019).
+
+**Diferencia entre monedas que la fuente no abre.** La parte del cruce entre pesos y dólares que no se puede atribuir a una operación identificada. En el mandato fue de 4.309 millones de dólares, un 4% del flujo del Tesoro en dólares, y se muestra en los diagramas con ese nombre en lugar de repartirse.
 
 **DJVE.** Declaración jurada de venta al exterior. El exportador de granos la registra al vender, y la alícuota de esa fecha es la que paga.
 
@@ -81,6 +83,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Duales.** Bonos del Tesoro en pesos que pagan la mayor de dos tasas: una fija y otra variable (TAMAR) o ajustada por CER. (Pesos.)
 
 **EFF.** Extended Fund Facility, Servicio Ampliado del FMI. El acuerdo de abril de 2025 es un EFF de 48 meses por 15.267 millones de DEG. (Dólares.)
+
+**ESF.** Exchange Stabilization Fund, el Fondo de Estabilización Cambiaria del Tesoro de los Estados Unidos. En octubre de 2025 firmó con el BCRA un acuerdo de swap por hasta 20.000 millones de dólares. Es distinto de la Reserva Federal, que no participó (capítulo 4.4).
 
 **Esterilización.** Absorber los pesos que el BCRA emite al comprar divisas, colocando pasivos que pagan interés (pases, LELIQ, LEFI) o, desde 2025, deuda del Tesoro en pesos. El interés es un costo para quien emite y un ingreso para quien los compra (D-015). (Pesos.)
 
@@ -114,6 +118,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Letras Intransferibles.** Letras en dólares que el Tesoro le entregó al BCRA a cambio de reservas para pagar deuda, desde 2006. No se pueden negociar. Parte se recompró en 2025 y 2026 con fondos del FMI y con utilidades del BCRA. (Dólares, deuda dentro del sector público.)
 
+**MEP y contado con liquidación.** Formas de comprar dólares a través del mercado de títulos: se compra un bono en pesos y se vende en dólares, en el país (MEP) o en el exterior (contado con liquidación). No pasan por el mercado oficial de cambios y no figuran en la compra de billetes y divisas del balance cambiario.
+
 **MLC.** Mercado libre de cambios. El mercado oficial donde se compran y venden divisas, con el BCRA como regulador y participante.
 
 **Moneda de pago.** La moneda en que efectivamente se paga una deuda, que puede diferir de la moneda en que está escrita. Un bono dólar linked está escrito en dólares y se paga en pesos. El informe clasifica los flujos por moneda de pago, como el cuadro A.5 del boletín de la Secretaría de Finanzas.
@@ -132,11 +138,15 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 
 **Pasivos remunerados.** Las deudas del BCRA en pesos que pagan interés: pases, LELIQ y, antes, LEBAC. En el informe se suman las LEFI y la deuda del Tesoro colocada para absorber pesos. (Pesos.)
 
+**Repo.** Préstamo en dólares que bancos internacionales le dan al BCRA con garantía de títulos, que el BCRA recompra al vencimiento. Suma a las reservas brutas mientras está vigente.
+
 **Reservas brutas.** Todos los activos externos del BCRA: divisas, oro, DEG, posición en el FMI.
 
 **Reservas netas.** Las reservas brutas menos los pasivos externos de corto plazo del BCRA, con la definición del acuerdo con el FMI. Los depósitos del Tesoro en dólares en el BCRA no se restan (D-001).
 
 **Resolución conjunta (RC).** Norma de las Secretarías de Finanzas y de Hacienda que autoriza cada emisión, canje o recompra de deuda. Se citan por número y año, como RC 27/2026.
+
+**Resultado financiero con intereses capitalizados devengados.** El resultado financiero en base caja más el interés que las LECAP, BONCAP y LEFI acumulan en el capital en cada trimestre, aunque todavía no se haya pagado. No incluye el ajuste del capital de los bonos CER. Es la medida que reconstruye el capítulo 3.4 (D-009).
 
 **Resultado primario y financiero.** El primario es la diferencia entre ingresos y gastos sin contar intereses. El financiero resta además los intereses pagados en efectivo. Ninguno de los dos, en base caja, registra los intereses capitalizados (D-009). (Pesos.)
 
@@ -149,6 +159,8 @@ Borrador del 17-10-2026 (D-017). Crece a medida que se escribe el informe: cada 
 **Selic e IPCA.** La tasa de política del Banco Central do Brasil y el índice de precios al consumidor de Brasil. Gran parte de la deuda pública brasileña se ajusta por una u otra (anexo B).
 
 **SIGADE.** Sistema de Gestión y Análisis de la Deuda. La base de la Oficina Nacional de Crédito Público con cada operación de deuda del Tesoro. Sus montos están en dólares (unidades).
+
+**SOFR.** Secured Overnight Financing Rate, la tasa de referencia a un día en dólares en los Estados Unidos. Los repos del BCRA pagan SOFR más un margen.
 
 **Superávit fiscal.** El Estado le sacó al sector privado, con impuestos, más pesos de los que le puso con el gasto (superávit primario) o con el gasto y los intereses (superávit financiero). Los pesos que vuelven por impuestos dejan de circular: cobrar impuestos retira pesos de la economía, así como gastar los pone. Un superávit en pesos se mide en pesos; para pagar deuda en dólares con él, alguien tiene que vender los dólares y el Tesoro comprarlos. (Pesos.)
 

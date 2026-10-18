@@ -13,3 +13,7 @@ Datos observados que el motor usa junto con los escenarios. No son términos con
 Las fuentes están registradas en `inbox/lote-j/sources.csv` y sus originales en R2. Los IDs SRC-1900 en adelante son de Claude Code, separados de la numeración de Grok.
 
 Para actualizar, se baja de nuevo la API del BCRA (`https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/{5,30,44}?desde=&hasta=&limit=3000`), se registra la descarga como fuente nueva y se reescriben los CSV con columnas `fecha,valor,source_id`.
+
+## Presupuesto (revisión del 18-10-2026)
+
+`presupuesto_abierto_devengado.csv`: crédito vigente y devengado de la Administración Nacional por concepto (transferencias a universidades nacionales con tres perímetros, intereses de la deuda por tipo, comisiones, primas, prestaciones de la seguridad social, transferencias corrientes en energía y transporte), 2023 a septiembre de 2026, en millones de pesos corrientes y de septiembre de 2026 (IPC del INDEC, datos.gob.ar 145.3). Sale de los datasets de crédito anual y mensual de Presupuesto Abierto (SRC-9009 a SRC-9012 y los de 2023 y 2024 del mismo repositorio), procesados fuera del paquete; el capítulo 3.5 del informe los pasa a pesos de agosto de 2026. Las columnas en pesos constantes son de septiembre de 2026.

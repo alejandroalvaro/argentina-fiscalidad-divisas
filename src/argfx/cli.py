@@ -501,7 +501,8 @@ def cmd_simular(args: argparse.Namespace) -> int:
 
 def cmd_graficos(args: argparse.Namespace) -> int:
     from argfx.informe import graficos as gr
-    from argfx.informe.flujos import read_a3500
+    from argfx.informe import terceros
+    from argfx.informe.flujos import read_a3500, read_cpi
 
     _, eom = read_a3500(args.a3500)
     normal = next(
@@ -523,6 +524,16 @@ def cmd_graficos(args: argparse.Namespace) -> int:
         gr.duties_vs_service(args.simulacion / "proyeccion_derechos.csv"),
         gr.fund_smoothing(args.simulacion / "proyeccion_mensual.csv", "2027-01", "2028-12"),
     ]
+    third = terceros.third_party_debt(
+        terceros.read_structure(args.privados_por_moneda),
+        args.tenedores,
+        args.remunerados,
+        eom,
+        read_cpi(args.ipc),
+        args.pesos_de,
+    )
+    print(terceros.write_rows(third, args.out / "deuda_con_terceros.csv"))
+    charts.append(gr.third_parties(third))
     for g in charts:
         print(gr.write_chart(g, args.out))
     return 0
@@ -692,6 +703,25 @@ def build_parser() -> argparse.ArgumentParser:
     gra.add_argument("--simulacion", type=Path, default=Path("data/simulacion"))
     gra.add_argument("--instrumentos", type=Path, default=Path("inbox/lote-c/instruments.csv"))
     gra.add_argument("--fmi", type=Path, default=Path("series/fmi_balanza_proyectada.csv"))
+    gra.add_argument(
+        "--privados-por-moneda", type=Path, default=Path("series/finanzas_privados_por_moneda.csv")
+    )
+    gra.add_argument(
+        "--tenedores",
+        type=Path,
+        default=Path("inbox/lote-aj/tablas/deuda_bruta_por_acreedor_trimestral.csv"),
+    )
+    gra.add_argument(
+        "--remunerados",
+        type=Path,
+        default=Path("inbox/lote-aj/tablas/pasivos_remunerados_bcra_mensual.csv"),
+    )
+    gra.add_argument(
+        "--ipc",
+        type=Path,
+        default=Path("inbox/lote-am/tablas/indec_ipc_nacional_nivel_general_mensual.csv"),
+    )
+    gra.add_argument("--pesos-de", default="2026-08", help="month of the constant pesos")
     gra.add_argument("--out", type=Path, default=Path("data/informe"))
     gra.set_defaults(func=cmd_graficos)
     return parser

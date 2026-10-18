@@ -1,0 +1,17 @@
+corte,concepto,valor,unidad,source_id,nota
+2023-12-31,base_privados_sin_holdouts,123507,millones de USD,SRC-1706,"torta ""Estructura de la deuda bruta en poder del sector privado (excluye deuda elegible pendiente de reestructuración)"""
+2023-12-31,holdouts,2346,millones de USD,SRC-1706,deuda elegible pendiente de reestructuración; se paga en divisas
+2023-12-31,pct_dolares,69.2,porcentaje,SRC-1706,
+2023-12-31,pct_euros_y_otros,4.8,porcentaje,SRC-1706,
+2023-12-31,pct_dolar_linked,11.9,porcentaje,SRC-1706,escrita en dólares y pagada en pesos
+2023-12-31,pct_cer,11.6,porcentaje,SRC-1706,
+2023-12-31,pct_pesos,2.6,porcentaje,SRC-1706,
+2023-12-31,divisas_pago_normal_total,264481,millones de USD,SRC-9002,"boletín de Finanzas, cuadros A.1 y A.3; situación de pago normal"
+2026-06-30,base_privados_sin_holdouts,175335,millones de USD,SRC-1602,presentación del segundo trimestre de 2026
+2026-06-30,holdouts,2403,millones de USD,SRC-1602,
+2026-06-30,pct_dolares,45.6,porcentaje,SRC-1602,
+2026-06-30,pct_euros_y_otros,3.1,porcentaje,SRC-1602,
+2026-06-30,pct_dolar_linked,4.2,porcentaje,SRC-1602,
+2026-06-30,pct_cer,27.1,porcentaje,SRC-1602,
+2026-06-30,pct_pesos,20.0,porcentaje,SRC-1602,
+2026-06-30,divisas_pago_normal_total,246536,millones de USD,SRC-9002,

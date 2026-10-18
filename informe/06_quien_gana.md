@@ -1,6 +1,14 @@
-# 6. Quién gana y quién pierde
+# 6. Quién recibe los flujos y quién asume las obligaciones
 
-Los capítulos anteriores midieron por dónde pasaron los pesos y los dólares. Este pregunta en manos de quién quedaron. La respuesta es parcial por una razón que el capítulo 7 desarrolla: las fuentes oficiales dicen bastante sobre quién paga y poco sobre quién cobra. Aun así, los datos alcanzan para describir cómo se repartieron los flujos en cada circuito. El informe describe ese reparto y deja su valoración al lector.
+::: {.destacado custom-style="Destacado"}
+**La dolarización privada y las obligaciones públicas se leen juntas.**
+
+Mientras personas y empresas compraban en neto 48.476 millones de dólares en el mercado oficial, el FMI desembolsó 20.957 millones y la deuda del sector público en divisas con acreedores de afuera subió 14.353. Unos adquirieron activos en dólares; el sector público asumió los pasivos en dólares que habrá que pagar después.
+
+*Alcance.* El capítulo describe quién recibió los flujos y quién quedó con las obligaciones. No mide ganancias ni pérdidas finales de cada grupo.
+:::
+
+Los capítulos anteriores midieron por dónde pasaron los pesos y los dólares. Este pregunta en manos de quién quedaron. La pregunta original del proyecto era quién gana y quién pierde, y los datos permiten contestar una parte. Para hablar de ganancias habría que distinguir cuatro cosas: el ingreso financiero que alguien cobra (un interés, una prima), el rendimiento real de ese ingreso después de la inflación y del tipo de cambio, la ganancia realizada cuando se vende o vence el activo, y el cambio de exposición al riesgo (quién queda con un activo o un pasivo en dólares, o atado a la inflación). Las fuentes oficiales dicen bastante sobre quién paga y poco sobre quién cobra (capítulo 7), y casi nada sobre el resultado final de cada grupo. Por eso el capítulo describe los flujos y las obligaciones, dice en cada caso cuál de las cuatro cosas mide, y deja la valoración al lector.
 
 ## 6.1 En el circuito de los pesos
 
@@ -22,7 +30,7 @@ Del lado del Tesoro, el interés en pesos casi no se pagó en efectivo: $2,2 bil
 
 ### Quién cobró
 
-**Los bancos.** En 2023 y 2024 fueron los principales cobradores del interés de la absorción.
+**Los bancos.** En 2023 y 2024 fueron los principales cobradores del interés de la absorción. La tabla mide ingresos financieros y resultados contables, en pesos constantes; no mide cuánto de ese ingreso fue una ganancia real para los bancos después de pagarles a sus depositantes y de la inflación.
 
 | Año | Margen financiero | Resultado por títulos valores | Primas por pases | Resultado total |
 |---|---:|---:|---:|---:|
@@ -43,7 +51,7 @@ En 2023, el resultado por títulos y las primas por pases equivalían al 122% de
 
 ## 6.2 En el circuito de los dólares
 
-**Los que atesoraron.** La compra neta de dólares de personas y empresas fue de 48.476 millones en el mandato, y 68.452 de compra bruta ocurrieron después de abril de 2025. Es la mayor salida del mercado de cambios después de las importaciones. Quien compró dólares a un tipo de cambio dentro de la banda se quedó con un activo que el Estado necesita para pagar su deuda.
+**Los que atesoraron.** La compra neta de dólares de personas y empresas fue de 48.476 millones en el mandato, y 68.452 de compra bruta ocurrieron después de abril de 2025. Es la mayor salida del mercado de cambios después de las importaciones. Quien compró dólares cambió su exposición: pasó de tener un activo en pesos a tener uno en dólares, que es la moneda en que el Estado necesita pagar su deuda. Si eso le dio una ganancia o una pérdida depende de la tasa en pesos que dejó de cobrar y del tipo de cambio al que compró, y el informe no lo mide.
 
 **Los acreedores privados.** El Gobierno Nacional pagó 10.456 millones de dólares de intereses por el mercado de cambios, en su mayor parte a tenedores de Globales y Bonares, y pagó todo el capital que venció. La deuda con privados en dólares no se reestructuró en el período.
 
@@ -53,7 +61,7 @@ En 2023, el resultado por títulos y las primas por pases equivalían al 122% de
 
 ## 6.3 Entre el Tesoro y el BCRA
 
-Las operaciones entre el Tesoro y el BCRA no cambian la deuda del sector público con terceros, pero sí quién carga con qué. En el mandato hubo seis.
+Una operación aislada entre el Tesoro y el BCRA no cambia la deuda del sector público con terceros, pero sí quién carga con qué. Cuando se paga con un préstamo nuevo, como las recompras de 2025 con el desembolso del FMI, el conjunto sí la cambia (capítulo 5). En el mandato hubo seis.
 
 | Operación | Qué entregó el BCRA | Qué recibió | Precio | Fuente |
 |---|---|---|---|---|
@@ -66,7 +74,7 @@ Las operaciones entre el Tesoro y el BCRA no cambian la deuda del sector públic
 
 En todas, el BCRA entregó activos en dólares contra el Tesoro y recibió, a cambio, dólares, pesos o títulos en pesos por menos que el valor nominal. Para el Tesoro, cada operación redujo deuda nominal en dólares a un precio menor. Para el BCRA, la contrapartida dependió de la vía: con dólares del FMI, cambió un activo ilíquido por reservas; con pesos, cambió un activo en dólares por pesos que él mismo había creado al girar utilidades. Consolidando los dos balances, el sector público cambió deuda en dólares con el BCRA por deuda en dólares con el FMI (en 2025) y por pesos (en 2024 y 2026).
 
-## 6.4 Lo que sale en limpio
+## 6.4 Lo que se puede decir
 
 - En pesos, el costo de absorber la liquidez lo pagó el BCRA hasta mediados de 2024 y lo cobraron sobre todo los bancos. Desde entonces lo paga el Tesoro, en su mayor parte como interés capitalizado que no figura en el resultado fiscal, y lo cobran bancos, fondos comunes y, en un 60%, el propio sector público.
 - En dólares, el principal destino de los dólares disponibles fue el atesoramiento privado, y el principal proveedor neto del sector público fue el FMI.
