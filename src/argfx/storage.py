@@ -63,9 +63,10 @@ class LocalObjectStore:
 
 
 class S3ObjectStore:
-    def __init__(self, client: S3Client, bucket: str) -> None:
+    def __init__(self, client: S3Client, bucket: str, cache_control: str | None = None) -> None:
         self.client = client
         self.bucket = bucket
+        self.cache_control = cache_control
 
     def exists(self, key: str) -> bool:
         from botocore.exceptions import ClientError
@@ -79,8 +80,12 @@ class S3ObjectStore:
         return True
 
     def upload(self, path: Path, key: str, content_type: str | None = None) -> None:
-        extra = {"ContentType": content_type} if content_type else None
-        self.client.upload_file(str(path), self.bucket, key, ExtraArgs=extra)
+        extra: dict[str, str] = {}
+        if content_type:
+            extra["ContentType"] = content_type
+        if self.cache_control:
+            extra["CacheControl"] = self.cache_control
+        self.client.upload_file(str(path), self.bucket, key, ExtraArgs=extra or None)
 
     def download(self, key: str, dest: Path) -> None:
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -131,7 +136,9 @@ def public_store(settings: Settings) -> ObjectStore:
         aws_secret_access_key=secret.get_secret_value(),
         region_name="auto",
     )
-    return S3ObjectStore(client, settings.r2_public_bucket)
+    # no-transform keeps the CDN from rewriting served files (http:// links in HTML, for one),
+    # which would change their SHA-256 and break verification.
+    return S3ObjectStore(client, settings.r2_public_bucket, cache_control="no-transform")
 
 
 def get_store(settings: Settings) -> ObjectStore:
