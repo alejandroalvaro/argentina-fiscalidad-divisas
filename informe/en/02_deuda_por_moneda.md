@@ -187,9 +187,58 @@ Until 2029 maturities exceed the projected goods surplus; in 2030 and 2031 the s
 
 The first is that the country also pays for services, profits and interest. The same IMF projection shows a current account deficit every year, from 4.5 billion in 2027 to 2.2 billion in 2031. The current account already nets out interest on public debt, so full debt service cannot be subtracted from it without counting that interest twice. What the current account shows is that, even after paying interest, the country as a whole does not generate net dollars, and all maturing principal has to be refinanced or covered with financial account inflows.
 
-The second is that this balance belongs to the country and not to the Treasury. The country's external constraint and the Treasury's foreign-currency cash position are different things: the Treasury has to buy those dollars with pesos, from the BCRA or in the market, or borrow them. The third is that the projection changes a lot from one report to the next: for 2027 the IMF projected 22.3 billion in April 2025, 15 billion in August 2025 and 21.4 billion in May 2026. Without refinancing, the dollar savings the country could generate are not enough to pay the dollar debt that falls due; with refinancing by the international organizations, which is what happened during the term (chapter 4), the pressure falls to about 12 to 16 billion per year.
+The second is that this balance belongs to the country and not to the Treasury. The country's external constraint and the Treasury's foreign-currency cash position are different things: the Treasury has to buy those dollars with pesos, from the BCRA or in the market, or borrow them. The third is that the projection changes a lot from one report to the next: for 2027 the IMF projected 22.3 billion in April 2025, 15 billion in August 2025 and 21.4 billion in May 2026. Without refinancing, the dollar savings the country could generate are not enough to pay the dollar debt that falls due; with refinancing by the international organizations, which is what happened during the term (chapter 4), the pressure falls to about 12 to 16 billion per year. That figure does not yet count the other uses of dollars, which section 2.6 adds.
 
-## 2.6 What reconciles and what does not
+## 2.6 The whole dollar account
+
+The comparison in the previous section puts the goods surplus on one side and debt on the other. It leaves out the other uses of dollars, which in Argentina are large: travel and other services, private interest and profits, and purchases of dollars by persons and firms. This section measures them with the BCRA foreign exchange market and adds them to the same account.
+
+**What was used in each period.** The BCRA foreign exchange market records each transaction by item and by sector, which allows persons to be separated from firms (SRC-1604). The table puts each item at a yearly pace in four periods: January 2017 to August 2019, when persons and firms could buy without restrictions; 2024, under the controls (the cepo); April 2025 to August 2026, with persons free to buy and firms still restricted; and the first eight months of 2026.
+
+| USD million per year | 2017 to Aug 2019 | 2024 | Apr 2025 to Aug 2026 | Jan to Aug 2026 |
+|---|---:|---:|---:|---:|
+| Travel, fares and card spending abroad | −8,466 | −5,688 | −8,225 | −7,898 |
+| Other services | −464 | 1,237 | −1,248 | −741 |
+| Profits and dividends | −1,437 | −64 | −2,777 | −5,559 |
+| Private interest | −1,467 | −2,179 | −2,912 | −3,144 |
+| Net purchases of dollars by persons | −17,373 | 624 | −40,568 | −32,572 |
+| Net purchases of dollars by firms | −8,755 | 1,716 | 4,056 | 4,371 |
+| *On the other side:* goods, receipts minus payments | 10,340 | 18,677 | 29,413 | 34,874 |
+| Private loans and debt securities, net | 1,871 | 6,250 | 16,234 | 17,361 |
+| Non-resident investment, inflows | 16,194 | 949 | 5,761 | 7,285 |
+
+*Source: BCRA, foreign exchange market by sector and item (SRC-1604), records of the pivot table in the statistical annex. Monthly average of each period times twelve. Negative sign: outflow of dollars. Own elaboration.*
+
+Travel and card spending abroad take about 8,000 to 8,500 million a year when there are no restrictions, and even under the controls they did not fall below 5,700. Persons bought at a pace of 40,600 million a year from April 2025 and of 32,600 million in 2026; in 2017, a year without crisis or restrictions, they bought 16,600 million. Firms still cannot buy dollars to hoard and so they sell more than they buy. When they could, between 2017 and August 2019, they bought 8,800 million a year, 6,100 million in 2017. Remitted profits rose to 5,600 million a year in 2026 with those of financial years from 2025 onward, the only ones that can be remitted. Those of earlier years remain retained, and the IMF confirms that this backlog is still restricted (SRC-1263), but no source in this report publishes its amount.
+
+In 2026 the account closed in two ways. One is goods export receipts, 34,900 million a year in cash, which include advance payments and pre-financing from abroad. The other is loans and corporate bonds of firms and provinces, 17,400 million a year. Both bring dollars today, and the pre-financing and the private debt call for them again when they fall due.
+
+**The account by year.** The table adds everything up for 2027 to 2030. Goods, services and income come from the IMF projection (SRC-1263, table 2). Private income is primary income minus interest on public debt, which is already in the maturities. Purchases of dollars by persons and firms are assumptions, at the pace observed in each period.
+
+| USD million | 2027 | 2028 | 2029 | 2030 |
+|---|---:|---:|---:|---:|
+| Goods balance (IMF) | 21,400 | 23,200 | 25,400 | 27,200 |
+| Secondary income (IMF) | 2,300 | 2,500 | 2,700 | 2,800 |
+| Services (IMF) | −11,000 | −11,000 | −11,300 | −11,200 |
+| Private interest and profits (IMF) | −7,700 | −8,300 | −9,300 | −10,600 |
+| **Left to pay debt** | **5,000** | **6,400** | **7,500** | **8,200** |
+| Maturities to creditors outside the public sector (2.5) | −21,982 | −25,740 | −26,938 | −24,703 |
+| **Result before anyone buys dollars** | **−16,982** | **−19,340** | **−19,438** | **−16,503** |
+| Assumption A: persons at the 2017 to August 2019 pace | −17,373 | −17,373 | −17,373 | −17,373 |
+| **Gap under assumption A** | **−34,354** | **−36,713** | **−36,810** | **−33,876** |
+| Assumption B: persons at the 2026 pace | −32,572 | −32,572 | −32,572 | −32,572 |
+| and firms at the 2017 to August 2019 pace | −8,755 | −8,755 | −8,755 | −8,755 |
+| **Gap under assumption B** | **−58,310** | **−60,668** | **−60,765** | **−57,831** |
+
+*Sources: IMF, second review of the EFF (SRC-1263), table 2; maturities from chapter 2.5; paces from the previous table. The gaps are what would have to be found each year through foreign investment, new private or government debt, refinancing by the international organizations or a loss of reserves. Own elaboration.*
+
+With services and income, the goods surplus leaves between 5,000 and 8,200 million a year for debt, a quarter to a third of what falls due. Before a single person or firm buys a dollar, 16,500 to 19,400 million a year are missing. With persons buying as in 2017-2019, the gap reaches about 34,000 to 37,000 million; with persons at the 2026 pace and firms free to buy, about 58,000 to 61,000 million. The reassurance suggested by the comparison with the goods surplus disappears once the other uses are added.
+
+There are four caveats, and they point in different directions. The IMF income figures are on an accrual basis and include profits that firms reinvest, which do not call for dollars; in cash, in 2026, private interest and profits add up to 8,700 million a year, a similar magnitude. Part of what persons buy returns to banks as dollar deposits (chapter 4.1). The 2018 and 2019 pace includes two runs, and the 2026 pace may still include purchases held back during the years of controls. In the other direction, the table leaves out the backlog of profits from financial years before 2025 and the pesos that firms and foreign investors accumulated under the controls, which would seek to leave if the restriction on firms were lifted, because there is no public figure for that stock.
+
+**How the IMF closes the account.** The IMF projection closes the same years with three assumptions. Net foreign direct investment, excluding importers' debt, is 20,000 to 22,800 million a year, against 13,200 million in 2025 by its own measure. The government places new bonds for 9,800 to 15,900 million a year. And the line "other items, net", where the IMF records, among other things, residents' purchases of foreign assets, shows outflows of 11,300 to 13,400 million a year, a little more than a third of what persons bought in 2026. With those assumptions, gross reserves rise by 8,300 to 15,800 million a year. The projection is consistent with its assumptions. What this account adds is a measure of how much it depends on them: foreign investment growing by more than half over 2025, the government placing debt in the market every year, and purchases of dollars by persons falling to a little more than a third of the current pace.
+
+## 2.7 What reconciles and what does not
 
 All reconciliation checks pass: the SIGADE balance against the official spreadsheet, the four flow identities for the second quarter of 2026 and the official twelve-month maturity profile in its 24 cells (twelve months for principal and for interest).
 

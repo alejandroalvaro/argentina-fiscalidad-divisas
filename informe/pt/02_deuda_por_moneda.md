@@ -187,9 +187,58 @@ Até 2029, os vencimentos superam o superávit de bens projetado; em 2030 e 2031
 
 A primeira é que o país também paga serviços, lucros e juros. A mesma projeção do FMI traz uma conta corrente em déficit todos os anos, de 4.500 milhões em 2027 a 2.200 em 2031. A conta corrente já desconta os juros da dívida pública, de modo que não dá para subtrair dela o serviço completo sem contar esses juros duas vezes. O que a conta corrente mostra é que, mesmo depois de pagar juros, o país como um todo não gera dólares líquidos, e todo o principal que vence precisa ser refinanciado ou coberto com entradas da conta financeira.
 
-A segunda é que esse saldo é do país, e não do Tesouro. A restrição externa do país e o caixa em divisas do Tesouro são coisas distintas: o Tesouro precisa comprar esses dólares com pesos, ao BCRA ou no mercado, ou tomá-los emprestados. A terceira é que a projeção muda muito de um relatório para outro: para 2027, o FMI projetava 22.300 milhões em abril de 2025, 15.000 em agosto de 2025 e 21.400 em maio de 2026. Sem refinanciamento, a poupança em dólares que o país poderia gerar não basta para pagar a dívida em dólares que vence. Com o refinanciamento dos organismos, que foi o que aconteceu no mandato (capítulo 4), a pressão cai para uns 12.000 a 16.000 milhões por ano.
+A segunda é que esse saldo é do país, e não do Tesouro. A restrição externa do país e o caixa em divisas do Tesouro são coisas distintas: o Tesouro precisa comprar esses dólares com pesos, ao BCRA ou no mercado, ou tomá-los emprestados. A terceira é que a projeção muda muito de um relatório para outro: para 2027, o FMI projetava 22.300 milhões em abril de 2025, 15.000 em agosto de 2025 e 21.400 em maio de 2026. Sem refinanciamento, a poupança em dólares que o país poderia gerar não basta para pagar a dívida em dólares que vence. Com o refinanciamento dos organismos, que foi o que aconteceu no mandato (capítulo 4), a pressão cai para uns 12.000 a 16.000 milhões por ano. Esse número ainda não conta os outros usos dos dólares, que a seção 2.6 soma.
 
-## 2.6 O que fecha e o que não fecha
+## 2.6 A conta completa dos dólares
+
+A comparação da seção anterior põe de um lado o superávit de bens e do outro a dívida. Faltam os outros usos dos dólares, que na Argentina são grandes: as viagens e os demais serviços, os juros e os lucros das empresas, e as compras de dólares de pessoas e empresas. Esta seção os mede com o mercado de câmbio do BCRA e os soma à mesma conta.
+
+**O que se usou em cada etapa.** O mercado de câmbio do BCRA registra cada operação por conceito e por setor, e permite separar as pessoas das empresas (SRC-1604). O quadro leva cada conceito a um ritmo anual em quatro etapas: de janeiro de 2017 a agosto de 2019, quando pessoas e empresas podiam comprar sem restrições; 2024, com o cepo; de abril de 2025 a agosto de 2026, com as pessoas liberadas e as empresas ainda restritas; e os primeiros oito meses de 2026.
+
+| Milhões de USD por ano | 2017 a ago 2019 | 2024 | Abr 2025 a ago 2026 | Jan a ago 2026 |
+|---|---:|---:|---:|---:|
+| Viagens, passagens e gastos com cartão no exterior | −8.466 | −5.688 | −8.225 | −7.898 |
+| Outros serviços | −464 | 1.237 | −1.248 | −741 |
+| Lucros e dividendos | −1.437 | −64 | −2.777 | −5.559 |
+| Juros privados | −1.467 | −2.179 | −2.912 | −3.144 |
+| Compra líquida de dólares por pessoas | −17.373 | 624 | −40.568 | −32.572 |
+| Compra líquida de dólares por empresas | −8.755 | 1.716 | 4.056 | 4.371 |
+| *Do outro lado:* bens, recebimentos menos pagamentos | 10.340 | 18.677 | 29.413 | 34.874 |
+| Empréstimos e títulos de dívida privados, líquido | 1.871 | 6.250 | 16.234 | 17.361 |
+| Investimento de não residentes, entradas | 16.194 | 949 | 5.761 | 7.285 |
+
+*Fonte: BCRA, mercado de câmbio por setor e conceito (SRC-1604), registros da tabela dinâmica do anexo estatístico. Média mensal de cada etapa vezes doze. Sinal negativo: saída de dólares. Elaboração própria.*
+
+As viagens e os gastos com cartão no exterior levam uns 8.000 a 8.500 milhões por ano quando não há restrições, e nem com o cepo caíram abaixo de 5.700. As pessoas compraram a um ritmo de 40.600 milhões anuais desde abril de 2025 e de 32.600 em 2026; em 2017, um ano sem crise e sem restrições, compraram 16.600. As empresas continuam sem poder comprar dólares para entesourar e por isso vendem mais do que compram. Quando puderam, entre 2017 e agosto de 2019, compraram 8.800 milhões por ano, 6.100 em 2017. Os lucros remetidos subiram para 5.600 milhões por ano em 2026 com os de exercícios de 2025 em diante, os únicos que podem ser remetidos. Os de exercícios anteriores continuam retidos, e o FMI confirma que esse atraso continua restrito (SRC-1263), mas nenhuma fonte deste relatório publica o seu valor.
+
+Em 2026 a conta fechou por duas vias. Uma é o recebimento de exportações de bens, 34.900 milhões por ano em caixa, que inclui antecipações e pré-financiamentos do exterior. A outra são os empréstimos e as obrigações negociáveis de empresas e províncias, 17.400 milhões por ano. As duas trazem dólares hoje, e os pré-financiamentos e a dívida privada os pedem de volta quando vencem.
+
+**A conta por ano.** O quadro soma tudo para 2027 a 2030. Os bens, os serviços e as rendas vêm da projeção do FMI (SRC-1263, quadro 2). As rendas privadas são a renda primária menos os juros da dívida pública, que já estão nos vencimentos. As compras de dólares de pessoas e empresas são hipóteses, com o ritmo observado de cada etapa.
+
+| Milhões de USD | 2027 | 2028 | 2029 | 2030 |
+|---|---:|---:|---:|---:|
+| Saldo de bens (FMI) | 21.400 | 23.200 | 25.400 | 27.200 |
+| Renda secundária (FMI) | 2.300 | 2.500 | 2.700 | 2.800 |
+| Serviços (FMI) | −11.000 | −11.000 | −11.300 | −11.200 |
+| Juros e lucros privados (FMI) | −7.700 | −8.300 | −9.300 | −10.600 |
+| **Sobra para pagar dívida** | **5.000** | **6.400** | **7.500** | **8.200** |
+| Vencimentos com credores fora do setor público (2.5) | −21.982 | −25.740 | −26.938 | −24.703 |
+| **Resultado antes de alguém comprar dólares** | **−16.982** | **−19.340** | **−19.438** | **−16.503** |
+| Hipótese A: pessoas no ritmo de 2017 a agosto de 2019 | −17.373 | −17.373 | −17.373 | −17.373 |
+| **Lacuna com a hipótese A** | **−34.354** | **−36.713** | **−36.810** | **−33.876** |
+| Hipótese B: pessoas no ritmo de 2026 | −32.572 | −32.572 | −32.572 | −32.572 |
+| e empresas no ritmo de 2017 a agosto de 2019 | −8.755 | −8.755 | −8.755 | −8.755 |
+| **Lacuna com a hipótese B** | **−58.310** | **−60.668** | **−60.765** | **−57.831** |
+
+*Fontes: FMI, segunda revisão do EFF (SRC-1263), quadro 2; vencimentos do capítulo 2.5; ritmos do quadro anterior. As lacunas são o que seria preciso conseguir por ano com investimento estrangeiro, dívida nova de privados ou do Estado, refinanciamento dos organismos ou perda de reservas. Elaboração própria.*
+
+Com serviços e rendas, o superávit de bens deixa entre 5.000 e 8.200 milhões por ano para a dívida, de um quarto a um terço do que vence. Antes que uma pessoa ou uma empresa compre um dólar, faltam entre 16.500 e 19.400 milhões por ano. Com as pessoas comprando como em 2017-2019, a lacuna chega a uns 34.000 a 37.000 milhões; com as pessoas no ritmo de 2026 e as empresas liberadas, a uns 58.000 a 61.000. A tranquilidade que a comparação com o superávit de bens sugere desaparece quando se somam os outros usos.
+
+Há quatro ressalvas, e elas vão em direções diferentes. As rendas do FMI são medidas por competência e incluem lucros que as empresas reinvestem e que não pedem dólares; em caixa, em 2026, juros e lucros privados somam 8.700 milhões por ano, uma magnitude parecida. Uma parte do que as pessoas compram volta aos bancos como depósitos em dólares (capítulo 4.1). O ritmo de 2018 e 2019 inclui duas corridas, e o de 2026 ainda pode incluir compras represadas durante os anos de cepo. No sentido contrário, o quadro deixa de fora o atraso de lucros de exercícios anteriores a 2025 e os pesos que as empresas e os investidores do exterior acumularam durante o cepo, que buscariam sair se a restrição às empresas fosse levantada, porque não há um número público desse estoque.
+
+**Como o FMI fecha a conta.** A projeção do FMI fecha os mesmos anos com três hipóteses. O investimento estrangeiro direto líquido, sem a dívida de importadores, é de 20.000 a 22.800 milhões por ano, contra 13.200 em 2025 pela sua própria medida. O governo coloca títulos novos por 9.800 a 15.900 milhões por ano. E a linha "outros itens líquidos", onde o FMI registra, entre outras coisas, as compras de ativos externos dos residentes, dá saídas de 11.300 a 13.400 milhões por ano, pouco mais de um terço do que as pessoas compraram em 2026. Com essas hipóteses, as reservas brutas sobem entre 8.300 e 15.800 milhões por ano. A projeção é coerente com as suas hipóteses. O que esta conta acrescenta é a medida de quanto ela depende delas: que o investimento estrangeiro cresça mais da metade sobre 2025, que o Estado coloque dívida no mercado todos os anos e que as compras de dólares das pessoas caiam para pouco mais de um terço do ritmo atual.
+
+## 2.7 O que fecha e o que não fecha
 
 Todos os controles de conciliação fecham: o saldo do SIGADE contra a planilha oficial, as quatro identidades de fluxos do segundo trimestre de 2026 e o perfil oficial de vencimentos a doze meses nas suas 24 células (doze meses, por principal e por juros).
 

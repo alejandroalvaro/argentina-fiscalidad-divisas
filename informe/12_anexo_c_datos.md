@@ -9,7 +9,7 @@
 | Boletín mensual de la Secretaría de Finanzas, serie 2019-2026 | Deuda por moneda (A.1, A.3), operaciones (A.4) y pagos por moneda de pago (A.5) | SRC-9002 | 2, 3, 5 |
 | Deuda de la Administración Central por tenedor | Sector público, privados y organismos | SRC-1014, SRC-1706 a SRC-1715 | 2, 6 |
 | Esquema ahorro-inversión-financiamiento, base caja, Secretaría de Hacienda | Ingresos, gastos, resultado y financiamiento del sector público nacional | lotes AM y AN | 3, 5 |
-| Balance cambiario, BCRA | Compras y ventas de divisas por concepto | SRC-1604 | 4 |
+| Balance cambiario, BCRA | Compras y ventas de divisas por concepto y por sector | SRC-1604 | 2 y 4 |
 | Series.xlsm, BCRA | Factores de la base monetaria e instrumentos del BCRA | SRC-1625 | 3 |
 | Estados contables del BCRA 2023 a 2025 | Intereses pagados y cobrados, utilidades | SRC-1673 y siguientes | 3, 6 |
 | Informe sobre Bancos, BCRA | Resultados del sistema financiero | lote AJ | 6 |
@@ -35,7 +35,9 @@ Un lote es una entrega del agente de búsqueda, guardada en la carpeta `inbox/lo
 | Derechos estimados y cobrados | `argfx derechos` | `data/simulacion/derechos_*.csv` |
 | Modelo de la fase 4: el mandato con cobro en dólares y la proyección a 2036 | `argfx simular` | `data/simulacion/mandato_*` y `proyeccion_*` |
 | Gráficos de barras | `argfx graficos` | `data/informe/grafico_*.csv` y `.html` |
+| La cuenta completa de los dólares (capítulo 2.6) | `argfx demanda` | `data/informe/demanda_divisas_observada.csv` y `cuenta_anual_divisas.csv` |
 | Proyección del FMI del saldo comercial | | `series/fmi_balanza_proyectada.csv` (SRC-1263) |
+| Proyección del FMI de la balanza de pagos | | `series/fmi_cuenta_corriente_proyectada.csv` (SRC-1263) |
 
 Todas las salidas de esta versión se regeneraron el 17 de octubre de 2026 desde la versión `57a7c62` del repositorio.
 

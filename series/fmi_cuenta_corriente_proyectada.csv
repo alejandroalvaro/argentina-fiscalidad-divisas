@@ -1,0 +1,5 @@
+anio,balanza_bienes_musd,servicios_musd,ingreso_primario_musd,interes_publico_musd,ingreso_secundario_musd,ied_neta_sin_deuda_importadores_musd,otros_rubros_netos_musd,bonos_nuevos_gobierno_musd,otro_financiamiento_oficial_musd,financiamiento_fmi_musd,aumento_reservas_brutas_musd,source_id,referencia
+2027,21400,-11000,-17100,-9400,2300,20800,-13400,9800,4900,1700,8300,SRC-1263,"FMI, segunda revisión del EFF (mayo de 2026), cuadro 2, balanza de pagos externa, columna proyectada"
+2028,23200,-11000,-18400,-10100,2500,20000,-12600,12400,5500,1700,12100,SRC-1263,"ídem"
+2029,25400,-11300,-19800,-10500,2700,21200,-11300,14800,5500,900,15800,SRC-1263,"ídem"
+2030,27200,-11200,-21400,-10800,2800,22800,-12900,15900,5500,0,15500,SRC-1263,"ídem; 2031 queda afuera porque la fila de interés público del cuadro trae valores de signo inconsistente (5,2 y 14,0)"
