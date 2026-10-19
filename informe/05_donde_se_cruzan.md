@@ -62,7 +62,7 @@ Esos flujos van en el circuito de los pesos (capítulo 3), porque los pesos entr
 
 Del lado de los pesos, el cruce suma $72,7 billones de agosto de 2026: $45,7 billones de compra de dólares y $27,0 billones de deuda con el BCRA cancelada con pesos. Son dos usos distintos de los pesos. Con los primeros el Tesoro consiguió dólares que pudo usar para pagar a terceros; con los segundos canceló una deuda con el BCRA, sin conseguir ningún dólar disponible. La diferencia entre monedas que la fuente no abre aparece aquí como una entrada de $7,7 billones, la contracara de los 4.309 millones del lado de los dólares.
 
-Para dar escala, el Tesoro aplicó a obligaciones en dólares más pesos de los que cobró en todo el período por derechos de exportación ($28,6 billones), y casi tanto como recibió en utilidades del BCRA ($42,9 billones). Son comparaciones de magnitud dentro de la misma moneda. Que el Tesoro tenga pesos no dice que haya dólares para comprar: ese es el punto de partida del informe.
+Para dar escala, los $72,7 billones que el Tesoro aplicó a obligaciones en dólares superan lo que cobró en todo el período por derechos de exportación ($28,6 billones) y lo que recibió en utilidades del BCRA ($42,9 billones). Las compras efectivas de divisas, $45,7 billones, fueron de un orden parecido a esas utilidades. Son comparaciones de magnitud dentro de la misma moneda. Que el Tesoro tenga pesos no dice que haya dólares para comprar: ese es el punto de partida del informe.
 
 ## 5.4 Las Letras Intransferibles: un cruce dentro del sector público
 

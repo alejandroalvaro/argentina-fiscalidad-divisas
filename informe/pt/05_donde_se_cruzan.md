@@ -62,7 +62,7 @@ Esses fluxos ficam no circuito dos pesos (capítulo 3), porque os pesos entram e
 
 Do lado dos pesos, o cruzamento soma $72,7 trilhões de agosto de 2026: $45,7 trilhões de compra de dólares e $27,0 trilhões de dívida com o BCRA quitada com pesos. São dois usos diferentes dos pesos. Com os primeiros, o Tesouro conseguiu dólares que pôde usar para pagar terceiros. Com os segundos, quitou uma dívida com o BCRA sem conseguir nenhum dólar disponível. A diferença entre moedas que a fonte não abre aparece aqui como uma entrada de $7,7 trilhões, a contrapartida dos 4.309 milhões do lado dos dólares.
 
-Para dar a escala, o Tesouro destinou a obrigações em dólares mais pesos do que arrecadou em todo o período com direitos de exportação ($28,6 trilhões), e quase tanto quanto recebeu em lucros do BCRA ($42,9 trilhões). São comparações de grandeza dentro da mesma moeda. O fato de o Tesouro ter pesos não diz que haja dólares para comprar, e é desse ponto que o relatório parte.
+Para dar a escala, os $72,7 trilhões que o Tesouro destinou a obrigações em dólares superam o que arrecadou em todo o período com direitos de exportação ($28,6 trilhões) e o que recebeu em lucros do BCRA ($42,9 trilhões). As compras efetivas de divisas, $45,7 trilhões, foram de uma ordem parecida com esses lucros. São comparações de grandeza dentro da mesma moeda. O fato de o Tesouro ter pesos não diz que haja dólares para comprar, e é desse ponto que o relatório parte.
 
 ## 5.4 As Letras Intransferibles: um cruzamento dentro do setor público
 

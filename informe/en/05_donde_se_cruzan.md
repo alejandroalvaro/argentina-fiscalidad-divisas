@@ -62,7 +62,7 @@ Those flows belong to the peso circuit (chapter 3), because the pesos come in an
 
 On the peso side, the crossing adds up to ARS 72.7 trillion at August 2026 prices: ARS 45.7 trillion in dollar purchases and ARS 27.0 trillion in debt to the BCRA canceled with pesos. These are two different uses of pesos. With the first, the Treasury obtained dollars it could use to pay third parties; with the second, it canceled a debt to the BCRA without obtaining any usable dollar. The difference between currencies that the source does not break down appears here as an inflow of ARS 7.7 trillion, the counterpart of the 4,309 million on the dollar side.
 
-For scale, the Treasury applied more pesos to dollar obligations than it collected in export duties over the whole period (ARS 28.6 trillion), and almost as much as it received in BCRA profits (ARS 42.9 trillion). These are comparisons of magnitude within the same currency. The fact that the Treasury has pesos does not mean there are dollars to buy: that is the starting point of the report.
+For scale, the ARS 72.7 trillion the Treasury applied to dollar obligations exceeds what it collected in export duties over the whole period (ARS 28.6 trillion) and what it received in BCRA profits (ARS 42.9 trillion). Actual foreign currency purchases, ARS 45.7 trillion, were of a similar order to those profits. These are comparisons of magnitude within the same currency. The fact that the Treasury has pesos does not mean there are dollars to buy: that is the starting point of the report.
 
 ## 5.4 The Letras Intransferibles: a crossing within the public sector
 
