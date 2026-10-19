@@ -514,6 +514,50 @@ def cmd_simular(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_demanda(args: argparse.Namespace) -> int:
+    import csv
+
+    from argfx.informe.demanda import (
+        dollar_account,
+        read_market,
+        read_maturities,
+        write_rows,
+        yearly_pace,
+    )
+
+    monthly = read_market(_cached_object(BALANCE_CAMBIARIO_SHA, "bcra"))
+    periods = {
+        "2017-ago2019": ("2017-01", "2019-08"),
+        "2024": ("2024-01", "2024-12"),
+        "abr2025-ago2026": ("2025-04", "2026-08"),
+        "ene-ago2026": ("2026-01", "2026-08"),
+    }
+    paces = {label: yearly_pace(monthly, *span) for label, span in periods.items()}
+    keys = sorted({k for p in paces.values() for k in p})
+    observed = [
+        {"concepto": k, **{label: round(p.get(k, 0.0)) for label, p in paces.items()}} for k in keys
+    ]
+    write_rows(observed, args.out / "demanda_divisas_observada.csv")
+    with args.fmi.open(newline="", encoding="utf-8") as fh:
+        imf = list(csv.DictReader(fh))
+    persons = {
+        "ritmo_2017_2019": -paces["2017-ago2019"]["atesoramiento_personas"],
+        "ritmo_2026": -paces["ene-ago2026"]["atesoramiento_personas"],
+    }
+    firms = -paces["2017-ago2019"]["atesoramiento_empresas"]
+    rows = dollar_account(imf, read_maturities(args.vencimientos), persons, firms)
+    write_rows(rows, args.out / "cuenta_anual_divisas.csv")
+    for r in observed:
+        print(f"{r['concepto']:<26}" + "".join(f"{r[k]:>10,}" for k in periods))
+    for r in rows:
+        print(
+            f"{r['anio']}: antes de atesorar {r['resultado_antes_de_atesoramiento']:>8,}"
+            f"  brecha {r['brecha_ritmo_2017_2019']:>8,} a {r['brecha_ritmo_2026_y_empresas']:>8,}"
+        )
+    print(f"tablas en {args.out}/ (millones de USD por año)")
+    return 0
+
+
 def cmd_graficos(args: argparse.Namespace) -> int:
     from argfx.informe import graficos as gr
     from argfx.informe import terceros
@@ -739,6 +783,14 @@ def build_parser() -> argparse.ArgumentParser:
     gra.add_argument("--pesos-de", default="2026-08", help="month of the constant pesos")
     gra.add_argument("--out", type=Path, default=Path("data/informe"))
     gra.set_defaults(func=cmd_graficos)
+
+    dem = sub.add_parser("demanda", help="report: the whole yearly dollar account (chapter 2.6)")
+    dem.add_argument("--fmi", type=Path, default=Path("series/fmi_cuenta_corriente_proyectada.csv"))
+    dem.add_argument(
+        "--vencimientos", type=Path, default=Path("data/informe/grafico_balanza_vs_servicio.csv")
+    )
+    dem.add_argument("--out", type=Path, default=Path("data/informe"))
+    dem.set_defaults(func=cmd_demanda)
 
     pub = sub.add_parser("publicar", help="table of republishable originals; copy them")
     pub.add_argument("--objects", type=Path, default=Path("manifests/objects.csv"))

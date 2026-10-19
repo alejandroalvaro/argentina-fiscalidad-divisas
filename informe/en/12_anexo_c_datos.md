@@ -9,7 +9,7 @@
 | Monthly bulletin of the Finance Secretariat, 2019-2026 series | Debt by currency (A.1, A.3), operations (A.4) and payments by currency of payment (A.5) | SRC-9002 | 2, 3, 5 |
 | Central Administration debt by holder | Public sector, private holders and international organizations | SRC-1014, SRC-1706 to SRC-1715 | 2, 6 |
 | Savings-investment-financing (AIF) table, cash basis, Secretaría de Hacienda (Budget Secretariat) | Revenue, spending, balance and financing of the national public sector | batches AM and AN | 3, 5 |
-| FX balance (balance cambiario), BCRA | Foreign-currency purchases and sales by item | SRC-1604 | 4 |
+| FX balance (balance cambiario), BCRA | Foreign-currency purchases and sales by item and by sector | SRC-1604 | 2 and 4 |
 | Series.xlsm, BCRA | Monetary base factors and BCRA instruments | SRC-1625 | 3 |
 | BCRA financial statements 2023 to 2025 | Interest paid and received, profits | SRC-1673 and following | 3, 6 |
 | Informe sobre Bancos (banking report), BCRA | Results of the financial system | batch AJ | 6 |
@@ -35,7 +35,9 @@ A batch is a delivery from the search agent, stored in the repository folder `in
 | Estimated and collected duties | `argfx derechos` | `data/simulacion/derechos_*.csv` |
 | Phase 4 model: the term with collection in dollars and the projection to 2036 | `argfx simular` | `data/simulacion/mandato_*` and `proyeccion_*` |
 | Bar charts | `argfx graficos` | `data/informe/grafico_*.csv` and `.html` |
+| The whole dollar account (chapter 2.6) | `argfx demanda` | `data/informe/demanda_divisas_observada.csv` and `cuenta_anual_divisas.csv` |
 | IMF projection of the trade balance | | `series/fmi_balanza_proyectada.csv` (SRC-1263) |
+| IMF projection of the balance of payments | | `series/fmi_cuenta_corriente_proyectada.csv` (SRC-1263) |
 
 All outputs of this version were regenerated on 17 October 2026 from version `57a7c62` of the repository.
 

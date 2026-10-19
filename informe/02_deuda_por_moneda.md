@@ -187,9 +187,58 @@ Hasta 2029 los vencimientos superan el superávit de bienes proyectado; en 2030 
 
 La primera es que el país también paga servicios, utilidades e intereses. La misma proyección del FMI da una cuenta corriente en déficit todos los años, de 4.500 millones en 2027 a 2.200 en 2031. La cuenta corriente ya descuenta los intereses de la deuda pública, de modo que no se puede restar de ella el servicio completo sin contar dos veces esos intereses. Lo que la cuenta corriente muestra es que, aun después de pagar intereses, el país en su conjunto no genera dólares netos, y todo el capital que vence tiene que refinanciarse o cubrirse con ingresos de la cuenta financiera.
 
-La segunda es que ese saldo es del país y no del Tesoro. La restricción externa del país y la caja en divisas del Tesoro son cosas distintas: el Tesoro tiene que comprar esos dólares con pesos, al BCRA o en el mercado, o tomarlos prestados. La tercera es que la proyección cambia mucho de un informe a otro: para 2027 el FMI proyectaba 22.300 millones en abril de 2025, 15.000 en agosto de 2025 y 21.400 en mayo de 2026. Sin refinanciación, el ahorro en dólares que el país podría generar no alcanza para pagar la deuda en dólares que vence; con refinanciación de los organismos, que es lo que pasó en el mandato (capítulo 4), la presión se reduce a unos 12.000 a 16.000 millones por año.
+La segunda es que ese saldo es del país y no del Tesoro. La restricción externa del país y la caja en divisas del Tesoro son cosas distintas: el Tesoro tiene que comprar esos dólares con pesos, al BCRA o en el mercado, o tomarlos prestados. La tercera es que la proyección cambia mucho de un informe a otro: para 2027 el FMI proyectaba 22.300 millones en abril de 2025, 15.000 en agosto de 2025 y 21.400 en mayo de 2026. Sin refinanciación, el ahorro en dólares que el país podría generar no alcanza para pagar la deuda en dólares que vence; con refinanciación de los organismos, que es lo que pasó en el mandato (capítulo 4), la presión se reduce a unos 12.000 a 16.000 millones por año. Esa cifra todavía no cuenta los otros usos de los dólares, que la sección 2.6 suma.
 
-## 2.6 Lo que cierra y lo que no
+## 2.6 La cuenta completa de los dólares
+
+La comparación de la sección anterior pone de un lado el superávit de bienes y del otro la deuda. Le faltan los otros usos de los dólares, que en la Argentina son grandes: los viajes y los demás servicios, los intereses y las utilidades de las empresas, y las compras de dólares de personas y empresas. Esta sección los mide con el mercado de cambios del BCRA y los suma a la misma cuenta.
+
+**Lo que se usó en cada etapa.** El mercado de cambios del BCRA registra cada operación por concepto y por sector, y permite separar a las personas de las empresas (SRC-1604). El cuadro lleva cada concepto a un ritmo anual en cuatro etapas: de enero de 2017 a agosto de 2019, cuando personas y empresas podían comprar sin restricciones; 2024, con el cepo; de abril de 2025 a agosto de 2026, con las personas liberadas y las empresas todavía restringidas; y los primeros ocho meses de 2026.
+
+| Millones de USD por año | 2017 a ago 2019 | 2024 | Abr 2025 a ago 2026 | Ene a ago 2026 |
+|---|---:|---:|---:|---:|
+| Viajes, pasajes y gastos con tarjeta en el exterior | −8.466 | −5.688 | −8.225 | −7.898 |
+| Otros servicios | −464 | 1.237 | −1.248 | −741 |
+| Utilidades y dividendos | −1.437 | −64 | −2.777 | −5.559 |
+| Intereses privados | −1.467 | −2.179 | −2.912 | −3.144 |
+| Compra neta de dólares de personas | −17.373 | 624 | −40.568 | −32.572 |
+| Compra neta de dólares de empresas | −8.755 | 1.716 | 4.056 | 4.371 |
+| *Del otro lado:* bienes, cobros menos pagos | 10.340 | 18.677 | 29.413 | 34.874 |
+| Préstamos y títulos de deuda privados, neto | 1.871 | 6.250 | 16.234 | 17.361 |
+| Inversión de no residentes, ingresos | 16.194 | 949 | 5.761 | 7.285 |
+
+*Fuente: BCRA, mercado de cambios por sector y concepto (SRC-1604), registros de la tabla dinámica del anexo estadístico. Promedio mensual de cada etapa por doce. Signo negativo: salida de dólares. Elaboración propia.*
+
+Los viajes y los gastos con tarjeta en el exterior se llevan unos 8.000 a 8.500 millones por año cuando no hay restricciones, y ni con el cepo bajaron de 5.700. Las personas compraron a un ritmo de 40.600 millones anuales desde abril de 2025 y de 32.600 en 2026; en 2017, un año sin crisis y sin restricciones, compraron 16.600. Las empresas siguen sin poder comprar dólares para atesorar y por eso venden más de los que compran. Cuando pudieron hacerlo, entre 2017 y agosto de 2019, compraron 8.800 millones por año, 6.100 en 2017. Las utilidades giradas subieron a 5.600 millones por año en 2026 con las de ejercicios de 2025 en adelante, las únicas que se pueden girar. Las de ejercicios anteriores siguen retenidas, y el FMI confirma que ese atraso sigue restringido (SRC-1263), pero ninguna fuente de este informe publica su monto.
+
+En 2026 la cuenta cerró por dos vías. Una es el cobro de exportaciones de bienes, 34.900 millones al año en caja, que incluye anticipos y prefinanciaciones del exterior. La otra son los préstamos y las obligaciones negociables de empresas y provincias, 17.400 millones al año. Las dos traen dólares hoy, y las prefinanciaciones y la deuda privada los piden de vuelta cuando vencen.
+
+**La cuenta por año.** El cuadro suma todo para 2027 a 2030. Los bienes, los servicios y las rentas salen de la proyección del FMI (SRC-1263, cuadro 2). Las rentas privadas son el ingreso primario menos el interés de la deuda pública, que ya está en los vencimientos. Las compras de dólares de personas y empresas son supuestos, con el ritmo observado de cada etapa.
+
+| Millones de USD | 2027 | 2028 | 2029 | 2030 |
+|---|---:|---:|---:|---:|
+| Saldo de bienes (FMI) | 21.400 | 23.200 | 25.400 | 27.200 |
+| Ingreso secundario (FMI) | 2.300 | 2.500 | 2.700 | 2.800 |
+| Servicios (FMI) | −11.000 | −11.000 | −11.300 | −11.200 |
+| Intereses y utilidades privados (FMI) | −7.700 | −8.300 | −9.300 | −10.600 |
+| **Queda para pagar deuda** | **5.000** | **6.400** | **7.500** | **8.200** |
+| Vencimientos con acreedores fuera del sector público (2.5) | −21.982 | −25.740 | −26.938 | −24.703 |
+| **Resultado antes de que alguien compre dólares** | **−16.982** | **−19.340** | **−19.438** | **−16.503** |
+| Supuesto A: personas al ritmo de 2017 a agosto de 2019 | −17.373 | −17.373 | −17.373 | −17.373 |
+| **Brecha con el supuesto A** | **−34.354** | **−36.713** | **−36.810** | **−33.876** |
+| Supuesto B: personas al ritmo de 2026 | −32.572 | −32.572 | −32.572 | −32.572 |
+| y empresas al ritmo de 2017 a agosto de 2019 | −8.755 | −8.755 | −8.755 | −8.755 |
+| **Brecha con el supuesto B** | **−58.310** | **−60.668** | **−60.765** | **−57.831** |
+
+*Fuentes: FMI, segunda revisión del EFF (SRC-1263), cuadro 2; vencimientos del capítulo 2.5; ritmos del cuadro anterior. Las brechas son lo que habría que conseguir por año con inversión extranjera, deuda nueva de privados o del Estado, refinanciación de los organismos o pérdida de reservas. Elaboración propia.*
+
+Con servicios y rentas, el superávit de bienes deja entre 5.000 y 8.200 millones por año para la deuda, de una cuarta a una tercera parte de lo que vence. Antes de que una persona o una empresa compre un dólar, faltan entre 16.500 y 19.400 millones por año. Con las personas comprando como en 2017-2019, la brecha llega a unos 34.000 a 37.000 millones; con las personas al ritmo de 2026 y las empresas liberadas, a unos 58.000 a 61.000. La tranquilidad que sugiere la comparación con el superávit de bienes desaparece cuando se suman los otros usos.
+
+Hay cuatro salvedades, y van en direcciones distintas. Las rentas del FMI se miden en base devengado e incluyen utilidades que las empresas reinvierten y que no piden dólares; en caja, en 2026, intereses y utilidades privados suman 8.700 millones por año, una magnitud parecida. Una parte de lo que compran las personas vuelve a los bancos como depósitos en dólares (capítulo 4.1). El ritmo de 2018 y 2019 incluye dos corridas, y el de 2026 todavía puede incluir compras acumuladas durante los años de cepo. En sentido contrario, el cuadro deja afuera el atraso de utilidades de ejercicios anteriores a 2025 y los pesos que las empresas y los inversores del exterior acumularon durante el cepo, que buscarían salir si se levanta la restricción a las empresas, porque no hay una cifra pública de ese stock.
+
+**Cómo cierra la cuenta el FMI.** La proyección del FMI cierra los mismos años con tres supuestos. La inversión extranjera directa neta, sin la deuda de importadores, es de 20.000 a 22.800 millones por año, contra 13.200 en 2025 con su propia medida. El gobierno coloca bonos nuevos por 9.800 a 15.900 millones por año. Y la línea "otros rubros netos", donde el FMI registra, entre otras cosas, las compras de activos externos de los residentes, da salidas de 11.300 a 13.400 millones por año, poco más de un tercio de lo que compraron las personas en 2026. Con esos supuestos, las reservas brutas suben entre 8.300 y 15.800 millones por año. La proyección es coherente con sus supuestos. Lo que esta cuenta agrega es la medida de cuánto dependen de ellos: que la inversión extranjera crezca más de la mitad sobre 2025, que el Estado coloque deuda en el mercado todos los años y que las compras de dólares de las personas caigan a poco más de un tercio del ritmo actual.
+
+## 2.7 Lo que cierra y lo que no
 
 Los controles de conciliación cierran todos: el saldo de SIGADE contra la planilla oficial, las cuatro identidades de flujos del segundo trimestre de 2026 y el perfil oficial de vencimientos a doce meses en sus 24 casillas (doce meses por capital e interés).
 
