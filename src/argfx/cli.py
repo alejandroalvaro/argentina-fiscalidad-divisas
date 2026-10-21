@@ -15,17 +15,30 @@ from argfx.storage import fetch_verified, get_store
 
 
 def cmd_publicar(args: argparse.Namespace) -> int:
-    from argfx.publicacion import build_table, copy_public, write_table
+    from argfx.publicacion import (
+        INDEX_KEY,
+        build_index,
+        build_table,
+        copy_public,
+        read_sources,
+        write_table,
+    )  # fmt: skip
     from argfx.storage import public_store
 
     rows = build_table(args.objects, args.inbox, args.base_url or get_settings().r2_public_base_url)
     write_table(rows, args.out)
     public = sum(r["publicar"] == "si" for r in rows)
     print(f"{args.out}: {public} originales públicos, {len(rows) - public} privados")
+    titles = {k: v.get("title") or "" for k, v in read_sources(args.inbox).items()}
+    args.indice.parent.mkdir(parents=True, exist_ok=True)
+    args.indice.write_text(build_index(rows, titles), encoding="utf-8")
+    print(f"{args.indice}: página índice del bucket público")
     if args.copiar:
         settings = get_settings()
-        n = copy_public(rows, get_store(settings), public_store(settings))
-        print(f"copiados al bucket {settings.r2_public_bucket}: {n}")
+        dst = public_store(settings)
+        n = copy_public(rows, get_store(settings), dst)
+        dst.upload(args.indice, INDEX_KEY, "text/html; charset=utf-8")
+        print(f"copiados al bucket {settings.r2_public_bucket}: {n}, más {INDEX_KEY}")
     return 0
 
 
@@ -797,6 +810,8 @@ def build_parser() -> argparse.ArgumentParser:
     pub.add_argument("--inbox", type=Path, default=Path("inbox"))
     pub.add_argument("--out", type=Path, default=Path("manifests/publicacion.csv"))
     pub.add_argument("--base-url", help="public address of the bucket (default: from .env)")
+    pub.add_argument("--indice", type=Path, default=Path("data/publicacion/index.html"),
+                     help="landing page of the public bucket, uploaded with --copiar")  # fmt: skip
     pub.add_argument("--copiar", action="store_true", help="copy them to the public bucket")
     pub.set_defaults(func=cmd_publicar)
     return parser
