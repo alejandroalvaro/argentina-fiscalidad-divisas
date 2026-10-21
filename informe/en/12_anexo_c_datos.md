@@ -57,8 +57,8 @@ The researcher's decisions are in `docs/DECISIONES.md`, with date and rationale.
 
 Everything that supports this report is public:
 
-- **The repository**, with the code, the tests, the manifests, the tables of each batch, the method decisions and the messages between the agents, with its full history: https://github.com/alejandroalvaro/argentina-fiscalidad-divisas
-- **The official original documents**, as downloaded, at https://datos.8kgm.com.br. Each original is in `objects/sha256/` followed by its hash. The table `manifests/publicacion.csv` gives, for each SRC code, the issuer, the source URL, the hash and the public address.
+- **The repository**, with the code, the tests, the manifests, the tables of each batch, the method decisions and the messages between the agents, with its full history: [github.com/alejandroalvaro/argentina-fiscalidad-divisas](https://github.com/alejandroalvaro/argentina-fiscalidad-divisas)
+- **The official original documents**, as downloaded, at [datos.8kgm.com.br](https://datos.8kgm.com.br). Each original is in `objects/sha256/` followed by its hash. The table `manifests/publicacion.csv` gives, for each SRC code, the issuer, the source URL, the hash and the public address.
 - **Third-party documents** (press articles, academic papers, reports by private business chambers and copies of official texts hosted on third-party sites), 140 of 1,214, are not reproduced because their rights belong to their authors. The same table gives their source URL and their hash, so that anyone who downloads them can check that it is the same file.
 
 To check an original, it is enough to download it and compute its hash (`shasum -a 256 archivo` on macOS or Linux, `certutil -hashfile archivo SHA256` on Windows): it has to match the object's name. To redo a calculation, the repository explains how to install the code and which command produces each output (section C.2).
