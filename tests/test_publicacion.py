@@ -40,3 +40,17 @@ def test_only_public_objects_are_copied_once(tmp_path: Path) -> None:
     assert copy_public(rows, src, dst) == 1
     assert dst.exists("objects/aa") and not dst.exists("objects/bb")
     assert copy_public(rows, src, dst) == 0
+
+
+def test_index_lists_only_public_objects() -> None:
+    from argfx.publicacion import build_index
+
+    rows = [
+        {"source_id": "SRC-1", "sha256": "aa" * 32, "object_key": "objects/aa", "issuer": "BCRA",
+         "url": "https://bcra", "publicar": "si"},
+        {"source_id": "SRC-2", "sha256": "bb" * 32, "object_key": "objects/bb",
+         "issuer": "Infobae", "url": "https://infobae", "publicar": "no"},
+    ]  # fmt: skip
+    page = build_index(rows, {"SRC-1": "Comunicación <A>"})
+    assert 'href="objects/aa"' in page and "Comunicación &lt;A&gt;" in page
+    assert "objects/bb" not in page and "infobae" not in page

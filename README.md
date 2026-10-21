@@ -65,7 +65,7 @@ Las credenciales viven sólo en `.env` local o en secretos de CI. El token de R2
 
 ## Datos públicos
 
-Los documentos originales oficiales (1.074 de 1.214) se pueden bajar de https://datos.8kgm.com.br, con la misma clave que en el bucket privado: `objects/sha256/<aa>/<bb>/<huella>`. La tabla `manifests/publicacion.csv` da, para cada original, la fuente, la URL de origen, la huella sha256 y la dirección pública. Los 140 documentos de terceros (prensa, trabajos académicos, cámaras privadas, copias en sitios de terceros) no se reproducen; la tabla da su URL y su huella. `argfx publicar` regenera la tabla y, con `--copiar`, sube al bucket público los originales oficiales que falten, con un token propio de ese bucket (`R2_PUBLIC_ACCESS_KEY_ID`, `R2_PUBLIC_SECRET_ACCESS_KEY`, `R2_PUBLIC_BASE_URL`).
+Los documentos originales oficiales (1.074 de 1.214) se pueden bajar de https://datos.8kgm.com.br, cuya portada los lista con buscador, con la misma clave que en el bucket privado: `objects/sha256/<aa>/<bb>/<huella>`. La tabla `manifests/publicacion.csv` da, para cada original, la fuente, la URL de origen, la huella sha256 y la dirección pública. Los 140 documentos de terceros (prensa, trabajos académicos, cámaras privadas, copias en sitios de terceros) no se reproducen; la tabla da su URL y su huella. `argfx publicar` regenera la tabla y, con `--copiar`, sube al bucket público los originales oficiales que falten y la portada `index.html`, con un token propio de ese bucket (`R2_PUBLIC_ACCESS_KEY_ID`, `R2_PUBLIC_SECRET_ACCESS_KEY`, `R2_PUBLIC_BASE_URL`).
 
 ## Licencias
 
