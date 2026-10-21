@@ -57,8 +57,8 @@ As decisões do pesquisador estão em `docs/DECISIONES.md`, com data e fundament
 
 Tudo o que sustenta este relatório é público:
 
-- **O repositório**, com o código, os testes, os manifestos, as tabelas de cada lote, as decisões de método e as mensagens entre os agentes, com todo o histórico: https://github.com/alejandroalvaro/argentina-fiscalidad-divisas
-- **Os documentos originais oficiais**, do jeito que foram baixados, em https://datos.8kgm.com.br. Cada original está em `objects/sha256/` seguido da sua impressão digital. A tabela `manifests/publicacion.csv` informa, para cada código SRC, o emissor, a URL de origem, a impressão digital e o endereço público.
+- **O repositório**, com o código, os testes, os manifestos, as tabelas de cada lote, as decisões de método e as mensagens entre os agentes, com todo o histórico: [github.com/alejandroalvaro/argentina-fiscalidad-divisas](https://github.com/alejandroalvaro/argentina-fiscalidad-divisas)
+- **Os documentos originais oficiais**, do jeito que foram baixados, em [datos.8kgm.com.br](https://datos.8kgm.com.br). Cada original está em `objects/sha256/` seguido da sua impressão digital. A tabela `manifests/publicacion.csv` informa, para cada código SRC, o emissor, a URL de origem, a impressão digital e o endereço público.
 - **Os documentos de terceiros** (notas de imprensa, trabalhos acadêmicos, relatórios de câmaras privadas e cópias de textos oficiais hospedadas em sites de terceiros), 140 de 1.214, não são reproduzidos porque os direitos pertencem aos seus autores. A mesma tabela informa a URL de origem e a impressão digital, para que quem os baixar possa conferir que se trata do mesmo arquivo.
 
 Para conferir um original, basta baixá-lo e calcular a sua impressão digital (`shasum -a 256 archivo` no macOS ou no Linux, `certutil -hashfile archivo SHA256` no Windows): ela precisa coincidir com o nome do objeto. Para refazer um cálculo, o repositório explica como instalar o código e qual comando produz cada saída (seção C.2).

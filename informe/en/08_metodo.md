@@ -23,7 +23,7 @@ The two agents communicated in writing, in 134 messages stored in the repository
 
 Each document that supports a figure is stored once, unmodified, in an object store, with its SHA-256 hash as its name. If two sources deliver the same file, it is stored once. If a source changes the file, the hash changes and the new version is stored next to the old one. The repository manifests record, for each source, the URL, the download date, the response code, the size and the hash, and whether it matches the one computed by the search agent.
 
-When this version closed there were 1,214 stored originals. The 1,074 that are official documents can be downloaded from https://datos.8kgm.com.br; the other 140, from third parties, are listed with their source URL and their hash. Annex C, section C.4, explains how to verify each one. Some sources could not be stored because the portal blocks automated downloads (ANSES and the IMF, chapter 7); in those cases the web reading was used, and this is indicated.
+When this version closed there were 1,214 stored originals. The 1,074 that are official documents can be downloaded from [datos.8kgm.com.br](https://datos.8kgm.com.br); the other 140, from third parties, are listed with their source URL and their hash. Annex C, section C.4, explains how to verify each one. Some sources could not be stored because the portal blocks automated downloads (ANSES and the IMF, chapter 7); in those cases the web reading was used, and this is indicated.
 
 ## 8.3 Validation and verification
 

@@ -23,7 +23,7 @@ Os dois agentes se comunicaram por escrito, em 134 mensagens guardadas no reposi
 
 Cada documento que sustenta um número é guardado uma única vez, sem modificação, num armazenamento de objetos, com a impressão digital sha256 como nome. Se duas fontes entregam o mesmo arquivo, ele é guardado uma vez. Se uma fonte muda o arquivo, a impressão digital muda e a nova versão é guardada ao lado da antiga. Os manifestos do repositório registram, para cada fonte, a URL, a data do download, o código de resposta, o tamanho e a impressão digital, e se ela coincide com a que o agente de busca calculou.
 
-No fechamento desta versão havia 1.214 originais guardados. Os 1.074 que são documentos oficiais podem ser baixados em https://datos.8kgm.com.br; os outros 140, de terceiros, aparecem com a URL de origem e a impressão digital. O anexo C, seção C.4, explica como verificar cada um. Algumas fontes não puderam ser guardadas porque o portal bloqueia o download automático (ANSES e FMI, capítulo 7); nesses casos se usou a leitura na web, e isso é indicado.
+No fechamento desta versão havia 1.214 originais guardados. Os 1.074 que são documentos oficiais podem ser baixados em [datos.8kgm.com.br](https://datos.8kgm.com.br); os outros 140, de terceiros, aparecem com a URL de origem e a impressão digital. O anexo C, seção C.4, explica como verificar cada um. Algumas fontes não puderam ser guardadas porque o portal bloqueia o download automático (ANSES e FMI, capítulo 7); nesses casos se usou a leitura na web, e isso é indicado.
 
 ## 8.3 Validação e verificação
 
